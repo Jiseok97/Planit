@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6B118332716D261008842BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118322716D261008842BA /* AppDelegate.swift */; };
+		B6B118352716D261008842BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118342716D261008842BA /* SceneDelegate.swift */; };
+		B6B1183C2716D262008842BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183B2716D262008842BA /* Assets.xcassets */; };
+		B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183D2716D262008842BA /* LaunchScreen.storyboard */; };
+		B6B1184A2716D262008842BA /* Cash_StudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118492716D262008842BA /* Cash_StudyTests.swift */; };
+		B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* Cash_StudyUITests.swift */; };
+		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
+		B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118662716D7B0008842BA /* LoginViewController.xib */; };
+		B6B1186B2716D87D008842BA /* BeginningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118692716D87D008842BA /* BeginningViewController.swift */; };
+		B6B1186C2716D87D008842BA /* BeginningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B1186A2716D87D008842BA /* BeginningViewController.xib */; };
+		B6B118712716DCB6008842BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1186F2716DCB6008842BA /* RegisterViewController.swift */; };
+		B6B118722716DCB6008842BA /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118702716DCB6008842BA /* RegisterViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6B118462716D262008842BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B118272716D261008842BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6B1182E2716D261008842BA;
+			remoteInfo = "Cash Study";
+		};
+		B6B118512716D262008842BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B118272716D261008842BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6B1182E2716D261008842BA;
+			remoteInfo = "Cash Study";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6B1182F2716D261008842BA /* Cash Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B118322716D261008842BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B6B118342716D261008842BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B6B1183B2716D262008842BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6B1183E2716D262008842BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6B118402716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6B118452716D262008842BA /* Cash StudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cash StudyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B118492716D262008842BA /* Cash_StudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_StudyTests.swift; sourceTree = "<group>"; };
+		B6B1184B2716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6B118502716D262008842BA /* Cash StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cash StudyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B118542716D262008842BA /* Cash_StudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_StudyUITests.swift; sourceTree = "<group>"; };
+		B6B118562716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6B118652716D7B0008842BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B6B118662716D7B0008842BA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6B118692716D87D008842BA /* BeginningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginningViewController.swift; sourceTree = "<group>"; };
+		B6B1186A2716D87D008842BA /* BeginningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeginningViewController.xib; sourceTree = "<group>"; };
+		B6B1186F2716DCB6008842BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B6B118702716DCB6008842BA /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6B1182C2716D261008842BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B118422716D262008842BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B1184D2716D262008842BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6B118262716D261008842BA = {
+			isa = PBXGroup;
+			children = (
+				B6B118312716D261008842BA /* Cash Study */,
+				B6B118482716D262008842BA /* Cash StudyTests */,
+				B6B118532716D262008842BA /* Cash StudyUITests */,
+				B6B118302716D261008842BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6B118302716D261008842BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6B1182F2716D261008842BA /* Cash Study.app */,
+				B6B118452716D262008842BA /* Cash StudyTests.xctest */,
+				B6B118502716D262008842BA /* Cash StudyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6B118312716D261008842BA /* Cash Study */ = {
+			isa = PBXGroup;
+			children = (
+				B6B118622716D317008842BA /* Resource */,
+				B6B118632716D5B4008842BA /* Splash */,
+				B6B118642716D707008842BA /* BeginningVC */,
+				B6B1183B2716D262008842BA /* Assets.xcassets */,
+				B6B118402716D262008842BA /* Info.plist */,
+			);
+			path = "Cash Study";
+			sourceTree = "<group>";
+		};
+		B6B118482716D262008842BA /* Cash StudyTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6B118492716D262008842BA /* Cash_StudyTests.swift */,
+				B6B1184B2716D262008842BA /* Info.plist */,
+			);
+			path = "Cash StudyTests";
+			sourceTree = "<group>";
+		};
+		B6B118532716D262008842BA /* Cash StudyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6B118542716D262008842BA /* Cash_StudyUITests.swift */,
+				B6B118562716D262008842BA /* Info.plist */,
+			);
+			path = "Cash StudyUITests";
+			sourceTree = "<group>";
+		};
+		B6B118622716D317008842BA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B6B118322716D261008842BA /* AppDelegate.swift */,
+				B6B118342716D261008842BA /* SceneDelegate.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B6B118632716D5B4008842BA /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B6B1183D2716D262008842BA /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B6B118642716D707008842BA /* BeginningVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6B1186D2716D88D008842BA /* LoginVC */,
+				B6B1186E2716D8A1008842BA /* RegisterVC */,
+				B6B118692716D87D008842BA /* BeginningViewController.swift */,
+				B6B1186A2716D87D008842BA /* BeginningViewController.xib */,
+			);
+			path = BeginningVC;
+			sourceTree = "<group>";
+		};
+		B6B1186D2716D88D008842BA /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6B118652716D7B0008842BA /* LoginViewController.swift */,
+				B6B118662716D7B0008842BA /* LoginViewController.xib */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		B6B1186E2716D8A1008842BA /* RegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6B1186F2716DCB6008842BA /* RegisterViewController.swift */,
+				B6B118702716DCB6008842BA /* RegisterViewController.xib */,
+			);
+			path = RegisterVC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6B1182E2716D261008842BA /* Cash Study */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6B118592716D262008842BA /* Build configuration list for PBXNativeTarget "Cash Study" */;
+			buildPhases = (
+				B6B1182B2716D261008842BA /* Sources */,
+				B6B1182C2716D261008842BA /* Frameworks */,
+				B6B1182D2716D261008842BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cash Study";
+			productName = "Cash Study";
+			productReference = B6B1182F2716D261008842BA /* Cash Study.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6B118442716D262008842BA /* Cash StudyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6B1185C2716D262008842BA /* Build configuration list for PBXNativeTarget "Cash StudyTests" */;
+			buildPhases = (
+				B6B118412716D262008842BA /* Sources */,
+				B6B118422716D262008842BA /* Frameworks */,
+				B6B118432716D262008842BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6B118472716D262008842BA /* PBXTargetDependency */,
+			);
+			name = "Cash StudyTests";
+			productName = "Cash StudyTests";
+			productReference = B6B118452716D262008842BA /* Cash StudyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6B1184F2716D262008842BA /* Cash StudyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6B1185F2716D262008842BA /* Build configuration list for PBXNativeTarget "Cash StudyUITests" */;
+			buildPhases = (
+				B6B1184C2716D262008842BA /* Sources */,
+				B6B1184D2716D262008842BA /* Frameworks */,
+				B6B1184E2716D262008842BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6B118522716D262008842BA /* PBXTargetDependency */,
+			);
+			name = "Cash StudyUITests";
+			productName = "Cash StudyUITests";
+			productReference = B6B118502716D262008842BA /* Cash StudyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6B118272716D261008842BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					B6B1182E2716D261008842BA = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					B6B118442716D262008842BA = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = B6B1182E2716D261008842BA;
+					};
+					B6B1184F2716D262008842BA = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = B6B1182E2716D261008842BA;
+					};
+				};
+			};
+			buildConfigurationList = B6B1182A2716D261008842BA /* Build configuration list for PBXProject "Cash Study" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6B118262716D261008842BA;
+			productRefGroup = B6B118302716D261008842BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6B1182E2716D261008842BA /* Cash Study */,
+				B6B118442716D262008842BA /* Cash StudyTests */,
+				B6B1184F2716D262008842BA /* Cash StudyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6B1182D2716D261008842BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B1186C2716D87D008842BA /* BeginningViewController.xib in Resources */,
+				B6B118722716DCB6008842BA /* RegisterViewController.xib in Resources */,
+				B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */,
+				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
+				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B118432716D262008842BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B1184E2716D262008842BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6B1182B2716D261008842BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B1186B2716D87D008842BA /* BeginningViewController.swift in Sources */,
+				B6B118712716DCB6008842BA /* RegisterViewController.swift in Sources */,
+				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
+				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
+				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B118412716D262008842BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B1184A2716D262008842BA /* Cash_StudyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B1184C2716D262008842BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6B118472716D262008842BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6B1182E2716D261008842BA /* Cash Study */;
+			targetProxy = B6B118462716D262008842BA /* PBXContainerItemProxy */;
+		};
+		B6B118522716D262008842BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6B1182E2716D261008842BA /* Cash Study */;
+			targetProxy = B6B118512716D262008842BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6B1183D2716D262008842BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6B1183E2716D262008842BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6B118572716D262008842BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6B118582716D262008842BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6B1185A2716D262008842BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cash Study/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "netLee.Cash-Study";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6B1185B2716D262008842BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cash Study/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "netLee.Cash-Study";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B6B1185D2716D262008842BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cash StudyTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "netLee.Cash-StudyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cash Study.app/Cash Study";
+			};
+			name = Debug;
+		};
+		B6B1185E2716D262008842BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cash StudyTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "netLee.Cash-StudyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cash Study.app/Cash Study";
+			};
+			name = Release;
+		};
+		B6B118602716D262008842BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cash StudyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "netLee.Cash-StudyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Cash Study";
+			};
+			name = Debug;
+		};
+		B6B118612716D262008842BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cash StudyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "netLee.Cash-StudyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Cash Study";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6B1182A2716D261008842BA /* Build configuration list for PBXProject "Cash Study" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B118572716D262008842BA /* Debug */,
+				B6B118582716D262008842BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6B118592716D262008842BA /* Build configuration list for PBXNativeTarget "Cash Study" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B1185A2716D262008842BA /* Debug */,
+				B6B1185B2716D262008842BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6B1185C2716D262008842BA /* Build configuration list for PBXNativeTarget "Cash StudyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B1185D2716D262008842BA /* Debug */,
+				B6B1185E2716D262008842BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6B1185F2716D262008842BA /* Build configuration list for PBXNativeTarget "Cash StudyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B118602716D262008842BA /* Debug */,
+				B6B118612716D262008842BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6B118272716D261008842BA /* Project object */;
+}
