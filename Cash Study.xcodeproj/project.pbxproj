@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,10 +15,7 @@
 		B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* Cash_StudyUITests.swift */; };
 		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
 		B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118662716D7B0008842BA /* LoginViewController.xib */; };
-		B6B1186B2716D87D008842BA /* BeginningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118692716D87D008842BA /* BeginningViewController.swift */; };
-		B6B1186C2716D87D008842BA /* BeginningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B1186A2716D87D008842BA /* BeginningViewController.xib */; };
-		B6B118712716DCB6008842BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1186F2716DCB6008842BA /* RegisterViewController.swift */; };
-		B6B118722716DCB6008842BA /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118702716DCB6008842BA /* RegisterViewController.xib */; };
+		F3F6926C8A1B39ED5DED89BB /* Pods_Cash_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cash_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC5E403BAE4CA6C305325102 /* Pods-Cash Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.release.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.release.xcconfig"; sourceTree = "<group>"; };
 		B6B1182F2716D261008842BA /* Cash Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B118322716D261008842BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B118342716D261008842BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,10 +52,7 @@
 		B6B118562716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118652716D7B0008842BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6B118662716D7B0008842BA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		B6B118692716D87D008842BA /* BeginningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginningViewController.swift; sourceTree = "<group>"; };
-		B6B1186A2716D87D008842BA /* BeginningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeginningViewController.xib; sourceTree = "<group>"; };
-		B6B1186F2716DCB6008842BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		B6B118702716DCB6008842BA /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		B80A33E58E855DD65AA923FA /* Pods-Cash Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.debug.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F6926C8A1B39ED5DED89BB /* Pods_Cash_Study.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1608D476363EB172B6AFCFB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B80A33E58E855DD65AA923FA /* Pods-Cash Study.debug.xcconfig */,
+				AC5E403BAE4CA6C305325102 /* Pods-Cash Study.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E3D4B64F2D9191CD05CDD04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B6B118262716D261008842BA = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +105,8 @@
 				B6B118482716D262008842BA /* Cash StudyTests */,
 				B6B118532716D262008842BA /* Cash StudyUITests */,
 				B6B118302716D261008842BA /* Products */,
+				1608D476363EB172B6AFCFB7 /* Pods */,
+				5E3D4B64F2D9191CD05CDD04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +125,7 @@
 			children = (
 				B6B118622716D317008842BA /* Resource */,
 				B6B118632716D5B4008842BA /* Splash */,
-				B6B118642716D707008842BA /* BeginningVC */,
+				B6B1186D2716D88D008842BA /* LoginVC */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
 			);
@@ -151,17 +167,6 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		B6B118642716D707008842BA /* BeginningVC */ = {
-			isa = PBXGroup;
-			children = (
-				B6B1186D2716D88D008842BA /* LoginVC */,
-				B6B1186E2716D8A1008842BA /* RegisterVC */,
-				B6B118692716D87D008842BA /* BeginningViewController.swift */,
-				B6B1186A2716D87D008842BA /* BeginningViewController.xib */,
-			);
-			path = BeginningVC;
-			sourceTree = "<group>";
-		};
 		B6B1186D2716D88D008842BA /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,15 +176,6 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
-		B6B1186E2716D8A1008842BA /* RegisterVC */ = {
-			isa = PBXGroup;
-			children = (
-				B6B1186F2716DCB6008842BA /* RegisterViewController.swift */,
-				B6B118702716DCB6008842BA /* RegisterViewController.xib */,
-			);
-			path = RegisterVC;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6B118592716D262008842BA /* Build configuration list for PBXNativeTarget "Cash Study" */;
 			buildPhases = (
+				33D8C2D60FAADBCC85178303 /* [CP] Check Pods Manifest.lock */,
 				B6B1182B2716D261008842BA /* Sources */,
 				B6B1182C2716D261008842BA /* Frameworks */,
 				B6B1182D2716D261008842BA /* Resources */,
+				0EF53A07AF2CC4C4A8C8FEC5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,8 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B1186C2716D87D008842BA /* BeginningViewController.xib in Resources */,
-				B6B118722716DCB6008842BA /* RegisterViewController.xib in Resources */,
 				B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
@@ -307,13 +303,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EF53A07AF2CC4C4A8C8FEC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cash Study/Pods-Cash Study-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cash Study/Pods-Cash Study-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cash Study/Pods-Cash Study-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33D8C2D60FAADBCC85178303 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cash Study-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B6B1182B2716D261008842BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B1186B2716D87D008842BA /* BeginningViewController.swift in Sources */,
-				B6B118712716DCB6008842BA /* RegisterViewController.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
@@ -481,6 +517,7 @@
 		};
 		B6B1185A2716D262008842BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80A33E58E855DD65AA923FA /* Pods-Cash Study.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,6 +536,7 @@
 		};
 		B6B1185B2716D262008842BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC5E403BAE4CA6C305325102 /* Pods-Cash Study.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

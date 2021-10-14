@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 130.0, *) { return true }
         
         window = UIWindow()
-        window?.rootViewController = BeginningViewController()
+        window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
+        
+        // Kakao Login
+        KakaoSDKCommon.initSDK(appKey: "9dd539538c7ec090849f98f4b9809fdd")
+        
         return true
     }
 
