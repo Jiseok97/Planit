@@ -8,6 +8,7 @@
 import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
+import FacebookCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,15 +26,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Kakao Login
         KakaoSDKCommon.initSDK(appKey: "9dd539538c7ec090849f98f4b9809fdd")
         
+        // FaceBook
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
+        
         return true
     }
     
     // MARK: Kakao Login Setup
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Kakao
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
                 return AuthController.handleOpenUrl(url: url)
             }
+        
+        // FaceBook
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
 
             return false
         }

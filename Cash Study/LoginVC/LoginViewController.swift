@@ -86,6 +86,7 @@ class LoginViewController: UIViewController {
                             
                             _ = accessTokenInfo
                             guard let token = oauthToken?.accessToken else { return }
+                            UserDefaults.standard.setValue(token, forKey: "userToken")
                             print("accessTokenInfo → \(token)")
                             self.getUserInfo()
                         }
