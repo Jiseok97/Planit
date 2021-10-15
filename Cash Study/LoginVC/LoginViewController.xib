@@ -102,11 +102,21 @@
                                 <constraint firstAttribute="height" constant="50" id="yzm-dC-MX8"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-6S-l45">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                            <connections>
+                                <action selector="kakaoBtnTapped:" destination="-1" eventType="touchUpInside" id="jHb-t4-tnw"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.88235294117647056" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="JL0-8x-3BZ" firstAttribute="centerY" secondItem="8dH-nr-LLp" secondAttribute="centerY" id="1qD-Wi-W98"/>
+                        <constraint firstItem="N4N-6S-l45" firstAttribute="centerX" secondItem="gSY-fm-8DP" secondAttribute="centerX" id="8yg-Hd-j9H"/>
+                        <constraint firstItem="N4N-6S-l45" firstAttribute="height" secondItem="gSY-fm-8DP" secondAttribute="height" id="VJX-gT-SfC"/>
                         <constraint firstAttribute="height" constant="50" id="VnC-Nt-4mJ"/>
+                        <constraint firstItem="N4N-6S-l45" firstAttribute="width" secondItem="gSY-fm-8DP" secondAttribute="width" id="XmQ-IL-Bp4"/>
+                        <constraint firstItem="N4N-6S-l45" firstAttribute="centerY" secondItem="gSY-fm-8DP" secondAttribute="centerY" id="a7f-42-hoH"/>
                         <constraint firstItem="8dH-nr-LLp" firstAttribute="centerX" secondItem="gSY-fm-8DP" secondAttribute="centerX" constant="10" id="dEq-NN-Yv9"/>
                         <constraint firstItem="8dH-nr-LLp" firstAttribute="centerY" secondItem="gSY-fm-8DP" secondAttribute="centerY" id="dq2-fT-hcQ"/>
                         <constraint firstItem="8dH-nr-LLp" firstAttribute="leading" secondItem="JL0-8x-3BZ" secondAttribute="trailing" id="k4K-uh-SHP"/>
