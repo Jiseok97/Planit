@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
                             
                             _ = accessTokenInfo
                             guard let token = oauthToken?.accessToken else { return }
-                            UserDefaults.standard.setValue(token, forKey: "userToken")
+//                            UserDefaults.standard.setValue(token, forKey: "hasToken")
                             print("accessTokenInfo → \(token)")
                             self.getUserInfo()
                         }
@@ -118,15 +118,27 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    // MARK: 페이스북 로그인
     @IBAction func facebookBtnTapped(_ sender: Any) {
         let manager = LoginManager()
         manager.logIn(permissions: ["public_profile"], from: self) { result, error in
+            print("페이스북 로그인 성공")
+            if let token = AccessToken.current, !token.isExpired {
+//                UserDefaults.standard.setValue(token, forKey: "hasToken")
+                print("페이스북 로그인 token → \(token)")
+            }
+            Profile.loadCurrentProfile { profile, error in
+                guard let userName = profile?.name else { return }
+                print("UserName(FB) → \(userName)")
+            }
+            
             if let error = error {
                 print("페이스북 로그인 에러 → \(error)")
                 return
             }
             guard let result = result else {
-                print("result → \(result)")
+                print("페이스북 결괏값이 없습니다.")
                 return
             }
             if result.isCancelled {
