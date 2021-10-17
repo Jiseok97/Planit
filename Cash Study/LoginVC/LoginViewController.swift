@@ -8,6 +8,7 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -116,6 +117,27 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func facebookBtnTapped(_ sender: Any) {
+        let manager = LoginManager()
+        manager.logIn(permissions: ["public_profile"], from: self) { result, error in
+            if let error = error {
+                print("페이스북 로그인 에러 → \(error)")
+                return
+            }
+            guard let result = result else {
+                print("result → \(result)")
+                return
+            }
+            if result.isCancelled {
+                print("사용자가 페이스북 로그인을 취소했습니다.")
+                return
+            }
+        }
+        
+    }
+    
+    
     
     
 }
