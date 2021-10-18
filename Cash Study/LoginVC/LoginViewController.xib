@@ -50,13 +50,23 @@
                                 <constraint firstAttribute="width" constant="25" id="Pb6-du-eHw"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-mW-fub">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                            <connections>
+                                <action selector="appleBtnTapped:" destination="-1" eventType="touchUpInside" id="QhP-jh-mrX"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="wmo-Vw-UVd" firstAttribute="leading" secondItem="On0-bj-01H" secondAttribute="trailing" constant="18" id="2Ec-sX-fIE"/>
                         <constraint firstItem="On0-bj-01H" firstAttribute="centerY" secondItem="wmo-Vw-UVd" secondAttribute="centerY" id="5JI-SX-xLp"/>
                         <constraint firstAttribute="height" constant="50" id="9h3-7T-zg5"/>
+                        <constraint firstItem="p7h-mW-fub" firstAttribute="height" secondItem="SZ2-Lu-Q4j" secondAttribute="height" id="Mez-SC-7SK"/>
+                        <constraint firstItem="p7h-mW-fub" firstAttribute="width" secondItem="SZ2-Lu-Q4j" secondAttribute="width" id="Wcf-V2-0Sb"/>
                         <constraint firstItem="wmo-Vw-UVd" firstAttribute="centerY" secondItem="SZ2-Lu-Q4j" secondAttribute="centerY" id="fqn-4d-6fp"/>
+                        <constraint firstItem="p7h-mW-fub" firstAttribute="centerX" secondItem="SZ2-Lu-Q4j" secondAttribute="centerX" id="iQ8-6G-eSi"/>
+                        <constraint firstItem="p7h-mW-fub" firstAttribute="centerY" secondItem="SZ2-Lu-Q4j" secondAttribute="centerY" id="miC-14-aBK"/>
                         <constraint firstItem="wmo-Vw-UVd" firstAttribute="centerX" secondItem="SZ2-Lu-Q4j" secondAttribute="centerX" constant="5" id="oXx-hd-Hlg"/>
                     </constraints>
                 </view>

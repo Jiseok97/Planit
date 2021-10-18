@@ -9,7 +9,10 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
 import FBSDKLoginKit
+import AuthenticationServices
 
+// iOS 13버전부터 Apple Login 지원
+@available(iOS 13.0, *)
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var kakaoLoginView: UIView!
@@ -94,9 +97,6 @@ class LoginViewController: UIViewController {
                     }
                 }
             }
-        
-        
-        
     }
     
     
@@ -123,7 +123,7 @@ class LoginViewController: UIViewController {
     @IBAction func facebookBtnTapped(_ sender: Any) {
         let manager = LoginManager()
         manager.logIn(permissions: ["public_profile"], from: self) { result, error in
-            print("페이스북 로그인 성공")
+//            print("페이스북 로그인 성공")
             if let token = AccessToken.current, !token.isExpired {
 //                UserDefaults.standard.setValue(token, forKey: "hasToken")
                 print("페이스북 로그인 token → \(token)")
@@ -146,10 +146,45 @@ class LoginViewController: UIViewController {
                 return
             }
         }
-        
     }
     
     
+    // MARK: 애플 로그인
+    @IBAction func appleBtnTapped(_ sender: Any) {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
     
+    
+}
+
+
+// MARK: 애플 로그인 설정
+extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    // Presentation context UI를 어디에 띄울지 가장 적합한 뷰 앵커를 반환함
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+    
+    // 로그인 성공
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+        
+        print("Apple ID Credential User Identifier → \(appleIDCredential.user)")
+        print("Apple ID Credential User Name → \(String(describing: appleIDCredential.fullName))")
+        print("User Email → \(String(describing: appleIDCredential.email))")
+    }
+    
+    // 로그인 시 에러
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Apple Login Error → \(error)")
+    }
     
 }
