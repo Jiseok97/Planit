@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8C271954A500A7F3C6 /* FacebookCore */; };
 		B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8E271954A500A7F3C6 /* FacebookLogin */; };
+		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
 		B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */; };
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
@@ -46,6 +47,7 @@
 		A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cash_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5E403BAE4CA6C305325102 /* Pods-Cash Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.release.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.release.xcconfig"; sourceTree = "<group>"; };
 		B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
+		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B65310DC27253E32004AD249 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				B65310DF27253E49004AD249 /* Model */,
+				B65310DE27253E45004AD249 /* View */,
+				B65310DD27253E40004AD249 /* ViewModel */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		B65310DD27253E40004AD249 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B65310E027253E6F004AD249 /* TimerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B65310DE27253E45004AD249 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B67C98A52724FFB30039D271 /* TimerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B65310DF27253E49004AD249 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B67C98982724F9E60039D271 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +192,7 @@
 		B6B118312716D261008842BA /* Cash Study */ = {
 			isa = PBXGroup;
 			children = (
+				B65310DC27253E32004AD249 /* Timer */,
 				B67C98982724F9E60039D271 /* Configuration */,
 				B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */,
 				B6B118622716D317008842BA /* Resource */,
@@ -164,7 +200,6 @@
 				B6B1186D2716D88D008842BA /* LoginVC */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
-				B67C98A52724FFB30039D271 /* TimerView.swift */,
 			);
 			path = "Cash Study";
 			sourceTree = "<group>";
@@ -395,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
+				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,

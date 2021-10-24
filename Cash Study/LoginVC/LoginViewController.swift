@@ -117,6 +117,10 @@ class LoginViewController: UIViewController {
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
                 print("getUserInfo(kakaoAccount) → \(userName)")
                 
+//                let tvc = BaseTabBarController()
+//                tvc.modalPresentationStyle = .overFullScreen
+//                self.present(tvc, animated: true)
+                
                 let vc = UIHostingController(rootView: TimerView(name: .constant(userName)))
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)

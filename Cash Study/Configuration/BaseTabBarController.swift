@@ -7,16 +7,18 @@
 
 
 import UIKit
+import SwiftUI
 
 class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
-//    let mainViewController = MainViewController()
+    let timerViewController = UIHostingController(rootView: TimerView(name: .constant("")))
+    //    let mainViewController = MainViewController()
 //    let mangoPickViewController = MangoPickViewController()
 //    let plusViewController = PlusViewController()
 //    let storyViewController = MangoStroyViewController()
 //    let myInfoViewController = MyInfoViewController()
 //    let noLoginViewController = NotLoginViewController()
 //
-//    let mainTabBarItem = UITabBarItem(title: "맛집찾기", image: UIImage(systemName: "signpost.right"), tag: 0)
+    let timerTabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
 //    let mangoTabBarItem = UITabBarItem(title: "망고픽", image: UIImage(systemName: "bookmark"), tag: 1)
 //    let plusTabBarItem = UITabBarItem(title: nil,
 //                                      image: UIImage(named: "tabBarPlus")?.withRenderingMode(.alwaysOriginal).withTintColor(UIColor.mainColor),
@@ -25,9 +27,10 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
 //    let myInfoTabBarItem = UITabBarItem(title: "내정보", image: UIImage(systemName: "person.crop.circle"), tag: 4)
 //
 //
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let timerVC = UINavigationController(rootViewController: timerViewController)
 //        let mainVC = UINavigationController(rootViewController: mainViewController)
 //        let mangoPickVC = UINavigationController(rootViewController: mangoPickViewController)
 //        let plusVC = UINavigationController(rootViewController: plusViewController)
@@ -38,6 +41,7 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
 //
 //        plusTabBarItem.imageInsets = UIEdgeInsets(top: 20, left: 27, bottom: 0, right: 27)
 //
+        timerVC.tabBarItem = timerTabBarItem
 //        mainVC.tabBarItem = mainTabBarItem
 //        mangoPickVC.tabBarItem = mangoTabBarItem
 //        plusVC.tabBarItem = plusTabBarItem
@@ -54,11 +58,11 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
 //
 //
 //
-//        self.delegate = self
-//        self.tabBar.tintColor = UIColor.mainColor
-//        self.tabBar.unselectedItemTintColor = UIColor.systemGray3
-//        self.tabBar.backgroundColor = UIColor.white
+        self.delegate = self
+        self.tabBar.tintColor = UIColor.mainYellow
+        self.tabBar.unselectedItemTintColor = UIColor.systemGray3
+        self.tabBar.backgroundColor = UIColor.white
         
         
-//    }
+    }
 }
