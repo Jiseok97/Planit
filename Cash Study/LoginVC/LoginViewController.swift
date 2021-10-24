@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
 import FBSDKLoginKit
@@ -31,6 +32,8 @@ class LoginViewController: UIViewController {
         kakaoLoginView.layer.cornerRadius = 25
         facebookLoginView.layer.cornerRadius = 25
         appleLoginView.layer.cornerRadius = 25
+        
+        view.backgroundColor = UIColor.mainNavy
         
     }
     
@@ -77,7 +80,6 @@ class LoginViewController: UIViewController {
                 else {
                     // 로그인 성공
                     print("loginWithKakaoAccount() success.")
-
                     
                     _ = oauthToken
                     
@@ -93,6 +95,10 @@ class LoginViewController: UIViewController {
 //                            UserDefaults.standard.setValue(token, forKey: "hasToken")
                             print("accessTokenInfo → \(token)")
                             self.getUserInfo()
+                            
+                            let vc = UIHostingController(rootView: TimerView())
+                            vc.modalPresentationStyle = .overFullScreen
+                            self.present(vc, animated: true)
                         }
                     }
                 }

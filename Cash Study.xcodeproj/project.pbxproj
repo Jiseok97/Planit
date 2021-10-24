@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8C271954A500A7F3C6 /* FacebookCore */; };
 		B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8E271954A500A7F3C6 /* FacebookLogin */; };
+		B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */; };
+		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
+		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
+		B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A32724FBBE0039D271 /* IndicatorView.swift */; };
+		B67C98A62724FFB30039D271 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A52724FFB30039D271 /* TimerView.swift */; };
 		B6B118332716D261008842BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118322716D261008842BA /* AppDelegate.swift */; };
 		B6B118352716D261008842BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118342716D261008842BA /* SceneDelegate.swift */; };
 		B6B1183C2716D262008842BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183B2716D262008842BA /* Assets.xcassets */; };
@@ -41,6 +46,11 @@
 		A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cash_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5E403BAE4CA6C305325102 /* Pods-Cash Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.release.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.release.xcconfig"; sourceTree = "<group>"; };
 		B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
+		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B67C98A32724FBBE0039D271 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		B67C98A52724FFB30039D271 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B6B1182F2716D261008842BA /* Cash Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B118322716D261008842BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B118342716D261008842BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +113,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B67C98982724F9E60039D271 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B67C989E2724FA810039D271 /* Extension */,
+				B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B67C989E2724FA810039D271 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B67C989F2724FA9C0039D271 /* Color.swift */,
+				B67C98A12724FB910039D271 /* UIViewController.swift */,
+				B67C98A32724FBBE0039D271 /* IndicatorView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B6B118262716D261008842BA = {
 			isa = PBXGroup;
 			children = (
@@ -128,12 +157,14 @@
 		B6B118312716D261008842BA /* Cash Study */ = {
 			isa = PBXGroup;
 			children = (
+				B67C98982724F9E60039D271 /* Configuration */,
 				B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */,
 				B6B118622716D317008842BA /* Resource */,
 				B6B118632716D5B4008842BA /* Splash */,
 				B6B1186D2716D88D008842BA /* LoginVC */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
+				B67C98A52724FFB30039D271 /* TimerView.swift */,
 			);
 			path = "Cash Study";
 			sourceTree = "<group>";
@@ -363,8 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
+				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
+				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
+				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
+				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
