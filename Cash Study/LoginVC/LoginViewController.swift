@@ -96,9 +96,6 @@ class LoginViewController: UIViewController {
                             print("accessTokenInfo → \(token)")
                             self.getUserInfo()
                             
-                            let vc = UIHostingController(rootView: TimerView())
-                            vc.modalPresentationStyle = .overFullScreen
-                            self.present(vc, animated: true)
                         }
                     }
                 }
@@ -119,6 +116,10 @@ class LoginViewController: UIViewController {
 //                guard let profile = user?.kakaoAccount?.profile else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
                 print("getUserInfo(kakaoAccount) → \(userName)")
+                
+                let vc = UIHostingController(rootView: TimerView(name: .constant(userName)))
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
 
             }
         }
