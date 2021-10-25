@@ -25,7 +25,7 @@ class TermsOfUseViewController: UIViewController {
     // MARK: Set UI
     func setUI() {
         view.backgroundColor = UIColor.mainNavy
-        self.allCheckView.backgroundColor = UIColor.disabledColor
+//        self.allCheckView.backgroundColor = UIColor.disabledColor
         
         
         // Set Button
@@ -62,12 +62,12 @@ class TermsOfUseViewController: UIViewController {
         
         
         if !isCheck {
-            if let image = UIImage(systemName: "checkmark.square.fill") {
+            if let image = UIImage(named: "Check") {
                 sender.setImage(image, for: .normal)
                 isCheck = true
             }
         } else {
-            if let image = UIImage(systemName: "square") {
+            if let image = UIImage(systemName: "noCheck") {
                 sender.setImage(image, for: .normal)
                 isCheck = false
             }

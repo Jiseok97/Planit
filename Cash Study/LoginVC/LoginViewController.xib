@@ -21,36 +21,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돈버는 공부타이머" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inm-yR-aQi">
-                    <rect key="frame" x="40" y="282.5" width="186" height="31.5"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                    <rect key="frame" x="40" y="268" width="171.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플래닛" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiR-u9-IQu">
-                    <rect key="frame" x="40" y="327" width="67.5" height="31.5"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                    <rect key="frame" x="40" y="299" width="62.5" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ2-Lu-Q4j">
-                    <rect key="frame" x="20" y="757" width="374" height="55"/>
+                    <rect key="frame" x="32" y="732" width="350" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmo-Vw-UVd">
-                            <rect key="frame" x="147.5" y="18" width="89.5" height="19.5"/>
+                            <rect key="frame" x="135.5" y="15.5" width="89.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applelogo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="On0-bj-01H">
-                            <rect key="frame" x="15" y="15.5" width="25" height="23.5"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="On0-bj-01H">
+                            <rect key="frame" x="15" y="15" width="20" height="20"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="1dF-UV-nEK"/>
-                                <constraint firstAttribute="width" constant="25" id="Pb6-du-eHw"/>
-                            </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-mW-fub">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
                             <connections>
                                 <action selector="appleBtnTapped:" destination="-1" eventType="touchUpInside" id="QhP-jh-mrX"/>
                             </connections>
@@ -59,7 +55,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="On0-bj-01H" firstAttribute="centerY" secondItem="wmo-Vw-UVd" secondAttribute="centerY" id="5JI-SX-xLp"/>
-                        <constraint firstAttribute="height" constant="55" id="9h3-7T-zg5"/>
+                        <constraint firstAttribute="height" constant="50" id="9h3-7T-zg5"/>
                         <constraint firstItem="p7h-mW-fub" firstAttribute="height" secondItem="SZ2-Lu-Q4j" secondAttribute="height" id="Mez-SC-7SK"/>
                         <constraint firstItem="p7h-mW-fub" firstAttribute="width" secondItem="SZ2-Lu-Q4j" secondAttribute="width" id="Wcf-V2-0Sb"/>
                         <constraint firstItem="wmo-Vw-UVd" firstAttribute="centerY" secondItem="SZ2-Lu-Q4j" secondAttribute="centerY" id="fqn-4d-6fp"/>
@@ -70,23 +66,19 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSY-fm-8DP">
-                    <rect key="frame" x="20" y="687" width="374" height="55"/>
+                    <rect key="frame" x="32" y="667" width="350" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dH-nr-LLp">
-                            <rect key="frame" x="148.5" y="18" width="87" height="19.5"/>
+                            <rect key="frame" x="136.5" y="15.5" width="87" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <color key="textColor" red="0.18823529411764706" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakaoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JL0-8x-3BZ">
-                            <rect key="frame" x="5" y="0.0" width="55" height="55"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="55" id="X9m-M9-7ZV"/>
-                                <constraint firstAttribute="height" constant="55" id="yzm-dC-MX8"/>
-                            </constraints>
+                            <rect key="frame" x="15" y="15" width="20" height="20"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-6S-l45">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
                             <connections>
                                 <action selector="kakaoBtnTapped:" destination="-1" eventType="touchUpInside" id="jHb-t4-tnw"/>
                             </connections>
@@ -96,36 +88,36 @@
                     <constraints>
                         <constraint firstItem="JL0-8x-3BZ" firstAttribute="centerY" secondItem="8dH-nr-LLp" secondAttribute="centerY" id="1qD-Wi-W98"/>
                         <constraint firstItem="N4N-6S-l45" firstAttribute="centerX" secondItem="gSY-fm-8DP" secondAttribute="centerX" id="8yg-Hd-j9H"/>
-                        <constraint firstItem="JL0-8x-3BZ" firstAttribute="leading" secondItem="gSY-fm-8DP" secondAttribute="leading" constant="5" id="Q1U-na-wb6"/>
+                        <constraint firstItem="JL0-8x-3BZ" firstAttribute="leading" secondItem="gSY-fm-8DP" secondAttribute="leading" constant="15" id="Q1U-na-wb6"/>
                         <constraint firstItem="N4N-6S-l45" firstAttribute="height" secondItem="gSY-fm-8DP" secondAttribute="height" id="VJX-gT-SfC"/>
-                        <constraint firstAttribute="height" constant="55" id="VnC-Nt-4mJ"/>
+                        <constraint firstAttribute="height" constant="50" id="VnC-Nt-4mJ"/>
                         <constraint firstItem="N4N-6S-l45" firstAttribute="width" secondItem="gSY-fm-8DP" secondAttribute="width" id="XmQ-IL-Bp4"/>
                         <constraint firstItem="N4N-6S-l45" firstAttribute="centerY" secondItem="gSY-fm-8DP" secondAttribute="centerY" id="a7f-42-hoH"/>
-                        <constraint firstItem="8dH-nr-LLp" firstAttribute="centerX" secondItem="gSY-fm-8DP" secondAttribute="centerX" constant="5" id="dEq-NN-Yv9"/>
                         <constraint firstItem="8dH-nr-LLp" firstAttribute="centerY" secondItem="gSY-fm-8DP" secondAttribute="centerY" id="dq2-fT-hcQ"/>
+                        <constraint firstItem="8dH-nr-LLp" firstAttribute="centerX" secondItem="gSY-fm-8DP" secondAttribute="centerX" constant="5" id="iO4-zn-LjB"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray4Color"/>
             <constraints>
-                <constraint firstItem="kiR-u9-IQu" firstAttribute="top" secondItem="Inm-yR-aQi" secondAttribute="bottom" constant="13" id="16i-Pj-GWJ"/>
+                <constraint firstItem="kiR-u9-IQu" firstAttribute="top" secondItem="Inm-yR-aQi" secondAttribute="bottom" constant="2" id="16i-Pj-GWJ"/>
                 <constraint firstItem="Inm-yR-aQi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="5cx-1s-7aj"/>
-                <constraint firstItem="SZ2-Lu-Q4j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7GK-np-BPm"/>
+                <constraint firstItem="SZ2-Lu-Q4j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="7GK-np-BPm"/>
                 <constraint firstItem="kiR-u9-IQu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="CEx-mj-fN7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SZ2-Lu-Q4j" secondAttribute="bottom" constant="50" id="JdZ-cU-m2z"/>
-                <constraint firstItem="gSY-fm-8DP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="MrE-lD-WKA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SZ2-Lu-Q4j" secondAttribute="bottom" constant="80" id="JdZ-cU-m2z"/>
+                <constraint firstItem="gSY-fm-8DP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="MrE-lD-WKA"/>
                 <constraint firstItem="p7h-mW-fub" firstAttribute="top" secondItem="gSY-fm-8DP" secondAttribute="bottom" constant="15" id="NTs-vv-g9T"/>
-                <constraint firstItem="Inm-yR-aQi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-150" id="Snc-gb-uUu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gSY-fm-8DP" secondAttribute="trailing" constant="20" id="ePF-bn-vhK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SZ2-Lu-Q4j" secondAttribute="trailing" constant="20" id="m3f-bS-0a6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gSY-fm-8DP" secondAttribute="trailing" constant="32" id="ePF-bn-vhK"/>
+                <constraint firstItem="Inm-yR-aQi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="224" id="kOP-Sd-r8C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SZ2-Lu-Q4j" secondAttribute="trailing" constant="32" id="m3f-bS-0a6"/>
             </constraints>
             <point key="canvasLocation" x="45" y="89"/>
         </view>
     </objects>
     <resources>
-        <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="kakaoLogo" width="421" height="321"/>
+        <image name="appleLogo" width="20" height="20"/>
+        <image name="kakaoLogo" width="20" height="20"/>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
