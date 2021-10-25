@@ -23,6 +23,8 @@
 		B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* Cash_StudyUITests.swift */; };
 		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
 		B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118662716D7B0008842BA /* LoginViewController.xib */; };
+		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
+		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
 		F3F6926C8A1B39ED5DED89BB /* Pods_Cash_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		B6B118562716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118652716D7B0008842BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6B118662716D7B0008842BA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
+		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
 		B80A33E58E855DD65AA923FA /* Pods-Cash Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.debug.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +155,8 @@
 		B67C98982724F9E60039D271 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				B6B1183B2716D262008842BA /* Assets.xcassets */,
+				B6B118402716D262008842BA /* Info.plist */,
 				B67C989E2724FA810039D271 /* Extension */,
 				B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */,
 			);
@@ -197,9 +203,8 @@
 				B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */,
 				B6B118622716D317008842BA /* Resource */,
 				B6B118632716D5B4008842BA /* Splash */,
+				B6B272AB272686250010138A /* TermsOfUse */,
 				B6B1186D2716D88D008842BA /* LoginVC */,
-				B6B1183B2716D262008842BA /* Assets.xcassets */,
-				B6B118402716D262008842BA /* Info.plist */,
 			);
 			path = "Cash Study";
 			sourceTree = "<group>";
@@ -246,6 +251,15 @@
 				B6B118662716D7B0008842BA /* LoginViewController.xib */,
 			);
 			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		B6B272AB272686250010138A /* TermsOfUse */ = {
+			isa = PBXGroup;
+			children = (
+				B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */,
+				B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */,
+			);
+			path = TermsOfUse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */,
+				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 			);
@@ -434,6 +449,7 @@
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
+				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
@@ -608,7 +624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Cash Study/Info.plist";
+				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -628,7 +644,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Cash Study/Info.plist";
+				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

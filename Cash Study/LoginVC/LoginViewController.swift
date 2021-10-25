@@ -17,7 +17,6 @@ import AuthenticationServices
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var kakaoLoginView: UIView!
-    @IBOutlet weak var facebookLoginView: UIView!
     @IBOutlet weak var appleLoginView: UIView!
     
     
@@ -29,9 +28,8 @@ class LoginViewController: UIViewController {
     
     // MARK: Set UI
     func setUI() {
-        kakaoLoginView.layer.cornerRadius = 25
-        facebookLoginView.layer.cornerRadius = 25
-        appleLoginView.layer.cornerRadius = 25
+        kakaoLoginView.layer.cornerRadius = 10
+        appleLoginView.layer.cornerRadius = 10
         
         view.backgroundColor = UIColor.mainNavy
         
@@ -110,7 +108,7 @@ class LoginViewController: UIViewController {
                 print(error)
             }
             else {
-                print("me() success.")
+                print("카카오 로그인 및 토큰 발급 완료")
                 
                 _ = user
 //                guard let profile = user?.kakaoAccount?.profile else { return }
@@ -121,44 +119,15 @@ class LoginViewController: UIViewController {
 //                tvc.modalPresentationStyle = .overFullScreen
 //                self.present(tvc, animated: true)
                 
-                let vc = UIHostingController(rootView: TimerView(name: .constant(userName)))
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true)
+//                self.moveTimerVC(name: userName)
+                
+                self.moveTermsOfUseVC()
+                
+                
 
             }
         }
     }
-    
-    
-    // MARK: 페이스북 로그인
-    @IBAction func facebookBtnTapped(_ sender: Any) {
-        let manager = LoginManager()
-        manager.logIn(permissions: ["public_profile"], from: self) { result, error in
-//            print("페이스북 로그인 성공")
-            if let token = AccessToken.current, !token.isExpired {
-//                UserDefaults.standard.setValue(token, forKey: "hasToken")
-                print("페이스북 로그인 token → \(token)")
-            }
-            Profile.loadCurrentProfile { profile, error in
-                guard let userName = profile?.name else { return }
-                print("UserName(FB) → \(userName)")
-            }
-            
-            if let error = error {
-                print("페이스북 로그인 에러 → \(error)")
-                return
-            }
-            guard let result = result else {
-                print("페이스북 결괏값이 없습니다.")
-                return
-            }
-            if result.isCancelled {
-                print("사용자가 페이스북 로그인을 취소했습니다.")
-                return
-            }
-        }
-    }
-    
     
     // MARK: 애플 로그인
     @IBAction func appleBtnTapped(_ sender: Any) {
@@ -172,6 +141,22 @@ class LoginViewController: UIViewController {
         authorizationController.performRequests()
     }
     
+    
+    // MARK: 이용약관 페이지 이동
+    func moveTermsOfUseVC() {
+        let touVC = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+        touVC.modalPresentationStyle = .overFullScreen
+        self.present(touVC, animated: true)
+    }
+    
+    
+    
+    // MARK: 타이머 뷰 (SwiftUI)
+    func moveTimerVC(name: String) {
+        let vc = UIHostingController(rootView: TimerView(name: .constant(name)))
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
     
 }
 
