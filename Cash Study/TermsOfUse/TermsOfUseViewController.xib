@@ -12,6 +12,11 @@
                 <outlet property="allCheckBtn" destination="661-3Y-E3v" id="RLK-F6-w6t"/>
                 <outlet property="allCheckView" destination="Vdz-JQ-7UH" id="y2W-yc-UEc"/>
                 <outlet property="confirmBtn" destination="xuw-bo-Asz" id="BTk-Od-WkF"/>
+                <outlet property="firstCheckBox" destination="8AV-Fr-IF7" id="vm2-C5-7hr"/>
+                <outlet property="fourthCheckBox" destination="VU7-dz-tOi" id="qAU-V8-wrM"/>
+                <outlet property="secondCheckBox" destination="QEO-cn-cgY" id="KyI-95-ovh"/>
+                <outlet property="selectiveView" destination="qww-tR-OGH" id="WuE-vv-CTO"/>
+                <outlet property="thirdCheckBox" destination="HHb-yy-RrR" id="CyU-8x-z6v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,15 +42,8 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7q-5S-uTv">
-                    <rect key="frame" x="32" y="754" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="testAct:" destination="-1" eventType="touchUpInside" id="ilj-08-68d"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdz-JQ-7UH">
-                    <rect key="frame" x="24" y="337.5" width="366" height="76"/>
+                    <rect key="frame" x="24" y="365" width="366" height="76"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="661-3Y-E3v">
                             <rect key="frame" x="26" y="26" width="24" height="24"/>
@@ -54,8 +52,9 @@
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
                             </state>
+                            <state key="selected" image="Check"/>
                             <connections>
-                                <action selector="tappedBtn:" destination="-1" eventType="touchUpInside" id="176-Jl-eUJ"/>
+                                <action selector="allAgreeChecked:" destination="-1" eventType="touchUpInside" id="RQR-Wb-wk9"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-gy-RPo">
@@ -75,23 +74,39 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qww-tR-OGH">
-                    <rect key="frame" x="24" y="425.5" width="366" height="232"/>
+                    <rect key="frame" x="24" y="453" width="366" height="232"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AV-Fr-IF7">
                             <rect key="frame" x="26" y="32" width="24" height="24"/>
                             <state key="normal" image="noCheck"/>
+                            <state key="selected" image="Check"/>
+                            <connections>
+                                <action selector="firstAgreeChecked:" destination="-1" eventType="touchUpInside" id="icT-2E-IeB"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEO-cn-cgY">
                             <rect key="frame" x="26" y="80" width="24" height="24"/>
                             <state key="normal" image="noCheck"/>
+                            <state key="selected" image="Check"/>
+                            <connections>
+                                <action selector="secondAgreeChecked:" destination="-1" eventType="touchUpInside" id="pth-ct-upb"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHb-yy-RrR">
                             <rect key="frame" x="26" y="128" width="24" height="24"/>
                             <state key="normal" image="noCheck"/>
+                            <state key="selected" image="Check"/>
+                            <connections>
+                                <action selector="thirdAgreeChecked:" destination="-1" eventType="touchUpInside" id="ksm-JA-YTt"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-dz-tOi">
                             <rect key="frame" x="26" y="176" width="24" height="24"/>
                             <state key="normal" image="noCheck"/>
+                            <state key="selected" image="Check"/>
+                            <connections>
+                                <action selector="fourthAgreeChecked:" destination="-1" eventType="touchUpInside" id="hYZ-d1-LNh"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관 동의(필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-Ru-41Y">
                             <rect key="frame" x="62" y="35.5" width="111.5" height="17"/>
@@ -168,23 +183,22 @@
             <color key="backgroundColor" red="0.023529411764705882" green="0.019607843137254902" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xuw-bo-Asz" secondAttribute="bottom" constant="10" id="Fm2-oI-TNx"/>
-                <constraint firstItem="Vdz-JQ-7UH" firstAttribute="top" secondItem="COd-XV-fWc" secondAttribute="bottom" constant="136" id="GM0-Bh-Mxl"/>
                 <constraint firstItem="Vdz-JQ-7UH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="LxJ-0w-0Im"/>
-                <constraint firstItem="xuw-bo-Asz" firstAttribute="top" secondItem="H7q-5S-uTv" secondAttribute="bottom" constant="8" symbolic="YES" id="Ptn-VT-b8H"/>
                 <constraint firstItem="COd-XV-fWc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="VN3-Oi-lHf"/>
                 <constraint firstItem="qww-tR-OGH" firstAttribute="top" secondItem="Vdz-JQ-7UH" secondAttribute="bottom" constant="12" id="a9K-7X-ZCP"/>
                 <constraint firstItem="COd-XV-fWc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="ewj-CK-9RX"/>
                 <constraint firstItem="qww-tR-OGH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fU6-hg-B7s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vdz-JQ-7UH" secondAttribute="trailing" constant="24" id="hRT-Za-QFh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xuw-bo-Asz" secondAttribute="trailing" constant="32" id="ik6-JI-jqm"/>
-                <constraint firstItem="H7q-5S-uTv" firstAttribute="leading" secondItem="xuw-bo-Asz" secondAttribute="leading" id="pb8-9S-1aW"/>
                 <constraint firstItem="xuw-bo-Asz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="sI7-eg-Nh8"/>
+                <constraint firstItem="Vdz-JQ-7UH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-45" id="vgo-ZO-RO7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qww-tR-OGH" secondAttribute="trailing" constant="24" id="y6G-Ko-nF9"/>
             </constraints>
             <point key="canvasLocation" x="34.782608695652179" y="65.625"/>
         </view>
     </objects>
     <resources>
+        <image name="Check" width="24" height="24"/>
         <image name="noCheck" width="24" height="24"/>
         <image name="rightArrow" width="16" height="16"/>
     </resources>

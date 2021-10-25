@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
     
     // MARK: Set UI
     func setUI() {
-        kakaoLoginView.layer.cornerRadius = 10
-        appleLoginView.layer.cornerRadius = 10
+        kakaoLoginView.layer.cornerRadius = 6
+        appleLoginView.layer.cornerRadius = 6
         
         view.backgroundColor = UIColor.mainNavy
         

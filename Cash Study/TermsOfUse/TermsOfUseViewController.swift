@@ -10,69 +10,116 @@ import UIKit
 class TermsOfUseViewController: UIViewController {
 
     @IBOutlet weak var allCheckView: UIView!
+    @IBOutlet weak var selectiveView: UIView!
+    
+    
     @IBOutlet weak var allCheckBtn: UIButton!
+    @IBOutlet weak var firstCheckBox: UIButton!
+    @IBOutlet weak var secondCheckBox: UIButton!
+    @IBOutlet weak var thirdCheckBox: UIButton!
+    @IBOutlet weak var fourthCheckBox: UIButton!
     
     @IBOutlet weak var confirmBtn: UIButton!
     
-    var isCheck : Bool = false
+    var allCheck : Bool = false
+    var firstCheck : Bool = false
+    var secondCheck : Bool = false
+    var thirdCheck : Bool = false
+    var fourthCheck : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
+        checkConfirmBtn()
     }
     
     // MARK: Set UI
     func setUI() {
-        view.backgroundColor = UIColor.mainNavy
-//        self.allCheckView.backgroundColor = UIColor.disabledColor
-        
-        
-        // Set Button
-        self.confirmBtn.isEnabled = false
-        self.confirmBtn.layer.cornerRadius = 30
-        self.setBtnColor()
+        self.allCheckView.layer.cornerRadius = 11
+        self.selectiveView.layer.cornerRadius = 11
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
     }
     
-    
-    func setBtnColor() {
-        DispatchQueue.main.async {
-            if !self.confirmBtn.isEnabled {
-                self.confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-            } else {
-                self.confirmBtn.backgroundColor = UIColor.white
+    func checkConfirmBtn() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.main.async {
+                self.activationBtn()
             }
         }
+        
     }
     
-    @IBAction func testAct(_ sender: Any) {
-        print("Tapped Button")
-        
-        if !confirmBtn.isEnabled {
-            print("Confrim Button is True")
+    func activationBtn() {
+        if allCheck == true || firstCheck,secondCheck == true {
             self.confirmBtn.isEnabled = true
             self.confirmBtn.backgroundColor = UIColor.white
         } else {
-            print("Confirm Button is False")
             self.confirmBtn.isEnabled = false
             self.confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
         }
     }
-    @IBAction func tappedBtn(_ sender: UIButton) {
-        
-        
-        if !isCheck {
-            if let image = UIImage(named: "Check") {
-                sender.setImage(image, for: .normal)
-                isCheck = true
-            }
+    
+    
+    // MARK: 이용약관 체크박스
+    @IBAction func allAgreeChecked(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            firstCheckBox.isSelected = false
+            secondCheckBox.isSelected = false
+            thirdCheckBox.isSelected = false
+            fourthCheckBox.isSelected = false
         } else {
-            if let image = UIImage(systemName: "noCheck") {
-                sender.setImage(image, for: .normal)
-                isCheck = false
-            }
+            sender.isSelected = true
+            firstCheckBox.isSelected = true
+            secondCheckBox.isSelected = true
+            thirdCheckBox.isSelected = true
+            fourthCheckBox.isSelected = true
+            
+            allCheck = true
+        }
+    }
+    
+    @IBAction func firstAgreeChecked(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            self.allCheckBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            self.firstCheck = true
+        }
+    }
+    
+    @IBAction func secondAgreeChecked(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            self.allCheckBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            self.secondCheck = true
+        }
+    }
+    
+    @IBAction func thirdAgreeChecked(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            self.allCheckBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            self.thirdCheck = true
+        }
+    }
+    
+    @IBAction func fourthAgreeChecked(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            self.allCheckBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            self.fourthCheck = true
         }
         
     }
+    
     
 }
