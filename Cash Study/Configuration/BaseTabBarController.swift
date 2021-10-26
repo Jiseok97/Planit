@@ -59,7 +59,7 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
 //
 //
         self.delegate = self
-        self.tabBar.tintColor = UIColor.mainYellow
+//        self.tabBar.tintColor = UIColor.mainYellow
         self.tabBar.unselectedItemTintColor = UIColor.systemGray3
         self.tabBar.backgroundColor = UIColor.white
         

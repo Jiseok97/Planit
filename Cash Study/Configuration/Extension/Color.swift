@@ -20,7 +20,6 @@ extension UIColor {
     
     
     class var mainNavy: UIColor { UIColor(hex: 0x050626) }
-    class var disabledColor: UIColor { UIColor(hex: 0x0A0828) }
-    class var mainBlue: UIColor { UIColor(hex: 0x1760FE) }
-    class var mainYellow: UIColor { UIColor(hex: 0xEFBF0A) }
+    class var disabledColor: UIColor { UIColor(hex: 0x090A35) }
+    class var placeHolderColor: UIColor { UIColor(hex: 0x6B6C85) }
 }

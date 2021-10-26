@@ -31,6 +31,8 @@ class InputNameViewController: UIViewController {
     }
     
     func setUI() {
+        self.nameTF.setPlaceHolderColor(UIColor.placeHolderColor)
+        self.nickNameTF.setPlaceHolderColor(UIColor.placeHolderColor)
         self.nameView.layer.cornerRadius = 11
         self.nickNameView.layer.cornerRadius = 11
         self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
@@ -86,9 +88,6 @@ class InputNameViewController: UIViewController {
             }
         }
     }
-    
-    
-    
     
     
     // MARK: 성별 선택 뷰 이동
