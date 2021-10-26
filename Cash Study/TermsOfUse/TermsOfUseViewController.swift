@@ -31,7 +31,7 @@ class TermsOfUseViewController: UIViewController {
         super.viewDidLoad()
 
         setUI()
-        checkConfirmBtn()
+//        checkConfirmBtn()
     }
     
     // MARK: Set UI
@@ -39,7 +39,10 @@ class TermsOfUseViewController: UIViewController {
         self.allCheckView.layer.cornerRadius = 11
         self.selectiveView.layer.cornerRadius = 11
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
+        
+        self.confirmBtn.isEnabled = true
     }
+    
     
     func checkConfirmBtn() {
         DispatchQueue.global(qos: .userInitiated).async {
@@ -120,6 +123,16 @@ class TermsOfUseViewController: UIViewController {
         }
         
     }
+    
+    
+    // MARK: 다음으로 이동
+    @IBAction func nextVC(_ sender: Any) {
+        guard let navigation = UIStoryboard(name: "InputUserInfo", bundle: nil).instantiateViewController(identifier: "NavigationViewController") as? NavigationViewController else { return }
+        
+        navigation.modalPresentationStyle = .overFullScreen
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
     
     
 }
