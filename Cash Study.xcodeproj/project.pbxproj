@@ -10,8 +10,6 @@
 		B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */; };
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
-		B60797762728027500D6D454 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797742728027500D6D454 /* SelectGenderViewController.swift */; };
-		B60797772728027500D6D454 /* SelectGenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60797752728027500D6D454 /* SelectGenderViewController.xib */; };
 		B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8C271954A500A7F3C6 /* FacebookCore */; };
 		B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8E271954A500A7F3C6 /* FacebookLogin */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
@@ -28,10 +26,11 @@
 		B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* Cash_StudyUITests.swift */; };
 		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
 		B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118662716D7B0008842BA /* LoginViewController.xib */; };
+		B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B22697272933860021A9A4 /* SelectGenderViewController.swift */; };
+		B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */; };
+		B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269C272941370021A9A4 /* SelectJobViewController.swift */; };
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
-		B6D1FDEF2728293A00C9C846 /* InputBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDED2728293A00C9C846 /* InputBirthdayViewController.swift */; };
-		B6D1FDF02728293A00C9C846 /* InputBirthdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D1FDEE2728293A00C9C846 /* InputBirthdayViewController.xib */; };
 		B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDF12728308A00C9C846 /* UITextField.swift */; };
 		F3F6926C8A1B39ED5DED89BB /* Pods_Cash_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0397BF6CA17C363B848211E /* Pods_Cash_Study.framework */; };
 /* End PBXBuildFile section */
@@ -59,8 +58,6 @@
 		B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputUserInfo.storyboard; sourceTree = "<group>"; };
 		B607976D2727FD3100D6D454 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		B60797702727FF8A00D6D454 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
-		B60797742728027500D6D454 /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
-		B60797752728027500D6D454 /* SelectGenderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectGenderViewController.xib; sourceTree = "<group>"; };
 		B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -82,10 +79,11 @@
 		B6B118562716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118652716D7B0008842BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6B118662716D7B0008842BA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6B22697272933860021A9A4 /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
+		B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBirthdayViewController.swift; sourceTree = "<group>"; };
+		B6B2269C272941370021A9A4 /* SelectJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobViewController.swift; sourceTree = "<group>"; };
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
-		B6D1FDED2728293A00C9C846 /* InputBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBirthdayViewController.swift; sourceTree = "<group>"; };
-		B6D1FDEE2728293A00C9C846 /* InputBirthdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputBirthdayViewController.xib; sourceTree = "<group>"; };
 		B6D1FDF12728308A00C9C846 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B80A33E58E855DD65AA923FA /* Pods-Cash Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.debug.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,38 +144,11 @@
 		B60797662727FBD600D6D454 /* InputUserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				B60797722728018300D6D454 /* InputName */,
-				B60797732728021C00D6D454 /* SelectGender */,
-				B6D1FDEC2728290A00C9C846 /* InputBirthday */,
-				B607976F2727FF6B00D6D454 /* NavigationVC */,
+				B6B226A0272941690021A9A4 /* Storyboard */,
+				B6B2269F2729414E0021A9A4 /* ViewController */,
+				B6B2269E272941460021A9A4 /* NavigationVC */,
 			);
 			path = InputUserInfo;
-			sourceTree = "<group>";
-		};
-		B607976F2727FF6B00D6D454 /* NavigationVC */ = {
-			isa = PBXGroup;
-			children = (
-				B60797702727FF8A00D6D454 /* NavigationViewController.swift */,
-			);
-			path = NavigationVC;
-			sourceTree = "<group>";
-		};
-		B60797722728018300D6D454 /* InputName */ = {
-			isa = PBXGroup;
-			children = (
-				B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */,
-				B607976D2727FD3100D6D454 /* InputNameViewController.swift */,
-			);
-			path = InputName;
-			sourceTree = "<group>";
-		};
-		B60797732728021C00D6D454 /* SelectGender */ = {
-			isa = PBXGroup;
-			children = (
-				B60797752728027500D6D454 /* SelectGenderViewController.xib */,
-				B60797742728027500D6D454 /* SelectGenderViewController.swift */,
-			);
-			path = SelectGender;
 			sourceTree = "<group>";
 		};
 		B65310DC27253E32004AD249 /* Timer */ = {
@@ -315,6 +286,33 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
+		B6B2269E272941460021A9A4 /* NavigationVC */ = {
+			isa = PBXGroup;
+			children = (
+				B60797702727FF8A00D6D454 /* NavigationViewController.swift */,
+			);
+			path = NavigationVC;
+			sourceTree = "<group>";
+		};
+		B6B2269F2729414E0021A9A4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B607976D2727FD3100D6D454 /* InputNameViewController.swift */,
+				B6B22697272933860021A9A4 /* SelectGenderViewController.swift */,
+				B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */,
+				B6B2269C272941370021A9A4 /* SelectJobViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B6B226A0272941690021A9A4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		B6B272AB272686250010138A /* TermsOfUse */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,15 +321,6 @@
 				B60797662727FBD600D6D454 /* InputUserInfo */,
 			);
 			path = TermsOfUse;
-			sourceTree = "<group>";
-		};
-		B6D1FDEC2728290A00C9C846 /* InputBirthday */ = {
-			isa = PBXGroup;
-			children = (
-				B6D1FDEE2728293A00C9C846 /* InputBirthdayViewController.xib */,
-				B6D1FDED2728293A00C9C846 /* InputBirthdayViewController.swift */,
-			);
-			path = InputBirthday;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,13 +435,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D1FDF02728293A00C9C846 /* InputBirthdayViewController.xib in Resources */,
 				B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
-				B60797772728027500D6D454 /* SelectGenderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,16 +508,17 @@
 			files = (
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
-				B60797762728027500D6D454 /* SelectGenderViewController.swift in Sources */,
+				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
+				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
-				B6D1FDEF2728293A00C9C846 /* InputBirthdayViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
+				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,

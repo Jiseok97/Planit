@@ -24,12 +24,25 @@ class InputNameViewController: UIViewController {
     var name: String?
     var nickName: String?
     
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        addKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardNotifications()
+    }
+    
+    
+    
+    // MAKR: Functions
     func setUI() {
         self.nameTF.setPlaceHolderColor(UIColor.placeHolderColor)
         self.nickNameTF.setPlaceHolderColor(UIColor.placeHolderColor)
@@ -59,42 +72,11 @@ class InputNameViewController: UIViewController {
     }
     
     
-    // MARK: 빈화면 키보드 내려가기
-    func dismissKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer =
-            UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-    }
-    @objc func dismissKeyboard() {
-        self.view.endEditing(false)
-    }
-    
-    
-    
-    // MARK: 왼쪽 제스처 dismiss
-    func swipeRecognizer() {
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
-        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(swipeRight)
-        
-    }
-    
-    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            switch swipeGesture.direction{
-            case UISwipeGestureRecognizer.Direction.right:
-                self.navigationController?.popViewController(animated: true)
-            default: break
-            }
-        }
-    }
-    
-    
     // MARK: 성별 선택 뷰 이동
     @IBAction func moveSelectGenderVC(_ sender: Any) {
-        let sgVC = SelectGenderViewController(nibName: "SelectGenderViewController", bundle: nil)
+        guard let sgVC = self.storyboard?.instantiateViewController(identifier: "SelectGenderViewController") as? SelectGenderViewController else { return }
         
-        self.navigationController?.pushViewController(sgVC, animated: true)
+        self.navigationController?.pushViewController(sgVC, animated: false)
     }
     
 }
