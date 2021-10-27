@@ -10,6 +10,7 @@
 		B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */; };
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
+		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
 		B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8C271954A500A7F3C6 /* FacebookCore */; };
 		B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8E271954A500A7F3C6 /* FacebookLogin */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
@@ -58,6 +59,7 @@
 		B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputUserInfo.storyboard; sourceTree = "<group>"; };
 		B607976D2727FD3100D6D454 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		B60797702727FF8A00D6D454 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
 		B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				B6B22697272933860021A9A4 /* SelectGenderViewController.swift */,
 				B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */,
 				B6B2269C272941370021A9A4 /* SelectJobViewController.swift */,
+				B60D61062729A27700D95950 /* InputRecommenderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
+				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,

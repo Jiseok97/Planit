@@ -14,6 +14,8 @@ class SelectGenderViewController: UIViewController {
     
     @IBOutlet weak var confirmBtn: UIButton!
     
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

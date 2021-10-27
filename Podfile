@@ -8,4 +8,7 @@ target 'Cash Study' do
   # Kakao Login
   pod 'KakaoSDK'
 
+  # About Keyboard
+  pod 'IQKeyboardManagerSwift'
+
 end

@@ -12,6 +12,8 @@ class InputBirthdayViewController: UIViewController {
     @IBOutlet weak var birthView: UIView!
     @IBOutlet weak var confirmBtn: UIButton!
     
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

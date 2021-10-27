@@ -8,7 +8,19 @@
 import UIKit
 
 class SelectJobViewController: UIViewController {
+    
+    @IBOutlet weak var firstBtn: UIButton!
+    @IBOutlet weak var secondBtn: UIButton!
+    @IBOutlet weak var thirdBtn: UIButton!
+    @IBOutlet weak var fourthBtn: UIButton!
+    @IBOutlet weak var fifthBtn: UIButton!
+    @IBOutlet weak var sixthBtn: UIButton!
+    @IBOutlet weak var seventhBtn: UIButton!
+    @IBOutlet weak var eighthBtn: UIButton!
+    @IBOutlet weak var confirmBtn: UIButton!
+    
 
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,9 +28,26 @@ class SelectJobViewController: UIViewController {
     }
     
     func setUI() {
+        let size : CGFloat = 11
+        
+        self.firstBtn.layer.cornerRadius = size
+        self.secondBtn.layer.cornerRadius = size
+        self.thirdBtn.layer.cornerRadius = size
+        self.fourthBtn.layer.cornerRadius = size
+        self.fifthBtn.layer.cornerRadius = size
+        self.sixthBtn.layer.cornerRadius = size
+        self.seventhBtn.layer.cornerRadius = size
+        self.eighthBtn.layer.cornerRadius = size
+        
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
         swipeRecognizer()
     }
     
-
+    @IBAction func moveRecommenderVC(_ sender: Any) {
+        guard let rcVC = self.storyboard?.instantiateViewController(identifier: "InputRecommenderViewController") as? InputRecommenderViewController else { return }
+        
+        self.navigationController?.pushViewController(rcVC, animated: false)
+    }
+    
 }

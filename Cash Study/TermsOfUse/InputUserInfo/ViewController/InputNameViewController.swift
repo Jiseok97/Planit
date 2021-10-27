@@ -7,15 +7,23 @@
 
 import UIKit
 
-class InputNameViewController: UIViewController {
+class InputNameViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nextBtn: UIButton!
     
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nickNameView: UIView!
     
-    @IBOutlet weak var nameTF: UITextField!
-    @IBOutlet weak var nickNameTF: UITextField!
+    @IBOutlet weak var nameTF: UITextField! {
+        didSet {
+            nameTF.delegate = self
+        }
+    }
+    @IBOutlet weak var nickNameTF: UITextField! {
+        didSet {
+            nickNameTF.delegate = self
+        }
+    }
     
     @IBOutlet weak var nickNameError: UIImageView!
     @IBOutlet weak var nickNameErrorLbl: UILabel!
@@ -32,15 +40,6 @@ class InputNameViewController: UIViewController {
         setUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        addKeyboardNotifications()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        removeKeyboardNotifications()
-    }
-    
-    
     
     // MAKR: Functions
     func setUI() {
@@ -50,8 +49,8 @@ class InputNameViewController: UIViewController {
         self.nickNameView.layer.cornerRadius = 11
         self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
         
-        clearBtnTF()
-        dismissKeyboardWhenTappedAround()
+//        clearBtnTF()
+//        dismissKeyboardWhenTappedAround()
         
         self.nickNameError.isHidden = true
         self.nickNameErrorLbl.isHidden = true
@@ -69,6 +68,20 @@ class InputNameViewController: UIViewController {
         self.nameTF.clearButtonMode = .whileEditing
         self.nickNameTF.clearButtonMode = .always
         self.nickNameTF.clearButtonMode = .whileEditing
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTF {
+            nickNameTF.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
     
