@@ -22,7 +22,7 @@ class InputBirthdayViewController: UIViewController {
     
     func setUI() {
         self.birthView.layer.cornerRadius = 11
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         swipeRecognizer()
         
     }

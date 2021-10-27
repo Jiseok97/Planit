@@ -25,7 +25,7 @@ class SelectGenderViewController: UIViewController {
     func setUI() {
         self.manView.layer.cornerRadius = 11
         self.womanView.layer.cornerRadius = 11
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         swipeRecognizer()
     }
     

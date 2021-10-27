@@ -39,7 +39,7 @@ class SelectJobViewController: UIViewController {
         self.seventhBtn.layer.cornerRadius = size
         self.eighthBtn.layer.cornerRadius = size
         
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         
         swipeRecognizer()
     }

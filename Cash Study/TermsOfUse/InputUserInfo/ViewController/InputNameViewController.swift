@@ -40,6 +40,39 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: nickNameTF)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: nickNameTF)
+    }
+    
+    @objc private func textLengthLimit(_ noti: Notification) {
+        let maxLength : Int = 8
+        if let textField = noti.object as? UITextField {
+            if let text = textField.text {
+                if text.count > maxLength {
+                    nickNameErrorLbl.isHidden = false
+                    nickNameErrorLbl.text = "닉네임은 8글자 이내로 입력해주세요."
+                    nickNameError.isHidden = false
+                } else {
+                    nickNameError.isHidden = true
+                    nickNameErrorLbl.isHidden = true
+                }
+                
+                if text.count >= maxLength {
+                    let idx = text.index(text.startIndex, offsetBy: maxLength)
+                    let newText = text[text.startIndex..<idx]
+                    textField.text = String(newText)
+                }
+                
+                // 닉네임 중복 추가하기
+                
+            }
+        }
+    }
+    
     
     // MAKR: Functions
     func setUI() {
@@ -47,14 +80,12 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         self.nickNameTF.setPlaceHolderColor(UIColor.placeHolderColor)
         self.nameView.layer.cornerRadius = 11
         self.nickNameView.layer.cornerRadius = 11
-        self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
-        
-//        clearBtnTF()
-//        dismissKeyboardWhenTappedAround()
+        self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2 - 5
         
         self.nickNameError.isHidden = true
         self.nickNameErrorLbl.isHidden = true
     }
+    
     
     func alreadyExistNickName() {
         self.nickNameError.isHidden = false
