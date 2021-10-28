@@ -70,7 +70,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "초등학생"
+            myJobIs = "ELEMENTARY_SCHOOL"
             
             
         case secondBtn:
@@ -86,7 +86,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "중학생"
+            myJobIs = "MIDDLE_SCHOOL"
             
             
         case thirdBtn:
@@ -102,7 +102,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "고등학생"
+            myJobIs = "HIGH_SCHOOL"
             
             
         case fourthBtn:
@@ -118,7 +118,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "N수생"
+            myJobIs = "NNTH_EXAM"
             
         case fifthBtn:
             self.fifthBtnClicked = changeBoolValue(buttonChecked: fifthBtnClicked)
@@ -133,7 +133,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "대학생"
+            myJobIs = "UNIVERSITY"
             
         case sixthBtn:
             self.sixthBtnClicked = changeBoolValue(buttonChecked: sixthBtnClicked)
@@ -148,7 +148,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "고시생"
+            myJobIs = "EXAM_PREP"
             
         case seventhBtn:
             self.seventhBtnClicked = changeBoolValue(buttonChecked: seventhBtnClicked)
@@ -163,7 +163,7 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.eighthBtnClicked = false
             
-            myJobIs = "취업준비생"
+            myJobIs = "JOB_PREP"
             
         default:
             self.eighthBtnClicked = changeBoolValue(buttonChecked: eighthBtnClicked)
@@ -178,7 +178,7 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.seventhBtnClicked = false
             
-            myJobIs = "직장인"
+            myJobIs = "WORKER"
         }
     }
     

@@ -12,8 +12,13 @@ class SelectGenderViewController: UIViewController {
     @IBOutlet weak var manView: UIView!
     @IBOutlet weak var womanView: UIView!
     
+    @IBOutlet weak var manBtn: UIButton!
+    @IBOutlet weak var womanBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
+    var manBtnClicked: Bool = false
+    var womanBtnClicked: Bool = false
+    var myGenderIs: String = ""
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -25,15 +30,29 @@ class SelectGenderViewController: UIViewController {
     func setUI() {
         self.manView.layer.cornerRadius = 11
         self.womanView.layer.cornerRadius = 11
+        self.manBtn.layer.cornerRadius = 11
+        self.womanBtn.layer.cornerRadius = 11
+        self.manBtn.contentHorizontalAlignment = .left
+        self.womanBtn.contentHorizontalAlignment = .left
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         swipeRecognizer()
     }
     
-    
-    @IBAction func manBtnTapped(_ sender: Any) {
-    }
-    
-    @IBAction func womanBtnTapped(_ sender: Any) {
+    @IBAction func selectedGender(_ sender: UIButton) {
+        switch sender {
+            case manBtn:
+                self.manBtnClicked = changeBoolValue(buttonChecked: manBtnClicked)
+                setBtnColor(manBtn, manBtnClicked)
+                self.womanBtnClicked = false
+                setBtnColor(womanBtn, womanBtnClicked)
+                myGenderIs = "MALE"
+            default:
+                self.womanBtnClicked = changeBoolValue(buttonChecked: womanBtnClicked)
+                setBtnColor(womanBtn, womanBtnClicked)
+                self.manBtnClicked = false
+                setBtnColor(manBtn, manBtnClicked)
+                myGenderIs = "FEMALE"
+        }
     }
     
     

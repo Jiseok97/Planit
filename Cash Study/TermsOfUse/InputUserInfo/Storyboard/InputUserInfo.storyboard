@@ -76,7 +76,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7V-Ik-oPf">
                                 <rect key="frame" x="24" y="440" width="366" height="76"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력하세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4Vp-qq-jvL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력하세요" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vp-qq-jvL">
                                         <rect key="frame" x="26" y="10" width="316" height="56"/>
                                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -95,7 +95,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-uP-HrB">
                                 <rect key="frame" x="24" y="532" width="366" height="76"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ab5-oj-Adu">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab5-oj-Adu">
                                         <rect key="frame" x="26" y="10" width="268" height="56"/>
                                         <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -239,16 +239,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSt-pd-aVb">
                                 <rect key="frame" x="24" y="440" width="366" height="76"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfF-Y8-Tvo">
-                                        <rect key="frame" x="26" y="27" width="32" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" systemColor="systemGray2Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L15-ED-r6b">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="남성">
+                                            <color key="titleColor" systemColor="systemGray2Color"/>
+                                        </state>
                                         <connections>
-                                            <action selector="manBtnTapped:" destination="Qit-vm-yez" eventType="touchUpInside" id="MRu-km-V3p"/>
+                                            <action selector="selectedGender:" destination="Qit-vm-yez" eventType="touchUpInside" id="tqE-As-7WA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -256,26 +255,23 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="0f7-GH-z82"/>
                                     <constraint firstItem="L15-ED-r6b" firstAttribute="height" secondItem="ZSt-pd-aVb" secondAttribute="height" id="F3H-bK-mgh"/>
-                                    <constraint firstItem="UfF-Y8-Tvo" firstAttribute="leading" secondItem="ZSt-pd-aVb" secondAttribute="leading" constant="26" id="Hqu-6l-5eO"/>
                                     <constraint firstItem="L15-ED-r6b" firstAttribute="width" secondItem="ZSt-pd-aVb" secondAttribute="width" id="PAl-Gh-kyS"/>
                                     <constraint firstItem="L15-ED-r6b" firstAttribute="centerX" secondItem="ZSt-pd-aVb" secondAttribute="centerX" id="SH6-sf-04M"/>
                                     <constraint firstItem="L15-ED-r6b" firstAttribute="centerY" secondItem="ZSt-pd-aVb" secondAttribute="centerY" id="Z5N-Gr-tCb"/>
-                                    <constraint firstItem="UfF-Y8-Tvo" firstAttribute="centerY" secondItem="ZSt-pd-aVb" secondAttribute="centerY" id="wxT-kO-ng9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pj2-D5-AV9">
                                 <rect key="frame" x="24" y="528" width="366" height="76"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66R-iy-1qN">
-                                        <rect key="frame" x="27" y="27.5" width="31.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" systemColor="systemGray2Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IH2-KT-R9s">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="여성">
+                                            <color key="titleColor" systemColor="systemGray2Color"/>
+                                        </state>
                                         <connections>
-                                            <action selector="womanBtnTapped:" destination="Qit-vm-yez" eventType="touchUpInside" id="hGe-TA-BsQ"/>
+                                            <action selector="selectedGender:" destination="Qit-vm-yez" eventType="touchUpInside" id="UjN-vi-lbf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -284,10 +280,8 @@
                                     <constraint firstItem="IH2-KT-R9s" firstAttribute="centerY" secondItem="Pj2-D5-AV9" secondAttribute="centerY" id="JnR-Ty-qey"/>
                                     <constraint firstAttribute="height" constant="76" id="aVi-8I-J70"/>
                                     <constraint firstItem="IH2-KT-R9s" firstAttribute="height" secondItem="Pj2-D5-AV9" secondAttribute="height" id="adK-QE-Uu8"/>
-                                    <constraint firstItem="66R-iy-1qN" firstAttribute="leading" secondItem="Pj2-D5-AV9" secondAttribute="leading" constant="27" id="cLc-Pm-bAS"/>
                                     <constraint firstItem="IH2-KT-R9s" firstAttribute="centerX" secondItem="Pj2-D5-AV9" secondAttribute="centerX" id="jco-QB-ZYo"/>
                                     <constraint firstItem="IH2-KT-R9s" firstAttribute="width" secondItem="Pj2-D5-AV9" secondAttribute="width" id="kPG-jB-5DJ"/>
-                                    <constraint firstItem="66R-iy-1qN" firstAttribute="centerY" secondItem="Pj2-D5-AV9" secondAttribute="centerY" id="vHV-Xm-Hgx"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -320,7 +314,9 @@
                     </view>
                     <connections>
                         <outlet property="confirmBtn" destination="bbe-Hr-TwQ" id="a0s-I0-stm"/>
+                        <outlet property="manBtn" destination="L15-ED-r6b" id="NuV-yb-VVU"/>
                         <outlet property="manView" destination="ZSt-pd-aVb" id="Mxp-GK-cxb"/>
+                        <outlet property="womanBtn" destination="IH2-KT-R9s" id="T5u-48-wfD"/>
                         <outlet property="womanView" destination="Pj2-D5-AV9" id="mp8-KT-4Du"/>
                     </connections>
                 </viewController>
@@ -385,18 +381,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlD-Te-LQG">
                                 <rect key="frame" x="24" y="440" width="366" height="76"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YY/MM/DD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-dL-xEq">
-                                        <rect key="frame" x="26" y="27" width="87.5" height="22"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YY/MM/DD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdk-M5-dir">
+                                        <rect key="frame" x="26" y="10" width="314" height="56"/>
+                                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" systemColor="systemGray2Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.023529411760000001" green="0.019607843140000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Sdk-M5-dir" firstAttribute="top" secondItem="XlD-Te-LQG" secondAttribute="top" constant="10" id="Soj-E7-Dy2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sdk-M5-dir" secondAttribute="bottom" constant="10" id="VhP-DF-ERK"/>
                                     <constraint firstAttribute="height" constant="76" id="X3q-PK-Mgq"/>
-                                    <constraint firstItem="bGl-dL-xEq" firstAttribute="centerY" secondItem="XlD-Te-LQG" secondAttribute="centerY" id="eG9-8y-cQA"/>
-                                    <constraint firstItem="bGl-dL-xEq" firstAttribute="leading" secondItem="XlD-Te-LQG" secondAttribute="leading" constant="26" id="kKT-0T-ZOG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sdk-M5-dir" secondAttribute="trailing" constant="26" id="oSU-no-THF"/>
+                                    <constraint firstItem="Sdk-M5-dir" firstAttribute="leading" secondItem="XlD-Te-LQG" secondAttribute="leading" constant="26" id="sDQ-Hm-iPM"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kn-Bu-0SY">
@@ -436,6 +434,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="birthTF" destination="Sdk-M5-dir" id="Ola-lf-liL"/>
                         <outlet property="birthView" destination="XlD-Te-LQG" id="PN5-aE-le8"/>
                         <outlet property="confirmBtn" destination="1Kn-Bu-0SY" id="g8P-L5-QWT"/>
                     </connections>
@@ -739,7 +738,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ied-JV-P8T">
                                 <rect key="frame" x="24" y="609.5" width="366" height="77"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="추천인 닉네임을 입력하세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-mF-1lS">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="추천인 닉네임을 입력하세요" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-mF-1lS">
                                         <rect key="frame" x="26" y="10" width="266" height="57"/>
                                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>

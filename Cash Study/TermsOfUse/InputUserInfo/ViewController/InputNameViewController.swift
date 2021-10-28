@@ -99,16 +99,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         self.nickNameErrorLbl.isHidden = false
     }
     
-    
-    // MARK: 텍스트 클리어 버튼
-    func clearBtnTF() {
-        self.nameTF.clearButtonMode = .always
-        self.nameTF.clearButtonMode = .whileEditing
-        self.nickNameTF.clearButtonMode = .always
-        self.nickNameTF.clearButtonMode = .whileEditing
-    }
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

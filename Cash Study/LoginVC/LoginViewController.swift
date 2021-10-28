@@ -112,7 +112,9 @@ class LoginViewController: UIViewController {
                 _ = user
 //                guard let profile = user?.kakaoAccount?.profile else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
-                print("getUserInfo(kakaoAccount) → \(userName)")
+                guard let userEmail = user?.kakaoAccount?.email else { return }
+                print("getUserInfo(kakaoName) → \(userName)")
+                print("getUserInfo(kakaoEmail) → \(userEmail)")
                 
 //                let tvc = BaseTabBarController()
 //                tvc.modalPresentationStyle = .overFullScreen
