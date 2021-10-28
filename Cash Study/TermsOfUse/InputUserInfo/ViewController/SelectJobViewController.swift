@@ -19,6 +19,17 @@ class SelectJobViewController: UIViewController {
     @IBOutlet weak var eighthBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
+    
+    var firstBtnClicked: Bool = false 
+    var secondBtnClicked: Bool = false
+    var thirdBtnClicked: Bool = false
+    var fourthBtnClicked: Bool = false
+    var fifthBtnClicked: Bool = false
+    var sixthBtnClicked: Bool = false
+    var seventhBtnClicked: Bool = false
+    var eighthBtnClicked: Bool = false
+    
+    var myJobIs : String = ""
 
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -44,20 +55,138 @@ class SelectJobViewController: UIViewController {
         swipeRecognizer()
     }
     
+    @IBAction func selectedBtn(_ sender: UIButton) {
+        switch sender {
+        case firstBtn:
+            self.firstBtnClicked = changeBoolValue(buttonChecked: firstBtnClicked)
+            setBtnColor(firstBtn, firstBtnClicked)
+            setElseBtnColor(secondBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+            
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.seventhBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "초등학생"
+            
+            
+        case secondBtn:
+            self.secondBtnClicked = changeBoolValue(buttonChecked: secondBtnClicked)
+            setBtnColor(secondBtn, secondBtnClicked)
+            setElseBtnColor(firstBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+            
+            self.firstBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.seventhBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "중학생"
+            
+            
+        case thirdBtn:
+            self.thirdBtnClicked = changeBoolValue(buttonChecked: thirdBtnClicked)
+            setBtnColor(thirdBtn, thirdBtnClicked)
+            setElseBtnColor(firstBtn, secondBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.seventhBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "고등학생"
+            
+            
+        case fourthBtn:
+            self.fourthBtnClicked = changeBoolValue(buttonChecked: fourthBtnClicked)
+            setBtnColor(fourthBtn, fourthBtnClicked)
+            setElseBtnColor(firstBtn, secondBtn, thirdBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fifthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.seventhBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "N수생"
+            
+        case fifthBtn:
+            self.fifthBtnClicked = changeBoolValue(buttonChecked: fifthBtnClicked)
+            setBtnColor(fifthBtn, fifthBtnClicked)
+            setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, sixthBtn, seventhBtn, eighthBtn)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.seventhBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "대학생"
+            
+        case sixthBtn:
+            self.sixthBtnClicked = changeBoolValue(buttonChecked: sixthBtnClicked)
+            setBtnColor(sixthBtn, sixthBtnClicked)
+            setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, fifthBtn, seventhBtn, eighthBtn)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            self.seventhBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "고시생"
+            
+        case seventhBtn:
+            self.seventhBtnClicked = changeBoolValue(buttonChecked: seventhBtnClicked)
+            setBtnColor(seventhBtn, seventhBtnClicked)
+            setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, eighthBtn)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.eighthBtnClicked = false
+            
+            myJobIs = "취업준비생"
+            
+        default:
+            self.eighthBtnClicked = changeBoolValue(buttonChecked: eighthBtnClicked)
+            setBtnColor(eighthBtn, eighthBtnClicked)
+            setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            self.sixthBtnClicked = false
+            self.seventhBtnClicked = false
+            
+            myJobIs = "직장인"
+        }
+    }
     
-//    @IBAction func selectedBtn(_ sender: UIButton) {
-//        switch sender {
-//        case firstBtn:
-//            print("Selected FirstButton")
-//        case secondBtn:
-//            print("Selected SecondeButton")
-//        default:
-//            print("This is Default")
-//        }
-//    }
     
     @IBAction func moveRecommenderVC(_ sender: Any) {
         guard let rcVC = self.storyboard?.instantiateViewController(identifier: "InputRecommenderViewController") as? InputRecommenderViewController else { return }
+        
+        print("사용자의 직업은 \(myJobIs)입니다.")
         
         self.navigationController?.pushViewController(rcVC, animated: false)
     }

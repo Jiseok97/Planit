@@ -40,4 +40,35 @@ extension UIViewController {
         }
     }
     
+    
+    // MARK: 버튼 체크
+    func setBtnColor(_ btn: UIButton, _ checkClick: Bool) {
+        if checkClick {
+            btn.backgroundColor = UIColor.link
+            btn.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            btn.backgroundColor = UIColor.disabledColor
+            btn.setTitleColor(UIColor.systemGray2, for: .normal)
+        }
+    }
+    
+    func changeBoolValue(buttonChecked: Bool) -> Bool {
+        if !buttonChecked {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func setElseBtnColor(_ btn1: UIButton, _ btn2: UIButton, _ btn3: UIButton, _ btn4: UIButton, _ btn5: UIButton, _ btn6: UIButton, _ btn7: UIButton) {
+        setBtnColor(btn1, false)
+        setBtnColor(btn2, false)
+        setBtnColor(btn3, false)
+        setBtnColor(btn4, false)
+        setBtnColor(btn5, false)
+        setBtnColor(btn6, false)
+        setBtnColor(btn7, false)
+    }
+    
+    
 }

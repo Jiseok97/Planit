@@ -516,6 +516,9 @@
                                 <state key="normal" title="취업준비생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="0yS-9E-ypy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzz-8J-zg0">
                                 <rect key="frame" x="216" y="648.5" width="174" height="58"/>
@@ -524,6 +527,9 @@
                                 <state key="normal" title="직장인">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="6ej-kd-q8c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h56-La-kyd">
                                 <rect key="frame" x="24" y="582" width="174" height="58.5"/>
@@ -532,6 +538,9 @@
                                 <state key="normal" title="대학생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="8JN-Se-ltp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb4-TO-38Y">
                                 <rect key="frame" x="216" y="582" width="174" height="58.5"/>
@@ -540,6 +549,9 @@
                                 <state key="normal" title="고시생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="iAY-yR-p7A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpE-vz-acY">
                                 <rect key="frame" x="24" y="516" width="174" height="58"/>
@@ -548,6 +560,9 @@
                                 <state key="normal" title="고등학생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="kvo-ub-BaW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD7-Oc-a2I">
                                 <rect key="frame" x="216" y="516" width="174" height="58"/>
@@ -556,6 +571,9 @@
                                 <state key="normal" title="N수생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="Rif-Tz-lAM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5G-hH-9ni">
                                 <rect key="frame" x="24" y="449.5" width="174" height="58.5"/>
@@ -564,6 +582,9 @@
                                 <state key="normal" title="초등학생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="I0s-0H-OtN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-fY-sId">
                                 <rect key="frame" x="216" y="449.5" width="174" height="58.5"/>
@@ -572,6 +593,9 @@
                                 <state key="normal" title="중학생">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectedBtn:" destination="ccf-4z-9u7" eventType="touchUpInside" id="Sba-AU-FA8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JAw-Zo-DuC"/>
