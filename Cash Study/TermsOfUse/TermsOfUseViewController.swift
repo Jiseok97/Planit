@@ -8,7 +8,7 @@
 import UIKit
 
 class TermsOfUseViewController: UIViewController {
-
+    
     @IBOutlet weak var allCheckView: UIView!
     @IBOutlet weak var selectiveView: UIView!
     
@@ -27,11 +27,31 @@ class TermsOfUseViewController: UIViewController {
     var thirdCheck : Bool = false
     var fourthCheck : Bool = false
     
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
-//        checkConfirmBtn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(checkBtn(_:)), name: .btnTapped, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .btnTapped, object: nil)
+    }
+    
+    
+    
+    
+    @objc func checkBtn(_ noti: Notification) {
+        
+    }
+    
+    @objc func btnTap() {
+        NotificationCenter.default.post(name: Notification.Name("btnTapped"), object: nil)
     }
     
     // MARK: Set UI
@@ -43,15 +63,6 @@ class TermsOfUseViewController: UIViewController {
         self.confirmBtn.isEnabled = true
     }
     
-    
-    func checkConfirmBtn() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            DispatchQueue.main.async {
-                self.activationBtn()
-            }
-        }
-        
-    }
     
     func activationBtn() {
         if allCheck == true || firstCheck,secondCheck == true {
@@ -135,4 +146,9 @@ class TermsOfUseViewController: UIViewController {
     
     
     
+}
+
+
+extension Notification.Name {
+    static let btnTapped = Notification.Name("btnTappedbtnTapped")
 }

@@ -84,6 +84,13 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         
         self.nickNameError.isHidden = true
         self.nickNameErrorLbl.isHidden = true
+        
+        let image = UIImageView()
+        let imageName = UIImage(named: "textFieldError")
+        image.image = imageName
+        nameTF.rightView = image
+        
+        nameTF.rightViewMode = .always
     }
     
     

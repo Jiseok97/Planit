@@ -8,7 +8,6 @@
 import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
-import FacebookCore
 import IQKeyboardManagerSwift
 
 @main
@@ -27,12 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Kakao Login
         KakaoSDKCommon.initSDK(appKey: "9dd539538c7ec090849f98f4b9809fdd")
         
-        // FaceBook
-        ApplicationDelegate.shared.application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
-        
         // About Keyboard
         IQKeyboardManager.shared.enable = true
         
@@ -47,14 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return AuthController.handleOpenUrl(url: url)
             }
         
-        // FaceBook
-        ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
-
             return false
         }
 

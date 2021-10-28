@@ -9,7 +9,6 @@ import UIKit
 import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
-import FBSDKLoginKit
 import AuthenticationServices
 
 // iOS 13버전부터 Apple Login 지원

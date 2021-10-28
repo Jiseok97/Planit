@@ -44,6 +44,18 @@ class SelectJobViewController: UIViewController {
         swipeRecognizer()
     }
     
+    
+//    @IBAction func selectedBtn(_ sender: UIButton) {
+//        switch sender {
+//        case firstBtn:
+//            print("Selected FirstButton")
+//        case secondBtn:
+//            print("Selected SecondeButton")
+//        default:
+//            print("This is Default")
+//        }
+//    }
+    
     @IBAction func moveRecommenderVC(_ sender: Any) {
         guard let rcVC = self.storyboard?.instantiateViewController(identifier: "InputRecommenderViewController") as? InputRecommenderViewController else { return }
         
