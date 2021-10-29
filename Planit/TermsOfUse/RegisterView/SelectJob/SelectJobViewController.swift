@@ -52,8 +52,7 @@ class SelectJobViewController: UIViewController {
         self.eighthBtn.layer.cornerRadius = size
         
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
-        confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-        confirmBtn.isEnabled = false
+        setEnableBtn(confirmBtn)
         
         swipeRecognizer()
     }
@@ -198,11 +197,9 @@ class SelectJobViewController: UIViewController {
     
     func setAbleBtn() {
         if firstBtnClicked || secondBtnClicked || thirdBtnClicked || fourthBtnClicked || fifthBtnClicked || sixthBtnClicked || seventhBtnClicked || eighthBtnClicked {
-            confirmBtn.backgroundColor = UIColor.white
-            confirmBtn.isEnabled = true
+            setAbleBtn(confirmBtn)
         } else {
-            confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-            confirmBtn.isEnabled = false
+            setEnableBtn(confirmBtn)
         }
     }
     
@@ -212,7 +209,6 @@ class SelectJobViewController: UIViewController {
         let irSB = sbName.instantiateViewController(identifier: "InputRecommenderViewController")
         
         print("사용자의 직업은 \(myJobIs)입니다.")
-        
         self.navigationController?.pushViewController(irSB, animated: false)
     }
     

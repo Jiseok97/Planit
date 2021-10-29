@@ -37,8 +37,7 @@ class SelectGenderViewController: UIViewController {
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         swipeRecognizer()
         
-        confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-        confirmBtn.isEnabled = false
+        setEnableBtn(confirmBtn)
     }
     
     @IBAction func selectedGender(_ sender: UIButton) {
@@ -49,25 +48,23 @@ class SelectGenderViewController: UIViewController {
             self.womanBtnClicked = false
             setBtnColor(womanBtn, womanBtnClicked)
             myGenderIs = "MALE"
-            setAbleBtn()
+            setAbleBtnState()
         default:
             self.womanBtnClicked = changeBoolValue(buttonChecked: womanBtnClicked)
             setBtnColor(womanBtn, womanBtnClicked)
             self.manBtnClicked = false
             setBtnColor(manBtn, manBtnClicked)
             myGenderIs = "FEMALE"
-            setAbleBtn()
+            setAbleBtnState()
         }
     }
     
     
-    func setAbleBtn() {
+    func setAbleBtnState() {
         if manBtnClicked || womanBtnClicked {
-            confirmBtn.backgroundColor = UIColor.white
-            confirmBtn.isEnabled = true
+            setAbleBtn(confirmBtn)
         } else {
-            confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-            confirmBtn.isEnabled = false
+            setEnableBtn(confirmBtn)
         }
         
     }

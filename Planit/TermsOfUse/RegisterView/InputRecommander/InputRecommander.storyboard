@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +12,7 @@
         <!--Input Recommender View Controller-->
         <scene sceneID="478-c0-5Vd">
             <objects>
-                <viewController storyboardIdentifier="InputRecommenderViewController" id="sUO-TL-O9Q" customClass="InputRecommenderViewController" customModule="Cash_Study" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputRecommenderViewController" id="sUO-TL-O9Q" customClass="InputRecommenderViewController" customModule="Planit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hp9-aS-kr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +70,9 @@
                                 <state key="normal" title="확인">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishBtn:" destination="sUO-TL-O9Q" eventType="touchUpInside" id="V5E-31-rBH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6Z-UT-lz2">
                                 <rect key="frame" x="32" y="786.5" width="145" height="65.5"/>
@@ -76,6 +80,9 @@
                                 <state key="normal" title="건너뛰기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipInputRecommander:" destination="sUO-TL-O9Q" eventType="touchUpInside" id="Ofn-QX-xIF"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86e-Ha-x9v">
                                 <rect key="frame" x="24" y="609.5" width="366" height="77"/>

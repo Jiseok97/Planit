@@ -21,12 +21,35 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLbl: UILabel!
     @IBOutlet weak var errorImageView: UIImageView!
     
-    var keyHeight: CGFloat?
+    var recommander: String = ""
+    
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(knowRecommander(_:)), name: UITextField.textDidChangeNotification, object: recommenderTF)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: recommenderTF)
+    }
+    
+    @objc private func knowRecommander(_ noti: Notification) {
+        if let textField = noti.object as? UITextField {
+            if let text = textField.text {
+                if text.isEmpty {
+                    setEnableBtn(confirmBtn)
+                } else {
+                    recommander = text
+                    setAbleBtn(confirmBtn)
+                }
+            }
+        }
     }
     
     
@@ -38,6 +61,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         self.recommenderTF.setPlaceHolderColor(UIColor.placeHolderColor)
         swipeRecognizer()
+        setEnableBtn(confirmBtn)
         
         self.errorLbl.isHidden = true
         self.errorImageView.isHidden = true
@@ -53,6 +77,15 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    @IBAction func finishBtn(_ sender: UIButton) {
+        print("사용자의 추천인은 \(recommander)입니다.")
+        // 홈 이동
+    }
+    
+    @IBAction func skipInputRecommander(_ sender: UIButton) {
+        // 스킵 → 홈 이동
+    }
     
 
 }

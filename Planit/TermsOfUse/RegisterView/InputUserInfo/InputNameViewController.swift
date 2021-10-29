@@ -89,8 +89,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         nameTF.rightView = image
         nameTF.rightViewMode = .always
         
-        nextBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-        nextBtn.isEnabled = false
+        setEnableBtn(nextBtn)
     }
     
     
@@ -123,11 +122,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             
         default:
             if sender.text?.isEmpty == false && isNotEmpty == true {
-                self.nextBtn.backgroundColor = UIColor.white
-                self.nextBtn.isEnabled = true
+                setAbleBtn(nextBtn)
             } else {
-                self.nextBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
-                self.nextBtn.isEnabled = false
+                setEnableBtn(nextBtn)
             }
         }
     }
