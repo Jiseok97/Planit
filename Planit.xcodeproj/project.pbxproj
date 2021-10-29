@@ -29,8 +29,8 @@
 		B6B118352716D261008842BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118342716D261008842BA /* SceneDelegate.swift */; };
 		B6B1183C2716D262008842BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183B2716D262008842BA /* Assets.xcassets */; };
 		B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183D2716D262008842BA /* LaunchScreen.storyboard */; };
-		B6B1184A2716D262008842BA /* Cash_StudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118492716D262008842BA /* Cash_StudyTests.swift */; };
-		B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* Cash_StudyUITests.swift */; };
+		B6B1184A2716D262008842BA /* PlanitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118492716D262008842BA /* PlanitTests.swift */; };
+		B6B118552716D262008842BA /* PlanitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* PlanitUITests.swift */; };
 		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
 		B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118662716D7B0008842BA /* LoginViewController.xib */; };
 		B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B22697272933860021A9A4 /* SelectGenderViewController.swift */; };
@@ -86,10 +86,10 @@
 		B6B1183E2716D262008842BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6B118402716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118452716D262008842BA /* PlanitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6B118492716D262008842BA /* Cash_StudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_StudyTests.swift; sourceTree = "<group>"; };
+		B6B118492716D262008842BA /* PlanitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitTests.swift; sourceTree = "<group>"; };
 		B6B1184B2716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118502716D262008842BA /* PlanitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6B118542716D262008842BA /* Cash_StudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_StudyUITests.swift; sourceTree = "<group>"; };
+		B6B118542716D262008842BA /* PlanitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitUITests.swift; sourceTree = "<group>"; };
 		B6B118562716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118652716D7B0008842BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6B118662716D7B0008842BA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -301,19 +301,21 @@
 		B6B118482716D262008842BA /* Cash StudyTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6B118492716D262008842BA /* Cash_StudyTests.swift */,
+				B6B118492716D262008842BA /* PlanitTests.swift */,
 				B6B1184B2716D262008842BA /* Info.plist */,
 			);
-			path = "Cash StudyTests";
+			name = "Cash StudyTests";
+			path = PlanitTests;
 			sourceTree = "<group>";
 		};
 		B6B118532716D262008842BA /* Cash StudyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B6B118542716D262008842BA /* Cash_StudyUITests.swift */,
+				B6B118542716D262008842BA /* PlanitUITests.swift */,
 				B6B118562716D262008842BA /* Info.plist */,
 			);
-			path = "Cash StudyUITests";
+			name = "Cash StudyUITests";
+			path = PlanitUITests;
 			sourceTree = "<group>";
 		};
 		B6B118622716D317008842BA /* Resource */ = {
@@ -581,7 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B1184A2716D262008842BA /* Cash_StudyTests.swift in Sources */,
+				B6B1184A2716D262008842BA /* PlanitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B118552716D262008842BA /* Cash_StudyUITests.swift in Sources */,
+				B6B118552716D262008842BA /* PlanitUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
