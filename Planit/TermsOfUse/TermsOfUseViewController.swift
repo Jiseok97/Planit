@@ -9,8 +9,6 @@ import UIKit
 
 class TermsOfUseViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var allCheckView: UIView!
     @IBOutlet weak var selectiveView: UIView!
     
@@ -22,37 +20,10 @@ class TermsOfUseViewController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
    
     var allCheck : Bool = false
-    var firstCheck : Bool = false {
-        didSet {
-            if firstCheck {
-                cntCheck += 1
-            } else {
-                cntCheck -= 1
-            }
-            
-        }
-    }
-    var secondCheck : Bool = false {
-        didSet {
-            if secondCheck {
-                cntCheck += 1
-            } else {
-                cntCheck -= 1
-            }
-        }
-    }
+    var firstCheck : Bool = false
+    var secondCheck : Bool = false
     var thirdCheck : Bool = false
     var fourthCheck : Bool = false
-    
-    var cntCheck: Int = 0 {
-        didSet {
-//            if cntCheck == 2 {
-//                confirmBtn.backgroundColor = UIColor.yellow
-//            } else {
-//                confirmBtn.backgroundColor = UIColor.link
-//            }
-        }
-    }
     
     
     // MARK: View Life Cycle
@@ -119,7 +90,6 @@ class TermsOfUseViewController: UIViewController {
             
         }
     }
-    
     
     
     func checkButtonStatus() {

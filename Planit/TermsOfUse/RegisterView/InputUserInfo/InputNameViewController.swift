@@ -141,6 +141,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             if sender.text?.isEmpty == false && isNotEmpty == true {
                 self.nextBtn.backgroundColor = UIColor.white
                 self.nextBtn.isEnabled = true
+            } else {
+                self.nextBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+                self.nextBtn.isEnabled = false
             }
         }
     }

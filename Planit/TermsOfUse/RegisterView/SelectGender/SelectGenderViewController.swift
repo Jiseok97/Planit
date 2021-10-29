@@ -36,23 +36,40 @@ class SelectGenderViewController: UIViewController {
         self.womanBtn.contentHorizontalAlignment = .left
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         swipeRecognizer()
+        
+        confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        confirmBtn.isEnabled = false
     }
     
     @IBAction func selectedGender(_ sender: UIButton) {
         switch sender {
-            case manBtn:
-                self.manBtnClicked = changeBoolValue(buttonChecked: manBtnClicked)
-                setBtnColor(manBtn, manBtnClicked)
-                self.womanBtnClicked = false
-                setBtnColor(womanBtn, womanBtnClicked)
-                myGenderIs = "MALE"
-            default:
-                self.womanBtnClicked = changeBoolValue(buttonChecked: womanBtnClicked)
-                setBtnColor(womanBtn, womanBtnClicked)
-                self.manBtnClicked = false
-                setBtnColor(manBtn, manBtnClicked)
-                myGenderIs = "FEMALE"
+        case manBtn:
+            self.manBtnClicked = changeBoolValue(buttonChecked: manBtnClicked)
+            setBtnColor(manBtn, manBtnClicked)
+            self.womanBtnClicked = false
+            setBtnColor(womanBtn, womanBtnClicked)
+            myGenderIs = "MALE"
+            setAbleBtn()
+        default:
+            self.womanBtnClicked = changeBoolValue(buttonChecked: womanBtnClicked)
+            setBtnColor(womanBtn, womanBtnClicked)
+            self.manBtnClicked = false
+            setBtnColor(manBtn, manBtnClicked)
+            myGenderIs = "FEMALE"
+            setAbleBtn()
         }
+    }
+    
+    
+    func setAbleBtn() {
+        if manBtnClicked || womanBtnClicked {
+            confirmBtn.backgroundColor = UIColor.white
+            confirmBtn.isEnabled = true
+        } else {
+            confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+            confirmBtn.isEnabled = false
+        }
+        
     }
     
     
@@ -60,6 +77,8 @@ class SelectGenderViewController: UIViewController {
         let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
         let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
         
+        
+        print("나의 성별은 \(myGenderIs)입니다.")
         self.navigationController?.pushViewController(ibSB, animated: false)
     }
     
