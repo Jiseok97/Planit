@@ -28,6 +28,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nickNameError: UIImageView!
     @IBOutlet weak var nickNameErrorLbl: UILabel!
     
+    var isNotEmpty: Bool = false
     
     var name: String?
     var nickName: String?
@@ -89,8 +90,10 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         let imageName = UIImage(named: "textFieldError")
         image.image = imageName
         nameTF.rightView = image
-        
         nameTF.rightViewMode = .always
+        
+        nextBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        nextBtn.isEnabled = false
     }
     
     
@@ -122,4 +125,26 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    @IBAction func editChange(_ sender: UITextField) {
+        switch sender {
+        case nameTF:
+            if sender.text?.isEmpty == true {
+                self.isNotEmpty = false
+                print("isNotEmpty = false")
+            } else {
+                self.isNotEmpty = true
+                print("isNotEmpty = true")
+            }
+            
+        default:
+            if sender.text?.isEmpty == false && isNotEmpty == true {
+                self.nextBtn.backgroundColor = UIColor.white
+                self.nextBtn.isEnabled = true
+            }
+        }
+    }
+
 }
+
+

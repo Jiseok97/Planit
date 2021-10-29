@@ -6,6 +6,42 @@
 //
 
 import UIKit
+//
+//class DefaultBtn: UIButton {
+//    enum btnState {
+//        case On
+//        case Off
+//    }
+//    
+//    var isOn: btnState = .Off {
+//        didSet {
+//            setting()
+//        }
+//    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        setting()
+//    }
+//    
+//    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setting()
+//    }
+//    
+//    
+//    func setting() {
+//        switch isOn {
+//        case .On:
+//            self.backgroundColor = UIColor.white
+//            self.isUserInteractionEnabled = true
+//        case .Off:
+//            self.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+//            self.isUserInteractionEnabled = false
+//        }
+//    }
+//    
+//}
 
 extension UIViewController {
     
