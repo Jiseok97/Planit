@@ -57,9 +57,10 @@ class SelectGenderViewController: UIViewController {
     
     
     @IBAction func moveInputBirthdatVC(_ sender: Any) {
-        guard let ibVC = self.storyboard?.instantiateViewController(identifier: "InputBirthdayViewController") as? InputBirthdayViewController else { return }
+        let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
+        let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
         
-        self.navigationController?.pushViewController(ibVC, animated: false)
+        self.navigationController?.pushViewController(ibSB, animated: false)
     }
     
     

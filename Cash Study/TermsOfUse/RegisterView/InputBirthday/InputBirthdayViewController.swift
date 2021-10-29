@@ -34,7 +34,7 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func textLengthLimit(_ noti: Notification) {
-        let maxLength : Int = 8
+        let maxLength : Int = 10
         if let textField = noti.object as? UITextField {
             if let text = textField.text {
                 if text.count >= maxLength {
@@ -43,9 +43,9 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
                     textField.text = String(newText)
                 }
                 switch text.count{
-                    case 2:
+                    case 4:
                         textField.text = text + "/"
-                    case 5:
+                    case 7:
                         textField.text = text + "/"
                     default:
                         return
@@ -75,9 +75,10 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func moveSelectJobVC(_ sender: Any) {
-        guard let sjVC = self.storyboard?.instantiateViewController(identifier: "SelectJobViewController") as? SelectJobViewController else { return }
+        let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
+        let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
         
-        self.navigationController?.pushViewController(sjVC, animated: false)
+        self.navigationController?.pushViewController(sjSB, animated: false)
     }
     
 }

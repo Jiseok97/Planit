@@ -57,7 +57,7 @@
                             </state>
                             <state key="selected" image="Check"/>
                             <connections>
-                                <action selector="allAgreeChecked:" destination="-1" eventType="touchUpInside" id="RQR-Wb-wk9"/>
+                                <action selector="checkBoxTapped:" destination="-1" eventType="touchUpInside" id="IG5-Lm-lqy"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNy-gy-RPo">
@@ -84,7 +84,7 @@
                             <state key="normal" image="noCheck"/>
                             <state key="selected" image="Check"/>
                             <connections>
-                                <action selector="firstAgreeChecked:" destination="-1" eventType="touchUpInside" id="icT-2E-IeB"/>
+                                <action selector="checkBoxTapped:" destination="-1" eventType="touchUpInside" id="tRL-CL-DeN"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEO-cn-cgY">
@@ -92,7 +92,7 @@
                             <state key="normal" image="noCheck"/>
                             <state key="selected" image="Check"/>
                             <connections>
-                                <action selector="secondAgreeChecked:" destination="-1" eventType="touchUpInside" id="pth-ct-upb"/>
+                                <action selector="checkBoxTapped:" destination="-1" eventType="touchUpInside" id="PCI-de-1JE"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHb-yy-RrR">
@@ -100,7 +100,7 @@
                             <state key="normal" image="noCheck"/>
                             <state key="selected" image="Check"/>
                             <connections>
-                                <action selector="thirdAgreeChecked:" destination="-1" eventType="touchUpInside" id="ksm-JA-YTt"/>
+                                <action selector="checkBoxTapped:" destination="-1" eventType="touchUpInside" id="aYD-Ec-t0f"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-dz-tOi">
@@ -108,7 +108,7 @@
                             <state key="normal" image="noCheck"/>
                             <state key="selected" image="Check"/>
                             <connections>
-                                <action selector="fourthAgreeChecked:" destination="-1" eventType="touchUpInside" id="hYZ-d1-LNh"/>
+                                <action selector="checkBoxTapped:" destination="-1" eventType="touchUpInside" id="hCf-Pu-Dvp"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관 동의(필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-Ru-41Y">

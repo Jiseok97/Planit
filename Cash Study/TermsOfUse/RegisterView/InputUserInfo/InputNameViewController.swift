@@ -115,9 +115,11 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: 성별 선택 뷰 이동
     @IBAction func moveSelectGenderVC(_ sender: Any) {
-        guard let sgVC = self.storyboard?.instantiateViewController(identifier: "SelectGenderViewController") as? SelectGenderViewController else { return }
+        let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
+        let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
         
-        self.navigationController?.pushViewController(sgVC, animated: false)
+        self.navigationController?.pushViewController(sgSB, animated: false)
+        
     }
     
 }

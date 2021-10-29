@@ -14,6 +14,11 @@
 		B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8C271954A500A7F3C6 /* FacebookCore */; };
 		B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8E271954A500A7F3C6 /* FacebookLogin */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
+		B6709E55272BD7C100847491 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6709E54272BD7C100847491 /* NotificationName.swift */; };
+		B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E61272BF05300847491 /* SelectGender.storyboard */; };
+		B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E64272BF1CB00847491 /* InputBirthday.storyboard */; };
+		B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E68272BF31600847491 /* SelectJob.storyboard */; };
+		B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E6A272BF32100847491 /* InputRecommander.storyboard */; };
 		B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */; };
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
@@ -62,6 +67,11 @@
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
 		B610BFC5271BCC3D004C77C5 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		B6709E54272BD7C100847491 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		B6709E61272BF05300847491 /* SelectGender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGender.storyboard; sourceTree = "<group>"; };
+		B6709E64272BF1CB00847491 /* InputBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputBirthday.storyboard; sourceTree = "<group>"; };
+		B6709E68272BF31600847491 /* SelectJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectJob.storyboard; sourceTree = "<group>"; };
+		B6709E6A272BF32100847491 /* InputRecommander.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputRecommander.storyboard; sourceTree = "<group>"; };
 		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -143,14 +153,17 @@
 			path = MainViews;
 			sourceTree = "<group>";
 		};
-		B60797662727FBD600D6D454 /* InputUserInfo */ = {
+		B60797662727FBD600D6D454 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
-				B6B226A0272941690021A9A4 /* Storyboard */,
-				B6B2269F2729414E0021A9A4 /* ViewController */,
+				B6B226A0272941690021A9A4 /* InputUserInfo */,
+				B6709E60272BF03700847491 /* SelectGender */,
+				B6709E63272BF1B100847491 /* InputBirthday */,
+				B6709E66272BF2D400847491 /* SelectJob */,
+				B6709E67272BF2F200847491 /* InputRecommander */,
 				B6B2269E272941460021A9A4 /* NavigationVC */,
 			);
-			path = InputUserInfo;
+			path = RegisterView;
 			sourceTree = "<group>";
 		};
 		B65310DC27253E32004AD249 /* Timer */ = {
@@ -186,6 +199,42 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B6709E60272BF03700847491 /* SelectGender */ = {
+			isa = PBXGroup;
+			children = (
+				B6709E61272BF05300847491 /* SelectGender.storyboard */,
+				B6B22697272933860021A9A4 /* SelectGenderViewController.swift */,
+			);
+			path = SelectGender;
+			sourceTree = "<group>";
+		};
+		B6709E63272BF1B100847491 /* InputBirthday */ = {
+			isa = PBXGroup;
+			children = (
+				B6709E64272BF1CB00847491 /* InputBirthday.storyboard */,
+				B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */,
+			);
+			path = InputBirthday;
+			sourceTree = "<group>";
+		};
+		B6709E66272BF2D400847491 /* SelectJob */ = {
+			isa = PBXGroup;
+			children = (
+				B6709E68272BF31600847491 /* SelectJob.storyboard */,
+				B6B2269C272941370021A9A4 /* SelectJobViewController.swift */,
+			);
+			path = SelectJob;
+			sourceTree = "<group>";
+		};
+		B6709E67272BF2F200847491 /* InputRecommander */ = {
+			isa = PBXGroup;
+			children = (
+				B6709E6A272BF32100847491 /* InputRecommander.storyboard */,
+				B60D61062729A27700D95950 /* InputRecommenderViewController.swift */,
+			);
+			path = InputRecommander;
+			sourceTree = "<group>";
+		};
 		B67C98982724F9E60039D271 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +253,7 @@
 				B67C98A12724FB910039D271 /* UIViewController.swift */,
 				B67C98A32724FBBE0039D271 /* IndicatorView.swift */,
 				B6D1FDF12728308A00C9C846 /* UITextField.swift */,
+				B6709E54272BD7C100847491 /* NotificationName.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -296,32 +346,21 @@
 			path = NavigationVC;
 			sourceTree = "<group>";
 		};
-		B6B2269F2729414E0021A9A4 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B607976D2727FD3100D6D454 /* InputNameViewController.swift */,
-				B6B22697272933860021A9A4 /* SelectGenderViewController.swift */,
-				B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */,
-				B6B2269C272941370021A9A4 /* SelectJobViewController.swift */,
-				B60D61062729A27700D95950 /* InputRecommenderViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B6B226A0272941690021A9A4 /* Storyboard */ = {
+		B6B226A0272941690021A9A4 /* InputUserInfo */ = {
 			isa = PBXGroup;
 			children = (
 				B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */,
+				B607976D2727FD3100D6D454 /* InputNameViewController.swift */,
 			);
-			path = Storyboard;
+			path = InputUserInfo;
 			sourceTree = "<group>";
 		};
 		B6B272AB272686250010138A /* TermsOfUse */ = {
 			isa = PBXGroup;
 			children = (
-				B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */,
 				B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */,
-				B60797662727FBD600D6D454 /* InputUserInfo */,
+				B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */,
+				B60797662727FBD600D6D454 /* RegisterView */,
 			);
 			path = TermsOfUse;
 			sourceTree = "<group>";
@@ -439,9 +478,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */,
+				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
+				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
+				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
+				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +559,7 @@
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
+				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,

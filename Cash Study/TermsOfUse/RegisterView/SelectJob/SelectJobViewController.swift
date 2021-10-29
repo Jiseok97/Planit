@@ -184,11 +184,12 @@ class SelectJobViewController: UIViewController {
     
     
     @IBAction func moveRecommenderVC(_ sender: Any) {
-        guard let rcVC = self.storyboard?.instantiateViewController(identifier: "InputRecommenderViewController") as? InputRecommenderViewController else { return }
+        let sbName = UIStoryboard(name: "InputRecommander", bundle: nil)
+        let irSB = sbName.instantiateViewController(identifier: "InputRecommenderViewController")
         
         print("사용자의 직업은 \(myJobIs)입니다.")
         
-        self.navigationController?.pushViewController(rcVC, animated: false)
+        self.navigationController?.pushViewController(irSB, animated: false)
     }
     
 }
