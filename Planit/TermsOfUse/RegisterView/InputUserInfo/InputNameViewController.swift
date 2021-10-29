@@ -30,9 +30,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     var isNotEmpty: Bool = false
     
-    var name: String?
-    var nickName: String?
-    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -115,26 +112,13 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
-    // MARK: 성별 선택 뷰 이동
-    @IBAction func moveSelectGenderVC(_ sender: Any) {
-        let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
-        let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
-        
-        self.navigationController?.pushViewController(sgSB, animated: false)
-        
-    }
-    
-    
     @IBAction func editChange(_ sender: UITextField) {
         switch sender {
         case nameTF:
             if sender.text?.isEmpty == true {
                 self.isNotEmpty = false
-                print("isNotEmpty = false")
             } else {
                 self.isNotEmpty = true
-                print("isNotEmpty = true")
             }
             
         default:
@@ -147,7 +131,20 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-
+    
+    
+    // MARK: 성별 선택 뷰 이동
+    @IBAction func moveSelectGenderVC(_ sender: Any) {
+        let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
+        let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
+        
+        guard let userName = nameTF.text else { return }
+        guard let userNickName = nickNameTF.text else { return }
+        
+        print("사용자의 이름은 \(userName)이며, 닉네임은 \(userNickName)입니다.")
+        self.navigationController?.pushViewController(sgSB, animated: false)
+        
+    }
 }
 
 

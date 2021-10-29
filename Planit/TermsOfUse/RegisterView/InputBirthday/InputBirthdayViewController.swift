@@ -17,6 +17,7 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet weak var confirmBtn: UIButton!
     
+    var myBirthDate : String = ""
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -41,6 +42,13 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
                     let idx = text.index(text.startIndex, offsetBy: maxLength)
                     let newText = text[text.startIndex..<idx]
                     textField.text = String(newText)
+                    
+                    confirmBtn.backgroundColor = UIColor.white
+                    confirmBtn.isEnabled = true
+                    myBirthDate = text
+                } else {
+                    confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+                    confirmBtn.isEnabled = false
                 }
                 switch text.count{
                     case 4:
@@ -55,12 +63,13 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
     func setUI() {
         self.birthView.layer.cornerRadius = 11
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         self.birthTF.setPlaceHolderColor(UIColor.placeHolderColor)
         swipeRecognizer()
+        confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        confirmBtn.isEnabled = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -78,6 +87,7 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
         let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
         let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
         
+        print("사용자의 생년월일은 \(myBirthDate)입니다.")
         self.navigationController?.pushViewController(sjSB, animated: false)
     }
     

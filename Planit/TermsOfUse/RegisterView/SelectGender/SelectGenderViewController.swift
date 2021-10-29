@@ -78,7 +78,7 @@ class SelectGenderViewController: UIViewController {
         let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
         
         
-        print("나의 성별은 \(myGenderIs)입니다.")
+        print("사용자의 성별은 \(myGenderIs)입니다.")
         self.navigationController?.pushViewController(ibSB, animated: false)
     }
     

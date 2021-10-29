@@ -31,6 +31,7 @@ class SelectJobViewController: UIViewController {
     
     var myJobIs : String = ""
 
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,14 @@ class SelectJobViewController: UIViewController {
         self.eighthBtn.layer.cornerRadius = size
         
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
+        confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        confirmBtn.isEnabled = false
         
         swipeRecognizer()
     }
     
     @IBAction func selectedBtn(_ sender: UIButton) {
+        
         switch sender {
         case firstBtn:
             self.firstBtnClicked = changeBoolValue(buttonChecked: firstBtnClicked)
@@ -69,7 +73,8 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
-            
+
+            setAbleBtn()
             myJobIs = "ELEMENTARY_SCHOOL"
             
             
@@ -85,7 +90,8 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
-            
+
+            setAbleBtn()
             myJobIs = "MIDDLE_SCHOOL"
             
             
@@ -102,6 +108,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
             
+            setAbleBtn()
             myJobIs = "HIGH_SCHOOL"
             
             
@@ -117,7 +124,8 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
-            
+
+            setAbleBtn()
             myJobIs = "NNTH_EXAM"
             
         case fifthBtn:
@@ -132,7 +140,8 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
-            
+
+            setAbleBtn()
             myJobIs = "UNIVERSITY"
             
         case sixthBtn:
@@ -147,7 +156,8 @@ class SelectJobViewController: UIViewController {
             self.fifthBtnClicked = false
             self.seventhBtnClicked = false
             self.eighthBtnClicked = false
-            
+
+            setAbleBtn()
             myJobIs = "EXAM_PREP"
             
         case seventhBtn:
@@ -163,6 +173,7 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.eighthBtnClicked = false
             
+            setAbleBtn()
             myJobIs = "JOB_PREP"
             
         default:
@@ -178,7 +189,20 @@ class SelectJobViewController: UIViewController {
             self.sixthBtnClicked = false
             self.seventhBtnClicked = false
             
+            setAbleBtn()
             myJobIs = "WORKER"
+        }
+        
+    }
+    
+    
+    func setAbleBtn() {
+        if firstBtnClicked || secondBtnClicked || thirdBtnClicked || fourthBtnClicked || fifthBtnClicked || sixthBtnClicked || seventhBtnClicked || eighthBtnClicked {
+            confirmBtn.backgroundColor = UIColor.white
+            confirmBtn.isEnabled = true
+        } else {
+            confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+            confirmBtn.isEnabled = false
         }
     }
     
