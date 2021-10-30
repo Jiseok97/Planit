@@ -26,8 +26,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nickNameErrorLbl: UILabel!
     
     var isNotEmpty: Bool = false
-    var checkNickNameValue : Bool = true
-    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -115,9 +113,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: 텍스트 유효성 체크
     @IBAction func editChange(_ sender: UITextField) {
-        guard let userNickName = nickNameTF.text else { return }
-        let input = nickNameInput(nickname: userNickName)
-        
         switch sender {
         case nameTF:
             if sender.text?.isEmpty == true {
@@ -128,9 +123,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             
         default:
             if sender.text?.isEmpty == false && isNotEmpty == true {
-                NickNameDataManager().validateNickName(input, viewController: self)
+                setAbleBtn(nextBtn)
             } else {
-                NickNameDataManager().validateNickName(input, viewController: self)
+                setEnableBtn(nextBtn)
             }
         }
     }
@@ -138,11 +133,15 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: 성별 선택 뷰 이동
     @IBAction func moveSelectGenderVC(_ sender: UIButton) {
+        
         let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
         let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
         
         guard let userName = nameTF.text else { return }
         guard let userNickName = nickNameTF.text else { return }
+        
+        let input = nickNameInput(nickname: userNickName)
+        NickNameDataManager().validateNickName(input, viewController: self)
         
         print("사용자의 이름은 \(userName)이며, 닉네임은 \(userNickName)입니다.")
         self.navigationController?.pushViewController(sgSB, animated: false)
