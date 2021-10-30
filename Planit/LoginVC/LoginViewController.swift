@@ -130,6 +130,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // MARK: 이용약관 페이지 이동
+    func moveTermsOfUseVC() {
+        let touVC = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+        changeRootVC(touVC)
+    }
+    
     // MARK: 애플 로그인
     @IBAction func appleBtnTapped(_ sender: Any) {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -141,15 +147,6 @@ class LoginViewController: UIViewController {
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
-    
-    
-    // MARK: 이용약관 페이지 이동
-    func moveTermsOfUseVC() {
-        let touVC = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
-        touVC.modalPresentationStyle = .overFullScreen
-        self.present(touVC, animated: true)
-    }
-    
     
     
     // MARK: 타이머 뷰 (SwiftUI)
