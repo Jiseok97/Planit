@@ -18,6 +18,8 @@
 		B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420A272D0751004F6750 /* nickNameEntity.swift */; };
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
+		B6224217272D12D3004F6750 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6224216272D12D3004F6750 /* UserEntity.swift */; };
+		B6224219272D12DC004F6750 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6224218272D12DC004F6750 /* UserDataManager.swift */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
 		B6709E55272BD7C100847491 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6709E54272BD7C100847491 /* NotificationName.swift */; };
 		B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E61272BF05300847491 /* SelectGender.storyboard */; };
@@ -74,6 +76,8 @@
 		B622420A272D0751004F6750 /* nickNameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameEntity.swift; sourceTree = "<group>"; };
 		B622420D272D07EE004F6750 /* NickNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDataManager.swift; sourceTree = "<group>"; };
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B6224216272D12D3004F6750 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		B6224218272D12DC004F6750 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B6709E54272BD7C100847491 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		B6709E61272BF05300847491 /* SelectGender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGender.storyboard; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		B60797662727FBD600D6D454 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
+				B6224215272D1292004F6750 /* DataManager */,
+				B6224214272D128C004F6750 /* Entity */,
 				B6B226A0272941690021A9A4 /* InputUserInfo */,
 				B6709E60272BF03700847491 /* SelectGender */,
 				B6709E63272BF1B100847491 /* InputBirthday */,
@@ -196,6 +202,22 @@
 				B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		B6224214272D128C004F6750 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6224216272D12D3004F6750 /* UserEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B6224215272D1292004F6750 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B6224218272D12DC004F6750 /* UserDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		B65310DC27253E32004AD249 /* Timer */ = {
@@ -589,6 +611,7 @@
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
+				B6224217272D12D3004F6750 /* UserEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
@@ -605,6 +628,7 @@
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
+				B6224219272D12DC004F6750 /* UserDataManager.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,

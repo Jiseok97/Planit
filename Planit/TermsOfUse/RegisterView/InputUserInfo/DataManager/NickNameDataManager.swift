@@ -12,6 +12,8 @@ class NickNameDataManager : UIViewController {
 
         guard let img = viewController.nickNameError else { return }
         guard let lbl = viewController.nickNameErrorLbl else { return }
+        guard let userName = viewController.nameTF.text else { return }
+        guard let userNickName = viewController.nickNameTF.text else { return }
         
         AF.request(Constant.BASE_URL + "/v1/user/validate-nickname", method: .get, parameters: nickName)
             .validate()
@@ -22,6 +24,8 @@ class NickNameDataManager : UIViewController {
                 
                 case 200:
                     viewController.sethiddenLblImg(img, lbl)
+                    UserEntity.name = userName
+                    UserEntity.nickname = userNickName
                     
                     let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
                     let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
@@ -32,11 +36,10 @@ class NickNameDataManager : UIViewController {
                 case 409:
                     viewController.setShowLblImg(img, lbl)
                     print("이미 중복된 닉네임입니다. → \(String(describing: statusCode))")
-                    
-                    
-                case .none: print("응답이 없습니다.")
-                case .some(_): return
-                    
+ 
+                default:
+                    print("서버 응답이 없습니다.")
+  
                 }
             }
     }
