@@ -11,4 +11,7 @@ target 'Planit' do
   # About Keyboard
   pod 'IQKeyboardManagerSwift'
 
+  # Server Networking
+  pod 'Moya', '~> 15.0.0'
+  pod 'Alamofire', '~> 5.4'
 end

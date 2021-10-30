@@ -10,10 +10,8 @@ import UIKit
 class InputNameViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nextBtn: UIButton!
-    
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nickNameView: UIView!
-    
     @IBOutlet weak var nameTF: UITextField! {
         didSet {
             nameTF.delegate = self
@@ -24,17 +22,17 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             nickNameTF.delegate = self
         }
     }
-    
     @IBOutlet weak var nickNameError: UIImageView!
     @IBOutlet weak var nickNameErrorLbl: UILabel!
     
     var isNotEmpty: Bool = false
+    var checkNickNameValue : Bool = true
     
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
     
@@ -93,15 +91,18 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    // 이부분은 서버 연동을 통해 false 일 때 가져오기
     func alreadyExistNickName() {
         self.nickNameError.isHidden = false
         self.nickNameErrorLbl.isHidden = false
     }
     
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
+    // 텍스트 필드 리턴 타입
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTF {
             nickNameTF.becomeFirstResponder()
@@ -111,7 +112,12 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    // MARK: 텍스트 유효성 체크
     @IBAction func editChange(_ sender: UITextField) {
+        guard let userNickName = nickNameTF.text else { return }
+        let input = nickNameInput(nickname: userNickName)
+        
         switch sender {
         case nameTF:
             if sender.text?.isEmpty == true {
@@ -122,16 +128,16 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             
         default:
             if sender.text?.isEmpty == false && isNotEmpty == true {
-                setAbleBtn(nextBtn)
+                NickNameDataManager().validateNickName(input, viewController: self)
             } else {
-                setEnableBtn(nextBtn)
+                NickNameDataManager().validateNickName(input, viewController: self)
             }
         }
     }
     
     
     // MARK: 성별 선택 뷰 이동
-    @IBAction func moveSelectGenderVC(_ sender: Any) {
+    @IBAction func moveSelectGenderVC(_ sender: UIButton) {
         let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
         let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
         
@@ -140,7 +146,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         
         print("사용자의 이름은 \(userName)이며, 닉네임은 \(userNickName)입니다.")
         self.navigationController?.pushViewController(sgSB, animated: false)
-        
     }
 }
 

@@ -94,4 +94,15 @@ extension UIViewController {
         btn.isEnabled = true
     }
     
+    
+    func sethiddenLblImg(_ imgView: UIImageView, _ lbl: UILabel) {
+        lbl.isHidden = true
+        imgView.isHidden = true
+    }
+    
+    func setShowLblImg(_ imgView: UIImageView, _ lbl: UILabel) {
+        lbl.isHidden = false
+        imgView.isHidden = false
+    }
+    
 }
