@@ -78,6 +78,11 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBAction func finishBtn(_ sender: UIButton) {
         print("사용자의 추천인은 \(recommander)입니다.")
         // 홈 이동

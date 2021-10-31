@@ -212,4 +212,9 @@ class SelectJobViewController: UIViewController {
         self.navigationController?.pushViewController(irSB, animated: false)
     }
     
+    
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

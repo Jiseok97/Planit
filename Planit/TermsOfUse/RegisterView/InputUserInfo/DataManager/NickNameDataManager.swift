@@ -24,16 +24,13 @@ class NickNameDataManager : UIViewController {
                 
                 case 200:
                     viewController.sethiddenLblImg(img, lbl)
+                    viewController.checkUserNickName = true
                     UserEntity.name = userName
                     UserEntity.nickname = userNickName
-                    
-                    let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
-                    let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
-                    
-                    print("성공입니다. → \(String(describing: statusCode))")
-                    self.navigationController?.pushViewController(sgSB, animated: false)
+                    print("사용 가능한 닉네임입니다. → \(String(describing: statusCode))")
                     
                 case 409:
+                    viewController.checkUserNickName = false
                     viewController.setShowLblImg(img, lbl)
                     print("이미 중복된 닉네임입니다. → \(String(describing: statusCode))")
  

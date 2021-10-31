@@ -90,4 +90,8 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(sjSB, animated: false)
     }
     
+    
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

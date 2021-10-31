@@ -79,5 +79,8 @@ class SelectGenderViewController: UIViewController {
         self.navigationController?.pushViewController(ibSB, animated: false)
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }

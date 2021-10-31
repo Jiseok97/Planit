@@ -26,6 +26,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nickNameErrorLbl: UILabel!
     
     var isNotEmpty: Bool = false
+    var checkUserNickName : Bool = false
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -133,6 +134,11 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: 성별 선택 뷰 이동
     @IBAction func moveSelectGenderVC(_ sender: UIButton) {
+        if checkUserNickName {
+            let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
+            let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
+            self.navigationController?.pushViewController(sgSB, animated: false)
+        }
         guard let userName = nameTF.text else { return }
         guard let userNickName = nickNameTF.text else { return }
         
@@ -141,6 +147,11 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         print("사용자의 이름은 \(userName)이며, 닉네임은 \(userNickName)입니다.")
         
     }
+    
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 
