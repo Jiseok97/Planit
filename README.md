@@ -16,12 +16,14 @@
 
 * Select User Job View → ✅
 
-* Input Recommander View → ✅
+* Input Recommender View → ✅
 
 </br>
 
 ## 🔗 API Progress ▾
 * Validate-nickname → ✅
+
+* Validate-recommender-nickname → ***Proceeding*** 
 
 * Register User → ***Proceeding***
 
