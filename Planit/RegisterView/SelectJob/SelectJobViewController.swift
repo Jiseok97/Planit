@@ -29,7 +29,7 @@ class SelectJobViewController: UIViewController {
     var seventhBtnClicked: Bool = false
     var eighthBtnClicked: Bool = false
     
-    var myJobIs : String = ""
+    var userCategory : String = ""
 
     
     // MARK: View Life Cycle
@@ -74,7 +74,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
 
             setAbleBtn()
-            myJobIs = "ELEMENTARY_SCHOOL"
+            userCategory = "ELEMENTARY_SCHOOL"
             
             
         case secondBtn:
@@ -91,7 +91,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
 
             setAbleBtn()
-            myJobIs = "MIDDLE_SCHOOL"
+            userCategory = "MIDDLE_SCHOOL"
             
             
         case thirdBtn:
@@ -108,7 +108,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
             
             setAbleBtn()
-            myJobIs = "HIGH_SCHOOL"
+            userCategory = "HIGH_SCHOOL"
             
             
         case fourthBtn:
@@ -125,7 +125,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
 
             setAbleBtn()
-            myJobIs = "NNTH_EXAM"
+            userCategory = "NNTH_EXAM"
             
         case fifthBtn:
             self.fifthBtnClicked = changeBoolValue(buttonChecked: fifthBtnClicked)
@@ -141,7 +141,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
 
             setAbleBtn()
-            myJobIs = "UNIVERSITY"
+            userCategory = "UNIVERSITY"
             
         case sixthBtn:
             self.sixthBtnClicked = changeBoolValue(buttonChecked: sixthBtnClicked)
@@ -157,7 +157,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
 
             setAbleBtn()
-            myJobIs = "EXAM_PREP"
+            userCategory = "EXAM_PREP"
             
         case seventhBtn:
             self.seventhBtnClicked = changeBoolValue(buttonChecked: seventhBtnClicked)
@@ -173,7 +173,7 @@ class SelectJobViewController: UIViewController {
             self.eighthBtnClicked = false
             
             setAbleBtn()
-            myJobIs = "JOB_PREP"
+            userCategory = "JOB_PREP"
             
         default:
             self.eighthBtnClicked = changeBoolValue(buttonChecked: eighthBtnClicked)
@@ -189,7 +189,7 @@ class SelectJobViewController: UIViewController {
             self.seventhBtnClicked = false
             
             setAbleBtn()
-            myJobIs = "WORKER"
+            userCategory = "WORKER"
         }
         
     }
@@ -208,7 +208,10 @@ class SelectJobViewController: UIViewController {
         let sbName = UIStoryboard(name: "InputRecommander", bundle: nil)
         let irSB = sbName.instantiateViewController(identifier: "InputRecommenderViewController")
         
-        print("사용자의 직업은 \(myJobIs)입니다.")
+        HaveReceiverInput.category = userCategory
+        noReceiverInput.category = userCategory
+        
+        print("사용자의 직업은 \(userCategory)입니다.")
         self.navigationController?.pushViewController(irSB, animated: false)
     }
     

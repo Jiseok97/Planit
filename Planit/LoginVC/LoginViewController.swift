@@ -113,6 +113,8 @@ class LoginViewController: UIViewController {
 //                guard let profile = user?.kakaoAccount?.profile else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
                 guard let userEmail = user?.kakaoAccount?.email else { return }
+                HaveReceiverInput.email = userEmail
+                noReceiverInput.email = userEmail
                 print("getUserInfo(kakaoName) → \(userName)")
                 print("getUserInfo(kakaoEmail) → \(userEmail)")
                 

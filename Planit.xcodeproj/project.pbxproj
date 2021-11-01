@@ -18,8 +18,6 @@
 		B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420A272D0751004F6750 /* nickNameEntity.swift */; };
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
-		B6224217272D12D3004F6750 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6224216272D12D3004F6750 /* UserEntity.swift */; };
-		B6224219272D12DC004F6750 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6224218272D12DC004F6750 /* UserDataManager.swift */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
 		B6709E55272BD7C100847491 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6709E54272BD7C100847491 /* NotificationName.swift */; };
 		B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E61272BF05300847491 /* SelectGender.storyboard */; };
@@ -44,6 +42,12 @@
 		B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269C272941370021A9A4 /* SelectJobViewController.swift */; };
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
+		B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AC2730270D00B1326A /* noReceiverEntity.swift */; };
+		B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */; };
+		B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */; };
+		B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B2273028A600B1326A /* noReceiverDataManager.swift */; };
+		B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B427302A3800B1326A /* HaveReceiverInput.swift */; };
+		B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B627302A8800B1326A /* noReceiverInput.swift */; };
 		B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDF12728308A00C9C846 /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,8 +80,6 @@
 		B622420A272D0751004F6750 /* nickNameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameEntity.swift; sourceTree = "<group>"; };
 		B622420D272D07EE004F6750 /* NickNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDataManager.swift; sourceTree = "<group>"; };
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		B6224216272D12D3004F6750 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
-		B6224218272D12DC004F6750 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B6709E54272BD7C100847491 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		B6709E61272BF05300847491 /* SelectGender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGender.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,12 @@
 		B6B2269C272941370021A9A4 /* SelectJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobViewController.swift; sourceTree = "<group>"; };
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
+		B6C455AC2730270D00B1326A /* noReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverEntity.swift; sourceTree = "<group>"; };
+		B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverEntity.swift; sourceTree = "<group>"; };
+		B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverDataManager.swift; sourceTree = "<group>"; };
+		B6C455B2273028A600B1326A /* noReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverDataManager.swift; sourceTree = "<group>"; };
+		B6C455B427302A3800B1326A /* HaveReceiverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverInput.swift; sourceTree = "<group>"; };
+		B6C455B627302A8800B1326A /* noReceiverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverInput.swift; sourceTree = "<group>"; };
 		B6D1FDF12728308A00C9C846 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,8 +175,8 @@
 		B60797662727FBD600D6D454 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
-				B6224215272D1292004F6750 /* DataManager */,
-				B6224214272D128C004F6750 /* Entity */,
+				B6C455A8273026BE00B1326A /* HaveReceiver */,
+				B6C455A9273026CB00B1326A /* noReceiver */,
 				B6B226A0272941690021A9A4 /* InputUserInfo */,
 				B6709E60272BF03700847491 /* SelectGender */,
 				B6709E63272BF1B100847491 /* InputBirthday */,
@@ -207,7 +215,8 @@
 		B6224214272D128C004F6750 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				B6224216272D12D3004F6750 /* UserEntity.swift */,
+				B6C455B427302A3800B1326A /* HaveReceiverInput.swift */,
+				B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -215,7 +224,7 @@
 		B6224215272D1292004F6750 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				B6224218272D12DC004F6750 /* UserDataManager.swift */,
+				B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 		B67C98982724F9E60039D271 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				B622420F272D0840004F6750 /* Constant.swift */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
 				B6224211272D0852004F6750 /* Base */,
@@ -338,10 +348,10 @@
 			isa = PBXGroup;
 			children = (
 				B67C98982724F9E60039D271 /* Configuration */,
-				B622420F272D0840004F6750 /* Constant.swift */,
 				B6B118632716D5B4008842BA /* Splash */,
 				B6B1186D2716D88D008842BA /* LoginVC */,
 				B6B272AB272686250010138A /* TermsOfUse */,
+				B60797662727FBD600D6D454 /* RegisterView */,
 				B60797652727FAB500D6D454 /* MainViews */,
 				B6B118622716D317008842BA /* Resource */,
 			);
@@ -416,9 +426,43 @@
 			children = (
 				B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */,
 				B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */,
-				B60797662727FBD600D6D454 /* RegisterView */,
 			);
 			path = TermsOfUse;
+			sourceTree = "<group>";
+		};
+		B6C455A8273026BE00B1326A /* HaveReceiver */ = {
+			isa = PBXGroup;
+			children = (
+				B6224215272D1292004F6750 /* DataManager */,
+				B6224214272D128C004F6750 /* Entity */,
+			);
+			path = HaveReceiver;
+			sourceTree = "<group>";
+		};
+		B6C455A9273026CB00B1326A /* noReceiver */ = {
+			isa = PBXGroup;
+			children = (
+				B6C455AA273026E900B1326A /* DataManager */,
+				B6C455AB273026F400B1326A /* Entity */,
+			);
+			path = noReceiver;
+			sourceTree = "<group>";
+		};
+		B6C455AA273026E900B1326A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B6C455B2273028A600B1326A /* noReceiverDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B6C455AB273026F400B1326A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6C455AC2730270D00B1326A /* noReceiverEntity.swift */,
+				B6C455B627302A8800B1326A /* noReceiverInput.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,12 +654,15 @@
 			files = (
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
+				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
-				B6224217272D12D3004F6750 /* UserEntity.swift in Sources */,
+				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
+				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
+				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,
 				B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
@@ -628,9 +675,10 @@
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
-				B6224219272D12DC004F6750 /* UserDataManager.swift in Sources */,
+				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
+				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

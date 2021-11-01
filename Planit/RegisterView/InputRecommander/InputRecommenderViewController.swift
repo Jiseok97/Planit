@@ -86,11 +86,13 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     @IBAction func finishBtn(_ sender: UIButton) {
         print("사용자의 추천인은 \(recommander)입니다.")
         // 홈 이동
+        // HaveReceiver API
 //        changeRootVC(<#T##viewControllerToPresent: UIViewController##UIViewController#>)
     }
     
     @IBAction func skipInputRecommander(_ sender: UIButton) {
         // 스킵 → 홈 이동
+        // noReceiver API
 //        changeRootVC(<#T##viewControllerToPresent: UIViewController##UIViewController#>)
     }
     

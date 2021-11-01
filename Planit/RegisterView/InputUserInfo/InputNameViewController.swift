@@ -146,6 +146,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         NickNameDataManager().validateNickName(input, viewController: self)
         print("사용자의 이름은 \(userName)이며, 닉네임은 \(userNickName)입니다.")
         
+        
+        
+        
     }
     
     @IBAction func backBtn(_ sender: Any) {

@@ -1,11 +1,11 @@
 //
-//  UserEntity.swift
+//  HaveReceiverInput.swift
 //  Planit
 //
-//  Created by 이지석 on 2021/10/30.
+//  Created by 이지석 on 2021/11/01.
 //
 
-struct UserEntity: Decodable {
+struct HaveReceiverInput: Encodable {
     static var email : String = ""
     static var name: String = ""
     static var nickname: String = ""

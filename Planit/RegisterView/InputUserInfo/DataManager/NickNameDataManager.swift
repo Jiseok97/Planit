@@ -25,8 +25,12 @@ class NickNameDataManager : UIViewController {
                 case 200:
                     viewController.sethiddenLblImg(img, lbl)
                     viewController.checkUserNickName = true
-                    UserEntity.name = userName
-                    UserEntity.nickname = userNickName
+                    
+                    HaveReceiverInput.name = userName
+                    HaveReceiverInput.nickname = userNickName
+                    noReceiverInput.name = userName
+                    noReceiverInput.nickname = userNickName
+                    
                     print("사용 가능한 닉네임입니다. → \(String(describing: statusCode))")
                     
                 case 409:

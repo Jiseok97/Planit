@@ -86,6 +86,10 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
         let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
         
         let userBirthDate = birthDate.replacingOccurrences(of: "/", with: "-")
+        
+        HaveReceiverInput.birth = userBirthDate
+        noReceiverInput.birth = userBirthDate
+        
         print("사용자의 생년월일은 \(userBirthDate)입니다.")
         self.navigationController?.pushViewController(sjSB, animated: false)
     }

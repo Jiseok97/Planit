@@ -18,7 +18,7 @@ class SelectGenderViewController: UIViewController {
     
     var manBtnClicked: Bool = false
     var womanBtnClicked: Bool = false
-    var myGenderIs: String = ""
+    var userSex: String = ""
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -47,14 +47,14 @@ class SelectGenderViewController: UIViewController {
             setBtnColor(manBtn, manBtnClicked)
             self.womanBtnClicked = false
             setBtnColor(womanBtn, womanBtnClicked)
-            myGenderIs = "MALE"
+            userSex = "MALE"
             setAbleBtnState()
         default:
             self.womanBtnClicked = changeBoolValue(buttonChecked: womanBtnClicked)
             setBtnColor(womanBtn, womanBtnClicked)
             self.manBtnClicked = false
             setBtnColor(manBtn, manBtnClicked)
-            myGenderIs = "FEMALE"
+            userSex = "FEMALE"
             setAbleBtnState()
         }
     }
@@ -74,8 +74,10 @@ class SelectGenderViewController: UIViewController {
         let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
         let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
         
+        HaveReceiverInput.sex = userSex
+        noReceiverInput.sex = userSex
         
-        print("사용자의 성별은 \(myGenderIs)입니다.")
+        print("사용자의 성별은 \(userSex)입니다.")
         self.navigationController?.pushViewController(ibSB, animated: false)
     }
     
