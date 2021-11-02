@@ -12,8 +12,6 @@
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
-		B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8C271954A500A7F3C6 /* FacebookCore */; };
-		B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B60DBC8E271954A500A7F3C6 /* FacebookLogin */; };
 		B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6224208272D06FE004F6750 /* nickNameInput.swift */; };
 		B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420A272D0751004F6750 /* nickNameEntity.swift */; };
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
@@ -42,6 +40,7 @@
 		B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269C272941370021A9A4 /* SelectJobViewController.swift */; };
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
+		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
 		B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AC2730270D00B1326A /* noReceiverEntity.swift */; };
 		B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */; };
 		B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */; };
@@ -110,6 +109,7 @@
 		B6B2269C272941370021A9A4 /* SelectJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobViewController.swift; sourceTree = "<group>"; };
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
+		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
 		B6C455AC2730270D00B1326A /* noReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverDataManager.swift; sourceTree = "<group>"; };
@@ -124,8 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60DBC8D271954A500A7F3C6 /* FacebookCore in Frameworks */,
-				B60DBC8F271954A500A7F3C6 /* FacebookLogin in Frameworks */,
 				147C3521761F1469B1DAAD44 /* Pods_Planit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,8 +173,7 @@
 		B60797662727FBD600D6D454 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
-				B6C455A8273026BE00B1326A /* HaveReceiver */,
-				B6C455A9273026CB00B1326A /* noReceiver */,
+				B6B60B10273150FE0050C772 /* UserInfoData.swift */,
 				B6B226A0272941690021A9A4 /* InputUserInfo */,
 				B6709E60272BF03700847491 /* SelectGender */,
 				B6709E63272BF1B100847491 /* InputBirthday */,
@@ -292,6 +289,8 @@
 		B6709E67272BF2F200847491 /* InputRecommander */ = {
 			isa = PBXGroup;
 			children = (
+				B6C455A8273026BE00B1326A /* HaveReceiver */,
+				B6C455A9273026CB00B1326A /* noReceiver */,
 				B6709E6A272BF32100847491 /* InputRecommander.storyboard */,
 				B60D61062729A27700D95950 /* InputRecommenderViewController.swift */,
 			);
@@ -484,8 +483,6 @@
 			);
 			name = Planit;
 			packageProductDependencies = (
-				B60DBC8C271954A500A7F3C6 /* FacebookCore */,
-				B60DBC8E271954A500A7F3C6 /* FacebookLogin */,
 			);
 			productName = "Cash Study";
 			productReference = B6B1182F2716D261008842BA /* Planit.app */;
@@ -678,6 +675,7 @@
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
+				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);
@@ -777,7 +775,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -832,7 +830,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1015,19 +1013,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B60DBC8C271954A500A7F3C6 /* FacebookCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B60DBC8B271954A500A7F3C6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
-		};
-		B60DBC8E271954A500A7F3C6 /* FacebookLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B60DBC8B271954A500A7F3C6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookLogin;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6B118272716D261008842BA /* Project object */;
 }

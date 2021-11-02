@@ -113,14 +113,10 @@ class LoginViewController: UIViewController {
 //                guard let profile = user?.kakaoAccount?.profile else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
                 guard let userEmail = user?.kakaoAccount?.email else { return }
-                HaveReceiverInput.email = userEmail
-                noReceiverInput.email = userEmail
+                UserInfoData.email = userEmail
+                
                 print("getUserInfo(kakaoName) → \(userName)")
                 print("getUserInfo(kakaoEmail) → \(userEmail)")
-                
-//                let tvc = BaseTabBarController()
-//                tvc.modalPresentationStyle = .overFullScreen
-//                self.present(tvc, animated: true)
                 
 //                self.moveTimerVC(name: userName)
                 

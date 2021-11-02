@@ -101,6 +101,7 @@ extension UIViewController {
     }
     
     func setShowLblImg(_ imgView: UIImageView, _ lbl: UILabel) {
+        lbl.text = "이미 사용중인 닉네임입니다."
         lbl.isHidden = false
         imgView.isHidden = false
     }

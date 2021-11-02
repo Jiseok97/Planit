@@ -61,9 +61,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
                     let newText = text[text.startIndex..<idx]
                     textField.text = String(newText)
                 }
-                
-                // 닉네임 중복 추가하기
-                
             }
         }
     }
@@ -88,15 +85,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         
         setEnableBtn(nextBtn)
     }
-    
-    
-    // 이부분은 서버 연동을 통해 false 일 때 가져오기
-    func alreadyExistNickName() {
-        self.nickNameError.isHidden = false
-        self.nickNameErrorLbl.isHidden = false
-    }
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -134,20 +122,22 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: 성별 선택 뷰 이동
     @IBAction func moveSelectGenderVC(_ sender: UIButton) {
-        if checkUserNickName {
-            let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
-            let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
-            self.navigationController?.pushViewController(sgSB, animated: false)
-        }
         guard let userName = nameTF.text else { return }
         guard let userNickName = nickNameTF.text else { return }
         
         let input = nickNameInput(nickname: userNickName)
         NickNameDataManager().validateNickName(input, viewController: self)
-        print("사용자의 이름은 \(userName)이며, 닉네임은 \(userNickName)입니다.")
         
-        
-        
+        if checkUserNickName {
+            UserInfoData.name = userName
+            UserInfoData.nickname = userNickName
+            
+            let sbName = UIStoryboard(name: "SelectGender", bundle: nil)
+            let sgSB = sbName.instantiateViewController(identifier: "SelectGenderViewController")
+            self.navigationController?.pushViewController(sgSB, animated: false)
+        } else {
+            return
+        }
         
     }
     

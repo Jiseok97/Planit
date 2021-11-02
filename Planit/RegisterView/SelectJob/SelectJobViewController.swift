@@ -207,9 +207,7 @@ class SelectJobViewController: UIViewController {
     @IBAction func moveRecommenderVC(_ sender: Any) {
         let sbName = UIStoryboard(name: "InputRecommander", bundle: nil)
         let irSB = sbName.instantiateViewController(identifier: "InputRecommenderViewController")
-        
-        HaveReceiverInput.category = userCategory
-        noReceiverInput.category = userCategory
+        UserInfoData.category = userCategory
         
         print("사용자의 직업은 \(userCategory)입니다.")
         self.navigationController?.pushViewController(irSB, animated: false)

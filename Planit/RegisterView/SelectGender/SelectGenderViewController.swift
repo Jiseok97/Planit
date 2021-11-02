@@ -74,8 +74,7 @@ class SelectGenderViewController: UIViewController {
         let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
         let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
         
-        HaveReceiverInput.sex = userSex
-        noReceiverInput.sex = userSex
+        UserInfoData.sex = userSex
         
         print("사용자의 성별은 \(userSex)입니다.")
         self.navigationController?.pushViewController(ibSB, animated: false)

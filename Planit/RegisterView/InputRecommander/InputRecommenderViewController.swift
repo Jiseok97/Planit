@@ -93,6 +93,12 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     @IBAction func skipInputRecommander(_ sender: UIButton) {
         // 스킵 → 홈 이동
         // noReceiver API
+//        let input =  noReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex,
+//                                     birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: true, marketingInformationAgree: true)
+        let input =  noReceiverInput(email: "testEmail@test.com", name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex,
+                                     birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: true, marketingInformationAgree: true)
+        noReceiverDataManager().user(input ,viewController: self)
+        
 //        changeRootVC(<#T##viewControllerToPresent: UIViewController##UIViewController#>)
     }
     

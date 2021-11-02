@@ -106,6 +106,7 @@ class TermsOfUseViewController: UIViewController {
     
     // MARK: 다음으로 이동
     @IBAction func nextVC(_ sender: Any) {
+        
         guard let navigation = UIStoryboard(name: "InputUserInfo", bundle: nil).instantiateViewController(identifier: "NavigationViewController") as? NavigationViewController else { return }
         
         navigation.modalPresentationStyle = .overFullScreen
