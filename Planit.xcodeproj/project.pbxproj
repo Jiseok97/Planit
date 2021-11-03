@@ -27,6 +27,9 @@
 		B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B478B2732895800F89012 /* AnalysisViewController.xib */; };
 		B66B47902732896800F89012 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B478E2732896800F89012 /* MyPageViewController.swift */; };
 		B66B47912732896800F89012 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B478F2732896800F89012 /* MyPageViewController.xib */; };
+		B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B479427328C6E00F89012 /* LoginDataManager.swift */; };
+		B66B479727328C7300F89012 /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B479627328C7300F89012 /* LoginInput.swift */; };
+		B66B479927328C7900F89012 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B479827328C7900F89012 /* LoginEntity.swift */; };
 		B6709E55272BD7C100847491 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6709E54272BD7C100847491 /* NotificationName.swift */; };
 		B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E61272BF05300847491 /* SelectGender.storyboard */; };
 		B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E64272BF1CB00847491 /* InputBirthday.storyboard */; };
@@ -100,6 +103,9 @@
 		B66B478B2732895800F89012 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		B66B478E2732896800F89012 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		B66B478F2732896800F89012 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
+		B66B479427328C6E00F89012 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		B66B479627328C7300F89012 /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
+		B66B479827328C7900F89012 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		B6709E54272BD7C100847491 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		B6709E61272BF05300847491 /* SelectGender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGender.storyboard; sourceTree = "<group>"; };
 		B6709E64272BF1CB00847491 /* InputBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputBirthday.storyboard; sourceTree = "<group>"; };
@@ -338,6 +344,23 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		B66B479227328B9700F89012 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B66B479427328C6E00F89012 /* LoginDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B66B479327328B9E00F89012 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B66B479627328C7300F89012 /* LoginInput.swift */,
+				B66B479827328C7900F89012 /* LoginEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		B6709E60272BF03700847491 /* SelectGender */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +496,8 @@
 		B6B1186D2716D88D008842BA /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
+				B66B479227328B9700F89012 /* DataManager */,
+				B66B479327328B9E00F89012 /* Entity */,
 				B6B118662716D7B0008842BA /* LoginViewController.xib */,
 				B6B118652716D7B0008842BA /* LoginViewController.swift */,
 			);
@@ -734,6 +759,7 @@
 			files = (
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
+				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
@@ -745,12 +771,14 @@
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,
 				B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */,
+				B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B66B478C2732895800F89012 /* AnalysisViewController.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
+				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,

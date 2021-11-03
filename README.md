@@ -23,9 +23,8 @@
 ## 🔗 API Progress ▾
 * Validate-nickname → ✅
 
-* Validate-recommender-nickname → ***Proceeding*** 
-
-* Register User → ***Proceeding***
+* Register User → ✅
+    * Validate-recommender-nickname → ✅
 
 * Login → ***Proceeding***
 

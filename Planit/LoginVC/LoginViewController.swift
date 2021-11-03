@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var kakaoLoginView: UIView!
     @IBOutlet weak var appleLoginView: UIView!
     
+    var haveEmail : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,8 @@ class LoginViewController: UIViewController {
     
     // MARK: Kakao Login Btn
     @IBAction func kakaoBtnTapped(_ sender: Any) {
-        
+        let input = LoginInput(email: UserInfoData.email)
+        LoginDataManager().userLogin(input, viewController: self)
         /// 폰으로 직접 확인해야 할 부분!!
         // 카카오톡 설치 여부
 //        if (UserApi.isKakaoTalkLoginAvailable()) {
@@ -76,6 +78,9 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     // 로그인 성공
+                    
+                    
+                    
                     print("loginWithKakaoAccount() success.")
                     
                     _ = oauthToken
@@ -92,11 +97,7 @@ class LoginViewController: UIViewController {
 //                            UserDefaults.standard.setValue(token, forKey: "hasToken")
                             print("accessTokenInfo → \(token)")
                             
-//                            self.getUserInfo()
-                            
-                            // MARK: Test VC
-                            
-                            
+                            self.getUserInfo()
                             
                         }
                     }
@@ -115,15 +116,12 @@ class LoginViewController: UIViewController {
                 print("카카오 로그인 및 토큰 발급 완료")
                 
                 _ = user
-//                guard let profile = user?.kakaoAccount?.profile else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
                 guard let userEmail = user?.kakaoAccount?.email else { return }
                 UserInfoData.email = userEmail
                 
                 print("getUserInfo(kakaoName) → \(userName)")
                 print("getUserInfo(kakaoEmail) → \(userEmail)")
-                
-//                self.moveTimerVC(name: userName)
                 
                 self.moveTermsOfUseVC()
             }
