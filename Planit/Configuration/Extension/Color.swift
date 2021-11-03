@@ -22,4 +22,5 @@ extension UIColor {
     class var mainNavy: UIColor { UIColor(hex: 0x050626) }
     class var disabledColor: UIColor { UIColor(hex: 0x090A35) }
     class var placeHolderColor: UIColor { UIColor(hex: 0x6B6C85) }
+    class var homeBorderColor: UIColor { UIColor(hex: 0x171853)}
 }

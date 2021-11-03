@@ -100,10 +100,21 @@ extension UIViewController {
         imgView.isHidden = true
     }
     
-    func setShowLblImg(_ imgView: UIImageView, _ lbl: UILabel) {
-        lbl.text = "이미 사용중인 닉네임입니다."
+    func setShowErrorLblImg(_ imgView: UIImageView, _ lbl: UILabel, _ txt: String) {
+        lbl.text = txt
         lbl.isHidden = false
         imgView.isHidden = false
+    }
+    
+    
+    
+    // InputUserNameVC
+    func tfIsEmpty(_ tf1: UITextField, _ tf2: UITextField, _ btn: UIButton) {
+        if tf1.text?.isEmpty == true || tf2.text?.isEmpty == true {
+            setEnableBtn(btn)
+        } else {
+            setAbleBtn(btn)
+        }
     }
     
 }

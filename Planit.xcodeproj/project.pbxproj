@@ -17,6 +17,16 @@
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
+		B66B47772732706000F89012 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B47752732706000F89012 /* HomeViewController.swift */; };
+		B66B47782732706000F89012 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B47762732706000F89012 /* HomeViewController.xib */; };
+		B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B477C2732799E00F89012 /* PlannerViewController.swift */; };
+		B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B477D2732799E00F89012 /* PlannerViewController.xib */; };
+		B66B47882732894A00F89012 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B47862732894A00F89012 /* RewardViewController.swift */; };
+		B66B47892732894A00F89012 /* RewardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B47872732894A00F89012 /* RewardViewController.xib */; };
+		B66B478C2732895800F89012 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B478A2732895800F89012 /* AnalysisViewController.swift */; };
+		B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B478B2732895800F89012 /* AnalysisViewController.xib */; };
+		B66B47902732896800F89012 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B478E2732896800F89012 /* MyPageViewController.swift */; };
+		B66B47912732896800F89012 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B478F2732896800F89012 /* MyPageViewController.xib */; };
 		B6709E55272BD7C100847491 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6709E54272BD7C100847491 /* NotificationName.swift */; };
 		B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E61272BF05300847491 /* SelectGender.storyboard */; };
 		B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E64272BF1CB00847491 /* InputBirthday.storyboard */; };
@@ -80,6 +90,16 @@
 		B622420D272D07EE004F6750 /* NickNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDataManager.swift; sourceTree = "<group>"; };
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		B66B47752732706000F89012 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B66B47762732706000F89012 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		B66B477C2732799E00F89012 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
+		B66B477D2732799E00F89012 /* PlannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlannerViewController.xib; sourceTree = "<group>"; };
+		B66B47862732894A00F89012 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
+		B66B47872732894A00F89012 /* RewardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardViewController.xib; sourceTree = "<group>"; };
+		B66B478A2732895800F89012 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		B66B478B2732895800F89012 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
+		B66B478E2732896800F89012 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		B66B478F2732896800F89012 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		B6709E54272BD7C100847491 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		B6709E61272BF05300847491 /* SelectGender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGender.storyboard; sourceTree = "<group>"; };
 		B6709E64272BF1CB00847491 /* InputBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputBirthday.storyboard; sourceTree = "<group>"; };
@@ -165,7 +185,11 @@
 		B60797652727FAB500D6D454 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
-				B65310DC27253E32004AD249 /* Timer */,
+				B66B47742732704C00F89012 /* Home */,
+				B66B477B2732797F00F89012 /* Planner */,
+				B66B4782273288E200F89012 /* Reward */,
+				B66B4783273288FF00F89012 /* Analysis */,
+				B66B47852732892000F89012 /* MyPage */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -259,6 +283,61 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B66B47742732704C00F89012 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B66B47752732706000F89012 /* HomeViewController.swift */,
+				B66B47762732706000F89012 /* HomeViewController.xib */,
+				B65310DC27253E32004AD249 /* Timer */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B66B477A273274D000F89012 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B6B272AB272686250010138A /* TermsOfUse */,
+				B60797662727FBD600D6D454 /* RegisterView */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		B66B477B2732797F00F89012 /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
+				B66B477D2732799E00F89012 /* PlannerViewController.xib */,
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
+		B66B4782273288E200F89012 /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				B66B47862732894A00F89012 /* RewardViewController.swift */,
+				B66B47872732894A00F89012 /* RewardViewController.xib */,
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
+		B66B4783273288FF00F89012 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				B66B478A2732895800F89012 /* AnalysisViewController.swift */,
+				B66B478B2732895800F89012 /* AnalysisViewController.xib */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		B66B47852732892000F89012 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				B66B478E2732896800F89012 /* MyPageViewController.swift */,
+				B66B478F2732896800F89012 /* MyPageViewController.xib */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		B6709E60272BF03700847491 /* SelectGender */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,8 +428,7 @@
 				B67C98982724F9E60039D271 /* Configuration */,
 				B6B118632716D5B4008842BA /* Splash */,
 				B6B1186D2716D88D008842BA /* LoginVC */,
-				B6B272AB272686250010138A /* TermsOfUse */,
-				B60797662727FBD600D6D454 /* RegisterView */,
+				B66B477A273274D000F89012 /* Register */,
 				B60797652727FAB500D6D454 /* MainViews */,
 				B6B118622716D317008842BA /* Resource */,
 			);
@@ -458,8 +536,8 @@
 		B6C455AB273026F400B1326A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				B6C455AC2730270D00B1326A /* noReceiverEntity.swift */,
 				B6C455B627302A8800B1326A /* noReceiverInput.swift */,
+				B6C455AC2730270D00B1326A /* noReceiverEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -579,8 +657,13 @@
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
+				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,
+				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
+				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
+				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
+				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 			);
@@ -654,6 +737,7 @@
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
+				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
 				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
@@ -662,6 +746,7 @@
 				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,
 				B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
+				B66B478C2732895800F89012 /* AnalysisViewController.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
@@ -673,9 +758,12 @@
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
+				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
+				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
+				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);

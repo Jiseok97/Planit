@@ -91,7 +91,12 @@ class LoginViewController: UIViewController {
                             guard let token = oauthToken?.accessToken else { return }
 //                            UserDefaults.standard.setValue(token, forKey: "hasToken")
                             print("accessTokenInfo → \(token)")
-                            self.getUserInfo()
+                            
+//                            self.getUserInfo()
+                            
+                            // MARK: Test VC
+                            
+                            
                             
                         }
                     }
@@ -121,12 +126,10 @@ class LoginViewController: UIViewController {
 //                self.moveTimerVC(name: userName)
                 
                 self.moveTermsOfUseVC()
-                
-                
-
             }
         }
     }
+    
     
     // MARK: 이용약관 페이지 이동
     func moveTermsOfUseVC() {
@@ -150,6 +153,15 @@ class LoginViewController: UIViewController {
     // MARK: 타이머 뷰 (SwiftUI)
     func moveTimerVC(name: String) {
         let vc = UIHostingController(rootView: TimerView(name: .constant(name)))
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
+    
+    
+    
+    
+    @IBAction func testMove(_ sender: Any) {
+        let vc = BaseTabBarController()
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
     }
