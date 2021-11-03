@@ -18,6 +18,10 @@
 
 * Input Recommender View → ✅
 
+* Added BaseTabBar Controller → ✅
+
+* Home View → ***proceeding***
+
 </br>
 
 ## 🔗 API Progress ▾
@@ -28,7 +32,7 @@
 
 * Login → ✅
 
-* Token renewal → ***Proceeding*** 
+* Token renewal → ✅   *dev only & didn't apply* 😱
 
 </br>
 
