@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class LoginDataManager {
+class LoginDataManager : UIViewController{
     func userLogin(_ info: LoginInput ,viewController: LoginViewController) {
         AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
             .validate()
@@ -15,8 +15,23 @@ class LoginDataManager {
                 let code = response.response?.statusCode
                 switch code {
                 case 200:
-                    viewController.haveEmail = true
-                    print("로그인 API")
+                    guard let result = response.value?.result else { return }
+                    guard let accessToken = response.value?.accessToken else { return }
+                    guard let refreshToken = response.value?.refreshToken else { return }
+                    
+                    if result {
+                        viewController.haveEmail = true
+                        print("기존 유저")
+                        self.changeRootVC(BaseTabBarController())
+                        Constant.MY_ACCESS_TOKEN = accessToken
+                        Constant.MY_REFRESH_TOKEN = refreshToken
+                        print("refreshToken ▾")
+                        print(refreshToken)
+                    } else {
+                        viewController.haveEmail = false
+                        print("신규 유저")
+                        self.changeRootVC(TermsOfUseViewController())
+                    }
                     
                 default:
                     print("오류")

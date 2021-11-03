@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
         setUI()
     }
     
+    
     // MARK: Set UI
     func setUI() {
         kakaoLoginView.layer.cornerRadius = 6
@@ -36,10 +37,15 @@ class LoginViewController: UIViewController {
     }
     
     
+    func loginCheck(_ email: String) {
+        let input = LoginInput(email: email)
+        LoginDataManager().userLogin(input, viewController: self)
+    }
+    
+    
     // MARK: Kakao Login Btn
     @IBAction func kakaoBtnTapped(_ sender: Any) {
-        let input = LoginInput(email: UserInfoData.email)
-        LoginDataManager().userLogin(input, viewController: self)
+        
         /// 폰으로 직접 확인해야 할 부분!!
         // 카카오톡 설치 여부
 //        if (UserApi.isKakaoTalkLoginAvailable()) {
@@ -78,9 +84,6 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     // 로그인 성공
-                    
-                    
-                    
                     print("loginWithKakaoAccount() success.")
                     
                     _ = oauthToken
@@ -122,17 +125,10 @@ class LoginViewController: UIViewController {
                 
                 print("getUserInfo(kakaoName) → \(userName)")
                 print("getUserInfo(kakaoEmail) → \(userEmail)")
-                
-                self.moveTermsOfUseVC()
+            
+                self.loginCheck(UserInfoData.email)
             }
         }
-    }
-    
-    
-    // MARK: 이용약관 페이지 이동
-    func moveTermsOfUseVC() {
-        let touVC = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
-        changeRootVC(touVC)
     }
     
     // MARK: 애플 로그인
@@ -159,9 +155,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func testMove(_ sender: Any) {
-        let vc = BaseTabBarController()
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
+        changeRootVC(BaseTabBarController())
     }
     
 }
