@@ -49,17 +49,13 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
             if let text = textField.text {
                 if text.count > maxLength {
                     nickNameErrorLbl.isHidden = false
-                    nickNameErrorLbl.text = "닉네임은 8글자 이내로 입력해주세요."
                     nickNameError.isHidden = false
+                    nickNameErrorLbl.text = "닉네임은 8글자 이내로 입력해주세요."
+                    setEnableBtn(nextBtn)
                 } else {
                     nickNameError.isHidden = true
                     nickNameErrorLbl.isHidden = true
-                }
-                
-                if text.count >= maxLength {
-                    let idx = text.index(text.startIndex, offsetBy: maxLength)
-                    let newText = text[text.startIndex..<idx]
-                    textField.text = String(newText)
+                    setAbleBtn(nextBtn)
                 }
             }
         }
@@ -76,12 +72,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         
         self.nickNameError.isHidden = true
         self.nickNameErrorLbl.isHidden = true
-        
-        let image = UIImageView()
-        let imageName = UIImage(named: "textFieldError")
-        image.image = imageName
-        nameTF.rightView = image
-        nameTF.rightViewMode = .always
         
         setEnableBtn(nextBtn)
     }

@@ -42,12 +42,12 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
                     let idx = text.index(text.startIndex, offsetBy: maxLength)
                     let newText = text[text.startIndex..<idx]
                     textField.text = String(newText)
-                    
-                    setAbleBtn(confirmBtn)
+                    setEnableBtn(confirmBtn)
                     birthDate = text
                 } else {
-                    setEnableBtn(confirmBtn)
+                    setAbleBtn(confirmBtn)
                 }
+                
                 switch text.count{
                     case 4:
                         textField.text = text + "/"
