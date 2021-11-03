@@ -26,7 +26,7 @@
 * Register User → ✅
     * Validate-recommender-nickname → ✅
 
-* Login → ***Proceeding***
+* Login → ✅
 
 * Token renewal → ***Proceeding*** 
 

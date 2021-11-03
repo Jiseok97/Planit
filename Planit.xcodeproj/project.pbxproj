@@ -43,7 +43,6 @@
 		B6B118332716D261008842BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118322716D261008842BA /* AppDelegate.swift */; };
 		B6B118352716D261008842BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118342716D261008842BA /* SceneDelegate.swift */; };
 		B6B1183C2716D262008842BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183B2716D262008842BA /* Assets.xcassets */; };
-		B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183D2716D262008842BA /* LaunchScreen.storyboard */; };
 		B6B1184A2716D262008842BA /* PlanitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118492716D262008842BA /* PlanitTests.swift */; };
 		B6B118552716D262008842BA /* PlanitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* PlanitUITests.swift */; };
 		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
@@ -61,6 +60,11 @@
 		B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B427302A3800B1326A /* HaveReceiverInput.swift */; };
 		B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B627302A8800B1326A /* noReceiverInput.swift */; };
 		B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDF12728308A00C9C846 /* UITextField.swift */; };
+		B6D81E172732B588006E641E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E152732B588006E641E /* SplashViewController.swift */; };
+		B6D81E182732B588006E641E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D81E162732B588006E641E /* SplashViewController.xib */; };
+		B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E1C2732B8EA006E641E /* CheckTokenDataManager.swift */; };
+		B6D81E1F2732B8FA006E641E /* RefreshTokenInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E1E2732B8FA006E641E /* RefreshTokenInput.swift */; };
+		B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E202732B905006E641E /* RefreshTokenEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +124,6 @@
 		B6B118322716D261008842BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B118342716D261008842BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B6B1183B2716D262008842BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B6B1183E2716D262008842BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6B118402716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118452716D262008842BA /* Planit */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Planit; path = PlanitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B118492716D262008842BA /* PlanitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitTests.swift; sourceTree = "<group>"; };
@@ -143,6 +146,11 @@
 		B6C455B427302A3800B1326A /* HaveReceiverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverInput.swift; sourceTree = "<group>"; };
 		B6C455B627302A8800B1326A /* noReceiverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverInput.swift; sourceTree = "<group>"; };
 		B6D1FDF12728308A00C9C846 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		B6D81E152732B588006E641E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B6D81E162732B588006E641E /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		B6D81E1C2732B8EA006E641E /* CheckTokenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTokenDataManager.swift; sourceTree = "<group>"; };
+		B6D81E1E2732B8FA006E641E /* RefreshTokenInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenInput.swift; sourceTree = "<group>"; };
+		B6D81E202732B905006E641E /* RefreshTokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,7 +496,9 @@
 		B6B118632716D5B4008842BA /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				B6B1183D2716D262008842BA /* LaunchScreen.storyboard */,
+				B6D81E192732B8B6006E641E /* CheckToken */,
+				B6D81E162732B588006E641E /* SplashViewController.xib */,
+				B6D81E152732B588006E641E /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -563,6 +573,32 @@
 			children = (
 				B6C455B627302A8800B1326A /* noReceiverInput.swift */,
 				B6C455AC2730270D00B1326A /* noReceiverEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B6D81E192732B8B6006E641E /* CheckToken */ = {
+			isa = PBXGroup;
+			children = (
+				B6D81E1A2732B8CB006E641E /* DataManager */,
+				B6D81E1B2732B8DA006E641E /* Entity */,
+			);
+			path = CheckToken;
+			sourceTree = "<group>";
+		};
+		B6D81E1A2732B8CB006E641E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B6D81E1C2732B8EA006E641E /* CheckTokenDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B6D81E1B2732B8DA006E641E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6D81E1E2732B8FA006E641E /* RefreshTokenInput.swift */,
+				B6D81E202732B905006E641E /* RefreshTokenEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -677,7 +713,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B1183F2716D262008842BA /* LaunchScreen.storyboard in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
@@ -690,6 +725,7 @@
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
+				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +793,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
@@ -774,6 +811,7 @@
 				B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B66B478C2732895800F89012 /* AnalysisViewController.swift in Sources */,
+				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
@@ -790,6 +828,8 @@
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
+				B6D81E1F2732B8FA006E641E /* RefreshTokenInput.swift in Sources */,
+				B6D81E172732B588006E641E /* SplashViewController.swift in Sources */,
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
@@ -827,17 +867,6 @@
 			targetProxy = B6B118512716D262008842BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B6B1183D2716D262008842BA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6B1183E2716D262008842BA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B6B118572716D262008842BA /* Debug */ = {

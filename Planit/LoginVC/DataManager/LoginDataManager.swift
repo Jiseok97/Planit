@@ -20,15 +20,17 @@ class LoginDataManager : UIViewController{
                     guard let refreshToken = response.value?.refreshToken else { return }
                     
                     if result {
-                        viewController.haveEmail = true
                         print("기존 유저")
                         self.changeRootVC(BaseTabBarController())
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
+                        
+//                        UserDefaults.setValue(accessToken, forKey: "accessToken")
+//                        UserDefaults.setValue(refreshToken, forKey: "refreshToken")
+                        
                         print("refreshToken ▾")
                         print(refreshToken)
                     } else {
-                        viewController.haveEmail = false
                         print("신규 유저")
                         self.changeRootVC(TermsOfUseViewController())
                     }

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 130.0, *) { return true }
         
         window = UIWindow()
-        window?.rootViewController = LoginViewController()
+        window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
         
         // Kakao Login

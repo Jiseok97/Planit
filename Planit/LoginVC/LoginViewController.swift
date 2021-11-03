@@ -18,8 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var kakaoLoginView: UIView!
     @IBOutlet weak var appleLoginView: UIView!
     
-    var haveEmail : Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +29,6 @@ class LoginViewController: UIViewController {
     func setUI() {
         kakaoLoginView.layer.cornerRadius = 6
         appleLoginView.layer.cornerRadius = 6
-        
-        view.backgroundColor = UIColor.mainNavy
-        
     }
     
     
@@ -126,7 +121,8 @@ class LoginViewController: UIViewController {
                 print("getUserInfo(kakaoName) → \(userName)")
                 print("getUserInfo(kakaoEmail) → \(userEmail)")
             
-                self.loginCheck(UserInfoData.email)
+//                self.loginCheck(UserInfoData.email)
+                self.loginCheck("testEmail1@test.com")
             }
         }
     }
