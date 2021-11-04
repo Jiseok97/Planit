@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addStudyBtn: UIButton!
     @IBOutlet weak var addDdayBtn: UIButton!
     
-    var studyDataLst : [String] = ["Empty"]
+    var studyDataLst : [String] = ["Empty", "Have"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
         studyLstTV.register(UINib(nibName: "EmptyStudyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyCell")
         studyLstTV.register(UINib(nibName: "HaveStudyTableViewCell", bundle: nil), forCellReuseIdentifier: "haveCell")
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,6 +47,7 @@ class HomeViewController: UIViewController {
         
         studyLstTV.delegate = self
         studyLstTV.dataSource = self
+        studyLstTV.backgroundColor = UIColor.mainNavy
     }
 }
 
@@ -58,17 +60,23 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if studyDataLst.count == 1 {
-            guard let epCell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as? EmptyStudyTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as? EmptyStudyTableViewCell else { return UITableViewCell() }
             
-            epCell.layer.borderWidth = 1
-            epCell.layer.borderColor = UIColor.homeBorderColor.cgColor
-            epCell.layer.cornerRadius = 8
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+            cell.layer.cornerRadius = 8
             
-            return epCell
+            return cell
             
         } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "haveCell", for: indexPath) as? HaveStudyTableViewCell else { return UITableViewCell() }
             
-            return UITableViewCell()
+            cell.layer.cornerRadius = 8
+            cell.separatorInset = UIEdgeInsets(top: 50.0, left: 7.0, bottom: 0, right: 0)
+            
+            cell.studyTitleLbl.text = studyDataLst[indexPath.row]
+            
+            return cell
         }
        
     }
@@ -77,7 +85,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         if studyDataLst.count == 1 {
             return 224
         } else {
-            return 98
+            return 120
         }
     }
     

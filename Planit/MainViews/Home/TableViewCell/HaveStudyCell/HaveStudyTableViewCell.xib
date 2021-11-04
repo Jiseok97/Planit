@@ -29,24 +29,20 @@
                         <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvf-ua-pnA">
-                        <rect key="frame" x="283" y="37" width="24" height="24"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-Kp-op5">
+                        <rect key="frame" x="292" y="37" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="24" id="725-RS-fuV"/>
-                            <constraint firstAttribute="height" constant="24" id="Uw1-z4-gOP"/>
+                            <constraint firstAttribute="height" constant="24" id="MLk-kP-yo9"/>
+                            <constraint firstAttribute="width" constant="24" id="tc5-tt-2Of"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="rightArrow">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24"/>
-                        </buttonConfiguration>
-                    </button>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="fvf-ua-pnA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CeJ-Ue-rIr"/>
+                    <constraint firstAttribute="trailing" secondItem="Yha-Kp-op5" secondAttribute="trailing" constant="11" id="8Mn-5h-R3z"/>
                     <constraint firstItem="3lJ-WE-3dP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="OTZ-wZ-TZ1"/>
                     <constraint firstItem="fy1-Rd-L1c" firstAttribute="top" secondItem="3lJ-WE-3dP" secondAttribute="bottom" constant="4" id="TJb-vT-86U"/>
-                    <constraint firstAttribute="trailing" secondItem="fvf-ua-pnA" secondAttribute="trailing" constant="20" id="i1O-VA-Jqn"/>
+                    <constraint firstItem="Yha-Kp-op5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ltX-XJ-8Yn"/>
                     <constraint firstItem="fy1-Rd-L1c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="n5K-kg-RkS"/>
                     <constraint firstItem="3lJ-WE-3dP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="p8O-Dj-a4P"/>
                 </constraints>

@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-rX-n1N">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLANIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-qJ-PPl">
                                     <rect key="frame" x="32" y="58" width="71" height="24"/>
@@ -54,8 +54,8 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vl-mY-cZe">
                                     <rect key="frame" x="288" y="52" width="102" height="36"/>
                                     <constraints>
+                                        <constraint firstAttribute="width" constant="102" id="GrD-tj-nQE"/>
                                         <constraint firstAttribute="height" constant="36" id="V3a-wH-96N"/>
-                                        <constraint firstAttribute="width" constant="102" id="dCw-a8-1ya"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Plus" title=" 공부추가" titleAlignment="center">
@@ -76,12 +76,10 @@
                                     <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-iK-ePq">
-                                    <rect key="frame" x="24" y="427" width="366" height="224"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-iK-ePq">
+                                    <rect key="frame" x="24" y="427" width="366" height="361"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="224" id="BB5-7O-NGj"/>
-                                    </constraints>
+                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,10 +96,10 @@
                                 <constraint firstItem="b7E-ah-6p0" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="aWc-fI-Iu4"/>
                                 <constraint firstItem="yn1-qJ-PPl" firstAttribute="top" secondItem="AtT-rX-n1N" secondAttribute="top" constant="58" id="agS-BQ-b3L"/>
                                 <constraint firstItem="Njf-gU-YXh" firstAttribute="top" secondItem="c43-HD-Wgz" secondAttribute="bottom" constant="24" id="cgZ-HR-zDb"/>
+                                <constraint firstAttribute="bottom" secondItem="ayO-iK-ePq" secondAttribute="bottom" constant="30" id="fva-FV-grR"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="juH-w2-Zap"/>
                                 <constraint firstAttribute="trailing" secondItem="ayO-iK-ePq" secondAttribute="trailing" constant="24" id="lHg-18-0OV"/>
                                 <constraint firstAttribute="trailing" secondItem="Njf-gU-YXh" secondAttribute="trailing" constant="24" id="mu4-Si-Jgw"/>
-                                <constraint firstAttribute="height" constant="1500" id="wLg-C0-jns"/>
                                 <constraint firstItem="yn1-qJ-PPl" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="zop-Fa-zmz"/>
                             </constraints>
                         </view>
@@ -112,6 +110,7 @@
                         <constraint firstItem="AtT-rX-n1N" firstAttribute="top" secondItem="NrU-8q-1Ui" secondAttribute="top" id="gkl-rB-68h"/>
                         <constraint firstItem="AtT-rX-n1N" firstAttribute="width" secondItem="NrU-8q-1Ui" secondAttribute="width" id="lAd-ZX-JUd"/>
                         <constraint firstAttribute="bottom" secondItem="AtT-rX-n1N" secondAttribute="bottom" id="rfp-tI-sUZ"/>
+                        <constraint firstItem="AtT-rX-n1N" firstAttribute="height" secondItem="NrU-8q-1Ui" secondAttribute="height" id="tZw-cH-bml"/>
                     </constraints>
                 </scrollView>
             </subviews>
