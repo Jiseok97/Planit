@@ -53,6 +53,10 @@
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
+		B6BFB4082733BA4100C0C97D /* HaveStudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFB4062733BA4100C0C97D /* HaveStudyTableViewCell.swift */; };
+		B6BFB4092733BA4100C0C97D /* HaveStudyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BFB4072733BA4100C0C97D /* HaveStudyTableViewCell.xib */; };
+		B6BFB40C2733BA5600C0C97D /* EmptyStudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFB40A2733BA5600C0C97D /* EmptyStudyTableViewCell.swift */; };
+		B6BFB40D2733BA5600C0C97D /* EmptyStudyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BFB40B2733BA5600C0C97D /* EmptyStudyTableViewCell.xib */; };
 		B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AC2730270D00B1326A /* noReceiverEntity.swift */; };
 		B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */; };
 		B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */; };
@@ -139,6 +143,10 @@
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
+		B6BFB4062733BA4100C0C97D /* HaveStudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyTableViewCell.swift; sourceTree = "<group>"; };
+		B6BFB4072733BA4100C0C97D /* HaveStudyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyTableViewCell.xib; sourceTree = "<group>"; };
+		B6BFB40A2733BA5600C0C97D /* EmptyStudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStudyTableViewCell.swift; sourceTree = "<group>"; };
+		B6BFB40B2733BA5600C0C97D /* EmptyStudyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStudyTableViewCell.xib; sourceTree = "<group>"; };
 		B6C455AC2730270D00B1326A /* noReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverDataManager.swift; sourceTree = "<group>"; };
@@ -300,8 +308,9 @@
 		B66B47742732704C00F89012 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B66B47752732706000F89012 /* HomeViewController.swift */,
+				B6BFB4032733BA0A00C0C97D /* TableViewCell */,
 				B66B47762732706000F89012 /* HomeViewController.xib */,
+				B66B47752732706000F89012 /* HomeViewController.swift */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
 			path = Home;
@@ -542,6 +551,33 @@
 			path = TermsOfUse;
 			sourceTree = "<group>";
 		};
+		B6BFB4032733BA0A00C0C97D /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6BFB4052733BA2A00C0C97D /* HaveStudyCell */,
+				B6BFB4042733BA1700C0C97D /* EmptyStudyCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		B6BFB4042733BA1700C0C97D /* EmptyStudyCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6BFB40B2733BA5600C0C97D /* EmptyStudyTableViewCell.xib */,
+				B6BFB40A2733BA5600C0C97D /* EmptyStudyTableViewCell.swift */,
+			);
+			path = EmptyStudyCell;
+			sourceTree = "<group>";
+		};
+		B6BFB4052733BA2A00C0C97D /* HaveStudyCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6BFB4072733BA4100C0C97D /* HaveStudyTableViewCell.xib */,
+				B6BFB4062733BA4100C0C97D /* HaveStudyTableViewCell.swift */,
+			);
+			path = HaveStudyCell;
+			sourceTree = "<group>";
+		};
 		B6C455A8273026BE00B1326A /* HaveReceiver */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,9 +752,11 @@
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
+				B6BFB4092733BA4100C0C97D /* HaveStudyTableViewCell.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
+				B6BFB40D2733BA5600C0C97D /* EmptyStudyTableViewCell.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
@@ -819,11 +857,13 @@
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
+				B6BFB40C2733BA5600C0C97D /* EmptyStudyTableViewCell.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
+				B6BFB4082733BA4100C0C97D /* HaveStudyTableViewCell.swift in Sources */,
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,

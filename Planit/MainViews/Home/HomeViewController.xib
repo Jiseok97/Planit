@@ -5,12 +5,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Planit" customModuleProvider="target">
             <connections>
                 <outlet property="addDdayBtn" destination="Njf-gU-YXh" id="OUK-Am-SIH"/>
+                <outlet property="addStudyBtn" destination="8Vl-mY-cZe" id="yhA-11-yPB"/>
+                <outlet property="studyLstTV" destination="ayO-iK-ePq" id="WTJ-am-7GH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,9 +28,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-rX-n1N">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-qJ-PPl">
-                                    <rect key="frame" x="32" y="58" width="17.5" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLANIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-qJ-PPl">
+                                    <rect key="frame" x="32" y="58" width="71" height="24"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                     <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -48,14 +51,55 @@
                                         <color key="baseForegroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vl-mY-cZe">
+                                    <rect key="frame" x="288" y="52" width="102" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="V3a-wH-96N"/>
+                                        <constraint firstAttribute="width" constant="102" id="dCw-a8-1ya"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="Plus" title=" 공부추가" titleAlignment="center">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                        <color key="baseForegroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todo" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-ah-6p0">
+                                    <rect key="frame" x="32" y="381" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="CsQ-H7-iGH"/>
+                                        <constraint firstAttribute="height" constant="24" id="uKG-mF-oaH"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 할 공부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMs-cR-tGf">
+                                    <rect key="frame" x="64" y="382.5" width="87" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-iK-ePq">
+                                    <rect key="frame" x="24" y="427" width="366" height="224"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="224" id="BB5-7O-NGj"/>
+                                    </constraints>
+                                </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="8Vl-mY-cZe" secondAttribute="trailing" constant="24" id="2xC-h7-jxQ"/>
+                                <constraint firstItem="ayO-iK-ePq" firstAttribute="top" secondItem="b7E-ah-6p0" secondAttribute="bottom" constant="22" id="7bz-xr-vve"/>
+                                <constraint firstItem="tMs-cR-tGf" firstAttribute="centerY" secondItem="b7E-ah-6p0" secondAttribute="centerY" id="7sI-tz-dlE"/>
                                 <constraint firstItem="Njf-gU-YXh" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="ALa-6W-2Cc"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="top" secondItem="yn1-qJ-PPl" secondAttribute="bottom" constant="50" id="EMm-C6-fmo"/>
+                                <constraint firstItem="tMs-cR-tGf" firstAttribute="leading" secondItem="b7E-ah-6p0" secondAttribute="trailing" constant="8" id="GOI-KA-1js"/>
+                                <constraint firstItem="ayO-iK-ePq" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="Iaf-Oq-CVS"/>
+                                <constraint firstItem="8Vl-mY-cZe" firstAttribute="centerY" secondItem="yn1-qJ-PPl" secondAttribute="centerY" id="Viq-6E-wB7"/>
+                                <constraint firstItem="b7E-ah-6p0" firstAttribute="top" secondItem="Njf-gU-YXh" secondAttribute="bottom" constant="80" id="Y20-hf-wPT"/>
+                                <constraint firstItem="b7E-ah-6p0" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="aWc-fI-Iu4"/>
                                 <constraint firstItem="yn1-qJ-PPl" firstAttribute="top" secondItem="AtT-rX-n1N" secondAttribute="top" constant="58" id="agS-BQ-b3L"/>
                                 <constraint firstItem="Njf-gU-YXh" firstAttribute="top" secondItem="c43-HD-Wgz" secondAttribute="bottom" constant="24" id="cgZ-HR-zDb"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="juH-w2-Zap"/>
+                                <constraint firstAttribute="trailing" secondItem="ayO-iK-ePq" secondAttribute="trailing" constant="24" id="lHg-18-0OV"/>
                                 <constraint firstAttribute="trailing" secondItem="Njf-gU-YXh" secondAttribute="trailing" constant="24" id="mu4-Si-Jgw"/>
                                 <constraint firstAttribute="height" constant="1500" id="wLg-C0-jns"/>
                                 <constraint firstItem="yn1-qJ-PPl" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="zop-Fa-zmz"/>
@@ -84,5 +128,9 @@
     </objects>
     <resources>
         <image name="Plus" width="12" height="12"/>
+        <image name="todo" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
