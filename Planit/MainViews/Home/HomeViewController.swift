@@ -9,7 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var studyLstTV: UITableView!
+    @IBOutlet weak var studyLstTVHeight: NSLayoutConstraint!
     @IBOutlet weak var addStudyBtn: UIButton!
     @IBOutlet weak var addDdayBtn: UIButton!
     
@@ -19,9 +21,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
-        
         studyLstTV.register(UINib(nibName: "EmptyStudyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyCell")
         studyLstTV.register(UINib(nibName: "HaveStudyTableViewCell", bundle: nil), forCellReuseIdentifier: "haveCell")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.changeHeight()
     }
 
     
@@ -48,11 +53,16 @@ class HomeViewController: UIViewController {
         studyLstTV.delegate = self
         studyLstTV.dataSource = self
         studyLstTV.backgroundColor = UIColor.mainNavy
+        studyLstTV.layer.cornerRadius = 8
     }
 }
 
 
-extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController : UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    func changeHeight() {
+        self.studyLstTVHeight.constant = self.studyLstTV.contentSize.height
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studyDataLst.count
