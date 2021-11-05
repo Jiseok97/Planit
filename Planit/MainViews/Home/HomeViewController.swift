@@ -71,9 +71,6 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "haveCell", for: indexPath) as? HaveStudyTableViewCell else { return UITableViewCell() }
             
-            cell.layer.cornerRadius = 8
-            cell.separatorInset = UIEdgeInsets(top: 50.0, left: 7.0, bottom: 0, right: 0)
-            
             cell.studyTitleLbl.text = studyDataLst[indexPath.row]
             
             return cell
