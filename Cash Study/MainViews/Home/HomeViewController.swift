@@ -17,13 +17,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var ctView: UIView!
     
     
-    var studyDataLst : [String] = ["Empty", "hello", "test", "자격증 시험"]
+    var studyDataLst : [String] = ["Empty", "hello", "test", "자격증 시험", "testData1", "testData2", "testData3", "testData4", "testData5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
-//        setGradation()
+        setGradation()
         
         studyLstCV?.delegate = self
         studyLstCV?.dataSource = self
@@ -48,17 +48,19 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func setGradation() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.mainNavy.cgColor]
+        gradientLayer.colors = [UIColor.gradationStartColor.cgColor, UIColor.mainNavy.cgColor]
         
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        self.view.layer.addSublayer(gradientLayer)
+        gradientLayer.zPosition = 0
+//        self.view.layer.addSublayer(gradientLayer)
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     
@@ -72,6 +74,7 @@ class HomeViewController: UIViewController {
         addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
         
         studyLstCV.layer.cornerRadius = 8
+        studyLstCV.layer.zPosition = 999
     }
     
     

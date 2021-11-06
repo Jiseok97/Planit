@@ -24,5 +24,6 @@ extension UIColor {
     class var placeHolderColor: UIColor { UIColor(hex: 0x6B6C85) }
     class var homeBorderColor: UIColor { UIColor(hex: 0x171853) }
     class var myGray: UIColor { UIColor(hex: 0xD9D9D9) }
-    class var studyCellBgColor : UIColor { UIColor(hex: 0x11123D)}
+    class var studyCellBgColor : UIColor { UIColor(hex: 0x11123D) }
+    class var gradationStartColor: UIColor { UIColor(hex: 0x0D0E34) }
 }
