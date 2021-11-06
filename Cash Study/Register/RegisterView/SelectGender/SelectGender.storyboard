@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Select Gender View Controller-->
         <scene sceneID="KTb-8Y-SZR">
             <objects>
-                <viewController storyboardIdentifier="SelectGenderViewController" id="BFn-ob-8Df" customClass="SelectGenderViewController" customModule="Planit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectGenderViewController" id="BFn-ob-8Df" customClass="SelectGenderViewController" customModule="Cash_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4GX-HQ-G3R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-WL-OlS">
-                                <rect key="frame" x="32" y="756.5" width="350" height="65.5"/>
+                                <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="다음">
@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-WJ-Dla">
-                                <rect key="frame" x="24" y="492.5" width="366" height="76"/>
+                                <rect key="frame" x="24" y="487.5" width="366" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-DW-L1n">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
@@ -99,7 +99,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baE-U4-Tf1">
-                                <rect key="frame" x="24" y="580.5" width="366" height="76"/>
+                                <rect key="frame" x="24" y="575.5" width="366" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-p5-PCg">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
@@ -151,7 +151,7 @@
                             <constraint firstItem="wLc-We-pOb" firstAttribute="centerY" secondItem="QFd-8U-LPE" secondAttribute="centerY" id="VxL-8i-vKa"/>
                             <constraint firstItem="XsN-Uc-48j" firstAttribute="trailing" secondItem="9ud-WL-OlS" secondAttribute="trailing" constant="32" id="WGX-FW-SYb"/>
                             <constraint firstItem="XsN-Uc-48j" firstAttribute="bottom" secondItem="9ud-WL-OlS" secondAttribute="bottom" constant="40" id="YLs-JZ-jNR"/>
-                            <constraint firstItem="9ud-WL-OlS" firstAttribute="height" secondItem="4GX-HQ-G3R" secondAttribute="height" multiplier="0.073" id="aPl-8n-Q7W"/>
+                            <constraint firstItem="9ud-WL-OlS" firstAttribute="height" secondItem="4GX-HQ-G3R" secondAttribute="height" multiplier="0.0788177" id="aPl-8n-Q7W"/>
                             <constraint firstItem="9ud-WL-OlS" firstAttribute="leading" secondItem="XsN-Uc-48j" secondAttribute="leading" constant="32" id="bQO-5i-9S7"/>
                             <constraint firstItem="9ud-WL-OlS" firstAttribute="top" secondItem="baE-U4-Tf1" secondAttribute="bottom" constant="100" id="kLi-mX-ue3"/>
                             <constraint firstItem="n5u-Nb-KUS" firstAttribute="centerY" secondItem="ow7-ww-MAN" secondAttribute="centerY" id="lvV-I1-sH2"/>

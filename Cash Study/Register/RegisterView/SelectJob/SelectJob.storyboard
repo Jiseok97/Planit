@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Select Job View Controller-->
         <scene sceneID="DSb-wM-lul">
             <objects>
-                <viewController storyboardIdentifier="SelectJobViewController" id="92A-rx-FJN" customClass="SelectJobViewController" customModule="Planit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectJobViewController" id="92A-rx-FJN" customClass="SelectJobViewController" customModule="Cash_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3yB-nW-bHW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCg-ZE-jNj">
-                                <rect key="frame" x="32" y="756.5" width="350" height="65.5"/>
+                                <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="다음">
@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTn-Yx-Xc7">
-                                <rect key="frame" x="24" y="638.5" width="174" height="58"/>
+                                <rect key="frame" x="24" y="633" width="176.5" height="58.5"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="취업준비생">
@@ -86,7 +86,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGI-Yt-FYN">
-                                <rect key="frame" x="216" y="638.5" width="174" height="58"/>
+                                <rect key="frame" x="213.5" y="633" width="176.5" height="58.5"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="직장인">
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHC-gt-SPZ">
-                                <rect key="frame" x="24" y="572" width="174" height="58.5"/>
+                                <rect key="frame" x="24" y="567" width="176.5" height="58"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="대학생">
@@ -108,7 +108,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtX-BA-ckI">
-                                <rect key="frame" x="216" y="572" width="174" height="58.5"/>
+                                <rect key="frame" x="213.5" y="567" width="176.5" height="58"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="고시생">
@@ -119,7 +119,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ii-Wk-lxz">
-                                <rect key="frame" x="24" y="506" width="174" height="58"/>
+                                <rect key="frame" x="24" y="500.5" width="176.5" height="58.5"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="고등학생">
@@ -130,7 +130,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-at-hfC">
-                                <rect key="frame" x="216" y="506" width="174" height="58"/>
+                                <rect key="frame" x="213.5" y="500.5" width="176.5" height="58.5"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="N수생">
@@ -141,7 +141,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TO2-Eo-U9G">
-                                <rect key="frame" x="24" y="439.5" width="174" height="58.5"/>
+                                <rect key="frame" x="24" y="434.5" width="176.5" height="58"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="초등학생">
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0u-hw-qko">
-                                <rect key="frame" x="216" y="439.5" width="174" height="58.5"/>
+                                <rect key="frame" x="213.5" y="434.5" width="176.5" height="58"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.031372549020000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="중학생">
@@ -177,11 +177,14 @@
                         <constraints>
                             <constraint firstItem="2Ii-Wk-lxz" firstAttribute="height" secondItem="mHC-gt-SPZ" secondAttribute="height" id="0h2-r8-HGJ"/>
                             <constraint firstItem="LTn-Yx-Xc7" firstAttribute="height" secondItem="3yB-nW-bHW" secondAttribute="height" multiplier="0.065" id="1SC-Ct-cFg"/>
+                            <constraint firstItem="LTn-Yx-Xc7" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="3SV-VD-VYa"/>
                             <constraint firstItem="fnB-HH-5SO" firstAttribute="leading" secondItem="fFO-Xx-yc6" secondAttribute="trailing" constant="8" id="45X-Td-HQC"/>
                             <constraint firstItem="QCg-ZE-jNj" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="32" id="53E-hw-G63"/>
                             <constraint firstItem="LTn-Yx-Xc7" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="24" id="5O6-Tv-vf9"/>
+                            <constraint firstItem="2Ii-Wk-lxz" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="5UF-Zh-jSJ"/>
                             <constraint firstItem="mHC-gt-SPZ" firstAttribute="top" secondItem="2Ii-Wk-lxz" secondAttribute="bottom" constant="8" id="639-iB-Ycg"/>
-                            <constraint firstItem="OOM-at-hfC" firstAttribute="width" secondItem="rtX-BA-ckI" secondAttribute="width" id="CNZ-MX-eMs"/>
+                            <constraint firstItem="mHC-gt-SPZ" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="9lV-QU-M62"/>
+                            <constraint firstItem="TO2-Eo-U9G" firstAttribute="width" secondItem="3yB-nW-bHW" secondAttribute="width" multiplier="0.426667" id="AWg-k0-6Mu"/>
                             <constraint firstItem="r14-me-iAw" firstAttribute="top" secondItem="tqj-dx-Aip" secondAttribute="bottom" constant="12" id="DOh-LE-aoZ"/>
                             <constraint firstItem="mHC-gt-SPZ" firstAttribute="height" secondItem="LTn-Yx-Xc7" secondAttribute="height" id="EIF-q8-CYr"/>
                             <constraint firstItem="2Ii-Wk-lxz" firstAttribute="top" secondItem="TO2-Eo-U9G" secondAttribute="bottom" constant="8" id="EYP-4W-4Yu"/>
@@ -189,15 +192,14 @@
                             <constraint firstItem="A0u-hw-qko" firstAttribute="height" secondItem="OOM-at-hfC" secondAttribute="height" id="H5c-AU-z8z"/>
                             <constraint firstItem="TO2-Eo-U9G" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="24" id="Hkz-lI-R80"/>
                             <constraint firstItem="OOM-at-hfC" firstAttribute="height" secondItem="rtX-BA-ckI" secondAttribute="height" id="IFE-Zk-WOT"/>
-                            <constraint firstItem="A0u-hw-qko" firstAttribute="width" secondItem="OOM-at-hfC" secondAttribute="width" id="IUJ-M4-jdV"/>
-                            <constraint firstItem="2Ii-Wk-lxz" firstAttribute="width" secondItem="mHC-gt-SPZ" secondAttribute="width" id="JG2-4O-2Il"/>
                             <constraint firstItem="rtX-BA-ckI" firstAttribute="top" secondItem="OOM-at-hfC" secondAttribute="bottom" constant="8" id="JOf-cI-WmR"/>
                             <constraint firstItem="fnB-HH-5SO" firstAttribute="centerY" secondItem="fFO-Xx-yc6" secondAttribute="centerY" id="JaV-Qw-5lB"/>
+                            <constraint firstItem="rtX-BA-ckI" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="KwP-lr-xSh"/>
                             <constraint firstItem="2CS-Rn-OfD" firstAttribute="trailing" secondItem="wGI-Yt-FYN" secondAttribute="trailing" constant="24" id="Kz5-fB-SWC"/>
+                            <constraint firstItem="OOM-at-hfC" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="OYw-OV-P6v"/>
                             <constraint firstItem="TO2-Eo-U9G" firstAttribute="height" secondItem="2Ii-Wk-lxz" secondAttribute="height" id="Ps6-56-btn"/>
-                            <constraint firstItem="LTn-Yx-Xc7" firstAttribute="width" secondItem="3yB-nW-bHW" secondAttribute="width" multiplier="0.42" id="QTS-qs-NtT"/>
                             <constraint firstItem="wGI-Yt-FYN" firstAttribute="height" secondItem="3yB-nW-bHW" secondAttribute="height" multiplier="0.065" id="Qh6-gQ-N1f"/>
-                            <constraint firstItem="QCg-ZE-jNj" firstAttribute="height" secondItem="3yB-nW-bHW" secondAttribute="height" multiplier="0.073" id="V93-iE-YEs"/>
+                            <constraint firstItem="QCg-ZE-jNj" firstAttribute="height" secondItem="3yB-nW-bHW" secondAttribute="height" multiplier="0.0788177" id="V93-iE-YEs"/>
                             <constraint firstItem="r14-me-iAw" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="32" id="VPf-5y-gAb"/>
                             <constraint firstItem="wGI-Yt-FYN" firstAttribute="top" secondItem="rtX-BA-ckI" secondAttribute="bottom" constant="8" id="WO7-iy-nKF"/>
                             <constraint firstItem="QCg-ZE-jNj" firstAttribute="top" secondItem="LTn-Yx-Xc7" secondAttribute="bottom" constant="60" id="Wue-KR-iKi"/>
@@ -209,18 +211,16 @@
                             <constraint firstItem="2CS-Rn-OfD" firstAttribute="trailing" secondItem="OOM-at-hfC" secondAttribute="trailing" constant="24" id="bf0-Gp-PRh"/>
                             <constraint firstItem="2CS-Rn-OfD" firstAttribute="trailing" secondItem="rtX-BA-ckI" secondAttribute="trailing" constant="24" id="blG-8S-RG4"/>
                             <constraint firstItem="esO-7J-dOo" firstAttribute="centerY" secondItem="fnB-HH-5SO" secondAttribute="centerY" id="eJu-ZA-Bnp"/>
-                            <constraint firstItem="TO2-Eo-U9G" firstAttribute="width" secondItem="2Ii-Wk-lxz" secondAttribute="width" id="gIO-0V-zdq"/>
                             <constraint firstItem="rtX-BA-ckI" firstAttribute="height" secondItem="wGI-Yt-FYN" secondAttribute="height" id="gzh-vN-mbk"/>
                             <constraint firstItem="mHC-gt-SPZ" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="24" id="hiX-MK-uEi"/>
                             <constraint firstItem="LTn-Yx-Xc7" firstAttribute="top" secondItem="mHC-gt-SPZ" secondAttribute="bottom" constant="8" id="ifx-o1-hhc"/>
                             <constraint firstItem="Hjs-k2-7On" firstAttribute="leading" secondItem="tqj-dx-Aip" secondAttribute="trailing" constant="8" id="jKS-gF-8Zy"/>
                             <constraint firstItem="2CS-Rn-OfD" firstAttribute="trailing" secondItem="QCg-ZE-jNj" secondAttribute="trailing" constant="32" id="lfd-o2-cfM"/>
+                            <constraint firstItem="wGI-Yt-FYN" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="nY4-nQ-OMA"/>
+                            <constraint firstItem="A0u-hw-qko" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="pCR-jt-VY2"/>
                             <constraint firstItem="wGI-Yt-FYN" firstAttribute="centerY" secondItem="LTn-Yx-Xc7" secondAttribute="centerY" id="qbK-TO-JVL"/>
-                            <constraint firstItem="wGI-Yt-FYN" firstAttribute="width" secondItem="3yB-nW-bHW" secondAttribute="width" multiplier="0.42" id="sYf-xf-nfT"/>
-                            <constraint firstItem="rtX-BA-ckI" firstAttribute="width" secondItem="wGI-Yt-FYN" secondAttribute="width" id="sog-Lv-BKq"/>
                             <constraint firstItem="OOM-at-hfC" firstAttribute="top" secondItem="A0u-hw-qko" secondAttribute="bottom" constant="8" id="tos-2c-Zqe"/>
                             <constraint firstItem="fFO-Xx-yc6" firstAttribute="centerY" secondItem="Hjs-k2-7On" secondAttribute="centerY" id="uuz-IK-4Cd"/>
-                            <constraint firstItem="mHC-gt-SPZ" firstAttribute="width" secondItem="LTn-Yx-Xc7" secondAttribute="width" id="vbD-Th-coD"/>
                             <constraint firstItem="tqj-dx-Aip" firstAttribute="top" secondItem="b6b-1b-mOB" secondAttribute="bottom" constant="64" id="wtW-49-ESl"/>
                             <constraint firstItem="2CS-Rn-OfD" firstAttribute="bottom" secondItem="QCg-ZE-jNj" secondAttribute="bottom" constant="40" id="x2t-Oj-Uct"/>
                             <constraint firstItem="b6b-1b-mOB" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="32" id="zMp-tD-0Ty"/>

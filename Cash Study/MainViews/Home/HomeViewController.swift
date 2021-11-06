@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var ctView: UIView!
     
     
-    var studyDataLst : [String] = ["Empty", "hello", "test", "자격증 시험", "testData1", "testData2", "testData3", "testData4", "testData5"]
+    var studyDataLst : [String] = ["Empty", "hello", "Empty", "hello", "Empty", "hello", "Empty", "hello", "Empty", "hello"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +78,26 @@ class HomeViewController: UIViewController {
     }
     
     
+    
+//    func customNavBarLeft(title: String) {
+//        let containerView = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
+//        let topLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 15))
+//        topLabel.numberOfLines = 1
+//        topLabel.textAlignment = .left
+//        topLabel.font = .systemFont(ofSize: 11.5)
+//        topLabel.textColor = .black
+//        topLabel.text = "지금 보고있는 지역은"
+//
+//        let bottomLabel = UILabel(frame: CGRect(x: 0, y: topLabel.frame.height, width: 200, height: 20))
+//        bottomLabel.numberOfLines = 1
+//        bottomLabel.textAlignment = .left
+//        bottomLabel.font = .systemFont(ofSize: 18)
+//        bottomLabel.textColor = .black
+//        bottomLabel.text = title
+//        bottomLabel.sizeToFit()
+//    }
+    
+    
 }
 
 
@@ -85,6 +105,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func changeHeight() {
         self.studyLstCVHeight.constant = self.studyLstCV.collectionViewLayout.collectionViewContentSize.height
+//        self.studyLstCVHeight.constant = CGFloat(studyDataLst.count * 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if studyDataLst.count > 1 {
+            // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

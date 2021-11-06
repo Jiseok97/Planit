@@ -449,8 +449,8 @@
 			isa = PBXGroup;
 			children = (
 				B6B118312716D261008842BA /* Cash Study */,
-				B6B118482716D262008842BA /* PlanitTests */,
-				B6B118532716D262008842BA /* PlanitUITests */,
+				B6B118482716D262008842BA /* Cash StudyTests */,
+				B6B118532716D262008842BA /* Cash StudyUITests */,
 				B6B118302716D261008842BA /* Products */,
 				1608D476363EB172B6AFCFB7 /* Pods */,
 				5E3D4B64F2D9191CD05CDD04 /* Frameworks */,
@@ -481,23 +481,21 @@
 			path = "Cash Study";
 			sourceTree = "<group>";
 		};
-		B6B118482716D262008842BA /* PlanitTests */ = {
+		B6B118482716D262008842BA /* Cash StudyTests */ = {
 			isa = PBXGroup;
 			children = (
 				B6B118492716D262008842BA /* PlanitTests.swift */,
 				B6B1184B2716D262008842BA /* Info.plist */,
 			);
-			name = PlanitTests;
 			path = "Cash StudyTests";
 			sourceTree = "<group>";
 		};
-		B6B118532716D262008842BA /* PlanitUITests */ = {
+		B6B118532716D262008842BA /* Cash StudyUITests */ = {
 			isa = PBXGroup;
 			children = (
 				B6B118542716D262008842BA /* PlanitUITests.swift */,
 				B6B118562716D262008842BA /* Info.plist */,
 			);
-			name = PlanitUITests;
 			path = "Cash StudyUITests";
 			sourceTree = "<group>";
 		};

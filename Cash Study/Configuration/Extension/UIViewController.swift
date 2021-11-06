@@ -10,7 +10,6 @@ import UIKit
 extension UIViewController {
     
     // MARK: Change Root VC
-    
     func changeRootVC(_ viewControllerToPresent: UIViewController) {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = viewControllerToPresent

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Input Birthday View Controller-->
         <scene sceneID="Nh2-3l-OM6">
             <objects>
-                <viewController storyboardIdentifier="InputBirthdayViewController" id="uDA-tF-BYl" customClass="InputBirthdayViewController" customModule="Planit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputBirthdayViewController" id="uDA-tF-BYl" customClass="InputBirthdayViewController" customModule="Cash_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0dv-X8-ZNo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTD-Ry-yJk">
-                                <rect key="frame" x="24" y="580.5" width="366" height="76"/>
+                                <rect key="frame" x="24" y="575.5" width="366" height="76"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YYYY/MM/DD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jby-DS-2jo">
                                         <rect key="frame" x="26" y="10" width="314" height="56"/>
@@ -82,7 +82,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-dA-gss">
-                                <rect key="frame" x="32" y="756.5" width="350" height="65.5"/>
+                                <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="다음">
@@ -116,7 +116,7 @@
                             <constraint firstItem="ESd-TR-8Ef" firstAttribute="centerY" secondItem="wsg-Hi-VAX" secondAttribute="centerY" id="PvF-eJ-8M3"/>
                             <constraint firstItem="U6F-Y6-mfG" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="R3x-Mm-Yzz"/>
                             <constraint firstItem="sih-Ff-2ed" firstAttribute="trailing" secondItem="nTD-Ry-yJk" secondAttribute="trailing" constant="24" id="RnO-eA-4NL"/>
-                            <constraint firstItem="XAD-dA-gss" firstAttribute="height" secondItem="0dv-X8-ZNo" secondAttribute="height" multiplier="0.073" id="Zdv-29-tTQ"/>
+                            <constraint firstItem="XAD-dA-gss" firstAttribute="height" secondItem="0dv-X8-ZNo" secondAttribute="height" multiplier="0.0788177" id="Zdv-29-tTQ"/>
                             <constraint firstItem="XfS-f2-MVg" firstAttribute="centerY" secondItem="ihw-j1-0oI" secondAttribute="centerY" id="aTy-xL-3w8"/>
                             <constraint firstItem="ekX-AN-111" firstAttribute="centerY" secondItem="XfS-f2-MVg" secondAttribute="centerY" id="dHL-i0-qdK"/>
                             <constraint firstItem="ihw-j1-0oI" firstAttribute="leading" secondItem="ESd-TR-8Ef" secondAttribute="trailing" constant="8" id="jEv-WK-mgH"/>
