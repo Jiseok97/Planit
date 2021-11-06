@@ -13,5 +13,4 @@ class EmptyStudyCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

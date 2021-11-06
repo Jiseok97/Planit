@@ -44,8 +44,9 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         self.tabBar.tintColor = UIColor.white
         self.tabBar.barTintColor = UIColor.mainNavy
+        self.tabBar.backgroundColor = UIColor.mainNavy
         self.tabBar.isTranslucent = false
-        self.tabBar.layer.borderWidth = 1
+        self.tabBar.layer.borderWidth = 0.4
         self.tabBar.layer.borderColor = UIColor.homeBorderColor.cgColor
         self.tabBar.clipsToBounds = true
         
