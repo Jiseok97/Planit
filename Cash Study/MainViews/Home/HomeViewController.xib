@@ -8,13 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Planit" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="addDdayBtn" destination="Njf-gU-YXh" id="OUK-Am-SIH"/>
                 <outlet property="addStudyBtn" destination="8Vl-mY-cZe" id="yhA-11-yPB"/>
                 <outlet property="scrollView" destination="NrU-8q-1Ui" id="Jnk-8q-P3W"/>
-                <outlet property="studyLstTV" destination="ayO-iK-ePq" id="WTJ-am-7GH"/>
-                <outlet property="studyLstTVHeight" destination="XE8-UC-Ya6" id="Xbk-wL-6rf"/>
+                <outlet property="studyLstCV" destination="mLS-r5-ApP" id="unS-Op-hv5"/>
+                <outlet property="studyLstCVHeight" destination="CZo-Ic-IeA" id="JU5-gw-qgP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-rX-n1N">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLANIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-qJ-PPl">
                                     <rect key="frame" x="32" y="58" width="71" height="24"/>
@@ -77,33 +77,37 @@
                                     <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-iK-ePq">
-                                    <rect key="frame" x="24" y="427" width="366" height="800"/>
-                                    <color key="backgroundColor" red="0.066666666669999999" green="0.070588235289999995" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-r5-ApP">
+                                    <rect key="frame" x="24" y="427" width="366" height="700"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="800" id="XE8-UC-Ya6"/>
+                                        <constraint firstAttribute="height" constant="700" id="CZo-Ic-IeA"/>
                                     </constraints>
-                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                </tableView>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zCD-7F-11J">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
                             </subviews>
                             <color key="backgroundColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="8Vl-mY-cZe" secondAttribute="trailing" constant="24" id="2xC-h7-jxQ"/>
-                                <constraint firstItem="ayO-iK-ePq" firstAttribute="top" secondItem="b7E-ah-6p0" secondAttribute="bottom" constant="22" id="7bz-xr-vve"/>
                                 <constraint firstItem="tMs-cR-tGf" firstAttribute="centerY" secondItem="b7E-ah-6p0" secondAttribute="centerY" id="7sI-tz-dlE"/>
                                 <constraint firstItem="Njf-gU-YXh" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="ALa-6W-2Cc"/>
-                                <constraint firstAttribute="height" constant="1000" id="BVu-oT-TwA"/>
+                                <constraint firstAttribute="height" constant="900" id="BVu-oT-TwA"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="top" secondItem="yn1-qJ-PPl" secondAttribute="bottom" constant="50" id="EMm-C6-fmo"/>
                                 <constraint firstItem="tMs-cR-tGf" firstAttribute="leading" secondItem="b7E-ah-6p0" secondAttribute="trailing" constant="8" id="GOI-KA-1js"/>
-                                <constraint firstItem="ayO-iK-ePq" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="Iaf-Oq-CVS"/>
+                                <constraint firstItem="mLS-r5-ApP" firstAttribute="top" secondItem="b7E-ah-6p0" secondAttribute="bottom" constant="22" id="Tbl-dk-tBj"/>
                                 <constraint firstItem="8Vl-mY-cZe" firstAttribute="centerY" secondItem="yn1-qJ-PPl" secondAttribute="centerY" id="Viq-6E-wB7"/>
                                 <constraint firstItem="b7E-ah-6p0" firstAttribute="top" secondItem="Njf-gU-YXh" secondAttribute="bottom" constant="80" id="Y20-hf-wPT"/>
                                 <constraint firstItem="b7E-ah-6p0" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="aWc-fI-Iu4"/>
                                 <constraint firstItem="yn1-qJ-PPl" firstAttribute="top" secondItem="AtT-rX-n1N" secondAttribute="top" constant="58" id="agS-BQ-b3L"/>
                                 <constraint firstItem="Njf-gU-YXh" firstAttribute="top" secondItem="c43-HD-Wgz" secondAttribute="bottom" constant="24" id="cgZ-HR-zDb"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="juH-w2-Zap"/>
-                                <constraint firstAttribute="trailing" secondItem="ayO-iK-ePq" secondAttribute="trailing" constant="24" id="lHg-18-0OV"/>
                                 <constraint firstAttribute="trailing" secondItem="Njf-gU-YXh" secondAttribute="trailing" constant="24" id="mu4-Si-Jgw"/>
+                                <constraint firstItem="mLS-r5-ApP" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="pGd-ks-Tpc"/>
+                                <constraint firstAttribute="trailing" secondItem="mLS-r5-ApP" secondAttribute="trailing" constant="24" id="pgw-Fm-e2U"/>
                                 <constraint firstItem="yn1-qJ-PPl" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="zop-Fa-zmz"/>
                             </constraints>
                         </view>

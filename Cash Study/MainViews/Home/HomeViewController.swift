@@ -10,23 +10,30 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var studyLstTV: UITableView!
-    @IBOutlet weak var studyLstTVHeight: NSLayoutConstraint!
     @IBOutlet weak var addStudyBtn: UIButton!
     @IBOutlet weak var addDdayBtn: UIButton!
+    @IBOutlet weak var studyLstCV: UICollectionView!
+    @IBOutlet weak var studyLstCVHeight: NSLayoutConstraint!
     
-    var studyDataLst : [String] = ["Empty", "Have", "Hello", "MyStudy", "GoOut", "sleep"]
+    var studyDataLst : [String] = ["Empty"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
-        studyLstTV.register(UINib(nibName: "EmptyStudyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyCell")
-        studyLstTV.register(UINib(nibName: "HaveStudyTableViewCell", bundle: nil), forCellReuseIdentifier: "haveCell")
+        
+        studyLstCV?.delegate = self
+        studyLstCV?.dataSource = self
+        studyLstCV.register(UINib(nibName: "HaveStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "haveCell")
+        studyLstCV.register(UINib(nibName: "EmptyStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyCell")
+        
+        if let collectionViewLayout = studyLstCV.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
     
     override func viewDidLayoutSubviews() {
-//        self.changeHeight()
+        self.changeHeight()
     }
 
     
@@ -50,49 +57,47 @@ class HomeViewController: UIViewController {
         addStudyBtn.layer.borderWidth = 1
         addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
         
-        studyLstTV.delegate = self
-        studyLstTV.dataSource = self
-        studyLstTV.backgroundColor = UIColor.mainNavy
-        studyLstTV.layer.cornerRadius = 8
+        studyLstCV.layer.cornerRadius = 8
     }
 }
 
 
-extension HomeViewController : UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func changeHeight() {
-//        self.studyLstTVHeight.constant = self.view.intrinsicContentSize.height
+        self.studyLstCVHeight.constant = self.studyLstCV.collectionViewLayout.collectionViewContentSize.height
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return studyDataLst.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if studyDataLst.count == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as? EmptyStudyTableViewCell else { return UITableViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
             
+            cell.backgroundColor = UIColor.mainNavy
+            cell.layer.cornerRadius = 8
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-            cell.layer.cornerRadius = 8
             
             return cell
             
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "haveCell", for: indexPath) as? HaveStudyTableViewCell else { return UITableViewCell() }
             
-            cell.studyTitleLbl.text = studyDataLst[indexPath.row]
             
-            return cell
+            return UICollectionViewCell()
         }
-       
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width * 0.872
         if studyDataLst.count == 1 {
-            return 224
+            let height = self.view.frame.height * 0.27586206896
+            return CGSize(width: width, height: height)
         } else {
-            return 120
+            let height = self.view.frame.height * 0.12068965517
+            return CGSize(width: width, height: height)
         }
     }
     

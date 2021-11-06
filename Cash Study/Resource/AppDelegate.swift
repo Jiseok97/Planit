@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
 import IQKeyboardManagerSwift
+import AuthenticationServices
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // About Keyboard
         IQKeyboardManager.shared.enable = true
+        
+        // Apple Login
+//        let appleIDProvider = ASAuthorizationAppleIDProvider()
+//        appleIDProvider.getCredentialState(forUserID: , completion: <#T##(ASAuthorizationAppleIDProvider.CredentialState, Error?) -> Void#>)
         
         return true
     }

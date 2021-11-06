@@ -12,6 +12,10 @@
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
+		B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */; };
+		B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */; };
+		B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */; };
+		B61FAD1627363D1B00D11538 /* EmptyStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAD1427363D1B00D11538 /* EmptyStudyCollectionViewCell.xib */; };
 		B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6224208272D06FE004F6750 /* nickNameInput.swift */; };
 		B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420A272D0751004F6750 /* nickNameEntity.swift */; };
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
@@ -53,10 +57,6 @@
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
-		B6BFB4082733BA4100C0C97D /* HaveStudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFB4062733BA4100C0C97D /* HaveStudyTableViewCell.swift */; };
-		B6BFB4092733BA4100C0C97D /* HaveStudyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BFB4072733BA4100C0C97D /* HaveStudyTableViewCell.xib */; };
-		B6BFB40C2733BA5600C0C97D /* EmptyStudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFB40A2733BA5600C0C97D /* EmptyStudyTableViewCell.swift */; };
-		B6BFB40D2733BA5600C0C97D /* EmptyStudyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BFB40B2733BA5600C0C97D /* EmptyStudyTableViewCell.xib */; };
 		B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AC2730270D00B1326A /* noReceiverEntity.swift */; };
 		B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */; };
 		B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */; };
@@ -99,6 +99,10 @@
 		B60797702727FF8A00D6D454 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
 		B61FAD0E273635CA00D11538 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
+		B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyCollectionViewCell.xib; sourceTree = "<group>"; };
+		B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		B61FAD1427363D1B00D11538 /* EmptyStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStudyCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6224208272D06FE004F6750 /* nickNameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameInput.swift; sourceTree = "<group>"; };
 		B622420A272D0751004F6750 /* nickNameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameEntity.swift; sourceTree = "<group>"; };
 		B622420D272D07EE004F6750 /* NickNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDataManager.swift; sourceTree = "<group>"; };
@@ -146,10 +150,6 @@
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
-		B6BFB4062733BA4100C0C97D /* HaveStudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyTableViewCell.swift; sourceTree = "<group>"; };
-		B6BFB4072733BA4100C0C97D /* HaveStudyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyTableViewCell.xib; sourceTree = "<group>"; };
-		B6BFB40A2733BA5600C0C97D /* EmptyStudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStudyTableViewCell.swift; sourceTree = "<group>"; };
-		B6BFB40B2733BA5600C0C97D /* EmptyStudyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStudyTableViewCell.xib; sourceTree = "<group>"; };
 		B6C455AC2730270D00B1326A /* noReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverDataManager.swift; sourceTree = "<group>"; };
@@ -571,8 +571,8 @@
 		B6BFB4042733BA1700C0C97D /* EmptyStudyCell */ = {
 			isa = PBXGroup;
 			children = (
-				B6BFB40B2733BA5600C0C97D /* EmptyStudyTableViewCell.xib */,
-				B6BFB40A2733BA5600C0C97D /* EmptyStudyTableViewCell.swift */,
+				B61FAD1427363D1B00D11538 /* EmptyStudyCollectionViewCell.xib */,
+				B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */,
 			);
 			path = EmptyStudyCell;
 			sourceTree = "<group>";
@@ -580,8 +580,8 @@
 		B6BFB4052733BA2A00C0C97D /* HaveStudyCell */ = {
 			isa = PBXGroup;
 			children = (
-				B6BFB4072733BA4100C0C97D /* HaveStudyTableViewCell.xib */,
-				B6BFB4062733BA4100C0C97D /* HaveStudyTableViewCell.swift */,
+				B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */,
+				B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */,
 			);
 			path = HaveStudyCell;
 			sourceTree = "<group>";
@@ -755,14 +755,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61FAD1627363D1B00D11538 /* EmptyStudyCollectionViewCell.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
-				B6BFB4092733BA4100C0C97D /* HaveStudyTableViewCell.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
-				B6BFB40D2733BA5600C0C97D /* EmptyStudyTableViewCell.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
@@ -770,6 +769,7 @@
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
+				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,6 +840,7 @@
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
+				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
 				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
@@ -861,15 +862,14 @@
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
+				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
-				B6BFB40C2733BA5600C0C97D /* EmptyStudyTableViewCell.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
-				B6BFB4082733BA4100C0C97D /* HaveStudyTableViewCell.swift in Sources */,
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
@@ -1039,6 +1039,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1060,6 +1061,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
