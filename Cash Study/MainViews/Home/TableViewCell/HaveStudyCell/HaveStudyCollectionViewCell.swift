@@ -9,6 +9,10 @@ import UIKit
 
 class HaveStudyCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var subLbl: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -14,16 +14,20 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addDdayBtn: UIButton!
     @IBOutlet weak var studyLstCV: UICollectionView!
     @IBOutlet weak var studyLstCVHeight: NSLayoutConstraint!
+    @IBOutlet weak var ctView: UIView!
     
-    var studyDataLst : [String] = ["Empty"]
+    
+    var studyDataLst : [String] = ["Empty", "hello", "test", "자격증 시험"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
+//        setGradation()
         
         studyLstCV?.delegate = self
         studyLstCV?.dataSource = self
+        studyLstCV.backgroundColor = UIColor.mainNavy
         studyLstCV.register(UINib(nibName: "HaveStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "haveCell")
         studyLstCV.register(UINib(nibName: "EmptyStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyCell")
         
@@ -44,7 +48,17 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    func setGradation() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.mainNavy.cgColor]
+        
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        self.view.layer.addSublayer(gradientLayer)
     }
     
     
@@ -59,6 +73,8 @@ class HomeViewController: UIViewController {
         
         studyLstCV.layer.cornerRadius = 8
     }
+    
+    
 }
 
 
@@ -84,9 +100,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             return cell
             
         } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
             
+            cell.nameLbl.text = studyDataLst[indexPath.row]
+            cell.layer.cornerRadius = 8
+            cell.backgroundColor = UIColor.studyCellBgColor
             
-            return UICollectionViewCell()
+            return cell
         }
     }
     

@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="addDdayBtn" destination="Njf-gU-YXh" id="OUK-Am-SIH"/>
                 <outlet property="addStudyBtn" destination="8Vl-mY-cZe" id="yhA-11-yPB"/>
+                <outlet property="ctView" destination="AtT-rX-n1N" id="S8Y-IT-SaF"/>
                 <outlet property="scrollView" destination="NrU-8q-1Ui" id="Jnk-8q-P3W"/>
                 <outlet property="studyLstCV" destination="mLS-r5-ApP" id="unS-Op-hv5"/>
                 <outlet property="studyLstCVHeight" destination="CZo-Ic-IeA" id="JU5-gw-qgP"/>
@@ -79,10 +80,11 @@
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-r5-ApP">
                                     <rect key="frame" x="24" y="427" width="366" height="700"/>
+                                    <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="700" id="CZo-Ic-IeA"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zCD-7F-11J">
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="zCD-7F-11J">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -90,7 +92,6 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                             </subviews>
-                            <color key="backgroundColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="8Vl-mY-cZe" secondAttribute="trailing" constant="24" id="2xC-h7-jxQ"/>
                                 <constraint firstItem="tMs-cR-tGf" firstAttribute="centerY" secondItem="b7E-ah-6p0" secondAttribute="centerY" id="7sI-tz-dlE"/>

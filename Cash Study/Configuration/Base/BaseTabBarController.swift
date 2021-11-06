@@ -49,8 +49,5 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
         self.tabBar.layer.borderColor = UIColor.homeBorderColor.cgColor
         self.tabBar.clipsToBounds = true
         
-        
-        
-        
     }
 }
