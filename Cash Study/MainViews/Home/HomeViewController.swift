@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var topLbl: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var addStudyBtn: UIButton!
     @IBOutlet weak var addDdayBtn: UIButton!
@@ -27,7 +29,7 @@ class HomeViewController: UIViewController {
         
         studyLstCV?.delegate = self
         studyLstCV?.dataSource = self
-        studyLstCV.backgroundColor = UIColor.mainNavy
+        studyLstCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         studyLstCV.register(UINib(nibName: "HaveStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "haveCell")
         studyLstCV.register(UINib(nibName: "EmptyStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyCell")
         
@@ -51,17 +53,7 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func setGradation() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [UIColor.gradationStartColor.cgColor, UIColor.mainNavy.cgColor]
-        
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        gradientLayer.zPosition = 0
-//        self.view.layer.addSublayer(gradientLayer)
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-    }
+    
     
     
     func setUI() {
@@ -71,31 +63,15 @@ class HomeViewController: UIViewController {
         
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
-        addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
+        addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2 - 5
         
         studyLstCV.layer.cornerRadius = 8
         studyLstCV.layer.zPosition = 999
+        
+        guard let name = UserInfoData.name as? String else { return }
+        self.topLbl.text = "\(name) 님의 \n 공부를 응원합니다."
     }
     
-    
-    
-//    func customNavBarLeft(title: String) {
-//        let containerView = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
-//        let topLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 15))
-//        topLabel.numberOfLines = 1
-//        topLabel.textAlignment = .left
-//        topLabel.font = .systemFont(ofSize: 11.5)
-//        topLabel.textColor = .black
-//        topLabel.text = "지금 보고있는 지역은"
-//
-//        let bottomLabel = UILabel(frame: CGRect(x: 0, y: topLabel.frame.height, width: 200, height: 20))
-//        bottomLabel.numberOfLines = 1
-//        bottomLabel.textAlignment = .left
-//        bottomLabel.font = .systemFont(ofSize: 18)
-//        bottomLabel.textColor = .black
-//        bottomLabel.text = title
-//        bottomLabel.sizeToFit()
-//    }
     
     
 }
@@ -111,6 +87,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if studyDataLst.count > 1 {
             // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
+            let vc = UIHostingController(rootView: TimerView(name: .constant(studyDataLst[indexPath.row])))
+//            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
         }
     }
     

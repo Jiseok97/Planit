@@ -148,17 +148,6 @@ class LoginViewController: UIViewController {
         controller.performRequests()
     }
     
-    
-    // MARK: 타이머 뷰 (SwiftUI)
-    func moveTimerVC(name: String) {
-        let vc = UIHostingController(rootView: TimerView(name: .constant(name)))
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
-    }
-    
-    
-    
-    
     @IBAction func testMove(_ sender: Any) {
         changeRootVC(BaseTabBarController())
     }
