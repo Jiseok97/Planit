@@ -33,18 +33,11 @@ PODS:
     - KakaoSDKCommon/Common (= 2.5.5)
   - KakaoSDKUser (2.5.5):
     - KakaoSDKAuth (= 2.5.5)
-  - Moya (15.0.0):
-    - Moya/Core (= 15.0.0)
-  - Moya/Core (15.0.0):
-    - Alamofire (~> 5.0)
-  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - IQKeyboardManagerSwift
   - KakaoSDK
-  - Moya (~> 15.0.0)
-  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -59,8 +52,6 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
-    - Moya
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -74,9 +65,7 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: d464152ad2f6612753c12dcc91a1967e9181d46f
   KakaoSDKTemplate: 5e9fd8dacb0516cc2bdb0fbd6b5b81a8a4277afa
   KakaoSDKUser: 7bb1c38bbd4608bd4e7eebbd4eda130338364fb3
-  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: cc1a2c2e20bad397712aeded8ce4dd91cdcfd2c5
+PODFILE CHECKSUM: 85ba4705ec99698bb0ff04d58c19563c88f4c6e9
 
 COCOAPODS: 1.11.2

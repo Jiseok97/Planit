@@ -12,7 +12,6 @@ target 'Cash Study' do
   pod 'IQKeyboardManagerSwift'
 
   # Server Networking
-  pod 'Moya', '~> 15.0.0'
   pod 'Alamofire', '~> 5.4'
-  pod 'SwiftyJSON', '~> 4.0'
+
 end

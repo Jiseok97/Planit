@@ -56,6 +56,11 @@
 		B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269C272941370021A9A4 /* SelectJobViewController.swift */; };
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
+		B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B448F82738CC9B00AB45AC /* TimerData.swift */; };
+		B6B448FD2738EDF000AB45AC /* AddDdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B448FB2738EDF000AB45AC /* AddDdayViewController.swift */; };
+		B6B448FE2738EDF000AB45AC /* AddDdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B448FC2738EDF000AB45AC /* AddDdayViewController.xib */; };
+		B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */; };
+		B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
 		B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AC2730270D00B1326A /* noReceiverEntity.swift */; };
 		B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */; };
@@ -149,6 +154,11 @@
 		B6B2269C272941370021A9A4 /* SelectJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobViewController.swift; sourceTree = "<group>"; };
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
+		B6B448F82738CC9B00AB45AC /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
+		B6B448FB2738EDF000AB45AC /* AddDdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayViewController.swift; sourceTree = "<group>"; };
+		B6B448FC2738EDF000AB45AC /* AddDdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDdayViewController.xib; sourceTree = "<group>"; };
+		B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStopViewController.swift; sourceTree = "<group>"; };
+		B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerStopViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
 		B6C455AC2730270D00B1326A /* noReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverEntity.swift; sourceTree = "<group>"; };
@@ -280,6 +290,7 @@
 		B65310DC27253E32004AD249 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				B6B448FF2738EF1B00AB45AC /* CustomView */,
 				B65310DF27253E49004AD249 /* Model */,
 				B65310DE27253E45004AD249 /* View */,
 				B65310DD27253E40004AD249 /* ViewModel */,
@@ -306,6 +317,7 @@
 		B65310DF27253E49004AD249 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6B448F82738CC9B00AB45AC /* TimerData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,9 +325,10 @@
 		B66B47742732704C00F89012 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B6BFB4032733BA0A00C0C97D /* TableViewCell */,
 				B66B47762732706000F89012 /* HomeViewController.xib */,
 				B66B47752732706000F89012 /* HomeViewController.swift */,
+				B6B448FA2738EDC000AB45AC /* AddDdayVC */,
+				B6BFB4032733BA0A00C0C97D /* TableViewCell */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
 			path = Home;
@@ -557,6 +570,24 @@
 			path = TermsOfUse;
 			sourceTree = "<group>";
 		};
+		B6B448FA2738EDC000AB45AC /* AddDdayVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6B448FC2738EDF000AB45AC /* AddDdayViewController.xib */,
+				B6B448FB2738EDF000AB45AC /* AddDdayViewController.swift */,
+			);
+			path = AddDdayVC;
+			sourceTree = "<group>";
+		};
+		B6B448FF2738EF1B00AB45AC /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */,
+				B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		B6BFB4032733BA0A00C0C97D /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,11 +788,13 @@
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
+				B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
+				B6B448FE2738EDF000AB45AC /* AddDdayViewController.xib in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
@@ -863,6 +896,7 @@
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
+				B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
@@ -876,6 +910,8 @@
 				B6D81E172732B588006E641E /* SplashViewController.swift in Sources */,
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
+				B6B448FD2738EDF000AB45AC /* AddDdayViewController.swift in Sources */,
+				B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);
