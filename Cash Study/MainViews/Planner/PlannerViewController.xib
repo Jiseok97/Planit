@@ -51,7 +51,7 @@
                             </segments>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-r1-ZdJ">
-                            <rect key="frame" x="277.5" y="8" width="112.5" height="43.5"/>
+                            <rect key="frame" x="277.5" y="10" width="112.5" height="43.5"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="Plus" title=" 공부추가">
                                 <color key="baseForegroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,9 +59,9 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="0Sv-r1-ZdJ" secondAttribute="bottom" constant="8" id="5PU-ls-2fl"/>
+                        <constraint firstAttribute="bottom" secondItem="0Sv-r1-ZdJ" secondAttribute="bottom" constant="6" id="5PU-ls-2fl"/>
                         <constraint firstAttribute="trailing" secondItem="0Sv-r1-ZdJ" secondAttribute="trailing" constant="24" id="Zwp-dV-jjg"/>
-                        <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="8" id="ncg-0k-TJe"/>
+                        <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="10" id="ncg-0k-TJe"/>
                         <constraint firstItem="xd0-Q8-ix2" firstAttribute="leading" secondItem="EXl-0f-pf6" secondAttribute="leading" constant="32" id="nhs-5a-IRP"/>
                         <constraint firstItem="xd0-Q8-ix2" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="8" id="omq-7b-Xq1"/>
                         <constraint firstAttribute="bottom" secondItem="xd0-Q8-ix2" secondAttribute="bottom" constant="8" id="ubI-Q0-8dS"/>
