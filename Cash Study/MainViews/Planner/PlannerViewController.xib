@@ -5,13 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlannerViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
-                <outlet property="timerView" destination="Dbh-Fp-0JJ" id="zTO-lE-16N"/>
+                <outlet property="plusBtn" destination="0Sv-r1-ZdJ" id="dMR-cz-rWc"/>
+                <outlet property="sgController" destination="xd0-Q8-ix2" id="K7U-MQ-SIc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,25 +20,72 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbh-Fp-0JJ">
-                    <rect key="frame" x="60.5" y="302" width="293" height="292"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4u-dX-fbS">
+                    <rect key="frame" x="0.0" y="103.5" width="414" height="758.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbS-gH-hMb">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="1200" id="reo-xh-JuT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="dbS-gH-hMb" secondAttribute="bottom" id="9H0-2N-oXR"/>
+                        <constraint firstItem="dbS-gH-hMb" firstAttribute="leading" secondItem="F4u-dX-fbS" secondAttribute="leading" id="Jup-aL-eP6"/>
+                        <constraint firstItem="dbS-gH-hMb" firstAttribute="width" secondItem="F4u-dX-fbS" secondAttribute="width" id="XFh-8K-e5p"/>
+                        <constraint firstItem="dbS-gH-hMb" firstAttribute="top" secondItem="F4u-dX-fbS" secondAttribute="top" id="d17-dK-MBP"/>
+                        <constraint firstAttribute="trailing" secondItem="dbS-gH-hMb" secondAttribute="trailing" id="hTv-Ka-htt"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="UUe-iU-BFI"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="W2a-sR-nBH"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXl-0f-pf6">
+                    <rect key="frame" x="0.0" y="44" width="414" height="59.5"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-Q8-ix2">
+                            <rect key="frame" x="32" y="8" width="141.5" height="44.5"/>
+                            <segments>
+                                <segment title="플래너"/>
+                                <segment title="디데이"/>
+                            </segments>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-r1-ZdJ">
+                            <rect key="frame" x="277.5" y="8" width="112.5" height="43.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Plus" title=" 공부추가">
+                                <color key="baseForegroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0Sv-r1-ZdJ" secondAttribute="bottom" constant="8" id="5PU-ls-2fl"/>
+                        <constraint firstAttribute="trailing" secondItem="0Sv-r1-ZdJ" secondAttribute="trailing" constant="24" id="Zwp-dV-jjg"/>
+                        <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="8" id="ncg-0k-TJe"/>
+                        <constraint firstItem="xd0-Q8-ix2" firstAttribute="leading" secondItem="EXl-0f-pf6" secondAttribute="leading" constant="32" id="nhs-5a-IRP"/>
+                        <constraint firstItem="xd0-Q8-ix2" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="8" id="omq-7b-Xq1"/>
+                        <constraint firstAttribute="bottom" secondItem="xd0-Q8-ix2" secondAttribute="bottom" constant="8" id="ubI-Q0-8dS"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Dbh-Fp-0JJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6WT-bo-jj2"/>
-                <constraint firstItem="Dbh-Fp-0JJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ega-cf-wOY"/>
-                <constraint firstItem="Dbh-Fp-0JJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.706667" id="eCO-BP-fWY"/>
-                <constraint firstItem="Dbh-Fp-0JJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.326355" id="rwv-eV-sPN"/>
+                <constraint firstItem="F4u-dX-fbS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="431-22-VTR"/>
+                <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.272" id="4Wq-BK-Gem"/>
+                <constraint firstItem="F4u-dX-fbS" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="bottom" id="7jT-Qk-WLX"/>
+                <constraint firstItem="EXl-0f-pf6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CzD-kd-k1y"/>
+                <constraint firstItem="EXl-0f-pf6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0665025" id="Hld-u3-vRt"/>
+                <constraint firstItem="F4u-dX-fbS" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Mtm-pi-Y9h"/>
+                <constraint firstItem="xd0-Q8-ix2" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.341333" id="dhh-ww-K3w"/>
+                <constraint firstItem="EXl-0f-pf6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iHG-PS-TdC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EXl-0f-pf6" secondAttribute="trailing" id="o3j-qW-3K6"/>
+                <constraint firstItem="F4u-dX-fbS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vys-uV-To9"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="16"/>
+            <point key="canvasLocation" x="137.68115942028987" y="15.401785714285714"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="Plus" width="12" height="12"/>
     </resources>
 </document>

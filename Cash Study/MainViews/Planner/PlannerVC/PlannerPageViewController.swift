@@ -1,13 +1,13 @@
 //
-//  AddDdayViewController.swift
+//  PlannerPageViewController.swift
 //  Cash Study
 //
-//  Created by 이지석 on 2021/11/08.
+//  Created by 이지석 on 2021/11/09.
 //
 
 import UIKit
 
-class AddDdayViewController: UIViewController {
+class PlannerPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

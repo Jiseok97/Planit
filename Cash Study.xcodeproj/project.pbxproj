@@ -12,6 +12,11 @@
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
+		B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */; };
+		B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */; };
+		B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */; };
+		B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */; };
+		B614C46E273AA63700A5E8F9 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */; };
 		B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */; };
 		B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */; };
 		B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */; };
@@ -57,8 +62,6 @@
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
 		B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B448F82738CC9B00AB45AC /* TimerData.swift */; };
-		B6B448FD2738EDF000AB45AC /* AddDdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B448FB2738EDF000AB45AC /* AddDdayViewController.swift */; };
-		B6B448FE2738EDF000AB45AC /* AddDdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B448FC2738EDF000AB45AC /* AddDdayViewController.xib */; };
 		B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
@@ -103,6 +106,11 @@
 		B607976D2727FD3100D6D454 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		B60797702727FF8A00D6D454 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
+		B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerPageViewController.swift; sourceTree = "<group>"; };
+		B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlannerPageViewController.xib; sourceTree = "<group>"; };
+		B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayPageViewController.swift; sourceTree = "<group>"; };
+		B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DdayPageViewController.xib; sourceTree = "<group>"; };
+		B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Medium.otf"; path = "../../../../softSqaured/Template/ios-template-storyboard-master/EduTemplate/Configuration/Font/NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		B61FAD0E273635CA00D11538 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -155,8 +163,6 @@
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
 		B6B448F82738CC9B00AB45AC /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
-		B6B448FB2738EDF000AB45AC /* AddDdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayViewController.swift; sourceTree = "<group>"; };
-		B6B448FC2738EDF000AB45AC /* AddDdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDdayViewController.xib; sourceTree = "<group>"; };
 		B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStopViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerStopViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
@@ -245,6 +251,32 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
+		B614C461273A9CEE00A5E8F9 /* PlannerVC */ = {
+			isa = PBXGroup;
+			children = (
+				B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */,
+				B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */,
+			);
+			path = PlannerVC;
+			sourceTree = "<group>";
+		};
+		B614C462273A9CFA00A5E8F9 /* DdayVC */ = {
+			isa = PBXGroup;
+			children = (
+				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
+				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
+			);
+			path = DdayVC;
+			sourceTree = "<group>";
+		};
+		B614C46B273A9F7A00A5E8F9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		B6224203272D03BC004F6750 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +359,6 @@
 			children = (
 				B66B47762732706000F89012 /* HomeViewController.xib */,
 				B66B47752732706000F89012 /* HomeViewController.swift */,
-				B6B448FA2738EDC000AB45AC /* AddDdayVC */,
 				B6BFB4032733BA0A00C0C97D /* TableViewCell */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
@@ -346,8 +377,10 @@
 		B66B477B2732797F00F89012 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
-				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
+				B614C462273A9CFA00A5E8F9 /* DdayVC */,
+				B614C461273A9CEE00A5E8F9 /* PlannerVC */,
 				B66B477D2732799E00F89012 /* PlannerViewController.xib */,
+				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -440,6 +473,7 @@
 				B622420F272D0840004F6750 /* Constant.swift */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
+				B614C46B273A9F7A00A5E8F9 /* Font */,
 				B6224211272D0852004F6750 /* Base */,
 				B67C989E2724FA810039D271 /* Extension */,
 			);
@@ -568,15 +602,6 @@
 				B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */,
 			);
 			path = TermsOfUse;
-			sourceTree = "<group>";
-		};
-		B6B448FA2738EDC000AB45AC /* AddDdayVC */ = {
-			isa = PBXGroup;
-			children = (
-				B6B448FC2738EDF000AB45AC /* AddDdayViewController.xib */,
-				B6B448FB2738EDF000AB45AC /* AddDdayViewController.swift */,
-			);
-			path = AddDdayVC;
 			sourceTree = "<group>";
 		};
 		B6B448FF2738EF1B00AB45AC /* CustomView */ = {
@@ -785,6 +810,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61FAD1627363D1B00D11538 /* EmptyStudyCollectionViewCell.xib in Resources */,
+				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
@@ -794,14 +820,15 @@
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
-				B6B448FE2738EDF000AB45AC /* AddDdayViewController.xib in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
+				B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */,
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
+				B614C46E273AA63700A5E8F9 /* NotoSansCJKkr-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +900,7 @@
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
 				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
+				B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */,
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
@@ -904,13 +932,13 @@
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
+				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6D81E1F2732B8FA006E641E /* RefreshTokenInput.swift in Sources */,
 				B6D81E172732B588006E641E /* SplashViewController.swift in Sources */,
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
-				B6B448FD2738EDF000AB45AC /* AddDdayViewController.swift in Sources */,
 				B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,

@@ -26,4 +26,5 @@ extension UIColor {
     class var myGray: UIColor { UIColor(hex: 0xD9D9D9) }
     class var studyCellBgColor : UIColor { UIColor(hex: 0x11123D) }
     class var gradationStartColor: UIColor { UIColor(hex: 0x0D0E34) }
+    class var sgNomalColor : UIColor { UIColor(hex: 0x3A3B53) }
 }

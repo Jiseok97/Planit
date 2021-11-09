@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
+
     
     override func viewDidLayoutSubviews() {
         self.changeHeight()
@@ -129,5 +130,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             return CGSize(width: width, height: height)
         }
     }
+    
+    
     
 }

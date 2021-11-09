@@ -14,4 +14,7 @@ target 'Cash Study' do
   # Server Networking
   pod 'Alamofire', '~> 5.4'
 
+  # Code Dev
+  pod 'SnapKit'
+
 end
