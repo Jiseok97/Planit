@@ -23,13 +23,16 @@ class PlannerViewController: UIViewController {
         setSGControl()
         setUp()
         setGradation()
+        
     }
+    
     
     func setUI() {
         self.plusBtn.layer.borderColor = UIColor.myGray.cgColor
         self.plusBtn.layer.borderWidth = 1
         self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2 - 5
     }
+    
     
     func setSGControl() {
         self.sgController.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSansCJKkr-Medium", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor.sgNomalColor], for: .normal)

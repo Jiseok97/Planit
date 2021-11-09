@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var ctView: UIView!
     
     
-    var studyDataLst : [String] = ["Empty", "hello", "Empty", "hello", "Empty", "hello", "Empty", "hello", "Empty", "hello"]
+    var studyDataLst : [String] = ["Empty", "hello", "Empty"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
