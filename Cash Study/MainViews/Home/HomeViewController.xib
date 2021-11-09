@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="addDdayBtn" destination="Njf-gU-YXh" id="OUK-Am-SIH"/>
                 <outlet property="addStudyBtn" destination="msx-qI-rMt" id="sUo-k1-3dx"/>
-                <outlet property="ctView" destination="AtT-rX-n1N" id="S8Y-IT-SaF"/>
                 <outlet property="scrollView" destination="NrU-8q-1Ui" id="Jnk-8q-P3W"/>
                 <outlet property="studyLstCV" destination="mLS-r5-ApP" id="unS-Op-hv5"/>
                 <outlet property="studyLstCVHeight" destination="CZo-Ic-IeA" id="JU5-gw-qgP"/>

@@ -12,7 +12,7 @@ class DdayPageViewController: UIViewController {
     @IBOutlet weak var dDayCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
-    var dDayLst : [String] = ["Test", "Test02", "Test03"]
+    var dDayLst : [String] = ["Test", "Test02", "Test03", "Test04", "Test05"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             cell.layer.cornerRadius = 8
             
             return cell
+            
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DdayCell", for: indexPath) as? DdayListCollectionViewCell else { return UICollectionViewCell() }
             
@@ -70,13 +71,18 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width * 0.872
+        
         if indexPath.row == 0 {
+            
             let height = self.view.frame.height * 0.23510971786
             return CGSize(width: width, height: height)
+            
         } else {
+            
             let height = self.view.frame.height * 0.15673981191
             return CGSize(width: width, height: height)
         }
+        
     }
     
 }

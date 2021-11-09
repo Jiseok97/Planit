@@ -424,8 +424,8 @@
 		B66B4782273288E200F89012 /* Reward */ = {
 			isa = PBXGroup;
 			children = (
-				B66B47862732894A00F89012 /* RewardViewController.swift */,
 				B66B47872732894A00F89012 /* RewardViewController.xib */,
+				B66B47862732894A00F89012 /* RewardViewController.swift */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -433,8 +433,8 @@
 		B66B4783273288FF00F89012 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
-				B66B478A2732895800F89012 /* AnalysisViewController.swift */,
 				B66B478B2732895800F89012 /* AnalysisViewController.xib */,
+				B66B478A2732895800F89012 /* AnalysisViewController.swift */,
 			);
 			path = Analysis;
 			sourceTree = "<group>";
@@ -442,8 +442,8 @@
 		B66B47852732892000F89012 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				B66B478E2732896800F89012 /* MyPageViewController.swift */,
 				B66B478F2732896800F89012 /* MyPageViewController.xib */,
+				B66B478E2732896800F89012 /* MyPageViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";

@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addDdayBtn: UIButton!
     @IBOutlet weak var studyLstCV: UICollectionView!
     @IBOutlet weak var studyLstCVHeight: NSLayoutConstraint!
-    @IBOutlet weak var ctView: UIView!
     
     
     var studyDataLst : [String] = ["Empty", "hello", "Empty"]
@@ -82,7 +81,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func changeHeight() {
         self.studyLstCVHeight.constant = self.studyLstCV.collectionViewLayout.collectionViewContentSize.height
-//        self.studyLstCVHeight.constant = CGFloat(studyDataLst.count * 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

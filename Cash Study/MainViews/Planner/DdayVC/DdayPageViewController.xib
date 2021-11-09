@@ -24,14 +24,14 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVL-cm-TeY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1060"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9dy-8o-XNz">
-                                    <rect key="frame" x="24" y="40" width="366" height="1000"/>
+                                    <rect key="frame" x="24" y="44" width="366" height="700"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="1000" id="P0C-xB-GAB"/>
+                                        <constraint firstAttribute="height" constant="700" id="P0C-xB-GAB"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="12" minimumInteritemSpacing="12" id="4B6-56-6m5">
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="4B6-56-6m5">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -43,7 +43,7 @@
                                 <constraint firstAttribute="trailing" secondItem="9dy-8o-XNz" secondAttribute="trailing" constant="24" id="3L4-ND-5gi"/>
                                 <constraint firstItem="9dy-8o-XNz" firstAttribute="leading" secondItem="SVL-cm-TeY" secondAttribute="leading" constant="24" id="GEI-1B-19M"/>
                                 <constraint firstAttribute="height" priority="250" constant="1000" id="biw-v8-BAr"/>
-                                <constraint firstItem="9dy-8o-XNz" firstAttribute="top" secondItem="SVL-cm-TeY" secondAttribute="top" constant="40" id="dJ4-8a-JjX"/>
+                                <constraint firstItem="9dy-8o-XNz" firstAttribute="top" secondItem="SVL-cm-TeY" secondAttribute="top" constant="44" id="dJ4-8a-JjX"/>
                                 <constraint firstAttribute="bottom" secondItem="9dy-8o-XNz" secondAttribute="bottom" constant="20" id="rXR-su-N3J"/>
                             </constraints>
                         </view>
@@ -55,8 +55,6 @@
                         <constraint firstItem="SVL-cm-TeY" firstAttribute="width" secondItem="mg1-tK-FNV" secondAttribute="width" id="QYM-F6-rUf"/>
                         <constraint firstItem="SVL-cm-TeY" firstAttribute="leading" secondItem="mg1-tK-FNV" secondAttribute="leading" id="Ysa-qR-rfV"/>
                     </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="Hab-rb-VIK"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="FKQ-7I-29S"/>
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

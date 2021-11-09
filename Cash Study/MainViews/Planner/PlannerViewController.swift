@@ -30,7 +30,7 @@ class PlannerViewController: UIViewController {
     func setUI() {
         self.plusBtn.layer.borderColor = UIColor.myGray.cgColor
         self.plusBtn.layer.borderWidth = 1
-        self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2 - 5
+        self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2
     }
     
     
@@ -75,8 +75,10 @@ class PlannerViewController: UIViewController {
         switch self.sgController.selectedSegmentIndex {
         case 0:
             self.plannerVC.view.isHidden = false
+            self.plusBtn.setTitle(" 공부추가", for: .normal)
         default:
             self.dDayVC.view.isHidden = false
+            self.plusBtn.setTitle(" 디데이추가", for: .normal)
         }
     }
     
