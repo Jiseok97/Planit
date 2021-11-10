@@ -21,6 +21,8 @@
 		B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C471273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib */; };
 		B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C476273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift */; };
 		B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C477273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib */; };
+		B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */; };
+		B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */; };
 		B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */; };
 		B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */; };
 		B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */; };
@@ -119,6 +121,8 @@
 		B614C471273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DdayListCollectionViewCell.xib; sourceTree = "<group>"; };
 		B614C476273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B614C477273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepresentativeCollectionViewCell.xib; sourceTree = "<group>"; };
+		B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayViewController.swift; sourceTree = "<group>"; };
+		B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDdayViewController.xib; sourceTree = "<group>"; };
 		B61FAD0E273635CA00D11538 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 		B614C462273A9CFA00A5E8F9 /* DdayVC */ = {
 			isa = PBXGroup;
 			children = (
+				B614C47A273AE06E00A5E8F9 /* AddDday */,
 				B614C46F273ABED700A5E8F9 /* CVCell */,
 				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
 				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
@@ -311,6 +316,15 @@
 				B614C476273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift */,
 			);
 			path = RepresentDday;
+			sourceTree = "<group>";
+		};
+		B614C47A273AE06E00A5E8F9 /* AddDday */ = {
+			isa = PBXGroup;
+			children = (
+				B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */,
+				B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */,
+			);
+			path = AddDday;
 			sourceTree = "<group>";
 		};
 		B6224203272D03BC004F6750 /* Entity */ = {
@@ -413,8 +427,8 @@
 		B66B477B2732797F00F89012 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
-				B614C462273A9CFA00A5E8F9 /* DdayVC */,
 				B614C461273A9CEE00A5E8F9 /* PlannerVC */,
+				B614C462273A9CFA00A5E8F9 /* DdayVC */,
 				B66B477D2732799E00F89012 /* PlannerViewController.xib */,
 				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
 			);
@@ -858,6 +872,7 @@
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
+				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
@@ -949,6 +964,7 @@
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
+				B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */,
 				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,
 				B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */,
 				B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */,
