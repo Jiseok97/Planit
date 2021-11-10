@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class PlannerViewController: UIViewController {
 
@@ -79,9 +78,15 @@ class PlannerViewController: UIViewController {
         default:
             self.dDayVC.view.isHidden = false
             self.plusBtn.setTitle(" 디데이추가", for: .normal)
+            self.plusBtn.addTarget(self, action: #selector(moveAddDdayVC), for: .touchUpInside)
         }
     }
     
+    @objc func moveAddDdayVC() {
+        let vc = AddDdayViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     
     // MARK: Navigation Bar Hidden
