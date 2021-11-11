@@ -7,6 +7,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Input Birthday View Controller-->
         <scene sceneID="Nh2-3l-OM6">
@@ -57,8 +65,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-Nx-M5d">
-                                <rect key="frame" x="32" y="213" width="125" height="57.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <rect key="frame" x="32" y="213" width="132.5" height="70"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -68,7 +76,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YYYY/MM/DD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jby-DS-2jo">
                                         <rect key="frame" x="26" y="10" width="314" height="56"/>
                                         <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
                                     </textField>
                                 </subviews>
@@ -84,7 +92,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-dA-gss">
                                 <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

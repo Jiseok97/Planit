@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // iOS 13 미만일 경우 실행을 위해
-        if #available(iOS 130.0, *) { return true }
+        if #available(iOS 13.0, *) { return true }
         
         window = UIWindow()
         window?.rootViewController = SplashViewController()

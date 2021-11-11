@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Select Gender View Controller-->
         <scene sceneID="KTb-8Y-SZR">
@@ -58,15 +66,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-SB-81q">
-                                <rect key="frame" x="32" y="213" width="125" height="57.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <rect key="frame" x="32" y="213" width="132.5" height="70"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-WL-OlS">
                                 <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -77,9 +85,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-WJ-Dla">
                                 <rect key="frame" x="24" y="487.5" width="366" height="76"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-DW-L1n">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-DW-L1n">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="남성">
                                             <color key="titleColor" systemColor="systemGray2Color"/>
@@ -101,9 +109,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baE-U4-Tf1">
                                 <rect key="frame" x="24" y="575.5" width="366" height="76"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-p5-PCg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-p5-PCg">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="여성">
                                             <color key="titleColor" systemColor="systemGray2Color"/>

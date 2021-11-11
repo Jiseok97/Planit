@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Input Name View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -20,7 +28,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U22-mb-ODf">
                                 <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -69,8 +77,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름과 사용하실 닉네임을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQb-vm-0Ce">
-                                <rect key="frame" x="32" y="199" width="213" height="57.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <rect key="frame" x="32" y="199" width="226.5" height="70"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -80,7 +88,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vp-qq-jvL">
                                         <rect key="frame" x="26" y="10" width="316" height="56"/>
                                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                                         <connections>
                                             <action selector="editChange:" destination="Y6W-OH-hqX" eventType="editingChanged" id="D6j-8c-9qe"/>
@@ -102,7 +110,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab5-oj-Adu">
                                         <rect key="frame" x="26" y="10" width="268" height="56"/>
                                         <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                                         <connections>
                                             <action selector="editChange:" destination="Y6W-OH-hqX" eventType="editingChanged" id="DOL-bb-Kwi"/>
@@ -128,8 +136,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용중인 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbf-Az-ND4">
-                                <rect key="frame" x="50" y="659.5" width="157" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="50" y="659.5" width="166.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

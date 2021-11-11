@@ -67,6 +67,10 @@
 		B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269C272941370021A9A4 /* SelectJobViewController.swift */; };
 		B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */; };
 		B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */; };
+		B6B40618273CFB52008DBE7C /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B40617273CFB51008DBE7C /* NotoSansKR-Regular.otf */; };
+		B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */; };
+		B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */; };
+		B6B40620273CFDD3008DBE7C /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */; };
 		B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B448F82738CC9B00AB45AC /* TimerData.swift */; };
 		B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */; };
@@ -174,6 +178,10 @@
 		B6B2269C272941370021A9A4 /* SelectJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobViewController.swift; sourceTree = "<group>"; };
 		B6B272AC272687ED0010138A /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		B6B272AD272687ED0010138A /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
+		B6B40617273CFB51008DBE7C /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Regular.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Thin.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		B6B448F82738CC9B00AB45AC /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
 		B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStopViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerStopViewController.xib; sourceTree = "<group>"; };
@@ -286,6 +294,10 @@
 		B614C46B273A9F7A00A5E8F9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */,
+				B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */,
+				B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */,
+				B6B40617273CFB51008DBE7C /* NotoSansKR-Regular.otf */,
 				B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */,
 			);
 			path = Font;
@@ -859,7 +871,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B40620273CFDD3008DBE7C /* NotoSansKR-Thin.otf in Resources */,
 				B61FAD1627363D1B00D11538 /* EmptyStudyCollectionViewCell.xib in Resources */,
+				B6B40618273CFB52008DBE7C /* NotoSansKR-Regular.otf in Resources */,
+				B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */,
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
@@ -868,6 +883,7 @@
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,
+				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
@@ -1159,7 +1175,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1181,7 +1197,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

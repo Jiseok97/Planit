@@ -5,6 +5,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSansCJKkr-Medium.otf</string>
+		<string>NotoSansKR-Light.otf</string>
+		<string>NotoSansKR-Bold.otf</string>
+		<string>NotoSansKR-Thin</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
