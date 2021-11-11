@@ -57,4 +57,10 @@ class AddDdayViewController: UIViewController {
         self.fifthBtn.setTitle("", for: .normal)
     }
     
+    @IBAction func addDdayTapped(_ sender: Any) {
+        let input = AddDdayInput(title: "테스트 디데이 2", endAt: "2021-11-12", color: "YELLOW", isRepresentative: false)
+        AddDdayDataManager().addDday(input, viewController: self)
+    }
+    
+    
 }

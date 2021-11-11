@@ -75,6 +75,9 @@
 		B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
+		B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */; };
+		B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */; };
+		B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */; };
 		B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AC2730270D00B1326A /* noReceiverEntity.swift */; };
 		B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */; };
 		B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */; };
@@ -186,6 +189,9 @@
 		B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStopViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerStopViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
+		B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayEntity.swift; sourceTree = "<group>"; };
+		B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayInput.swift; sourceTree = "<group>"; };
+		B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayDataManager.swift; sourceTree = "<group>"; };
 		B6C455AC2730270D00B1326A /* noReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455AE2730272300B1326A /* HaveReceiverEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverEntity.swift; sourceTree = "<group>"; };
 		B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverDataManager.swift; sourceTree = "<group>"; };
@@ -333,6 +339,8 @@
 		B614C47A273AE06E00A5E8F9 /* AddDday */ = {
 			isa = PBXGroup;
 			children = (
+				B6BF8954273D14A3000ABCFF /* DataManager */,
+				B6BF8955273D14AB000ABCFF /* Entity */,
 				B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */,
 				B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */,
 			);
@@ -675,6 +683,23 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		B6BF8954273D14A3000ABCFF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B6BF8955273D14AB000ABCFF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */,
+				B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		B6BFB4032733BA0A00C0C97D /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -937,7 +962,7 @@
 		};
 		33D8C2D60FAADBCC85178303 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -952,7 +977,7 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Cash Study-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
@@ -968,12 +993,14 @@
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
+				B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
 				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
 				B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */,
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
+				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,
 				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
 				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
@@ -993,6 +1020,7 @@
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
+				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */,
@@ -1175,7 +1203,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1197,7 +1225,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
