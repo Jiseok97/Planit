@@ -121,8 +121,7 @@ class LoginViewController: UIViewController {
                 print("getUserInfo(kakaoName) → \(userName)")
                 print("getUserInfo(kakaoEmail) → \(userEmail)")
             
-//                self.loginCheck(UserInfoData.email)
-                self.loginCheck("testEmail1@test.com")
+                self.loginCheck(UserInfoData.email)
             }
         }
     }

@@ -63,6 +63,23 @@ extension UIViewController {
         }
     }
     
+    // MARK: Add Dday VC
+    func setElseBtnColors(_ btn1: UIButton, _ btn2: UIButton, _ btn3: UIButton, _ btn4: UIButton) {
+        setBtnColors(btn1, false)
+        setBtnColors(btn2, false)
+        setBtnColors(btn3, false)
+        setBtnColors(btn4, false)
+    }
+    func setBtnColors(_ btn: UIButton, _ checkClicked: Bool) {
+        if checkClicked {
+            btn.backgroundColor = UIColor.link
+        } else {
+            btn.backgroundColor = UIColor.homeBorderColor
+        }
+    }
+    
+    
+    // MARK: Change Bool Value for UIButton
     func changeBoolValue(buttonChecked: Bool) -> Bool {
         if !buttonChecked {
             return true
@@ -71,6 +88,7 @@ extension UIViewController {
         }
     }
     
+    // Register - Select Job
     func setElseBtnColor(_ btn1: UIButton, _ btn2: UIButton, _ btn3: UIButton, _ btn4: UIButton, _ btn5: UIButton, _ btn6: UIButton, _ btn7: UIButton) {
         setBtnColor(btn1, false)
         setBtnColor(btn2, false)
@@ -80,6 +98,7 @@ extension UIViewController {
         setBtnColor(btn6, false)
         setBtnColor(btn7, false)
     }
+    
     
     
     

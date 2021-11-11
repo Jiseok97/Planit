@@ -17,15 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // iOS 13 미만일 경우 실행을 위해
-        if #available(iOS 13.0, *) { return true }
+        // Kakao Login
+        KakaoSDKCommon.initSDK(appKey: "ca398c6d25602fa0235ad2824bbaef1a")
+        
+        // iOS 13 버전 이상일 때 true
+//        if #available(iOS 13.0, *) {
+//            print("버전 13 이상")
+//            return true
+//        } else {
+//            print("버전 13 미만")
+//        }
         
         window = UIWindow()
         window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
-        
-        // Kakao Login
-        KakaoSDKCommon.initSDK(appKey: "ca398c6d25602fa0235ad2824bbaef1a")
+
         
         // About Keyboard
         IQKeyboardManager.shared.enable = true

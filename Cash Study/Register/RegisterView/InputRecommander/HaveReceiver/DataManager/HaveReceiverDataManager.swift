@@ -15,6 +15,7 @@ class HaveReceiverDataManager : UIViewController {
                 let code = response.response?.statusCode
                 switch code {
                 case 201:
+                    guard let id = response.value?.id else { return }
                     guard let email = response.value?.email else { return }
                     guard let name = response.value?.name else { return }
                     guard let nickname = response.value?.nickname else { return }
@@ -24,7 +25,7 @@ class HaveReceiverDataManager : UIViewController {
                     guard let accessToken = response.value?.accessToken else { return }
                     guard let refreshToken = response.value?.refreshToken else { return }
                     
-                    Constant.MY_ID = response.value?.id ?? 0
+                    Constant.MY_ID = id
                     Constant.MY_EMAIL = email
                     Constant.MY_NAME = name
                     Constant.MY_NICKNAME = nickname
@@ -38,7 +39,13 @@ class HaveReceiverDataManager : UIViewController {
                     viewController.checkUser = true
                     print("회원가입 성공!")
                     
+                    // 홈 불러오는 API 엮기
+                    
+                    self.changeRootVC(BaseTabBarController())
+                    
                 case 404:
+                    // 없으면 건너뛰기 누를 것
+                    
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "닉네임이 존재하지 않습니다.")
                     print("닉네임이 존재하지 않습니다.")
@@ -48,6 +55,8 @@ class HaveReceiverDataManager : UIViewController {
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
                     print("이미 사용중인 이메일입니다.")
 
+                    // 로그인 뷰로 돌아가게 해주기
+                    
                 default:
                     print("서버 요청 형식이 잘못되었습니다.")
                 }

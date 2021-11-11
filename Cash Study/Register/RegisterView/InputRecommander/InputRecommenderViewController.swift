@@ -96,24 +96,28 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func finishBtn(_ sender: UIButton) {
         // 홈 이동
-        let input =  HaveReceiverInput(email: "testEmail@test.com", name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, receiverNickname: recommander)
+        let input =  HaveReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, receiverNickname: recommander)
         
         HaveReceiverDataManager().user(input ,viewController: self)
         
-        if checkUser {
-//        changeRootVC(<#T##viewControllerToPresent: UIViewController##UIViewController#>)
+        if !checkUser {
+            // 홈으로 다시 돌아가게 하기 ?
         }
         
     }
     
     @IBAction func skipInputRecommander(_ sender: UIButton) {
         // 스킵 → 홈 이동
-        let input =  noReceiverInput(email: "testEmail@test.com", name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex,
-                                     birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree)
+        let input =  noReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree)
+        
         noReceiverDataManager().user(input ,viewController: self)
         
         if checkUser {
-//        changeRootVC(<#T##viewControllerToPresent: UIViewController##UIViewController#>)
+            // 홈 불러오는 API 넣어주기
+            
+            changeRootVC(BaseTabBarController())
+        } else {
+            changeRootVC(LoginViewController())
         }
     }
     
