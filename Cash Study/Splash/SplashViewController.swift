@@ -35,12 +35,16 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         usleep(3000000)
         
+//        changeRootVC(LoginViewController())
+        
         if userAccessToken == "" {
             changeRootVC(LoginViewController())
         } else {
             // 홈을 불러오는 API 넣어주기 !
-            
+
             changeRootVC(BaseTabBarController())
+            print("User AccessToken → \(userAccessToken)")
+            print("User RefreshToken → \(userRefreshToken)")
         }
         
     }

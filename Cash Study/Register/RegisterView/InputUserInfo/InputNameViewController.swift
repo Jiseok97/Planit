@@ -120,7 +120,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backBtn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        changeRootVC(LoginViewController())
     }
     
 }

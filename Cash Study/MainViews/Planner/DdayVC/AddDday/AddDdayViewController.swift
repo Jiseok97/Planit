@@ -44,8 +44,28 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: inputTitleTF)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: inputTitleTF)
+    }
+    
+    @objc private func textLengthLimit(_ noti: Notification) {
+        let maxLength : Int = 10
+        if let textField = noti.object as? UITextField {
+            if let text = textField.text {
+                if text.count >= maxLength {
+                    let index = text.index(text.startIndex, offsetBy: maxLength)
+                    let newString = text[text.startIndex..<index]
+                    textField.text = String(newString)
+                }
+            }
+        }
     }
 
     
@@ -72,7 +92,12 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     // MARK: About Text Field
     @IBAction func showTextCount(_ sender: Any) {
         guard let textCnt = self.inputTitleTF.text?.count else { return }
-        self.countTfLbl.text = String(describing: textCnt) + "/10"
+        
+        if textCnt > 10 {
+            self.countTfLbl.text = "10/10"
+        } else {
+            self.countTfLbl.text = String(describing: textCnt) + "/10"
+        }
     }
     
     
