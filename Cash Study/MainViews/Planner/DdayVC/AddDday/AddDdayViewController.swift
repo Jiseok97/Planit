@@ -12,6 +12,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var backBtn: UIButton!
     
     @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleLbl: UILabel!
+    
     @IBOutlet weak var inputTitleTF: UITextField! {
         didSet {
             inputTitleTF.delegate = self
@@ -30,6 +32,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var representView: UIView!
     @IBOutlet weak var checkRepresentSd: UISlider!
+    @IBOutlet weak var sdButton: UIButton!
     
     @IBOutlet weak var confirmBtn: UIButton!
     
@@ -40,6 +43,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var fifthBtnClicked: Bool = false
     
     var color : String = ""
+    var isRepresentative : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +91,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         self.thirdBtn.setTitle("", for: .normal)
         self.fourthBtn.setTitle("", for: .normal)
         self.fifthBtn.setTitle("", for: .normal)
+        self.sdButton.setTitle("", for: .normal)
     }
     
     // MARK: About Text Field
@@ -175,6 +180,18 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
+    @IBAction func sliderTapped(_ sender: Any) {
+        if checkRepresentSd.value == 0.0 {
+            self.checkRepresentSd.value = 1.0
+            self.isRepresentative = true
+        } else {
+            self.checkRepresentSd.value = 0.0
+            self.isRepresentative = false
+        }
+    }
+    
+    
+    
     // MARK: Confirm Btn Tapped
     @IBAction func addDdayTapped(_ sender: Any) {
         // 커스텀 뷰 띄우기
@@ -182,11 +199,16 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             // 제목은 한글자 이상 적어주세요.
             
         } else  {
-            // 해당 디데이를 대표 디데이로 설정하시겠어요?
+            if self.isRepresentative {
+                // 해당 디데이를 대표 디데이로 설정하시겠어요?
+                // 여기서 확인 누르면 끝
+                // 아니오 누르면 데이터 안 보내기
+            }
+            let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-12", color: self.color, isRepresentative: self.isRepresentative)
+//            print(input)
+            AddDdayDataManager().addDday(input, viewController: self)
         }
         
-        let input = AddDdayInput(title: "테스트 디데이 2", endAt: "2021-11-12", color: "YELLOW", isRepresentative: false)
-        AddDdayDataManager().addDday(input, viewController: self)
     }
     
     

@@ -8,7 +8,7 @@
 import UIKit
 
 class RewardViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

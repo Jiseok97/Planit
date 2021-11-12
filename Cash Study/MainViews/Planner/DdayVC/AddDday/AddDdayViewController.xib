@@ -30,8 +30,10 @@
                 <outlet property="fourthBtn" destination="Qbg-Nv-4ch" id="g9H-RJ-IUQ"/>
                 <outlet property="inputTitleTF" destination="LSS-2G-tkR" id="XfG-b9-Yvo"/>
                 <outlet property="representView" destination="95o-Ga-YkK" id="Xn9-e1-4XQ"/>
+                <outlet property="sdButton" destination="TLd-CL-4uC" id="2D2-Yr-0Ns"/>
                 <outlet property="secondBtn" destination="464-gP-7YT" id="UZe-1V-uqa"/>
                 <outlet property="thirdBtn" destination="RGw-fZ-9U9" id="4Gp-bc-RJp"/>
+                <outlet property="titleLbl" destination="Cbv-sQ-SCZ" id="sxI-gS-fOc"/>
                 <outlet property="titleView" destination="gO3-9G-fP8" id="yTg-zx-Pth"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -218,14 +220,28 @@
                                 <constraint firstAttribute="height" constant="6" id="FBy-GI-75H"/>
                             </constraints>
                         </slider>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLd-CL-4uC">
+                            <rect key="frame" x="286" y="0.0" width="80" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="8p1-i4-7B6"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="sliderTapped:" destination="-1" eventType="touchUpInside" id="7mm-K6-mPA"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.066666666669999999" green="0.070588235289999995" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="27Y-oi-sDe"/>
                         <constraint firstAttribute="trailing" secondItem="3P7-XX-icL" secondAttribute="trailing" constant="22" id="JX9-sR-pVa"/>
+                        <constraint firstAttribute="trailing" secondItem="TLd-CL-4uC" secondAttribute="trailing" id="P06-qG-e6n"/>
                         <constraint firstItem="3P7-XX-icL" firstAttribute="centerY" secondItem="jvx-4M-Dvf" secondAttribute="centerY" id="jrC-fQ-aMA"/>
+                        <constraint firstAttribute="bottom" secondItem="TLd-CL-4uC" secondAttribute="bottom" id="odq-RF-yXW"/>
                         <constraint firstItem="jvx-4M-Dvf" firstAttribute="centerY" secondItem="95o-Ga-YkK" secondAttribute="centerY" id="ovt-fI-KGE"/>
                         <constraint firstItem="jvx-4M-Dvf" firstAttribute="leading" secondItem="95o-Ga-YkK" secondAttribute="leading" constant="22" id="sFn-0F-D1E"/>
+                        <constraint firstItem="TLd-CL-4uC" firstAttribute="top" secondItem="95o-Ga-YkK" secondAttribute="top" id="w5z-mW-Ebu"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-0I-r2B">

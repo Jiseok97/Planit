@@ -38,6 +38,7 @@ class DdayPageViewController: UIViewController {
 }
 
 
+// MARK: Extension
 extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func changeHeight() {
@@ -68,6 +69,20 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         }
         
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = AddDdayViewController()
+        
+        vc.titleLbl.text = "디데이 편집하기"
+        vc.confirmBtn.setTitle("저장하기", for: .normal)
+        vc.modalPresentationStyle = .overFullScreen
+        // 해당 디데이 ID 저장
+        
+        present(vc, animated: true)
+        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width * 0.872

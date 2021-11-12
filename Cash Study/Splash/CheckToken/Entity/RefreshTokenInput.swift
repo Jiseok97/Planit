@@ -6,11 +6,11 @@
 //
 
 struct RefreshTokenInput {
-    var email: String
+    var refreshToken: String
     
     var toDictionary : [ String: Any] {
         let dict : [String: Any] = [
-            "email" : self.email
+            "refreshToken" : self.refreshToken
         ]
         return dict
     }
