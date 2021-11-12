@@ -37,6 +37,8 @@ class noReceiverDataManager : UIViewController {
                     self.sethiddenLblImg(viewController.errorImageView, viewController.errorLbl)
                     UserDefaults.standard.set(accessToken, forKey: "accessToken")
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
+                    
+                    
                     viewController.checkUser = true
                     print("회원가입 성공!")
                     

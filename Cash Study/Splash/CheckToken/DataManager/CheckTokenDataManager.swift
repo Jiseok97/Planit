@@ -8,7 +8,7 @@
 import Alamofire
 
 class CheckTokenDataManager {
-    func updateToken(_ info: RefreshTokenInput ,viewController: SplashViewController) {
+    func updateToken(_ info: RefreshTokenInput) {
         AF.request(Constant.BASE_URL + "/v1/auth/update-token", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
             .validate()
             .responseDecodable(of: RefreshTokenEntity.self) { response in
@@ -17,7 +17,7 @@ class CheckTokenDataManager {
                 case 200:
                     guard let accessToken = response.value?.accessToken else { return }
                     Constant.MY_ACCESS_TOKEN = accessToken
-                    UserDefaults.standard.setValue(accessToken, forKey: "accessToken")
+                    UserDefaults.standard.set(accessToken, forKey: "accessToken")
                     print("AccessToken 발급 성공")
                     
                 default:

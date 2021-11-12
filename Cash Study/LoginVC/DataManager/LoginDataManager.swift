@@ -9,7 +9,7 @@ import Alamofire
 
 class LoginDataManager : UIViewController{
     func userLogin(_ info: LoginInput ,viewController: LoginViewController) {
-        AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
+        AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"], interceptor: MyRequestInterceptor())
             .validate()
             .responseDecodable(of: LoginEntity.self) { response in
                 let code = response.response?.statusCode
@@ -25,11 +25,18 @@ class LoginDataManager : UIViewController{
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
                         
-//                        UserDefaults.setValue(accessToken, forKey: "accessToken")
-//                        UserDefaults.setValue(refreshToken, forKey: "refreshToken")
+                        let tk = TokenUtils()
+                        tk.create(Constant.BASE_URL + "/v1/auth/login", account: "accessToken", value: accessToken)
+                        tk.create(Constant.BASE_URL + "/v1/auth/login", account: "refreshToken", value: refreshToken)
                         
+                        UserDefaults.standard.set(accessToken, forKey: "accessToken")
+                        UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
+                        
+                        print("accessToekn ▾")
+                        print(accessToken)
                         print("refreshToken ▾")
                         print(refreshToken)
+                        
                     } else {
                         print("신규 유저")
                         self.changeRootVC(TermsOfUseViewController())
