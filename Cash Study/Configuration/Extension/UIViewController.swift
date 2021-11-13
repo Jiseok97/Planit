@@ -100,7 +100,25 @@ extension UIViewController {
     }
     
     
-    
+    // MARK: Add Study VC
+    func setElseDaysBtnColor(_ btn1: UIButton, _ btn2: UIButton, _ btn3: UIButton, _ btn4: UIButton, _ btn5: UIButton, _ btn6: UIButton, _ btn7: UIButton) {
+        tappedDayBtn(btn1, false)
+        tappedDayBtn(btn2, false)
+        tappedDayBtn(btn3, false)
+        tappedDayBtn(btn4, false)
+        tappedDayBtn(btn5, false)
+        tappedDayBtn(btn6, false)
+        tappedDayBtn(btn7, false)
+    }
+    func tappedDayBtn(_ btn: UIButton, _ check: Bool) {
+        if check {
+            btn.setTitleColor(UIColor.myGray, for: .normal)
+            btn.backgroundColor = UIColor.link
+        } else {
+            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
+            btn.backgroundColor = UIColor.homeBorderColor
+        }
+    }
     
     func setEnableBtn(_ btn: UIButton) {
         btn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)

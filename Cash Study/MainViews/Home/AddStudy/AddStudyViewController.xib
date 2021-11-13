@@ -208,6 +208,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="w6F-o7-cIt"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMm-og-dfA">
                             <rect key="frame" x="225.5" y="68" width="56" height="51"/>
@@ -220,6 +223,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="Aem-x3-ZE7"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJi-gt-8SI">
                             <rect key="frame" x="289.5" y="68" width="56.5" height="51"/>
@@ -232,6 +238,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="zxU-Jk-n3I"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-U6-cKW">
                             <rect key="frame" x="155" y="127" width="56" height="51"/>
@@ -241,6 +250,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="T9D-Fb-YfJ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFd-LG-khm">
                             <rect key="frame" x="90.5" y="127" width="56.5" height="51"/>
@@ -250,6 +262,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="VAc-UF-7e2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-FY-XCx">
                             <rect key="frame" x="26" y="127" width="56.5" height="51"/>
@@ -262,6 +277,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="fC9-vk-Ubi"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27N-me-mt7">
                             <rect key="frame" x="219" y="127" width="56.5" height="51"/>
@@ -274,6 +292,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="UFV-V6-0tv"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-Nw-9tL">
                             <rect key="frame" x="283.5" y="127" width="56.5" height="51"/>
@@ -286,6 +307,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                 <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="dayBtnTapped:" destination="-1" eventType="touchUpInside" id="aJw-34-quC"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

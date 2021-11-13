@@ -43,7 +43,7 @@ class AddStudyViewController: UIViewController {
     var fridayTapped : Bool = false
     var saturdayTapped : Bool = false
     var sundayTapped : Bool = false
-    
+    var everydapTapped : Bool = false
     
     
     override func viewDidLoad() {
@@ -52,6 +52,7 @@ class AddStudyViewController: UIViewController {
         
         setUI()
     }
+    
 
     func setUI() {
         self.titleView.layer.cornerRadius = 8
@@ -73,7 +74,7 @@ class AddStudyViewController: UIViewController {
         self.dataLblBtn.setTitle("", for: .normal)
         
         self.thirdView.isHidden = true
-    }
+    } 
     
     
     @IBAction func sliderTapped(_ sender: Any) {
@@ -94,6 +95,79 @@ class AddStudyViewController: UIViewController {
     @IBAction func showCalendarTapped(_ sender: Any) {
         
     }
+    
+    
+    @IBAction func dayBtnTapped(_ sender: UIButton) {
+        
+        switch sender {
+            
+        case mondayBtn :
+            self.mondayTapped = changeBoolValue(buttonChecked: mondayTapped)
+            tappedDayBtn(mondayBtn, mondayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+            
+        case tuesdayBtn:
+            self.tuesdayTapped = changeBoolValue(buttonChecked: tuesdayTapped)
+            tappedDayBtn(tuesdayBtn, tuesdayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+        case wednesdayBtn:
+            self.wednesdayTapped = changeBoolValue(buttonChecked: wednesdayTapped)
+            tappedDayBtn(wednesdayBtn, wednesdayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+        case thursdayBtn:
+            self.thursdayTapped = changeBoolValue(buttonChecked: thursdayTapped)
+            tappedDayBtn(thursdayBtn, thursdayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+        case fridayBtn:
+            self.fridayTapped = changeBoolValue(buttonChecked: fridayTapped)
+            tappedDayBtn(fridayBtn, fridayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+        case saturdayBtn:
+            self.saturdayTapped = changeBoolValue(buttonChecked: saturdayTapped)
+            tappedDayBtn(saturdayBtn, saturdayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+        case sundayBtn:
+            self.sundayTapped = changeBoolValue(buttonChecked: sundayTapped)
+            tappedDayBtn(sundayBtn, sundayTapped)
+            
+            self.everydapTapped = false
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+        default:
+            self.everydapTapped = changeBoolValue(buttonChecked: everydapTapped)
+            tappedDayBtn(everyDayBtn, everydapTapped)
+            
+            self.mondayTapped = false
+            self.tuesdayTapped = false
+            self.wednesdayTapped = false
+            self.thursdayTapped = false
+            self.fridayTapped = false
+            self.saturdayTapped = false
+            self.sundayTapped = false
+            
+            setElseDaysBtnColor(self.tuesdayBtn, self.wednesdayBtn, self.thursdayBtn, self.fridayBtn, self.saturdayBtn, self.sundayBtn, self.mondayBtn)
+            
+        }
+    }
+    
     
     
     
