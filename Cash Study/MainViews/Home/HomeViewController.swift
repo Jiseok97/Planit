@@ -72,6 +72,11 @@ class HomeViewController: UIViewController {
         self.topLbl.text = "\(name) 님의 \n 공부를 응원합니다."
     }
     
+    @IBAction func moveAddStudyBtn(_ sender: Any) {
+        let vc = AddStudyViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     
 }

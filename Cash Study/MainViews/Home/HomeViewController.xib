@@ -117,6 +117,9 @@
                                 <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                 <color key="baseForegroundColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="moveAddStudyBtn:" destination="-1" eventType="touchUpInside" id="Xyx-D1-zwS"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planit" translatesAutoresizingMaskIntoConstraints="NO" id="5bY-He-BJh">
                             <rect key="frame" x="32" y="58" width="70" height="15"/>

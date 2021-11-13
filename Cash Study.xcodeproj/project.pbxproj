@@ -52,6 +52,8 @@
 		B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E64272BF1CB00847491 /* InputBirthday.storyboard */; };
 		B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E68272BF31600847491 /* SelectJob.storyboard */; };
 		B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E6A272BF32100847491 /* InputRecommander.storyboard */; };
+		B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789945273F9B7200B08CEB /* AddStudyViewController.swift */; };
+		B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6789946273F9B7200B08CEB /* AddStudyViewController.xib */; };
 		B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */; };
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
@@ -162,6 +164,8 @@
 		B6709E64272BF1CB00847491 /* InputBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputBirthday.storyboard; sourceTree = "<group>"; };
 		B6709E68272BF31600847491 /* SelectJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectJob.storyboard; sourceTree = "<group>"; };
 		B6709E6A272BF32100847491 /* InputRecommander.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputRecommander.storyboard; sourceTree = "<group>"; };
+		B6789945273F9B7200B08CEB /* AddStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyViewController.swift; sourceTree = "<group>"; };
+		B6789946273F9B7200B08CEB /* AddStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudyViewController.xib; sourceTree = "<group>"; };
 		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +438,7 @@
 				B66B47762732706000F89012 /* HomeViewController.xib */,
 				B66B47752732706000F89012 /* HomeViewController.swift */,
 				B6BFB4032733BA0A00C0C97D /* CVCell */,
+				B6789944273F9B4F00B08CEB /* AddStudy */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
 			path = Home;
@@ -539,6 +544,15 @@
 				B60D61062729A27700D95950 /* InputRecommenderViewController.swift */,
 			);
 			path = InputRecommander;
+			sourceTree = "<group>";
+		};
+		B6789944273F9B4F00B08CEB /* AddStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B6789946273F9B7200B08CEB /* AddStudyViewController.xib */,
+				B6789945273F9B7200B08CEB /* AddStudyViewController.swift */,
+			);
+			path = AddStudy;
 			sourceTree = "<group>";
 		};
 		B67C98982724F9E60039D271 /* Configuration */ = {
@@ -926,6 +940,7 @@
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
 				B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */,
+				B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */,
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 				B614C46E273AA63700A5E8F9 /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -995,6 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,

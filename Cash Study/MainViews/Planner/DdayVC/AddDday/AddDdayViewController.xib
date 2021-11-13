@@ -15,6 +15,9 @@
         <array key="NotoSansCJKkr-Regular.otf">
             <string>NotoSansCJKkr-Regular</string>
         </array>
+        <array key="NotoSansKR-Light.otf">
+            <string>NotoSansKR-Light</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDdayViewController" customModule="Cash_Study" customModuleProvider="target">
@@ -24,7 +27,8 @@
                 <outlet property="checkRepresentSd" destination="3P7-XX-icL" id="Kfa-25-nd9"/>
                 <outlet property="confirmBtn" destination="fRC-0I-r2B" id="VwD-ux-29o"/>
                 <outlet property="countTfLbl" destination="loO-Cr-x5s" id="yBl-p8-5VB"/>
-                <outlet property="dateBtn" destination="U0Q-Mm-Psu" id="oJr-zd-ozQ"/>
+                <outlet property="dateBtn" destination="k3y-9p-jeA" id="mfN-pD-oZ0"/>
+                <outlet property="dateLbl" destination="5MY-k8-WBy" id="GAY-cV-98j"/>
                 <outlet property="fifthBtn" destination="zWp-II-4Ub" id="aJA-8F-xr5"/>
                 <outlet property="firstBtn" destination="RtV-zG-Tiv" id="4j4-97-MPx"/>
                 <outlet property="fourthBtn" destination="Qbg-Nv-4ch" id="g9H-RJ-IUQ"/>
@@ -44,10 +48,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gO3-9G-fP8">
-                    <rect key="frame" x="24" y="134" width="366" height="72"/>
+                    <rect key="frame" x="24" y="123" width="366" height="72"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="디데이 제목을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSS-2G-tkR">
-                            <rect key="frame" x="24" y="20" width="221" height="32"/>
+                            <rect key="frame" x="22" y="24" width="223" height="24"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR Regular" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
@@ -64,17 +68,17 @@
                     </subviews>
                     <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="LSS-2G-tkR" firstAttribute="leading" secondItem="gO3-9G-fP8" secondAttribute="leading" constant="24" id="00N-Tl-tDL"/>
-                        <constraint firstItem="LSS-2G-tkR" firstAttribute="top" secondItem="gO3-9G-fP8" secondAttribute="top" constant="20" id="Elc-Vq-M67"/>
+                        <constraint firstItem="LSS-2G-tkR" firstAttribute="leading" secondItem="gO3-9G-fP8" secondAttribute="leading" constant="22" id="00N-Tl-tDL"/>
+                        <constraint firstItem="LSS-2G-tkR" firstAttribute="top" secondItem="gO3-9G-fP8" secondAttribute="top" constant="24" id="Elc-Vq-M67"/>
                         <constraint firstAttribute="height" constant="72" id="N4h-Up-VAB"/>
                         <constraint firstItem="loO-Cr-x5s" firstAttribute="centerY" secondItem="LSS-2G-tkR" secondAttribute="centerY" id="d3K-fe-sa1"/>
                         <constraint firstAttribute="trailing" secondItem="loO-Cr-x5s" secondAttribute="trailing" constant="22" id="it1-cr-YPt"/>
                         <constraint firstItem="loO-Cr-x5s" firstAttribute="leading" secondItem="LSS-2G-tkR" secondAttribute="trailing" constant="70" id="jjz-C9-Ele"/>
-                        <constraint firstAttribute="bottom" secondItem="LSS-2G-tkR" secondAttribute="bottom" constant="20" id="njq-BY-Rjx"/>
+                        <constraint firstAttribute="bottom" secondItem="LSS-2G-tkR" secondAttribute="bottom" constant="24" id="njq-BY-Rjx"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZ4-b9-BqN">
-                    <rect key="frame" x="24" y="226" width="366" height="214"/>
+                    <rect key="frame" x="24" y="215" width="366" height="214"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="MNu-PB-gjG">
                             <rect key="frame" x="22" y="24" width="24" height="24"/>
@@ -89,14 +93,6 @@
                             <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Q-Mm-Psu">
-                            <rect key="frame" x="198" y="19" width="146" height="34.5"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="2021년 10월 4일 (월)">
-                                <fontDescription key="titleFontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="14"/>
-                                <color key="baseForegroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </buttonConfiguration>
-                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-19-jKE">
                             <rect key="frame" x="0.0" y="67.5" width="366" height="1"/>
                             <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -177,16 +173,31 @@
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="Wf4-81-zxL"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 10월 4일 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MY-k8-WBy">
+                            <rect key="frame" x="221.5" y="26" width="122.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="14"/>
+                            <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3y-9p-jeA">
+                            <rect key="frame" x="221.5" y="26" width="122.5" height="20.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="RGw-fZ-9U9" secondAttribute="bottom" constant="32" id="0Aa-Jd-qjF"/>
                         <constraint firstItem="hd5-15-6qL" firstAttribute="centerY" secondItem="MNu-PB-gjG" secondAttribute="centerY" id="4rV-yX-mLg"/>
+                        <constraint firstItem="k3y-9p-jeA" firstAttribute="height" secondItem="5MY-k8-WBy" secondAttribute="height" id="6ka-fo-Fqt"/>
                         <constraint firstItem="hd5-15-6qL" firstAttribute="leading" secondItem="MNu-PB-gjG" secondAttribute="trailing" constant="6" id="8fg-Ay-xk6"/>
                         <constraint firstItem="RGw-fZ-9U9" firstAttribute="centerX" secondItem="MZ4-b9-BqN" secondAttribute="centerX" id="C8x-VT-gFa"/>
                         <constraint firstItem="464-gP-7YT" firstAttribute="centerY" secondItem="RGw-fZ-9U9" secondAttribute="centerY" id="CZl-Uf-ckk"/>
                         <constraint firstItem="Y4b-19-jKE" firstAttribute="top" secondItem="hd5-15-6qL" secondAttribute="bottom" constant="22" id="EGo-VF-pBy"/>
                         <constraint firstItem="RGw-fZ-9U9" firstAttribute="leading" secondItem="464-gP-7YT" secondAttribute="trailing" constant="8" id="Efh-dt-NOI"/>
+                        <constraint firstItem="5MY-k8-WBy" firstAttribute="centerY" secondItem="hd5-15-6qL" secondAttribute="centerY" id="FHV-MC-yVO"/>
+                        <constraint firstItem="k3y-9p-jeA" firstAttribute="width" secondItem="5MY-k8-WBy" secondAttribute="width" id="JzQ-Qg-YM7"/>
+                        <constraint firstAttribute="trailing" secondItem="k3y-9p-jeA" secondAttribute="trailing" constant="22" id="K8i-yN-PJE"/>
                         <constraint firstItem="zWp-II-4Ub" firstAttribute="leading" secondItem="Qbg-Nv-4ch" secondAttribute="trailing" constant="8" id="NL6-vv-AOg"/>
                         <constraint firstItem="zWp-II-4Ub" firstAttribute="centerY" secondItem="Qbg-Nv-4ch" secondAttribute="centerY" id="QVi-9V-PWY"/>
                         <constraint firstItem="Qbg-Nv-4ch" firstAttribute="leading" secondItem="RGw-fZ-9U9" secondAttribute="trailing" constant="8" id="SJB-LE-CPw"/>
@@ -198,14 +209,14 @@
                         <constraint firstItem="Qbg-Nv-4ch" firstAttribute="centerY" secondItem="RGw-fZ-9U9" secondAttribute="centerY" id="hzp-Xt-QFa"/>
                         <constraint firstItem="RtV-zG-Tiv" firstAttribute="centerY" secondItem="464-gP-7YT" secondAttribute="centerY" id="jWD-JQ-KXI"/>
                         <constraint firstAttribute="height" constant="214" id="oMi-aq-Br3"/>
-                        <constraint firstAttribute="trailing" secondItem="U0Q-Mm-Psu" secondAttribute="trailing" constant="22" id="oYQ-4K-KBC"/>
+                        <constraint firstAttribute="trailing" secondItem="5MY-k8-WBy" secondAttribute="trailing" constant="22" id="pXN-Qu-eD2"/>
+                        <constraint firstItem="k3y-9p-jeA" firstAttribute="centerY" secondItem="hd5-15-6qL" secondAttribute="centerY" id="qCa-SW-kqA"/>
                         <constraint firstItem="MNu-PB-gjG" firstAttribute="leading" secondItem="MZ4-b9-BqN" secondAttribute="leading" constant="22" id="rYj-Vg-nm8"/>
                         <constraint firstItem="7IB-H5-qPF" firstAttribute="centerX" secondItem="MZ4-b9-BqN" secondAttribute="centerX" id="sOV-BZ-jIS"/>
-                        <constraint firstItem="U0Q-Mm-Psu" firstAttribute="centerY" secondItem="hd5-15-6qL" secondAttribute="centerY" id="vyl-nw-AV9"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95o-Ga-YkK">
-                    <rect key="frame" x="24" y="452" width="366" height="72"/>
+                    <rect key="frame" x="24" y="441" width="366" height="72"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 디데이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvx-4M-Dvf">
                             <rect key="frame" x="22" y="26.5" width="74" height="19"/>
@@ -294,7 +305,7 @@
                 <constraint firstItem="66z-dT-ho4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="gdh-oY-JoT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fRC-0I-r2B" secondAttribute="trailing" constant="32" id="ogb-zR-7Xy"/>
                 <constraint firstItem="Cbv-sQ-SCZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="23" id="pis-xq-Gpx"/>
-                <constraint firstItem="gO3-9G-fP8" firstAttribute="top" secondItem="Cbv-sQ-SCZ" secondAttribute="bottom" constant="43" id="zqB-HE-UIy"/>
+                <constraint firstItem="gO3-9G-fP8" firstAttribute="top" secondItem="Cbv-sQ-SCZ" secondAttribute="bottom" constant="32" id="zqB-HE-UIy"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="66.964285714285708"/>
         </view>

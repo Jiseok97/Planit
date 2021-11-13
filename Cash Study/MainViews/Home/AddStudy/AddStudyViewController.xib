@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansKR-Light.otf">
+            <string>NotoSansKR-Light</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddStudyViewController" customModule="Cash_Study" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="TNf-LH-vQR" id="bEF-ki-hsm"/>
+                <outlet property="confirmBtn" destination="32R-ri-Gqx" id="EV8-ZP-1lr"/>
+                <outlet property="dataLblBtn" destination="Nzl-Ca-npd" id="QOd-vf-EHE"/>
+                <outlet property="dateLbl" destination="Ltd-tp-eZV" id="U9x-g7-LCb"/>
+                <outlet property="everyDayBtn" destination="tjM-fy-XwI" id="DaN-1g-QEO"/>
+                <outlet property="fridayBtn" destination="rl5-Nw-9tL" id="VFU-pM-o6O"/>
+                <outlet property="mondayBtn" destination="uCN-FY-XCx" id="0LH-Xm-HF0"/>
+                <outlet property="repeatSd" destination="NRv-4q-Quk" id="BU9-x3-hG5"/>
+                <outlet property="saturdayBtn" destination="ZMm-og-dfA" id="fny-64-FcA"/>
+                <outlet property="sdBtn" destination="hy0-1O-OdK" id="e7U-h0-zW4"/>
+                <outlet property="secondView" destination="Wsb-Uf-jsK" id="FDR-AD-XqH"/>
+                <outlet property="sundayBtn" destination="qJi-gt-8SI" id="q1K-JC-DT0"/>
+                <outlet property="textCntLbl" destination="jJ8-bd-AKL" id="SrH-Hp-dOM"/>
+                <outlet property="thirdView" destination="CxY-Gm-xFz" id="fcL-KE-kJo"/>
+                <outlet property="thursdayBtn" destination="27N-me-mt7" id="r6j-SB-LmW"/>
+                <outlet property="titleTF" destination="VNd-Vh-1WM" id="l76-JN-UzH"/>
+                <outlet property="titleView" destination="ryV-V9-rcv" id="mKu-tu-T21"/>
+                <outlet property="tuesdayBtn" destination="zFd-LG-khm" id="8xe-HJ-r4S"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wednesdayBtn" destination="gpK-U6-cKW" id="kyU-um-C6N"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAE-Df-KMk">
+                    <rect key="frame" x="160.5" y="67" width="93" height="24"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                    <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-LH-vQR">
+                    <rect key="frame" x="32" y="67" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="4U1-0n-T3E"/>
+                        <constraint firstAttribute="height" constant="24" id="TDX-W1-ukU"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                    <connections>
+                        <action selector="dismissBtn:" destination="-1" eventType="touchUpInside" id="6rU-c4-jaa"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryV-V9-rcv">
+                    <rect key="frame" x="24" y="123" width="366" height="72"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="공부 제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNd-Vh-1WM">
+                            <rect key="frame" x="22" y="24" width="271" height="24"/>
+                            <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-bd-AKL">
+                            <rect key="frame" x="315" y="26" width="29" height="20.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                            <color key="textColor" systemColor="linkColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="VNd-Vh-1WM" secondAttribute="bottom" constant="24" id="BWw-iu-ymm"/>
+                        <constraint firstAttribute="trailing" secondItem="jJ8-bd-AKL" secondAttribute="trailing" constant="22" id="NzY-f2-S4y"/>
+                        <constraint firstItem="VNd-Vh-1WM" firstAttribute="top" secondItem="ryV-V9-rcv" secondAttribute="top" constant="24" id="WqX-4O-3eq"/>
+                        <constraint firstItem="VNd-Vh-1WM" firstAttribute="leading" secondItem="ryV-V9-rcv" secondAttribute="leading" constant="22" id="f6l-tO-Sfa"/>
+                        <constraint firstAttribute="height" constant="72" id="fz8-a6-ROO"/>
+                        <constraint firstItem="jJ8-bd-AKL" firstAttribute="leading" secondItem="VNd-Vh-1WM" secondAttribute="trailing" constant="22" id="jJ4-Fy-Udp"/>
+                        <constraint firstItem="jJ8-bd-AKL" firstAttribute="centerY" secondItem="VNd-Vh-1WM" secondAttribute="centerY" id="jTe-Rx-yxo"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-Uf-jsK">
+                    <rect key="frame" x="24" y="217" width="366" height="139"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 반복하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-5V-ZhZ">
+                            <rect key="frame" x="22" y="24" width="93" height="23.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                            <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NRv-4q-Quk">
+                            <rect key="frame" x="292" y="33" width="54" height="7"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="OAz-Lp-3Ts"/>
+                                <constraint firstAttribute="height" constant="6" id="WPB-ak-o35"/>
+                            </constraints>
+                        </slider>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hy0-1O-OdK">
+                            <rect key="frame" x="281" y="0.0" width="85" height="69.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="iAG-dd-yi9"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="sliderTapped:" destination="-1" eventType="touchUpInside" id="h91-jS-Rp1"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-We-Kf8">
+                            <rect key="frame" x="0.0" y="69.5" width="366" height="1"/>
+                            <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="yA8-cC-USG"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="1yR-bw-s1D">
+                            <rect key="frame" x="22" y="94.5" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="b7m-LT-Efq"/>
+                                <constraint firstAttribute="height" constant="24" id="oVE-d7-nCL"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJr-1d-SjF">
+                            <rect key="frame" x="52" y="95" width="29.5" height="23.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                            <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 10월 04일 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltd-tp-eZV">
+                            <rect key="frame" x="214" y="96.5" width="130" height="20.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="14"/>
+                            <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzl-Ca-npd">
+                            <rect key="frame" x="214" y="96.5" width="130" height="20.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="showCalendarTapped:" destination="-1" eventType="touchUpInside" id="dk2-gL-spR"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="gpV-We-Kf8" secondAttribute="trailing" id="2Ub-Dd-DZa"/>
+                        <constraint firstItem="mJr-1d-SjF" firstAttribute="leading" secondItem="1yR-bw-s1D" secondAttribute="trailing" constant="6" id="3qK-hp-wGQ"/>
+                        <constraint firstItem="1yR-bw-s1D" firstAttribute="top" secondItem="gpV-We-Kf8" secondAttribute="bottom" constant="24" id="53i-Da-u5F"/>
+                        <constraint firstItem="gpV-We-Kf8" firstAttribute="leading" secondItem="Wsb-Uf-jsK" secondAttribute="leading" id="5oY-4h-eWF"/>
+                        <constraint firstItem="tXF-5V-ZhZ" firstAttribute="leading" secondItem="Wsb-Uf-jsK" secondAttribute="leading" constant="22" id="AlY-FV-GA1"/>
+                        <constraint firstItem="Ltd-tp-eZV" firstAttribute="centerY" secondItem="mJr-1d-SjF" secondAttribute="centerY" id="Bzy-0F-UzK"/>
+                        <constraint firstItem="gpV-We-Kf8" firstAttribute="top" secondItem="hy0-1O-OdK" secondAttribute="bottom" id="F8j-1m-lUT"/>
+                        <constraint firstItem="hy0-1O-OdK" firstAttribute="top" secondItem="Wsb-Uf-jsK" secondAttribute="top" id="GWr-si-NnB"/>
+                        <constraint firstItem="Nzl-Ca-npd" firstAttribute="height" secondItem="Ltd-tp-eZV" secondAttribute="height" id="KLo-IR-btz"/>
+                        <constraint firstItem="Nzl-Ca-npd" firstAttribute="centerY" secondItem="mJr-1d-SjF" secondAttribute="centerY" id="L2l-uu-hft"/>
+                        <constraint firstAttribute="trailing" secondItem="NRv-4q-Quk" secondAttribute="trailing" constant="22" id="OGV-Zl-r0U"/>
+                        <constraint firstItem="tXF-5V-ZhZ" firstAttribute="top" secondItem="Wsb-Uf-jsK" secondAttribute="top" constant="24" id="SMh-ct-ePh"/>
+                        <constraint firstAttribute="trailing" secondItem="Ltd-tp-eZV" secondAttribute="trailing" constant="22" id="Z4S-Z8-vUF"/>
+                        <constraint firstItem="mJr-1d-SjF" firstAttribute="centerY" secondItem="1yR-bw-s1D" secondAttribute="centerY" id="bDd-Yi-bCZ"/>
+                        <constraint firstItem="NRv-4q-Quk" firstAttribute="centerY" secondItem="tXF-5V-ZhZ" secondAttribute="centerY" id="gR2-45-jg2"/>
+                        <constraint firstItem="gpV-We-Kf8" firstAttribute="top" secondItem="tXF-5V-ZhZ" secondAttribute="bottom" constant="22" id="iXw-mh-HEg"/>
+                        <constraint firstAttribute="trailing" secondItem="Nzl-Ca-npd" secondAttribute="trailing" constant="22" id="rGN-Ke-cvI"/>
+                        <constraint firstItem="1yR-bw-s1D" firstAttribute="leading" secondItem="Wsb-Uf-jsK" secondAttribute="leading" constant="22" id="st8-hn-oRE"/>
+                        <constraint firstAttribute="height" constant="139" id="xRW-KX-xgr"/>
+                        <constraint firstItem="Nzl-Ca-npd" firstAttribute="width" secondItem="Ltd-tp-eZV" secondAttribute="width" id="yAB-T6-uqU"/>
+                        <constraint firstAttribute="trailing" secondItem="hy0-1O-OdK" secondAttribute="trailing" id="yOV-Mo-L0e"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxY-Gm-xFz">
+                    <rect key="frame" x="24" y="351" width="366" height="210"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiI-wM-8Fb">
+                            <rect key="frame" x="1" y="6.5" width="364" height="1"/>
+                            <color key="backgroundColor" red="0.066666666669999999" green="0.070588235289999995" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Dry-we-z0Z"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반복할 요일을 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDQ-1R-Qir">
+                            <rect key="frame" x="102" y="31.5" width="162.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                            <color key="textColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjM-fy-XwI">
+                            <rect key="frame" x="20" y="68" width="197.5" height="51"/>
+                            <color key="backgroundColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="EQ2-nf-Qx4"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="매일">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMm-og-dfA">
+                            <rect key="frame" x="225.5" y="68" width="56" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="1X1-y6-pbm"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="토">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJi-gt-8SI">
+                            <rect key="frame" x="289.5" y="68" width="56.5" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="rAf-6r-0TM"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="일">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-U6-cKW">
+                            <rect key="frame" x="155" y="127" width="56" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="수">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFd-LG-khm">
+                            <rect key="frame" x="90.5" y="127" width="56.5" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="화">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-FY-XCx">
+                            <rect key="frame" x="26" y="127" width="56.5" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="3Bg-sJ-O3W"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="월">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27N-me-mt7">
+                            <rect key="frame" x="219" y="127" width="56.5" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="jTx-ZC-n54"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="목">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-Nw-9tL">
+                            <rect key="frame" x="283.5" y="127" width="56.5" height="51"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="9xr-sV-zdP"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="금">
+                                <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="baseForegroundColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="tjM-fy-XwI" firstAttribute="leading" secondItem="CxY-Gm-xFz" secondAttribute="leading" constant="20" id="1WG-z0-qbg"/>
+                        <constraint firstItem="cDQ-1R-Qir" firstAttribute="top" secondItem="MiI-wM-8Fb" secondAttribute="bottom" constant="24" id="2VG-Mc-iQ0"/>
+                        <constraint firstItem="gpK-U6-cKW" firstAttribute="leading" secondItem="zFd-LG-khm" secondAttribute="trailing" constant="8" id="3Br-bm-Oq0"/>
+                        <constraint firstItem="zFd-LG-khm" firstAttribute="height" secondItem="gpK-U6-cKW" secondAttribute="height" id="54h-tC-8QZ"/>
+                        <constraint firstItem="qJi-gt-8SI" firstAttribute="leading" secondItem="ZMm-og-dfA" secondAttribute="trailing" constant="8" id="5oh-Gy-vff"/>
+                        <constraint firstItem="rl5-Nw-9tL" firstAttribute="centerY" secondItem="27N-me-mt7" secondAttribute="centerY" id="6XO-lZ-aVe"/>
+                        <constraint firstItem="gpK-U6-cKW" firstAttribute="centerX" secondItem="CxY-Gm-xFz" secondAttribute="centerX" id="6ab-7w-9LB"/>
+                        <constraint firstItem="ZMm-og-dfA" firstAttribute="centerY" secondItem="tjM-fy-XwI" secondAttribute="centerY" id="6xG-t5-Kc3"/>
+                        <constraint firstItem="uCN-FY-XCx" firstAttribute="width" secondItem="zFd-LG-khm" secondAttribute="width" id="7qk-EO-qTk"/>
+                        <constraint firstItem="tjM-fy-XwI" firstAttribute="top" secondItem="cDQ-1R-Qir" secondAttribute="bottom" constant="16" id="8hP-PU-ois"/>
+                        <constraint firstItem="MiI-wM-8Fb" firstAttribute="leading" secondItem="CxY-Gm-xFz" secondAttribute="leading" constant="1" id="9Zt-jV-E3C"/>
+                        <constraint firstItem="zFd-LG-khm" firstAttribute="leading" secondItem="uCN-FY-XCx" secondAttribute="trailing" constant="8" id="BxI-Mk-Kb5"/>
+                        <constraint firstItem="gpK-U6-cKW" firstAttribute="height" secondItem="ZMm-og-dfA" secondAttribute="height" id="Hwp-Af-uUl"/>
+                        <constraint firstItem="rl5-Nw-9tL" firstAttribute="leading" secondItem="27N-me-mt7" secondAttribute="trailing" constant="8" id="Tm9-xi-Lx8"/>
+                        <constraint firstItem="zFd-LG-khm" firstAttribute="centerY" secondItem="gpK-U6-cKW" secondAttribute="centerY" id="Wmc-LL-Jtc"/>
+                        <constraint firstAttribute="bottom" secondItem="gpK-U6-cKW" secondAttribute="bottom" constant="32" id="Z8W-C8-mUS"/>
+                        <constraint firstItem="gpK-U6-cKW" firstAttribute="width" secondItem="ZMm-og-dfA" secondAttribute="width" id="a6s-OF-xrm"/>
+                        <constraint firstItem="qJi-gt-8SI" firstAttribute="centerY" secondItem="ZMm-og-dfA" secondAttribute="centerY" id="be5-4t-ZRM"/>
+                        <constraint firstItem="ZMm-og-dfA" firstAttribute="leading" secondItem="tjM-fy-XwI" secondAttribute="trailing" constant="8" id="dGn-cg-pO5"/>
+                        <constraint firstItem="27N-me-mt7" firstAttribute="leading" secondItem="gpK-U6-cKW" secondAttribute="trailing" constant="8" id="gmn-Q6-iFz"/>
+                        <constraint firstItem="qJi-gt-8SI" firstAttribute="width" secondItem="ZMm-og-dfA" secondAttribute="width" id="mU3-mc-A5T"/>
+                        <constraint firstItem="27N-me-mt7" firstAttribute="width" secondItem="gpK-U6-cKW" secondAttribute="width" id="mrZ-zc-AnC"/>
+                        <constraint firstItem="cDQ-1R-Qir" firstAttribute="centerX" secondItem="CxY-Gm-xFz" secondAttribute="centerX" id="mwS-Nj-aYn"/>
+                        <constraint firstItem="zFd-LG-khm" firstAttribute="width" secondItem="gpK-U6-cKW" secondAttribute="width" id="pYj-tJ-3g8"/>
+                        <constraint firstItem="uCN-FY-XCx" firstAttribute="centerY" secondItem="zFd-LG-khm" secondAttribute="centerY" id="pnq-av-ank"/>
+                        <constraint firstItem="gpK-U6-cKW" firstAttribute="top" secondItem="tjM-fy-XwI" secondAttribute="bottom" constant="8" id="qNI-YN-SAD"/>
+                        <constraint firstAttribute="trailing" secondItem="MiI-wM-8Fb" secondAttribute="trailing" constant="1" id="sVh-OD-e73"/>
+                        <constraint firstItem="27N-me-mt7" firstAttribute="centerY" secondItem="gpK-U6-cKW" secondAttribute="centerY" id="v7w-rO-ktX"/>
+                        <constraint firstItem="rl5-Nw-9tL" firstAttribute="width" secondItem="27N-me-mt7" secondAttribute="width" id="w0X-VT-fbZ"/>
+                        <constraint firstAttribute="trailing" secondItem="qJi-gt-8SI" secondAttribute="trailing" constant="20" id="yTS-Ik-JkY"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32R-ri-Gqx">
+                    <rect key="frame" x="32" y="767.5" width="350" height="70.5"/>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="추가하기">
+                        <fontDescription key="titleFontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MiI-wM-8Fb" firstAttribute="top" secondItem="mJr-1d-SjF" secondAttribute="bottom" constant="22" id="3qK-yp-EEe"/>
+                <constraint firstItem="TNf-LH-vQR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="6JL-Cg-Yz2"/>
+                <constraint firstItem="32R-ri-Gqx" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0788177" id="7hH-Yy-dln"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="32R-ri-Gqx" secondAttribute="bottom" constant="24" id="8MI-cA-hwD"/>
+                <constraint firstItem="jAE-Df-KMk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="23" id="8Um-9s-6yJ"/>
+                <constraint firstItem="CxY-Gm-xFz" firstAttribute="top" secondItem="Wsb-Uf-jsK" secondAttribute="bottom" constant="-5" id="8as-vi-uhA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="32R-ri-Gqx" secondAttribute="trailing" constant="32" id="G74-6B-z7U"/>
+                <constraint firstItem="jAE-Df-KMk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RPT-ME-a2A"/>
+                <constraint firstItem="TNf-LH-vQR" firstAttribute="centerY" secondItem="jAE-Df-KMk" secondAttribute="centerY" id="Ric-UZ-Cf1"/>
+                <constraint firstItem="ryV-V9-rcv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="SW0-7J-cGb"/>
+                <constraint firstItem="ryV-V9-rcv" firstAttribute="top" secondItem="jAE-Df-KMk" secondAttribute="bottom" constant="32" id="Wfk-Bq-cbR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ryV-V9-rcv" secondAttribute="trailing" constant="24" id="eZq-Zf-FzM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CxY-Gm-xFz" secondAttribute="trailing" constant="24" id="kU6-Ft-SP1"/>
+                <constraint firstItem="Wsb-Uf-jsK" firstAttribute="top" secondItem="ryV-V9-rcv" secondAttribute="bottom" constant="22" id="mId-hJ-uQT"/>
+                <constraint firstItem="32R-ri-Gqx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="nkj-2U-GSx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wsb-Uf-jsK" secondAttribute="trailing" constant="24" id="rid-Wb-ynR"/>
+                <constraint firstItem="ZMm-og-dfA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.136" id="uFm-M1-DwT"/>
+                <constraint firstItem="Wsb-Uf-jsK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="vfa-g1-Vxg"/>
+                <constraint firstItem="CxY-Gm-xFz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="wzz-zE-UdS"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="58.928571428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="24" height="24"/>
+        <image name="calendar" width="24" height="24"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -23,6 +23,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var dateBtn: UIButton!
+    @IBOutlet weak var dateLbl: UILabel!
     
     @IBOutlet weak var firstBtn: UIButton!
     @IBOutlet weak var secondBtn: UIButton!
@@ -92,6 +93,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         self.fourthBtn.setTitle("", for: .normal)
         self.fifthBtn.setTitle("", for: .normal)
         self.sdButton.setTitle("", for: .normal)
+        self.dateBtn.setTitle("", for: .normal)
     }
     
     // MARK: About Text Field
@@ -205,7 +207,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 // 아니오 누르면 데이터 안 보내기
             }
             let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-12", color: self.color, isRepresentative: self.isRepresentative)
-//            print(input)
+            print(input)
             AddDdayDataManager().addDday(input, viewController: self)
         }
         

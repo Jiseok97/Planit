@@ -72,6 +72,8 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Dday 편집하기 기능
+        
         let vc = AddDdayViewController()
         
         vc.titleLbl.text = "디데이 편집하기"
