@@ -99,6 +99,7 @@
                 <outlet property="bgView" destination="rli-fS-6qb" id="JTK-IY-vVR"/>
                 <outlet property="dDayLbl" destination="uh7-Xz-Wwh" id="wGk-dX-Dmb"/>
                 <outlet property="dDayNameLbl" destination="WW3-ag-PtR" id="eBq-zV-JTI"/>
+                <outlet property="iconImgView" destination="aol-3f-0t4" id="huU-GZ-Ruh"/>
                 <outlet property="timeLbl" destination="PTt-tN-f0S" id="M1v-lb-q3Z"/>
             </connections>
             <point key="canvasLocation" x="332.60869565217394" y="120.20089285714285"/>

@@ -31,6 +31,8 @@
 		B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420A272D0751004F6750 /* nickNameEntity.swift */; };
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
+		B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */; };
+		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
 		B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E1448273E49FA000F238A /* TokenUtils.swift */; };
 		B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */; };
@@ -143,6 +145,8 @@
 		B622420A272D0751004F6750 /* nickNameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameEntity.swift; sourceTree = "<group>"; };
 		B622420D272D07EE004F6750 /* NickNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDataManager.swift; sourceTree = "<group>"; };
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayDataManager.swift; sourceTree = "<group>"; };
+		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B65E1448273E49FA000F238A /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -298,9 +302,10 @@
 			isa = PBXGroup;
 			children = (
 				B614C47A273AE06E00A5E8F9 /* AddDday */,
-				B614C46F273ABED700A5E8F9 /* CVCell */,
+				B62618A6274228C000E301A7 /* ShowDday */,
 				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
 				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
+				B614C46F273ABED700A5E8F9 /* CVCell */,
 			);
 			path = DdayVC;
 			sourceTree = "<group>";
@@ -395,6 +400,31 @@
 				B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B62618A6274228C000E301A7 /* ShowDday */ = {
+			isa = PBXGroup;
+			children = (
+				B62618A72742291100E301A7 /* DataManager */,
+				B62618A8274229DB00E301A7 /* Entity */,
+			);
+			path = ShowDday;
+			sourceTree = "<group>";
+		};
+		B62618A72742291100E301A7 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B62618A8274229DB00E301A7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B62618AB274229F900E301A7 /* ShowDdayEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		B65310DC27253E32004AD249 /* Timer */ = {
@@ -1028,6 +1058,7 @@
 				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
+				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
@@ -1042,6 +1073,7 @@
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
+				B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,

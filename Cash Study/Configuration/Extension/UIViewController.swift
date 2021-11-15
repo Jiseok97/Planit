@@ -52,16 +52,7 @@ extension UIViewController {
     }
     
     
-    // MARK: 버튼 체크
-    func setBtnColor(_ btn: UIButton, _ checkClick: Bool) {
-        if checkClick {
-            btn.backgroundColor = UIColor.link
-            btn.setTitleColor(UIColor.white, for: .normal)
-        } else {
-            btn.backgroundColor = UIColor.disabledColor
-            btn.setTitleColor(UIColor.systemGray2, for: .normal)
-        }
-    }
+    
     
     // MARK: Add Dday VC
     func setElseBtnColors(_ btn1: UIButton, _ btn2: UIButton, _ btn3: UIButton, _ btn4: UIButton) {
@@ -98,6 +89,16 @@ extension UIViewController {
         setBtnColor(btn6, false)
         setBtnColor(btn7, false)
     }
+    func setBtnColor(_ btn: UIButton, _ checkClick: Bool) {
+        if checkClick {
+            btn.backgroundColor = UIColor.link
+            btn.setTitleColor(UIColor.myGray, for: .normal)
+        } else {
+            btn.backgroundColor = UIColor.disabledColor
+            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
+        }
+    }
+    
     
     
     // MARK: Add Study VC
@@ -112,13 +113,15 @@ extension UIViewController {
     }
     func tappedDayBtn(_ btn: UIButton, _ check: Bool) {
         if check {
-            btn.setTitleColor(UIColor.myGray, for: .normal)
             btn.backgroundColor = UIColor.link
+            btn.setTitleColor(UIColor.myGray, for: .normal)
         } else {
-            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
             btn.backgroundColor = UIColor.homeBorderColor
+            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
         }
     }
+    
+    
     
     func setEnableBtn(_ btn: UIButton) {
         btn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)

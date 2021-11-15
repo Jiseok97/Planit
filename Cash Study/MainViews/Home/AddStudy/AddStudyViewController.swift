@@ -7,13 +7,17 @@
 
 import UIKit
 
-class AddStudyViewController: UIViewController {
+class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
     
-    @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var titleTF: UITextField! {
+        didSet {
+            titleTF.delegate = self
+        }
+    }
     @IBOutlet weak var textCntLbl: UILabel!
     
     @IBOutlet weak var repeatSd: UISlider!
@@ -53,6 +57,28 @@ class AddStudyViewController: UIViewController {
         setUI()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: titleTF)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: titleTF)
+    }
+    
+    
+    @objc private func textLengthLimit(_ noti: Notification) {
+        let maxLength : Int = 16
+        if let textField = noti.object as? UITextField {
+            if let text = textField.text {
+                if text.count >= maxLength {
+                    let index = text.index(text.startIndex, offsetBy: maxLength)
+                    let newString = text[text.startIndex..<index]
+                    textField.text = String(newString)
+                }
+            }
+        }
+    }
 
     func setUI() {
         self.titleView.layer.cornerRadius = 8
@@ -75,6 +101,18 @@ class AddStudyViewController: UIViewController {
         
         self.thirdView.isHidden = true
     } 
+    
+    
+    // MARK: Title Text Field
+    @IBAction func showTextCount(_ sernder: Any) {
+        guard let textCnt = self.titleTF.text?.count else { return }
+        
+        if textCnt > 16 {
+            self.textCntLbl.text = "16/16"
+        } else {
+            self.textCntLbl.text = String(describing: textCnt) + "/16"
+        }
+    }
     
     
     @IBAction func sliderTapped(_ sender: Any) {
@@ -148,12 +186,14 @@ class AddStudyViewController: UIViewController {
             self.sundayTapped = changeBoolValue(buttonChecked: sundayTapped)
             tappedDayBtn(sundayBtn, sundayTapped)
             
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
+            everydapTapped = false
+            tappedDayBtn(everyDayBtn, false)
             
         default:
             self.everydapTapped = changeBoolValue(buttonChecked: everydapTapped)
             tappedDayBtn(everyDayBtn, everydapTapped)
+            
+            setElseDaysBtnColor(self.tuesdayBtn, self.wednesdayBtn, self.thursdayBtn, self.fridayBtn, self.saturdayBtn, self.sundayBtn, self.mondayBtn)
             
             self.mondayTapped = false
             self.tuesdayTapped = false
@@ -163,7 +203,13 @@ class AddStudyViewController: UIViewController {
             self.saturdayTapped = false
             self.sundayTapped = false
             
-            setElseDaysBtnColor(self.tuesdayBtn, self.wednesdayBtn, self.thursdayBtn, self.fridayBtn, self.saturdayBtn, self.sundayBtn, self.mondayBtn)
+            tappedDayBtn(mondayBtn, mondayTapped)
+            tappedDayBtn(tuesdayBtn, tuesdayTapped)
+            tappedDayBtn(wednesdayBtn, wednesdayTapped)
+            tappedDayBtn(thursdayBtn, thursdayTapped)
+            tappedDayBtn(fridayBtn, fridayTapped)
+            tappedDayBtn(saturdayBtn, saturdayTapped)
+            tappedDayBtn(sundayBtn, sundayTapped)
             
         }
     }

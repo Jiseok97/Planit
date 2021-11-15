@@ -70,13 +70,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryV-V9-rcv">
                     <rect key="frame" x="24" y="123" width="366" height="72"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="공부 제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNd-Vh-1WM">
-                            <rect key="frame" x="22" y="24" width="271" height="24"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="공부 제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNd-Vh-1WM">
+                            <rect key="frame" x="22" y="24" width="261" height="24"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            <connections>
+                                <action selector="showTextCount:" destination="-1" eventType="editingChanged" id="MK4-Py-41N"/>
+                            </connections>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-bd-AKL">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-bd-AKL">
                             <rect key="frame" x="315" y="26" width="29" height="20.5"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                             <color key="textColor" systemColor="linkColor"/>
@@ -90,8 +93,8 @@
                         <constraint firstItem="VNd-Vh-1WM" firstAttribute="top" secondItem="ryV-V9-rcv" secondAttribute="top" constant="24" id="WqX-4O-3eq"/>
                         <constraint firstItem="VNd-Vh-1WM" firstAttribute="leading" secondItem="ryV-V9-rcv" secondAttribute="leading" constant="22" id="f6l-tO-Sfa"/>
                         <constraint firstAttribute="height" constant="72" id="fz8-a6-ROO"/>
-                        <constraint firstItem="jJ8-bd-AKL" firstAttribute="leading" secondItem="VNd-Vh-1WM" secondAttribute="trailing" constant="22" id="jJ4-Fy-Udp"/>
                         <constraint firstItem="jJ8-bd-AKL" firstAttribute="centerY" secondItem="VNd-Vh-1WM" secondAttribute="centerY" id="jTe-Rx-yxo"/>
+                        <constraint firstItem="jJ8-bd-AKL" firstAttribute="leading" secondItem="VNd-Vh-1WM" secondAttribute="trailing" constant="32" id="qGJ-BS-UCv"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-Uf-jsK">

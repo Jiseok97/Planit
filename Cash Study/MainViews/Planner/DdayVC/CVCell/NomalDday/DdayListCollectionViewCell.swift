@@ -13,6 +13,7 @@ class DdayListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dDayName: UILabel!
     @IBOutlet weak var dDayLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var iconImgView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
