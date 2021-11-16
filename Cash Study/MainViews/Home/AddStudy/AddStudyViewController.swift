@@ -23,8 +23,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var repeatSd: UISlider!
     @IBOutlet weak var sdBtn: UIButton!
     
-    @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var dataLblBtn: UIButton!
+    @IBOutlet weak var startAtLbl: UILabel!
     
     @IBOutlet weak var everyDayBtn: UIButton!
     @IBOutlet weak var saturdayBtn: UIButton!
@@ -97,9 +96,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         self.backBtn.setTitle("", for: .normal)
         self.sdBtn.setTitle("", for: .normal)
-        self.dataLblBtn.setTitle("", for: .normal)
-        
-        self.thirdView.isHidden = true
     } 
     
     
@@ -117,11 +113,13 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func sliderTapped(_ sender: Any) {
         if repeatSd.value == 0 {
+            self.secondView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             self.isRepeat = true
             self.repeatSd.value = 1.0
             thirdView.isHidden = false
             
         } else {
+            self.secondView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             self.isRepeat = false
             self.repeatSd.value = 0.0
             thirdView.isHidden = true

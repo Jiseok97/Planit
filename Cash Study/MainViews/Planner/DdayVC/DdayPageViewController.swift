@@ -19,8 +19,8 @@ class DdayPageViewController: UIViewController {
         super.viewDidLoad()
 
         
-        ShowDdayDataManager().addDday(viewController: self)
-        print("DdayPage → \(DdayDataLst)")
+//        ShowDdayDataManager().addDday(viewController: self)
+//        print("DdayPage(viewDidLoad) → \(DdayDataLst)")
         
         setGradation()
         dDayCV.delegate = self
@@ -33,6 +33,17 @@ class DdayPageViewController: UIViewController {
         if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ShowDdayDataManager().addDday(viewController: self)
+        self.dDayCV.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print("DdayDataLst(DidDisappear) → \(DdayDataLst)")
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,73 +61,35 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.DdayDataLst.count
+//        return self.DdayDataLst.count
+        return dDayLst.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let isRepresentative = DdayDataLst[indexPath.row].isRepresentative!
-        
-        if isRepresentative {
+        if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
             
-            let color = DdayDataLst[indexPath.row].color
-            let data = DdayDataLst[indexPath.row]
-            
-            switch color {
-            case "YELLOW":
-                cell.iconImgView.image = UIImage(named: "exDday1")
-                
-            case "GREEN":
-                cell.iconImgView.image = UIImage(named: "exDday2")
-                
-            case "PINK":
-                cell.iconImgView.image = UIImage(named: "exDday3")
-                
-            case "LIGHT_BLUE":
-                cell.iconImgView.image = UIImage(named: "exDday4")
-                
-            default:
-                cell.iconImgView.image = UIImage(named: "exDday5")
-            }
-            
             cell.layer.cornerRadius = 8
-            cell.dDayNameLbl.text = data.title
-            cell.timeLbl.text = data.endAt
+//            cell.dDayNameLbl.text = data.title
+//            cell.timeLbl.text = data.endAt
+            cell.dDayNameLbl.text = dDayLst[indexPath.row]
+        
             
             return cell
             
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DdayCell", for: indexPath) as? DdayListCollectionViewCell else { return UICollectionViewCell() }
             
-            let color = DdayDataLst[indexPath.row].color
-            let data = DdayDataLst[indexPath.row]
-            
-            switch color {
-            case "YELLOW":
-                cell.iconImgView.image = UIImage(named: "exDday1")
-                
-            case "GREEN":
-                cell.iconImgView.image = UIImage(named: "exDday2")
-                
-            case "PINK":
-                cell.iconImgView.image = UIImage(named: "exDday3")
-                
-            case "LIGHT_BLUE":
-                cell.iconImgView.image = UIImage(named: "exDday4")
-                
-            default:
-                cell.iconImgView.image = UIImage(named: "exDday5")
-            }
-            
             cell.layer.cornerRadius = 8
             cell.backgroundColor = UIColor.studyCellBgColor
-            cell.dDayName.text = data.title
-            cell.timeLbl.text = data.endAt
+//            cell.dDayName.text = data.title
+//            cell.timeLbl.text = data.endAt
             
-            
+            cell.dDayName.text = dDayLst[indexPath.row]
             
             return cell
         }
+        
         
     }
     

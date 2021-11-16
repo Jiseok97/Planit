@@ -206,7 +206,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 // 여기서 확인 누르면 끝
                 // 아니오 누르면 데이터 안 보내기
             }
-            let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-12", color: self.color, isRepresentative: self.isRepresentative)
+            let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-20", color: self.color, isRepresentative: self.isRepresentative)
             print(input)
             AddDdayDataManager().addDday(input, viewController: self)
         }

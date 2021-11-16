@@ -8,11 +8,11 @@
 import Alamofire
 
 class AddDdayDataManager {
-//    let header: HTTPHeaders = [.authorization(bearerToken: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjgzLCJpYXQiOjE2MzY3MDc3OTAsImV4cCI6MTYzNjc5NDE5MH0.4KAbRAcaibJ6VlX5WC0inwGfKakiMlGhIwDvTf1jBz4"),
-//                               .accept("application/json")]
-    
-    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
+    let header: HTTPHeaders = [.authorization(bearerToken: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjgzLCJpYXQiOjE2MzY5NTU3MzYsImV4cCI6MTYzNzA0MjEzNn0.Us7KcwpitTcqaV0sgi4BKAqL0ngI06XC4Kqg2TvLFe0"),
                                .accept("application/json")]
+    
+//    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
+//                               .accept("application/json")]
     
     func addDday(_ info: AddDdayInput ,viewController: AddDdayViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)

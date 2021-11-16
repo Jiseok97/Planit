@@ -6,14 +6,14 @@
 //
 
 struct ShowDdayEntity : Decodable {
-    var ddays : [dday]?
+    var ddays : [dday]
 }
 
 struct dday : Decodable {
-    var id : Int?
-    var title : String?
-    var isRepresentative : Bool?
-    var endAt : String?
-    var createdAt : String?
-    var color : String?
+    var id : Int
+    var title : String
+    var isRepresentative : Bool
+    var endAt : String
+    var createdAt : String
+    var color : String
 }

@@ -14,18 +14,19 @@ class ShowDdayDataManager {
 //    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
 //                               .accept("application/json")]
     
+    // , completion: @escaping ([dday])->(Void)
     func addDday(viewController: DdayPageViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: ShowDdayEntity.self) { response in
                 let code = response.response?.statusCode
-                guard let result = response.value?.ddays else { return }
                 switch code {
                 case 200:
+                    guard let result = response.value?.ddays else { return }
                     print("Success")
                     print(result)
                     viewController.DdayDataLst = result
-                    viewController.dDayCV.reloadData()
+//                    completion(result)
                     
                 default:
                     print("오류")

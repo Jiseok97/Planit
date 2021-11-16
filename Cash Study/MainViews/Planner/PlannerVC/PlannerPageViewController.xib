@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlannerPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="calendarView" destination="Gbp-wF-k2r" id="iG8-JA-Qrc"/>
+                <outlet property="calendarViewHeight" destination="I5e-0Y-HPH" id="bxj-Le-eAQ"/>
+                <outlet property="changeScopeCalendar" destination="mYA-Pd-ems" id="IkW-N6-nEt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +22,76 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlannerVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64Z-35-A7q">
-                    <rect key="frame" x="145" y="432" width="124" height="32.5"/>
+                    <rect key="frame" x="145" y="482" width="124" height="32.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-wF-k2r" customClass="FSCalendar">
+                    <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                    <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="350" id="I5e-0Y-HPH"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                            <color key="value" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" red="0.10588235294117647" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                            <color key="value" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                            <color key="value" red="0.86274509803921573" green="0.72549019607843135" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-XF-POi">
+                    <rect key="frame" x="0.0" y="394" width="414" height="28"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYA-Pd-ems">
+                            <rect key="frame" x="0.0" y="-3" width="414" height="34"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="downArrow"/>
+                            <connections>
+                                <action selector="chageCalendarScope:" destination="-1" eventType="touchUpInside" id="2LC-Zg-OcD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="mYA-Pd-ems" firstAttribute="leading" secondItem="r6l-XF-POi" secondAttribute="leading" id="huz-gw-V6y"/>
+                        <constraint firstAttribute="trailing" secondItem="mYA-Pd-ems" secondAttribute="trailing" id="mCT-Ku-zke"/>
+                        <constraint firstAttribute="height" constant="28" id="sae-dF-s90"/>
+                        <constraint firstItem="mYA-Pd-ems" firstAttribute="centerY" secondItem="r6l-XF-POi" secondAttribute="centerY" id="vCR-es-4Zb"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
-                <constraint firstItem="64Z-35-A7q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dea-Ig-SZx"/>
+                <constraint firstItem="r6l-XF-POi" firstAttribute="top" secondItem="Gbp-wF-k2r" secondAttribute="bottom" id="4gM-Zc-uk4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r6l-XF-POi" secondAttribute="trailing" id="G0n-Oz-8gA"/>
+                <constraint firstItem="r6l-XF-POi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JRZ-SW-oY2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gbp-wF-k2r" secondAttribute="trailing" id="SzH-GZ-k0I"/>
+                <constraint firstItem="64Z-35-A7q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="50" id="dea-Ig-SZx"/>
                 <constraint firstItem="64Z-35-A7q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lTn-8l-uD3"/>
+                <constraint firstItem="Gbp-wF-k2r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s50-SY-Aub"/>
+                <constraint firstItem="Gbp-wF-k2r" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="y1D-iF-fwJ"/>
             </constraints>
             <point key="canvasLocation" x="132" y="13"/>
         </view>
     </objects>
+    <resources>
+        <image name="downArrow" width="20" height="20"/>
+    </resources>
 </document>

@@ -14,5 +14,8 @@ target 'Cash Study' do
   # Server Networking
   pod 'Alamofire', '~> 5.4'
 
+  # For calendar
+  pod 'FSCalendar'
+
 
 end
