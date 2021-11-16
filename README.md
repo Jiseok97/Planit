@@ -4,6 +4,7 @@
 </br>
 
 ## 📱 View Progress ▾
+
 * Login View → ✅
 
 * Terms of Use View → ✅
