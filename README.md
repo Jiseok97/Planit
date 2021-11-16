@@ -20,7 +20,8 @@
 
 * Added BaseTabBar Controller → ✅
 
-* Home View → ***proceeding***
+* Home View → ✅
+
 
 </br>
 
