@@ -44,11 +44,14 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     
     @IBAction func chageCalendarScope(_ sender: Any) {
-        if self.calendarView.scope == .week {
-            
+        if self.calendarView.scope == FSCalendarScope.week {
             self.calendarView.scope = .month
+//            self.calendarView.setScope(.month, animated: true)
+            self.calendarViewHeight.constant = 0
         } else {
             self.calendarView.scope = .week
+//            self.calendarView.setScope(.week, animated: true)
+            self.calendarViewHeight.constant = view.safeAreaLayoutGuide.layoutFrame.size.height * -0.20
         }
     }
     
