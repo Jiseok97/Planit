@@ -131,6 +131,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         } else {
             let height = self.view.frame.height * 0.12068965517
             return CGSize(width: width, height: height)
+            
         }
     }
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -301,11 +301,11 @@
 		B614C462273A9CFA00A5E8F9 /* DdayVC */ = {
 			isa = PBXGroup;
 			children = (
+				B614C46F273ABED700A5E8F9 /* CVCell */,
 				B614C47A273AE06E00A5E8F9 /* AddDday */,
 				B62618A6274228C000E301A7 /* ShowDday */,
 				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
 				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
-				B614C46F273ABED700A5E8F9 /* CVCell */,
 			);
 			path = DdayVC;
 			sourceTree = "<group>";
@@ -928,7 +928,6 @@
 			);
 			mainGroup = B6B118262716D261008842BA;
 			packageReferences = (
-				B60DBC8B271954A500A7F3C6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = B6B118302716D261008842BA /* Products */;
 			projectDirPath = "";
@@ -1413,17 +1412,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B60DBC8B271954A500A7F3C6 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 12.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B6B118272716D261008842BA /* Project object */;
 }

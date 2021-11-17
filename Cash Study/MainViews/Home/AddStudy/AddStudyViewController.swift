@@ -34,6 +34,8 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var thursdayBtn: UIButton!
     @IBOutlet weak var fridayBtn: UIButton!
     
+    @IBOutlet var dateBtnCollection: [UIButton]!
+    
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
@@ -128,88 +130,86 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func checkEveryDayBtn() {
+        if mondayTapped == true && tuesdayTapped == true &&  wednesdayTapped == true && thursdayTapped == true && fridayTapped == true &&  saturdayTapped == true && sundayTapped == true {
+            
+            mondayTapped = false
+            tuesdayTapped = false
+            wednesdayTapped = false
+            thursdayTapped = false
+            fridayTapped = false
+            saturdayTapped = false
+            sundayTapped = false
+            
+            tappedDayBtn(mondayBtn, mondayTapped)
+            tappedDayBtn(tuesdayBtn, tuesdayTapped)
+            tappedDayBtn(wednesdayBtn, wednesdayTapped)
+            tappedDayBtn(thursdayBtn, thursdayTapped)
+            tappedDayBtn(fridayBtn, fridayTapped)
+            tappedDayBtn(saturdayBtn, saturdayTapped)
+            tappedDayBtn(sundayBtn, sundayTapped)
+            
+            everydapTapped = true
+            tappedDayBtn(everyDayBtn, everydapTapped)
+        }
+    }
+    
+    
     @IBAction func showCalendarTapped(_ sender: Any) {
         
     }
     
     
     @IBAction func dayBtnTapped(_ sender: UIButton) {
+        var btnCheck : Bool = true
         
-        switch sender {
-            
-        case mondayBtn :
-            self.mondayTapped = changeBoolValue(buttonChecked: mondayTapped)
-            tappedDayBtn(mondayBtn, mondayTapped)
-            
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-            
-        case tuesdayBtn:
-            self.tuesdayTapped = changeBoolValue(buttonChecked: tuesdayTapped)
-            tappedDayBtn(tuesdayBtn, tuesdayTapped)
-            
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-        case wednesdayBtn:
-            self.wednesdayTapped = changeBoolValue(buttonChecked: wednesdayTapped)
-            tappedDayBtn(wednesdayBtn, wednesdayTapped)
-            
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-        case thursdayBtn:
-            self.thursdayTapped = changeBoolValue(buttonChecked: thursdayTapped)
-            tappedDayBtn(thursdayBtn, thursdayTapped)
-            
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-        case fridayBtn:
-            self.fridayTapped = changeBoolValue(buttonChecked: fridayTapped)
-            tappedDayBtn(fridayBtn, fridayTapped)
-            
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-        case saturdayBtn:
-            self.saturdayTapped = changeBoolValue(buttonChecked: saturdayTapped)
-            tappedDayBtn(saturdayBtn, saturdayTapped)
-            
-            self.everydapTapped = false
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-        case sundayBtn:
-            self.sundayTapped = changeBoolValue(buttonChecked: sundayTapped)
-            tappedDayBtn(sundayBtn, sundayTapped)
-            
-            everydapTapped = false
-            tappedDayBtn(everyDayBtn, false)
-            
-        default:
-            self.everydapTapped = changeBoolValue(buttonChecked: everydapTapped)
-            tappedDayBtn(everyDayBtn, everydapTapped)
-            
-            setElseDaysBtnColor(self.tuesdayBtn, self.wednesdayBtn, self.thursdayBtn, self.fridayBtn, self.saturdayBtn, self.sundayBtn, self.mondayBtn)
-            
-            self.mondayTapped = false
-            self.tuesdayTapped = false
-            self.wednesdayTapped = false
-            self.thursdayTapped = false
-            self.fridayTapped = false
-            self.saturdayTapped = false
-            self.sundayTapped = false
-            
-            tappedDayBtn(mondayBtn, mondayTapped)
-            tappedDayBtn(tuesdayBtn, tuesdayTapped)
-            tappedDayBtn(wednesdayBtn, wednesdayTapped)
-            tappedDayBtn(thursdayBtn, thursdayTapped)
-            tappedDayBtn(fridayBtn, fridayTapped)
-            tappedDayBtn(saturdayBtn, saturdayTapped)
-            tappedDayBtn(sundayBtn, sundayTapped)
-            
+        if sender == everyDayBtn {
+            // 매일 버튼 눌렀을 때
+            if !everyDayBtn.isSelected {
+                for date in dateBtnCollection {
+                    date.isSelected = false
+                    date.backgroundColor = UIColor.homeBorderColor
+                    date.setTitleColor(.notSelectBtnColor, for: .normal)
+                }
+            }
+        } else {
+            // 나머지 버튼들을 눌렀을 때
+            everyDayBtn.isSelected = false
+            everyDayBtn.backgroundColor = UIColor.homeBorderColor
+            everyDayBtn.setTitleColor(.notSelectBtnColor, for: .normal)
         }
+        
+        
+        
+        if !sender.isSelected {
+            sender.isSelected = true
+            sender.backgroundColor = UIColor.link
+            sender.setTitleColor(.myGray, for: .normal)
+            
+            for date in dateBtnCollection {
+                if date.isSelected == false {
+                    btnCheck = false
+                }
+            }
+            
+            if btnCheck {
+                for date in dateBtnCollection {
+                    date.isSelected = false
+                    date.backgroundColor = UIColor.homeBorderColor
+                    date.setTitleColor(.notSelectBtnColor, for: .normal)
+                    
+                    everyDayBtn.isSelected = true
+                    everyDayBtn.backgroundColor = UIColor.link
+                    everyDayBtn.setTitleColor(.myGray, for: .normal)
+                }
+            }
+            
+        } else {
+            sender.isSelected = false
+            sender.backgroundColor = UIColor.homeBorderColor
+            sender.setTitleColor(.notSelectBtnColor, for: .normal)
+        }
+        
     }
     
     

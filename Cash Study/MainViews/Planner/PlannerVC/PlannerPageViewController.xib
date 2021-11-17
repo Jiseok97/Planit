@@ -21,12 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlannerVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64Z-35-A7q">
-                    <rect key="frame" x="145" y="482" width="124" height="32.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                    <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-wF-k2r" customClass="FSCalendar">
                     <rect key="frame" x="0.0" y="44" width="414" height="350"/>
                     <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,8 +77,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r6l-XF-POi" secondAttribute="trailing" id="G0n-Oz-8gA"/>
                 <constraint firstItem="r6l-XF-POi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JRZ-SW-oY2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gbp-wF-k2r" secondAttribute="trailing" id="SzH-GZ-k0I"/>
-                <constraint firstItem="64Z-35-A7q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="50" id="dea-Ig-SZx"/>
-                <constraint firstItem="64Z-35-A7q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lTn-8l-uD3"/>
                 <constraint firstItem="Gbp-wF-k2r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s50-SY-Aub"/>
                 <constraint firstItem="Gbp-wF-k2r" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="y1D-iF-fwJ"/>
             </constraints>

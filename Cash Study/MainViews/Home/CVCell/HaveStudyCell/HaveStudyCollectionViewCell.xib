@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="iyN-gO-AvU">
-                        <rect key="frame" x="397" y="66" width="24" height="24"/>
+                        <rect key="frame" x="397" y="76" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="64d-qZ-Iiz"/>
                             <constraint firstAttribute="height" constant="24" id="Bhj-gN-lQ8"/>
@@ -53,7 +53,8 @@
                 <constraint firstItem="Ym2-sh-PHs" firstAttribute="top" secondItem="g0d-Un-yz4" secondAttribute="bottom" constant="4" id="Fve-xJ-vSJ"/>
                 <constraint firstItem="Ym2-sh-PHs" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="HMQ-4H-dFU"/>
                 <constraint firstItem="g0d-Un-yz4" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="26" id="Nfp-Zd-gS1"/>
-                <constraint firstItem="iyN-gO-AvU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Z8G-xb-596"/>
+                <constraint firstItem="iyN-gO-AvU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="10" id="Z8G-xb-596"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Ym2-sh-PHs" secondAttribute="bottom" constant="6.5" id="lnL-97-5RN"/>
             </constraints>
             <size key="customSize" width="441" height="156"/>
             <connections>

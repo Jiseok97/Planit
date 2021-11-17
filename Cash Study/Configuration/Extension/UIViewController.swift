@@ -112,12 +112,19 @@ extension UIViewController {
         tappedDayBtn(btn7, false)
     }
     func tappedDayBtn(_ btn: UIButton, _ check: Bool) {
-        if check {
-            btn.backgroundColor = UIColor.link
-            btn.setTitleColor(UIColor.myGray, for: .normal)
-        } else {
+//        if check == true {
+//            btn.backgroundColor = UIColor.link
+//            btn.setTitleColor(UIColor.myGray, for: .normal)
+//        } else {
+//            btn.backgroundColor = UIColor.homeBorderColor
+//            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
+//        }
+        if !check {
             btn.backgroundColor = UIColor.homeBorderColor
             btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
+        } else {
+            btn.backgroundColor = UIColor.link
+            btn.setTitleColor(UIColor.myGray, for: .normal)
         }
     }
     
