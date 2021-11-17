@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +14,8 @@
                 <outlet property="calendarView" destination="Gbp-wF-k2r" id="iG8-JA-Qrc"/>
                 <outlet property="calendarViewHeight" destination="I5e-0Y-HPH" id="bxj-Le-eAQ"/>
                 <outlet property="changeScopeCalendar" destination="mYA-Pd-ems" id="IkW-N6-nEt"/>
+                <outlet property="changeScopeCalendarView" destination="r6l-XF-POi" id="HKY-yE-dX0"/>
+                <outlet property="changeScopeCalendarViewHeight" destination="sae-dF-s90" id="rQl-FG-qf3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,17 +31,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-wF-k2r" customClass="FSCalendar">
-                    <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="300"/>
                     <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="350" id="I5e-0Y-HPH"/>
+                        <constraint firstAttribute="height" constant="300" id="I5e-0Y-HPH"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
                             <color key="value" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                            <color key="value" red="0.10588235294117647" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
                             <color key="value" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,16 +48,22 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="NO"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
-                            <color key="value" red="0.86274509803921573" green="0.72549019607843135" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
                             <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                            <color key="value" systemColor="linkColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                            <color key="value" systemColor="linkColor"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-XF-POi">
-                    <rect key="frame" x="0.0" y="394" width="414" height="28"/>
+                    <rect key="frame" x="0.0" y="344" width="414" height="28"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYA-Pd-ems">
                             <rect key="frame" x="0.0" y="-3" width="414" height="34"/>
@@ -93,5 +99,8 @@
     </objects>
     <resources>
         <image name="downArrow" width="20" height="20"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

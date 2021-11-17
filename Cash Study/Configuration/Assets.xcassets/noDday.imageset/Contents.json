@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "testImage001.png",
+      "filename" : "icon80DdayEmpty.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icon80DdayEmpty@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icon80DdayEmpty@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

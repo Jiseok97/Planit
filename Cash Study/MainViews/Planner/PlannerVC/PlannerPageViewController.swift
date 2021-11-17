@@ -13,6 +13,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     @IBOutlet weak var changeScopeCalendar: UIButton!
+    @IBOutlet weak var changeScopeCalendarView: UIView!
+    @IBOutlet weak var changeScopeCalendarViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     func setUI() {
         self.calendarView.layer.cornerRadius = 8
         self.changeScopeCalendar.setTitle("", for: .normal)
+        self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        self.changeScopeCalendarView.layer.cornerRadius = 8
+        self.changeScopeCalendarView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
 
     
@@ -34,24 +39,33 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
         calendarView.appearance.headerTitleColor = UIColor.link
-        calendarView.appearance.headerTitleFont = UIFont.systemFont(ofSize: 16)
-        
+        calendarView.appearance.headerTitleAlignment = .left
+        calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKkr-Medium", size: 16)
+        calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
+        calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 14)
+        calendarView.appearance.titleTodayColor = UIColor(red: 220/225, green: 185/225, blue: 45/225, alpha: 1.0)
+        calendarView.placeholderType = .none
     }
     
     
     
     
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        self.calendarViewHeight.constant = bounds.height
+        self.view.layoutIfNeeded()
+    }
     
     
-    @IBAction func chageCalendarScope(_ sender: Any) {
-        if self.calendarView.scope == FSCalendarScope.week {
+    @IBAction func chageCalendarScope(_ sender: AnyObject) {
+        if self.calendarView.scope == .week {
             self.calendarView.scope = .month
-//            self.calendarView.setScope(.month, animated: true)
-            self.calendarViewHeight.constant = 0
+            self.calendarViewHeight.constant = view.frame.height * 0.48
+            
+            
         } else {
             self.calendarView.scope = .week
-//            self.calendarView.setScope(.week, animated: true)
-            self.calendarViewHeight.constant = view.safeAreaLayoutGuide.layoutFrame.size.height * -0.20
+            self.calendarViewHeight.constant = view.frame.height * 0.193349753694581
+       
         }
     }
     
@@ -68,11 +82,6 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         print("선택 해체 \(dateFormatter.string(from: date))")
     }
     
-    
-    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        self.calendarViewHeight.constant = bounds.height
-        self.view.layoutIfNeeded()
-    }
     
     
 }
