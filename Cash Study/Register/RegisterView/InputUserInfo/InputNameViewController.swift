@@ -51,6 +51,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
                     setShowErrorLblImg(nickNameError, nickNameErrorLbl, "닉네임은 8글자 이내로 입력해주세요.")
                     setEnableBtn(nextBtn)
                 } else {
+                    guard let userNickName = self.nickNameTF.text else { return }
+                    let input = nickNameInput(nickname: userNickName)
+                    NickNameDataManager().validateNickName(input, viewController: self)
                     sethiddenLblImg(nickNameError, nickNameErrorLbl)
                 }
             }
@@ -103,8 +106,8 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         guard let userName = nameTF.text else { return }
         guard let userNickName = nickNameTF.text else { return }
         
-        let input = nickNameInput(nickname: userNickName)
-        NickNameDataManager().validateNickName(input, viewController: self)
+//        let input = nickNameInput(nickname: userNickName)
+//        NickNameDataManager().validateNickName(input, viewController: self)
         
         if checkUserNickName {
             UserInfoData.name = userName

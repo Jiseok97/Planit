@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var studyLstCVHeight: NSLayoutConstraint!
     
     
-    var studyDataLst : [String] = ["Empty", "hello", "Empty"]
+    var studyDataLst : [String] = ["Empty", "hello", "Empty", "리나", "리나2", "리나3", "리나4", "리나5", "리나6"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

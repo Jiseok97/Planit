@@ -90,6 +90,10 @@
 		B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B2273028A600B1326A /* noReceiverDataManager.swift */; };
 		B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B427302A3800B1326A /* HaveReceiverInput.swift */; };
 		B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C455B627302A8800B1326A /* noReceiverInput.swift */; };
+		B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB7CFC27463AE000B6381A /* NoStudyCollectionViewCell.swift */; };
+		B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7CFD27463AE000B6381A /* NoStudyCollectionViewCell.xib */; };
+		B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB7D042746439700B6381A /* StudyCollectionViewCell.swift */; };
+		B6CB7D072746439700B6381A /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */; };
 		B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDF12728308A00C9C846 /* UITextField.swift */; };
 		B6D81E172732B588006E641E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E152732B588006E641E /* SplashViewController.swift */; };
 		B6D81E182732B588006E641E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D81E162732B588006E641E /* SplashViewController.xib */; };
@@ -210,6 +214,10 @@
 		B6C455B2273028A600B1326A /* noReceiverDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverDataManager.swift; sourceTree = "<group>"; };
 		B6C455B427302A3800B1326A /* HaveReceiverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveReceiverInput.swift; sourceTree = "<group>"; };
 		B6C455B627302A8800B1326A /* noReceiverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noReceiverInput.swift; sourceTree = "<group>"; };
+		B6CB7CFC27463AE000B6381A /* NoStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6CB7CFD27463AE000B6381A /* NoStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoStudyCollectionViewCell.xib; sourceTree = "<group>"; };
+		B6CB7D042746439700B6381A /* StudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6D1FDF12728308A00C9C846 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B6D81E152732B588006E641E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B6D81E162732B588006E641E /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
@@ -292,6 +300,7 @@
 		B614C461273A9CEE00A5E8F9 /* PlannerVC */ = {
 			isa = PBXGroup;
 			children = (
+				B6CB7CF927463AA600B6381A /* CVCell */,
 				B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */,
 				B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */,
 			);
@@ -486,10 +495,10 @@
 		B66B477B2732797F00F89012 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
-				B614C461273A9CEE00A5E8F9 /* PlannerVC */,
-				B614C462273A9CFA00A5E8F9 /* DdayVC */,
 				B66B477D2732799E00F89012 /* PlannerViewController.xib */,
 				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
+				B614C461273A9CEE00A5E8F9 /* PlannerVC */,
+				B614C462273A9CFA00A5E8F9 /* DdayVC */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -812,6 +821,33 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		B6CB7CF927463AA600B6381A /* CVCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB7CFA27463ABE00B6381A /* NoStudy */,
+				B6CB7CFB27463AC300B6381A /* Study */,
+			);
+			path = CVCell;
+			sourceTree = "<group>";
+		};
+		B6CB7CFA27463ABE00B6381A /* NoStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB7CFD27463AE000B6381A /* NoStudyCollectionViewCell.xib */,
+				B6CB7CFC27463AE000B6381A /* NoStudyCollectionViewCell.swift */,
+			);
+			path = NoStudy;
+			sourceTree = "<group>";
+		};
+		B6CB7CFB27463AC300B6381A /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */,
+				B6CB7D042746439700B6381A /* StudyCollectionViewCell.swift */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
 		B6D81E192732B8B6006E641E /* CheckToken */ = {
 			isa = PBXGroup;
 			children = (
@@ -952,6 +988,7 @@
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
+				B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
@@ -969,6 +1006,8 @@
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
 				B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */,
+				B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */,
+				B6CB7D072746439700B6381A /* StudyCollectionViewCell.xib in Resources */,
 				B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */,
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
@@ -1059,6 +1098,7 @@
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
+				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
 				B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */,
@@ -1074,6 +1114,7 @@
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
+				B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */,
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,

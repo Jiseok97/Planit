@@ -35,6 +35,9 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var checkRepresentSd: UISlider!
     @IBOutlet weak var sdButton: UIButton!
     
+    @IBOutlet var btnCategory: [UIButton]!
+    
+    
     @IBOutlet weak var confirmBtn: UIButton!
     
     var firstBtnClicked: Bool = false
@@ -80,20 +83,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         self.representView.layer.cornerRadius = 8
         
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
-        self.firstBtn.layer.cornerRadius = 8
-        self.secondBtn.layer.cornerRadius = 8
-        self.thirdBtn.layer.cornerRadius = 8
-        self.fourthBtn.layer.cornerRadius = 8
-        self.fifthBtn.layer.cornerRadius = 8
+        // foreach
         
-        self.backBtn.setTitle("", for: .normal)
-        self.firstBtn.setTitle("", for: .normal)
-        self.secondBtn.setTitle("", for: .normal)
-        self.thirdBtn.setTitle("", for: .normal)
-        self.fourthBtn.setTitle("", for: .normal)
-        self.fifthBtn.setTitle("", for: .normal)
-        self.sdButton.setTitle("", for: .normal)
-        self.dateBtn.setTitle("", for: .normal)
+        btnCategory.forEach {
+            $0.layer.cornerRadius = 8
+        }
     }
     
     // MARK: About Text Field
@@ -114,6 +108,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     // MARK: Check Icon Button
     @IBAction func selectIconBtnTapped(_ sender: UIButton) {
         switch sender {
+            
         case self.firstBtn:
             self.firstBtnClicked = changeBoolValue(buttonChecked: firstBtnClicked)
             setBtnColors(firstBtn, firstBtnClicked)

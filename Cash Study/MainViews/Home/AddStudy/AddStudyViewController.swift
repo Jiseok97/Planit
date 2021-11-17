@@ -130,35 +130,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func checkEveryDayBtn() {
-        if mondayTapped == true && tuesdayTapped == true &&  wednesdayTapped == true && thursdayTapped == true && fridayTapped == true &&  saturdayTapped == true && sundayTapped == true {
-            
-            mondayTapped = false
-            tuesdayTapped = false
-            wednesdayTapped = false
-            thursdayTapped = false
-            fridayTapped = false
-            saturdayTapped = false
-            sundayTapped = false
-            
-            tappedDayBtn(mondayBtn, mondayTapped)
-            tappedDayBtn(tuesdayBtn, tuesdayTapped)
-            tappedDayBtn(wednesdayBtn, wednesdayTapped)
-            tappedDayBtn(thursdayBtn, thursdayTapped)
-            tappedDayBtn(fridayBtn, fridayTapped)
-            tappedDayBtn(saturdayBtn, saturdayTapped)
-            tappedDayBtn(sundayBtn, sundayTapped)
-            
-            everydapTapped = true
-            tappedDayBtn(everyDayBtn, everydapTapped)
-        }
-    }
-    
-    
-    @IBAction func showCalendarTapped(_ sender: Any) {
-        
-    }
-    
     
     @IBAction func dayBtnTapped(_ sender: UIButton) {
         var btnCheck : Bool = true
@@ -178,7 +149,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             everyDayBtn.backgroundColor = UIColor.homeBorderColor
             everyDayBtn.setTitleColor(.notSelectBtnColor, for: .normal)
         }
-        
         
         
         if !sender.isSelected {
