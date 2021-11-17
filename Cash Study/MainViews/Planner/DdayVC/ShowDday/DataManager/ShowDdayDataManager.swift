@@ -8,7 +8,7 @@
 import Alamofire
 
 class ShowDdayDataManager {
-    let header: HTTPHeaders = [.authorization(bearerToken: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjgzLCJpYXQiOjE2MzY5NTU3MzYsImV4cCI6MTYzNzA0MjEzNn0.Us7KcwpitTcqaV0sgi4BKAqL0ngI06XC4Kqg2TvLFe0"),
+    let header: HTTPHeaders = [.authorization(bearerToken: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjgzLCJpYXQiOjE2MzcxMzE1NjYsImV4cCI6MTYzNzIxNzk2Nn0.PA-08p5w4X-dQ4q_eUdwXSWGoqUkb2sNxRXJwUe-8nA"),
                                .accept("application/json")]
     
 //    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
@@ -23,9 +23,10 @@ class ShowDdayDataManager {
                 switch code {
                 case 200:
                     guard let result = response.value?.ddays else { return }
+                    guard let data = response.value else { return }
                     print("Success")
                     print(result)
-                    viewController.DdayDataLst = result
+                    viewController.showDday(result: data)
 //                    completion(result)
                     
                 default:
