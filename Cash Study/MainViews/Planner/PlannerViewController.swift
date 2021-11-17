@@ -29,7 +29,7 @@ class PlannerViewController: UIViewController {
     func setUI() {
         self.plusBtn.layer.borderColor = UIColor.myGray.cgColor
         self.plusBtn.layer.borderWidth = 1
-        self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2 - 5
+        self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2
     }
     
     
