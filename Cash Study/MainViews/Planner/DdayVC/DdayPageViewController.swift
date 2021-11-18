@@ -13,13 +13,13 @@ class DdayPageViewController: UIViewController {
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
     var dDayLst : [String] = ["Test", "Test02", "Test03", "Test04", "Test05"]
-    var DdayDataLst : [dday] = []
+    var DdayDataLst : ShowDdayEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-//        ShowDdayDataManager().addDday(viewController: self)
+        ShowDdayDataManager().addDday(viewController: self)
 //        print("DdayPage(viewDidLoad) → \(DdayDataLst)")
         
         setGradation()
@@ -29,6 +29,7 @@ class DdayPageViewController: UIViewController {
         dDayCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         dDayCV.register(UINib(nibName: "DdayListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DdayCell")
         dDayCV.register(UINib(nibName: "RepresentativeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RepresentativeCell")
+        dDayCV.register(UINib(nibName: "NoDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NoDdayCell")
         
         if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -55,18 +56,15 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.DdayDataLst.count
-        return dDayLst.count
+        if DdayDataLst != nil {
+            return DdayDataLst!.ddays.count
+        } else {
+            // 디데이가 없을 때
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.layer.cornerRadius = 8
-//            cell.dDayNameLbl.text = data.title
-//            cell.timeLbl.text = data.endAt
-            cell.dDayNameLbl.text = dDayLst[indexPath.row]
         
         if DdayDataLst != nil {
             if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
@@ -108,6 +106,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 cell.dDayNameLbl.text = DdayDataLst?.ddays[indexPath.row].title
                 cell.timeLbl.text = DdayDataLst?.ddays[indexPath.row].endAt
                 
+            
                 
                 return cell
                 
@@ -155,20 +154,13 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             }
             
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DdayCell", for: indexPath) as? DdayListCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.layer.cornerRadius = 8
-            cell.backgroundColor = UIColor.studyCellBgColor
-//            cell.dDayName.text = data.title
-//            cell.timeLbl.text = data.endAt
-            
-            cell.dDayName.text = dDayLst[indexPath.row]
+            // 디데이가 없다는 cell 출력
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoDdayCell", for: indexPath) as? NoDdayCollectionViewCell else { return UICollectionViewCell() }
             
             cell.backgroundColor = UIColor.yellow
             
             return cell
         }
-        
         
     }
     
@@ -205,10 +197,10 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     
 }
 
+
 extension DdayPageViewController {
     func showDday(result : ShowDdayEntity) {
         self.DdayDataLst = result
         self.dDayCV.reloadData()
     }
 }
-

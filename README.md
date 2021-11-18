@@ -4,6 +4,7 @@
 </br>
 
 ## 📱 View Progress ▾
+
 * Login View → ✅
 
 * Terms of Use View → ✅
@@ -20,7 +21,8 @@
 
 * Added BaseTabBar Controller → ✅
 
-* Home View → ***proceeding***
+* Home View → ✅
+
 
 </br>
 
