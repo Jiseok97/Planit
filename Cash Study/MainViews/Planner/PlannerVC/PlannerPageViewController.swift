@@ -55,6 +55,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.changeScopeCalendarView.layer.cornerRadius = 8
         self.changeScopeCalendarView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
     
@@ -75,24 +76,20 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     
-    
-    
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         self.calendarViewHeight.constant = bounds.height
         self.view.layoutIfNeeded()
     }
     
     
-    @IBAction func chageCalendarScope(_ sender: AnyObject) {
+    @IBAction func chageCalendarScope(_ sender: Any) {
+
         if self.calendarView.scope == .week {
             self.calendarView.scope = .month
             self.calendarViewHeight.constant = view.frame.height * 0.48
-            
-            
         } else {
             self.calendarView.scope = .week
             self.calendarViewHeight.constant = view.frame.height * 0.193349753694581
-       
         }
     }
     
@@ -109,6 +106,35 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     
+}
+
+
+extension PlannerPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func changeHeight() {
+        self.cvHeight.constant = self.studyCV.collectionViewLayout.collectionViewContentSize.height
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noStudyCell", for: indexPath) as? NoStudyCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.bounds.width * 0.872
+        let height = self.view.bounds.height * 0.142857142857143
+        
+        return CGSize(width: width, height: height)
+    }
     
 }
 //

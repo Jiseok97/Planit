@@ -16,6 +16,9 @@
                 <outlet property="changeScopeCalendar" destination="mYA-Pd-ems" id="IkW-N6-nEt"/>
                 <outlet property="changeScopeCalendarView" destination="r6l-XF-POi" id="HKY-yE-dX0"/>
                 <outlet property="changeScopeCalendarViewHeight" destination="sae-dF-s90" id="rQl-FG-qf3"/>
+                <outlet property="contentView" destination="byD-3z-RNm" id="XLC-uv-MxZ"/>
+                <outlet property="cvHeight" destination="K82-GS-hiM" id="ALs-a1-5nT"/>
+                <outlet property="studyCV" destination="dDb-PR-YQf" id="ofn-jS-dRd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,46 +27,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlannerVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64Z-35-A7q">
-                    <rect key="frame" x="145" y="482" width="124" height="32.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                    <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-wF-k2r" customClass="FSCalendar">
-                    <rect key="frame" x="0.0" y="44" width="414" height="300"/>
-                    <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="I5e-0Y-HPH"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                            <color key="value" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
-                            <color key="value" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                            <color key="value" systemColor="linkColor"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                            <color key="value" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
-                            <color key="value" systemColor="linkColor"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-XF-POi">
-                    <rect key="frame" x="0.0" y="344" width="414" height="28"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjm-az-eOQ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byD-3z-RNm">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1066"/>

@@ -50,7 +50,9 @@ class SplashViewController: UIViewController {
         
 //        changeRootVC(TermsOfUseViewController())
         
-
+        
+//        changeRootVC(TermsOfUseViewController())
+        
 //        if userAccessToken == "" {
 //            changeRootVC(LoginViewController())
 //        } else {

@@ -26,21 +26,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXl-0f-pf6">
-                    <rect key="frame" x="0.0" y="44" width="414" height="59.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="47"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-Q8-ix2">
-                            <rect key="frame" x="32" y="8" width="177" height="44.5"/>
+                            <rect key="frame" x="32" y="8" width="191.5" height="32"/>
                             <segments>
                                 <segment title="플래너"/>
                                 <segment title="디데이"/>
                             </segments>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-r1-ZdJ">
-                            <rect key="frame" x="263" y="10" width="127" height="43.5"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Plus" title=" 공부추가">
-                                <color key="baseForegroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </buttonConfiguration>
+                            <rect key="frame" x="277.5" y="10" width="112.5" height="31.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                            <color key="tintColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="  공부추가" image="Plus">
+                                <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                         </button>
                     </subviews>
                     <constraints>
@@ -60,6 +62,7 @@
                 <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.272" id="4Wq-BK-Gem"/>
                 <constraint firstItem="EXl-0f-pf6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CzD-kd-k1y"/>
                 <constraint firstItem="EXl-0f-pf6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0665025" id="Hld-u3-vRt"/>
+                <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.044335" id="WYN-oH-Rjk"/>
                 <constraint firstItem="EXl-0f-pf6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iHG-PS-TdC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EXl-0f-pf6" secondAttribute="trailing" id="o3j-qW-3K6"/>
             </constraints>

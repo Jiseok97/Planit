@@ -106,7 +106,6 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 cell.dDayNameLbl.text = DdayDataLst?.ddays[indexPath.row].title
                 cell.timeLbl.text = DdayDataLst?.ddays[indexPath.row].endAt
                 
-            
                 
                 return cell
                 
@@ -197,10 +196,10 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     
 }
 
-
 extension DdayPageViewController {
     func showDday(result : ShowDdayEntity) {
         self.DdayDataLst = result
         self.dDayCV.reloadData()
     }
 }
+
