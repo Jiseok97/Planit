@@ -156,8 +156,6 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             // 디데이가 없다는 cell 출력
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoDdayCell", for: indexPath) as? NoDdayCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.backgroundColor = UIColor.yellow
-            
             return cell
         }
         
@@ -190,7 +188,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         } else {
             // 디데이가 없을 때
             
-            return CGSize(width: self.view.bounds.width * 0.872, height: 400)
+            return CGSize(width: self.view.bounds.width / 2 + 30, height: view.bounds.height / 2 + 30)
         }
     }
     

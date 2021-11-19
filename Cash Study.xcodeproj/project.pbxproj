@@ -33,6 +33,10 @@
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
 		B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */; };
 		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
+		B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */; };
+		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
+		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
+		B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
 		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
@@ -95,7 +99,6 @@
 		B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB7CFC27463AE000B6381A /* NoStudyCollectionViewCell.swift */; };
 		B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7CFD27463AE000B6381A /* NoStudyCollectionViewCell.xib */; };
 		B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB7D042746439700B6381A /* StudyCollectionViewCell.swift */; };
-		B6CB7D072746439700B6381A /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */; };
 		B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDF12728308A00C9C846 /* UITextField.swift */; };
 		B6D81E172732B588006E641E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E152732B588006E641E /* SplashViewController.swift */; };
 		B6D81E182732B588006E641E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D81E162732B588006E641E /* SplashViewController.xib */; };
@@ -153,6 +156,10 @@
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayDataManager.swift; sourceTree = "<group>"; };
 		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
+		B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyDataManager.swift; sourceTree = "<group>"; };
+		B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyEntity.swift; sourceTree = "<group>"; };
+		B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudyInput.swift; sourceTree = "<group>"; };
+		B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyInput.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
@@ -441,6 +448,24 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		B63A1F312747ADAB0077CC76 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B63A1F322747ADB20077CC76 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */,
+				B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */,
+				B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		B64771BC2744F2D200BBCBC2 /* NoDday */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +627,8 @@
 		B6789944273F9B4F00B08CEB /* AddStudy */ = {
 			isa = PBXGroup;
 			children = (
+				B63A1F312747ADAB0077CC76 /* DataManager */,
+				B63A1F322747ADB20077CC76 /* Entity */,
 				B6789946273F9B7200B08CEB /* AddStudyViewController.xib */,
 				B6789945273F9B7200B08CEB /* AddStudyViewController.swift */,
 			);
@@ -1111,6 +1138,7 @@
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
+				B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */,
 				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
 				B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
@@ -1136,6 +1164,7 @@
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
+				B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
@@ -1143,12 +1172,14 @@
 				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */,
+				B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */,
 				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6D81E1F2732B8FA006E641E /* RefreshTokenInput.swift in Sources */,
 				B6D81E172732B588006E641E /* SplashViewController.swift in Sources */,
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
 				B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */,
+				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
 				B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,

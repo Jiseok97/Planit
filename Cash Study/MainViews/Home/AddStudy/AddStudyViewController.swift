@@ -40,15 +40,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmBtn: UIButton!
     
     var isRepeat : Bool = false
-    
-    var mondayTapped: Bool = false
-    var tuesdayTapped : Bool = false
-    var wednesdayTapped : Bool = false
-    var thursdayTapped : Bool = false
-    var fridayTapped : Bool = false
-    var saturdayTapped : Bool = false
-    var sundayTapped : Bool = false
-    var everydapTapped : Bool = false
+    var tappedDayButtons: [String] = []
     
     
     override func viewDidLoad() {
@@ -86,14 +78,11 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         self.secondView.layer.cornerRadius = 8
         self.thirdView.layer.cornerRadius = 8
         
+        dateBtnCollection.forEach {
+            $0.layer.cornerRadius = 8
+        }
         self.everyDayBtn.layer.cornerRadius = 8
-        self.mondayBtn.layer.cornerRadius = 8
-        self.tuesdayBtn.layer.cornerRadius = 8
-        self.wednesdayBtn.layer.cornerRadius = 8
-        self.thursdayBtn.layer.cornerRadius = 8
-        self.fridayBtn.layer.cornerRadius = 8
-        self.saturdayBtn.layer.cornerRadius = 8
-        self.sundayBtn.layer.cornerRadius = 8
+        
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         
         self.backBtn.setTitle("", for: .normal)
@@ -133,14 +122,15 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func dayBtnTapped(_ sender: UIButton) {
         var btnCheck : Bool = true
+        guard let txt = sender.titleLabel?.text else { return }
         
         if sender == everyDayBtn {
             // 매일 버튼 눌렀을 때
             if !everyDayBtn.isSelected {
-                for date in dateBtnCollection {
-                    date.isSelected = false
-                    date.backgroundColor = UIColor.homeBorderColor
-                    date.setTitleColor(.notSelectBtnColor, for: .normal)
+                dateBtnCollection.forEach {
+                    $0.isSelected = false
+                    $0.backgroundColor = UIColor.homeBorderColor
+                    $0.setTitleColor(.notSelectBtnColor, for: .normal)
                 }
             }
         } else {
@@ -152,14 +142,48 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         
         if !sender.isSelected {
+            
             sender.isSelected = true
             sender.backgroundColor = UIColor.link
             sender.setTitleColor(.myGray, for: .normal)
-            
-            for date in dateBtnCollection {
-                if date.isSelected == false {
+           
+            dateBtnCollection.forEach {
+                if !$0.isSelected {
                     btnCheck = false
                 }
+            }
+            
+            switch txt {
+                
+            case "월":
+                tappedDayButtons.append(String("MONDAY"))
+                
+            case "화":
+                tappedDayButtons.append(String("TUESDAY"))
+                
+            case "수":
+                tappedDayButtons.append(String("WEDNESDAY"))
+                
+            case "목":
+                tappedDayButtons.append(String("THURSDAY"))
+                
+            case "금":
+                tappedDayButtons.append(String("FRIDAY"))
+                
+            case "토":
+                tappedDayButtons.append(String("SATURDAY"))
+                
+            case "일":
+                tappedDayButtons.append(String("SUNDAY"))
+                
+            default:
+                tappedDayButtons.append(String("MONDAY"))
+                tappedDayButtons.append(String("TUESDAY"))
+                tappedDayButtons.append(String("WEDNESDAY"))
+                tappedDayButtons.append(String("THURSDAY"))
+                tappedDayButtons.append(String("FRIDAY"))
+                tappedDayButtons.append(String("SATURDAY"))
+                tappedDayButtons.append(String("SUNDAY"))
             }
             
             if btnCheck {
@@ -178,10 +202,53 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             sender.isSelected = false
             sender.backgroundColor = UIColor.homeBorderColor
             sender.setTitleColor(.notSelectBtnColor, for: .normal)
+            
+            switch txt {
+                
+            case "월":
+                tappedDayButtons.removeAll(where: { $0 == "MONDAY"} )
+                
+            case "화":
+                tappedDayButtons.removeAll(where: { $0 == "TUESDAY"} )
+                
+            case "수":
+                tappedDayButtons.removeAll(where: { $0 == "WEDNESDAY"} )
+                
+            case "목":
+                tappedDayButtons.removeAll(where: { $0 == "THURSDAY"} )
+                
+            case "금":
+                tappedDayButtons.removeAll(where: { $0 == "FRIDAY"} )
+                
+            case "토":
+                tappedDayButtons.removeAll(where: { $0 == "SATURDAY"} )
+                
+            case "일":
+                tappedDayButtons.removeAll(where: { $0 == "SUNDAY"} )
+                
+            default:
+                tappedDayButtons.removeAll()
+            }
+            
         }
         
     }
     
+    
+    
+    @IBAction func addStudyBtnTapped(_ sender: Any) {
+        guard let title = titleTF.text else { return }
+
+        if repeatSd.value == 1 {
+            // 반복
+            
+            print(tappedDayButtons)
+        } else {
+            // 반복 없음
+            let input = SingleStudyInput(title: title, startAt: "2021-11-19")
+            AddStudyDataManager().singleStudy(input, viewController: self)
+        }
+    }
     
     
     

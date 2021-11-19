@@ -62,8 +62,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     func setCalendar() {
         calendarView.locale = Locale(identifier: "ko_KR")
         calendarView.scrollEnabled = false
-        calendarView.scope = .month
-        
+//        calendarView.scope = .month
+        changeScopeCalendar.setImage(UIImage(named: "upArrow"), for: .normal)
         
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
         calendarView.appearance.headerTitleColor = UIColor.link
@@ -87,9 +87,12 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         if self.calendarView.scope == .week {
             self.calendarView.scope = .month
             self.calendarViewHeight.constant = view.frame.height * 0.48
+            self.changeScopeCalendar.setImage(UIImage(named: "upArrow"), for: .normal)
         } else {
             self.calendarView.scope = .week
             self.calendarViewHeight.constant = view.frame.height * 0.193349753694581
+            self.changeScopeCalendar.setImage(UIImage(named: "downArrow"), for: .normal)
+            
         }
     }
     

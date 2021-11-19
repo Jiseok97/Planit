@@ -394,6 +394,9 @@
                     <state key="normal" title="추가하기">
                         <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="addStudyBtnTapped:" destination="-1" eventType="touchUpInside" id="yqE-n6-I1H"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
