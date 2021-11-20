@@ -20,7 +20,6 @@ class ShowDdayDataManager {
                 case 200:
                     guard let result = response.value?.ddays else { return }
                     guard let data = response.value else { return }
-                    print("Success → Bring dday data")
                     print(result)
                     viewController.showDday(result: data)
                     

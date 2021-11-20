@@ -12,7 +12,11 @@ class DdayPageViewController: UIViewController {
     @IBOutlet weak var dDayCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
-    var DdayDataLst : ShowDdayEntity?
+    var DdayDataLst : ShowDdayEntity? {
+        didSet {
+            self.dDayCV.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,6 @@ class DdayPageViewController: UIViewController {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
         
-        dDayThread()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +45,6 @@ class DdayPageViewController: UIViewController {
         self.changeHeight()
     }
     
-    
-    func dDayThread() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            DispatchQueue.main.async {
-                self.dDayCV.reloadData()
-            }
-        }
-    }
     
 }
 

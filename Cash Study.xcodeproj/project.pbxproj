@@ -311,9 +311,9 @@
 		B614C461273A9CEE00A5E8F9 /* PlannerVC */ = {
 			isa = PBXGroup;
 			children = (
-				B6CB7CF927463AA600B6381A /* CVCell */,
 				B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */,
 				B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */,
+				B6CB7CF927463AA600B6381A /* CVCell */,
 			);
 			path = PlannerVC;
 			sourceTree = "<group>";
@@ -324,8 +324,6 @@
 				B614C46F273ABED700A5E8F9 /* CVCell */,
 				B614C47A273AE06E00A5E8F9 /* AddDday */,
 				B62618A6274228C000E301A7 /* ShowDday */,
-				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
-				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
 			);
 			path = DdayVC;
 			sourceTree = "<group>";
@@ -345,6 +343,8 @@
 		B614C46F273ABED700A5E8F9 /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
+				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
+				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
 				B64771BC2744F2D200BBCBC2 /* NoDday */,
 				B614C475273ACB5400A5E8F9 /* RepresentDday */,
 				B614C474273ACB4B00A5E8F9 /* NomalDday */,

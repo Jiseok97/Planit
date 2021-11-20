@@ -22,7 +22,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     @IBOutlet weak var studyCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
-    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +49,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         self.changeHeight()
     }
     
+    
+    // MARK: Function
     func setUI() {
         self.calendarView.layer.cornerRadius = 8
         self.changeScopeCalendar.setTitle("", for: .normal)
@@ -62,8 +64,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     func setCalendar() {
         calendarView.locale = Locale(identifier: "ko_KR")
         calendarView.scrollEnabled = false
-//        calendarView.scope = .month
-        changeScopeCalendar.setImage(UIImage(named: "upArrow"), for: .normal)
+        calendarView.scope = .week
         
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
         calendarView.appearance.headerTitleColor = UIColor.link

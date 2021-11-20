@@ -209,7 +209,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 
             } else {
                 // 일반 디데이 경우
-                let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-20", color: self.color, isRepresentative: self.isRepresentative)
+                let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-22", color: self.color, isRepresentative: self.isRepresentative)
                 AddDdayDataManager().addDday(input, viewController: self)
             }
         }
