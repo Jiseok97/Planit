@@ -67,7 +67,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         self.nickNameTF.setPlaceHolderColor(UIColor.placeHolderColor)
         self.nameView.layer.cornerRadius = 11
         self.nickNameView.layer.cornerRadius = 11
-        self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2 - 5
+        self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
         
         sethiddenLblImg(self.nickNameError, self.nickNameErrorLbl)
         

@@ -31,7 +31,7 @@ class TermsOfUseViewController: UIViewController {
     func setUI() {
         self.allCheckView.layer.cornerRadius = 11
         self.selectiveView.layer.cornerRadius = 11
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 10
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
         self.confirmBtn.isEnabled = false
         self.confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)

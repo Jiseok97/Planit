@@ -20,11 +20,12 @@ class AddDdayDataManager {
                 switch code {
                 case 201:
                     print("생성완료")
-                    vc.dDayCV.reloadData()
+//                    ShowDdayDataManager().addDday(viewController: DdayPageViewController())
+                    viewController.reloadCV = true
                     
                 default:
+                    // 커스텀 뷰 띄어주기
                     print("오류")
-                    
                 }
             }
     }

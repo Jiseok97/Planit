@@ -48,6 +48,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     var color : String = ""
     var isRepresentative : Bool = false
+    var reloadCV : Bool = false {
+        didSet {
+            dismiss(animated: true, completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +66,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: inputTitleTF)
+        
     }
     
     @objc private func textLengthLimit(_ noti: Notification) {
@@ -202,12 +208,10 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 // 아니오 누르면 데이터 안 보내기
                 
             } else {
+                // 일반 디데이 경우
                 let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-20", color: self.color, isRepresentative: self.isRepresentative)
                 AddDdayDataManager().addDday(input, viewController: self)
             }
-            
-            
-            // 데이터를 성공적으로 가져왔을 때, DdayPageVC.dDayCV.reloadData() & dismiss 해주기
         }
         
     }
