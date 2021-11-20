@@ -200,10 +200,14 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 // 해당 디데이를 대표 디데이로 설정하시겠어요?
                 // 여기서 확인 누르면 끝
                 // 아니오 누르면 데이터 안 보내기
+                
+            } else {
+                let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-20", color: self.color, isRepresentative: self.isRepresentative)
+                AddDdayDataManager().addDday(input, viewController: self)
             }
-            let input = AddDdayInput(title: self.inputTitleTF.text!, endAt: "2021-11-20", color: self.color, isRepresentative: self.isRepresentative)
-            print(input)
-            AddDdayDataManager().addDday(input, viewController: self)
+            
+            
+            // 데이터를 성공적으로 가져왔을 때, DdayPageVC.dDayCV.reloadData() & dismiss 해주기
         }
         
     }

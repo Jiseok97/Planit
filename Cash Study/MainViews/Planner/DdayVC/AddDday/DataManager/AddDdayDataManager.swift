@@ -8,11 +8,9 @@
 import Alamofire
 
 class AddDdayDataManager {
-    let header: HTTPHeaders = [.authorization(bearerToken: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjgzLCJpYXQiOjE2MzY5NTU3MzYsImV4cCI6MTYzNzA0MjEzNn0.Us7KcwpitTcqaV0sgi4BKAqL0ngI06XC4Kqg2TvLFe0"),
+    let vc = DdayPageViewController()
+    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
-    
-//    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-//                               .accept("application/json")]
     
     func addDday(_ info: AddDdayInput ,viewController: AddDdayViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
@@ -22,6 +20,7 @@ class AddDdayDataManager {
                 switch code {
                 case 201:
                     print("생성완료")
+                    vc.dDayCV.reloadData()
                     
                 default:
                     print("오류")

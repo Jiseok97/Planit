@@ -7,14 +7,10 @@
 
 import Alamofire
 
-class ShowDdayDataManager {
-    let header: HTTPHeaders = [.authorization(bearerToken: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjgzLCJpYXQiOjE2MzcxMzE1NjYsImV4cCI6MTYzNzIxNzk2Nn0.PA-08p5w4X-dQ4q_eUdwXSWGoqUkb2sNxRXJwUe-8nA"),
+class ShowDdayDataManager {    
+    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
-//    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-//                               .accept("application/json")]
-    
-    // , completion: @escaping ([dday])->(Void)
     func addDday(viewController: DdayPageViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
@@ -24,10 +20,9 @@ class ShowDdayDataManager {
                 case 200:
                     guard let result = response.value?.ddays else { return }
                     guard let data = response.value else { return }
-                    print("Success")
+                    print("Success → Bring dday data")
                     print(result)
                     viewController.showDday(result: data)
-//                    completion(result)
                     
                 default:
                     print("오류")

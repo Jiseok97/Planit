@@ -17,10 +17,6 @@ class DdayPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        ShowDdayDataManager().addDday(viewController: self)
-//        print("DdayPage(viewDidLoad) → \(DdayDataLst)")
         
         setGradation()
         dDayCV.delegate = self
@@ -188,7 +184,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         } else {
             // 디데이가 없을 때
             
-            return CGSize(width: self.view.bounds.width / 2 + 30, height: view.bounds.height / 2 + 30)
+            return CGSize(width: self.view.bounds.width / 2 + 30, height: view.bounds.height / 2 + 50)
         }
     }
     

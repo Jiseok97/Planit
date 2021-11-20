@@ -16,7 +16,7 @@
 		B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */; };
 		B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */; };
 		B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */; };
-		B614C46E273AA63700A5E8F9 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */; };
+		B614C46E273AA63700A5E8F9 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B614C46C273A9F8A00A5E8F9 /* NotoSansKR-Medium.otf */; };
 		B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C470273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift */; };
 		B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C471273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib */; };
 		B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C476273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift */; };
@@ -138,7 +138,7 @@
 		B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlannerPageViewController.xib; sourceTree = "<group>"; };
 		B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayPageViewController.swift; sourceTree = "<group>"; };
 		B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DdayPageViewController.xib; sourceTree = "<group>"; };
-		B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansCJKkr-Medium.otf"; path = "../../../../softSqaured/Template/ios-template-storyboard-master/EduTemplate/Configuration/Font/NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		B614C46C273A9F8A00A5E8F9 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		B614C470273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdayListCollectionViewCell.swift; sourceTree = "<group>"; };
 		B614C471273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DdayListCollectionViewCell.xib; sourceTree = "<group>"; };
 		B614C476273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 				B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */,
 				B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */,
 				B6B40617273CFB51008DBE7C /* NotoSansKR-Regular.otf */,
-				B614C46C273A9F8A00A5E8F9 /* NotoSansCJKkr-Medium.otf */,
+				B614C46C273A9F8A00A5E8F9 /* NotoSansKR-Medium.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1051,7 +1051,7 @@
 				B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */,
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
-				B614C46E273AA63700A5E8F9 /* NotoSansCJKkr-Medium.otf in Resources */,
+				B614C46E273AA63700A5E8F9 /* NotoSansKR-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
