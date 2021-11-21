@@ -22,6 +22,7 @@ class AddDdayDataManager {
                     print("생성완료")
 //                    ShowDdayDataManager().addDday(viewController: DdayPageViewController())
                     viewController.reloadCV = true
+                
                     
                 default:
                     // 커스텀 뷰 띄어주기

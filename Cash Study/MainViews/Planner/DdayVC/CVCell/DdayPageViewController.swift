@@ -14,7 +14,11 @@ class DdayPageViewController: UIViewController {
     
     var DdayDataLst : ShowDdayEntity? {
         didSet {
-            self.dDayCV.reloadData()
+            print("DdayDataLst is didSet")
+            
+            if let collectionView = self.dDayCV {
+                collectionView.reloadData()
+            }
         }
     }
     

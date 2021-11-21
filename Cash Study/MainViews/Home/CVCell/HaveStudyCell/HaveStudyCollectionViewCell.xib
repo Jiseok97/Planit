@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NotoSansCJKkr-Medium.otf">
-            <string>NotoSansCJKkr-Medium</string>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
         </array>
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
@@ -19,26 +19,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="haveCell" id="gTV-IL-0wX" customClass="HaveStudyCollectionViewCell" customModule="Cash_Study" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="441" height="156"/>
+            <rect key="frame" x="0.0" y="0.0" width="415" height="98"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="441" height="156"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="98"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0d-Un-yz4">
-                        <rect key="frame" x="24" y="70" width="63.5" height="24"/>
-                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                        <rect key="frame" x="24" y="27.5" width="63.5" height="23.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="측정된 공부시간이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym2-sh-PHs">
-                        <rect key="frame" x="24" y="98" width="139.5" height="17.5"/>
+                        <rect key="frame" x="24" y="55" width="139.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                         <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="iyN-gO-AvU">
-                        <rect key="frame" x="397" y="76" width="24" height="24"/>
+                        <rect key="frame" x="371" y="37" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="64d-qZ-Iiz"/>
                             <constraint firstAttribute="height" constant="24" id="Bhj-gN-lQ8"/>
@@ -52,16 +52,15 @@
                 <constraint firstItem="g0d-Un-yz4" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="37d-Zd-i4u"/>
                 <constraint firstItem="Ym2-sh-PHs" firstAttribute="top" secondItem="g0d-Un-yz4" secondAttribute="bottom" constant="4" id="Fve-xJ-vSJ"/>
                 <constraint firstItem="Ym2-sh-PHs" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="HMQ-4H-dFU"/>
-                <constraint firstItem="g0d-Un-yz4" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="26" id="Nfp-Zd-gS1"/>
-                <constraint firstItem="iyN-gO-AvU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="10" id="Z8G-xb-596"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Ym2-sh-PHs" secondAttribute="bottom" constant="6.5" id="lnL-97-5RN"/>
+                <constraint firstItem="iyN-gO-AvU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Z8G-xb-596"/>
+                <constraint firstItem="g0d-Un-yz4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.8" id="iDc-lt-2eu"/>
             </constraints>
-            <size key="customSize" width="441" height="156"/>
+            <size key="customSize" width="415" height="100"/>
             <connections>
                 <outlet property="nameLbl" destination="g0d-Un-yz4" id="u9e-gX-U6o"/>
                 <outlet property="subLbl" destination="Ym2-sh-PHs" id="UMc-19-onh"/>
             </connections>
-            <point key="canvasLocation" x="415.21739130434787" y="46.205357142857139"/>
+            <point key="canvasLocation" x="396.37681159420293" y="52.232142857142854"/>
         </collectionViewCell>
     </objects>
     <resources>

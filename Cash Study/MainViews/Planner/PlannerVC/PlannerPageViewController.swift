@@ -135,7 +135,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.bounds.width * 0.872
-        let height = self.view.bounds.height * 0.142857142857143
+        let height = self.view.bounds.height * 0.15
         
         return CGSize(width: width, height: height)
     }
