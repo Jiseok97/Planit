@@ -26,13 +26,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0d-Un-yz4">
-                        <rect key="frame" x="24" y="27.5" width="63.5" height="23.5"/>
+                        <rect key="frame" x="24" y="25" width="63.5" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="측정된 공부시간이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym2-sh-PHs">
-                        <rect key="frame" x="24" y="55" width="139.5" height="17.5"/>
+                        <rect key="frame" x="24" y="52.5" width="139.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                         <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                 <constraint firstItem="Ym2-sh-PHs" firstAttribute="top" secondItem="g0d-Un-yz4" secondAttribute="bottom" constant="4" id="Fve-xJ-vSJ"/>
                 <constraint firstItem="Ym2-sh-PHs" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="HMQ-4H-dFU"/>
                 <constraint firstItem="iyN-gO-AvU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Z8G-xb-596"/>
-                <constraint firstItem="g0d-Un-yz4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.8" id="iDc-lt-2eu"/>
+                <constraint firstItem="g0d-Un-yz4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.75" id="iDc-lt-2eu"/>
             </constraints>
             <size key="customSize" width="415" height="100"/>
             <connections>

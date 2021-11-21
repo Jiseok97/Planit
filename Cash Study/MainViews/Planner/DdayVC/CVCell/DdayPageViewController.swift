@@ -16,9 +16,9 @@ class DdayPageViewController: UIViewController {
         didSet {
             print("DdayDataLst is didSet")
             
-            if let collectionView = self.dDayCV {
-                collectionView.reloadData()
-            }
+//            if let collectionView = self.dDayCV {
+//                collectionView.reloadData()
+//            }
         }
     }
     
@@ -28,6 +28,9 @@ class DdayPageViewController: UIViewController {
         setGradation()
         dDayCV.delegate = self
         dDayCV.dataSource = self
+        
+        ShowDdayDataManager().addDday(viewController: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCV(_:)), name: NSNotification.Name("reload"), object: nil)
         
         dDayCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         dDayCV.register(UINib(nibName: "DdayListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DdayCell")
@@ -40,13 +43,18 @@ class DdayPageViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        ShowDdayDataManager().addDday(viewController: self)
-        self.dDayCV.reloadData()
+    override func viewWillDisappear(_ animated: Bool) {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reload"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         self.changeHeight()
+    }
+    
+    
+    // MARK: Funcitons
+    @objc func reloadCV(_ noti: Notification) {
+        self.dDayCV.reloadData()
     }
     
     

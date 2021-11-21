@@ -56,25 +56,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAE-Df-KMk">
-                    <rect key="frame" x="160.5" y="67" width="93" height="24"/>
+                    <rect key="frame" x="163.5" y="67" width="87.5" height="19"/>
                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-LH-vQR">
-                    <rect key="frame" x="32" y="67" width="24" height="24"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-LH-vQR">
+                    <rect key="frame" x="32" y="64.5" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="4U1-0n-T3E"/>
                         <constraint firstAttribute="height" constant="24" id="TDX-W1-ukU"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="backArrow"/>
                     <connections>
                         <action selector="dismissBtn:" destination="-1" eventType="touchUpInside" id="6rU-c4-jaa"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryV-V9-rcv">
-                    <rect key="frame" x="24" y="123" width="366" height="72"/>
+                    <rect key="frame" x="24" y="118" width="366" height="72"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="공부 제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNd-Vh-1WM">
                             <rect key="frame" x="22" y="24" width="261" height="24"/>
@@ -104,7 +104,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-Uf-jsK">
-                    <rect key="frame" x="24" y="217" width="366" height="139"/>
+                    <rect key="frame" x="24" y="212" width="366" height="139"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 반복하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-5V-ZhZ">
                             <rect key="frame" x="22" y="24" width="93" height="24"/>
@@ -171,7 +171,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxY-Gm-xFz">
-                    <rect key="frame" x="24" y="356" width="366" height="271.5"/>
+                    <rect key="frame" x="24" y="351" width="366" height="271.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiI-wM-8Fb">
                             <rect key="frame" x="1" y="2" width="364" height="1"/>

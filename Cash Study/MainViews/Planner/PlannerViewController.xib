@@ -43,6 +43,9 @@
                             <state key="normal" title="  공부추가" image="Plus">
                                 <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="moveAddpage:" destination="-1" eventType="touchUpInside" id="Rjl-Eo-AE3"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

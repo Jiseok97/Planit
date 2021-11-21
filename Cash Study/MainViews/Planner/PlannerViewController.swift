@@ -37,7 +37,7 @@ class PlannerViewController: UIViewController {
     }
     
     
-    // MARK: Function
+    // MARK: Functions
     func setUI() {
         self.plusBtn.layer.borderColor = UIColor.myGray.cgColor
         self.plusBtn.layer.borderWidth = 1
@@ -82,34 +82,29 @@ class PlannerViewController: UIViewController {
     @objc func indexChanged(_ sender: UISegmentedControl) {
         self.plannerVC.view.isHidden = true
         self.dDayVC.view.isHidden = true
-        self.plusBtn.addTarget(self, action: #selector(moveAddDdayVC), for: .touchUpInside)
         
         switch self.sgController.selectedSegmentIndex {
         case 0:
             self.plannerVC.view.isHidden = false
             self.plusBtn.setTitle(" 공부추가", for: .normal)
-            self.plusBtn.addTarget(self, action: #selector(moveAddDdayVC), for: .touchUpInside)
             
         default:
             self.dDayVC.view.isHidden = false
             self.plusBtn.setTitle(" 디데이추가", for: .normal)
-            self.plusBtn.addTarget(self, action: #selector(moveAddStudyVC), for: .touchUpInside)
-            self.dDayVC.dDayCV.reloadData()
         }
     }
     
-    @objc func moveAddStudyVC() {
-        let vc = AddStudyViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+    @IBAction func moveAddpage(_ sender: UIButton) {
+        if sgController.selectedSegmentIndex == 0 {
+            let vc = AddStudyViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        } else {
+            let vc = AddDdayViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
     }
-    
-    @objc func moveAddDdayVC() {
-        let vc = AddDdayViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
 }
 
 

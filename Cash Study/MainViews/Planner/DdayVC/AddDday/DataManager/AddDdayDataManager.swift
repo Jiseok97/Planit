@@ -21,8 +21,8 @@ class AddDdayDataManager {
                 case 201:
                     print("생성완료")
 //                    ShowDdayDataManager().addDday(viewController: DdayPageViewController())
-                    viewController.reloadCV = true
-                
+                    viewController.checkSuccess = true
+                    NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     
                 default:
                     // 커스텀 뷰 띄어주기

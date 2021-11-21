@@ -141,11 +141,3 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     }
     
 }
-//
-//
-//extension DdayPageViewController {
-//    func showDday(result : ShowDdayEntity) {
-//        self.DdayDataLst = result
-//        self.dDayCV.reloadData()
-//    }
-//}

@@ -48,7 +48,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     var color : String = ""
     var isRepresentative : Bool = false
-    var reloadCV : Bool = false {
+    var checkSuccess : Bool = false {
         didSet {
             dismiss(animated: true, completion: nil)
         }
