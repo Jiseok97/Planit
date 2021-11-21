@@ -50,10 +50,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var isRepresentative : Bool = false
     var checkSuccess : Bool = false {
         didSet {
-            dismiss(animated: true, completion: nil)
+            changeRootVC(BaseTabBarController())
         }
     }
     
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,6 +70,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
     }
     
+    
+    // MARK: Functions
     @objc private func textLengthLimit(_ noti: Notification) {
         let maxLength : Int = 10
         if let textField = noti.object as? UITextField {

@@ -12,15 +12,7 @@ class DdayPageViewController: UIViewController {
     @IBOutlet weak var dDayCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
-    var DdayDataLst : ShowDdayEntity? {
-        didSet {
-            print("DdayDataLst is didSet")
-            
-//            if let collectionView = self.dDayCV {
-//                collectionView.reloadData()
-//            }
-        }
-    }
+    var DdayDataLst : ShowDdayEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +20,6 @@ class DdayPageViewController: UIViewController {
         setGradation()
         dDayCV.delegate = self
         dDayCV.dataSource = self
-        
-        ShowDdayDataManager().addDday(viewController: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCV(_:)), name: NSNotification.Name("reload"), object: nil)
         
         dDayCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         dDayCV.register(UINib(nibName: "DdayListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DdayCell")
@@ -43,20 +32,29 @@ class DdayPageViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ShowDdayDataManager().addDday(viewController: self)
+        dDayCV.reloadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCV(_:)), name: NSNotification.Name("reload"), object: nil)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reload"), object: nil)
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         self.changeHeight()
     }
     
     
     // MARK: Funcitons
     @objc func reloadCV(_ noti: Notification) {
-        self.dDayCV.reloadData()
+        ShowDdayDataManager().addDday(viewController: self)
     }
-    
     
 }
 

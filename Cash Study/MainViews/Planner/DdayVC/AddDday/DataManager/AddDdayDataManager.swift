@@ -20,7 +20,6 @@ class AddDdayDataManager {
                 switch code {
                 case 201:
                     print("생성완료")
-//                    ShowDdayDataManager().addDday(viewController: DdayPageViewController())
                     viewController.checkSuccess = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     
