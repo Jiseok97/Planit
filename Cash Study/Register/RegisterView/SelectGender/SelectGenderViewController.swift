@@ -34,7 +34,7 @@ class SelectGenderViewController: UIViewController {
         self.womanBtn.layer.cornerRadius = 11
         self.manBtn.contentHorizontalAlignment = .left
         self.womanBtn.contentHorizontalAlignment = .left
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         swipeRecognizer()
         
         setEnableBtn(confirmBtn)

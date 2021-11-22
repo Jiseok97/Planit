@@ -68,6 +68,15 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if DdayDataLst != nil {
+            
+            if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
+    //            DdayDataLst?.ddays.swapAt(0, indexPath.row)
+                
+                // Swap이 아닌 대표 디데이의 인덱스를 지우고 맨 앞으로 추가해줘야 한다!
+//                DdayDataLst?.ddays.insert(contentsOf: DdayDataLst?.ddays[indexPath.row], at: 0)
+//                DdayDataLst?.ddays.remove(at: indexPath.row)
+            }
+            
             if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
                 // 대표 디데이
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
@@ -204,7 +213,6 @@ extension DdayPageViewController {
         self.DdayDataLst = result
         self.dDayCV.reloadData()
         DdayDataLst?.ddays.sort{ $0.endAt < $1.endAt}
-        
         
     }
 }

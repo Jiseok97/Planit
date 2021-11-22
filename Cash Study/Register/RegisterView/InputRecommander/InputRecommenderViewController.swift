@@ -66,8 +66,8 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         self.tfView.layer.cornerRadius = 11
         self.skipBtn.layer.borderWidth = 1
         self.skipBtn.layer.borderColor = UIColor.white.cgColor
-        self.skipBtn.layer.cornerRadius = skipBtn.frame.height / 2 - 5
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
+        self.skipBtn.layer.cornerRadius = skipBtn.frame.height / 2
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         self.recommenderTF.setPlaceHolderColor(UIColor.placeHolderColor)
         swipeRecognizer()
         setEnableBtn(confirmBtn)

@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wsg-Hi-VAX">
-                                <rect key="frame" x="32" y="155.5" width="9" height="8"/>
+                                <rect key="frame" x="32" y="162" width="9" height="8"/>
                                 <color key="tintColor" red="0.1450980392" green="0.14901960780000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="9" id="Cy3-Mg-wz6"/>
@@ -34,7 +34,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-TR-8Ef">
-                                <rect key="frame" x="49" y="155.5" width="9" height="8"/>
+                                <rect key="frame" x="49" y="162" width="9" height="8"/>
                                 <color key="tintColor" red="0.1450980392" green="0.14901960780000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="9" id="SgM-XN-Fys"/>
@@ -42,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ihw-j1-0oI">
-                                <rect key="frame" x="66" y="155.5" width="9" height="8"/>
+                                <rect key="frame" x="66" y="162" width="9" height="8"/>
                                 <color key="tintColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="SSZ-Ia-gKO"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-f2-MVg">
-                                <rect key="frame" x="83" y="155.5" width="9" height="8"/>
+                                <rect key="frame" x="83" y="162" width="9" height="8"/>
                                 <color key="tintColor" red="0.1450980392" green="0.14901960780000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="A4P-ae-Src"/>
@@ -58,7 +58,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ekX-AN-111">
-                                <rect key="frame" x="100" y="155.5" width="9" height="8"/>
+                                <rect key="frame" x="100" y="162" width="9" height="8"/>
                                 <color key="tintColor" red="0.1450980392" green="0.14901960780000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="V39-Ix-uSj"/>
@@ -66,7 +66,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-Nx-M5d">
-                                <rect key="frame" x="32" y="178" width="132.5" height="70"/>
+                                <rect key="frame" x="32" y="184.5" width="132.5" height="70"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -91,8 +91,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-dA-gss">
-                                <rect key="frame" x="32" y="751.5" width="350" height="70.5"/>
+                                <rect key="frame" x="32" y="758" width="350" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="XQR-1T-MQb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,12 +128,11 @@
                             <constraint firstItem="U6F-Y6-mfG" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="R3x-Mm-Yzz"/>
                             <constraint firstItem="sih-Ff-2ed" firstAttribute="trailing" secondItem="nTD-Ry-yJk" secondAttribute="trailing" constant="24" id="RnO-eA-4NL"/>
                             <constraint firstItem="U6F-Y6-mfG" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="0.22" id="Yin-CS-jnf"/>
-                            <constraint firstItem="XAD-dA-gss" firstAttribute="height" secondItem="0dv-X8-ZNo" secondAttribute="height" multiplier="0.0788177" id="Zdv-29-tTQ"/>
+                            <constraint firstItem="wsg-Hi-VAX" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="0.37" id="ZCI-UG-VwG"/>
                             <constraint firstItem="XfS-f2-MVg" firstAttribute="centerY" secondItem="ihw-j1-0oI" secondAttribute="centerY" id="aTy-xL-3w8"/>
                             <constraint firstItem="ekX-AN-111" firstAttribute="centerY" secondItem="XfS-f2-MVg" secondAttribute="centerY" id="dHL-i0-qdK"/>
                             <constraint firstItem="ihw-j1-0oI" firstAttribute="leading" secondItem="ESd-TR-8Ef" secondAttribute="trailing" constant="8" id="jEv-WK-mgH"/>
                             <constraint firstItem="nTD-Ry-yJk" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="1.33" id="mxn-dh-6Pv"/>
-                            <constraint firstItem="wsg-Hi-VAX" firstAttribute="top" secondItem="U6F-Y6-mfG" secondAttribute="bottom" multiplier="1.4" id="sBq-jv-Gpl"/>
                             <constraint firstItem="ekX-AN-111" firstAttribute="leading" secondItem="XfS-f2-MVg" secondAttribute="trailing" constant="8" id="uKh-A1-HwR"/>
                             <constraint firstItem="XAD-dA-gss" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="uc1-yk-gxV"/>
                             <constraint firstItem="ihw-j1-0oI" firstAttribute="centerY" secondItem="ESd-TR-8Ef" secondAttribute="centerY" id="wtE-lI-wFR"/>

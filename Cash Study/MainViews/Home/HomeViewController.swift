@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
         
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
-        addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2 - 5
+        addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
         
         studyLstCV.layer.cornerRadius = 8
         studyLstCV.layer.zPosition = 999

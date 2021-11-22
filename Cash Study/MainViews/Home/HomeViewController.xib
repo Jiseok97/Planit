@@ -111,7 +111,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msx-qI-rMt">
-                            <rect key="frame" x="277.5" y="50" width="112.5" height="40"/>
+                            <rect key="frame" x="277.5" y="52" width="112.5" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="ZRf-3W-T2u"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                             <color key="tintColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -146,7 +149,6 @@
                 <constraint firstItem="NrU-8q-1Ui" firstAttribute="top" secondItem="QJm-5N-cU0" secondAttribute="bottom" id="afH-r3-ylN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QJm-5N-cU0" secondAttribute="trailing" id="jXh-pv-3uv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="QJm-5N-cU0" secondAttribute="top" constant="44" id="kVQ-Qt-vwE"/>
-                <constraint firstItem="msx-qI-rMt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.044335" id="sER-im-RUi"/>
             </constraints>
             <point key="canvasLocation" x="-584" y="-23"/>
         </view>

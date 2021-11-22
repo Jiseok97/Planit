@@ -63,7 +63,7 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     
     func setUI() {
         self.birthView.layer.cornerRadius = 11
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         self.birthTF.setPlaceHolderColor(UIColor.placeHolderColor)
         swipeRecognizer()
         

@@ -67,9 +67,15 @@ class PlannerViewController: UIViewController {
         plannerVC.didMove(toParent: self)
         dDayVC.didMove(toParent: self)
         
+        // 화면 높이가 작은건 y : 90으로 바꿔주기 !
+        if self.view.frame.height < 812 {
+            plannerVC.view.frame = CGRect(x: 0, y: 90, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            dDayVC.view.frame = CGRect(x: 0, y: 90, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+        } else {
+            plannerVC.view.frame = CGRect(x: 0, y: 110, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            dDayVC.view.frame = CGRect(x: 0, y: 110, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+        }
         
-        plannerVC.view.frame = CGRect(x: 0, y: 110, width: self.view.bounds.width, height: self.view.bounds.height - 104)
-        dDayVC.view.frame = CGRect(x: 0, y: 110, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         
         plannerVC.view.isHidden = false
         dDayVC.view.isHidden = true
