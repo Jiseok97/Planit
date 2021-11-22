@@ -1,11 +1,11 @@
 //
-//  AddDdayInput.swift
+//  EditDdayInput.swift
 //  Cash Study
 //
-//  Created by 이지석 on 2021/11/11.
+//  Created by 이지석 on 2021/11/22.
 //
 
-struct AddDdayInput {
+struct EditDdayInput {
     var title: String
     var endAt: String
     var icon: String
@@ -22,3 +22,4 @@ struct AddDdayInput {
     }
 
 }
+

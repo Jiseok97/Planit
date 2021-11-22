@@ -32,12 +32,6 @@ class LoginViewController: UIViewController {
     }
     
     
-    func loginCheck(_ email: String) {
-        let input = LoginInput(email: email)
-        LoginDataManager().userLogin(input, viewController: self)
-    }
-    
-    
     // MARK: Kakao Login Btn
     @IBAction func kakaoBtnTapped(_ sender: Any) {
         
@@ -126,6 +120,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func loginCheck(_ email: String) {
+        let input = LoginInput(email: email)
+        LoginDataManager().userLogin(input, viewController: self)
+        print("Login Check")
+    }
+    
     // MARK: 애플 로그인
     @IBAction func appleBtnTapped(_ sender: Any) {
 //        let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -167,6 +167,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
         
         guard let email = appleIDCredential.email else { return }
+        
+        UserInfoData.email = email
         
         print("Apple ID Credential User Identifier → \(appleIDCredential.user)")
         print("Apple ID Credential User Name → \(String(describing: appleIDCredential.fullName))")

@@ -1,11 +1,11 @@
 //
-//  AddDdayEntity.swift
+//  EditDdayEntity.swift
 //  Cash Study
 //
-//  Created by 이지석 on 2021/11/11.
+//  Created by 이지석 on 2021/11/22.
 //
 
-struct AddDdayEntity : Decodable {
+struct EditDdayEntity : Decodable {
     var id: Int
     var title : String
     var isRepresentative : Bool

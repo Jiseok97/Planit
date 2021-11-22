@@ -11,7 +11,7 @@ class ShowDdayDataManager {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
-    func addDday(viewController: DdayPageViewController) {
+    func showDday(viewController: DdayPageViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: ShowDdayEntity.self) { response in

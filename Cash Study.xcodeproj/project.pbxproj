@@ -33,6 +33,9 @@
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
 		B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */; };
 		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
+		B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */; };
+		B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC469274B5F07005296D8 /* EditDdayInput.swift */; };
+		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
 		B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */; };
 		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
 		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
@@ -156,6 +159,9 @@
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayDataManager.swift; sourceTree = "<group>"; };
 		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
+		B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayDataManager.swift; sourceTree = "<group>"; };
+		B62BC469274B5F07005296D8 /* EditDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayInput.swift; sourceTree = "<group>"; };
+		B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayEntity.swift; sourceTree = "<group>"; };
 		B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyDataManager.swift; sourceTree = "<group>"; };
 		B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyEntity.swift; sourceTree = "<group>"; };
 		B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudyInput.swift; sourceTree = "<group>"; };
@@ -321,8 +327,13 @@
 		B614C462273A9CFA00A5E8F9 /* DdayVC */ = {
 			isa = PBXGroup;
 			children = (
+				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
+				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
+				B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */,
+				B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */,
 				B614C46F273ABED700A5E8F9 /* CVCell */,
 				B614C47A273AE06E00A5E8F9 /* AddDday */,
+				B62BC464274B5B4F005296D8 /* EditDday */,
 				B62618A6274228C000E301A7 /* ShowDday */,
 			);
 			path = DdayVC;
@@ -343,8 +354,6 @@
 		B614C46F273ABED700A5E8F9 /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
-				B614C468273A9D7A00A5E8F9 /* DdayPageViewController.xib */,
-				B614C467273A9D7A00A5E8F9 /* DdayPageViewController.swift */,
 				B64771BC2744F2D200BBCBC2 /* NoDday */,
 				B614C475273ACB5400A5E8F9 /* RepresentDday */,
 				B614C474273ACB4B00A5E8F9 /* NomalDday */,
@@ -375,8 +384,6 @@
 			children = (
 				B6BF8954273D14A3000ABCFF /* DataManager */,
 				B6BF8955273D14AB000ABCFF /* Entity */,
-				B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */,
-				B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */,
 			);
 			path = AddDday;
 			sourceTree = "<group>";
@@ -444,6 +451,32 @@
 			isa = PBXGroup;
 			children = (
 				B62618AB274229F900E301A7 /* ShowDdayEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B62BC464274B5B4F005296D8 /* EditDday */ = {
+			isa = PBXGroup;
+			children = (
+				B62BC465274B5B6F005296D8 /* DataManager */,
+				B62BC466274B5B75005296D8 /* Entity */,
+			);
+			path = EditDday;
+			sourceTree = "<group>";
+		};
+		B62BC465274B5B6F005296D8 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B62BC466274B5B75005296D8 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */,
+				B62BC469274B5F07005296D8 /* EditDdayInput.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1138,6 +1171,7 @@
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
+				B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */,
 				B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */,
 				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
 				B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */,
@@ -1149,6 +1183,7 @@
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B66B478C2732895800F89012 /* AnalysisViewController.swift in Sources */,
 				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
+				B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
@@ -1165,6 +1200,7 @@
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */,
+				B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,

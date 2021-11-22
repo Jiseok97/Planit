@@ -55,7 +55,7 @@
                                         <color key="baseForegroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todo" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-ah-6p0">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-ah-6p0">
                                     <rect key="frame" x="32" y="322" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="CsQ-H7-iGH"/>
@@ -111,7 +111,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msx-qI-rMt">
-                            <rect key="frame" x="277.5" y="45.5" width="112.5" height="40"/>
+                            <rect key="frame" x="277.5" y="50" width="112.5" height="40"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                             <color key="tintColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -123,7 +123,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planit" translatesAutoresizingMaskIntoConstraints="NO" id="5bY-He-BJh">
-                            <rect key="frame" x="32" y="58" width="70" height="15"/>
+                            <rect key="frame" x="32" y="58" width="69" height="24"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -153,7 +153,7 @@
     </objects>
     <resources>
         <image name="Plus" width="12" height="12"/>
-        <image name="planit" width="70" height="15"/>
-        <image name="todo" width="24" height="24"/>
+        <image name="planit" width="69" height="24"/>
+        <image name="todoIcon" width="24" height="24"/>
     </resources>
 </document>

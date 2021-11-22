@@ -15,5 +15,5 @@ struct dday : Decodable {
     var isRepresentative : Bool
     var endAt : String
     var createdAt : String
-    var color : String
+    var icon : String
 }
