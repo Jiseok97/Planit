@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DdayPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
-                <outlet property="cvHeight" destination="P0C-xB-GAB" id="AVO-Fs-MQM"/>
                 <outlet property="dDayCV" destination="9dy-8o-XNz" id="CD2-lO-EUl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,49 +19,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mg1-tK-FNV">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVL-cm-TeY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
-                            <subviews>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9dy-8o-XNz">
-                                    <rect key="frame" x="24" y="20" width="366" height="800"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="800" id="P0C-xB-GAB"/>
-                                    </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="4B6-56-6m5">
-                                        <size key="itemSize" width="128" height="128"/>
-                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </collectionViewFlowLayout>
-                                </collectionView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="9dy-8o-XNz" secondAttribute="trailing" constant="24" id="3L4-ND-5gi"/>
-                                <constraint firstItem="9dy-8o-XNz" firstAttribute="leading" secondItem="SVL-cm-TeY" secondAttribute="leading" constant="24" id="GEI-1B-19M"/>
-                                <constraint firstAttribute="height" priority="250" constant="1000" id="biw-v8-BAr"/>
-                                <constraint firstItem="9dy-8o-XNz" firstAttribute="top" secondItem="SVL-cm-TeY" secondAttribute="top" constant="20" id="dJ4-8a-JjX"/>
-                                <constraint firstAttribute="bottom" secondItem="9dy-8o-XNz" secondAttribute="bottom" constant="60" id="rXR-su-N3J"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="SVL-cm-TeY" secondAttribute="bottom" id="2ow-Mh-EDG"/>
-                        <constraint firstItem="SVL-cm-TeY" firstAttribute="top" secondItem="mg1-tK-FNV" secondAttribute="top" id="7Ec-OS-eND"/>
-                        <constraint firstAttribute="trailing" secondItem="SVL-cm-TeY" secondAttribute="trailing" id="Emg-P3-L5P"/>
-                        <constraint firstItem="SVL-cm-TeY" firstAttribute="width" secondItem="mg1-tK-FNV" secondAttribute="width" id="QYM-F6-rUf"/>
-                        <constraint firstItem="SVL-cm-TeY" firstAttribute="leading" secondItem="mg1-tK-FNV" secondAttribute="leading" id="Ysa-qR-rfV"/>
-                    </constraints>
-                </scrollView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9dy-8o-XNz">
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="4B6-56-6m5">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
-                <constraint firstItem="mg1-tK-FNV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3rs-43-Bop"/>
-                <constraint firstItem="mg1-tK-FNV" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="LGZ-GN-lhp"/>
-                <constraint firstItem="mg1-tK-FNV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VFE-e5-ju0"/>
-                <constraint firstItem="mg1-tK-FNV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dWY-SW-SqN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9dy-8o-XNz" secondAttribute="bottom" id="8wn-Ww-J4S"/>
+                <constraint firstItem="9dy-8o-XNz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="PZt-Nc-qjA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9dy-8o-XNz" secondAttribute="trailing" id="UPg-iG-Jj3"/>
+                <constraint firstItem="9dy-8o-XNz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lh8-MG-Rrj"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="67.633928571428569"/>
         </view>

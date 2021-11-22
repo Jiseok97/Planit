@@ -63,7 +63,7 @@
                             <rect key="frame" x="22" y="24" width="223" height="24"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR Regular" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             <connections>
                                 <action selector="showTextCount:" destination="-1" eventType="editingChanged" id="emj-lJ-Q52"/>
                             </connections>
@@ -126,7 +126,6 @@
                             <state key="normal" image="Star">
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
                             </state>
-                            <state key="selected" image="exDday3"/>
                             <connections>
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="LHl-d2-pQc"/>
                             </connections>
@@ -140,7 +139,7 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="PlanetRing"/>
-                            <state key="selected" image="exDday2"/>
+                            <state key="selected" image="PlanetRing"/>
                             <connections>
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="EBg-Mz-lAq"/>
                             </connections>
@@ -155,7 +154,7 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="Planet"/>
-                            <state key="selected" image="exDday1"/>
+                            <state key="selected" image="Planet"/>
                             <connections>
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="AZe-qX-8vk"/>
                             </connections>
@@ -169,7 +168,7 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="Flame"/>
-                            <state key="selected" image="exDday4"/>
+                            <state key="selected" image="Flame"/>
                             <connections>
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="upS-Dc-Jmr"/>
                             </connections>
@@ -183,7 +182,7 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="Ufo"/>
-                            <state key="selected" image="exDday5"/>
+                            <state key="selected" image="Ufo"/>
                             <connections>
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="Wf4-81-zxL"/>
                             </connections>
@@ -346,11 +345,6 @@
         <image name="Ufo" width="32" height="32"/>
         <image name="backArrow" width="24" height="24"/>
         <image name="calendar" width="24" height="24"/>
-        <image name="exDday1" width="24" height="24"/>
-        <image name="exDday2" width="24" height="24"/>
-        <image name="exDday3" width="24" height="24"/>
-        <image name="exDday4" width="24" height="24"/>
-        <image name="exDday5" width="24" height="24"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

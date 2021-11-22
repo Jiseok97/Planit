@@ -28,6 +28,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     var nameEmpty: Bool = true
     var checkUserNickName : Bool = false
     
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

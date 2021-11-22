@@ -51,15 +51,18 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var isRepresentative : Bool = false
     var checkSuccess : Bool = false {
         didSet {
-            changeRootVC(BaseTabBarController())
+//            changeRootVC(BaseTabBarController())
+            dismiss(animated: true, completion: nil)
         }
     }
     var dDayId: Int = 0
     var isEdit: Bool = false
+    var titleTxt: String = ""
     
-    init(id: Int, isEdit: Bool) {
+    init(id: Int, title : String, isEdit: Bool) {
         self.isEdit = isEdit
         self.dDayId = id
+        self.titleTxt = title
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -115,6 +118,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             self.titleLbl.text = "디데이 편집하기"
             self.confirmBtn.setTitle("저장하기", for: .normal)
             self.deleteBtn.isHidden = false
+            self.inputTitleTF.text = titleTxt
             
         } else {
             self.titleLbl.text = "디데이 추가하기"
@@ -123,7 +127,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         }
     }
     
-    // MARK: About Text Field
+    
+    
     @IBAction func showTextCount(_ sender: Any) {
         guard let textCnt = self.inputTitleTF.text?.count else { return }
         
@@ -133,12 +138,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             self.countTfLbl.text = String(describing: textCnt) + "/10"
         }
     }
+
     
-    
-    
-    
-    
-    // MARK: Check Icon Button
     @IBAction func selectIconBtnTapped(_ sender: UIButton) {
         switch sender {
             
@@ -225,6 +226,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     // MARK: Confirm Btn Tapped
     @IBAction func addDdayTapped(_ sender: Any) {
         // 커스텀 뷰 띄우기
+        guard let title = self.inputTitleTF.text else { return }
+        
         if inputTitleTF.text?.isEmpty == true {
             // 제목은 한글자 이상 적어주세요.
             
@@ -233,10 +236,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 // 해당 디데이를 대표 디데이로 설정하시겠어요?
                 // 여기서 확인 누르면 끝
                 // 아니오 누르면 데이터 안 보내기
+                let input = AddDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
+                AddDdayDataManager().addDday(input, viewController: self)
                 
             } else {
                 // 일반 디데이 경우
-                guard let title = self.inputTitleTF.text else { return }
                 if isEdit {
                     // 편집 모드
                     let input = EditDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
@@ -244,7 +248,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                     
                 } else {
                     // 일반 추가 모드
-                    let input = AddDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
+                    let input = AddDdayInput(title: title, endAt: "2021-11-01", icon: self.icon, isRepresentative: self.isRepresentative)
                     AddDdayDataManager().addDday(input, viewController: self)
                 }
                
@@ -260,7 +264,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func deleteTapBtn(_ sender: Any) {
-        
+        DeleteDdayDataManager().deleteDday(id: self.dDayId, viewController: self)
     }
     
     

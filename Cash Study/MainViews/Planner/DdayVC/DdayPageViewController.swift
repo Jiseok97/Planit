@@ -30,6 +30,7 @@ class DdayPageViewController: UIViewController {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
         
+        dDayCV.contentInset.bottom = 60
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,34 +45,16 @@ class DdayPageViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reload"), object: nil)
     }
     
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//
-//        self.changeHeight()
-//        self.dDayCV.collectionViewLayout.invalidateLayout()
-//    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        self.changeHeight()
-    }
-    
-    
     // MARK: Funcitons
     @objc func reloadCV(_ noti: Notification) {
         ShowDdayDataManager().showDday(viewController: self)
+        
     }
-    
 }
 
 
 // MARK: Extension
 extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func changeHeight() {
-        self.cvHeight.constant = self.dDayCV.collectionViewLayout.collectionViewContentSize.height
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if DdayDataLst != nil {
@@ -123,7 +106,6 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 
                 cell.dDayNameLbl.text = DdayDataLst?.ddays[indexPath.row].title
                 cell.timeLbl.text = DdayDataLst?.ddays[indexPath.row].endAt
-                
                 
                 return cell
                 
@@ -184,7 +166,8 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Dday 편집하기 기능
         guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
-        let vc = AddDdayViewController(id: id, isEdit: true)
+        guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
+        let vc = AddDdayViewController(id: id, title: title, isEdit: true)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
        
@@ -197,7 +180,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         let width = self.view.bounds.width * 0.872
         
         if DdayDataLst != nil {
-            if indexPath.row == 0 {
+            if  DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
                 
                 let height = self.view.bounds.height * 0.23510971786
                 return CGSize(width: width, height: height)
@@ -220,6 +203,9 @@ extension DdayPageViewController {
     func showDday(result : ShowDdayEntity) {
         self.DdayDataLst = result
         self.dDayCV.reloadData()
+        DdayDataLst?.ddays.sort{ $0.endAt < $1.endAt}
+        
+        
     }
 }
 
