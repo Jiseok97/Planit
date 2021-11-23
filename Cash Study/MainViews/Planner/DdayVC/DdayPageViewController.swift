@@ -45,6 +45,7 @@ class DdayPageViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reload"), object: nil)
     }
     
+    
     // MARK: Funcitons
     @objc func reloadCV(_ noti: Notification) {
         ShowDdayDataManager().showDday(viewController: self)

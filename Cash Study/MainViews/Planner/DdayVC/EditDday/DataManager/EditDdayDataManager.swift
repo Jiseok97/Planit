@@ -19,12 +19,12 @@ class EditDdayDataManager {
                 switch code {
                 case 200:
                     print("편집완료")
-                    viewController.checkSuccess = true
+                    viewController.checkEdit = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     
                 default:
                     // 커스텀 뷰 띄어주기
-                    print("오류")
+                    print("수정오류")
                 }
             }
     }

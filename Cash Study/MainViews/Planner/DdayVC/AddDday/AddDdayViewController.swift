@@ -55,6 +55,12 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             dismiss(animated: true, completion: nil)
         }
     }
+    var checkEdit : Bool = false {
+        didSet {
+//            DeleteDdayDataManager().deleteDday(id: dDayId, viewController: self)
+            dismiss(animated: true, completion: nil)
+        }
+    }
     var dDayId: Int = 0
     var isEdit: Bool = false
     var titleTxt: String = ""
@@ -232,29 +238,24 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             // 제목은 한글자 이상 적어주세요.
             
         } else  {
-            if self.isRepresentative {
-                // 해당 디데이를 대표 디데이로 설정하시겠어요?
-                // 여기서 확인 누르면 끝
-                // 아니오 누르면 데이터 안 보내기
+            if isEdit {
+                // 편집 모드
+                let input = EditDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
+                EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
+                if isRepresentative == true {
+                    // 대표 디데이 설정 커스텀 창 띄우기
+                }
+            }
+            
+            else {
+                // 추가 모드
                 let input = AddDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
                 AddDdayDataManager().addDday(input, viewController: self)
-                
-            } else {
-                // 일반 디데이 경우
-                if isEdit {
-                    // 편집 모드
-                    let input = EditDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
-                    EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
-                    
-                } else {
-                    // 일반 추가 모드
-                    let input = AddDdayInput(title: title, endAt: "2021-11-01", icon: self.icon, isRepresentative: self.isRepresentative)
-                    AddDdayDataManager().addDday(input, viewController: self)
+                if isRepresentative == true {
+                    // 대표 디데이 설정 커스텀 창 띄우기
                 }
-               
             }
         }
-        
     }
     
     
