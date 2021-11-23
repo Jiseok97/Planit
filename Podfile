@@ -16,6 +16,8 @@ target 'Cash Study' do
 
   # For calendar
   pod 'FSCalendar'
-
+  
+  # Timer View
+  pod 'MSCircularSlider'
 
 end

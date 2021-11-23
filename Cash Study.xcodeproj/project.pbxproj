@@ -43,7 +43,6 @@
 		B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
-		B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65310E027253E6F004AD249 /* TimerViewModel.swift */; };
 		B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E1448273E49FA000F238A /* TokenUtils.swift */; };
 		B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */; };
 		B66B47772732706000F89012 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B47752732706000F89012 /* HomeViewController.swift */; };
@@ -70,7 +69,6 @@
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
 		B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A32724FBBE0039D271 /* IndicatorView.swift */; };
-		B67C98A62724FFB30039D271 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A52724FFB30039D271 /* TimerView.swift */; };
 		B6B118332716D261008842BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118322716D261008842BA /* AppDelegate.swift */; };
 		B6B118352716D261008842BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118342716D261008842BA /* SceneDelegate.swift */; };
 		B6B1183C2716D262008842BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183B2716D262008842BA /* Assets.xcassets */; };
@@ -87,7 +85,6 @@
 		B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */; };
 		B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */; };
 		B6B40620273CFDD3008DBE7C /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */; };
-		B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B448F82738CC9B00AB45AC /* TimerData.swift */; };
 		B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
@@ -170,7 +167,6 @@
 		B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyInput.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
-		B65310E027253E6F004AD249 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B65E1448273E49FA000F238A /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestInterceptor.swift; sourceTree = "<group>"; };
 		B66B47752732706000F89012 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +193,6 @@
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B67C98A32724FBBE0039D271 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		B67C98A52724FFB30039D271 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B6B1182F2716D261008842BA /* Cash Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B118322716D261008842BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B118342716D261008842BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,7 +215,6 @@
 		B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Thin.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		B6B448F82738CC9B00AB45AC /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
 		B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStopViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerStopViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
@@ -531,35 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				B6B448FF2738EF1B00AB45AC /* CustomView */,
-				B65310DF27253E49004AD249 /* Model */,
-				B65310DE27253E45004AD249 /* View */,
-				B65310DD27253E40004AD249 /* ViewModel */,
 			);
 			path = Timer;
-			sourceTree = "<group>";
-		};
-		B65310DD27253E40004AD249 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B65310E027253E6F004AD249 /* TimerViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B65310DE27253E45004AD249 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B67C98A52724FFB30039D271 /* TimerView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B65310DF27253E49004AD249 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B6B448F82738CC9B00AB45AC /* TimerData.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B66B47742732704C00F89012 /* Home */ = {
@@ -1189,7 +1156,6 @@
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
-				B65310E127253E6F004AD249 /* TimerViewModel.swift in Sources */,
 				B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */,
 				B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */,
 				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
@@ -1228,7 +1194,6 @@
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */,
 				B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */,
-				B67C98A62724FFB30039D271 /* TimerView.swift in Sources */,
 				B6D81E1F2732B8FA006E641E /* RefreshTokenInput.swift in Sources */,
 				B6D81E172732B588006E641E /* SplashViewController.swift in Sources */,
 				B62BC471274B72BC005296D8 /* DeleteDdayDataManager.swift in Sources */,
@@ -1236,7 +1201,6 @@
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
 				B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */,
 				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
-				B6B448F92738CC9B00AB45AC /* TimerData.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);

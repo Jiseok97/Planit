@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class HomeViewController: UIViewController {
 
@@ -91,9 +90,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if studyDataLst.count > 1 {
             // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
-            let vc = UIHostingController(rootView: TimerView(title: .constant(studyDataLst[indexPath.row])))
-//            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+            
+            // 타이머 뷰
+            let vc = TimerStopViewController()
+            present(vc, animated: true, completion: nil)
         }
     }
     

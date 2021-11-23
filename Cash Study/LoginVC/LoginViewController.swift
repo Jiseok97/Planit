@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
 import AuthenticationServices
@@ -146,11 +145,6 @@ class LoginViewController: UIViewController {
         controller.presentationContextProvider = self
         controller.performRequests()
     }
-    
-    @IBAction func testMove(_ sender: Any) {
-        changeRootVC(BaseTabBarController())
-    }
-    
 }
 
 
