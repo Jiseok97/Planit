@@ -81,6 +81,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         dateBtnCollection.forEach {
             $0.layer.cornerRadius = 8
         }
+        
         self.everyDayBtn.layer.cornerRadius = 8
         
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
