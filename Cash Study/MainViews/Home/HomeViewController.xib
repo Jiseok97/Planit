@@ -18,8 +18,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
-                <outlet property="addDdayBtn" destination="Njf-gU-YXh" id="OUK-Am-SIH"/>
                 <outlet property="addStudyBtn" destination="msx-qI-rMt" id="sUo-k1-3dx"/>
+                <outlet property="rprDdayCV" destination="ZTr-R6-LZk" id="ucC-rh-qNf"/>
                 <outlet property="scrollView" destination="NrU-8q-1Ui" id="Jnk-8q-P3W"/>
                 <outlet property="studyLstCV" destination="mLS-r5-ApP" id="unS-Op-hv5"/>
                 <outlet property="studyLstCVHeight" destination="CZo-Ic-IeA" id="JU5-gw-qgP"/>
@@ -44,17 +44,6 @@
                                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njf-gU-YXh">
-                                    <rect key="frame" x="24" y="150" width="366" height="92"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="92" id="DSd-Ts-gQo"/>
-                                    </constraints>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="Plus" title="  대표 디데이 설정하기">
-                                        <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
-                                        <color key="baseForegroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </buttonConfiguration>
-                                </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-ah-6p0">
                                     <rect key="frame" x="32" y="322" width="24" height="24"/>
                                     <constraints>
@@ -80,19 +69,31 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZTr-R6-LZk">
+                                    <rect key="frame" x="24" y="150" width="366" height="92"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="92" id="4UC-Ts-lMi"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7mt-jc-eFi">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="b7E-ah-6p0" firstAttribute="top" secondItem="ZTr-R6-LZk" secondAttribute="bottom" constant="80" id="5w5-uS-U2r"/>
                                 <constraint firstItem="tMs-cR-tGf" firstAttribute="centerY" secondItem="b7E-ah-6p0" secondAttribute="centerY" id="7sI-tz-dlE"/>
-                                <constraint firstItem="Njf-gU-YXh" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="ALa-6W-2Cc"/>
                                 <constraint firstItem="tMs-cR-tGf" firstAttribute="leading" secondItem="b7E-ah-6p0" secondAttribute="trailing" constant="8" id="GOI-KA-1js"/>
+                                <constraint firstAttribute="trailing" secondItem="ZTr-R6-LZk" secondAttribute="trailing" constant="24" id="Hqz-FX-fe5"/>
                                 <constraint firstItem="mLS-r5-ApP" firstAttribute="top" secondItem="b7E-ah-6p0" secondAttribute="bottom" constant="22" id="Tbl-dk-tBj"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="top" secondItem="AtT-rX-n1N" secondAttribute="top" constant="62" id="UVf-wP-Qfv"/>
-                                <constraint firstItem="b7E-ah-6p0" firstAttribute="top" secondItem="Njf-gU-YXh" secondAttribute="bottom" constant="80" id="Y20-hf-wPT"/>
+                                <constraint firstItem="ZTr-R6-LZk" firstAttribute="top" secondItem="c43-HD-Wgz" secondAttribute="bottom" constant="24" id="XeP-gg-kID"/>
                                 <constraint firstItem="b7E-ah-6p0" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="aWc-fI-Iu4"/>
-                                <constraint firstItem="Njf-gU-YXh" firstAttribute="top" secondItem="c43-HD-Wgz" secondAttribute="bottom" constant="24" id="cgZ-HR-zDb"/>
                                 <constraint firstItem="c43-HD-Wgz" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="32" id="juH-w2-Zap"/>
                                 <constraint firstAttribute="height" priority="250" constant="1000" id="k3y-4s-Hx6"/>
-                                <constraint firstAttribute="trailing" secondItem="Njf-gU-YXh" secondAttribute="trailing" constant="24" id="mu4-Si-Jgw"/>
+                                <constraint firstItem="ZTr-R6-LZk" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="kDL-to-yZg"/>
                                 <constraint firstItem="mLS-r5-ApP" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="pGd-ks-Tpc"/>
                                 <constraint firstAttribute="trailing" secondItem="mLS-r5-ApP" secondAttribute="trailing" constant="24" id="pgw-Fm-e2U"/>
                                 <constraint firstAttribute="bottom" secondItem="mLS-r5-ApP" secondAttribute="bottom" constant="60" id="trN-MF-Hi2"/>

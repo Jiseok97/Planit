@@ -11,6 +11,11 @@
 		B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */; };
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
+		B608E50A274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608E508274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift */; };
+		B608E50B274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B608E509274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib */; };
+		B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */; };
+		B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */; };
+		B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
 		B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */; };
 		B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */; };
@@ -134,6 +139,11 @@
 		B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputUserInfo.storyboard; sourceTree = "<group>"; };
 		B607976D2727FD3100D6D454 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		B60797702727FF8A00D6D454 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		B608E508274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveRprDdayCollectionViewCell.swift; sourceTree = "<group>"; };
+		B608E509274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveRprDdayCollectionViewCell.xib; sourceTree = "<group>"; };
+		B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDdayCollectionViewCell.swift; sourceTree = "<group>"; };
+		B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDdayCollectionViewCell.xib; sourceTree = "<group>"; };
+		B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../캐•스 자료/이미지자료/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
 		B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerPageViewController.swift; sourceTree = "<group>"; };
 		B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlannerPageViewController.xib; sourceTree = "<group>"; };
@@ -310,6 +320,24 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
+		B608E506274DEF04003A87A2 /* EmptyDdayCell */ = {
+			isa = PBXGroup;
+			children = (
+				B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */,
+				B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */,
+			);
+			path = EmptyDdayCell;
+			sourceTree = "<group>";
+		};
+		B608E507274DEF20003A87A2 /* HaveRepresentCell */ = {
+			isa = PBXGroup;
+			children = (
+				B608E509274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib */,
+				B608E508274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift */,
+			);
+			path = HaveRepresentCell;
+			sourceTree = "<group>";
+		};
 		B614C461273A9CEE00A5E8F9 /* PlannerVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +365,7 @@
 		B614C46B273A9F7A00A5E8F9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */,
 				B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */,
 				B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */,
 				B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */,
@@ -796,8 +825,8 @@
 		B6B448FF2738EF1B00AB45AC /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */,
 				B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */,
+				B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -822,6 +851,8 @@
 		B6BFB4032733BA0A00C0C97D /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
+				B608E507274DEF20003A87A2 /* HaveRepresentCell */,
+				B608E506274DEF04003A87A2 /* EmptyDdayCell */,
 				B6BFB4052733BA2A00C0C97D /* HaveStudyCell */,
 				B6BFB4042733BA1700C0C97D /* EmptyStudyCell */,
 			);
@@ -1049,6 +1080,7 @@
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */,
+				B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
@@ -1061,10 +1093,12 @@
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
+				B608E50B274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
+				B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */,
 				B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */,
 				B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */,
 				B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */,
@@ -1149,6 +1183,7 @@
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
+				B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */,
 				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,
 				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
 				B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */,
@@ -1170,6 +1205,7 @@
 				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
 				B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
+				B608E50A274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,

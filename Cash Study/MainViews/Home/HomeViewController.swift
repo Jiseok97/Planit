@@ -12,21 +12,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var topLbl: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var addStudyBtn: UIButton!
-    @IBOutlet weak var addDdayBtn: UIButton!
     @IBOutlet weak var studyLstCV: UICollectionView!
     @IBOutlet weak var studyLstCVHeight: NSLayoutConstraint!
+    @IBOutlet weak var rprDdayCV: UICollectionView!
+    
+    var haveRprDday : Bool = false
+    var studyDataLst : [String] = ["Empty", "hello", "Empty", "Test", "HiCV", "중간고사"]
     
     
-    var studyDataLst : [String] = ["Empty", "hello", "Empty", "리나", "리나2", "리나3", "리나4", "리나5", "리나6"]
-    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
         setGradation()
         
+        rprDdayCV?.delegate = self
+        rprDdayCV?.dataSource = self
         studyLstCV?.delegate = self
         studyLstCV?.dataSource = self
+        
+        rprDdayCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
+        rprDdayCV.register(UINib(nibName: "HaveRprDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "rprDdayCell")
+        rprDdayCV.register(UINib(nibName: "EmptyDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyDdayCell")
+        
         studyLstCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         studyLstCV.register(UINib(nibName: "HaveStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "haveCell")
         studyLstCV.register(UINib(nibName: "EmptyStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyCell")
@@ -54,21 +63,15 @@ class HomeViewController: UIViewController {
     
     
     
-    
+    // MARK: Functions
     func setUI() {
-        addDdayBtn.layer.borderColor = UIColor.homeBorderColor.cgColor
-        addDdayBtn.layer.borderWidth = 1
-        addDdayBtn.layer.cornerRadius = 8
         
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
         addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
         
-        studyLstCV.layer.cornerRadius = 8
-        studyLstCV.layer.zPosition = 999
-        
-        guard let name = UserInfoData.name as? String else { return }
-        self.topLbl.text = "\(name) 님의 \n 공부를 응원합니다."
+//        guard let name = UserInfoData.name as? String else { return }
+//        self.topLbl.text = "\(name) 님의 \n 공부를 응원합니다."
     }
     
     @IBAction func moveAddStudyBtn(_ sender: Any) {
@@ -88,52 +91,86 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if studyDataLst.count > 1 {
-            // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
-            
-            // 타이머 뷰
-            let vc = TimerStopViewController()
-            present(vc, animated: true, completion: nil)
+        if collectionView == studyLstCV {
+            if studyDataLst.count > 1 {
+                // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
+                // 타이머 뷰
+                
+                let vc = TimerStopViewController(title: "테스트 공부하기")
+                vc.modalPresentationStyle = .overFullScreen
+                present(vc, animated: true, completion: nil)
+            }
+        } else {
+            print("Tapped")
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return studyDataLst.count
+        if collectionView == studyLstCV {
+            return studyDataLst.count
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if studyDataLst.count == 1 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.backgroundColor = UIColor.mainNavy
-            cell.layer.cornerRadius = 8
-            cell.layer.borderWidth = 1
-            cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-            
-            return cell
-            
+        
+        if collectionView == rprDdayCV {
+            if haveRprDday {
+                // 대표 디데이 있을 때
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rprDdayCell", for: indexPath) as? HaveRprDdayCollectionViewCell else { return UICollectionViewCell() }
+
+                
+                return cell
+            } else {
+                // 대표 디데이 없을 때
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyDdayCell", for: indexPath) as? EmptyDdayCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+                cell.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
+                cell.layer.borderWidth = 1
+                cell.layer.cornerRadius = 8
+                
+                return cell
+                
+            }
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.nameLbl.text = studyDataLst[indexPath.row]
-            cell.layer.cornerRadius = 8
-            cell.backgroundColor = UIColor.studyCellBgColor
-            
-            return cell
+            if studyDataLst.count == 1 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.layer.cornerRadius = 8
+                cell.layer.borderWidth = 1
+                cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+                
+                return cell
+                
+            } else {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.nameLbl.text = studyDataLst[indexPath.row]
+                cell.layer.cornerRadius = 8
+                cell.backgroundColor = UIColor.studyCellBgColor
+                
+                return cell
+            }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width = self.view.frame.width * 0.872
-        if studyDataLst.count == 1 {
-            let height = self.view.frame.height * 0.27586206896
-            return CGSize(width: width, height: height)
+        
+        if collectionView == studyLstCV {
+            if studyDataLst.count == 1 {
+                let height = self.view.frame.height * 0.27586206896
+                return CGSize(width: width, height: height)
+            } else {
+                let height = self.view.frame.height * 0.12068965517
+    //            let height = self.view.frame.height * 0.132
+                return CGSize(width: width, height: height)
+            }
         } else {
-            let height = self.view.frame.height * 0.12068965517
-//            let height = self.view.frame.height * 0.132
-            return CGSize(width: width, height: height)
-            
+            return CGSize(width: width, height: 92)
         }
     }
-    
 }

@@ -28,4 +28,5 @@ extension UIColor {
     class var gradationStartColor: UIColor { UIColor(hex: 0x0D0E34) }
     class var sgNomalColor : UIColor { UIColor(hex: 0x3A3B53) }
     class var notSelectBtnColor : UIColor { UIColor(hex: 0x6B6C85) }
+    class var circleBgColor : UIColor { UIColor(hex: 0x04041D) }
 }

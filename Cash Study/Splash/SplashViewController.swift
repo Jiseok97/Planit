@@ -46,6 +46,7 @@ class SplashViewController: UIViewController {
         usleep(3000000)
         
         changeRootVC(LoginViewController())
+//        changeRootVC(BaseTabBarController())
 //        changeRootVC(TermsOfUseViewController())
 
         
