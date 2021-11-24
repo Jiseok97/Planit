@@ -18,17 +18,19 @@ class TimerStopViewController: UIViewController {
     @IBOutlet weak var stopBtn: UIButton!
     
     @IBOutlet weak var studyTitleLbl: UILabel!
+    @IBOutlet weak var restCntLbl: UILabel!
     @IBOutlet weak var rewardCntLbl: UILabel!
     @IBOutlet weak var bonusCntLbl: UILabel!
     
-    var studyTitle : String = ""
+    @IBOutlet weak var timerLbl: UILabel!
     
-    // MARK: View Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setUI()
-    }
+    var studyTitle : String = ""
+    var restCnt : Int = 0
+    var rewardCnt : Int = 0
+    var bonusCnt : Int = 0
+    
+    var timer : Timer?
+    var timeCnt : Int = 0
     
     init(title: String) {
         self.studyTitle = title
@@ -40,9 +42,19 @@ class TimerStopViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: View Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setUI()
+    }
+    
+    
 
     // MARK: Functions
     func setUI() {
+        self.startTimer()
         self.studyTitleLbl.text = studyTitle
         
         self.circleView.backgroundColor = UIColor.circleBgColor.withAlphaComponent(0.0)
@@ -58,7 +70,29 @@ class TimerStopViewController: UIViewController {
         self.stopBtn.layer.cornerRadius = stopBtn.frame.height / 2
         
     }
+    
+    
+    func makeTimeLabel(count: Int) -> String {
+        let sec = timeCnt % 60
+        let min = timeCnt / 60
+        
+        let secString = "\(sec)".count == 1 ? "0\(sec)" : "\(sec)"
+        let minString = "\(min)".count == 1 ? "0\(min)" : "\(min)"
+        
+        return ("00:\(minString):\(secString)")
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.timeCnt += 1
+            DispatchQueue.main.async {
+                let timeString = self.makeTimeLabel(count: self.timeCnt)
+                self.timerLbl.text = timeString
+            }
+        })
+    }
 
+    
     
     @IBAction func stopBtnTapped(_ sender: Any) {
         // 타이머 멈추기 커스텀 뷰

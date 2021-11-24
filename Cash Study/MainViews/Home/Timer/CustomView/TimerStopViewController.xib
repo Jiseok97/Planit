@@ -29,11 +29,13 @@
                 <outlet property="bonusView" destination="ZvH-EW-aeY" id="WCU-bZ-eL7"/>
                 <outlet property="circleBgView" destination="hEB-ik-2dB" id="gtK-rm-DW7"/>
                 <outlet property="circleView" destination="rU4-Cs-IVe" id="qwm-cH-DjW"/>
+                <outlet property="restCntLbl" destination="aS8-cz-yYn" id="HP9-3L-kvq"/>
                 <outlet property="restCntView" destination="BM2-3C-cCJ" id="wrp-ZX-BPi"/>
                 <outlet property="rewardCntLbl" destination="4He-yy-fEs" id="n4j-lL-aWD"/>
                 <outlet property="rewardView" destination="pIV-l3-JhN" id="pWT-G4-OvX"/>
                 <outlet property="stopBtn" destination="VL7-Db-nyP" id="EZV-RB-fvY"/>
                 <outlet property="studyTitleLbl" destination="eaO-s7-0dF" id="8WF-mL-zj0"/>
+                <outlet property="timerLbl" destination="3Rf-BP-co4" id="BWO-wF-adX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -112,7 +114,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-sO-I7G">
-                    <rect key="frame" x="32" y="86.5" width="24" height="24"/>
+                    <rect key="frame" x="32" y="73" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="EIP-xx-CWL"/>
                         <constraint firstAttribute="height" constant="24" id="FDh-zc-S0n"/>
@@ -126,7 +128,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트 공부하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-s7-0dF">
-                    <rect key="frame" x="153" y="87" width="108" height="23.5"/>
+                    <rect key="frame" x="153" y="73.5" width="108" height="23.5"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -233,7 +235,7 @@
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="height" secondItem="BM2-3C-cCJ" secondAttribute="height" id="4SY-dE-dIS"/>
                 <constraint firstItem="hEB-ik-2dB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5OD-WI-cZN"/>
                 <constraint firstItem="ZvH-EW-aeY" firstAttribute="centerY" secondItem="pIV-l3-JhN" secondAttribute="centerY" id="EEN-j3-VpO"/>
-                <constraint firstItem="oPu-sO-I7G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="FBG-kX-wTt"/>
+                <constraint firstItem="oPu-sO-I7G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.19" id="FBG-kX-wTt"/>
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="FUH-gL-qUM"/>
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="width" secondItem="BM2-3C-cCJ" secondAttribute="width" multiplier="0.485" id="Iip-N9-aFa"/>
                 <constraint firstItem="rU4-Cs-IVe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.722" id="PJi-n8-xc7"/>
