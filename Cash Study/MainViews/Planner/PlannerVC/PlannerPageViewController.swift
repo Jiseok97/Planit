@@ -21,6 +21,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     @IBOutlet weak var studyCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
+    @IBOutlet weak var testLbl: UILabel!
+    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -63,17 +65,24 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     func setCalendar() {
         calendarView.locale = Locale(identifier: "ko_KR")
-        calendarView.scrollEnabled = false
         calendarView.scope = .week
         
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
-        calendarView.appearance.headerTitleColor = UIColor.link
+        calendarView.appearance.headerTitleColor = UIColor.link.withAlphaComponent(0.0)
         calendarView.appearance.headerTitleAlignment = .left
         calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKkr-Medium", size: 16)
         calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleTodayColor = UIColor(red: 220/225, green: 185/225, blue: 45/225, alpha: 1.0)
         calendarView.placeholderType = .none
+        
+        calendarView.scrollEnabled = true
+        calendarView.scrollDirection = .horizontal
+        
+        let monthFormmater = DateFormatter()
+        monthFormmater.dateFormat = "YYYY년 MM월"
+        self.testLbl.text = "\(monthFormmater.string(from: self.calendarView.currentPage))"
+        
     }
     
     
@@ -93,14 +102,29 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
             self.calendarView.scope = .week
             self.calendarViewHeight.constant = view.frame.height * 0.193349753694581
             self.changeScopeCalendar.setImage(UIImage(named: "downArrow"), for: .normal)
-            
         }
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
-        
+        let differenceDF = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        differenceDF.dateFormat = "yyyyMMdd"
+        
+        let selectedDate = differenceDF.string(from: date)
+        let todayDate = differenceDF.string(from: Date())
+        
+        guard let sDate = Int(selectedDate) else { return }
+        guard let tDate = Int(todayDate) else { return }
+        
+        if sDate < tDate {
+            // 선택해제 시키기
+            print("sDate = \(sDate) && tDate = \(tDate)")
+            self.calendarView.appearance.selectionColor = UIColor.link.withAlphaComponent(0.0)
+        } else {
+            self.calendarView.appearance.selectionColor = UIColor.link
+        }
+        
         print("자체 날짜 \(dateFormatter.string(from: date))")
     }
     

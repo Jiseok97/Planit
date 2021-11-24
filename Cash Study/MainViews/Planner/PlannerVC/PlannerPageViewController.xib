@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlannerPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
@@ -19,6 +24,7 @@
                 <outlet property="contentView" destination="byD-3z-RNm" id="XLC-uv-MxZ"/>
                 <outlet property="cvHeight" destination="K82-GS-hiM" id="ALs-a1-5nT"/>
                 <outlet property="studyCV" destination="dDb-PR-YQf" id="ofn-jS-dRd"/>
+                <outlet property="testLbl" destination="UTQ-tp-fUk" id="Lh8-Ha-73i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,12 +37,22 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byD-3z-RNm">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1066"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1062"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-wF-k2r" customClass="FSCalendar">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-tp-fUk">
+                                            <rect key="frame" x="32" y="10" width="42" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                            <color key="textColor" systemColor="linkColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
+                                        <constraint firstItem="UTQ-tp-fUk" firstAttribute="top" secondItem="Gbp-wF-k2r" secondAttribute="top" constant="10" id="0Hc-XU-7iu"/>
+                                        <constraint firstItem="UTQ-tp-fUk" firstAttribute="leading" secondItem="Gbp-wF-k2r" secondAttribute="leading" constant="32" id="78p-KF-ocy"/>
                                         <constraint firstAttribute="height" constant="300" id="I5e-0Y-HPH"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -46,14 +62,11 @@
                                         <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
                                             <color key="value" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="YES"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                             <color key="value" systemColor="linkColor"/>
                                         </userDefinedRuntimeAttribute>
@@ -63,13 +76,18 @@
                                         <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
                                             <color key="value" systemColor="linkColor"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="fakeEventDots" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-XF-POi">
-                                    <rect key="frame" x="0.0" y="300" width="414" height="28"/>
+                                    <rect key="frame" x="0.0" y="300" width="414" height="20"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYA-Pd-ems">
-                                            <rect key="frame" x="0.0" y="4" width="414" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
                                             <color key="tintColor" red="0.22745098039215686" green="0.23137254901960785" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="downArrow"/>
@@ -82,12 +100,12 @@
                                     <constraints>
                                         <constraint firstItem="mYA-Pd-ems" firstAttribute="leading" secondItem="r6l-XF-POi" secondAttribute="leading" id="huz-gw-V6y"/>
                                         <constraint firstAttribute="trailing" secondItem="mYA-Pd-ems" secondAttribute="trailing" id="mCT-Ku-zke"/>
-                                        <constraint firstAttribute="height" constant="28" id="sae-dF-s90"/>
+                                        <constraint firstAttribute="height" constant="20" id="sae-dF-s90"/>
                                         <constraint firstItem="mYA-Pd-ems" firstAttribute="centerY" secondItem="r6l-XF-POi" secondAttribute="centerY" id="vCR-es-4Zb"/>
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-PR-YQf">
-                                    <rect key="frame" x="24" y="356" width="366" height="650"/>
+                                    <rect key="frame" x="24" y="352" width="366" height="650"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="650" id="K82-GS-hiM"/>
                                     </constraints>

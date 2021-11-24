@@ -90,10 +90,7 @@ class TimerStopViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.timeCnt += 1
             self.circleView._currentValue += 1
-            print("current Value = \(self.circleView._currentValue)")
-            print("maximum Value = \(self.circleView._maximumValue)")
-                        
-            if self.circleView._currentValue >= 3599.9 {
+            if self.circleView._currentValue > 3599.9 {
                 self.circleView._currentValue = 0.0
             }
                 
