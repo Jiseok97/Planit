@@ -59,6 +59,8 @@ class TimerStopViewController: UIViewController {
         
         self.circleView.backgroundColor = UIColor.circleBgColor.withAlphaComponent(0.0)
         self.circleView.layer.zPosition = 999
+        self.circleView._maximumRevolutions = 24
+        self.circleView._currentValue = 0.0
         
         self.circleBgView.layer.cornerRadius = circleBgView.bounds.width / 2
         self.circleBgView.clipsToBounds = true
@@ -74,28 +76,39 @@ class TimerStopViewController: UIViewController {
     
     func makeTimeLabel(count: Int) -> String {
         let sec = timeCnt % 60
-        let min = timeCnt / 60
+        let min = (timeCnt / 60) % 60
+        let hour = timeCnt / 3600
         
         let secString = "\(sec)".count == 1 ? "0\(sec)" : "\(sec)"
         let minString = "\(min)".count == 1 ? "0\(min)" : "\(min)"
+        let hourString = "\(hour)".count == 1 ? "0\(hour)" : "\(hour)"
         
-        return ("00:\(minString):\(secString)")
+        return ("\(hourString):\(minString):\(secString)")
     }
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.timeCnt += 1
+            self.circleView._currentValue += 1
+            print("current Value = \(self.circleView._currentValue)")
+            print("maximum Value = \(self.circleView._maximumValue)")
+                        
+            if self.circleView._currentValue >= 3599.9 {
+                self.circleView._currentValue = 0.0
+            }
+                
             DispatchQueue.main.async {
                 let timeString = self.makeTimeLabel(count: self.timeCnt)
                 self.timerLbl.text = timeString
             }
         })
     }
-
     
     
     @IBAction func stopBtnTapped(_ sender: Any) {
         // 타이머 멈추기 커스텀 뷰
+//        timer?.invalidate()
+        self.circleView._currentValue = 0.0
     }
     
     @IBAction func dismissTapped(_ sender: Any) {
