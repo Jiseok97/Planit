@@ -157,8 +157,15 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         } else {
             self.checkRepresentSd.value = 0.0
         }
+        
+        self.dateLbl.isHidden = true
     }
     
+    @IBAction func showCalendarBtn(_ sender: Any) {
+        let vc = CalendarAlertViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+    }
     
     
     @IBAction func showTextCount(_ sender: Any) {
@@ -288,6 +295,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             }
         }
     }
+    
+    
     
     
     @IBAction func dismissBtn(_ sender: Any) {

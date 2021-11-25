@@ -66,7 +66,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         calendarView.locale = Locale(identifier: "ko_KR")
         calendarView.scope = .week
         
-        calendarView.appearance.headerDateFormat = "YYYY년 M월"
+        calendarView.appearance.headerDateFormat = "YYYY년 MM월"
         calendarView.appearance.headerTitleColor = UIColor.link
         calendarView.appearance.headerTitleAlignment = .left
         calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKkr-Medium", size: 16)
