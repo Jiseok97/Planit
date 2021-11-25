@@ -65,10 +65,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var isEdit: Bool = false
     var titleTxt: String = ""
     
-    init(id: Int, title : String, isEdit: Bool) {
+    init(id: Int, title : String, isEdit: Bool, isRepresentative: Bool) {
         self.isEdit = isEdit
         self.dDayId = id
         self.titleTxt = title
+        self.isRepresentative = isRepresentative
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -90,17 +91,19 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         NotificationCenter.default.addObserver(self, selector: #selector(removeDday(_:)), name: NSNotification.Name("remove"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(setRepresent(_:)), name: Notification.Name("setRepresent"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: inputTitleTF)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("remove"), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("setRepresent"), object: nil)
     }
     
-    @objc func removeDday(_ noti: Notification) {
-        DeleteDdayDataManager().deleteDday(id: self.dDayId, viewController: self)
-    }
+    
     
     
     // MARK: Functions
@@ -115,6 +118,15 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 }
             }
         }
+    }
+    
+    @objc func removeDday(_ noti: Notification) {
+        DeleteDdayDataManager().deleteDday(id: self.dDayId, viewController: self)
+    }
+    
+    @objc func setRepresent(_ noti: Notification) {
+        self.checkRepresentSd.value = 1.0
+        self.isRepresentative = true
     }
 
     
@@ -138,6 +150,12 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             self.titleLbl.text = "디데이 추가하기"
             self.confirmBtn.setTitle("추가하기", for: .normal)
             self.deleteBtn.isHidden = true
+        }
+        
+        if isRepresentative {
+            self.checkRepresentSd.value = 1.0
+        } else {
+            self.checkRepresentSd.value = 0.0
         }
     }
     
@@ -231,8 +249,6 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
-            self.checkRepresentSd.value = 1.0
-            self.isRepresentative = true
         } else {
             self.checkRepresentSd.value = 0.0
             self.isRepresentative = false

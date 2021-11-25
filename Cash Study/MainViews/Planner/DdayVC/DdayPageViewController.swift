@@ -168,12 +168,12 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         // Dday 편집하기 기능
         guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
         guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
-        let vc = AddDdayViewController(id: id, title: title, isEdit: true)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-       
-        // 해당 디데이 ID 저장
+        guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
         
+        let vc = AddDdayViewController(id: id, title: title, isEdit: true, isRepresentative: isRepresent)
+        vc.modalPresentationStyle = .overFullScreen
+        
+        present(vc, animated: true)
     }
     
     
