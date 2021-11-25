@@ -8,11 +8,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NotoSansKR-Medium.otf">
-            <string>NotoSansKR-Medium</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlannerPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
@@ -24,7 +19,6 @@
                 <outlet property="contentView" destination="byD-3z-RNm" id="XLC-uv-MxZ"/>
                 <outlet property="cvHeight" destination="K82-GS-hiM" id="ALs-a1-5nT"/>
                 <outlet property="studyCV" destination="dDb-PR-YQf" id="ofn-jS-dRd"/>
-                <outlet property="testLbl" destination="UTQ-tp-fUk" id="Lh8-Ha-73i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,18 +35,8 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-wF-k2r" customClass="FSCalendar">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-tp-fUk">
-                                            <rect key="frame" x="32" y="10" width="42" height="23.5"/>
-                                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
-                                            <color key="textColor" systemColor="linkColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="UTQ-tp-fUk" firstAttribute="top" secondItem="Gbp-wF-k2r" secondAttribute="top" constant="10" id="0Hc-XU-7iu"/>
-                                        <constraint firstItem="UTQ-tp-fUk" firstAttribute="leading" secondItem="Gbp-wF-k2r" secondAttribute="leading" constant="32" id="78p-KF-ocy"/>
                                         <constraint firstAttribute="height" constant="300" id="I5e-0Y-HPH"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>

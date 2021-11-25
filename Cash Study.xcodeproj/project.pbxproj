@@ -74,6 +74,8 @@
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
 		B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A32724FBBE0039D271 /* IndicatorView.swift */; };
+		B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A33E8E274F5600004E88B0 /* AlertViewController.swift */; };
+		B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A33E8F274F5600004E88B0 /* AlertViewController.xib */; };
 		B6B118332716D261008842BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118322716D261008842BA /* AppDelegate.swift */; };
 		B6B118352716D261008842BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118342716D261008842BA /* SceneDelegate.swift */; };
 		B6B1183C2716D262008842BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B1183B2716D262008842BA /* Assets.xcassets */; };
@@ -203,6 +205,8 @@
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B67C98A32724FBBE0039D271 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		B6A33E8E274F5600004E88B0 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		B6A33E8F274F5600004E88B0 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		B6B1182F2716D261008842BA /* Cash Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B118322716D261008842BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B118342716D261008842BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -412,6 +416,15 @@
 				B6BF8955273D14AB000ABCFF /* Entity */,
 			);
 			path = AddDday;
+			sourceTree = "<group>";
+		};
+		B6196613274F0F510004EA10 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B6A33E8F274F5600004E88B0 /* AlertViewController.xib */,
+				B6A33E8E274F5600004E88B0 /* AlertViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		B6224203272D03BC004F6750 /* Entity */ = {
@@ -689,6 +702,7 @@
 				B622420F272D0840004F6750 /* Constant.swift */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
+				B6196613274F0F510004EA10 /* Alert */,
 				B614C46B273A9F7A00A5E8F9 /* Font */,
 				B6224211272D0852004F6750 /* Base */,
 				B67C989E2724FA810039D271 /* Extension */,
@@ -1105,6 +1119,7 @@
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 				B614C46E273AA63700A5E8F9 /* NotoSansKR-Medium.otf in Resources */,
+				B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1214,6 +1229,7 @@
 				B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */,
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
+				B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */,

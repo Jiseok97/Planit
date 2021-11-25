@@ -87,11 +87,19 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: inputTitleTF)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(removeDday(_:)), name: NSNotification.Name("remove"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: inputTitleTF)
         
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("remove"), object: nil)
+    }
+    
+    @objc func removeDday(_ noti: Notification) {
+        DeleteDdayDataManager().deleteDday(id: self.dDayId, viewController: self)
     }
     
     
@@ -219,6 +227,10 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func sliderTapped(_ sender: Any) {
         if checkRepresentSd.value == 0.0 {
+            let vc = AlertViewController(mainMsg: "대표 디데이를 설정하시겠어요?", subMsg: "홈에 표시되는 대표 디데이는\n1개만 설정할 수 있어요", btnTitle: "확인")
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
             self.checkRepresentSd.value = 1.0
             self.isRepresentative = true
         } else {
@@ -236,6 +248,9 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         if inputTitleTF.text?.isEmpty == true {
             // 제목은 한글자 이상 적어주세요.
+//            let vc = AlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "")
+//            vc.modalPresentationStyle = .overFullScreen
+//            present(vc, animated: true)
             
         } else  {
             if isEdit {
@@ -265,7 +280,9 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func deleteTapBtn(_ sender: Any) {
-        DeleteDdayDataManager().deleteDday(id: self.dDayId, viewController: self)
+        let vc = AlertViewController(mainMsg: "디데이를 삭제하시겠습니까?", subMsg: "", btnTitle: "삭제")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     

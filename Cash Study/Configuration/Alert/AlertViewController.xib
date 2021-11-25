@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewController" customModule="Cash_Study" customModuleProvider="target">
+            <connections>
+                <outlet property="alertView" destination="hij-LL-ObM" id="A3o-zA-HsW"/>
+                <outlet property="cancelBtn" destination="hZH-Uc-J8V" id="pqD-oc-vZo"/>
+                <outlet property="confirmBtn" destination="gja-ol-dTH" id="6ik-8R-UKP"/>
+                <outlet property="msgLbl" destination="1ci-SA-ayN" id="BYo-W2-hp4"/>
+                <outlet property="msgStView" destination="RMG-KS-cPw" id="0lm-JS-nr8"/>
+                <outlet property="subMsgLbl" destination="IZ5-dK-0BL" id="slJ-Ge-SuH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-do-po3">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hij-LL-ObM">
+                    <rect key="frame" x="32" y="331.5" width="350" height="233"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RMG-KS-cPw">
+                            <rect key="frame" x="39" y="62" width="272" height="51"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림창 제목" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ci-SA-ayN">
+                                    <rect key="frame" x="0.0" y="0.0" width="272" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="18"/>
+                                    <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ5-dK-0BL">
+                                    <rect key="frame" x="0.0" y="30.5" width="272" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                                    <color key="textColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gja-ol-dTH">
+                            <rect key="frame" x="180" y="158" width="154" height="55"/>
+                            <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="Ik7-OU-5rK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="확인">
+                                <color key="titleColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmBtnTapped:" destination="-1" eventType="touchUpInside" id="cF6-HS-NvQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZH-Uc-J8V">
+                            <rect key="frame" x="16" y="158" width="154" height="55"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="취소">
+                                <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="RMG-KS-cPw" firstAttribute="leading" secondItem="hij-LL-ObM" secondAttribute="leading" constant="39" id="0HU-rK-0tH"/>
+                        <constraint firstItem="hZH-Uc-J8V" firstAttribute="width" secondItem="gja-ol-dTH" secondAttribute="width" id="93d-EI-ZZI"/>
+                        <constraint firstItem="hZH-Uc-J8V" firstAttribute="leading" secondItem="hij-LL-ObM" secondAttribute="leading" constant="16" id="NPC-jU-emo"/>
+                        <constraint firstItem="gja-ol-dTH" firstAttribute="width" secondItem="hij-LL-ObM" secondAttribute="width" multiplier="0.44" id="Q4c-Qi-OmU"/>
+                        <constraint firstAttribute="trailing" secondItem="gja-ol-dTH" secondAttribute="trailing" constant="16" id="mHD-gb-1ik"/>
+                        <constraint firstItem="hZH-Uc-J8V" firstAttribute="centerY" secondItem="gja-ol-dTH" secondAttribute="centerY" id="ou4-H0-vOq"/>
+                        <constraint firstAttribute="bottom" secondItem="gja-ol-dTH" secondAttribute="bottom" constant="20" id="r6W-vV-Uea"/>
+                        <constraint firstItem="hZH-Uc-J8V" firstAttribute="height" secondItem="gja-ol-dTH" secondAttribute="height" id="rM3-UQ-oGQ"/>
+                        <constraint firstItem="RMG-KS-cPw" firstAttribute="centerY" secondItem="hij-LL-ObM" secondAttribute="centerY" multiplier="0.75" id="rZJ-wQ-SYa"/>
+                        <constraint firstAttribute="trailing" secondItem="RMG-KS-cPw" secondAttribute="trailing" constant="39" id="xxa-Ve-sA0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="yNs-do-po3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PmV-2H-dTR"/>
+                <constraint firstItem="hij-LL-ObM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="V27-OT-JiS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hij-LL-ObM" secondAttribute="trailing" constant="32" id="aju-cg-TJD"/>
+                <constraint firstItem="yNs-do-po3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eYD-lp-PM5"/>
+                <constraint firstItem="hij-LL-ObM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="kN6-y9-Og7"/>
+                <constraint firstItem="hij-LL-ObM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.26" id="ns7-cX-7gd"/>
+                <constraint firstAttribute="bottom" secondItem="yNs-do-po3" secondAttribute="bottom" id="oqg-f7-qqt"/>
+                <constraint firstItem="yNs-do-po3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zjo-kq-2sy"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="60.9375"/>
+        </view>
+    </objects>
+</document>

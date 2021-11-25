@@ -21,7 +21,6 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     @IBOutlet weak var studyCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
-    @IBOutlet weak var testLbl: UILabel!
     
     
     // MARK: View Life Cycle
@@ -68,7 +67,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         calendarView.scope = .week
         
         calendarView.appearance.headerDateFormat = "YYYY년 M월"
-        calendarView.appearance.headerTitleColor = UIColor.link.withAlphaComponent(0.0)
+        calendarView.appearance.headerTitleColor = UIColor.link
         calendarView.appearance.headerTitleAlignment = .left
         calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKkr-Medium", size: 16)
         calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
@@ -78,10 +77,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         calendarView.scrollEnabled = true
         calendarView.scrollDirection = .horizontal
-        
-        let monthFormmater = DateFormatter()
-        monthFormmater.dateFormat = "YYYY년 MM월"
-        self.testLbl.text = "\(monthFormmater.string(from: self.calendarView.currentPage))"
+        calendarView.appearance.headerTitleOffset = CGPoint(x: -60, y: calendarView.frame.origin.y)
         
     }
     
@@ -106,6 +102,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
         let dateFormatter = DateFormatter()
         let differenceDF = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -113,10 +110,10 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         let selectedDate = differenceDF.string(from: date)
         let todayDate = differenceDF.string(from: Date())
-        
+
         guard let sDate = Int(selectedDate) else { return }
         guard let tDate = Int(todayDate) else { return }
-        
+
         if sDate < tDate {
             // 선택해제 시키기
             print("sDate = \(sDate) && tDate = \(tDate)")
@@ -129,10 +126,9 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let dateFormatter = DateFormatter()
-        print("선택 해체 \(dateFormatter.string(from: date))")
+        
+        print("선택 해체")
     }
-    
     
 }
 

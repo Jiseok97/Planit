@@ -29,4 +29,5 @@ extension UIColor {
     class var sgNomalColor : UIColor { UIColor(hex: 0x3A3B53) }
     class var notSelectBtnColor : UIColor { UIColor(hex: 0x6B6C85) }
     class var circleBgColor : UIColor { UIColor(hex: 0x04041D) }
+    class var cancleAlertColor : UIColor { UIColor(hex: 0x888888)}
 }

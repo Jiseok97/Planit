@@ -113,8 +113,6 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         noReceiverDataManager().user(input ,viewController: self)
         
         if checkUser {
-            // 홈 불러오는 API 넣어주기
-            
             changeRootVC(BaseTabBarController())
         } else {
             changeRootVC(LoginViewController())
