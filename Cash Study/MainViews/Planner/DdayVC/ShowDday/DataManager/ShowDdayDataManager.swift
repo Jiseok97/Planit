@@ -18,9 +18,7 @@ class ShowDdayDataManager {
                 let code = response.response?.statusCode
                 switch code {
                 case 200:
-                    guard let result = response.value?.ddays else { return }
                     guard let data = response.value else { return }
-                    print(result)
                     viewController.showDday(result: data)
                     
                 default:

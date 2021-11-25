@@ -22,4 +22,9 @@ struct Constant {
     static var MY_JOB: String = ""
     static var MY_ACCESS_TOKEN : String = ""
     static var MY_REFRESH_TOKEN : String = ""
+    
+    
+    /// For Calendar
+    static var START_DATE : String = ""
+    static var END_DATE : String = ""
 }

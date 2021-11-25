@@ -38,6 +38,8 @@
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
 		B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */; };
 		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
+		B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */; };
+		B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */; };
 		B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */; };
 		B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC469274B5F07005296D8 /* EditDdayInput.swift */; };
 		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
@@ -171,6 +173,8 @@
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayDataManager.swift; sourceTree = "<group>"; };
 		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
+		B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyDataManager.swift; sourceTree = "<group>"; };
+		B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyEntity.swift; sourceTree = "<group>"; };
 		B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayDataManager.swift; sourceTree = "<group>"; };
 		B62BC469274B5F07005296D8 /* EditDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayInput.swift; sourceTree = "<group>"; };
 		B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayEntity.swift; sourceTree = "<group>"; };
@@ -498,6 +502,39 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		B62A93B1274FA8C10092C9B5 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				B62A93B2274FA8CC0092C9B5 /* ByDateShowStudy */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		B62A93B2274FA8CC0092C9B5 /* ByDateShowStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B62A93B3274FA8F10092C9B5 /* DataManager */,
+				B62A93B4274FA8F70092C9B5 /* Entity */,
+			);
+			path = ByDateShowStudy;
+			sourceTree = "<group>";
+		};
+		B62A93B3274FA8F10092C9B5 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B62A93B4274FA8F70092C9B5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		B62BC464274B5B4F005296D8 /* EditDday */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +639,7 @@
 				B66B477D2732799E00F89012 /* PlannerViewController.xib */,
 				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
 				B614C461273A9CEE00A5E8F9 /* PlannerVC */,
+				B62A93B1274FA8C10092C9B5 /* Study */,
 				B614C462273A9CFA00A5E8F9 /* DdayVC */,
 			);
 			path = Planner;
@@ -1230,9 +1268,11 @@
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */,
+				B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */,
 				B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */,
 				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
 				B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */,
+				B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */,
 				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,

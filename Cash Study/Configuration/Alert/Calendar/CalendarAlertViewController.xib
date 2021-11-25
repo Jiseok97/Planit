@@ -19,6 +19,8 @@
                 <outlet property="calendarView" destination="kDR-mR-K4h" id="ymW-lA-nAu"/>
                 <outlet property="confirmBtn" destination="PGD-dT-sxp" id="feb-gZ-vrB"/>
                 <outlet property="contentView" destination="c5z-IV-Qlf" id="FFs-iY-hH4"/>
+                <outlet property="nextBtn" destination="Wpe-aW-Y0I" id="nhj-ae-EJa"/>
+                <outlet property="prevBtn" destination="xZK-oL-93U" id="waf-KK-WQr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,30 +37,36 @@
                     <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDR-mR-K4h" customClass="FSCalendar">
-                            <rect key="frame" x="24" y="20" width="366" height="447.5"/>
+                            <rect key="frame" x="24" y="17" width="366" height="425.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-oL-93U">
-                                    <rect key="frame" x="12" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="12" y="2.5" width="24" height="24"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" image="lastImg"/>
+                                    <connections>
+                                        <action selector="previousTapped:" destination="-1" eventType="touchUpInside" id="c7G-OM-jHY"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpe-aW-Y0I">
-                                    <rect key="frame" x="330" y="0.0" width="24" height="24"/>
+                                    <rect key="frame" x="330" y="2.5" width="24" height="24"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" image="nextImg"/>
+                                    <connections>
+                                        <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="Yho-sp-zcC"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="xZK-oL-93U" firstAttribute="top" secondItem="kDR-mR-K4h" secondAttribute="top" id="6Un-TS-TQ5"/>
+                                <constraint firstItem="xZK-oL-93U" firstAttribute="top" secondItem="kDR-mR-K4h" secondAttribute="top" constant="2.5" id="6Un-TS-TQ5"/>
                                 <constraint firstItem="xZK-oL-93U" firstAttribute="leading" secondItem="kDR-mR-K4h" secondAttribute="leading" constant="12" id="drQ-5M-tP7"/>
                                 <constraint firstAttribute="trailing" secondItem="Wpe-aW-Y0I" secondAttribute="trailing" constant="12" id="nku-85-D9j"/>
-                                <constraint firstItem="Wpe-aW-Y0I" firstAttribute="top" secondItem="kDR-mR-K4h" secondAttribute="top" id="z2G-WP-ARe"/>
+                                <constraint firstItem="Wpe-aW-Y0I" firstAttribute="top" secondItem="kDR-mR-K4h" secondAttribute="top" constant="2.5" id="z2G-WP-ARe"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
                                     <color key="value" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -95,9 +103,9 @@
                     </subviews>
                     <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="kDR-mR-K4h" firstAttribute="top" secondItem="c5z-IV-Qlf" secondAttribute="top" constant="20" id="1Kb-Ey-vLw"/>
+                        <constraint firstItem="kDR-mR-K4h" firstAttribute="top" secondItem="c5z-IV-Qlf" secondAttribute="top" constant="17" id="1Kb-Ey-vLw"/>
                         <constraint firstAttribute="bottom" secondItem="PGD-dT-sxp" secondAttribute="bottom" constant="40" id="412-rj-IgH"/>
-                        <constraint firstAttribute="bottom" secondItem="kDR-mR-K4h" secondAttribute="bottom" constant="70" id="7ZS-Uk-aEh"/>
+                        <constraint firstAttribute="bottom" secondItem="kDR-mR-K4h" secondAttribute="bottom" constant="95" id="7ZS-Uk-aEh"/>
                         <constraint firstAttribute="trailing" secondItem="PGD-dT-sxp" secondAttribute="trailing" constant="32" id="Ck4-bJ-Vsm"/>
                         <constraint firstItem="PGD-dT-sxp" firstAttribute="leading" secondItem="c5z-IV-Qlf" secondAttribute="leading" constant="32" id="Hi6-Bz-lh6"/>
                         <constraint firstItem="kDR-mR-K4h" firstAttribute="leading" secondItem="c5z-IV-Qlf" secondAttribute="leading" constant="24" id="aFO-MH-sWp"/>

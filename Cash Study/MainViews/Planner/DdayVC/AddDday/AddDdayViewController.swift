@@ -9,6 +9,9 @@ import UIKit
 
 class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
+    
+    
+    
     @IBOutlet weak var backBtn: UIButton!
     
     @IBOutlet weak var titleView: UIView!
@@ -51,13 +54,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var isRepresentative : Bool = false
     var checkSuccess : Bool = false {
         didSet {
-//            changeRootVC(BaseTabBarController())
             dismiss(animated: true, completion: nil)
         }
     }
     var checkEdit : Bool = false {
         didSet {
-//            DeleteDdayDataManager().deleteDday(id: dDayId, viewController: self)
             dismiss(animated: true, completion: nil)
         }
     }
@@ -84,6 +85,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
 
         setUI()
+        print("View Did Load")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,6 +95,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         NotificationCenter.default.addObserver(self, selector: #selector(setRepresent(_:)), name: Notification.Name("setRepresent"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(sendData(_:)), name: Notification.Name("sendData"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,6 +105,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("remove"), object: nil)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("setRepresent"), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("sendData"), object: nil)
     }
     
     
@@ -127,6 +133,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     @objc func setRepresent(_ noti: Notification) {
         self.checkRepresentSd.value = 1.0
         self.isRepresentative = true
+    }
+    
+    @objc func sendData(_ noti : Notification) {
+        self.dateLbl.isHidden = false
+        self.dateLbl.text = Constant.START_DATE
     }
 
     

@@ -22,6 +22,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     @IBOutlet weak var studyCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
+    var selectedDate : String = ""
+    var studyDataLst : ShowDateStudyEntity?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -69,7 +71,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         calendarView.appearance.headerDateFormat = "YYYY년 MM월"
         calendarView.appearance.headerTitleColor = UIColor.link
         calendarView.appearance.headerTitleAlignment = .left
-        calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKkr-Medium", size: 16)
+        calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansKR-Medium", size: 16)
         calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleTodayColor = UIColor(red: 220/225, green: 185/225, blue: 45/225, alpha: 1.0)
@@ -104,8 +106,9 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let dateFormatter = DateFormatter()
-        let differenceDF = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let differenceDF = DateFormatter()
         differenceDF.dateFormat = "yyyyMMdd"
         
         let selectedDate = differenceDF.string(from: date)
@@ -115,19 +118,15 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         guard let tDate = Int(todayDate) else { return }
 
         if sDate < tDate {
-            // 선택해제 시키기
-            print("sDate = \(sDate) && tDate = \(tDate)")
             self.calendarView.appearance.selectionColor = UIColor.link.withAlphaComponent(0.0)
+            calendar.deselect(date)
         } else {
             self.calendarView.appearance.selectionColor = UIColor.link
+            self.selectedDate = dateFormatter.string(from: date)
+            
+            
+            
         }
-        
-        print("자체 날짜 \(dateFormatter.string(from: date))")
-    }
-    
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        print("선택 해체")
     }
     
 }
@@ -160,4 +159,11 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
         return CGSize(width: width, height: height)
     }
     
+}
+
+extension PlannerPageViewController {
+    func showStudy(result : ShowDateStudyEntity) {
+        self.studyDataLst = result
+        self.studyCV.reloadData()
+    }
 }
