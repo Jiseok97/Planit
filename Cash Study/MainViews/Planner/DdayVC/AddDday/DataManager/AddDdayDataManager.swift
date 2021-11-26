@@ -8,7 +8,6 @@
 import Alamofire
 
 class AddDdayDataManager {
-    let vc = DdayPageViewController()
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -22,6 +21,7 @@ class AddDdayDataManager {
                     print("생성완료")
                     viewController.checkSuccess = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+                    Constant.DATE = ""
                     
                 default:
                     // 커스텀 뷰 띄어주기

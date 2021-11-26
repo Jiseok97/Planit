@@ -41,24 +41,36 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     var isRepeat : Bool = false
     var tappedDayButtons: [String] = []
+    var checkSuccess : Bool = false {
+        didSet {
+            dismiss(animated: true, completion: nil)
+        }
+    }
     
-    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         setUI()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: titleTF)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(sendDate(_:)), name: Notification.Name("sendDate"), object: nil)
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: titleTF)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("sendDate"), object: nil)
     }
     
+    
+    // MARK: Functions
     
     @objc private func textLengthLimit(_ noti: Notification) {
         let maxLength : Int = 16
@@ -74,6 +86,12 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setUI() {
+        let toDate = DateFormatter()
+        toDate.locale = Locale(identifier: "ko_KR")
+        toDate.dateFormat = "yyyy년 MM월 dd일 (E)"
+        
+        self.startAtLbl.text = toDate.string(from: Date())
+        
         self.titleView.layer.cornerRadius = 8
         self.secondView.layer.cornerRadius = 8
         self.thirdView.layer.cornerRadius = 8
@@ -84,14 +102,20 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         self.everyDayBtn.layer.cornerRadius = 8
         
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
         self.backBtn.setTitle("", for: .normal)
         self.sdBtn.setTitle("", for: .normal)
-    } 
+    }
+    
+    @objc func sendDate(_ noti : Notification) {
+        if Constant.DATE_TEXT != "" {
+            self.startAtLbl.text = Constant.DATE_TEXT
+            Constant.DATE_TEXT = ""
+        }
+    }
     
     
-    // MARK: Title Text Field
     @IBAction func showTextCount(_ sernder: Any) {
         guard let textCnt = self.titleTF.text?.count else { return }
         
@@ -235,10 +259,24 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func showCalendar(_ sender: Any) {
+        let vc = CalendarAlertViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     
     @IBAction func addStudyBtnTapped(_ sender: Any) {
         guard let title = titleTF.text else { return }
+        
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        
+        var inputDate = Constant.DATE
+        
+        if inputDate == "" {
+            inputDate = df.string(from: Date())
+        }
 
         if repeatSd.value == 1 {
             // 반복
@@ -246,7 +284,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             print(tappedDayButtons)
         } else {
             // 반복 없음
-            let input = SingleStudyInput(title: title, startAt: "2021-11-19")
+            let input = SingleStudyInput(title: title, startAt: inputDate)
             AddStudyDataManager().singleStudy(input, viewController: self)
         }
     }

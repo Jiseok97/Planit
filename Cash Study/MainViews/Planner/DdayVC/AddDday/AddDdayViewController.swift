@@ -85,7 +85,6 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
 
         setUI()
-        print("View Did Load")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,8 +135,9 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @objc func sendDate(_ noti : Notification) {
-        if Constant.END_DATE != "" {
-            self.dateLbl.text = Constant.END_DATE
+        if Constant.DATE_TEXT != "" {
+            self.dateLbl.text = Constant.DATE_TEXT
+            Constant.DATE_TEXT = ""
         }
     }
 
@@ -282,11 +282,18 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     // MARK: Confirm Btn Tapped
     @IBAction func addDdayTapped(_ sender: Any) {
-        // 커스텀 뷰 띄우기
         guard let title = self.inputTitleTF.text else { return }
-        let endDate = Constant.DATE
         
-        if inputTitleTF.text?.isEmpty == true && dateLbl.text?.isEmpty == true {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        
+        var endDate = Constant.DATE
+        
+        if endDate == "" {
+            endDate = df.string(from: Date())
+        }
+        
+        if inputTitleTF.text?.isEmpty == true && Constant.DATE == "" {
             // 제목은 한글자 이상 적어주세요.
 //            let vc = AlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "")
 //            vc.modalPresentationStyle = .overFullScreen

@@ -93,9 +93,9 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     
     
     @IBAction func dismissBtn(_ sender: Any) {
-        Constant.END_DATE = self.selectedDate
+        Constant.DATE_TEXT = self.selectedDate
         Constant.DATE = self.nomalDate
-        print(Constant.END_DATE)
+        print(Constant.DATE_TEXT)
         NotificationCenter.default.post(name: NSNotification.Name("sendDate"), object: nil)
         dismiss(animated: true, completion: nil)
     }

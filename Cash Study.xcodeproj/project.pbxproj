@@ -502,12 +502,12 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		B62A93B1274FA8C10092C9B5 /* Study */ = {
+		B62A93B1274FA8C10092C9B5 /* ShowStudy */ = {
 			isa = PBXGroup;
 			children = (
 				B62A93B2274FA8CC0092C9B5 /* ByDateShowStudy */,
 			);
-			path = Study;
+			path = ShowStudy;
 			sourceTree = "<group>";
 		};
 		B62A93B2274FA8CC0092C9B5 /* ByDateShowStudy */ = {
@@ -618,7 +618,6 @@
 				B66B47762732706000F89012 /* HomeViewController.xib */,
 				B66B47752732706000F89012 /* HomeViewController.swift */,
 				B6BFB4032733BA0A00C0C97D /* CVCell */,
-				B6789944273F9B4F00B08CEB /* AddStudy */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
 			path = Home;
@@ -639,7 +638,8 @@
 				B66B477D2732799E00F89012 /* PlannerViewController.xib */,
 				B66B477C2732799E00F89012 /* PlannerViewController.swift */,
 				B614C461273A9CEE00A5E8F9 /* PlannerVC */,
-				B62A93B1274FA8C10092C9B5 /* Study */,
+				B6789944273F9B4F00B08CEB /* AddStudy */,
+				B62A93B1274FA8C10092C9B5 /* ShowStudy */,
 				B614C462273A9CFA00A5E8F9 /* DdayVC */,
 			);
 			path = Planner;
@@ -730,10 +730,10 @@
 		B6789944273F9B4F00B08CEB /* AddStudy */ = {
 			isa = PBXGroup;
 			children = (
-				B63A1F312747ADAB0077CC76 /* DataManager */,
-				B63A1F322747ADB20077CC76 /* Entity */,
 				B6789946273F9B7200B08CEB /* AddStudyViewController.xib */,
 				B6789945273F9B7200B08CEB /* AddStudyViewController.swift */,
+				B63A1F312747ADAB0077CC76 /* DataManager */,
+				B63A1F322747ADB20077CC76 /* Entity */,
 			);
 			path = AddStudy;
 			sourceTree = "<group>";

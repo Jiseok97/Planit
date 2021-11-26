@@ -21,6 +21,7 @@ class EditDdayDataManager {
                     print("편집완료")
                     viewController.checkEdit = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+                    Constant.DATE = ""
                     
                 default:
                     // 커스텀 뷰 띄어주기
