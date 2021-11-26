@@ -15,6 +15,9 @@
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansKR-Bold</string>
         </array>
+        <array key="NotoSansKR-Light.otf">
+            <string>NotoSansKR-Light</string>
+        </array>
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
         </array>
@@ -24,6 +27,8 @@
             <connections>
                 <outlet property="backBtn" destination="TNf-LH-vQR" id="bEF-ki-hsm"/>
                 <outlet property="confirmBtn" destination="32R-ri-Gqx" id="EV8-ZP-1lr"/>
+                <outlet property="endAtCalendarBtn" destination="8ZC-pN-ctl" id="OOg-1N-BFL"/>
+                <outlet property="endAtLbl" destination="ufO-fO-3LO" id="x0q-jf-4ea"/>
                 <outlet property="everyDayBtn" destination="tjM-fy-XwI" id="DaN-1g-QEO"/>
                 <outlet property="fridayBtn" destination="rl5-Nw-9tL" id="VFU-pM-o6O"/>
                 <outlet property="mondayBtn" destination="uCN-FY-XCx" id="0LH-Xm-HF0"/>
@@ -31,6 +36,7 @@
                 <outlet property="saturdayBtn" destination="ZMm-og-dfA" id="fny-64-FcA"/>
                 <outlet property="sdBtn" destination="hy0-1O-OdK" id="e7U-h0-zW4"/>
                 <outlet property="secondView" destination="Wsb-Uf-jsK" id="FDR-AD-XqH"/>
+                <outlet property="startAtCalendarBtn" destination="7I1-yw-fRg" id="980-sJ-A66"/>
                 <outlet property="startAtLbl" destination="24f-QY-EdF" id="LwU-ho-hdV"/>
                 <outlet property="sundayBtn" destination="qJi-gt-8SI" id="q1K-JC-DT0"/>
                 <outlet property="textCntLbl" destination="jJ8-bd-AKL" id="SrH-Hp-dOM"/>
@@ -152,7 +158,7 @@
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24f-QY-EdF">
                             <rect key="frame" x="344" y="107" width="0.0" height="0.0"/>
-                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="14"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -363,6 +369,19 @@
                                 <constraint firstAttribute="height" constant="1" id="gaP-tu-pMh"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-fO-3LO">
+                            <rect key="frame" x="342" y="34" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="14"/>
+                            <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZC-pN-ctl">
+                            <rect key="frame" x="196.5" y="8" width="145.5" height="55"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="showCalendar:" destination="-1" eventType="touchUpInside" id="Ry2-Jq-rfw"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -381,9 +400,11 @@
                         <constraint firstItem="zFd-LG-khm" firstAttribute="leading" secondItem="uCN-FY-XCx" secondAttribute="trailing" constant="8" id="BxI-Mk-Kb5"/>
                         <constraint firstItem="Qw2-Jb-0x4" firstAttribute="leading" secondItem="Bw0-2U-W0Z" secondAttribute="trailing" constant="6" id="FmE-w2-roK"/>
                         <constraint firstItem="gpK-U6-cKW" firstAttribute="height" secondItem="ZMm-og-dfA" secondAttribute="height" id="Hwp-Af-uUl"/>
+                        <constraint firstItem="Yzz-oH-hdB" firstAttribute="top" secondItem="8ZC-pN-ctl" secondAttribute="bottom" constant="5" id="L1A-Ta-add"/>
                         <constraint firstAttribute="trailing" secondItem="Yzz-oH-hdB" secondAttribute="trailing" id="M4K-9o-CQB"/>
                         <constraint firstItem="Bw0-2U-W0Z" firstAttribute="leading" secondItem="CxY-Gm-xFz" secondAttribute="leading" constant="22" id="NDN-Bf-UkA"/>
                         <constraint firstItem="rl5-Nw-9tL" firstAttribute="leading" secondItem="27N-me-mt7" secondAttribute="trailing" constant="8" id="Tm9-xi-Lx8"/>
+                        <constraint firstAttribute="trailing" secondItem="8ZC-pN-ctl" secondAttribute="trailing" constant="24" id="VnE-I1-C6y"/>
                         <constraint firstItem="zFd-LG-khm" firstAttribute="centerY" secondItem="gpK-U6-cKW" secondAttribute="centerY" id="Wmc-LL-Jtc"/>
                         <constraint firstAttribute="bottom" secondItem="gpK-U6-cKW" secondAttribute="bottom" constant="24" id="Z8W-C8-mUS"/>
                         <constraint firstItem="gpK-U6-cKW" firstAttribute="width" secondItem="ZMm-og-dfA" secondAttribute="width" id="a6s-OF-xrm"/>
@@ -391,7 +412,10 @@
                         <constraint firstItem="ZMm-og-dfA" firstAttribute="leading" secondItem="tjM-fy-XwI" secondAttribute="trailing" constant="8" id="dGn-cg-pO5"/>
                         <constraint firstItem="27N-me-mt7" firstAttribute="leading" secondItem="gpK-U6-cKW" secondAttribute="trailing" constant="8" id="gmn-Q6-iFz"/>
                         <constraint firstItem="Yzz-oH-hdB" firstAttribute="top" secondItem="Bw0-2U-W0Z" secondAttribute="bottom" constant="22" id="h7C-x7-3Ou"/>
+                        <constraint firstAttribute="trailing" secondItem="ufO-fO-3LO" secondAttribute="trailing" constant="24" id="hCc-S6-QIW"/>
                         <constraint firstItem="cDQ-1R-Qir" firstAttribute="top" secondItem="Yzz-oH-hdB" secondAttribute="bottom" constant="16" id="hkU-cP-nRJ"/>
+                        <constraint firstItem="8ZC-pN-ctl" firstAttribute="leading" secondItem="Qw2-Jb-0x4" secondAttribute="trailing" constant="100" id="jdV-p3-E44"/>
+                        <constraint firstItem="8ZC-pN-ctl" firstAttribute="top" secondItem="MiI-wM-8Fb" secondAttribute="bottom" constant="5" id="kWF-uB-k5W"/>
                         <constraint firstItem="qJi-gt-8SI" firstAttribute="width" secondItem="ZMm-og-dfA" secondAttribute="width" id="mU3-mc-A5T"/>
                         <constraint firstItem="27N-me-mt7" firstAttribute="width" secondItem="gpK-U6-cKW" secondAttribute="width" id="mrZ-zc-AnC"/>
                         <constraint firstItem="cDQ-1R-Qir" firstAttribute="centerX" secondItem="CxY-Gm-xFz" secondAttribute="centerX" id="mwS-Nj-aYn"/>
@@ -403,6 +427,7 @@
                         <constraint firstItem="rl5-Nw-9tL" firstAttribute="width" secondItem="27N-me-mt7" secondAttribute="width" id="w0X-VT-fbZ"/>
                         <constraint firstItem="Qw2-Jb-0x4" firstAttribute="centerY" secondItem="Bw0-2U-W0Z" secondAttribute="centerY" id="wlm-ac-Epl"/>
                         <constraint firstAttribute="trailing" secondItem="qJi-gt-8SI" secondAttribute="trailing" constant="20" id="yTS-Ik-JkY"/>
+                        <constraint firstItem="ufO-fO-3LO" firstAttribute="centerY" secondItem="Qw2-Jb-0x4" secondAttribute="centerY" id="ylO-JX-PiO"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32R-ri-Gqx">

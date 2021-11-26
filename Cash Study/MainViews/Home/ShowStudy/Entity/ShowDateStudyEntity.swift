@@ -18,7 +18,7 @@ struct study : Decodable {
     var isDone : Bool
     var startAt : String
     var endAt: String
-    var repeatedDays : [String]
+    var repeatedDays : [String]?
     var rest : Int
     var recordedTime : Int
 }

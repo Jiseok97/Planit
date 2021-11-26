@@ -24,6 +24,10 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sdBtn: UIButton!
     
     @IBOutlet weak var startAtLbl: UILabel!
+    @IBOutlet weak var startAtCalendarBtn: UIButton!
+    @IBOutlet weak var endAtLbl: UILabel!
+    @IBOutlet weak var endAtCalendarBtn: UIButton!
+    
     
     @IBOutlet weak var everyDayBtn: UIButton!
     @IBOutlet weak var saturdayBtn: UIButton!
@@ -46,6 +50,8 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
+    
+    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {

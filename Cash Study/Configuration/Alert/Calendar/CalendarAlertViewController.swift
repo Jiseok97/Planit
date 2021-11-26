@@ -16,8 +16,6 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     
-//    let calendar = Calendar.current
-//    var dateComponents = DateComponents()
     var selectedDate : String = ""
     var nomalDate : String = ""
     

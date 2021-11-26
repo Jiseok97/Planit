@@ -16,14 +16,12 @@ class ShowDateStudyDataManager {
         AF.request(Constant.BASE_URL + "/v1/study/list/\(date)", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: ShowDateStudyEntity.self) { response in
+                print("Show API 호출")
+                print(response)
                 guard let data = response.value else { return }
                 
                 viewController.homeStudy(result: data)
                 viewController.topLbl.text = "\(data.nickname)님의\n공부를 응원합니다!"
-                
-                print("Study response")
-                print(String(describing: data.studies))
-                
             }
     }
     

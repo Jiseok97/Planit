@@ -27,6 +27,7 @@
                 <outlet property="confirmBtn" destination="gja-ol-dTH" id="6ik-8R-UKP"/>
                 <outlet property="msgLbl" destination="1ci-SA-ayN" id="BYo-W2-hp4"/>
                 <outlet property="msgStView" destination="RMG-KS-cPw" id="0lm-JS-nr8"/>
+                <outlet property="restBtView" destination="awk-xT-Fbr" id="AsJ-yY-aZA"/>
                 <outlet property="restBtn" destination="ZdS-Ia-N9a" id="d6w-Je-iTq"/>
                 <outlet property="subMsgLbl" destination="IZ5-dK-0BL" id="slJ-Ge-SuH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

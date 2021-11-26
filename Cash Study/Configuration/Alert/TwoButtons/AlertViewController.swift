@@ -15,6 +15,7 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var restBtn: UIButton!
+    @IBOutlet weak var restBtView: UIView!
     
     @IBOutlet weak var msgStView: UIStackView!
     
@@ -23,11 +24,13 @@ class AlertViewController: UIViewController {
     var mainMsg : String = ""
     var subMsg : String = ""
     var confirmBtnTxt : String = ""
+    var isTimer : Bool = false
     
-    init(mainMsg: String, subMsg : String, btnTitle : String) {
+    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.confirmBtnTxt = btnTitle
+        self.isTimer = isTimer
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -55,6 +58,14 @@ class AlertViewController: UIViewController {
         self.cancelBtn.layer.cornerRadius = self.cancelBtn.frame.height / 2
         self.cancelBtn.layer.borderColor = UIColor.cancleAlertColor.cgColor
         self.cancelBtn.layer.borderWidth = 1
+        
+        if isTimer {
+            self.restBtn.isHidden = false
+            self.restBtView.isHidden = false
+        } else {
+            self.restBtn.isHidden = true
+            self.restBtView.isHidden = true
+        }
     }
     
     

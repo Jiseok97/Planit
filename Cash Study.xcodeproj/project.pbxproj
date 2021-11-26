@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		88CA37D59B433E43BA824565 /* Pods_Cash_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5D0E845A1C6A7C965C3682 /* Pods_Cash_Study.framework */; };
+		B604DA412751274900783E79 /* ObAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604DA3F2751274900783E79 /* ObAlertViewController.swift */; };
+		B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B604DA402751274900783E79 /* ObAlertViewController.xib */; };
 		B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */; };
 		B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607976D2727FD3100D6D454 /* InputNameViewController.swift */; };
 		B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60797702727FF8A00D6D454 /* NavigationViewController.swift */; };
@@ -40,7 +42,6 @@
 		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
 		B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */; };
 		B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */; };
-		B62BC4192750F0400098A645 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC4182750F0400098A645 /* String.swift */; };
 		B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */; };
 		B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC469274B5F07005296D8 /* EditDdayInput.swift */; };
 		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
@@ -142,6 +143,8 @@
 		9E7A0943E39E66AD635E5720 /* Pods-Cash Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cash Study.release.xcconfig"; path = "Target Support Files/Pods-Cash Study/Pods-Cash Study.release.xcconfig"; sourceTree = "<group>"; };
 		A58A080CB94FCEFA57FD8DDA /* Pods-Planit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planit.debug.xcconfig"; path = "Target Support Files/Pods-Planit/Pods-Planit.debug.xcconfig"; sourceTree = "<group>"; };
 		AF5D0E845A1C6A7C965C3682 /* Pods_Cash_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cash_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B604DA3F2751274900783E79 /* ObAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObAlertViewController.swift; sourceTree = "<group>"; };
+		B604DA402751274900783E79 /* ObAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObAlertViewController.xib; sourceTree = "<group>"; };
 		B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputUserInfo.storyboard; sourceTree = "<group>"; };
 		B607976D2727FD3100D6D454 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		B60797702727FF8A00D6D454 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +178,6 @@
 		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
 		B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyDataManager.swift; sourceTree = "<group>"; };
 		B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyEntity.swift; sourceTree = "<group>"; };
-		B62BC4182750F0400098A645 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayDataManager.swift; sourceTree = "<group>"; };
 		B62BC469274B5F07005296D8 /* EditDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayInput.swift; sourceTree = "<group>"; };
 		B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayEntity.swift; sourceTree = "<group>"; };
@@ -306,6 +308,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B604DA3E2751272A00783E79 /* OneButton */ = {
+			isa = PBXGroup;
+			children = (
+				B604DA402751274900783E79 /* ObAlertViewController.xib */,
+				B604DA3F2751274900783E79 /* ObAlertViewController.swift */,
+			);
+			path = OneButton;
+			sourceTree = "<group>";
+		};
 		B60797652727FAB500D6D454 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,8 +440,9 @@
 		B6196613274F0F510004EA10 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				B6A33E93274F72E9004E88B0 /* Calendar */,
+				B604DA3E2751272A00783E79 /* OneButton */,
 				B6A33E92274F72DB004E88B0 /* TwoButtons */,
+				B6A33E93274F72E9004E88B0 /* Calendar */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -753,7 +765,6 @@
 				B67C98A32724FBBE0039D271 /* IndicatorView.swift */,
 				B6D1FDF12728308A00C9C846 /* UITextField.swift */,
 				B6709E54272BD7C100847491 /* NotificationName.swift */,
-				B62BC4182750F0400098A645 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1156,6 +1167,7 @@
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
+				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
@@ -1243,7 +1255,6 @@
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
-				B62BC4192750F0400098A645 /* String.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
@@ -1262,6 +1273,7 @@
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */,
 				B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */,
+				B604DA412751274900783E79 /* ObAlertViewController.swift in Sources */,
 				B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */,
 				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
 				B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */,

@@ -50,6 +50,12 @@ class TimerStopViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showAlert()
+    }
+    
     
 
     // MARK: Functions
@@ -71,6 +77,15 @@ class TimerStopViewController: UIViewController {
         self.bonusView.layer.cornerRadius = bonusView.frame.height / 2
         self.stopBtn.layer.cornerRadius = stopBtn.frame.height / 2
         
+    }
+    
+    func showAlert() {
+        let vc = ObAlertViewController(mainMsg: "기기의 홈버튼을 이용해서\n앱을 나가면 타이머 측정이\n자동으로 멈추게 돼요.",
+                                       subMsg: "앱을 유지해주세요",
+                                       btnTitle: "공부시간 측정 시작하기",
+                                       isTimer: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     

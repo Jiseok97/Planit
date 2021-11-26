@@ -26,10 +26,6 @@ class HomeViewController: UIViewController {
         setUI()
         setGradation()
         
-        let td = DateFormatter()
-        td.dateFormat = "yyyy-MM-dd"
-        ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
-        
         rprDdayCV?.delegate = self
         rprDdayCV?.dataSource = self
         studyLstCV?.delegate = self
@@ -57,11 +53,20 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        let td = DateFormatter()
+        td.dateFormat = "yyyy-MM-dd"
+        ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
+        studyLstCV.reloadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("addStudy"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("addStudy"), object: nil)
     }
     
     // MARK: Functions
@@ -78,6 +83,10 @@ class HomeViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    @objc func addStudy(_ noti: Notification) {
+        changeRootVC(BaseTabBarController())
+    }
+    
     
 }
 
@@ -91,10 +100,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == studyLstCV {
             if todayStudyLst?.studies != nil {
-                // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
                 // 타이머 뷰
-                
-                let vc = TimerStopViewController(title: "테스트 공부하기")
+                guard let titleTxt = todayStudyLst?.studies[indexPath.row].title else { return }
+                        
+                let vc = TimerStopViewController(title: titleTxt)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true, completion: nil)
             }

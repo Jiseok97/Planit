@@ -268,7 +268,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func sliderTapped(_ sender: Any) {
         if checkRepresentSd.value == 0.0 {
-            let vc = AlertViewController(mainMsg: "대표 디데이를 설정하시겠어요?", subMsg: "홈에 표시되는 대표 디데이는\n1개만 설정할 수 있어요", btnTitle: "확인")
+            let vc = AlertViewController(mainMsg: "대표 디데이를 설정하시겠어요?", subMsg: "홈에 표시되는 대표 디데이는\n1개만 설정할 수 있어요", btnTitle: "확인", isTimer: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
@@ -279,8 +279,6 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
-    
-    // MARK: Confirm Btn Tapped
     @IBAction func addDdayTapped(_ sender: Any) {
         guard let title = self.inputTitleTF.text else { return }
         
@@ -295,27 +293,21 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         if inputTitleTF.text?.isEmpty == true && Constant.DATE == "" {
             // 제목은 한글자 이상 적어주세요.
-//            let vc = AlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "")
-//            vc.modalPresentationStyle = .overFullScreen
-//            present(vc, animated: true)
+            let vc = ObAlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "", btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
             
         } else  {
             if isEdit {
                 // 편집 모드
                 let input = EditDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
                 EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
-                if isRepresentative == true {
-                    // 대표 디데이 설정 커스텀 창 띄우기
-                }
             }
             
             else {
                 // 추가 모드
                 let input = AddDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
                 AddDdayDataManager().addDday(input, viewController: self)
-                if isRepresentative == true {
-                    // 대표 디데이 설정 커스텀 창 띄우기
-                }
             }
         }
     }
@@ -329,7 +321,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func deleteTapBtn(_ sender: Any) {
-        let vc = AlertViewController(mainMsg: "디데이를 삭제하시겠습니까?", subMsg: "", btnTitle: "삭제")
+        let vc = AlertViewController(mainMsg: "디데이를 삭제하시겠습니까?", subMsg: "", btnTitle: "삭제", isTimer: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
