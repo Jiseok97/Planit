@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     
     var haveRprDday : Bool = false
     var studyDataLst : [String] = ["Empty", "hello", "Empty", "Test", "HiCV", "중간고사"]
-    
+    var todayStudyLst : ShowDateStudyEntity?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -26,6 +26,10 @@ class HomeViewController: UIViewController {
         
         setUI()
         setGradation()
+        
+        let td = DateFormatter()
+        td.dateFormat = "yyyy-MM-dd"
+        ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
         
         rprDdayCV?.delegate = self
         rprDdayCV?.dataSource = self
@@ -54,13 +58,24 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(homeData(_:)), name: NSNotification.Name("homeData"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("homeData"), object: nil)
     }
-    
+//
+//    @objc func homeData(_ noti: Notification) {
+//        let df = DateFormatter()
+//        df.dateFormat = "yyyy-MM-dd"
+//        ShowDateStudyDataManager().homeStudy(date: df.string(from: Date()), viewController: self)
+//    }
+//
     
     
     // MARK: Functions
@@ -69,6 +84,8 @@ class HomeViewController: UIViewController {
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
         addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
+        
+        self.topLbl.text = todayStudyLst?.nickname
         
 //        guard let name = UserInfoData.name as? String else { return }
 //        self.topLbl.text = "\(name) 님의 \n 공부를 응원합니다."
@@ -107,7 +124,11 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == studyLstCV {
-            return studyDataLst.count
+            if todayStudyLst?.studies != nil {
+                return todayStudyLst!.studies.count
+            } else {
+                return 1
+            }
         } else {
             return 1
         }
@@ -135,21 +156,20 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 
             }
         } else {
-            if studyDataLst.count == 1 {
+            if todayStudyLst?.studies != nil {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.nameLbl.text = todayStudyLst?.studies[indexPath.row].title
+                cell.layer.cornerRadius = 8
+                cell.backgroundColor = UIColor.studyCellBgColor
+                
+                return cell
+            } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
                 cell.layer.borderWidth = 1
                 cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-                
-                return cell
-                
-            } else {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
-                
-                cell.nameLbl.text = studyDataLst[indexPath.row]
-                cell.layer.cornerRadius = 8
-                cell.backgroundColor = UIColor.studyCellBgColor
                 
                 return cell
             }
@@ -161,7 +181,19 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         let width = self.view.frame.width * 0.872
         
         if collectionView == studyLstCV {
-            if studyDataLst.count == 1 {
+            
+            
+//            if studyDataLst.count == 1 {
+//                let height = self.view.frame.height * 0.27586206896
+//                return CGSize(width: width, height: height)
+//            } else {
+//                let height = self.view.frame.height * 0.12068965517
+//    //            let height = self.view.frame.height * 0.132
+//                return CGSize(width: width, height: height)
+//            }
+            
+            
+            if todayStudyLst?.studies == nil {
                 let height = self.view.frame.height * 0.27586206896
                 return CGSize(width: width, height: height)
             } else {
@@ -172,5 +204,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         } else {
             return CGSize(width: width, height: 92)
         }
+    }
+}
+
+
+extension HomeViewController {
+    func homeStudy(result : ShowDateStudyEntity) {
+        self.todayStudyLst = result
+        self.studyLstCV.reloadData()
     }
 }
