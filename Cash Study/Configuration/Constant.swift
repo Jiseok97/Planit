@@ -27,4 +27,5 @@ struct Constant {
     /// For Calendar
     static var START_DATE : String = ""
     static var END_DATE : String = ""
+    static var DATE : String = ""
 }

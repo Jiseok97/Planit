@@ -95,7 +95,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         NotificationCenter.default.addObserver(self, selector: #selector(setRepresent(_:)), name: Notification.Name("setRepresent"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(sendData(_:)), name: Notification.Name("sendData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sendDate(_:)), name: Notification.Name("sendDate"), object: nil)
         
     }
     
@@ -106,7 +106,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("setRepresent"), object: nil)
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("sendData"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("sendDate"), object: nil)
     }
     
     
@@ -135,13 +135,19 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         self.isRepresentative = true
     }
     
-    @objc func sendData(_ noti : Notification) {
-        self.dateLbl.isHidden = false
-        self.dateLbl.text = Constant.START_DATE
+    @objc func sendDate(_ noti : Notification) {
+        if Constant.END_DATE != "" {
+            self.dateLbl.text = Constant.END_DATE
+        }
     }
 
     
     func setUI() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 (E)"
+        
+        self.dateLbl.text = dateFormatter.string(from: Date())
         self.titleView.layer.cornerRadius = 8
         self.calendarView.layer.cornerRadius = 8
         self.representView.layer.cornerRadius = 8
@@ -168,8 +174,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         } else {
             self.checkRepresentSd.value = 0.0
         }
-        
-        self.dateLbl.isHidden = true
+    
     }
     
     @IBAction func showCalendarBtn(_ sender: Any) {
@@ -279,8 +284,9 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     @IBAction func addDdayTapped(_ sender: Any) {
         // 커스텀 뷰 띄우기
         guard let title = self.inputTitleTF.text else { return }
+        let endDate = Constant.DATE
         
-        if inputTitleTF.text?.isEmpty == true {
+        if inputTitleTF.text?.isEmpty == true && dateLbl.text?.isEmpty == true {
             // 제목은 한글자 이상 적어주세요.
 //            let vc = AlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "")
 //            vc.modalPresentationStyle = .overFullScreen
@@ -289,7 +295,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         } else  {
             if isEdit {
                 // 편집 모드
-                let input = EditDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
+                let input = EditDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
                 EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
                 if isRepresentative == true {
                     // 대표 디데이 설정 커스텀 창 띄우기
@@ -298,7 +304,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             
             else {
                 // 추가 모드
-                let input = AddDdayInput(title: title, endAt: "2021-12-01", icon: self.icon, isRepresentative: self.isRepresentative)
+                let input = AddDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
                 AddDdayDataManager().addDday(input, viewController: self)
                 if isRepresentative == true {
                     // 대표 디데이 설정 커스텀 창 띄우기

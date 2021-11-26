@@ -187,14 +187,14 @@
                                 <action selector="selectIconBtnTapped:" destination="-1" eventType="touchUpInside" id="Wf4-81-zxL"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 10월 4일 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MY-k8-WBy">
-                            <rect key="frame" x="221.5" y="19" width="122.5" height="34"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MY-k8-WBy">
+                            <rect key="frame" x="344" y="36" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="14"/>
                             <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3y-9p-jeA">
-                            <rect key="frame" x="221.5" y="19" width="122.5" height="34"/>
+                            <rect key="frame" x="180" y="19" width="164" height="34"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <connections>
                                 <action selector="showCalendarBtn:" destination="-1" eventType="touchUpInside" id="6wP-Po-Q63"/>
@@ -205,14 +205,13 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="RGw-fZ-9U9" secondAttribute="bottom" constant="32" id="0Aa-Jd-qjF"/>
                         <constraint firstItem="hd5-15-6qL" firstAttribute="centerY" secondItem="MNu-PB-gjG" secondAttribute="centerY" id="4rV-yX-mLg"/>
-                        <constraint firstItem="k3y-9p-jeA" firstAttribute="height" secondItem="5MY-k8-WBy" secondAttribute="height" id="6ka-fo-Fqt"/>
                         <constraint firstItem="hd5-15-6qL" firstAttribute="leading" secondItem="MNu-PB-gjG" secondAttribute="trailing" constant="6" id="8fg-Ay-xk6"/>
+                        <constraint firstItem="k3y-9p-jeA" firstAttribute="leading" secondItem="hd5-15-6qL" secondAttribute="trailing" constant="100" id="9BA-6C-5ys"/>
                         <constraint firstItem="RGw-fZ-9U9" firstAttribute="centerX" secondItem="MZ4-b9-BqN" secondAttribute="centerX" id="C8x-VT-gFa"/>
                         <constraint firstItem="464-gP-7YT" firstAttribute="centerY" secondItem="RGw-fZ-9U9" secondAttribute="centerY" id="CZl-Uf-ckk"/>
                         <constraint firstItem="Y4b-19-jKE" firstAttribute="top" secondItem="hd5-15-6qL" secondAttribute="bottom" constant="22" id="EGo-VF-pBy"/>
                         <constraint firstItem="RGw-fZ-9U9" firstAttribute="leading" secondItem="464-gP-7YT" secondAttribute="trailing" constant="8" id="Efh-dt-NOI"/>
                         <constraint firstItem="5MY-k8-WBy" firstAttribute="centerY" secondItem="hd5-15-6qL" secondAttribute="centerY" id="FHV-MC-yVO"/>
-                        <constraint firstItem="k3y-9p-jeA" firstAttribute="width" secondItem="5MY-k8-WBy" secondAttribute="width" id="JzQ-Qg-YM7"/>
                         <constraint firstAttribute="trailing" secondItem="k3y-9p-jeA" secondAttribute="trailing" constant="22" id="K8i-yN-PJE"/>
                         <constraint firstItem="zWp-II-4Ub" firstAttribute="leading" secondItem="Qbg-Nv-4ch" secondAttribute="trailing" constant="8" id="NL6-vv-AOg"/>
                         <constraint firstItem="zWp-II-4Ub" firstAttribute="centerY" secondItem="Qbg-Nv-4ch" secondAttribute="centerY" id="QVi-9V-PWY"/>

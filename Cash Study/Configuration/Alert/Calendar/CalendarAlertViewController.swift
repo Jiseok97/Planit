@@ -19,6 +19,7 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
 //    let calendar = Calendar.current
 //    var dateComponents = DateComponents()
     var selectedDate : String = ""
+    var nomalDate : String = ""
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -64,12 +65,17 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 (E)"
         
         let differenceDF = DateFormatter()
         differenceDF.dateFormat = "yyyyMMdd"
         
+        let nomalDF = DateFormatter()
+        nomalDF.dateFormat = "yyyy-MM-dd"
+        
         let selectedDate = differenceDF.string(from: date)
+        let sendDate = nomalDF.string(from: date)
         let todayDate = differenceDF.string(from: Date())
 
         guard let sDate = Int(selectedDate) else { return }
@@ -81,13 +87,16 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         } else {
             self.calendarView.appearance.selectionColor = UIColor.link
             self.selectedDate = dateFormatter.string(from: date)
+            self.nomalDate = nomalDF.string(from: date)
         }
     }
     
     
     @IBAction func dismissBtn(_ sender: Any) {
+        Constant.END_DATE = self.selectedDate
+        Constant.DATE = self.nomalDate
+        print(Constant.END_DATE)
         NotificationCenter.default.post(name: NSNotification.Name("sendDate"), object: nil)
-        Constant.START_DATE = self.selectedDate
         dismiss(animated: true, completion: nil)
     }
     
@@ -96,41 +105,3 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
 
 
 
-//    @IBAction func nextTapped(_ sender: UIButton) {
-//        calendarView.setCurrentPage(getNextMonth(date: calendarView.currentPage), animated: true)
-        
-//        dateComponents.month = 1
-//        self.calendarView.currentPage = calendar.date(byAdding: dateComponents, to: self.calendarView.currentPage)!
-        
-        
-//        let currentDay = calendarView.currentPage
-//        var components = DateComponents()
-//        let calendar = Calendar(identifier: .gregorian)
-//        components.month = 1
-//        let nextDay = calendar.date(byAdding: components, to: currentDay)!
-//        calendarView.setCurrentPage(nextDay, animated: true)
-        
-//    }
-
-//    @IBAction func previousTapped(_ sender: UIButton) {
-//        calendarView.setCurrentPage(getPreviousMonth(date: calendarView.currentPage), animated: true)
-        
-//        dateComponents.month = -1
-//        self.calendarView.currentPage = calendar.date(byAdding: dateComponents, to: self.calendarView.currentPage)!
-//        self.calendarView.setCurrentPage(calendarView.currentPage, animated: true)
-        
-//        let currentDay = calendarView.currentPage
-//        var components = DateComponents()
-//        let calendar = Calendar(identifier: .gregorian)
-//        components.month = -1
-//        let preDay = calendar.date(byAdding: components, to: currentDay)!
-//        calendarView.setCurrentPage(preDay, animated: true)
-//    }
-
-//    func getNextMonth(date:Date)->Date {
-//        return Calendar.current.date(byAdding: .month, value: 1, to:date)!
-//    }
-//
-//    func getPreviousMonth(date:Date)->Date {
-//        return Calendar.current.date(byAdding: .month, value: -1, to:date)!
-//    }
