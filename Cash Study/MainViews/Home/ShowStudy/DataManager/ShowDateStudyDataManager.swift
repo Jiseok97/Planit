@@ -19,13 +19,10 @@ class ShowDateStudyDataManager {
                 guard let data = response.value else { return }
                 
                 viewController.homeStudy(result: data)
-//                viewController.todayStudyLst = data
                 viewController.topLbl.text = "\(data.nickname)님의\n공부를 응원합니다!"
                 
                 print("Study response")
                 print(String(describing: data.studies))
-                
-//                NotificationCenter.default.post(name: NSNotification.Name("homeData"), object: nil)
                 
             }
     }

@@ -26,10 +26,6 @@ class LoginDataManager : UIViewController{
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
                         
-                        let tk = TokenUtils()
-                        tk.create(Constant.BASE_URL + "/v1/auth/login", account: "accessToken", value: accessToken)
-                        tk.create(Constant.BASE_URL + "/v1/auth/login", account: "refreshToken", value: refreshToken)
-                        
                         UserDefaults.standard.set(accessToken, forKey: "accessToken")
                         UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                         

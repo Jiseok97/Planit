@@ -14,6 +14,7 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var subMsgLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var restBtn: UIButton!
     
     @IBOutlet weak var msgStView: UIStackView!
     
@@ -72,5 +73,10 @@ class AlertViewController: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func restBtnTapped(_ sender: Any) {
+    }
+    
     
 }

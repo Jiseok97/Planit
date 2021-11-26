@@ -75,7 +75,6 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         nomalDF.dateFormat = "yyyy-MM-dd"
         
         let selectedDate = differenceDF.string(from: date)
-        let sendDate = nomalDF.string(from: date)
         let todayDate = differenceDF.string(from: Date())
 
         guard let sDate = Int(selectedDate) else { return }

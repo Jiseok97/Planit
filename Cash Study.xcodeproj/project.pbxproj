@@ -40,6 +40,7 @@
 		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
 		B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */; };
 		B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */; };
+		B62BC4192750F0400098A645 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC4182750F0400098A645 /* String.swift */; };
 		B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */; };
 		B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC469274B5F07005296D8 /* EditDdayInput.swift */; };
 		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
@@ -50,7 +51,6 @@
 		B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
-		B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E1448273E49FA000F238A /* TokenUtils.swift */; };
 		B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */; };
 		B66B47772732706000F89012 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B47752732706000F89012 /* HomeViewController.swift */; };
 		B66B47782732706000F89012 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B47762732706000F89012 /* HomeViewController.xib */; };
@@ -175,6 +175,7 @@
 		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
 		B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyDataManager.swift; sourceTree = "<group>"; };
 		B62A93B7274FA9180092C9B5 /* ShowDateStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyEntity.swift; sourceTree = "<group>"; };
+		B62BC4182750F0400098A645 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B62BC467274B5EFF005296D8 /* EditDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayDataManager.swift; sourceTree = "<group>"; };
 		B62BC469274B5F07005296D8 /* EditDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayInput.swift; sourceTree = "<group>"; };
 		B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayEntity.swift; sourceTree = "<group>"; };
@@ -185,7 +186,6 @@
 		B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyInput.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
-		B65E1448273E49FA000F238A /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestInterceptor.swift; sourceTree = "<group>"; };
 		B66B47752732706000F89012 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B66B47762732706000F89012 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -740,7 +740,6 @@
 				B614C46B273A9F7A00A5E8F9 /* Font */,
 				B6224211272D0852004F6750 /* Base */,
 				B67C989E2724FA810039D271 /* Extension */,
-				B65E1448273E49FA000F238A /* TokenUtils.swift */,
 				B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */,
 			);
 			path = Configuration;
@@ -754,6 +753,7 @@
 				B67C98A32724FBBE0039D271 /* IndicatorView.swift */,
 				B6D1FDF12728308A00C9C846 /* UITextField.swift */,
 				B6709E54272BD7C100847491 /* NotificationName.swift */,
+				B62BC4182750F0400098A645 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1243,6 +1243,7 @@
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
+				B62BC4192750F0400098A645 /* String.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
@@ -1263,7 +1264,6 @@
 				B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */,
 				B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */,
 				B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */,
-				B65E1449273E49FA000F238A /* TokenUtils.swift in Sources */,
 				B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */,

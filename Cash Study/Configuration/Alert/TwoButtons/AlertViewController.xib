@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,6 +27,7 @@
                 <outlet property="confirmBtn" destination="gja-ol-dTH" id="6ik-8R-UKP"/>
                 <outlet property="msgLbl" destination="1ci-SA-ayN" id="BYo-W2-hp4"/>
                 <outlet property="msgStView" destination="RMG-KS-cPw" id="0lm-JS-nr8"/>
+                <outlet property="restBtn" destination="ZdS-Ia-N9a" id="d6w-Je-iTq"/>
                 <outlet property="subMsgLbl" destination="IZ5-dK-0BL" id="slJ-Ge-SuH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,7 +39,33 @@
             <subviews>
                 <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-do-po3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdS-Ia-N9a">
+                            <rect key="frame" x="153.5" y="588.5" width="107" height="36"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="5분 쉬고 싶어요">
+                                <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="restBtnTapped:" destination="-1" eventType="touchUpInside" id="hkH-Wn-29f"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awk-xT-Fbr">
+                            <rect key="frame" x="153.5" y="616" width="107" height="1"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="SIq-PO-bDk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="awk-xT-Fbr" firstAttribute="top" secondItem="ZdS-Ia-N9a" secondAttribute="bottom" constant="-8.6999999999999993" id="3om-dr-uea"/>
+                        <constraint firstItem="awk-xT-Fbr" firstAttribute="centerX" secondItem="yNs-do-po3" secondAttribute="centerX" id="8CR-sM-Y3l"/>
+                        <constraint firstItem="ZdS-Ia-N9a" firstAttribute="centerX" secondItem="yNs-do-po3" secondAttribute="centerX" id="KzD-e7-WTw"/>
+                        <constraint firstItem="awk-xT-Fbr" firstAttribute="width" secondItem="ZdS-Ia-N9a" secondAttribute="width" id="nKF-Rb-W3i"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hij-LL-ObM">
                     <rect key="frame" x="32" y="331.5" width="350" height="233"/>
@@ -105,6 +133,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hij-LL-ObM" secondAttribute="trailing" constant="32" id="aju-cg-TJD"/>
                 <constraint firstItem="yNs-do-po3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eYD-lp-PM5"/>
                 <constraint firstItem="hij-LL-ObM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="kN6-y9-Og7"/>
+                <constraint firstItem="ZdS-Ia-N9a" firstAttribute="top" secondItem="hij-LL-ObM" secondAttribute="bottom" constant="24" id="mOX-tu-J8y"/>
                 <constraint firstItem="hij-LL-ObM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.26" id="ns7-cX-7gd"/>
                 <constraint firstAttribute="bottom" secondItem="yNs-do-po3" secondAttribute="bottom" id="oqg-f7-qqt"/>
                 <constraint firstItem="yNs-do-po3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zjo-kq-2sy"/>
@@ -112,4 +141,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="60.9375"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -17,7 +17,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var rprDdayCV: UICollectionView!
     
     var haveRprDday : Bool = false
-    var studyDataLst : [String] = ["Empty", "hello", "Empty", "Test", "HiCV", "중간고사"]
     var todayStudyLst : ShowDateStudyEntity?
     
     // MARK: View Life Cycle
@@ -58,25 +57,12 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(homeData(_:)), name: NSNotification.Name("homeData"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("homeData"), object: nil)
     }
-//
-//    @objc func homeData(_ noti: Notification) {
-//        let df = DateFormatter()
-//        df.dateFormat = "yyyy-MM-dd"
-//        ShowDateStudyDataManager().homeStudy(date: df.string(from: Date()), viewController: self)
-//    }
-//
-    
     
     // MARK: Functions
     func setUI() {
@@ -84,11 +70,6 @@ class HomeViewController: UIViewController {
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
         addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
-        
-        self.topLbl.text = todayStudyLst?.nickname
-        
-//        guard let name = UserInfoData.name as? String else { return }
-//        self.topLbl.text = "\(name) 님의 \n 공부를 응원합니다."
     }
     
     @IBAction func moveAddStudyBtn(_ sender: Any) {
@@ -109,7 +90,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == studyLstCV {
-            if studyDataLst.count > 1 {
+            if todayStudyLst?.studies != nil {
                 // 데이터가 비어있지 않을 경우, Cell 클릭 → 타이머 이동
                 // 타이머 뷰
                 
@@ -159,9 +140,23 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             if todayStudyLst?.studies != nil {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
                 
-                cell.nameLbl.text = todayStudyLst?.studies[indexPath.row].title
                 cell.layer.cornerRadius = 8
                 cell.backgroundColor = UIColor.studyCellBgColor
+                
+                cell.nameLbl.text = todayStudyLst?.studies[indexPath.row].title
+                
+                if todayStudyLst?.studies[indexPath.row].recordedTime != 0 {
+                    let time = todayStudyLst?.studies[indexPath.row].recordedTime
+                    let hour = time! / 3600
+                    let min = (time! / 60) % 60
+                    let sec = time! % 60
+                    let timeTxt = "\(hour)시간 \(min)분 \(sec)초"
+                    let restCnt = todayStudyLst?.studies[indexPath.row].rest
+                    let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
+                    
+                    cell.subLbl.text = changeText
+                    cell.subLbl.textColor = UIColor.link
+                }
                 
                 return cell
             } else {
@@ -181,18 +176,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         let width = self.view.frame.width * 0.872
         
         if collectionView == studyLstCV {
-            
-            
-//            if studyDataLst.count == 1 {
-//                let height = self.view.frame.height * 0.27586206896
-//                return CGSize(width: width, height: height)
-//            } else {
-//                let height = self.view.frame.height * 0.12068965517
-//    //            let height = self.view.frame.height * 0.132
-//                return CGSize(width: width, height: height)
-//            }
-            
-            
             if todayStudyLst?.studies == nil {
                 let height = self.view.frame.height * 0.27586206896
                 return CGSize(width: width, height: height)
