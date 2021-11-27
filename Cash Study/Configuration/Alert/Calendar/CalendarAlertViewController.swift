@@ -18,6 +18,18 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     
     var selectedDate : String = ""
     var nomalDate : String = ""
+    var isEnd : Bool = false
+    
+    init(isEnd: Bool) {
+        self.isEnd = isEnd
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -90,10 +102,18 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     
     
     @IBAction func dismissBtn(_ sender: Any) {
-        Constant.DATE_TEXT = self.selectedDate
-        Constant.DATE = self.nomalDate
+        
         print(Constant.DATE_TEXT)
-        NotificationCenter.default.post(name: NSNotification.Name("sendDate"), object: nil)
+        
+        if isEnd {
+            Constant.DATE_TEXT = self.selectedDate
+            Constant.END_DATE = self.nomalDate
+            NotificationCenter.default.post(name: NSNotification.Name("endDate"), object: nil)
+        } else {
+            Constant.DATE_TEXT = self.selectedDate
+            Constant.DATE = self.nomalDate
+            NotificationCenter.default.post(name: NSNotification.Name("sendDate"), object: nil)
+        }
         dismiss(animated: true, completion: nil)
     }
     

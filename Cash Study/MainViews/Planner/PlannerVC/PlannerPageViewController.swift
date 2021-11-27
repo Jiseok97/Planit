@@ -40,7 +40,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         studyCV.dataSource = self
         studyCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         studyCV.register(UINib(nibName: "NoStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "noStudyCell")
-//        studyCV.register(UINib(nibName: "HaveStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "haveStudyCell")
+        studyCV.register(UINib(nibName: "StudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "studyCell")
         
         if let collectionViewLayout = studyCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -55,6 +55,10 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     // MARK: Function
     func setUI() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        ShowDateStudyDataManager().showStudy(date: dateFormatter.string(from: Date()), viewController: self)
+        
         self.calendarView.layer.cornerRadius = 8
         self.changeScopeCalendar.setTitle("", for: .normal)
         self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -108,25 +112,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let differenceDF = DateFormatter()
-        differenceDF.dateFormat = "yyyyMMdd"
-        
-        let selectedDate = differenceDF.string(from: date)
-        let todayDate = differenceDF.string(from: Date())
-
-        guard let sDate = Int(selectedDate) else { return }
-        guard let tDate = Int(todayDate) else { return }
-
-        if sDate < tDate {
-            self.calendarView.appearance.selectionColor = UIColor.link.withAlphaComponent(0.0)
-            calendar.deselect(date)
-        } else {
-            self.calendarView.appearance.selectionColor = UIColor.link
-            self.selectedDate = dateFormatter.string(from: date)
-            
-            
-            
-        }
+        ShowDateStudyDataManager().showStudy(date: dateFormatter.string(from: date), viewController: self)
     }
     
 }
@@ -139,17 +125,33 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if studyDataLst?.studies != nil {
+            return studyDataLst!.studies.count
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noStudyCell", for: indexPath) as? NoStudyCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        
-        return cell
+        if studyDataLst?.studies != nil {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCell", for: indexPath) as? StudyCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.layer.cornerRadius = 8
+            cell.backgroundColor = UIColor.studyCellBgColor
+            
+            
+            
+            
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noStudyCell", for: indexPath) as? NoStudyCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+            cell.layer.borderWidth = 1
+            cell.layer.cornerRadius = 8
+            
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

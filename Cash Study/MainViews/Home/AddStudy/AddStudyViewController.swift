@@ -66,13 +66,15 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(sendDate(_:)), name: Notification.Name("sendDate"), object: nil)
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(endDate(_:)), name: NSNotification.Name("endDate"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: titleTF)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("sendDate"), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("endDate"), object: nil)
     }
     
     
@@ -97,6 +99,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         toDate.dateFormat = "yyyy년 MM월 dd일 (E)"
         
         self.startAtLbl.text = toDate.string(from: Date())
+        self.endAtLbl.text = toDate.string(from: Date())
         
         self.titleView.layer.cornerRadius = 8
         self.secondView.layer.cornerRadius = 8
@@ -117,6 +120,13 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @objc func sendDate(_ noti : Notification) {
         if Constant.DATE_TEXT != "" {
             self.startAtLbl.text = Constant.DATE_TEXT
+            Constant.DATE_TEXT = ""
+        }
+    }
+    
+    @objc func endDate(_ noti: Notification) {
+        if Constant.DATE_TEXT != "" {
+            self.endAtLbl.text = Constant.DATE_TEXT
             Constant.DATE_TEXT = ""
         }
     }
@@ -166,12 +176,15 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             // 나머지 버튼들을 눌렀을 때
+            if everyDayBtn.isSelected {
+                tappedDayButtons.removeAll()
+            }
             everyDayBtn.isSelected = false
             everyDayBtn.backgroundColor = UIColor.homeBorderColor
             everyDayBtn.setTitleColor(.notSelectBtnColor, for: .normal)
         }
         
-        
+    
         if !sender.isSelected {
             
             sender.isSelected = true
@@ -208,6 +221,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 tappedDayButtons.append(String("SUNDAY"))
                 
             default:
+                tappedDayButtons.removeAll()
                 tappedDayButtons.append(String("MONDAY"))
                 tappedDayButtons.append(String("TUESDAY"))
                 tappedDayButtons.append(String("WEDNESDAY"))
@@ -256,7 +270,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 
             case "일":
                 tappedDayButtons.removeAll(where: { $0 == "SUNDAY"} )
-                
+              
             default:
                 tappedDayButtons.removeAll()
             }
@@ -265,32 +279,45 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func showCalendar(_ sender: Any) {
-        let vc = CalendarAlertViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+    @IBAction func showCalendar(_ sender: UIButton) {
+        
+        switch sender {
+        case startAtCalendarBtn:
+            let vc = CalendarAlertViewController(isEnd: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
+        default:
+            let vc = CalendarAlertViewController(isEnd: true)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
+        
     }
     
     
-    @IBAction func addStudyBtnTapped(_ sender: Any) {
+    @IBAction func addStudyBtnTapped(_ sender: UIButton) {
         guard let title = titleTF.text else { return }
-        
+
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
+        var sDate = Constant.DATE
+        var eDate = Constant.END_DATE
         
-        var inputDate = Constant.DATE
-        
-        if inputDate == "" {
-            inputDate = df.string(from: Date())
+        if sDate == "" {
+            sDate = df.string(from: Date())
+        }
+        if eDate == "" {
+            eDate = df.string(from: Date())
         }
 
         if repeatSd.value == 1 {
-            // 반복
-            
-            print(tappedDayButtons)
+            let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+            AddStudyDataManager().repeatStudy(input, viewController: self)
+            print(input)
         } else {
             // 반복 없음
-            let input = SingleStudyInput(title: title, startAt: inputDate)
+            let input = SingleStudyInput(title: title, startAt: sDate)
             AddStudyDataManager().singleStudy(input, viewController: self)
         }
     }

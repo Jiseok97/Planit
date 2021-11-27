@@ -43,6 +43,8 @@ import Alamofire
                  switch code {
                  case 201:
                      viewController.checkSuccess = true
+                     NotificationCenter.default.post(name: NSNotification.Name("addStudy"), object: nil)
+                     print("Repeat study added!")
 
                  case 409:
                      print("동일한 공부 제목이 존재")
