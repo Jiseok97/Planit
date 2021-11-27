@@ -20,7 +20,7 @@ import Alamofire
                  switch code {
                  case 201:
                      viewController.checkSuccess = true
-                     NotificationCenter.default.post(name: NSNotification.Name("addStudy"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
 
                  case 409:
                      viewController.isAlreadyExist = true
@@ -29,9 +29,7 @@ import Alamofire
                  default:
                      print("잘못된 요청 형식")
                  }
-
-
-             }
+            }
      }
 
 

@@ -41,6 +41,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         studyCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
         studyCV.register(UINib(nibName: "NoStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "noStudyCell")
         studyCV.register(UINib(nibName: "StudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "studyCell")
+        studyCV.register(UINib(nibName: "RepeatStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "repeatStudyCell")
         
         if let collectionViewLayout = studyCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -51,6 +52,18 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     override func viewDidLayoutSubviews() {
         self.changeHeight()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("moveEditStudy"), object: nil)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("moveEditStudy"), object: nil)
+//    }
     
     
     // MARK: Function
@@ -90,6 +103,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         calendarView.appearance.headerTitleOffset = CGPoint(x: -60, y: calendarView.frame.origin.y)
         
     }
+    
     
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -140,23 +154,30 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if studyDataLst?.studies != nil {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCell", for: indexPath) as? StudyCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.layer.cornerRadius = 8
-            cell.backgroundColor = UIColor.studyCellBgColor
-            
-            cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
+            // if single || repeat
             if studyDataLst?.studies[indexPath.row].repeatedDays == nil {
-                cell.repeatLbl.isHidden = true
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCell", for: indexPath) as? StudyCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.layer.cornerRadius = 8
+                cell.backgroundColor = .studyCellBgColor
+                
+                cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
+                
+                return cell
             } else {
-                cell.repeatLbl.isHidden = false
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repeatStudyCell", for: indexPath) as? RepeatStudyCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.layer.cornerRadius = 8
+                cell.backgroundColor = .studyCellBgColor
+                
                 let startTxt = studyDataLst?.studies[indexPath.row].startAt.replacingOccurrences(of: "-", with: ".")
                 let endTxt = studyDataLst?.studies[indexPath.row].endAt.replacingOccurrences(of: "-", with: ".")
                 
+                cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 cell.repeatLbl.text = "\(String(describing: startTxt!))~\(String(describing: endTxt!))"
+                
+                return cell
             }
-            
-            return cell
         } else {
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noStudyCell", for: indexPath) as? NoStudyCollectionViewCell else { return UICollectionViewCell() }
@@ -169,18 +190,33 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
         }
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let data = studyDataLst?.studies[indexPath.row] else { return }
+        
+        let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, isEdit: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.bounds.width * 0.872
+        let width = self.studyCV.frame.width
         
         if studyDataLst?.studies != nil {
-            let height = self.view.bounds.height * 0.22
+            if studyDataLst?.studies[indexPath.row].repeatedDays != nil {
+                let height = self.view.bounds.height * 0.132
+                return CGSize(width: width, height: height)
+            } else {
+                let height = self.view.bounds.height * 0.1289
+                return CGSize(width: width, height: height)
+            }
             
-            return CGSize(width: width, height: height)
         } else {
-            let height = self.view.bounds.height * 0.15
-            
+            let height = self.view.bounds.height * 0.1487
             return CGSize(width: width, height: height)
         }
+        
     }
     
 }
@@ -189,5 +225,6 @@ extension PlannerPageViewController {
     func showStudy(result : ShowDateStudyEntity) {
         self.studyDataLst = result
         self.studyCV.reloadData()
+        self.studyDataLst?.studies.sort { $0.endAt < $1.endAt }
     }
 }

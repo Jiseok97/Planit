@@ -162,6 +162,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             self.confirmBtn.setTitle("저장하기", for: .normal)
             self.deleteBtn.isHidden = false
             self.inputTitleTF.text = titleTxt
+            self.countTfLbl.text = String(describing: titleTxt.count) + "/10"
             
         } else {
             self.titleLbl.text = "디데이 추가하기"

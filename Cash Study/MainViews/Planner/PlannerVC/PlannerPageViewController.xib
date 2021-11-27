@@ -88,7 +88,7 @@
                                         <constraint firstItem="mYA-Pd-ems" firstAttribute="centerY" secondItem="r6l-XF-POi" secondAttribute="centerY" id="vCR-es-4Zb"/>
                                     </constraints>
                                 </view>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-PR-YQf">
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-PR-YQf">
                                     <rect key="frame" x="24" y="352" width="366" height="650"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="650" id="K82-GS-hiM"/>

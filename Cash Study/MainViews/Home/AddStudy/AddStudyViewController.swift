@@ -23,6 +23,9 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var repeatSd: UISlider!
     @IBOutlet weak var sdBtn: UIButton!
     
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var deleteBtn: UIButton!
+    
     @IBOutlet weak var startAtLbl: UILabel!
     @IBOutlet weak var startAtCalendarBtn: UIButton!
     @IBOutlet weak var endAtLbl: UILabel!
@@ -58,6 +61,23 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    var stGrId: Int = 0
+    var stSchId: Int = 0
+    var stTitle: String = ""
+    var isEdit: Bool = false
+    
+    init(stGrId: Int, stSchId: Int, title: String, isEdit: Bool) {
+        self.stGrId = stGrId
+        self.stSchId = stSchId
+        self.stTitle = title
+        self.isEdit = isEdit
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     // MARK: View Life Cycle
@@ -122,7 +142,23 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         self.backBtn.setTitle("", for: .normal)
         self.sdBtn.setTitle("", for: .normal)
+        
+        if !isEdit {
+            self.deleteBtn.isHidden = true
+            self.confirmBtn.setTitle("추가하기", for: .normal)
+            self.titleLbl.text = "공부 추가하기"
+            
+        } else {
+            self.deleteBtn.isHidden = false
+            self.confirmBtn.setTitle("저장하기", for: .normal)
+            self.titleTF.text = stTitle
+            self.titleLbl.text = "공부 편집하기"
+            self.textCntLbl.text = String(describing: stTitle.count) + "/16"
+            
+        }
+        
     }
+    
     
     @objc func sendDate(_ noti : Notification) {
         if Constant.DATE_TEXT != "" {
@@ -324,18 +360,29 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true)
             } else {
-                let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
-                AddStudyDataManager().repeatStudy(input, viewController: self)
-                print(input)
+                if isEdit {
+                    
+                } else {
+                    let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                    AddStudyDataManager().repeatStudy(input, viewController: self)
+                }
             }
         } else {
-            // 반복 없음
-            let input = SingleStudyInput(title: title, startAt: sDate)
-            AddStudyDataManager().singleStudy(input, viewController: self)
+            if isEdit {
+                let input = EditStudyInput(title: title, startAt: sDate)
+                EditStudyDataManager().editSingleStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
+                print(input)
+                print("stGrId = \(stGrId) && stSchId = \(stSchId)")
+            } else {
+                let input = SingleStudyInput(title: title, startAt: sDate)
+                AddStudyDataManager().singleStudy(input, viewController: self)
+            }
         }
     }
     
     
+    @IBAction func delteBtnTapped(_ sender: Any) {
+    }
     
     
     @IBAction func dismissBtn(_ sender: Any) {

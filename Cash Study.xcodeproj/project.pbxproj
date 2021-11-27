@@ -30,6 +30,12 @@
 		B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C477273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib */; };
 		B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */; };
 		B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */; };
+		B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC492752763F007458A1 /* RepeatStudyCollectionViewCell.swift */; };
+		B61FAC4C2752763F007458A1 /* RepeatStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAC4A2752763F007458A1 /* RepeatStudyCollectionViewCell.xib */; };
+		B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC512752838E007458A1 /* EditStudyDataManger.swift */; };
+		B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC532752839A007458A1 /* EditStudyEntity.swift */; };
+		B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC57275283B5007458A1 /* EditStudyInput.swift */; };
+		B61FAC5A275283BF007458A1 /* EditRepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC59275283BF007458A1 /* EditRepeatStudyInput.swift */; };
 		B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */; };
 		B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */; };
 		B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */; };
@@ -166,6 +172,12 @@
 		B614C477273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepresentativeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayViewController.swift; sourceTree = "<group>"; };
 		B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDdayViewController.xib; sourceTree = "<group>"; };
+		B61FAC492752763F007458A1 /* RepeatStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		B61FAC4A2752763F007458A1 /* RepeatStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepeatStudyCollectionViewCell.xib; sourceTree = "<group>"; };
+		B61FAC512752838E007458A1 /* EditStudyDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyDataManger.swift; sourceTree = "<group>"; };
+		B61FAC532752839A007458A1 /* EditStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyEntity.swift; sourceTree = "<group>"; };
+		B61FAC57275283B5007458A1 /* EditStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyInput.swift; sourceTree = "<group>"; };
+		B61FAC59275283BF007458A1 /* EditRepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRepeatStudyInput.swift; sourceTree = "<group>"; };
 		B61FAD0E273635CA00D11538 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -448,6 +460,42 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		B61FAC4827527629007458A1 /* RepeatStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B61FAC4A2752763F007458A1 /* RepeatStudyCollectionViewCell.xib */,
+				B61FAC492752763F007458A1 /* RepeatStudyCollectionViewCell.swift */,
+			);
+			path = RepeatStudy;
+			sourceTree = "<group>";
+		};
+		B61FAC4E27528374007458A1 /* EditStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B61FAC5027528383007458A1 /* DataManager */,
+				B61FAC4F2752837D007458A1 /* Entity */,
+			);
+			path = EditStudy;
+			sourceTree = "<group>";
+		};
+		B61FAC4F2752837D007458A1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B61FAC532752839A007458A1 /* EditStudyEntity.swift */,
+				B61FAC57275283B5007458A1 /* EditStudyInput.swift */,
+				B61FAC59275283BF007458A1 /* EditRepeatStudyInput.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B61FAC5027528383007458A1 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B61FAC512752838E007458A1 /* EditStudyDataManger.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		B6224203272D03BC004F6750 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +673,7 @@
 				B6BFB4032733BA0A00C0C97D /* CVCell */,
 				B6789944273F9B4F00B08CEB /* AddStudy */,
 				B62A93B1274FA8C10092C9B5 /* ShowStudy */,
+				B61FAC4E27528374007458A1 /* EditStudy */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
 			path = Home;
@@ -995,6 +1044,7 @@
 			children = (
 				B6CB7CFA27463ABE00B6381A /* NoStudy */,
 				B6CB7CFB27463AC300B6381A /* Study */,
+				B61FAC4827527629007458A1 /* RepeatStudy */,
 			);
 			path = CVCell;
 			sourceTree = "<group>";
@@ -1157,6 +1207,7 @@
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6A33E97274F72FC004E88B0 /* CalendarAlertViewController.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
+				B61FAC4C2752763F007458A1 /* RepeatStudyCollectionViewCell.xib in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */,
 				B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */,
@@ -1255,6 +1306,7 @@
 			files = (
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
+				B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */,
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
@@ -1266,6 +1318,7 @@
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
 				B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */,
+				B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */,
 				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,
 				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
 				B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */,
@@ -1304,6 +1357,7 @@
 				B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
+				B61FAC5A275283BF007458A1 /* EditRepeatStudyInput.swift in Sources */,
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */,
 				B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */,
@@ -1312,6 +1366,7 @@
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
 				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
+				B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */,
 				B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */,
@@ -1321,6 +1376,7 @@
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
 				B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */,
+				B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */,
 				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
 				B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,

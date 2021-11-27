@@ -172,7 +172,6 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         
         let vc = AddDdayViewController(id: id, title: title, isEdit: true, isRepresentative: isRepresent)
         vc.modalPresentationStyle = .overFullScreen
-        
         present(vc, animated: true)
     }
     

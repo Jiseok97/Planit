@@ -102,7 +102,7 @@ class PlannerViewController: UIViewController {
     
     @IBAction func moveAddpage(_ sender: UIButton) {
         if sgController.selectedSegmentIndex == 0 {
-            let vc = AddStudyViewController()
+            let vc = AddStudyViewController(stGrId: 0, stSchId: 0, title: "", isEdit: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         } else {

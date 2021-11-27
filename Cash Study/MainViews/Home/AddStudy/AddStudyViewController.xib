@@ -27,6 +27,7 @@
             <connections>
                 <outlet property="backBtn" destination="TNf-LH-vQR" id="bEF-ki-hsm"/>
                 <outlet property="confirmBtn" destination="32R-ri-Gqx" id="EV8-ZP-1lr"/>
+                <outlet property="deleteBtn" destination="qbH-3w-tYK" id="Yb2-iy-QXn"/>
                 <outlet property="endAtCalendarBtn" destination="8ZC-pN-ctl" id="OOg-1N-BFL"/>
                 <outlet property="endAtLbl" destination="ufO-fO-3LO" id="x0q-jf-4ea"/>
                 <outlet property="everyDayBtn" destination="tjM-fy-XwI" id="DaN-1g-QEO"/>
@@ -42,6 +43,7 @@
                 <outlet property="textCntLbl" destination="jJ8-bd-AKL" id="SrH-Hp-dOM"/>
                 <outlet property="thirdView" destination="CxY-Gm-xFz" id="fcL-KE-kJo"/>
                 <outlet property="thursdayBtn" destination="27N-me-mt7" id="r6j-SB-LmW"/>
+                <outlet property="titleLbl" destination="jAE-Df-KMk" id="Or4-1O-k2a"/>
                 <outlet property="titleTF" destination="VNd-Vh-1WM" id="l76-JN-UzH"/>
                 <outlet property="titleView" destination="ryV-V9-rcv" id="mKu-tu-T21"/>
                 <outlet property="tuesdayBtn" destination="zFd-LG-khm" id="8xe-HJ-r4S"/>
@@ -445,6 +447,14 @@
                         <action selector="addStudyBtnTapped:" destination="-1" eventType="touchUpInside" id="yqE-n6-I1H"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbH-3w-tYK">
+                    <rect key="frame" x="358" y="64.5" width="24" height="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="Delete"/>
+                    <connections>
+                        <action selector="delteBtnTapped:" destination="-1" eventType="touchUpInside" id="bwF-89-5ov"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,10 +468,12 @@
                 <constraint firstItem="jAE-Df-KMk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RPT-ME-a2A"/>
                 <constraint firstItem="TNf-LH-vQR" firstAttribute="centerY" secondItem="jAE-Df-KMk" secondAttribute="centerY" id="Ric-UZ-Cf1"/>
                 <constraint firstItem="ryV-V9-rcv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="SW0-7J-cGb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qbH-3w-tYK" secondAttribute="trailing" constant="32" id="T4z-6J-1g4"/>
                 <constraint firstItem="ryV-V9-rcv" firstAttribute="top" secondItem="jAE-Df-KMk" secondAttribute="bottom" constant="24" id="Wfk-Bq-cbR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ryV-V9-rcv" secondAttribute="trailing" constant="24" id="eZq-Zf-FzM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CxY-Gm-xFz" secondAttribute="trailing" constant="24" id="kU6-Ft-SP1"/>
                 <constraint firstItem="Wsb-Uf-jsK" firstAttribute="top" secondItem="ryV-V9-rcv" secondAttribute="bottom" constant="16" id="mId-hJ-uQT"/>
+                <constraint firstItem="qbH-3w-tYK" firstAttribute="centerY" secondItem="jAE-Df-KMk" secondAttribute="centerY" id="mVQ-82-zhg"/>
                 <constraint firstItem="32R-ri-Gqx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="nkj-2U-GSx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wsb-Uf-jsK" secondAttribute="trailing" constant="24" id="rid-Wb-ynR"/>
                 <constraint firstItem="ZMm-og-dfA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.136" id="uFm-M1-DwT"/>
@@ -472,6 +484,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Delete" width="24" height="24"/>
         <image name="backArrow" width="24" height="24"/>
         <image name="calendar" width="24" height="24"/>
         <systemColor name="linkColor">

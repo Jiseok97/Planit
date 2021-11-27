@@ -59,14 +59,14 @@ class HomeViewController: UIViewController {
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
         studyLstCV.reloadData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("addStudy"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("reloadHome"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("addStudy"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadHome"), object: nil)
     }
     
     // MARK: Functions
@@ -78,7 +78,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func moveAddStudyBtn(_ sender: Any) {
-        let vc = AddStudyViewController()
+        let vc = AddStudyViewController(stGrId: 0, stSchId: 0, title: "", isEdit: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

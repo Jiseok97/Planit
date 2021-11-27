@@ -11,7 +11,6 @@ class StudyCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var checkBox: UIButton!
     @IBOutlet var titleLbl: UILabel!
-    @IBOutlet var repeatLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,11 +27,5 @@ class StudyCollectionViewCell: UICollectionViewCell {
             self.checkBox.isSelected = false
         }
     }
-    
-    
-    @IBAction func editStudy(_ sender: Any) {
-        print("Edit btn Tapped")
-    }
-    
 
 }
