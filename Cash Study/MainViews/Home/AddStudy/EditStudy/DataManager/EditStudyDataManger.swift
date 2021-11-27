@@ -20,11 +20,30 @@ import Alamofire
                  switch code {
                  case 200:
                      viewController.checkSuccess = true
-                     print("수정 완료")
                      
                  case 409:
                      viewController.isAlreadyExist = true
-                     print("동일한 공부 제목이 이미 존재")
+
+                 default:
+                     print("잘못된 요청 형식")
+                 }
+            }
+     }
+     
+     
+     func editRepeatStudy(stGroupId: Int, stScheduleId: Int, _ info: EditRepeatStudyInput, viewController : AddStudyViewController) {
+         AF.request(Constant.BASE_URL + "/v1/study/\(stGroupId)/\(stScheduleId)", method: .put, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
+             .validate()
+             .responseDecodable(of: EditStudyEntity.self) { response in
+                 let code = response.response?.statusCode
+
+                 switch code {
+                 case 200:
+                     viewController.checkSuccess = true
+                     viewController.editRpSuccess = true
+                     
+                 case 409:
+                     viewController.isAlreadyExist = true
 
                  default:
                      print("잘못된 요청 형식")

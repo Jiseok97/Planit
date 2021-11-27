@@ -16,8 +16,6 @@ class ShowDateStudyDataManager {
         AF.request(Constant.BASE_URL + "/v1/study/list/\(date)", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: ShowDateStudyEntity.self) { response in
-                print("Show API 호출")
-                print(response)
                 guard let data = response.value else { return }
                 
                 viewController.homeStudy(result: data)
@@ -34,8 +32,6 @@ class ShowDateStudyDataManager {
                 guard let data = response.value else { return }
                 
                 viewController.showStudy(result: data)
-                print("Study response => \(String(describing: response.value?.studies))")
-                
             }
     }
     

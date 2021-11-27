@@ -53,17 +53,17 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         self.changeHeight()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("moveEditStudy"), object: nil)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("moveEditStudy"), object: nil)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadStudy(_:)), name: NSNotification.Name("reloadStudy"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadStudy"), object: nil)
+    }
     
     
     // MARK: Function
@@ -104,6 +104,12 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
     }
     
+    
+    @objc func reloadStudy(_ noti : Notification) {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        ShowDateStudyDataManager().showStudy(date: df.string(from: Date()), viewController: self)
+    }
     
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -225,6 +231,6 @@ extension PlannerPageViewController {
     func showStudy(result : ShowDateStudyEntity) {
         self.studyDataLst = result
         self.studyCV.reloadData()
-        self.studyDataLst?.studies.sort { $0.endAt < $1.endAt }
+        self.studyDataLst?.studies.sort { $0.startAt < $1.startAt }
     }
 }

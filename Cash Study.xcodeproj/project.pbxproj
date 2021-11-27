@@ -36,6 +36,7 @@
 		B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC532752839A007458A1 /* EditStudyEntity.swift */; };
 		B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC57275283B5007458A1 /* EditStudyInput.swift */; };
 		B61FAC5A275283BF007458A1 /* EditRepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC59275283BF007458A1 /* EditRepeatStudyInput.swift */; };
+		B61FAC5F275293E2007458A1 /* DeleteStudyDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC5E275293E2007458A1 /* DeleteStudyDataManger.swift */; };
 		B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */; };
 		B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */; };
 		B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAD1327363D1B00D11538 /* EmptyStudyCollectionViewCell.swift */; };
@@ -178,6 +179,7 @@
 		B61FAC532752839A007458A1 /* EditStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyEntity.swift; sourceTree = "<group>"; };
 		B61FAC57275283B5007458A1 /* EditStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyInput.swift; sourceTree = "<group>"; };
 		B61FAC59275283BF007458A1 /* EditRepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRepeatStudyInput.swift; sourceTree = "<group>"; };
+		B61FAC5E275293E2007458A1 /* DeleteStudyDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStudyDataManger.swift; sourceTree = "<group>"; };
 		B61FAD0E273635CA00D11538 /* Cash Study.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cash Study.entitlements"; sourceTree = "<group>"; };
 		B61FAD0F27363D0800D11538 /* HaveStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveStudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B61FAD1027363D0800D11538 /* HaveStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveStudyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -496,6 +498,22 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		B61FAC5B2752937F007458A1 /* DeleteStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B61FAC5D27529394007458A1 /* DataManager */,
+			);
+			path = DeleteStudy;
+			sourceTree = "<group>";
+		};
+		B61FAC5D27529394007458A1 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B61FAC5E275293E2007458A1 /* DeleteStudyDataManger.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		B6224203272D03BC004F6750 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,8 +690,6 @@
 				B66B47752732706000F89012 /* HomeViewController.swift */,
 				B6BFB4032733BA0A00C0C97D /* CVCell */,
 				B6789944273F9B4F00B08CEB /* AddStudy */,
-				B62A93B1274FA8C10092C9B5 /* ShowStudy */,
-				B61FAC4E27528374007458A1 /* EditStudy */,
 				B65310DC27253E32004AD249 /* Timer */,
 			);
 			path = Home;
@@ -788,6 +804,9 @@
 				B6789945273F9B7200B08CEB /* AddStudyViewController.swift */,
 				B63A1F312747ADAB0077CC76 /* DataManager */,
 				B63A1F322747ADB20077CC76 /* Entity */,
+				B62A93B1274FA8C10092C9B5 /* ShowStudy */,
+				B61FAC4E27528374007458A1 /* EditStudy */,
+				B61FAC5B2752937F007458A1 /* DeleteStudy */,
 			);
 			path = AddStudy;
 			sourceTree = "<group>";
@@ -1378,6 +1397,7 @@
 				B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */,
 				B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */,
 				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
+				B61FAC5F275293E2007458A1 /* DeleteStudyDataManger.swift in Sources */,
 				B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
