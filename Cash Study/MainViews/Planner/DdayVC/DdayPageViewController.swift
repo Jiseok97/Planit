@@ -80,10 +80,10 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 
                 let endAt = formmat.date(from: (DdayDataLst?.ddays[indexPath.row].endAt)!)
                 let dDay = (endAt?.timeIntervalSince(Date()))!
-                let intDay = Int(dDay / 86400)
+                let intDay = Int((dDay + 32400) / 86400)
                 
                 if intDay > 0 {
-                    cell.dDayLbl.text = "D-" + String(describing: (intDay + 1))
+                    cell.dDayLbl.text = "D-" + String(describing: (intDay))
                 } else {
                     cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
                 }
@@ -119,10 +119,10 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 
                 let endAt = formmat.date(from: (DdayDataLst?.ddays[indexPath.row].endAt)!)
                 let dDay = (endAt?.timeIntervalSince(Date()))!
-                let intDay = Int(dDay / 86400)
+                let intDay = Int((dDay + 32400) / 86400)
                 
                 if intDay > 0 {
-                    cell.dDayLbl.text = "D-" + String(describing: (intDay + 1))
+                    cell.dDayLbl.text = "D-" + String(describing: (intDay))
                 } else {
                     cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
                 }

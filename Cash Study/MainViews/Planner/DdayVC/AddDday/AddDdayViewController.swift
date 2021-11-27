@@ -50,7 +50,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var fourthBtnClicked: Bool = false
     var fifthBtnClicked: Bool = false
     
-    var icon : String = ""
+    var icon : String = "STAR"
     var isRepresentative : Bool = false
     var checkSuccess : Bool = false {
         didSet {
@@ -151,6 +151,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         self.titleView.layer.cornerRadius = 8
         self.calendarView.layer.cornerRadius = 8
         self.representView.layer.cornerRadius = 8
+        
+        self.thirdBtn.isSelected = true
         
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
         btnCategory.forEach {

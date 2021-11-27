@@ -117,7 +117,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGw-fZ-9U9">
                             <rect key="frame" x="157.5" y="131" width="51" height="51"/>
-                            <color key="backgroundColor" red="0.090196078430000007" green="0.094117647060000004" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="51" id="Lko-ox-DJx"/>
                                 <constraint firstAttribute="width" constant="51" id="UdQ-Mt-OX7"/>

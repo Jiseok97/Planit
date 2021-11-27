@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         studyLstCV?.dataSource = self
         
         rprDdayCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
-        rprDdayCV.register(UINib(nibName: "HaveRprDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "rprDdayCell")
+        rprDdayCV.register(UINib(nibName: "RepresentativeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RepresentativeCell")
         rprDdayCV.register(UINib(nibName: "EmptyDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyDdayCell")
         
         studyLstCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
@@ -129,7 +129,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if collectionView == rprDdayCV {
             if haveRprDday {
                 // 대표 디데이 있을 때
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rprDdayCell", for: indexPath) as? HaveRprDdayCollectionViewCell else { return UICollectionViewCell() }
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
 
                 
                 return cell
