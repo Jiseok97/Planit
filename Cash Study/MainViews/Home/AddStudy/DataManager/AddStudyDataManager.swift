@@ -23,6 +23,7 @@ import Alamofire
                      NotificationCenter.default.post(name: NSNotification.Name("addStudy"), object: nil)
 
                  case 409:
+                     viewController.isAlreadyExist = true
                      print("동일한 공부 제목이 이미 존재")
 
                  default:
@@ -47,6 +48,7 @@ import Alamofire
                      print("Repeat study added!")
 
                  case 409:
+                     viewController.isAlreadyExist = true
                      print("동일한 공부 제목이 존재")
 
                  default:

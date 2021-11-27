@@ -65,6 +65,10 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         self.changeScopeCalendarView.layer.cornerRadius = 8
         self.changeScopeCalendarView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        if let collectionViewLayout = studyCV.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
 
     
@@ -109,6 +113,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
+        calendar.appearance.titleFont = UIFont(name: "NotoSansKR-Bold", size: 14)
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
@@ -139,11 +145,20 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
             cell.layer.cornerRadius = 8
             cell.backgroundColor = UIColor.studyCellBgColor
             
-            
-            
+            cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
+            if studyDataLst?.studies[indexPath.row].repeatedDays == nil {
+                cell.repeatLbl.isHidden = true
+            } else {
+                cell.repeatLbl.isHidden = false
+                let startTxt = studyDataLst?.studies[indexPath.row].startAt.replacingOccurrences(of: "-", with: ".")
+                let endTxt = studyDataLst?.studies[indexPath.row].endAt.replacingOccurrences(of: "-", with: ".")
+                
+                cell.repeatLbl.text = "\(String(describing: startTxt!))~\(String(describing: endTxt!))"
+            }
             
             return cell
         } else {
+            
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noStudyCell", for: indexPath) as? NoStudyCollectionViewCell else { return UICollectionViewCell() }
             
             cell.layer.borderColor = UIColor.homeBorderColor.cgColor
@@ -156,9 +171,16 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.bounds.width * 0.872
-        let height = self.view.bounds.height * 0.15
         
-        return CGSize(width: width, height: height)
+        if studyDataLst?.studies != nil {
+            let height = self.view.bounds.height * 0.22
+            
+            return CGSize(width: width, height: height)
+        } else {
+            let height = self.view.bounds.height * 0.15
+            
+            return CGSize(width: width, height: height)
+        }
     }
     
 }

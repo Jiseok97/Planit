@@ -46,6 +46,7 @@
 		B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC469274B5F07005296D8 /* EditDdayInput.swift */; };
 		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
 		B62BC471274B72BC005296D8 /* DeleteDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */; };
+		B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */; };
 		B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */; };
 		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
 		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
@@ -1174,6 +1175,7 @@
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B608E50B274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
+				B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,

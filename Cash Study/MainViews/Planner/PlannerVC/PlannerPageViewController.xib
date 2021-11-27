@@ -88,12 +88,12 @@
                                         <constraint firstItem="mYA-Pd-ems" firstAttribute="centerY" secondItem="r6l-XF-POi" secondAttribute="centerY" id="vCR-es-4Zb"/>
                                     </constraints>
                                 </view>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-PR-YQf">
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-PR-YQf">
                                     <rect key="frame" x="24" y="352" width="366" height="650"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="650" id="K82-GS-hiM"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DC9-I5-EG6">
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="12" id="DC9-I5-EG6">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

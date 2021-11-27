@@ -50,6 +50,13 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
+    var isAlreadyExist : Bool = false {
+        didSet {
+            let vc = ObAlertViewController(mainMsg: "해당 공부는 이미 존재합니다\n제목을 수정해주세요", subMsg: "", btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
+    }
     
     
     
@@ -310,11 +317,17 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         if eDate == "" {
             eDate = df.string(from: Date())
         }
-
+        
         if repeatSd.value == 1 {
-            let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
-            AddStudyDataManager().repeatStudy(input, viewController: self)
-            print(input)
+            if sDate > eDate {
+                let vc = ObAlertViewController(mainMsg: "종료일은 시작일보다\n이전일 수 없습니다", subMsg: "", btnTitle: "확인", isTimer: false)
+                vc.modalPresentationStyle = .overFullScreen
+                present(vc, animated: true)
+            } else {
+                let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                AddStudyDataManager().repeatStudy(input, viewController: self)
+                print(input)
+            }
         } else {
             // 반복 없음
             let input = SingleStudyInput(title: title, startAt: sDate)
