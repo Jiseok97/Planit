@@ -19,9 +19,11 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     var selectedDate : String = ""
     var nomalDate : String = ""
     var isEnd : Bool = false
+    var checkDday : Bool = false
     
-    init(isEnd: Bool) {
+    init(isEnd: Bool, checkDday : Bool) {
         self.isEnd = isEnd
+        self.checkDday = checkDday
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -89,22 +91,24 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
 
         guard let sDate = Int(selectedDate) else { return }
         guard let tDate = Int(todayDate) else { return }
-
-        if sDate < tDate {
-            self.calendarView.appearance.selectionColor = UIColor.link.withAlphaComponent(0.0)
-            calendar.deselect(date)
-        } else {
-            self.calendarView.appearance.selectionColor = UIColor.link
+        
+        if checkDday {
             self.selectedDate = dateFormatter.string(from: date)
             self.nomalDate = nomalDF.string(from: date)
+        } else {
+            if sDate < tDate {
+                self.calendarView.appearance.selectionColor = UIColor.link.withAlphaComponent(0.0)
+                calendar.deselect(date)
+            } else {
+                self.calendarView.appearance.selectionColor = UIColor.link
+                self.selectedDate = dateFormatter.string(from: date)
+                self.nomalDate = nomalDF.string(from: date)
+            }
         }
     }
     
     
     @IBAction func dismissBtn(_ sender: Any) {
-        
-        print(Constant.DATE_TEXT)
-        
         if isEnd {
             Constant.DATE_TEXT = self.selectedDate
             Constant.END_DATE = self.nomalDate

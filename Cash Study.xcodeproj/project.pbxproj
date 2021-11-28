@@ -60,7 +60,6 @@
 		B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
-		B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */; };
 		B66B47772732706000F89012 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B47752732706000F89012 /* HomeViewController.swift */; };
 		B66B47782732706000F89012 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66B47762732706000F89012 /* HomeViewController.xib */; };
 		B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B477C2732799E00F89012 /* PlannerViewController.swift */; };
@@ -203,7 +202,6 @@
 		B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyInput.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
-		B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestInterceptor.swift; sourceTree = "<group>"; };
 		B66B47752732706000F89012 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B66B47762732706000F89012 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B66B477C2732799E00F89012 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -821,7 +819,6 @@
 				B614C46B273A9F7A00A5E8F9 /* Font */,
 				B6224211272D0852004F6750 /* Base */,
 				B67C989E2724FA810039D271 /* Extension */,
-				B65E144A273E4F1A000F238A /* MyRequestInterceptor.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -932,10 +929,10 @@
 		B6B1186D2716D88D008842BA /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
-				B66B479227328B9700F89012 /* DataManager */,
-				B66B479327328B9E00F89012 /* Entity */,
 				B6B118662716D7B0008842BA /* LoginViewController.xib */,
 				B6B118652716D7B0008842BA /* LoginViewController.swift */,
+				B66B479227328B9700F89012 /* DataManager */,
+				B66B479327328B9E00F89012 /* Entity */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -1340,7 +1337,6 @@
 				B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */,
 				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,
 				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
-				B65E144B273E4F1A000F238A /* MyRequestInterceptor.swift in Sources */,
 				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
@@ -1567,10 +1563,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.planit.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.planit-study";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1589,10 +1585,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.planit.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.planit-study";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

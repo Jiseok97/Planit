@@ -41,26 +41,15 @@ class HaveReceiverDataManager : UIViewController {
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     
                     viewController.checkUser = true
-                    print("회원가입 성공!")
-                    
-                    // 홈 불러오는 API 엮기
-                    
                     self.changeRootVC(BaseTabBarController())
                     
                 case 404:
-                    // 없으면 건너뛰기 누를 것
-                    
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "닉네임이 존재하지 않습니다.")
-                    print("닉네임이 존재하지 않습니다.")
 
                 case 409:
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
-                    print("이미 사용중인 이메일입니다.")
-
-                    // 로그인 뷰로 돌아가게 해주기
-                    
                 default:
                     print("서버 요청 형식이 잘못되었습니다.")
                 }

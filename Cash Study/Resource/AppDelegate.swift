@@ -18,15 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Kakao Login
-        KakaoSDKCommon.initSDK(appKey: "ca398c6d25602fa0235ad2824bbaef1a")
-        
-        // iOS 13 버전 이상일 때 true
-//        if #available(iOS 13.0, *) {
-//            print("버전 13 이상")
-//            return true
-//        } else {
-//            print("버전 13 미만")
-//        }
+        KakaoSDKCommon.initSDK(appKey: "f953402e66a75c29b3150798868f15c4")
         
         window = UIWindow()
         window?.rootViewController = SplashViewController()

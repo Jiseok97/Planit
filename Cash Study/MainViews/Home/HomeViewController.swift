@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     
     var haveRprDday : Bool = false
     var todayStudyLst : ShowDateStudyEntity?
+    var representDday : ShowDdayEntity?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -58,6 +59,8 @@ class HomeViewController: UIViewController {
         td.dateFormat = "yyyy-MM-dd"
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
         studyLstCV.reloadData()
+        
+        ShowDdayDataManager().showHomeDday(viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("reloadHome"), object: nil)
     }
@@ -127,14 +130,16 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == rprDdayCV {
-            if haveRprDday {
-                // 대표 디데이 있을 때
+            if representDday != nil && representDday!.ddays[indexPath.row].isRepresentative {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
-
+                
+                cell.dDayNameLbl.text = representDday!.ddays[indexPath.row].title
+                cell.dDayLbl.text = representDday!.ddays[indexPath.row].endAt
+                
                 
                 return cell
+                
             } else {
-                // 대표 디데이 없을 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyDdayCell", for: indexPath) as? EmptyDdayCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.borderColor = UIColor.homeBorderColor.cgColor
@@ -143,7 +148,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 cell.layer.cornerRadius = 8
                 
                 return cell
-                
             }
         } else {
             if todayStudyLst?.studies != nil {
@@ -204,5 +208,10 @@ extension HomeViewController {
     func homeStudy(result : ShowDateStudyEntity) {
         self.todayStudyLst = result
         self.studyLstCV.reloadData()
+    }
+    
+    func showRepresentDday(result : ShowDdayEntity) {
+        self.representDday = result
+        self.rprDdayCV.reloadData()
     }
 }

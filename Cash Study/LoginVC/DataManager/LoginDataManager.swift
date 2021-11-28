@@ -10,7 +10,6 @@ import Alamofire
 class LoginDataManager : UIViewController{
     func userLogin(_ info: LoginInput ,viewController: LoginViewController) {
         AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
-        // Add interceptor: MyRequestInterceptor()
             .validate()
             .responseDecodable(of: LoginEntity.self) { response in
                 let code = response.response?.statusCode
@@ -25,9 +24,6 @@ class LoginDataManager : UIViewController{
                         self.changeRootVC(BaseTabBarController())
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
-                        
-                        UserDefaults.standard.set(accessToken, forKey: "accessToken")
-                        UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                         
                         print("accessToekn ▾")
                         print(accessToken)

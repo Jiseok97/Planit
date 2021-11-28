@@ -27,5 +27,24 @@ class ShowDdayDataManager {
                 }
             }
     }
+    
+    
+    func showHomeDday(viewController: HomeViewController) {
+        AF.request(Constant.BASE_URL + "/v1/dday", method: .get, encoding: JSONEncoding.default, headers: header)
+            .validate()
+            .responseDecodable(of: ShowDdayEntity.self) { response in
+                let code = response.response?.statusCode
+                switch code {
+                case 200:
+                    guard let data = response.value else { return }
+                    
+                    viewController
+                    
+                default:
+                    print("오류")
+                    
+                }
+            }
+    }
 }
 

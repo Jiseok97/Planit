@@ -17,31 +17,31 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         
-        checkToken()
+//        checkToken()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        setToken()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        setToken()
+//    }
+//
+//
+//    func checkToken() {
+////        let refreshToken = UserDefaults.standard.string(forKey: "refreshToken")
+//        let input = RefreshTokenInput(refreshToken: Constant.MY_REFRESH_TOKEN)
+//        CheckTokenDataManager().updateToken(input)
+//        print("Update Access Token")
+//    }
     
-    
-    func checkToken() {
-//        let refreshToken = UserDefaults.standard.string(forKey: "refreshToken")
-        let input = RefreshTokenInput(refreshToken: Constant.MY_REFRESH_TOKEN)
-        CheckTokenDataManager().updateToken(input)
-        print("Update Access Token")
-    }
-    
-    
-    func setToken() {
-        if UserDefaults.standard.string(forKey: "accessToken")?.isEmpty == false {
-            userAccessToken = UserDefaults.standard.string(forKey: "accessToken") ?? ""
-            userRefreshToken = UserDefaults.standard.string(forKey: "refreshToken") ?? ""
-        } else {
-            return
-        }
-    }
-    
+//    
+//    func setToken() {
+//        if UserDefaults.standard.string(forKey: "accessToken")?.isEmpty == false {
+//            userAccessToken = UserDefaults.standard.string(forKey: "accessToken") ?? ""
+//            userRefreshToken = UserDefaults.standard.string(forKey: "refreshToken") ?? ""
+//        } else {
+//            return
+//        }
+//    }
+//    
     override func viewDidAppear(_ animated: Bool) {
         usleep(3000000)
         

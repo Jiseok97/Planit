@@ -38,20 +38,13 @@ class noReceiverDataManager : UIViewController {
                     UserDefaults.standard.set(accessToken, forKey: "accessToken")
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     
-                    
                     viewController.checkUser = true
-                    print("회원가입 성공!")
-                    
-                    // 홈 불러오는 API 엮어주기
                     
                     self.changeRootVC(BaseTabBarController())
                     
                 case 409:
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
-                    print("이미 사용중인 이메일입니다.")
-                    
-                    // 다시 로그인 뷰로 돌아가게 하기
 
                 default:
                     print("서버 요청 형식이 잘못되었습니다.")

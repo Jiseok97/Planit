@@ -181,7 +181,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func showCalendarBtn(_ sender: Any) {
-        let vc = CalendarAlertViewController(isEnd: false)
+        let vc = CalendarAlertViewController(isEnd: false, checkDday: true)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true, completion: nil)
     }

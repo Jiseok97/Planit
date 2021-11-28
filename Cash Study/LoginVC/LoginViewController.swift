@@ -33,39 +33,6 @@ class LoginViewController: UIViewController {
     
     // MARK: Kakao Login Btn
     @IBAction func kakaoBtnTapped(_ sender: Any) {
-        
-        /// 폰으로 직접 확인해야 할 부분!!
-        // 카카오톡 설치 여부
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//            // 카카오톡으로 로그인 진행
-//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print("카카오톡이 설치되어 있지 않습니다.")
-//                    print(error)
-//                }
-//                else {
-//                    print("loginWithKakaoTalk() success.")
-//
-//                    _ = oauthToken
-        
-//                    UserApi.shared.accessTokenInfo {(accessTokenInfo, error) in
-//                        if let error = error {
-//                            print("AccessToken 정보를 가져오는데 실패 → \(error)")
-//                        }
-//                        else {
-//                            print("accessTokenInfo() success.")
-//
-//                            _ = accessTokenInfo
-//                            guard let token = oauthToken?.accessToken else { return }
-//                            print("accessTokenInfo → \(token)")
-//                            self.getUserInfo()
-//                        }
-//                    }
-//                }
-//            }
-//        }
-        
-        // 카카오 웹
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
                     print("카카오 임시 로그인 에러 발생 → \(error)")
@@ -76,22 +43,8 @@ class LoginViewController: UIViewController {
                     
                     _ = oauthToken
                     
-                    UserApi.shared.accessTokenInfo {(accessTokenInfo, error) in
-                        if let error = error {
-                            print("AccessToken 정보를 가져오는데 실패 → \(error)")
-                        }
-                        else {
-                            print("accessTokenInfo() success.")
-                            
-                            _ = accessTokenInfo
-                            guard let token = oauthToken?.accessToken else { return }
-//                            UserDefaults.standard.setValue(token, forKey: "hasToken")
-                            print("accessTokenInfo → \(token)")
-                            
-                            self.getUserInfo()
-                            
-                        }
-                    }
+                    self.getUserInfo()
+                    
                 }
             }
     }
@@ -104,17 +57,13 @@ class LoginViewController: UIViewController {
                 print(error)
             }
             else {
-                print("카카오 로그인 및 토큰 발급 완료")
-                
                 _ = user
-                guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
+                
                 guard let userEmail = user?.kakaoAccount?.email else { return }
+                Constant.MY_EMAIL = userEmail
                 UserInfoData.email = userEmail
                 
-                print("getUserInfo(kakaoName) → \(userName)")
-                print("getUserInfo(kakaoEmail) → \(userEmail)")
-            
-                self.loginCheck(UserInfoData.email)
+                self.loginCheck(userEmail)
             }
         }
     }
@@ -122,7 +71,6 @@ class LoginViewController: UIViewController {
     func loginCheck(_ email: String) {
         let input = LoginInput(email: email)
         LoginDataManager().userLogin(input, viewController: self)
-        print("Login Check")
     }
     
     // MARK: 애플 로그인
