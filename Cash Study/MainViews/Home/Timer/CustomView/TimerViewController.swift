@@ -8,7 +8,7 @@
 import UIKit
 import MSCircularSlider
 
-class TimerStopViewController: UIViewController {
+class TimerViewController: UIViewController {
     
     @IBOutlet weak var circleView: MSCircularSlider!
     @IBOutlet weak var circleBgView: UIView!
@@ -31,9 +31,12 @@ class TimerStopViewController: UIViewController {
     
     var timer : Timer?
     var timeCnt : Int = 0
+    var recordDataLst: ShowRecordEntity?
+    var stId: Int
     
-    init(title: String) {
+    init(title: String, stId: Int) {
         self.studyTitle = title
+        self.stId =  stId
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,14 +51,27 @@ class TimerStopViewController: UIViewController {
         super.viewDidLoad()
 
         setUI()
+        ShowRecordDataManager().showRecord(stId: self.stId, viewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         showAlert()
+        if self.recordDataLst != nil {
+            self.restCntLbl.text = "\(String(describing: recordDataLst?.rest))회"
+            self.rewardCntLbl.text = String(describing: recordDataLst?.star)
+            self.bonusCntLbl.text = String(describing: recordDataLst?.bonusTicket)
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(timerStop(_:)), name: NSNotification.Name("timerStop"), object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("timerStop"), object: nil)
+    }
     
 
     // MARK: Functions
@@ -84,6 +100,14 @@ class TimerStopViewController: UIViewController {
                                        subMsg: "앱을 유지해주세요",
                                        btnTitle: "공부시간 측정 시작하기",
                                        isTimer: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
+    @objc func timerStop(_ noti: Notification) {
+        timer?.invalidate()
+        // 타이머 멈춤 뷰 가기
+        let vc = StopTimerViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
@@ -118,13 +142,21 @@ class TimerStopViewController: UIViewController {
     
     
     @IBAction func stopBtnTapped(_ sender: Any) {
-        // 타이머 멈추기 커스텀 뷰
-//        timer?.invalidate()
-        self.circleView._currentValue = 0.0
+        let remainMin = String(describing: (self.timeCnt / 60) % 60)
+        let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     @IBAction func dismissTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+}
+
+
+extension TimerViewController {
+    func showRecord(result : ShowRecordEntity) {
+        self.recordDataLst = result
+    }
 }

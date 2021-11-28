@@ -16,18 +16,5 @@ class RepeatStudyCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-    
-
-    @IBAction func checkBoxTapped(_ sender: UIButton) {
-        if !sender.isSelected {
-            sender.isSelected = true
-            
-        } else {
-            sender.isSelected = false
-            
-        }
-    }
-    
 }

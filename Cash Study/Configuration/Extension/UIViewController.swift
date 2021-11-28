@@ -95,7 +95,7 @@ extension UIViewController {
             btn.setTitleColor(UIColor.myGray, for: .normal)
         } else {
             btn.backgroundColor = UIColor.disabledColor
-            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
+            btn.setTitleColor(UIColor.placeHolderColor, for: .normal)
         }
     }
     
@@ -114,7 +114,7 @@ extension UIViewController {
     func tappedDayBtn(_ btn: UIButton, _ check: Bool) {
         if !check {
             btn.backgroundColor = UIColor.homeBorderColor
-            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
+            btn.setTitleColor(UIColor.placeHolderColor, for: .normal)
         } else {
             btn.backgroundColor = UIColor.link
             btn.setTitleColor(UIColor.myGray, for: .normal)

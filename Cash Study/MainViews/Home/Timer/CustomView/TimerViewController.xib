@@ -217,7 +217,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL7-Db-nyP">
-                    <rect key="frame" x="32" y="696" width="350" height="64"/>
+                    <rect key="frame" x="32" y="769" width="350" height="64"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="uOD-AW-afO"/>
@@ -250,7 +250,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rU4-Cs-IVe" secondAttribute="trailing" constant="39" id="X6p-Pe-qDK"/>
                 <constraint firstItem="eaO-s7-0dF" firstAttribute="centerY" secondItem="oPu-sO-I7G" secondAttribute="centerY" id="XEQ-zp-lWw"/>
                 <constraint firstItem="ZvH-EW-aeY" firstAttribute="height" secondItem="pIV-l3-JhN" secondAttribute="height" id="ZFt-eB-5oi"/>
-                <constraint firstItem="VL7-Db-nyP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.625" id="Znx-dm-W9g"/>
+                <constraint firstItem="VL7-Db-nyP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.7878" id="Znx-dm-W9g"/>
                 <constraint firstItem="VL7-Db-nyP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Zxo-Yu-se1"/>
                 <constraint firstItem="rU4-Cs-IVe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="cxH-iW-crv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BM2-3C-cCJ" secondAttribute="trailing" constant="32" id="fRP-7p-TsB"/>
@@ -264,11 +264,6 @@
             <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
         </view>
     </objects>
-    <designables>
-        <designable name="rU4-Cs-IVe">
-            <size key="intrinsicContentSize" width="298" height="298"/>
-        </designable>
-    </designables>
     <resources>
         <image name="backArrow" width="24" height="24"/>
         <image name="bonus" width="32" height="32"/>

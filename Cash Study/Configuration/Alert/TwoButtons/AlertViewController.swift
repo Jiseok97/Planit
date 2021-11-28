@@ -62,9 +62,11 @@ class AlertViewController: UIViewController {
         if isTimer {
             self.restBtn.isHidden = false
             self.restBtView.isHidden = false
+            self.subMsgLbl.textColor = .link
         } else {
             self.restBtn.isHidden = true
             self.restBtView.isHidden = true
+            self.subMsgLbl.textColor = .placeHolderColor
         }
     }
     
@@ -77,6 +79,10 @@ class AlertViewController: UIViewController {
             
         case "확인":
             NotificationCenter.default.post(name: NSNotification.Name("setRepresent"), object: nil)
+            dismiss(animated: true, completion: nil)
+            
+        case "멈춤":
+            NotificationCenter.default.post(name: NSNotification.Name("timerStop"), object: nil)
             dismiss(animated: true, completion: nil)
             
         default:

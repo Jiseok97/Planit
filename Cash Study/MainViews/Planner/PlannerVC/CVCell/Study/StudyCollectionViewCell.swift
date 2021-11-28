@@ -14,18 +14,5 @@ class StudyCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
-    
-    
-    // MARK: Functions
-    @IBAction func checkBtnTapped(_ sender: Any) {
-        if !self.checkBox.isSelected {
-            self.checkBox.isSelected = true
-        } else {
-            self.checkBox.isSelected = false
-        }
-    }
-
 }

@@ -57,12 +57,18 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadStudy(_:)), name: NSNotification.Name("reloadStudy"), object: nil)
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("finishedStudy"), object: nil)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("noFinishedStudy"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadStudy"), object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("finishedStudy"), object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("noFinishedStudy"), object: nil)
     }
     
     
@@ -169,6 +175,12 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 
                 cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 
+                if studyDataLst?.studies[indexPath.row].isDone == true {
+                    cell.checkBox.isSelected = true
+                } else {
+                    cell.checkBox.isSelected = false
+                }
+                
                 return cell
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repeatStudyCell", for: indexPath) as? RepeatStudyCollectionViewCell else { return UICollectionViewCell() }
@@ -181,6 +193,13 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 
                 cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 cell.repeatLbl.text = "\(String(describing: startTxt!))~\(String(describing: endTxt!))"
+                
+                if studyDataLst?.studies[indexPath.row].isDone == true {
+                    cell.checkBox.isSelected = true
+                } else {
+                    cell.checkBox.isSelected = false
+                }
+                
                 
                 return cell
             }

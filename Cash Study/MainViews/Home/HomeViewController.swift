@@ -105,8 +105,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if collectionView == studyLstCV {
             if todayStudyLst?.studies != nil {
                 guard let titleTxt = todayStudyLst?.studies[indexPath.row].title else { return }
-                        
-                let vc = TimerStopViewController(title: titleTxt)
+                guard let stId = todayStudyLst?.studies[indexPath.row].studyId else { return }
+                
+                let vc = TimerViewController(title: titleTxt, stId: stId)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true, completion: nil)
             }

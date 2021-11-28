@@ -58,6 +58,10 @@
 		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
 		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
 		B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */; };
+		B63E67D12753DCCC00C891C2 /* ShowRecordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D02753DCCC00C891C2 /* ShowRecordDataManager.swift */; };
+		B63E67D32753DD1E00C891C2 /* ShowRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */; };
+		B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D52753E21300C891C2 /* StopTimerViewController.swift */; };
+		B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63E67D62753E21300C891C2 /* StopTimerViewController.xib */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
 		B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */; };
@@ -105,8 +109,8 @@
 		B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */; };
 		B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */; };
 		B6B40620273CFDD3008DBE7C /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */; };
-		B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */; };
-		B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */; };
+		B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerViewController.swift */; };
+		B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
 		B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */; };
 		B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */; };
@@ -201,6 +205,10 @@
 		B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyEntity.swift; sourceTree = "<group>"; };
 		B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudyInput.swift; sourceTree = "<group>"; };
 		B63A1F392747ADD60077CC76 /* RepeatStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyInput.swift; sourceTree = "<group>"; };
+		B63E67D02753DCCC00C891C2 /* ShowRecordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecordDataManager.swift; sourceTree = "<group>"; };
+		B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecordEntity.swift; sourceTree = "<group>"; };
+		B63E67D52753E21300C891C2 /* StopTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTimerViewController.swift; sourceTree = "<group>"; };
+		B63E67D62753E21300C891C2 /* StopTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopTimerViewController.xib; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -254,8 +262,8 @@
 		B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		B6B4061D273CFDCC008DBE7C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Thin.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStopViewController.swift; sourceTree = "<group>"; };
-		B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerStopViewController.xib; sourceTree = "<group>"; };
+		B6B449002738EF2B00AB45AC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		B6B449012738EF2B00AB45AC /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
 		B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayEntity.swift; sourceTree = "<group>"; };
 		B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayInput.swift; sourceTree = "<group>"; };
@@ -667,6 +675,40 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		B63E67CD2753DC6C00C891C2 /* ShowRecord */ = {
+			isa = PBXGroup;
+			children = (
+				B63E67CE2753DC9600C891C2 /* DataManager */,
+				B63E67CF2753DC9B00C891C2 /* Entity */,
+			);
+			path = ShowRecord;
+			sourceTree = "<group>";
+		};
+		B63E67CE2753DC9600C891C2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B63E67D02753DCCC00C891C2 /* ShowRecordDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B63E67CF2753DC9B00C891C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B63E67D42753E1F200C891C2 /* StopTimerVC */ = {
+			isa = PBXGroup;
+			children = (
+				B63E67D62753E21300C891C2 /* StopTimerViewController.xib */,
+				B63E67D52753E21300C891C2 /* StopTimerViewController.swift */,
+			);
+			path = StopTimerVC;
+			sourceTree = "<group>";
+		};
 		B64771BC2744F2D200BBCBC2 /* NoDday */ = {
 			isa = PBXGroup;
 			children = (
@@ -971,8 +1013,10 @@
 		B6B448FF2738EF1B00AB45AC /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				B6B449012738EF2B00AB45AC /* TimerStopViewController.xib */,
-				B6B449002738EF2B00AB45AC /* TimerStopViewController.swift */,
+				B6B449012738EF2B00AB45AC /* TimerViewController.xib */,
+				B6B449002738EF2B00AB45AC /* TimerViewController.swift */,
+				B63E67D42753E1F200C891C2 /* StopTimerVC */,
+				B63E67CD2753DC6C00C891C2 /* ShowRecord */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1231,7 +1275,7 @@
 				B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */,
 				B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
-				B6B449032738EF2B00AB45AC /* TimerStopViewController.xib in Resources */,
+				B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,
@@ -1245,6 +1289,7 @@
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B608E50B274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib in Resources */,
+				B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
@@ -1367,13 +1412,15 @@
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
+				B63E67D12753DCCC00C891C2 /* ShowRecordDataManager.swift in Sources */,
 				B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */,
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
+				B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
 				B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
-				B6B449022738EF2B00AB45AC /* TimerStopViewController.swift in Sources */,
+				B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
 				B61FAC5A275283BF007458A1 /* EditRepeatStudyInput.swift in Sources */,
@@ -1398,6 +1445,7 @@
 				B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */,
 				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
 				B61FAC5F275293E2007458A1 /* DeleteStudyDataManger.swift in Sources */,
+				B63E67D32753DD1E00C891C2 /* ShowRecordEntity.swift in Sources */,
 				B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,

@@ -221,7 +221,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 dateBtnCollection.forEach {
                     $0.isSelected = false
                     $0.backgroundColor = UIColor.homeBorderColor
-                    $0.setTitleColor(.notSelectBtnColor, for: .normal)
+                    $0.setTitleColor(.placeHolderColor, for: .normal)
                 }
             }
         } else {
@@ -231,7 +231,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             }
             everyDayBtn.isSelected = false
             everyDayBtn.backgroundColor = UIColor.homeBorderColor
-            everyDayBtn.setTitleColor(.notSelectBtnColor, for: .normal)
+            everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
         }
         
     
@@ -285,7 +285,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 for date in dateBtnCollection {
                     date.isSelected = false
                     date.backgroundColor = UIColor.homeBorderColor
-                    date.setTitleColor(.notSelectBtnColor, for: .normal)
+                    date.setTitleColor(.placeHolderColor, for: .normal)
                     
                     everyDayBtn.isSelected = true
                     everyDayBtn.backgroundColor = UIColor.link
@@ -296,7 +296,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         } else {
             sender.isSelected = false
             sender.backgroundColor = UIColor.homeBorderColor
-            sender.setTitleColor(.notSelectBtnColor, for: .normal)
+            sender.setTitleColor(.placeHolderColor, for: .normal)
             
             switch txt {
                 
