@@ -105,9 +105,9 @@ class TimerViewController: UIViewController {
     }
     
     @objc func timerStop(_ noti: Notification) {
-        let vc = StopTimerViewController(title: self.studyTitle)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        let stvc = StopTimerViewController(title: self.studyTitle)
+        stvc.modalPresentationStyle = .overFullScreen
+        present(stvc, animated: true)
         timer?.invalidate()
     }
     

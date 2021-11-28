@@ -75,16 +75,6 @@ class LoginViewController: UIViewController {
     
     // MARK: 애플 로그인
     @IBAction func appleBtnTapped(_ sender: Any) {
-//        let appleIDProvider = ASAuthorizationAppleIDProvider()
-//        let request = appleIDProvider.createRequest()
-//        request.requestedScopes = [.fullName, .email]
-//
-//        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-//        authorizationController.delegate = self
-//        authorizationController.presentationContextProvider = self
-//        authorizationController.performRequests()
-        
-        
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
         

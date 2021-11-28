@@ -42,7 +42,7 @@ import Alamofire
                  switch code {
                  case 201:
                      viewController.checkSuccess = true
-                     NotificationCenter.default.post(name: NSNotification.Name("addStudy"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
                      print("Repeat study added!")
 
                  case 409:

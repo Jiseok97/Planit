@@ -82,8 +82,8 @@ class AlertViewController: UIViewController {
             dismiss(animated: true, completion: nil)
             
         case "멈춤":
-            NotificationCenter.default.post(name: NSNotification.Name("timerStop"), object: nil)
             dismiss(animated: true, completion: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("timerStop"), object: nil)
             
         default:
             print("Default")
@@ -92,11 +92,12 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func cancleBtnTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        changeRootVC(BaseTabBarController())
     }
     
     
     @IBAction func restBtnTapped(_ sender: Any) {
+        print("쉬고 싶어요 버튼 클릭")
     }
     
     

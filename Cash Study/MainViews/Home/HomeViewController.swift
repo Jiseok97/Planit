@@ -75,7 +75,6 @@ class HomeViewController: UIViewController {
     
     // MARK: Functions
     func setUI() {
-        
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
         addStudyBtn.layer.cornerRadius = addStudyBtn.frame.height / 2
