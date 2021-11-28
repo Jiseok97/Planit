@@ -105,11 +105,10 @@ class TimerViewController: UIViewController {
     }
     
     @objc func timerStop(_ noti: Notification) {
-        timer?.invalidate()
-        // 타이머 멈춤 뷰 가기
-        let vc = StopTimerViewController()
+        let vc = StopTimerViewController(title: self.studyTitle)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+        timer?.invalidate()
     }
     
     
@@ -142,7 +141,7 @@ class TimerViewController: UIViewController {
     
     
     @IBAction func stopBtnTapped(_ sender: Any) {
-        let remainMin = String(describing: (self.timeCnt / 60) % 60)
+        let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
         let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
