@@ -61,10 +61,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-xu-C5O">
-                        <rect key="frame" x="0.0" y="144" width="327" height="69"/>
+                        <rect key="frame" x="0.0" y="144" width="327" height="63"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표디데이로 설정했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyo-Px-OEs">
-                                <rect key="frame" x="94" y="26" width="139.5" height="17.5"/>
+                                <rect key="frame" x="94" y="23" width="139.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -83,10 +83,10 @@
             <constraints>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="WW3-ag-PtR" secondAttribute="top" constant="-22" id="0v5-SN-Toh"/>
                 <constraint firstItem="uh7-Xz-Wwh" firstAttribute="leading" secondItem="rli-fS-6qb" secondAttribute="trailing" constant="14" id="28c-mi-16p"/>
-                <constraint firstItem="VmA-xu-C5O" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.333333" id="GRb-Iq-HHd"/>
                 <constraint firstItem="VmA-xu-C5O" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="GaG-YU-NmN"/>
                 <constraint firstItem="rli-fS-6qb" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="SPo-S6-s8n"/>
                 <constraint firstItem="WW3-ag-PtR" firstAttribute="leading" secondItem="rli-fS-6qb" secondAttribute="trailing" constant="14" id="gPy-gW-8kh"/>
+                <constraint firstItem="VmA-xu-C5O" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="gfW-dL-Gz4"/>
                 <constraint firstItem="VmA-xu-C5O" firstAttribute="top" secondItem="rli-fS-6qb" secondAttribute="bottom" constant="20" id="iZe-pd-tP0"/>
                 <constraint firstItem="PTt-tN-f0S" firstAttribute="centerY" secondItem="uh7-Xz-Wwh" secondAttribute="centerY" id="ijq-qL-lEa"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="VmA-xu-C5O" secondAttribute="trailing" id="oMD-df-p8c"/>

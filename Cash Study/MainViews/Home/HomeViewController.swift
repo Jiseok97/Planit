@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         studyLstCV?.dataSource = self
         
         rprDdayCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
-        rprDdayCV.register(UINib(nibName: "RepresentativeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RepresentativeCell")
+        rprDdayCV.register(UINib(nibName: "HaveRprDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "rprDdayCell")
         rprDdayCV.register(UINib(nibName: "EmptyDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyDdayCell")
         
         studyLstCV.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
@@ -58,9 +58,10 @@ class HomeViewController: UIViewController {
         let td = DateFormatter()
         td.dateFormat = "yyyy-MM-dd"
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
-        studyLstCV.reloadData()
+        self.studyLstCV.reloadData()
         
         ShowDdayDataManager().showHomeDday(viewController: self)
+        self.rprDdayCV.reloadData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("reloadHome"), object: nil)
     }
@@ -103,15 +104,12 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == studyLstCV {
             if todayStudyLst?.studies != nil {
-                // 타이머 뷰
                 guard let titleTxt = todayStudyLst?.studies[indexPath.row].title else { return }
                         
                 let vc = TimerStopViewController(title: titleTxt)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true, completion: nil)
             }
-        } else {
-            print("Tapped")
         }
     }
     
@@ -130,23 +128,53 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == rprDdayCV {
-            if representDday != nil && representDday!.ddays[indexPath.row].isRepresentative {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
-                
-                cell.dDayNameLbl.text = representDday!.ddays[indexPath.row].title
-                cell.dDayLbl.text = representDday!.ddays[indexPath.row].endAt
-                
-                
-                return cell
-                
+            if representDday != nil {
+                if (representDday?.ddays.count)! >= 1 && representDday?.ddays[0].isRepresentative == true {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rprDdayCell", for: indexPath) as? HaveRprDdayCollectionViewCell else { return UICollectionViewCell() }
+                    
+                    let formmat = DateFormatter()
+                    formmat.dateFormat = "yyyy-MM-dd"
+
+                    let endAt = formmat.date(from: (representDday?.ddays[indexPath.row].endAt)!)
+                    let dDay = (endAt?.timeIntervalSince(Date()))!
+                    var intDay : Int = 0
+                    if dDay >= 0 {
+                        intDay = Int(ceil((dDay + 32400) / 86400))
+                    } else {
+                        intDay = Int((dDay + 32400) / 86400)
+                    }
+
+                    if intDay > 0 {
+                        cell.dDayLbl.text = "D-" + String(describing: (intDay))
+                    } else if intDay == 0 {
+                        cell.dDayLbl.text = "D-DAY"
+                    } else {
+                        cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
+                    }
+                    
+                    cell.layer.cornerRadius = 8
+                    cell.titleLbl.text = representDday?.ddays[indexPath.row].title
+                    
+                    
+                    return cell
+                } else {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyDdayCell", for: indexPath) as? EmptyDdayCollectionViewCell else { return UICollectionViewCell() }
+
+                    cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+                    cell.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
+                    cell.layer.borderWidth = 1
+                    cell.layer.cornerRadius = 8
+
+                    return cell
+                }
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyDdayCell", for: indexPath) as? EmptyDdayCollectionViewCell else { return UICollectionViewCell() }
-                
+
                 cell.layer.borderColor = UIColor.homeBorderColor.cgColor
                 cell.backgroundColor = UIColor.mainNavy.withAlphaComponent(0.0)
                 cell.layer.borderWidth = 1
                 cell.layer.cornerRadius = 8
-                
+
                 return cell
             }
         } else {
@@ -194,11 +222,11 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 return CGSize(width: width, height: height)
             } else {
                 let height = self.view.frame.height * 0.12068965517
-    //            let height = self.view.frame.height * 0.132
                 return CGSize(width: width, height: height)
             }
         } else {
-            return CGSize(width: width, height: 92)
+            let height = self.view.frame.height * 0.12268965517
+            return CGSize(width: width, height: height)
         }
     }
 }
@@ -213,5 +241,18 @@ extension HomeViewController {
     func showRepresentDday(result : ShowDdayEntity) {
         self.representDday = result
         self.rprDdayCV.reloadData()
+        
+        if representDday != nil {
+            var idx : Int = 0
+            for i in 0..<representDday!.ddays.count {
+                if representDday?.ddays[i].isRepresentative == true {
+                    idx = i
+                }
+            }
+            if (representDday?.ddays.count)! >= 1 {
+                guard let data = representDday?.ddays[idx] as? dday else { return }
+                representDday?.ddays.insert(data, at: 0)
+            }
+        }
     }
 }

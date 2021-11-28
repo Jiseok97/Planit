@@ -112,13 +112,6 @@ extension UIViewController {
         tappedDayBtn(btn7, false)
     }
     func tappedDayBtn(_ btn: UIButton, _ check: Bool) {
-//        if check == true {
-//            btn.backgroundColor = UIColor.link
-//            btn.setTitleColor(UIColor.myGray, for: .normal)
-//        } else {
-//            btn.backgroundColor = UIColor.homeBorderColor
-//            btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
-//        }
         if !check {
             btn.backgroundColor = UIColor.homeBorderColor
             btn.setTitleColor(UIColor.notSelectBtnColor, for: .normal)
@@ -164,7 +157,6 @@ extension UIViewController {
     }
     
     
-    // Set Gardation
     func setGradation() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -173,8 +165,9 @@ extension UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradientLayer.zPosition = 0
-//        self.view.layer.addSublayer(gradientLayer)
+        
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
     
 }

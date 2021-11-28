@@ -37,8 +37,7 @@ class ShowDdayDataManager {
                 switch code {
                 case 200:
                     guard let data = response.value else { return }
-                    
-                    viewController
+                    viewController.showRepresentDday(result: data)
                     
                 default:
                     print("오류")

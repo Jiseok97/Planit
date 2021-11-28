@@ -22,28 +22,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="328" height="92"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fd-XF-aZ6">
-                        <rect key="frame" x="0.0" y="44" width="328" height="48"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 디데이가 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-JR-mOi">
+                        <rect key="frame" x="95.5" y="36" width="137" height="20.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="  대표 디데이 설정하기" image="Plus">
-                            <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
+                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="7Fd-XF-aZ6" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="9xY-kO-MoK"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="7Fd-XF-aZ6" secondAttribute="top" id="AQf-D9-pPc"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="7Fd-XF-aZ6" secondAttribute="trailing" id="AsY-MM-Fe0"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="7Fd-XF-aZ6" secondAttribute="bottom" id="QLa-QT-BrF"/>
+                <constraint firstItem="H9o-JR-mOi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tff-lg-WZG"/>
+                <constraint firstItem="H9o-JR-mOi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vSy-Sd-vEr"/>
             </constraints>
             <size key="customSize" width="288" height="128"/>
             <point key="canvasLocation" x="310.14492753623193" y="101.78571428571428"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Plus" width="12" height="12"/>
-    </resources>
 </document>

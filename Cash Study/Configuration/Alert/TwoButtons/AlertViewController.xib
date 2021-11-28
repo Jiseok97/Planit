@@ -72,7 +72,7 @@
                     <rect key="frame" x="32" y="331.5" width="350" height="233"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RMG-KS-cPw">
-                            <rect key="frame" x="39" y="62" width="272" height="51"/>
+                            <rect key="frame" x="39" y="55" width="272" height="51"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림창 제목" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ci-SA-ayN">
                                     <rect key="frame" x="0.0" y="0.0" width="272" height="26.5"/>
@@ -89,10 +89,10 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gja-ol-dTH">
-                            <rect key="frame" x="180" y="158" width="154" height="55"/>
+                            <rect key="frame" x="180" y="165" width="154" height="48"/>
                             <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="55" id="Ik7-OU-5rK"/>
+                                <constraint firstAttribute="height" constant="48" id="Ik7-OU-5rK"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -104,12 +104,15 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZH-Uc-J8V">
-                            <rect key="frame" x="16" y="158" width="154" height="55"/>
+                            <rect key="frame" x="16" y="165" width="154" height="48"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="14"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="취소">
                                 <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="cancleBtnTapped:" destination="-1" eventType="touchUpInside" id="Ymt-o1-esa"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
@@ -122,7 +125,7 @@
                         <constraint firstItem="hZH-Uc-J8V" firstAttribute="centerY" secondItem="gja-ol-dTH" secondAttribute="centerY" id="ou4-H0-vOq"/>
                         <constraint firstAttribute="bottom" secondItem="gja-ol-dTH" secondAttribute="bottom" constant="20" id="r6W-vV-Uea"/>
                         <constraint firstItem="hZH-Uc-J8V" firstAttribute="height" secondItem="gja-ol-dTH" secondAttribute="height" id="rM3-UQ-oGQ"/>
-                        <constraint firstItem="RMG-KS-cPw" firstAttribute="centerY" secondItem="hij-LL-ObM" secondAttribute="centerY" multiplier="0.75" id="rZJ-wQ-SYa"/>
+                        <constraint firstItem="RMG-KS-cPw" firstAttribute="centerY" secondItem="hij-LL-ObM" secondAttribute="centerY" multiplier="0.69" id="rZJ-wQ-SYa"/>
                         <constraint firstAttribute="trailing" secondItem="RMG-KS-cPw" secondAttribute="trailing" constant="39" id="xxa-Ve-sA0"/>
                     </constraints>
                 </view>

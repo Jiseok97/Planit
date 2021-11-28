@@ -85,6 +85,10 @@ class AlertViewController: UIViewController {
         
     }
     
+    @IBAction func cancleBtnTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func restBtnTapped(_ sender: Any) {
     }

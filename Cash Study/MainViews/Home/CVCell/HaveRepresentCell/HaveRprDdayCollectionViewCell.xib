@@ -5,21 +5,84 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Black.otf">
+            <string>NotoSansKR-Black</string>
+        </array>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="rprDdayCell" id="gTV-IL-0wX" customClass="HaveRprDdayCollectionViewCell" customModule="Cash_Study" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="201" height="123"/>
+            <rect key="frame" x="0.0" y="0.0" width="342" height="112"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="201" height="123"/>
+                <rect key="frame" x="0.0" y="0.0" width="342" height="112"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muV-qz-5HO">
+                        <rect key="frame" x="12" y="20.5" width="79.5" height="71"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-G3-7HD">
+                                <rect key="frame" x="18.5" y="22.5" width="42" height="26.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Black" family="Noto Sans KR" pointSize="18"/>
+                                <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lhf-G3-7HD" firstAttribute="centerY" secondItem="muV-qz-5HO" secondAttribute="centerY" id="mkm-kV-Bp9"/>
+                            <constraint firstItem="lhf-G3-7HD" firstAttribute="centerX" secondItem="muV-qz-5HO" secondAttribute="centerX" id="rra-Eh-6I1"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표디데이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK6-6g-pJl">
+                        <rect key="frame" x="113.5" y="29.5" width="55.5" height="17.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                        <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표디데이 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-VJ-xWy">
+                        <rect key="frame" x="113.5" y="49" width="108" height="23.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                        <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="201" height="123"/>
-            <point key="canvasLocation" x="247.10144927536234" y="39.174107142857139"/>
+            <color key="backgroundColor" systemColor="linkColor"/>
+            <constraints>
+                <constraint firstItem="muV-qz-5HO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="6Bz-16-slu"/>
+                <constraint firstItem="muV-qz-5HO" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="12" id="6p2-FY-UDE"/>
+                <constraint firstItem="hK6-6g-pJl" firstAttribute="leading" secondItem="muV-qz-5HO" secondAttribute="trailing" constant="22" id="DDh-vd-abM"/>
+                <constraint firstItem="muV-qz-5HO" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.232416" id="amy-39-2dk"/>
+                <constraint firstItem="hK6-6g-pJl" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.6789" id="dOa-kB-AuE"/>
+                <constraint firstItem="KcC-VJ-xWy" firstAttribute="leading" secondItem="muV-qz-5HO" secondAttribute="trailing" constant="22" id="sJd-WJ-jqb"/>
+                <constraint firstItem="muV-qz-5HO" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.633929" id="y1W-gU-TOh"/>
+                <constraint firstItem="KcC-VJ-xWy" firstAttribute="top" secondItem="hK6-6g-pJl" secondAttribute="bottom" constant="2" id="z78-mn-UvR"/>
+            </constraints>
+            <size key="customSize" width="442" height="193"/>
+            <connections>
+                <outlet property="dDayLbl" destination="lhf-G3-7HD" id="eUe-wy-1Cc"/>
+                <outlet property="displayDdayView" destination="muV-qz-5HO" id="MJA-Kr-Ra0"/>
+                <outlet property="titleLbl" destination="KcC-VJ-xWy" id="W0b-0a-NA9"/>
+            </connections>
+            <point key="canvasLocation" x="421.73913043478262" y="62.276785714285708"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

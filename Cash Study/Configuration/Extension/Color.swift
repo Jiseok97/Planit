@@ -30,4 +30,7 @@ extension UIColor {
     class var notSelectBtnColor : UIColor { UIColor(hex: 0x6B6C85) }
     class var circleBgColor : UIColor { UIColor(hex: 0x04041D) }
     class var cancleAlertColor : UIColor { UIColor(hex: 0x888888)}
+    class var topDdayGrColor : UIColor { UIColor(hex: 0x00D8FF) }
+    class var bottomDdayGrColor : UIColor { UIColor(hex: 0xDCB92C) }
+    class var remainDdayColor: UIColor { UIColor(hex: 0x1C6EE7) }
 }

@@ -9,9 +9,15 @@ import UIKit
 
 class HaveRprDdayCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var displayDdayView: UIView!
+    @IBOutlet weak var dDayLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        displayDdayView.layer.cornerRadius = 8
     }
 
 }

@@ -44,19 +44,19 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디데이 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGB-C3-cNv">
-                        <rect key="frame" x="94" y="66" width="78.5" height="23.5"/>
+                        <rect key="frame" x="94" y="40" width="78.5" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D+100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb9-jZ-sl0">
-                        <rect key="frame" x="94" y="93.5" width="49.5" height="23.5"/>
+                        <rect key="frame" x="94" y="67.5" width="49.5" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.10.16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeH-Nf-VXN">
-                        <rect key="frame" x="361" y="96.5" width="47" height="17.5"/>
+                        <rect key="frame" x="361" y="70.5" width="47" height="17.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                         <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                 <constraint firstItem="lGB-C3-cNv" firstAttribute="leading" secondItem="Liv-fg-8qJ" secondAttribute="trailing" constant="14" id="IWT-Hf-jfB"/>
                 <constraint firstItem="Liv-fg-8qJ" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="KV1-rh-zX6"/>
                 <constraint firstItem="lb9-jZ-sl0" firstAttribute="leading" secondItem="Liv-fg-8qJ" secondAttribute="trailing" constant="14" id="Mwz-3e-QP7"/>
-                <constraint firstItem="lGB-C3-cNv" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="22" id="OnM-WK-ziO"/>
+                <constraint firstItem="lGB-C3-cNv" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.6565" id="bZl-gN-6Vg"/>
                 <constraint firstItem="SeH-Nf-VXN" firstAttribute="centerY" secondItem="lb9-jZ-sl0" secondAttribute="centerY" id="bh7-Gp-pP9"/>
                 <constraint firstItem="Liv-fg-8qJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="cum-0T-VSu"/>
                 <constraint firstItem="lb9-jZ-sl0" firstAttribute="top" secondItem="lGB-C3-cNv" secondAttribute="bottom" constant="4" id="gBY-J3-g2g"/>
