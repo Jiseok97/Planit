@@ -126,6 +126,15 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let utf8Char = string.cString(using: .utf8)
+        let isBackSpace = strcmp(utf8Char, "\\b")
+        if string.hasCharacters() || isBackSpace == -92{
+            return true
+        }
+        return false
+    }
 
     func setUI() {
         let toDate = DateFormatter()

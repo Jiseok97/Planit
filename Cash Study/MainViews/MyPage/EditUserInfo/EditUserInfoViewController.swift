@@ -138,7 +138,16 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    // 텍스트 필드 리턴 타입
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let utf8Char = string.cString(using: .utf8)
+        let isBackSpace = strcmp(utf8Char, "\\b")
+        if string.hasCharacters() || isBackSpace == -92{
+            return true
+        }
+        return false
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTF {
             nicknameTF.becomeFirstResponder()
