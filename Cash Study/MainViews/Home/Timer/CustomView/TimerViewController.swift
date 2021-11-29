@@ -31,6 +31,7 @@ class TimerViewController: UIViewController {
     var prevRcrd: Int = 0
     var recordDataLst: ShowRecordEntity?
     var stId: Int
+    var restCnt : Int = 0
     
     init(title: String, stId: Int) {
         self.studyTitle = title
@@ -63,12 +64,15 @@ class TimerViewController: UIViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(timerStop(_:)), name: NSNotification.Name("timerStop"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showRestTimer(_:)), name: NSNotification.Name("ShowRestTimer"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("timerStop"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("ShowRestTimer"), object: nil)
     }
     
 
@@ -108,14 +112,21 @@ class TimerViewController: UIViewController {
         // 시간, 쉬는 횟수, 리워드, 보너스
         guard let star = Int(self.rewardCntLbl.text!) else { return }
         guard let bonus = Int(self.bonusCntLbl.text!) else { return }
-        guard let rest = Int(self.restCntLbl.text!.replacingOccurrences(of: "회", with: "")) else { return }
         let totalRcrd = self.prevRcrd + self.timeCnt
         
         timer?.invalidate()
-        let stvc = StopTimerViewController(title: self.studyTitle, totalRcrd: totalRcrd, additionalRcrd: self.timeCnt, starCnt: star, bonusCnt: bonus, restCnt: rest, isEdit: false)
+        let stvc = StopTimerViewController(stId: stId, title: self.studyTitle, totalRcrd: totalRcrd, additionalRcrd: self.timeCnt, starCnt: star, bonusCnt: bonus, restCnt: self.restCnt, isEdit: false)
         stvc.modalPresentationStyle = .overFullScreen
         present(stvc, animated: true)
         
+    }
+    
+    @objc func showRestTimer(_ noti: Notification) {
+        self.restCnt += 1
+        self.restCntLbl.text = "\(String(describing: restCnt))회"
+        let vc = RestTimerViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     
@@ -146,12 +157,35 @@ class TimerViewController: UIViewController {
         })
     }
     
+    func isTimerStop(_ btn: UIButton, _ check: Bool) {
+        if check {
+            btn.setTitle("타이머 시작하기", for: .normal)
+            btn.backgroundColor = .mainNavy
+            btn.layer.borderWidth = 0.8
+            btn.layer.borderColor = UIColor.link.cgColor
+        } else {
+            btn.setTitle("타이머 멈추기", for: .normal)
+            btn.backgroundColor = .link
+            btn.layer.borderWidth = 0
+        }
+        
+    }
     
-    @IBAction func stopBtnTapped(_ sender: Any) {
-        let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
-        let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+    @IBAction func stopBtnTapped(_ sender: UIButton) {
+        if sender.titleLabel!.text == "타이머 시작하기" {
+            startTimer()
+            isTimerStop(sender, false)
+        } else {
+            isTimerStop(sender, true)
+            
+            let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
+            
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true)
+            vc.modalPresentationStyle = .overFullScreen
+            timer?.invalidate()
+            present(vc, animated: true)
+        }
+        
     }
     
     @IBAction func dismissTapped(_ sender: Any) {
@@ -171,8 +205,9 @@ extension TimerViewController {
         guard let rcrd = recordDataLst?.recordedTime else { return }
         
         self.rewardCntLbl.text = String(describing: reward)
-        self.restCntLbl.text = "\(String(describing: rest))회"
+        self.restCntLbl.text = "\(String(describing: self.restCnt))회"
         self.bonusCntLbl.text = String(describing: bonus)
         self.prevRcrd = rcrd
+        self.restCnt = rest
     }
 }

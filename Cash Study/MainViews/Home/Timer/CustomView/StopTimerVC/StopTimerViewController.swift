@@ -29,8 +29,11 @@ class StopTimerViewController: UIViewController {
     var bonusCnt: Int = 0
     var restCnt: Int = 0
     var isEdit: Bool = false
+    var stId: Int = 0
+    var isDone : Bool = false
     
-    init(title: String, totalRcrd: Int, additionalRcrd: Int, starCnt: Int, bonusCnt: Int, restCnt: Int, isEdit: Bool) {
+    init(stId: Int, title: String, totalRcrd: Int, additionalRcrd: Int, starCnt: Int, bonusCnt: Int, restCnt: Int, isEdit: Bool) {
+        self.stId = stId
         self.studyTitle = title
         self.totalRcrd = totalRcrd
         self.additionalRcrd = additionalRcrd
@@ -60,7 +63,11 @@ class StopTimerViewController: UIViewController {
         let min = (self.totalRcrd / 60) % 60
         let hour = self.totalRcrd / 3600
         
-        self.additionRecordTimeLbl.text = "(+\(hour)시간 \(min)분)"
+        let aMin = (self.additionalRcrd / 60) % 60
+        let aHour = self.additionalRcrd / 3600
+        
+        self.additionRecordTimeLbl.text = "(+\(aHour)시간 \(aMin)분)"
+        self.totalRecordTimeLbl.text = "\(hour)시간 \(min)분 \(sec)초"
         self.titleLbl.text = studyTitle
         self.restLbl.text = "휴식은 모두 \(String(describing: restCnt))회 쉬었어요"
         self.starCntLbl.text = String(describing: self.starCnt)
@@ -71,16 +78,47 @@ class StopTimerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        ShowRecordDataManager().showRecordST(stId: stId, viewController: self)
+        
         let vc = TimerAlertViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: false)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(putRecordDone(_:)), name: NSNotification.Name("PutRecordDone"), object: nil)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("PutRecordDone"), object: nil)
     }
 
     
-    // MARK: Function
+    // MARK: Functions
+    @objc func putRecordDone(_ noti: Notification) {
+        let totalRes = totalRcrd + additionalRcrd
+        
+        if isDone {
+           let vc = ObAlertViewController(mainMsg: "이미 완료한 공부는\n결과에 반영되지 않습니다", subMsg: "", btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
+        } else {
+            let input = PutRecordInput(isDone: false, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: totalRes)
+            
+            PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
+        }
+    }
+    
     @IBAction func dismissBtn(_ sender: Any) {
         changeRootVC(BaseTabBarController())
     }
-    
 
+}
+
+extension StopTimerViewController {
+    func showRecordST(result: ShowRecordEntity) {
+        self.isDone = result.isDone
+    }
 }

@@ -54,6 +54,8 @@
 		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
 		B62BC471274B72BC005296D8 /* DeleteDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */; };
 		B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */; };
+		B63352A92755298500D1914D /* RestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63352A72755298500D1914D /* RestTimerViewController.swift */; };
+		B63352AA2755298500D1914D /* RestTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63352A82755298500D1914D /* RestTimerViewController.xib */; };
 		B633A9F72754932A00A00EFD /* ShowUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9F62754932A00A00EFD /* ShowUserInfoDataManager.swift */; };
 		B633A9F92754933200A00EFD /* ShowUserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9F82754933200A00EFD /* ShowUserInfoEntity.swift */; };
 		B633A9FD2754950100A00EFD /* EditUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */; };
@@ -214,6 +216,8 @@
 		B62BC469274B5F07005296D8 /* EditDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayInput.swift; sourceTree = "<group>"; };
 		B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayEntity.swift; sourceTree = "<group>"; };
 		B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDdayDataManager.swift; sourceTree = "<group>"; };
+		B63352A72755298500D1914D /* RestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerViewController.swift; sourceTree = "<group>"; };
+		B63352A82755298500D1914D /* RestTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestTimerViewController.xib; sourceTree = "<group>"; };
 		B633A9F62754932A00A00EFD /* ShowUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoDataManager.swift; sourceTree = "<group>"; };
 		B633A9F82754933200A00EFD /* ShowUserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoEntity.swift; sourceTree = "<group>"; };
 		B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +494,7 @@
 		B6196613274F0F510004EA10 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				B63352A62755297300D1914D /* RestAlert */,
 				B633AA0F2754EA4600A00EFD /* TimerAlert */,
 				B604DA3E2751272A00783E79 /* OneButton */,
 				B6A33E92274F72DB004E88B0 /* TwoButtons */,
@@ -683,6 +688,15 @@
 				B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B63352A62755297300D1914D /* RestAlert */ = {
+			isa = PBXGroup;
+			children = (
+				B63352A82755298500D1914D /* RestTimerViewController.xib */,
+				B63352A72755298500D1914D /* RestTimerViewController.swift */,
+			);
+			path = RestAlert;
 			sourceTree = "<group>";
 		};
 		B633A9F42754930D00A00EFD /* DataManager */ = {
@@ -1387,6 +1401,7 @@
 				B6B40618273CFB52008DBE7C /* NotoSansKR-Regular.otf in Resources */,
 				B633AA132754EA5A00A00EFD /* TimerAlertViewController.xib in Resources */,
 				B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */,
+				B63352AA2755298500D1914D /* RestTimerViewController.xib in Resources */,
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6A33E97274F72FC004E88B0 /* CalendarAlertViewController.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
@@ -1512,6 +1527,7 @@
 				B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */,
 				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,
 				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
+				B63352A92755298500D1914D /* RestTimerViewController.swift in Sources */,
 				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,

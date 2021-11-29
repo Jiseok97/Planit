@@ -97,7 +97,8 @@ class AlertViewController: UIViewController {
     
     
     @IBAction func restBtnTapped(_ sender: Any) {
-        print("쉬고 싶어요 버튼 클릭")
+        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("ShowRestTimer"), object: nil)
     }
     
     

@@ -182,9 +182,9 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 
                 if studyDataLst?.studies[indexPath.row].isDone == true {
-                    cell.checkBox.isSelected = true
+                    cell.checkBox.setImage(UIImage(named: "Check"), for: .normal)
                 } else {
-                    cell.checkBox.isSelected = false
+                    cell.checkBox.setImage(UIImage(named: "noCheck"), for: .normal)
                 }
                 
                 return cell
@@ -201,9 +201,9 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 cell.repeatLbl.text = "\(String(describing: startTxt!))~\(String(describing: endTxt!))"
                 
                 if studyDataLst?.studies[indexPath.row].isDone == true {
-                    cell.checkBox.isSelected = true
+                    cell.checkBox.setImage(UIImage(named: "Check"), for: .normal)
                 } else {
-                    cell.checkBox.isSelected = false
+                    cell.checkBox.setImage(UIImage(named: "noCheck"), for: .normal)
                 }
                 
                 

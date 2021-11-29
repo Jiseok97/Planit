@@ -234,8 +234,24 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
 extension HomeViewController {
     func homeStudy(result : ShowDateStudyEntity) {
+        var totalTime : Int = 0
+        
         self.todayStudyLst = result
         self.studyLstCV.reloadData()
+        
+        todayStudyLst?.studies.forEach {
+            totalTime += $0.recordedTime
+        }
+        
+        if totalTime == 0 {
+            self.topLbl.text = "\(result.nickname)님의\n공부를 응원합니다!"
+        } else {
+            let sec = String(describing: totalTime % 60 )
+            let min = String(describing: (totalTime / 60) % 60 )
+            let hour = String(describing: totalTime / 3600)
+            
+            self.topLbl.text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
+        }
     }
     
     func showRepresentDday(result : ShowDdayEntity) {

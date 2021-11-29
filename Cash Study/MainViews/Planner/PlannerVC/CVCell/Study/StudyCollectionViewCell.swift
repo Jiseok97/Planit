@@ -14,5 +14,7 @@ class StudyCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        checkBox.isEnabled = false
     }
 }

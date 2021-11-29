@@ -19,7 +19,6 @@ class ShowDateStudyDataManager {
                 guard let data = response.value else { return }
                 
                 viewController.homeStudy(result: data)
-                viewController.topLbl.text = "\(data.nickname)님의\n공부를 응원합니다!"
             }
     }
     

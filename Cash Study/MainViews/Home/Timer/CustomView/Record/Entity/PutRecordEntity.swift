@@ -5,4 +5,6 @@
 //  Created by 이지석 on 2021/11/29.
 //
 
-import Foundation
+struct PutRecordEntity : Decodable {
+    var message : String
+}

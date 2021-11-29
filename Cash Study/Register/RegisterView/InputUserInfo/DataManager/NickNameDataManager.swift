@@ -21,6 +21,7 @@ class NickNameDataManager : UIViewController {
                 switch statusCode {
                 
                 case 200:
+                    viewController.checkUserNickName = true
                     viewController.sethiddenLblImg(img, lbl)
                     viewController.nickNameErrorLbl.isHidden = false
                     viewController.nickNameErrorLbl.text = "사용 가능한 닉네임입니다."
