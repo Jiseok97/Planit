@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerAlertViewController" customModule="Cash_Study" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="9az-Ex-div" id="mRR-Qs-yuK"/>
+                <outlet property="noBtn" destination="GF7-xn-lh8" id="Hu7-0y-qeh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yesBtn" destination="6Tk-mM-6e8" id="GOw-HV-fMz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7b-xs-C6A">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9az-Ex-div">
+                    <rect key="frame" x="0.0" y="686" width="414" height="210"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerDone" translatesAutoresizingMaskIntoConstraints="NO" id="sLE-W3-Zcl">
+                            <rect key="frame" x="49.5" y="54.5" width="32" height="32"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당 공부를 플래너에 완료 상태로 표시해놓을까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-4G-xal">
+                            <rect key="frame" x="121.5" y="43.5" width="191.5" height="46.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                            <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF7-xn-lh8">
+                            <rect key="frame" x="32" y="124" width="166" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="2qq-5s-TJx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="아니오">
+                                <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="dismissBtn:" destination="-1" eventType="touchUpInside" id="wf0-um-Si4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-mM-6e8">
+                            <rect key="frame" x="216" y="124" width="166" height="46"/>
+                            <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="예">
+                                <color key="titleColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmBtn:" destination="-1" eventType="touchUpInside" id="STT-Ae-TNN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="GF7-xn-lh8" firstAttribute="width" secondItem="9az-Ex-div" secondAttribute="width" multiplier="0.4012" id="3dI-LM-ubP"/>
+                        <constraint firstAttribute="trailing" secondItem="6Tk-mM-6e8" secondAttribute="trailing" constant="32" id="5jD-4X-EQ6"/>
+                        <constraint firstItem="sLE-W3-Zcl" firstAttribute="centerY" secondItem="9az-Ex-div" secondAttribute="centerY" multiplier="0.67324" id="7M0-tY-uhO"/>
+                        <constraint firstItem="dhb-4G-xal" firstAttribute="leading" secondItem="sLE-W3-Zcl" secondAttribute="trailing" constant="40" id="9tU-jp-NzP"/>
+                        <constraint firstItem="dhb-4G-xal" firstAttribute="centerX" secondItem="9az-Ex-div" secondAttribute="centerX" multiplier="1.05" id="Lpn-2B-9BK"/>
+                        <constraint firstAttribute="bottom" secondItem="GF7-xn-lh8" secondAttribute="bottom" constant="40" id="TQI-r2-qlZ"/>
+                        <constraint firstItem="GF7-xn-lh8" firstAttribute="leading" secondItem="9az-Ex-div" secondAttribute="leading" constant="32" id="c2h-Z8-qsQ"/>
+                        <constraint firstItem="6Tk-mM-6e8" firstAttribute="height" secondItem="GF7-xn-lh8" secondAttribute="height" id="jv0-Zk-gwz"/>
+                        <constraint firstItem="dhb-4G-xal" firstAttribute="centerY" secondItem="sLE-W3-Zcl" secondAttribute="centerY" multiplier="0.9423" id="k0B-Id-YI0"/>
+                        <constraint firstItem="6Tk-mM-6e8" firstAttribute="centerY" secondItem="GF7-xn-lh8" secondAttribute="centerY" id="rJx-fG-weF"/>
+                        <constraint firstItem="6Tk-mM-6e8" firstAttribute="width" secondItem="GF7-xn-lh8" secondAttribute="width" id="uLe-eQ-twW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="9az-Ex-div" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.234375" id="02d-11-M4g"/>
+                <constraint firstAttribute="bottom" secondItem="s7b-xs-C6A" secondAttribute="bottom" id="CRa-pS-I1d"/>
+                <constraint firstItem="9az-Ex-div" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VVv-8C-llY"/>
+                <constraint firstAttribute="bottom" secondItem="9az-Ex-div" secondAttribute="bottom" id="cEW-RJ-GtH"/>
+                <constraint firstItem="s7b-xs-C6A" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kN0-JS-Isa"/>
+                <constraint firstItem="s7b-xs-C6A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mGG-R2-FIB"/>
+                <constraint firstItem="s7b-xs-C6A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="naF-Ke-66d"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9az-Ex-div" secondAttribute="trailing" id="zOT-xo-KVX"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="12.723214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="timerDone" width="32" height="32"/>
+    </resources>
+</document>

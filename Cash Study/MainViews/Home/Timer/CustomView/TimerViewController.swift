@@ -25,12 +25,10 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerLbl: UILabel!
     
     var studyTitle : String = ""
-    var restCnt : Int = 0
-    var rewardCnt : Int = 0
-    var bonusCnt : Int = 0
     
     var timer : Timer?
     var timeCnt : Int = 0
+    var prevRcrd: Int = 0
     var recordDataLst: ShowRecordEntity?
     var stId: Int
     
@@ -106,10 +104,18 @@ class TimerViewController: UIViewController {
     }
     
     @objc func timerStop(_ noti: Notification) {
-        let stvc = StopTimerViewController(title: self.studyTitle)
+        // 가지고 갈 것
+        // 시간, 쉬는 횟수, 리워드, 보너스
+        guard let star = Int(self.rewardCntLbl.text!) else { return }
+        guard let bonus = Int(self.bonusCntLbl.text!) else { return }
+        guard let rest = Int(self.restCntLbl.text!.replacingOccurrences(of: "회", with: "")) else { return }
+        let totalRcrd = self.prevRcrd + self.timeCnt
+        
+        timer?.invalidate()
+        let stvc = StopTimerViewController(title: self.studyTitle, totalRcrd: totalRcrd, additionalRcrd: self.timeCnt, starCnt: star, bonusCnt: bonus, restCnt: rest, isEdit: false)
         stvc.modalPresentationStyle = .overFullScreen
         present(stvc, animated: true)
-        timer?.invalidate()
+        
     }
     
     
@@ -158,5 +164,15 @@ class TimerViewController: UIViewController {
 extension TimerViewController {
     func showRecord(result : ShowRecordEntity) {
         self.recordDataLst = result
+        
+        guard let reward = recordDataLst?.star else { return }
+        guard let bonus = recordDataLst?.bonusTicket else { return }
+        guard let rest = recordDataLst?.rest else { return }
+        guard let rcrd = recordDataLst?.recordedTime else { return }
+        
+        self.rewardCntLbl.text = String(describing: reward)
+        self.restCntLbl.text = "\(String(describing: rest))회"
+        self.bonusCntLbl.text = String(describing: bonus)
+        self.prevRcrd = rcrd
     }
 }

@@ -62,6 +62,11 @@
 		B633AA072754D38400A00EFD /* EditUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA062754D38400A00EFD /* EditUserInfoDataManager.swift */; };
 		B633AA092754D3D800A00EFD /* EditUserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA082754D3D800A00EFD /* EditUserInfoEntity.swift */; };
 		B633AA0B2754D3E000A00EFD /* EditUserInfoInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA0A2754D3E000A00EFD /* EditUserInfoInput.swift */; };
+		B633AA122754EA5A00A00EFD /* TimerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA102754EA5A00A00EFD /* TimerAlertViewController.swift */; };
+		B633AA132754EA5A00A00EFD /* TimerAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B633AA112754EA5A00A00EFD /* TimerAlertViewController.xib */; };
+		B633AA152754F2EE00A00EFD /* PutRecordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA142754F2EE00A00EFD /* PutRecordDataManager.swift */; };
+		B633AA172754F31900A00EFD /* PutRecordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA162754F31900A00EFD /* PutRecordInput.swift */; };
+		B633AA192754F32100A00EFD /* PutRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA182754F32000A00EFD /* PutRecordEntity.swift */; };
 		B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */; };
 		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
 		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
@@ -217,6 +222,11 @@
 		B633AA062754D38400A00EFD /* EditUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoDataManager.swift; sourceTree = "<group>"; };
 		B633AA082754D3D800A00EFD /* EditUserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoEntity.swift; sourceTree = "<group>"; };
 		B633AA0A2754D3E000A00EFD /* EditUserInfoInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoInput.swift; sourceTree = "<group>"; };
+		B633AA102754EA5A00A00EFD /* TimerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAlertViewController.swift; sourceTree = "<group>"; };
+		B633AA112754EA5A00A00EFD /* TimerAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerAlertViewController.xib; sourceTree = "<group>"; };
+		B633AA142754F2EE00A00EFD /* PutRecordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutRecordDataManager.swift; sourceTree = "<group>"; };
+		B633AA162754F31900A00EFD /* PutRecordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutRecordInput.swift; sourceTree = "<group>"; };
+		B633AA182754F32000A00EFD /* PutRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutRecordEntity.swift; sourceTree = "<group>"; };
 		B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyDataManager.swift; sourceTree = "<group>"; };
 		B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyEntity.swift; sourceTree = "<group>"; };
 		B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudyInput.swift; sourceTree = "<group>"; };
@@ -480,6 +490,7 @@
 		B6196613274F0F510004EA10 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				B633AA0F2754EA4600A00EFD /* TimerAlert */,
 				B604DA3E2751272A00783E79 /* OneButton */,
 				B6A33E92274F72DB004E88B0 /* TwoButtons */,
 				B6A33E93274F72E9004E88B0 /* Calendar */,
@@ -725,6 +736,41 @@
 				B633AA082754D3D800A00EFD /* EditUserInfoEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		B633AA0C2754E14600A00EFD /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				B633AA0D2754E67000A00EFD /* DataManager */,
+				B633AA0E2754E67500A00EFD /* Entity */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		B633AA0D2754E67000A00EFD /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B633AA142754F2EE00A00EFD /* PutRecordDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B633AA0E2754E67500A00EFD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B633AA162754F31900A00EFD /* PutRecordInput.swift */,
+				B633AA182754F32000A00EFD /* PutRecordEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B633AA0F2754EA4600A00EFD /* TimerAlert */ = {
+			isa = PBXGroup;
+			children = (
+				B633AA112754EA5A00A00EFD /* TimerAlertViewController.xib */,
+				B633AA102754EA5A00A00EFD /* TimerAlertViewController.swift */,
+			);
+			path = TimerAlert;
 			sourceTree = "<group>";
 		};
 		B63A1F312747ADAB0077CC76 /* DataManager */ = {
@@ -1088,6 +1134,7 @@
 				B6B449012738EF2B00AB45AC /* TimerViewController.xib */,
 				B6B449002738EF2B00AB45AC /* TimerViewController.swift */,
 				B63E67D42753E1F200C891C2 /* StopTimerVC */,
+				B633AA0C2754E14600A00EFD /* Record */,
 				B63E67CD2753DC6C00C891C2 /* ShowRecord */,
 			);
 			path = CustomView;
@@ -1338,6 +1385,7 @@
 				B6B40620273CFDD3008DBE7C /* NotoSansKR-Thin.otf in Resources */,
 				B61FAD1627363D1B00D11538 /* EmptyStudyCollectionViewCell.xib in Resources */,
 				B6B40618273CFB52008DBE7C /* NotoSansKR-Regular.otf in Resources */,
+				B633AA132754EA5A00A00EFD /* TimerAlertViewController.xib in Resources */,
 				B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */,
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6A33E97274F72FC004E88B0 /* CalendarAlertViewController.xib in Resources */,
@@ -1442,6 +1490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B633AA192754F32100A00EFD /* PutRecordEntity.swift in Sources */,
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */,
@@ -1449,6 +1498,7 @@
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B633AA092754D3D800A00EFD /* EditUserInfoEntity.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
+				B633AA172754F31900A00EFD /* PutRecordInput.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
@@ -1480,6 +1530,7 @@
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B66B478C2732895800F89012 /* AnalysisViewController.swift in Sources */,
 				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
+				B633AA152754F2EE00A00EFD /* PutRecordDataManager.swift in Sources */,
 				B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B608E50A274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift in Sources */,
@@ -1499,6 +1550,7 @@
 				B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
+				B633AA122754EA5A00A00EFD /* TimerAlertViewController.swift in Sources */,
 				B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
 				B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */,
