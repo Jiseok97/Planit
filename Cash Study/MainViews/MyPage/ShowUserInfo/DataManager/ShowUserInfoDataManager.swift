@@ -28,4 +28,23 @@ class ShowUserInfoDataManager {
                 }
             }
     }
+    
+    
+    func showUserInfoEditVC(viewController: EditUserInfoViewController) {
+        AF.request(Constant.BASE_URL + "/v1/user", method: .get, headers: header)
+            .validate()
+            .responseDecodable(of: ShowUserInfoEntity.self) { response in
+                let statusCode = response.response?.statusCode
+                
+                switch statusCode {
+                case 200:
+                    guard let data = response.value else { return }
+                    viewController.showUserInfo(result: data)
+                    
+                default:
+                    print("토큰 만료.")
+  
+                }
+            }
+    }
 }

@@ -22,18 +22,23 @@ class MyPageViewController: UIViewController {
         setGradation()
         setUI()
         
-        ShowUserInfoDataManager().showUserInfo(viewController: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
+        ShowUserInfoDataManager().showUserInfo(viewController: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(editUserInfoNoti(_:)), name: NSNotification.Name("EditUserInfo"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("EditUserInfo"), object: nil)
     }
     
     
@@ -45,11 +50,15 @@ class MyPageViewController: UIViewController {
         self.logoutBtn.layer.borderWidth = 0.5
     }
     
+    @objc func editUserInfoNoti(_ noti : Notification) {
+        ShowUserInfoDataManager().showUserInfo(viewController: self)
+    }
+    
     @IBAction func editUserInfo(_ sender: Any) {
         let sbName = UIStoryboard(name: "EditUserInfo", bundle: nil)
         let ibSB = sbName.instantiateViewController(identifier: "EditUserInfoViewController")
         
-        self.navigationController?.pushViewController(ibSB, animated: false)
+        self.navigationController?.pushViewController(ibSB, animated: true)
 
     }
     

@@ -38,6 +38,9 @@
                                                 <rect key="frame" x="32" y="43" width="24" height="24"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="backArrow"/>
+                                                <connections>
+                                                    <action selector="dismissBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JsF-8A-Yjd"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 정보를 변경할 수 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dm-A7-Fgc">
                                                 <rect key="frame" x="32" y="98.5" width="172" height="64"/>
@@ -54,17 +57,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-Dw-LI0">
                                                 <rect key="frame" x="24" y="281" width="366" height="84.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJH-Dn-LjH">
-                                                        <rect key="frame" x="26" y="29" width="33.5" height="26.5"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ua-T1-RhI">
+                                                        <rect key="frame" x="26" y="28.5" width="290" height="28"/>
+                                                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
-                                                        <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="iJH-Dn-LjH" firstAttribute="centerY" secondItem="t9c-Dw-LI0" secondAttribute="centerY" id="DJL-Za-zZI"/>
-                                                    <constraint firstItem="iJH-Dn-LjH" firstAttribute="leading" secondItem="t9c-Dw-LI0" secondAttribute="leading" constant="26" id="Ia2-8R-37f"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3Ua-T1-RhI" secondAttribute="trailing" constant="50" id="3dr-fa-675"/>
+                                                    <constraint firstItem="3Ua-T1-RhI" firstAttribute="leading" secondItem="t9c-Dw-LI0" secondAttribute="leading" constant="26" id="I3k-iK-SNN"/>
+                                                    <constraint firstItem="3Ua-T1-RhI" firstAttribute="centerY" secondItem="t9c-Dw-LI0" secondAttribute="centerY" id="PCT-nc-KLQ"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNB-A1-v85">
@@ -76,22 +80,23 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZI-1u-bUp">
                                                 <rect key="frame" x="24" y="464" width="366" height="84"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzi-ZC-Y9X">
-                                                        <rect key="frame" x="26" y="28.5" width="50" height="26.5"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
-                                                        <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textFieldError" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-FC-acS">
                                                         <rect key="frame" x="318" y="30" width="24" height="24"/>
                                                     </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력하세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BA0-Jb-xaI">
+                                                        <rect key="frame" x="26" y="28" width="242" height="28"/>
+                                                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="Lzi-ZC-Y9X" firstAttribute="leading" secondItem="XZI-1u-bUp" secondAttribute="leading" constant="26" id="Abj-XN-paV"/>
                                                     <constraint firstItem="ru5-FC-acS" firstAttribute="centerY" secondItem="XZI-1u-bUp" secondAttribute="centerY" id="BMf-44-McX"/>
-                                                    <constraint firstItem="Lzi-ZC-Y9X" firstAttribute="centerY" secondItem="XZI-1u-bUp" secondAttribute="centerY" id="Cj0-by-j31"/>
                                                     <constraint firstAttribute="trailing" secondItem="ru5-FC-acS" secondAttribute="trailing" constant="24" id="EvP-99-5ab"/>
+                                                    <constraint firstItem="BA0-Jb-xaI" firstAttribute="centerY" secondItem="XZI-1u-bUp" secondAttribute="centerY" id="YMv-ZF-7Yf"/>
+                                                    <constraint firstItem="ru5-FC-acS" firstAttribute="leading" secondItem="BA0-Jb-xaI" secondAttribute="trailing" constant="50" id="rk6-x0-oSQ"/>
+                                                    <constraint firstItem="BA0-Jb-xaI" firstAttribute="leading" secondItem="XZI-1u-bUp" secondAttribute="leading" constant="26" id="xR1-Tl-heZ"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQr-j5-D58">
@@ -108,6 +113,9 @@
                                                 <state key="normal" title="초등학생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="N15-b1-sfg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVj-nJ-K7z">
                                                 <rect key="frame" x="213" y="646.5" width="177" height="64.5"/>
@@ -117,6 +125,9 @@
                                                 <state key="normal" title="중학생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uaZ-G7-B0F"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTc-Vk-rnZ">
                                                 <rect key="frame" x="24" y="719" width="177" height="64.5"/>
@@ -126,6 +137,9 @@
                                                 <state key="normal" title="고등학생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tWQ-ie-1AD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gk-WL-okK">
                                                 <rect key="frame" x="213" y="719" width="177" height="64.5"/>
@@ -135,6 +149,9 @@
                                                 <state key="normal" title="N수생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EZm-hq-b2v"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TS-l7-N9M">
                                                 <rect key="frame" x="24" y="791.5" width="177" height="65"/>
@@ -144,6 +161,9 @@
                                                 <state key="normal" title="대학생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AfO-ws-OGh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seS-fU-L82">
                                                 <rect key="frame" x="213" y="791.5" width="177" height="65"/>
@@ -153,6 +173,9 @@
                                                 <state key="normal" title="고시생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b4O-GA-fWG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCI-gY-Dwv">
                                                 <rect key="frame" x="24" y="864.5" width="177" height="64.5"/>
@@ -162,6 +185,9 @@
                                                 <state key="normal" title="취업준비생">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3eh-5p-8fl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dya-8K-hid">
                                                 <rect key="frame" x="213" y="864.5" width="177" height="64.5"/>
@@ -171,6 +197,9 @@
                                                 <state key="normal" title="직장인">
                                                     <color key="titleColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectCategoryBtns:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vLl-Dp-Ybh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biw-fa-8Ix">
                                                 <rect key="frame" x="32" y="996" width="350" height="64"/>
@@ -183,6 +212,9 @@
                                                 <state key="normal" title="완료">
                                                     <color key="titleColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="confirmBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Jfh-QT-xpT"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임 형식이 올바르지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL0-8Z-ngh">
                                                 <rect key="frame" x="50" y="556" width="196" height="20.5"/>
@@ -272,12 +304,20 @@
                     </view>
                     <connections>
                         <outlet property="confirmBtn" destination="biw-fa-8Ix" id="4rw-tr-V1n"/>
-                        <outlet property="nameLbl" destination="iJH-Dn-LjH" id="H1J-FT-cIa"/>
+                        <outlet property="eighthBtn" destination="Dya-8K-hid" id="xWg-vt-7hb"/>
+                        <outlet property="fifthBtn" destination="1TS-l7-N9M" id="kdb-h0-sLD"/>
+                        <outlet property="firstBtn" destination="8yH-Ry-ZGt" id="z9H-LR-9YI"/>
+                        <outlet property="fourthBtn" destination="8Gk-WL-okK" id="t4Q-Nc-0eY"/>
+                        <outlet property="nameTF" destination="3Ua-T1-RhI" id="GXL-2Q-Efw"/>
                         <outlet property="nameView" destination="t9c-Dw-LI0" id="eRr-nD-JGQ"/>
                         <outlet property="nicknameErrorImgView" destination="ru5-FC-acS" id="W5V-mB-uRb"/>
                         <outlet property="nicknameErrorLbl" destination="LL0-8Z-ngh" id="uIb-WK-U7m"/>
-                        <outlet property="nicknameLbl" destination="Lzi-ZC-Y9X" id="bxK-EB-JzS"/>
+                        <outlet property="nicknameTF" destination="BA0-Jb-xaI" id="1QX-p3-O6h"/>
                         <outlet property="nicknameView" destination="XZI-1u-bUp" id="PWs-x4-JHD"/>
+                        <outlet property="secondBtn" destination="TVj-nJ-K7z" id="5wO-ab-lzf"/>
+                        <outlet property="seventhBtn" destination="mCI-gY-Dwv" id="ubc-tI-UDS"/>
+                        <outlet property="sixthBtn" destination="seS-fU-L82" id="vuE-Tu-lbQ"/>
+                        <outlet property="thirdBtn" destination="XTc-Vk-rnZ" id="mZY-ZM-FU8"/>
                         <outletCollection property="categoryBtns" destination="8yH-Ry-ZGt" collectionClass="NSMutableArray" id="yV0-xm-mpW"/>
                         <outletCollection property="categoryBtns" destination="TVj-nJ-K7z" collectionClass="NSMutableArray" id="bwf-Lv-q6s"/>
                         <outletCollection property="categoryBtns" destination="XTc-Vk-rnZ" collectionClass="NSMutableArray" id="rlK-8Q-3AX"/>

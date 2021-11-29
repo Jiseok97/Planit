@@ -22,9 +22,40 @@ class NickNameDataManager : UIViewController {
                 
                 case 200:
                     viewController.sethiddenLblImg(img, lbl)
-                    viewController.checkUserNickName = true
                     viewController.nickNameErrorLbl.isHidden = false
                     viewController.nickNameErrorLbl.text = "사용 가능한 닉네임입니다."
+                    
+                case 409:
+                    viewController.checkUserNickName = false
+                    viewController.setShowErrorLblImg(img, lbl, "이미 사용중인 닉네임입니다.")
+                    
+ 
+                default:
+                    print("서버 응답이 없습니다.")
+  
+                }
+            }
+    }
+    
+    
+    
+    func validateEditNickName(_ nickName: EditnicknameInput, viewController: EditUserInfoViewController) {
+
+        guard let img = viewController.nicknameErrorImgView else { return }
+        guard let lbl = viewController.nicknameErrorLbl else { return }
+        
+        AF.request(Constant.BASE_URL + "/v1/user/validate-nickname", method: .get, parameters: nickName)
+            .validate()
+            .responseDecodable(of: nickNameEntity.self) { response in
+                let statusCode = response.response?.statusCode
+                
+                switch statusCode {
+                
+                case 200:
+                    viewController.sethiddenLblImg(img, lbl)
+                    viewController.checkUserNickName = true
+                    viewController.nicknameErrorLbl.isHidden = false
+                    viewController.nicknameErrorLbl.text = "사용 가능한 닉네임입니다."
                     
                 case 409:
                     viewController.checkUserNickName = false

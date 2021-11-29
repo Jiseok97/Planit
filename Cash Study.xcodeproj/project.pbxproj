@@ -58,6 +58,10 @@
 		B633A9F92754933200A00EFD /* ShowUserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9F82754933200A00EFD /* ShowUserInfoEntity.swift */; };
 		B633A9FD2754950100A00EFD /* EditUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */; };
 		B633AA002754A66000A00EFD /* EditUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B633A9FF2754A66000A00EFD /* EditUserInfo.storyboard */; };
+		B633AA022754C56900A00EFD /* EditnicknameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA012754C56900A00EFD /* EditnicknameInput.swift */; };
+		B633AA072754D38400A00EFD /* EditUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA062754D38400A00EFD /* EditUserInfoDataManager.swift */; };
+		B633AA092754D3D800A00EFD /* EditUserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA082754D3D800A00EFD /* EditUserInfoEntity.swift */; };
+		B633AA0B2754D3E000A00EFD /* EditUserInfoInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633AA0A2754D3E000A00EFD /* EditUserInfoInput.swift */; };
 		B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */; };
 		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
 		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
@@ -209,6 +213,10 @@
 		B633A9F82754933200A00EFD /* ShowUserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoEntity.swift; sourceTree = "<group>"; };
 		B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoViewController.swift; sourceTree = "<group>"; };
 		B633A9FF2754A66000A00EFD /* EditUserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditUserInfo.storyboard; sourceTree = "<group>"; };
+		B633AA012754C56900A00EFD /* EditnicknameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditnicknameInput.swift; sourceTree = "<group>"; };
+		B633AA062754D38400A00EFD /* EditUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoDataManager.swift; sourceTree = "<group>"; };
+		B633AA082754D3D800A00EFD /* EditUserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoEntity.swift; sourceTree = "<group>"; };
+		B633AA0A2754D3E000A00EFD /* EditUserInfoInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoInput.swift; sourceTree = "<group>"; };
 		B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyDataManager.swift; sourceTree = "<group>"; };
 		B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyEntity.swift; sourceTree = "<group>"; };
 		B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudyInput.swift; sourceTree = "<group>"; };
@@ -535,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				B6224208272D06FE004F6750 /* nickNameInput.swift */,
+				B633AA012754C56900A00EFD /* EditnicknameInput.swift */,
 				B622420A272D0751004F6750 /* nickNameEntity.swift */,
 			);
 			path = Entity;
@@ -686,8 +695,36 @@
 			children = (
 				B633A9FF2754A66000A00EFD /* EditUserInfo.storyboard */,
 				B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */,
+				B633AA042754D36500A00EFD /* DataManager */,
+				B633AA052754D37100A00EFD /* Entity */,
 			);
 			path = EditUserInfo;
+			sourceTree = "<group>";
+		};
+		B633AA032754D34100A00EFD /* ShowUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B633A9F42754930D00A00EFD /* DataManager */,
+				B633A9F52754931400A00EFD /* Entity */,
+			);
+			path = ShowUserInfo;
+			sourceTree = "<group>";
+		};
+		B633AA042754D36500A00EFD /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B633AA062754D38400A00EFD /* EditUserInfoDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B633AA052754D37100A00EFD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B633AA0A2754D3E000A00EFD /* EditUserInfoInput.swift */,
+				B633AA082754D3D800A00EFD /* EditUserInfoEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		B63A1F312747ADAB0077CC76 /* DataManager */ = {
@@ -815,8 +852,7 @@
 				B66B478F2732896800F89012 /* MyPageViewController.xib */,
 				B66B478E2732896800F89012 /* MyPageViewController.swift */,
 				B633A9FA275494EA00A00EFD /* EditUserInfo */,
-				B633A9F42754930D00A00EFD /* DataManager */,
-				B633A9F52754931400A00EFD /* Entity */,
+				B633AA032754D34100A00EFD /* ShowUserInfo */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -1409,13 +1445,16 @@
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */,
+				B633AA072754D38400A00EFD /* EditUserInfoDataManager.swift in Sources */,
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
+				B633AA092754D3D800A00EFD /* EditUserInfoEntity.swift in Sources */,
 				B60797712727FF8A00D6D454 /* NavigationViewController.swift in Sources */,
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
 				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
 				B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */,
+				B633AA022754C56900A00EFD /* EditnicknameInput.swift in Sources */,
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
@@ -1470,6 +1509,7 @@
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B66B47882732894A00F89012 /* RewardViewController.swift in Sources */,
+				B633AA0B2754D3E000A00EFD /* EditUserInfoInput.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
 				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
 				B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */,

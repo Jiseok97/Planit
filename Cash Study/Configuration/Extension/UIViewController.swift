@@ -94,7 +94,7 @@ extension UIViewController {
             btn.backgroundColor = UIColor.link
             btn.setTitleColor(UIColor.myGray, for: .normal)
         } else {
-            btn.backgroundColor = UIColor.disabledColor
+            btn.backgroundColor = UIColor.disabledColor.withAlphaComponent(1.0)
             btn.setTitleColor(UIColor.placeHolderColor, for: .normal)
         }
     }

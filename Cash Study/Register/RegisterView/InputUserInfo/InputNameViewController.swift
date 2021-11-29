@@ -78,7 +78,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    // 텍스트 필드 리턴 타입
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTF {
             nickNameTF.becomeFirstResponder()
@@ -88,7 +88,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // MARK: 텍스트 유효성 체크
+    
     @IBAction func editChange(_ sender: UITextField) {
         switch sender {
         case nameTF:
@@ -106,9 +106,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func moveSelectGenderVC(_ sender: UIButton) {
         guard let userName = nameTF.text else { return }
         guard let userNickName = nickNameTF.text else { return }
-        
-//        let input = nickNameInput(nickname: userNickName)
-//        NickNameDataManager().validateNickName(input, viewController: self)
         
         if checkUserNickName {
             UserInfoData.name = userName
