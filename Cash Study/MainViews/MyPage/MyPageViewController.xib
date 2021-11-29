@@ -31,10 +31,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPage" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-cn-WUd">
-                    <rect key="frame" x="32" y="75" width="89" height="19"/>
+                    <rect key="frame" x="32" y="89" width="89" height="19"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-Ur-W8w">
-                    <rect key="frame" x="24" y="126" width="366" height="113"/>
+                    <rect key="frame" x="24" y="140" width="366" height="113"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNJ-qz-bxU">
                             <rect key="frame" x="24" y="23" width="39" height="20.5"/>
@@ -42,7 +42,7 @@
                             <color key="textColor" systemColor="linkColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아요쓰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBi-lh-U16">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBi-lh-U16">
                             <rect key="frame" x="24" y="52.5" width="200" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="2Bv-sp-gv8"/>
@@ -52,7 +52,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-zU-szL">
-                            <rect key="frame" x="302" y="52.5" width="32" height="32"/>
+                            <rect key="frame" x="310" y="52.5" width="32" height="32"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="mpEdit"/>
                             <connections>
@@ -66,7 +66,7 @@
                         <constraint firstItem="NNJ-qz-bxU" firstAttribute="leading" secondItem="cpX-Ur-W8w" secondAttribute="leading" constant="24" id="1jQ-ic-KmE"/>
                         <constraint firstItem="NNJ-qz-bxU" firstAttribute="centerY" secondItem="cpX-Ur-W8w" secondAttribute="centerY" multiplier="0.589" id="9f9-w8-V4X"/>
                         <constraint firstItem="fBi-lh-U16" firstAttribute="leading" secondItem="cpX-Ur-W8w" secondAttribute="leading" constant="24" id="Na3-B4-V1H"/>
-                        <constraint firstAttribute="trailing" secondItem="rBh-zU-szL" secondAttribute="trailing" constant="32" id="m3o-Yg-cwU"/>
+                        <constraint firstAttribute="trailing" secondItem="rBh-zU-szL" secondAttribute="trailing" constant="24" id="m3o-Yg-cwU"/>
                         <constraint firstItem="rBh-zU-szL" firstAttribute="centerY" secondItem="fBi-lh-U16" secondAttribute="centerY" id="s7H-EL-Ng8"/>
                     </constraints>
                 </view>
@@ -88,7 +88,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aTL-aL-fiX" secondAttribute="trailing" constant="24" id="CrS-1C-pyg"/>
-                <constraint firstItem="R4L-cn-WUd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.189" id="DiZ-GT-W0R"/>
+                <constraint firstItem="R4L-cn-WUd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="DiZ-GT-W0R"/>
                 <constraint firstItem="aTL-aL-fiX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.812" id="J4J-n7-zhQ"/>
                 <constraint firstItem="cpX-Ur-W8w" firstAttribute="top" secondItem="R4L-cn-WUd" secondAttribute="bottom" constant="32" id="Phk-4S-snP"/>
                 <constraint firstItem="aTL-aL-fiX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="bF0-Z0-pDc"/>

@@ -57,7 +57,7 @@
 		B633A9F72754932A00A00EFD /* ShowUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9F62754932A00A00EFD /* ShowUserInfoDataManager.swift */; };
 		B633A9F92754933200A00EFD /* ShowUserInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9F82754933200A00EFD /* ShowUserInfoEntity.swift */; };
 		B633A9FD2754950100A00EFD /* EditUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */; };
-		B633A9FE2754950100A00EFD /* EditUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B633A9FC2754950100A00EFD /* EditUserInfoViewController.xib */; };
+		B633AA002754A66000A00EFD /* EditUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B633A9FF2754A66000A00EFD /* EditUserInfo.storyboard */; };
 		B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */; };
 		B63A1F362747ADC90077CC76 /* AddStudyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */; };
 		B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */; };
@@ -208,7 +208,7 @@
 		B633A9F62754932A00A00EFD /* ShowUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoDataManager.swift; sourceTree = "<group>"; };
 		B633A9F82754933200A00EFD /* ShowUserInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoEntity.swift; sourceTree = "<group>"; };
 		B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoViewController.swift; sourceTree = "<group>"; };
-		B633A9FC2754950100A00EFD /* EditUserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUserInfoViewController.xib; sourceTree = "<group>"; };
+		B633A9FF2754A66000A00EFD /* EditUserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditUserInfo.storyboard; sourceTree = "<group>"; };
 		B63A1F332747ADBF0077CC76 /* AddStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyDataManager.swift; sourceTree = "<group>"; };
 		B63A1F352747ADC90077CC76 /* AddStudyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyEntity.swift; sourceTree = "<group>"; };
 		B63A1F372747ADD00077CC76 /* SingleStudyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudyInput.swift; sourceTree = "<group>"; };
@@ -684,7 +684,7 @@
 		B633A9FA275494EA00A00EFD /* EditUserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				B633A9FC2754950100A00EFD /* EditUserInfoViewController.xib */,
+				B633A9FF2754A66000A00EFD /* EditUserInfo.storyboard */,
 				B633A9FB2754950100A00EFD /* EditUserInfoViewController.swift */,
 			);
 			path = EditUserInfo;
@@ -1306,13 +1306,13 @@
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6A33E97274F72FC004E88B0 /* CalendarAlertViewController.xib in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
+				B633AA002754A66000A00EFD /* EditUserInfo.storyboard in Resources */,
 				B61FAC4C2752763F007458A1 /* RepeatStudyCollectionViewCell.xib in Resources */,
 				B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */,
 				B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */,
 				B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */,
-				B633A9FE2754950100A00EFD /* EditUserInfoViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B66B47892732894A00F89012 /* RewardViewController.xib in Resources */,

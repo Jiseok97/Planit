@@ -28,6 +28,7 @@ class MyPageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,15 +42,15 @@ class MyPageViewController: UIViewController {
         self.nicknameView.layer.cornerRadius = 8
         self.logoutBtn.layer.cornerRadius = 8
         self.logoutBtn.layer.borderColor = UIColor.placeHolderColor.cgColor
-        self.logoutBtn.layer.borderWidth = 1
-        
-        if userInfoData != nil {
-            self.nicknameLbl.text = userInfoData?.nickname
-        }
+        self.logoutBtn.layer.borderWidth = 0.5
     }
     
     @IBAction func editUserInfo(_ sender: Any) {
+        let sbName = UIStoryboard(name: "EditUserInfo", bundle: nil)
+        let ibSB = sbName.instantiateViewController(identifier: "EditUserInfoViewController")
         
+        self.navigationController?.pushViewController(ibSB, animated: false)
+
     }
     
     
@@ -63,5 +64,7 @@ class MyPageViewController: UIViewController {
 extension MyPageViewController {
     func showUserInfo(result: ShowUserInfoEntity) {
         self.userInfoData = result
+        
+        self.nicknameLbl.text = userInfoData?.nickname
     }
 }
