@@ -115,8 +115,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     
     @objc func selectToday(_ noti: Notification) {
-        self.calendarView.appearance.selectionColor = .link
-        calendar(self.calendarView, didSelect: Date(), at: .current)
+        self.calendarView.select(Date())
     }
     
     @objc func reloadStudy(_ noti : Notification) {

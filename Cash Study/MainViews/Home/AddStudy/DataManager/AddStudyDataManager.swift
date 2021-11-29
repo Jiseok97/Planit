@@ -22,7 +22,8 @@ import Alamofire
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
-
+                     NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)
+                     
                  case 409:
                      viewController.isAlreadyExist = true
                      print("동일한 공부 제목이 이미 존재")
@@ -45,7 +46,8 @@ import Alamofire
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
-                     print("Repeat study added!")
+                     NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)
+                     
 
                  case 409:
                      viewController.isAlreadyExist = true
