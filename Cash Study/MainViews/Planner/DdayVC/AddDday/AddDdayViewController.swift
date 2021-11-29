@@ -316,8 +316,6 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
-    
-    
     @IBAction func dismissBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

@@ -21,6 +21,7 @@ import Alamofire
                  case 201:
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
 
                  case 409:
                      viewController.isAlreadyExist = true
@@ -43,6 +44,7 @@ import Alamofire
                  case 201:
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
                      print("Repeat study added!")
 
                  case 409:

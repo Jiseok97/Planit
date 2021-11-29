@@ -58,6 +58,8 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadStudy(_:)), name: NSNotification.Name("reloadStudy"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(selectToday(_:)), name: NSNotification.Name("selectToday"), object: nil)
+        
 //        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("finishedStudy"), object: nil)
 //
 //        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("noFinishedStudy"), object: nil)
@@ -67,6 +69,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadStudy"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("selectToday"), object: nil)
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("finishedStudy"), object: nil)
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("noFinishedStudy"), object: nil)
     }
@@ -111,6 +114,11 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     
+    @objc func selectToday(_ noti: Notification) {
+        self.calendarView.appearance.selectionColor = .link
+        calendar(self.calendarView, didSelect: Date(), at: .current)
+    }
+    
     @objc func reloadStudy(_ noti : Notification) {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
@@ -138,7 +146,6 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
         calendar.appearance.titleFont = UIFont(name: "NotoSansKR-Bold", size: 14)
         
         let dateFormatter = DateFormatter()

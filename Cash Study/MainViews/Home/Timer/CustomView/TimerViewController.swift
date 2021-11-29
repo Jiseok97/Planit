@@ -83,6 +83,7 @@ class TimerViewController: UIViewController {
         self.circleView.layer.zPosition = 999
         self.circleView._maximumRevolutions = 24
         self.circleView._currentValue = 0.0
+        self.circleView.isUserInteractionEnabled = false
         
         self.circleBgView.layer.cornerRadius = circleBgView.bounds.width / 2
         self.circleBgView.clipsToBounds = true

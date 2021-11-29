@@ -21,6 +21,7 @@ import Alamofire
                  case 204:
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)
                      
                  default:
                      print("오류")

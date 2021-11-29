@@ -22,6 +22,7 @@ class DeleteDdayDataManager {
                     viewController.checkSuccess = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     
+                    
                 default:
                     print("오류")
                 }
