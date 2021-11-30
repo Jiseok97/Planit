@@ -115,6 +115,8 @@
 		B6B118552716D262008842BA /* PlanitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118542716D262008842BA /* PlanitUITests.swift */; };
 		B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B118652716D7B0008842BA /* LoginViewController.swift */; };
 		B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B118662716D7B0008842BA /* LoginViewController.xib */; };
+		B6B1F88B2755F02000E84CE7 /* TermsAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1F8892755F02000E84CE7 /* TermsAlertViewController.swift */; };
+		B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B1F88A2755F02000E84CE7 /* TermsAlertViewController.xib */; };
 		B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B22697272933860021A9A4 /* SelectGenderViewController.swift */; };
 		B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */; };
 		B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2269C272941370021A9A4 /* SelectJobViewController.swift */; };
@@ -283,6 +285,8 @@
 		B6B118562716D262008842BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B118652716D7B0008842BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6B118662716D7B0008842BA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6B1F8892755F02000E84CE7 /* TermsAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAlertViewController.swift; sourceTree = "<group>"; };
+		B6B1F88A2755F02000E84CE7 /* TermsAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAlertViewController.xib; sourceTree = "<group>"; };
 		B6B22697272933860021A9A4 /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
 		B6B2269927293C080021A9A4 /* InputBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBirthdayViewController.swift; sourceTree = "<group>"; };
 		B6B2269C272941370021A9A4 /* SelectJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobViewController.swift; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 		B6196613274F0F510004EA10 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				B6B1F8882755F00800E84CE7 /* TerrmsAlert */,
 				B63352A62755297300D1914D /* RestAlert */,
 				B633AA0F2754EA4600A00EFD /* TimerAlert */,
 				B604DA3E2751272A00783E79 /* OneButton */,
@@ -1114,6 +1119,15 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
+		B6B1F8882755F00800E84CE7 /* TerrmsAlert */ = {
+			isa = PBXGroup;
+			children = (
+				B6B1F88A2755F02000E84CE7 /* TermsAlertViewController.xib */,
+				B6B1F8892755F02000E84CE7 /* TermsAlertViewController.swift */,
+			);
+			path = TerrmsAlert;
+			sourceTree = "<group>";
+		};
 		B6B2269E272941460021A9A4 /* NavigationVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1419,6 +1433,7 @@
 				B66B478D2732895800F89012 /* AnalysisViewController.xib in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
+				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
@@ -1523,6 +1538,7 @@
 				B6C455B12730289C00B1326A /* HaveReceiverDataManager.swift in Sources */,
 				B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */,
 				B6C455B527302A3800B1326A /* HaveReceiverInput.swift in Sources */,
+				B6B1F88B2755F02000E84CE7 /* TermsAlertViewController.swift in Sources */,
 				B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */,
 				B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */,
 				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,

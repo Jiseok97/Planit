@@ -21,10 +21,14 @@
                 <outlet property="allCheckBtn" destination="661-3Y-E3v" id="RLK-F6-w6t"/>
                 <outlet property="allCheckView" destination="Vdz-JQ-7UH" id="y2W-yc-UEc"/>
                 <outlet property="confirmBtn" destination="xuw-bo-Asz" id="BTk-Od-WkF"/>
+                <outlet property="firstBtn" destination="Cua-fa-oEJ" id="xKH-MV-svW"/>
                 <outlet property="firstCheckBox" destination="8AV-Fr-IF7" id="vm2-C5-7hr"/>
+                <outlet property="fourthBtn" destination="jsx-tT-GAU" id="tao-YD-X9z"/>
                 <outlet property="fourthCheckBox" destination="VU7-dz-tOi" id="qAU-V8-wrM"/>
+                <outlet property="secondBtn" destination="V3K-Dh-bEW" id="jSb-CS-bap"/>
                 <outlet property="secondCheckBox" destination="QEO-cn-cgY" id="KyI-95-ovh"/>
                 <outlet property="selectiveView" destination="qww-tR-OGH" id="WuE-vv-CTO"/>
+                <outlet property="thirdBtn" destination="Pam-Q5-G2p" id="U9O-rM-l67"/>
                 <outlet property="thirdCheckBox" destination="HHb-yy-RrR" id="CyU-8x-z6v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -147,18 +151,30 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cua-fa-oEJ">
                             <rect key="frame" x="322" y="33" width="16" height="22"/>
                             <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="jD5-n8-5wv"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-Dh-bEW">
                             <rect key="frame" x="322" y="81" width="16" height="22"/>
                             <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="sTW-zs-W4k"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pam-Q5-G2p">
                             <rect key="frame" x="322" y="129" width="16" height="22"/>
                             <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="Him-qR-b2o"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsx-tT-GAU">
                             <rect key="frame" x="322" y="177" width="16" height="22"/>
                             <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="ISu-ZR-ilH"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>

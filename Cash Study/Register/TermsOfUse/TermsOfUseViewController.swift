@@ -19,6 +19,12 @@ class TermsOfUseViewController: UIViewController {
     @IBOutlet weak var fourthCheckBox: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
+    @IBOutlet weak var firstBtn: UIButton!
+    @IBOutlet weak var secondBtn: UIButton!
+    @IBOutlet weak var thirdBtn: UIButton!
+    @IBOutlet weak var fourthBtn: UIButton!
+    
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +98,29 @@ class TermsOfUseViewController: UIViewController {
         }
     }
 
+    @IBAction func showTermsAlert(_ sender: UIButton) {
+        switch sender {
+        case firstBtn:
+            let vc = TermsAlertViewController(idx: 1)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
+        case secondBtn:
+            let vc = TermsAlertViewController(idx: 2)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
+        case thirdBtn:
+            let vc = TermsAlertViewController(idx: 3)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
+        default:
+            let vc = TermsAlertViewController(idx: 4)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
+    }
     
     
     // MARK: 다음으로 이동
