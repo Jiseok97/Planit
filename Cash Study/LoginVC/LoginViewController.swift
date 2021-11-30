@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var kakaoLoginView: UIView!
     @IBOutlet weak var appleLoginView: UIView!
+    @IBOutlet weak var appleLoginBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,11 +78,12 @@ class LoginViewController: UIViewController {
     @IBAction func appleBtnTapped(_ sender: Any) {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
-        
+
         let controller = ASAuthorizationController(authorizationRequests: [request])
         controller.delegate = self
         controller.presentationContextProvider = self
         controller.performRequests()
+        
     }
 }
 
@@ -96,17 +98,24 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     
     // 로그인 성공
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
         
-        guard let email = appleIDCredential.email else { return }
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            let userIdentifier = appleIDCredential.user
+            let userName = appleIDCredential.fullName
+            let userEmail = appleIDCredential.email
+            let dbEmail = UserDefaults.standard.string(forKey: "appleEmail")
+            
+            UserDefaults.standard.set(userIdentifier, forKey: "appleIdentifier")
+            UserDefaults.standard.set(userEmail, forKey: "appleEmail")
+            
+            UserInfoData.email = userEmail ?? dbEmail!
+            loginCheck(userEmail ?? dbEmail!)
+            
+        default:
+            break
+        }
         
-        UserInfoData.email = email
-        
-        print("Apple ID Credential User Identifier → \(appleIDCredential.user)")
-        print("Apple ID Credential User Name → \(String(describing: appleIDCredential.fullName))")
-        print("User Email → \(String(describing: appleIDCredential.email))")
-        
-        self.loginCheck(email)
     }
     
     // 로그인 시 에러
