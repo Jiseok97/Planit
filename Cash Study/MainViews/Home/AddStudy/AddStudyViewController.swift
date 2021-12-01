@@ -73,6 +73,9 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     var stTitle: String = ""
     var isEdit: Bool = false
     
+    var startDay : Int = 0
+    var endDay : Int = 0
+    
     init(stGrId: Int, stSchId: Int, title: String, isEdit: Bool) {
         self.stGrId = stGrId
         self.stSchId = stSchId
@@ -85,7 +88,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    var btnCheck : Bool = true
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -188,6 +191,95 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.endAtLbl.text = Constant.DATE_TEXT
             Constant.DATE_TEXT = ""
         }
+        
+        dateBtnCollection.forEach {
+            $0.isEnabled = true
+            $0.isSelected = false
+            $0.backgroundColor = UIColor.homeBorderColor
+            $0.setTitleColor(.placeHolderColor, for: .normal)
+        }
+        self.everyDayBtn.isEnabled = true
+        self.everyDayBtn.isSelected = false
+        self.everyDayBtn.backgroundColor = UIColor.homeBorderColor
+        self.everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
+        
+        limitDateBtn()
+    }
+    
+    
+    func limitDateBtn() {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "E"
+        
+        let datefm = DateFormatter()
+        datefm.dateFormat = "yyyyMMdd"
+        
+        var allDateLst : [String] = [ "월", "화", "수", "목", "금", "토", "일" ]
+        
+        if startDay == 0 {
+            let txt = datefm.string(from: Date())
+            startDay = Int(txt)!
+        }
+        
+        let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
+        self.endDay = Int(txt)!
+        
+        
+        print("start = \(startDay) && end = \(endDay)")
+        
+        if endDay - startDay < 6 {
+            self.tappedDayButtons.removeAll()
+            for i in startDay...endDay {
+                let data = datefm.date(from: String(describing: i))!
+                let a = df.string(from: data)
+                allDateLst.removeAll(where: { $0 == a } )
+                print(a)
+            }
+            
+            allDateLst.forEach {
+                switch $0 {
+                case "월":
+                    print("월요일 비활성화")
+                    limitBtnSetup(self.mondayBtn)
+
+                    
+                case "화":
+                    print("화요일 비활성화")
+                    limitBtnSetup(self.tuesdayBtn)
+
+                    
+                case "수":
+                    print("수요일 비활성화")
+                    limitBtnSetup(self.wednesdayBtn)
+
+                    
+                case "목":
+                    print("목요일 비활성화")
+                    limitBtnSetup(self.thursdayBtn)
+
+                    
+                case "금":
+                    print("금요일 비활성화")
+                    limitBtnSetup(self.fridayBtn)
+
+                    
+                case "토":
+                    print("토요일 비활성화")
+                    limitBtnSetup(self.saturdayBtn)
+
+                    
+                default:
+                    print("일요일 비활성화")
+                    limitBtnSetup(self.sundayBtn)
+//                    self.btnCheck = false
+                }
+                limitBtnSetup(self.everyDayBtn)
+            }
+        } else {
+            self.tappedDayButtons.removeAll()
+        }
+    
     }
     
     
@@ -214,6 +306,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.isRepeat = false
             self.repeatSd.value = 0.0
             thirdView.isHidden = true
+            print("tappedButtonLst = \(tappedDayButtons)")
             
         }
     }
@@ -221,7 +314,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func dayBtnTapped(_ sender: UIButton) {
-        var btnCheck : Bool = true
         guard let txt = sender.titleLabel?.text else { return }
         
         if sender == everyDayBtn {
@@ -243,98 +335,107 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
         }
         
-    
-        if !sender.isSelected {
-            
-            sender.isSelected = true
-            sender.backgroundColor = UIColor.link
-            sender.setTitleColor(.myGray, for: .normal)
-           
-            dateBtnCollection.forEach {
-                if !$0.isSelected {
-                    btnCheck = false
+        
+        if sender.isEnabled == true {
+            if !sender.isSelected {
+                sender.isSelected = true
+                sender.backgroundColor = UIColor.link
+                sender.setTitleColor(.myGray, for: .normal)
+               
+                dateBtnCollection.forEach {
+                    if !$0.isSelected {
+                        btnCheck = false
+                    }
                 }
-            }
-            
-            switch txt {
                 
-            case "월":
-                tappedDayButtons.append(String("MONDAY"))
-                
-            case "화":
-                tappedDayButtons.append(String("TUESDAY"))
-                
-            case "수":
-                tappedDayButtons.append(String("WEDNESDAY"))
-                
-            case "목":
-                tappedDayButtons.append(String("THURSDAY"))
-                
-            case "금":
-                tappedDayButtons.append(String("FRIDAY"))
-                
-            case "토":
-                tappedDayButtons.append(String("SATURDAY"))
-                
-            case "일":
-                tappedDayButtons.append(String("SUNDAY"))
-                
-            default:
-                tappedDayButtons.removeAll()
-                tappedDayButtons.append(String("MONDAY"))
-                tappedDayButtons.append(String("TUESDAY"))
-                tappedDayButtons.append(String("WEDNESDAY"))
-                tappedDayButtons.append(String("THURSDAY"))
-                tappedDayButtons.append(String("FRIDAY"))
-                tappedDayButtons.append(String("SATURDAY"))
-                tappedDayButtons.append(String("SUNDAY"))
-            }
-            
-            if btnCheck {
-                for date in dateBtnCollection {
-                    date.isSelected = false
-                    date.backgroundColor = UIColor.homeBorderColor
-                    date.setTitleColor(.placeHolderColor, for: .normal)
+                switch txt {
                     
-                    everyDayBtn.isSelected = true
-                    everyDayBtn.backgroundColor = UIColor.link
-                    everyDayBtn.setTitleColor(.myGray, for: .normal)
+                case "월":
+                    tappedDayButtons.append(String("MONDAY"))
+                    
+                case "화":
+                    tappedDayButtons.append(String("TUESDAY"))
+                    
+                case "수":
+                    tappedDayButtons.append(String("WEDNESDAY"))
+                    
+                case "목":
+                    tappedDayButtons.append(String("THURSDAY"))
+                    
+                case "금":
+                    tappedDayButtons.append(String("FRIDAY"))
+                    
+                case "토":
+                    tappedDayButtons.append(String("SATURDAY"))
+                    
+                case "일":
+                    tappedDayButtons.append(String("SUNDAY"))
+                    
+                default:
+                    dateBtnCollection.forEach {
+                        if $0.isEnabled == true {
+                            
+                        }
+                    }
+                    tappedDayButtons.removeAll()
+                    tappedDayButtons.append(String("MONDAY"))
+                    tappedDayButtons.append(String("TUESDAY"))
+                    tappedDayButtons.append(String("WEDNESDAY"))
+                    tappedDayButtons.append(String("THURSDAY"))
+                    tappedDayButtons.append(String("FRIDAY"))
+                    tappedDayButtons.append(String("SATURDAY"))
+                    tappedDayButtons.append(String("SUNDAY"))
                 }
+                
+                if everyDayBtn.isEnabled == true {
+                    if btnCheck {
+                        for date in dateBtnCollection {
+                            date.isSelected = false
+                            date.backgroundColor = UIColor.homeBorderColor
+                            date.setTitleColor(.placeHolderColor, for: .normal)
+                            
+                            everyDayBtn.isSelected = true
+                            everyDayBtn.backgroundColor = UIColor.link
+                            everyDayBtn.setTitleColor(.myGray, for: .normal)
+                        }
+                    }
+                }
+                
+            } else {
+                sender.isSelected = false
+                sender.backgroundColor = UIColor.homeBorderColor
+                sender.setTitleColor(.placeHolderColor, for: .normal)
+                
+                switch txt {
+                    
+                case "월":
+                    tappedDayButtons.removeAll(where: { $0 == "MONDAY"} )
+                    
+                case "화":
+                    tappedDayButtons.removeAll(where: { $0 == "TUESDAY"} )
+                    
+                case "수":
+                    tappedDayButtons.removeAll(where: { $0 == "WEDNESDAY"} )
+                    
+                case "목":
+                    tappedDayButtons.removeAll(where: { $0 == "THURSDAY"} )
+                    
+                case "금":
+                    tappedDayButtons.removeAll(where: { $0 == "FRIDAY"} )
+                    
+                case "토":
+                    tappedDayButtons.removeAll(where: { $0 == "SATURDAY"} )
+                    
+                case "일":
+                    tappedDayButtons.removeAll(where: { $0 == "SUNDAY"} )
+                  
+                default:
+                    tappedDayButtons.removeAll()
+                }
+                
             }
-            
-        } else {
-            sender.isSelected = false
-            sender.backgroundColor = UIColor.homeBorderColor
-            sender.setTitleColor(.placeHolderColor, for: .normal)
-            
-            switch txt {
-                
-            case "월":
-                tappedDayButtons.removeAll(where: { $0 == "MONDAY"} )
-                
-            case "화":
-                tappedDayButtons.removeAll(where: { $0 == "TUESDAY"} )
-                
-            case "수":
-                tappedDayButtons.removeAll(where: { $0 == "WEDNESDAY"} )
-                
-            case "목":
-                tappedDayButtons.removeAll(where: { $0 == "THURSDAY"} )
-                
-            case "금":
-                tappedDayButtons.removeAll(where: { $0 == "FRIDAY"} )
-                
-            case "토":
-                tappedDayButtons.removeAll(where: { $0 == "SATURDAY"} )
-                
-            case "일":
-                tappedDayButtons.removeAll(where: { $0 == "SUNDAY"} )
-              
-            default:
-                tappedDayButtons.removeAll()
-            }
-            
         }
+        
         
     }
     

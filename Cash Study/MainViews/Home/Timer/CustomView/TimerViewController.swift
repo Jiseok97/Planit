@@ -124,6 +124,7 @@ class TimerViewController: UIViewController {
     @objc func showRestTimer(_ noti: Notification) {
         self.restCnt += 1
         self.restCntLbl.text = "\(String(describing: restCnt))회"
+        
         let vc = RestTimerViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)

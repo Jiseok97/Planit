@@ -170,4 +170,10 @@ extension UIViewController {
     }
     
     
+    func limitBtnSetup(_ btn: UIButton) {
+        btn.backgroundColor = .mainNavy
+        btn.setTitleColor(UIColor.homeBorderColor, for: .normal)
+        btn.isEnabled = false
+    }
+    
 }
