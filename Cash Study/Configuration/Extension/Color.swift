@@ -32,4 +32,5 @@ extension UIColor {
     class var topDdayGrColor : UIColor { UIColor(hex: 0x00D8FF) }
     class var bottomDdayGrColor : UIColor { UIColor(hex: 0xDCB92C) }
     class var remainDdayColor: UIColor { UIColor(hex: 0x1C6EE7) }
+    class var homeTimeTxtColor: UIColor { UIColor(hex: 0xDCB92D) }
 }

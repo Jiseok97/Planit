@@ -249,8 +249,11 @@ extension HomeViewController {
             let sec = String(describing: totalTime % 60 )
             let min = String(describing: (totalTime / 60) % 60 )
             let hour = String(describing: totalTime / 3600)
+            let text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
+            let atrbuteString = NSMutableAttributedString(string: text)
+            atrbuteString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.homeTimeTxtColor, range: (text as NSString).range(of: "\(hour)시간 \(min)분 \(sec)초"))
             
-            self.topLbl.text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
+            self.topLbl.attributedText = atrbuteString
         }
     }
     
