@@ -32,6 +32,7 @@ class TimerAlertViewController: UIViewController {
     
     @IBAction func dismissBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("PutRecordNotDone"), object: nil)
     }
     
     @IBAction func confirmBtn(_ sender: Any) {

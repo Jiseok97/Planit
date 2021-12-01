@@ -100,7 +100,7 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func cancleBtnTapped(_ sender: Any) {
-        if isLogout {
+        if isLogout || isTimer {
             dismiss(animated: true, completion: nil)
         } else {
             changeRootVC(BaseTabBarController())

@@ -86,12 +86,15 @@ class StopTimerViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(putRecordDone(_:)), name: NSNotification.Name("PutRecordDone"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(putRecordNotDone(_:)), name: NSNotification.Name("PutRecordNotDone"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("PutRecordDone"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("PutRecordNotDone"), object: nil)
     }
 
     
@@ -109,6 +112,14 @@ class StopTimerViewController: UIViewController {
             showIndicator()
             PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
         }
+    }
+    
+    @objc func putRecordNotDone(_ noti: Notification) {
+        let totalRes = totalRcrd + additionalRcrd
+        
+        let input = PutRecordInput(isDone: false, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: totalRes)
+        showIndicator()
+        PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
     }
     
     @IBAction func dismissBtn(_ sender: Any) {
