@@ -55,6 +55,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
+        showIndicator()
         let td = DateFormatter()
         td.dateFormat = "yyyy-MM-dd"
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
@@ -234,6 +235,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
 extension HomeViewController {
     func homeStudy(result : ShowDateStudyEntity) {
+        dismissIndicator()
         var totalTime : Int = 0
         
         self.todayStudyLst = result

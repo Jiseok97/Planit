@@ -313,12 +313,14 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             if isEdit {
                 // 편집 모드
                 let input = EditDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
+                showIndicator()
                 EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
             }
             
             else {
                 // 추가 모드
                 let input = AddDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
+                showIndicator()
                 AddDdayDataManager().addDday(input, viewController: self)
             }
         }

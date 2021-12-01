@@ -7,7 +7,7 @@
 
 import Alamofire
 
- class AddStudyDataManager {
+class AddStudyDataManager : UIViewController {
      let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                 .accept("application/json")]
 
@@ -19,12 +19,14 @@ import Alamofire
 
                  switch code {
                  case 201:
+                     self.dismissIndicator()
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)
                      
                  case 409:
+                     self.dismissIndicator()
                      viewController.isAlreadyExist = true
                      print("동일한 공부 제목이 이미 존재")
 
@@ -43,6 +45,7 @@ import Alamofire
 
                  switch code {
                  case 201:
+                     self.dismissIndicator()
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
@@ -50,6 +53,7 @@ import Alamofire
                      
 
                  case 409:
+                     self.dismissIndicator()
                      viewController.isAlreadyExist = true
                      print("동일한 공부 제목이 존재")
 

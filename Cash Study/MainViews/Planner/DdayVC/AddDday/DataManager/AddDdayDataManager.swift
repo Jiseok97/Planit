@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class AddDdayDataManager {
+class AddDdayDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -18,7 +18,7 @@ class AddDdayDataManager {
                 let code = response.response?.statusCode
                 switch code {
                 case 201:
-                    print("생성완료")
+                    self.dismissIndicator()
                     viewController.checkSuccess = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     Constant.DATE = ""

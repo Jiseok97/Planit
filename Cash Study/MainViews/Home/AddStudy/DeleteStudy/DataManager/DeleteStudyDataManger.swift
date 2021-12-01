@@ -7,7 +7,7 @@
 
 import Alamofire
 
- class DeleteStudyDataManager {
+class DeleteStudyDataManager : UIViewController {
      let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                 .accept("application/json")]
 
@@ -19,6 +19,7 @@ import Alamofire
                  
                  switch code {
                  case 204:
+                     self.dismissIndicator()
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)

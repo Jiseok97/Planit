@@ -7,7 +7,7 @@
 
 import Alamofire
 
- class EditStudyDataManager {
+class EditStudyDataManager : UIViewController {
      let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                 .accept("application/json")]
 
@@ -19,9 +19,11 @@ import Alamofire
 
                  switch code {
                  case 200:
+                     self.dismissIndicator()
                      viewController.checkSuccess = true
                      
                  case 409:
+                     self.dismissIndicator()
                      viewController.isAlreadyExist = true
 
                  default:
@@ -39,10 +41,12 @@ import Alamofire
 
                  switch code {
                  case 200:
+                     self.dismissIndicator()
                      viewController.checkSuccess = true
                      viewController.editRpSuccess = true
                      
                  case 409:
+                     self.dismissIndicator()
                      viewController.isAlreadyExist = true
 
                  default:

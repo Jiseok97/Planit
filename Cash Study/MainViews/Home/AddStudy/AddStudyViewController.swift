@@ -485,10 +485,12 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                         present(vc, animated: true)
                     } else {
                         let input = EditRepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                        showIndicator()
                         EditStudyDataManager().editRepeatStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
                     }
                 } else {
                     let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                    showIndicator()
                     AddStudyDataManager().repeatStudy(input, viewController: self)
                 }
             }
@@ -501,10 +503,12 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                     present(vc, animated: true)
                 } else {
                     let input = EditStudyInput(title: title, startAt: sDate)
+                    showIndicator()
                     EditStudyDataManager().editSingleStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
                 }
             } else {
                 let input = SingleStudyInput(title: title, startAt: sDate)
+                showIndicator()
                 AddStudyDataManager().singleStudy(input, viewController: self)
             }
         }
@@ -512,6 +516,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func delteBtnTapped(_ sender: Any) {
+        showIndicator()
         DeleteStudyDataManager().deleteStudy(stGroupId: stGrId, viewController: self)
     }
     

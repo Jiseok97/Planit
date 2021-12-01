@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class EditDdayDataManager {
+class EditDdayDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -18,6 +18,7 @@ class EditDdayDataManager {
                 let code = response.response?.statusCode
                 switch code {
                 case 200:
+                    self.dismissIndicator()
                     print("편집완료")
                     viewController.checkEdit = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
