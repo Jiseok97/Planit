@@ -64,7 +64,8 @@ class MyPageViewController: UIViewController {
     
     
     @IBAction func logoutBtn(_ sender: Any) {
-        
+        changeRootVC(LoginViewController())
+        Constant.MY_ACCESS_TOKEN = ""
     }
     
 }

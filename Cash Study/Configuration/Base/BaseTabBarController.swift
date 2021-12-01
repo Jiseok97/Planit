@@ -11,16 +11,12 @@ import UIKit
 class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
     let homeViewController = HomeViewController()
     let plannerViewController = PlannerViewController()
-    let rewardViewController = RewardViewController()
-    let analysisViewController = AnalysisViewController()
     let mypageViewController = MyPageViewController()
     
     
     let homeTabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "homeTab"), tag: 0)
     let plannerTabBarItem = UITabBarItem(title: "플래너", image: UIImage(named: "plannerTab"), tag: 1)
-    let rewardTabBarItem = UITabBarItem(title: "리워드", image: UIImage(named: "rewardTab"), tag: 2)
-    let analysisTabBarItem = UITabBarItem(title: "분석", image: UIImage(named: "analysisTab"), tag: 3)
-    let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 4)
+    let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 2)
     
     
     override func viewDidLoad() {
@@ -28,17 +24,13 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
 
         let homeVC = UINavigationController(rootViewController: homeViewController)
         let plannerVC = UINavigationController(rootViewController: plannerViewController)
-        let rewardVC = UINavigationController(rootViewController: rewardViewController)
-        let analysisVC = UINavigationController(rootViewController: analysisViewController)
         let mypageVC = UINavigationController(rootViewController: mypageViewController)
         
         homeVC.tabBarItem = homeTabBarItem
         plannerVC.tabBarItem = plannerTabBarItem
-        rewardVC.tabBarItem = rewardTabBarItem
-        analysisVC.tabBarItem = analysisTabBarItem
         mypageVC.tabBarItem = mypageTabBarItem
         
-        self.viewControllers = [homeVC, plannerVC, rewardVC, analysisVC, mypageVC]
+        self.viewControllers = [homeVC, plannerVC, mypageVC]
         
         
         self.delegate = self
