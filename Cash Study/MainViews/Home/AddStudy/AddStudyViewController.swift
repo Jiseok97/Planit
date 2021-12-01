@@ -272,7 +272,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 default:
                     print("일요일 비활성화")
                     limitBtnSetup(self.sundayBtn)
-//                    self.btnCheck = false
                 }
                 limitBtnSetup(self.everyDayBtn)
             }
@@ -306,7 +305,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.isRepeat = false
             self.repeatSd.value = 0.0
             thirdView.isHidden = true
-            print("tappedButtonLst = \(tappedDayButtons)")
             
         }
     }
@@ -327,12 +325,14 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             // 나머지 버튼들을 눌렀을 때
-            if everyDayBtn.isSelected {
-                tappedDayButtons.removeAll()
+            if everyDayBtn.isEnabled == true {
+                if everyDayBtn.isSelected {
+                    tappedDayButtons.removeAll()
+                }
+                everyDayBtn.isSelected = false
+                everyDayBtn.backgroundColor = UIColor.homeBorderColor
+                everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
             }
-            everyDayBtn.isSelected = false
-            everyDayBtn.backgroundColor = UIColor.homeBorderColor
-            everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
         }
         
         
