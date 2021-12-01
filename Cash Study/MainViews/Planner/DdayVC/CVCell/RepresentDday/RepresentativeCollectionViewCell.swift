@@ -19,5 +19,12 @@ class RepresentativeCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        dDayNameLbl.text = nil
+        dDayLbl.text = nil
+        timeLbl.text = nil
+        iconImgView.image = nil
+    }
 
 }

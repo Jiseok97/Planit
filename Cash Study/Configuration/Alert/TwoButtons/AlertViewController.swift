@@ -25,12 +25,14 @@ class AlertViewController: UIViewController {
     var subMsg : String = ""
     var confirmBtnTxt : String = ""
     var isTimer : Bool = false
+    var isLogout: Bool = false
     
-    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool) {
+    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool, isLogout: Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.confirmBtnTxt = btnTitle
         self.isTimer = isTimer
+        self.isLogout = isLogout
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -78,8 +80,14 @@ class AlertViewController: UIViewController {
             dismiss(animated: true, completion: nil)
             
         case "확인":
-            NotificationCenter.default.post(name: NSNotification.Name("setRepresent"), object: nil)
-            dismiss(animated: true, completion: nil)
+            if isLogout {
+                NotificationCenter.default.post(name: NSNotification.Name("Logout"), object: nil)
+                dismiss(animated: true, completion: nil)
+            } else {
+                NotificationCenter.default.post(name: NSNotification.Name("setRepresent"), object: nil)
+                dismiss(animated: true, completion: nil)
+            }
+            
             
         case "멈춤":
             dismiss(animated: true, completion: nil)
@@ -92,7 +100,11 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func cancleBtnTapped(_ sender: Any) {
-        changeRootVC(BaseTabBarController())
+        if isLogout {
+            dismiss(animated: true, completion: nil)
+        } else {
+            changeRootVC(BaseTabBarController())
+        }
     }
     
     

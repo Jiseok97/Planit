@@ -60,9 +60,6 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         NotificationCenter.default.addObserver(self, selector: #selector(selectToday(_:)), name: NSNotification.Name("selectToday"), object: nil)
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("finishedStudy"), object: nil)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(<#T##@objc method#>), name: NSNotification.Name("noFinishedStudy"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,8 +67,6 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadStudy"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("selectToday"), object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("finishedStudy"), object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("noFinishedStudy"), object: nil)
     }
     
     
@@ -79,6 +74,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     func setUI() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        showIndicator()
         ShowDateStudyDataManager().showStudy(date: dateFormatter.string(from: Date()), viewController: self)
         
         self.calendarView.layer.cornerRadius = 8
@@ -121,6 +117,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     @objc func reloadStudy(_ noti : Notification) {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
+        showIndicator()
         ShowDateStudyDataManager().showStudy(date: df.string(from: Date()), viewController: self)
     }
     
@@ -149,7 +146,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
+        showIndicator()
         ShowDateStudyDataManager().showStudy(date: dateFormatter.string(from: date), viewController: self)
     }
     
@@ -182,11 +179,11 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 
                 if studyDataLst?.studies[indexPath.row].isDone == true {
-                    cell.checkBox.setImage(UIImage(named: "Check"), for: .normal)
+                    cell.checkBox.image = UIImage(named: "Check")
                 } else {
-                    cell.checkBox.setImage(UIImage(named: "noCheck"), for: .normal)
+                    cell.checkBox.image = UIImage(named: "noCheck")
                 }
-                
+                print("isDone = \(studyDataLst?.studies[indexPath.row].isDone)")
                 return cell
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repeatStudyCell", for: indexPath) as? RepeatStudyCollectionViewCell else { return UICollectionViewCell() }
@@ -201,9 +198,9 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 cell.repeatLbl.text = "\(String(describing: startTxt!))~\(String(describing: endTxt!))"
                 
                 if studyDataLst?.studies[indexPath.row].isDone == true {
-                    cell.checkBox.setImage(UIImage(named: "Check"), for: .normal)
+                    cell.checkBox.image = UIImage(named: "Check")
                 } else {
-                    cell.checkBox.setImage(UIImage(named: "noCheck"), for: .normal)
+                    cell.checkBox.image = UIImage(named: "noCheck")
                 }
                 
                 
@@ -254,6 +251,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
 
 extension PlannerPageViewController {
     func showStudy(result : ShowDateStudyEntity) {
+        self.dismissIndicator()
         self.studyDataLst = result
         self.studyCV.reloadData()
         self.studyDataLst?.studies.sort { $0.startAt < $1.startAt }

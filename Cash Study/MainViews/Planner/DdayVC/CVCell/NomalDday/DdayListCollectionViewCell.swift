@@ -21,6 +21,12 @@ class DdayListCollectionViewCell: UICollectionViewCell {
         setUI()
     }
     
+    override func prepareForReuse() {
+        dDayLbl.text = nil
+        dDayName.text = nil
+        timeLbl.text = nil
+        iconImgView.image = nil
+    }
     
     func setUI() {
         self.bgView.backgroundColor = UIColor.homeBorderColor

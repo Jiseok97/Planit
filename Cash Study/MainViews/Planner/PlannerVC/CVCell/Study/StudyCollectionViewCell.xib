@@ -22,12 +22,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="347" height="175"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZn-nZ-kg4">
-                        <rect key="frame" x="16" y="75.5" width="24" height="24"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="noCheck"/>
-                        <state key="selected" image="Check"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수학문제 풀기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk0-yO-mVL">
                         <rect key="frame" x="54" y="74.5" width="150" height="20.5"/>
                         <constraints>
@@ -40,27 +34,33 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextImg" translatesAutoresizingMaskIntoConstraints="NO" id="tcQ-D1-pyH">
                         <rect key="frame" x="303" y="75.5" width="24" height="24"/>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noCheck" translatesAutoresizingMaskIntoConstraints="NO" id="x4B-ld-igg">
+                        <rect key="frame" x="16" y="75.5" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="dRw-uC-TlN"/>
+                            <constraint firstAttribute="height" constant="24" id="hrQ-QF-yky"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="tcQ-D1-pyH" secondAttribute="trailing" constant="20" id="TWh-uh-bqE"/>
-                <constraint firstItem="qZn-nZ-kg4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="hdT-Dj-2c4"/>
-                <constraint firstItem="qZn-nZ-kg4" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="i0z-H7-2b2"/>
-                <constraint firstItem="Yk0-yO-mVL" firstAttribute="leading" secondItem="qZn-nZ-kg4" secondAttribute="trailing" constant="14" id="mZ4-0L-9kp"/>
+                <constraint firstItem="x4B-ld-igg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lO3-6b-uSh"/>
+                <constraint firstItem="x4B-ld-igg" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="pbO-Bm-aOI"/>
+                <constraint firstItem="Yk0-yO-mVL" firstAttribute="leading" secondItem="x4B-ld-igg" secondAttribute="trailing" constant="14" id="ptc-0l-tba"/>
                 <constraint firstItem="tcQ-D1-pyH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="t6K-Wl-7Sd"/>
                 <constraint firstItem="Yk0-yO-mVL" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.97" id="zKh-R2-HUq"/>
             </constraints>
             <size key="customSize" width="347" height="175"/>
             <connections>
-                <outlet property="checkBox" destination="qZn-nZ-kg4" id="0U1-WJ-NPA"/>
+                <outlet property="checkBox" destination="x4B-ld-igg" id="peF-rm-WAp"/>
                 <outlet property="titleLbl" destination="Yk0-yO-mVL" id="Dv1-Kg-ynk"/>
             </connections>
             <point key="canvasLocation" x="145.6521739130435" y="84.040178571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Check" width="24" height="24"/>
         <image name="nextImg" width="24" height="24"/>
         <image name="noCheck" width="24" height="24"/>
     </resources>

@@ -20,7 +20,7 @@ class LoginDataManager : UIViewController{
                     guard let refreshToken = response.value?.refreshToken else { return }
                     
                     if result {
-                        print("기존 유저")
+                        self.dismissIndicator()
                         self.changeRootVC(BaseTabBarController())
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
@@ -34,7 +34,7 @@ class LoginDataManager : UIViewController{
                         print(refreshToken)
                         
                     } else {
-                        print("신규 유저")
+                        self.dismissIndicator()
                         self.changeRootVC(TermsOfUseViewController())
                     }
                     

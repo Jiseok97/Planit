@@ -71,6 +71,7 @@ class LoginViewController: UIViewController {
     
     func loginCheck(_ email: String) {
         let input = LoginInput(email: email)
+        showIndicator()
         LoginDataManager().userLogin(input, viewController: self)
     }
     

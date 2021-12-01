@@ -32,6 +32,8 @@ class MyPageViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(editUserInfoNoti(_:)), name: NSNotification.Name("EditUserInfo"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(logout(_:)), name: NSNotification.Name("Logout"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,6 +41,7 @@ class MyPageViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("EditUserInfo"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("Logout"), object: nil)
     }
     
     
@@ -50,9 +53,17 @@ class MyPageViewController: UIViewController {
         self.logoutBtn.layer.borderWidth = 0.5
     }
     
+    
     @objc func editUserInfoNoti(_ noti : Notification) {
         ShowUserInfoDataManager().showUserInfo(viewController: self)
     }
+    
+    
+    @objc func logout(_ noti: Notification) {
+        changeRootVC(LoginViewController())
+        Constant.MY_ACCESS_TOKEN = ""
+    }
+    
     
     @IBAction func editUserInfo(_ sender: Any) {
         let sbName = UIStoryboard(name: "EditUserInfo", bundle: nil)
@@ -64,8 +75,9 @@ class MyPageViewController: UIViewController {
     
     
     @IBAction func logoutBtn(_ sender: Any) {
-        changeRootVC(LoginViewController())
-        Constant.MY_ACCESS_TOKEN = ""
+        let vc = AlertViewController(mainMsg: "로그아웃 하시겠습니까?", subMsg: "", btnTitle: "확인", isTimer: false, isLogout: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
 }

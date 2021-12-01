@@ -15,6 +15,7 @@ class noReceiverDataManager : UIViewController {
                 let code = response.response?.statusCode
                 switch code {
                 case 201:
+                    self.dismissIndicator()
                     guard let email = response.value?.email else { return }
                     guard let name = response.value?.name else { return }
                     guard let nickname = response.value?.nickname else { return }
@@ -43,6 +44,7 @@ class noReceiverDataManager : UIViewController {
                     self.changeRootVC(BaseTabBarController())
                     
                 case 409:
+                    self.dismissIndicator()
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
 

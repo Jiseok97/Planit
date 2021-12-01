@@ -50,6 +50,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
 
         setUI()
+        showIndicator()
         ShowRecordDataManager().showRecord(stId: self.stId, viewController: self)
     }
     
@@ -181,7 +182,7 @@ class TimerViewController: UIViewController {
             
             let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
             
-            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true)
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false)
             vc.modalPresentationStyle = .overFullScreen
             timer?.invalidate()
             present(vc, animated: true)
@@ -189,6 +190,7 @@ class TimerViewController: UIViewController {
         
     }
     
+    //  MARK:  타이머 멈춤 기능 
     @IBAction func dismissTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -198,6 +200,7 @@ class TimerViewController: UIViewController {
 
 extension TimerViewController {
     func showRecord(result : ShowRecordEntity) {
+        self.dismissIndicator()
         self.recordDataLst = result
         
         guard let reward = recordDataLst?.star else { return }

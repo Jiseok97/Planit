@@ -98,11 +98,8 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         // 홈 이동
         let input =  HaveReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, receiverNickname: recommander)
         
+        showIndicator()
         HaveReceiverDataManager().user(input ,viewController: self)
-        
-        if !checkUser {
-            // 홈으로 다시 돌아가게 하기 ?
-        }
         
     }
     
@@ -110,6 +107,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         // 스킵 → 홈 이동
         let input =  noReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree)
         
+        showIndicator()
         noReceiverDataManager().user(input ,viewController: self)
         
         if checkUser {

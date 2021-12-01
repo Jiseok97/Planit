@@ -19,5 +19,5 @@ class HaveRprDdayCollectionViewCell: UICollectionViewCell {
         
         displayDdayView.layer.cornerRadius = 8
     }
-
+    
 }

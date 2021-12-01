@@ -280,7 +280,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func sliderTapped(_ sender: Any) {
         if checkRepresentSd.value == 0.0 {
-            let vc = AlertViewController(mainMsg: "대표 디데이를 설정하시겠어요?", subMsg: "홈에 표시되는 대표 디데이는\n1개만 설정할 수 있어요", btnTitle: "확인", isTimer: false)
+            let vc = AlertViewController(mainMsg: "대표 디데이를 설정하시겠어요?", subMsg: "홈에 표시되는 대표 디데이는\n1개만 설정할 수 있어요", btnTitle: "확인", isTimer: false, isLogout: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
@@ -333,7 +333,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     
     
     @IBAction func deleteTapBtn(_ sender: Any) {
-        let vc = AlertViewController(mainMsg: "디데이를 삭제하시겠습니까?", subMsg: "", btnTitle: "삭제", isTimer: false)
+        let vc = AlertViewController(mainMsg: "디데이를 삭제하시겠습니까?", subMsg: "", btnTitle: "삭제", isTimer: false, isLogout: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

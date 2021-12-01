@@ -9,7 +9,8 @@ import UIKit
 
 class RepeatStudyCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var checkBox: UIButton!
+    
+    @IBOutlet weak var checkBox: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var repeatLbl: UILabel!
     
@@ -17,6 +18,5 @@ class RepeatStudyCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        checkBox.isEnabled = false
     }
 }

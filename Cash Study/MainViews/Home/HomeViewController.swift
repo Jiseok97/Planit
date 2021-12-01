@@ -74,6 +74,7 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadHome"), object: nil)
     }
     
+    
     // MARK: Functions
     func setUI() {
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
@@ -198,6 +199,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     
                     cell.subLbl.text = changeText
                     cell.subLbl.textColor = UIColor.link
+                } else {
+                    cell.subLbl.textColor = UIColor.cancleAlertColor
+                    cell.subLbl.text = "측정된 공부시간이 없습니다"
                 }
                 
                 return cell

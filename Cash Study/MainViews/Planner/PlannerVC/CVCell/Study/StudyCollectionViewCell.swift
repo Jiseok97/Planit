@@ -9,12 +9,13 @@ import UIKit
 
 class StudyCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var checkBox: UIButton!
+    
+    @IBOutlet weak var checkBox: UIImageView!
     @IBOutlet var titleLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        checkBox.isEnabled = false
     }
+    
 }

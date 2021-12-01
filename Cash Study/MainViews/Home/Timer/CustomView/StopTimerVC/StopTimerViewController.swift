@@ -77,7 +77,7 @@ class StopTimerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        showIndicator()
         ShowRecordDataManager().showRecordST(stId: stId, viewController: self)
         
         let vc = TimerAlertViewController()
@@ -105,8 +105,8 @@ class StopTimerViewController: UIViewController {
             present(vc, animated: true)
             
         } else {
-            let input = PutRecordInput(isDone: false, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: totalRes)
-            
+            let input = PutRecordInput(isDone: true, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: totalRes)
+            showIndicator()
             PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
         }
     }
@@ -119,6 +119,7 @@ class StopTimerViewController: UIViewController {
 
 extension StopTimerViewController {
     func showRecordST(result: ShowRecordEntity) {
+        self.dismissIndicator()
         self.isDone = result.isDone
     }
 }

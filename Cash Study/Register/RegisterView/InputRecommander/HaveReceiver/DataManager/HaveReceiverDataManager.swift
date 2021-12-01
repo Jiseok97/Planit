@@ -15,6 +15,7 @@ class HaveReceiverDataManager : UIViewController {
                 let code = response.response?.statusCode
                 switch code {
                 case 201:
+                    self.dismissIndicator()
                     guard let id = response.value?.id else { return }
                     guard let email = response.value?.email else { return }
                     guard let name = response.value?.name else { return }
@@ -44,10 +45,12 @@ class HaveReceiverDataManager : UIViewController {
                     self.changeRootVC(BaseTabBarController())
                     
                 case 404:
+                    self.dismissIndicator()
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "닉네임이 존재하지 않습니다.")
 
                 case 409:
+                    self.dismissIndicator()
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
                 default:

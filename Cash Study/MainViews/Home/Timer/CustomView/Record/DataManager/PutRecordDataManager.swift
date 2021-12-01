@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class PutRecordDataManager {
+class PutRecordDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -18,9 +18,11 @@ class PutRecordDataManager {
                 let code = response.response?.statusCode
                 switch code {
                 case 200:
+                    self.dismissIndicator()
                     print("성공")
                     
                 case 409:
+                    self.dismissIndicator()
                     print("이미 완료")
                     
                 default:
