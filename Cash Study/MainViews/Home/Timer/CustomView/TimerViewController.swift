@@ -32,6 +32,10 @@ class TimerViewController: UIViewController {
     var recordDataLst: ShowRecordEntity?
     var stId: Int
     var restCnt : Int = 0
+    var rw : Int = 0
+    var bn : Int = 0
+    var rewardCnt: Int = 0
+    var bonusCnt: Int = 0
     
     init(title: String, stId: Int) {
         self.studyTitle = title
@@ -109,18 +113,9 @@ class TimerViewController: UIViewController {
     }
     
     @objc func timerStop(_ noti: Notification) {
-        // 가지고 갈 것
-        // 시간, 쉬는 횟수, 리워드, 보너스
-        guard let star = Int(self.rewardCntLbl.text!) else { return }
-        guard let bonus = Int(self.bonusCntLbl.text!) else { return }
-        let totalRcrd = self.prevRcrd
-        
-        
-        timer?.invalidate()
-        let stvc = StopTimerViewController(stId: stId, title: self.studyTitle, totalRcrd: totalRcrd, additionalRcrd: self.timeCnt, starCnt: star, bonusCnt: bonus, restCnt: self.restCnt, isEdit: false)
+        let stvc = StopTimerViewController(stId: stId, title: self.studyTitle, totalRcrd: self.prevRcrd, additionalRcrd: self.timeCnt, starCnt: self.rewardCnt, bonusCnt: self.bonusCnt, restCnt: self.restCnt, isEdit: false)
         stvc.modalPresentationStyle = .overFullScreen
         present(stvc, animated: true)
-        
     }
     
     @objc func showRestTimer(_ noti: Notification) {
@@ -147,6 +142,17 @@ class TimerViewController: UIViewController {
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.rw += 1
+            self.bn += 1
+            if self.rw % 300 == 0 {
+                self.rw *= 0
+                self.rewardCnt += 1
+            }
+            if self.bn % 3600 == 0 {
+                self.bn *= 0
+                self.bonusCnt += 1
+            }
+            
             self.timeCnt += 1
             self.circleView._currentValue += 1
             if self.circleView._currentValue > 3599.9 {
@@ -156,6 +162,9 @@ class TimerViewController: UIViewController {
             DispatchQueue.main.async {
                 let timeString = self.makeTimeLabel(count: self.timeCnt)
                 self.timerLbl.text = timeString
+                self.rewardCntLbl.text = "\(self.rewardCnt)"
+                self.bonusCntLbl.text = "\(self.bonusCnt)"
+                
             }
         })
     }
@@ -191,9 +200,20 @@ class TimerViewController: UIViewController {
         
     }
     
-    //  MARK:  타이머 멈춤 기능 
     @IBAction func dismissTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        if self.stopBtn.titleLabel!.text == "타이머 시작하기" {
+            startTimer()
+            isTimerStop(self.stopBtn, false)
+        } else {
+            isTimerStop(self.stopBtn, true)
+            
+            let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
+            
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false)
+            vc.modalPresentationStyle = .overFullScreen
+            timer?.invalidate()
+            present(vc, animated: true)
+        }
     }
     
 }

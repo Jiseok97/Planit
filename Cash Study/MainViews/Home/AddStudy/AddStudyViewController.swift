@@ -226,51 +226,35 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         self.endDay = Int(txt)!
         
         
-        print("start = \(startDay) && end = \(endDay)")
-        
         if endDay - startDay < 6 {
             self.tappedDayButtons.removeAll()
             for i in startDay...endDay {
                 let data = datefm.date(from: String(describing: i))!
                 let a = df.string(from: data)
                 allDateLst.removeAll(where: { $0 == a } )
-                print(a)
             }
             
             allDateLst.forEach {
                 switch $0 {
                 case "월":
-                    print("월요일 비활성화")
                     limitBtnSetup(self.mondayBtn)
-
                     
                 case "화":
-                    print("화요일 비활성화")
                     limitBtnSetup(self.tuesdayBtn)
-
                     
                 case "수":
-                    print("수요일 비활성화")
                     limitBtnSetup(self.wednesdayBtn)
-
                     
                 case "목":
-                    print("목요일 비활성화")
                     limitBtnSetup(self.thursdayBtn)
-
                     
                 case "금":
-                    print("금요일 비활성화")
                     limitBtnSetup(self.fridayBtn)
-
                     
                 case "토":
-                    print("토요일 비활성화")
                     limitBtnSetup(self.saturdayBtn)
-
                     
                 default:
-                    print("일요일 비활성화")
                     limitBtnSetup(self.sundayBtn)
                 }
                 limitBtnSetup(self.everyDayBtn)
@@ -315,7 +299,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         guard let txt = sender.titleLabel?.text else { return }
         
         if sender == everyDayBtn {
-            // 매일 버튼 눌렀을 때
             if !everyDayBtn.isSelected {
                 dateBtnCollection.forEach {
                     $0.isSelected = false
@@ -324,7 +307,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         } else {
-            // 나머지 버튼들을 눌렀을 때
             if everyDayBtn.isEnabled == true {
                 if everyDayBtn.isSelected {
                     tappedDayButtons.removeAll()
