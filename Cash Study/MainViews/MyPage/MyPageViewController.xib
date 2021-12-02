@@ -12,6 +12,9 @@
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansKR-Bold</string>
         </array>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
         </array>
@@ -20,6 +23,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="logoutBtn" destination="aTL-aL-fiX" id="AlN-Zh-Oq4"/>
+                <outlet property="myGiftView" destination="bAc-O0-gEA" id="ujc-AF-pLC"/>
+                <outlet property="myPointView" destination="hcB-Az-eVc" id="LCc-mY-Cyh"/>
                 <outlet property="nicknameLbl" destination="fBi-lh-U16" id="VE4-jv-FEV"/>
                 <outlet property="nicknameView" destination="cpX-Ur-W8w" id="Utu-fn-h0Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -84,17 +89,77 @@
                         <action selector="logoutBtn:" destination="-1" eventType="touchUpInside" id="ZjS-uW-kJI"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcB-Az-eVc">
+                    <rect key="frame" x="24" y="265" width="178.5" height="119.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPoint" translatesAutoresizingMaskIntoConstraints="NO" id="Viq-p2-dEh">
+                            <rect key="frame" x="24" y="24" width="32" height="32"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포인트 내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92b-Wj-BpV">
+                            <rect key="frame" x="24" y="67.5" width="79" height="24"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-E2-CBT">
+                            <rect key="frame" x="103" y="73" width="16" height="16"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Viq-p2-dEh" firstAttribute="centerY" secondItem="hcB-Az-eVc" secondAttribute="centerY" multiplier="0.67" id="4l9-b0-Kh0"/>
+                        <constraint firstItem="92b-Wj-BpV" firstAttribute="centerY" secondItem="hcB-Az-eVc" secondAttribute="centerY" multiplier="1.33" id="BNj-yq-99R"/>
+                        <constraint firstItem="xtc-E2-CBT" firstAttribute="centerY" secondItem="92b-Wj-BpV" secondAttribute="centerY" multiplier="1.02" id="OK2-uI-g4q"/>
+                        <constraint firstItem="xtc-E2-CBT" firstAttribute="leading" secondItem="92b-Wj-BpV" secondAttribute="trailing" id="YaO-P7-ozr"/>
+                        <constraint firstItem="Viq-p2-dEh" firstAttribute="leading" secondItem="hcB-Az-eVc" secondAttribute="leading" constant="24" id="lF6-sd-fy5"/>
+                        <constraint firstItem="92b-Wj-BpV" firstAttribute="leading" secondItem="hcB-Az-eVc" secondAttribute="leading" constant="24" id="vEu-Du-HwK"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAc-O0-gEA">
+                    <rect key="frame" x="211.5" y="265" width="178.5" height="119.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myGift" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-hn-4vp">
+                            <rect key="frame" x="24" y="24" width="32" height="32"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기프티콘 내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7g-nz-BJQ">
+                            <rect key="frame" x="24" y="67.5" width="93" height="23.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="gds-7D-e7z">
+                            <rect key="frame" x="117" y="73" width="16" height="16"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.066666666669999999" green="0.070588235289999995" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="L7g-nz-BJQ" firstAttribute="centerY" secondItem="bAc-O0-gEA" secondAttribute="centerY" multiplier="1.33" id="BSx-hd-pnG"/>
+                        <constraint firstItem="gds-7D-e7z" firstAttribute="centerY" secondItem="L7g-nz-BJQ" secondAttribute="centerY" multiplier="1.02" id="Hra-uO-RYt"/>
+                        <constraint firstItem="gds-7D-e7z" firstAttribute="leading" secondItem="L7g-nz-BJQ" secondAttribute="trailing" id="SuE-BO-OPP"/>
+                        <constraint firstItem="L7g-nz-BJQ" firstAttribute="leading" secondItem="bAc-O0-gEA" secondAttribute="leading" constant="24" id="Yn6-r6-Nb5"/>
+                        <constraint firstItem="dQa-hn-4vp" firstAttribute="centerY" secondItem="bAc-O0-gEA" secondAttribute="centerY" multiplier="0.67" id="lH0-Td-1ig"/>
+                        <constraint firstItem="dQa-hn-4vp" firstAttribute="leading" secondItem="bAc-O0-gEA" secondAttribute="leading" constant="24" id="mGQ-2R-o7X"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
+                <constraint firstItem="hcB-Az-eVc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3UR-Ul-cMI"/>
+                <constraint firstItem="hcB-Az-eVc" firstAttribute="width" secondItem="cpX-Ur-W8w" secondAttribute="width" multiplier="0.48765" id="42H-KT-5c9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bAc-O0-gEA" secondAttribute="trailing" constant="24" id="4uE-ww-2v2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aTL-aL-fiX" secondAttribute="trailing" constant="24" id="CrS-1C-pyg"/>
                 <constraint firstItem="R4L-cn-WUd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="DiZ-GT-W0R"/>
+                <constraint firstItem="bAc-O0-gEA" firstAttribute="width" secondItem="hcB-Az-eVc" secondAttribute="width" id="HqC-Pw-jr5"/>
                 <constraint firstItem="aTL-aL-fiX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.812" id="J4J-n7-zhQ"/>
+                <constraint firstItem="hcB-Az-eVc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.133232" id="LyQ-0D-vEg"/>
                 <constraint firstItem="cpX-Ur-W8w" firstAttribute="top" secondItem="R4L-cn-WUd" secondAttribute="bottom" constant="32" id="Phk-4S-snP"/>
                 <constraint firstItem="aTL-aL-fiX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="bF0-Z0-pDc"/>
+                <constraint firstItem="bAc-O0-gEA" firstAttribute="centerY" secondItem="hcB-Az-eVc" secondAttribute="centerY" id="bWN-KU-ffE"/>
+                <constraint firstItem="bAc-O0-gEA" firstAttribute="height" secondItem="hcB-Az-eVc" secondAttribute="height" id="cdm-aK-A8u"/>
                 <constraint firstItem="cpX-Ur-W8w" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.126116" id="dY3-0q-gml"/>
                 <constraint firstItem="R4L-cn-WUd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="hsh-M6-xRz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cpX-Ur-W8w" secondAttribute="trailing" constant="24" id="jnD-hj-OG7"/>
+                <constraint firstItem="hcB-Az-eVc" firstAttribute="top" secondItem="cpX-Ur-W8w" secondAttribute="bottom" constant="12" id="urW-qQ-XP2"/>
                 <constraint firstItem="cpX-Ur-W8w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="xnd-Dt-mwR"/>
             </constraints>
             <point key="canvasLocation" x="132" y="51"/>
@@ -102,7 +167,10 @@
     </objects>
     <resources>
         <image name="mpEdit" width="32" height="32"/>
+        <image name="myGift" width="32" height="32"/>
         <image name="myPage" width="89" height="19"/>
+        <image name="myPoint" width="32" height="32"/>
+        <image name="rightArrow" width="16" height="16"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

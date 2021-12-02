@@ -91,6 +91,8 @@
 		B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B479427328C6E00F89012 /* LoginDataManager.swift */; };
 		B66B479727328C7300F89012 /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B479627328C7300F89012 /* LoginInput.swift */; };
 		B66B479927328C7900F89012 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B479827328C7900F89012 /* LoginEntity.swift */; };
+		B66BAFBF2758BB78009CAA31 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66BAFBD2758BB78009CAA31 /* ProductCollectionViewCell.swift */; };
+		B66BAFC02758BB78009CAA31 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66BAFBE2758BB78009CAA31 /* ProductCollectionViewCell.xib */; };
 		B6709E55272BD7C100847491 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6709E54272BD7C100847491 /* NotificationName.swift */; };
 		B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E61272BF05300847491 /* SelectGender.storyboard */; };
 		B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E64272BF1CB00847491 /* InputBirthday.storyboard */; };
@@ -253,6 +255,8 @@
 		B66B479427328C6E00F89012 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		B66B479627328C7300F89012 /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
 		B66B479827328C7900F89012 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		B66BAFBD2758BB78009CAA31 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		B66BAFBE2758BB78009CAA31 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6709E54272BD7C100847491 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		B6709E61272BF05300847491 /* SelectGender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGender.storyboard; sourceTree = "<group>"; };
 		B6709E64272BF1CB00847491 /* InputBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputBirthday.storyboard; sourceTree = "<group>"; };
@@ -416,8 +420,7 @@
 		B60A9DCF275894E800AC3E1B /* Reward */ = {
 			isa = PBXGroup;
 			children = (
-				B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */,
-				B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */,
+				B66BAFBB2758BB54009CAA31 /* RewardShop */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -923,6 +926,25 @@
 				B66B479827328C7900F89012 /* LoginEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		B66BAFBB2758BB54009CAA31 /* RewardShop */ = {
+			isa = PBXGroup;
+			children = (
+				B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */,
+				B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */,
+				B66BAFBC2758BB60009CAA31 /* CVCell */,
+			);
+			path = RewardShop;
+			sourceTree = "<group>";
+		};
+		B66BAFBC2758BB60009CAA31 /* CVCell */ = {
+			isa = PBXGroup;
+			children = (
+				B66BAFBE2758BB78009CAA31 /* ProductCollectionViewCell.xib */,
+				B66BAFBD2758BB78009CAA31 /* ProductCollectionViewCell.swift */,
+			);
+			path = CVCell;
 			sourceTree = "<group>";
 		};
 		B6709E60272BF03700847491 /* SelectGender */ = {
@@ -1434,6 +1456,7 @@
 				B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */,
 				B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */,
 				B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */,
+				B66BAFC02758BB78009CAA31 /* ProductCollectionViewCell.xib in Resources */,
 				B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */,
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
@@ -1509,6 +1532,7 @@
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */,
+				B66BAFBF2758BB78009CAA31 /* ProductCollectionViewCell.swift in Sources */,
 				B633AA072754D38400A00EFD /* EditUserInfoDataManager.swift in Sources */,
 				B6D81E1D2732B8EA006E641E /* CheckTokenDataManager.swift in Sources */,
 				B633AA092754D3D800A00EFD /* EditUserInfoEntity.swift in Sources */,

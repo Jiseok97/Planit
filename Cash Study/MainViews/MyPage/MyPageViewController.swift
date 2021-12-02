@@ -12,6 +12,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var nicknameView: UIView!
     @IBOutlet weak var nicknameLbl: UILabel!
     @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var myPointView: UIView!
+    @IBOutlet weak var myGiftView: UIView!
     
     var userInfoData : ShowUserInfoEntity?
     
@@ -48,6 +50,9 @@ class MyPageViewController: UIViewController {
     // MARK: Function
     func setUI() {
         self.nicknameView.layer.cornerRadius = 8
+        self.myPointView.layer.cornerRadius = 8
+        self.myGiftView.layer.cornerRadius = 8
+        
         self.logoutBtn.layer.cornerRadius = 8
         self.logoutBtn.layer.borderColor = UIColor.placeHolderColor.cgColor
         self.logoutBtn.layer.borderWidth = 0.5
