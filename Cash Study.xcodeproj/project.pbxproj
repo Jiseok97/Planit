@@ -18,6 +18,8 @@
 		B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */; };
 		B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */; };
 		B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */; };
+		B60A9DD22758951700AC3E1B /* RewardShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */; };
+		B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
 		B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */; };
 		B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */; };
@@ -178,6 +180,8 @@
 		B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../캐•스 자료/이미지자료/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardShopViewController.swift; sourceTree = "<group>"; };
+		B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardShopViewController.xib; sourceTree = "<group>"; };
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
 		B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerPageViewController.swift; sourceTree = "<group>"; };
 		B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlannerPageViewController.xib; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 			children = (
 				B66B47742732704C00F89012 /* Home */,
 				B66B477B2732797F00F89012 /* Planner */,
+				B60A9DCF275894E800AC3E1B /* Reward */,
 				B66B47852732892000F89012 /* MyPage */,
 			);
 			path = MainViews;
@@ -406,6 +411,15 @@
 				B608E508274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift */,
 			);
 			path = HaveRepresentCell;
+			sourceTree = "<group>";
+		};
+		B60A9DCF275894E800AC3E1B /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */,
+				B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */,
+			);
+			path = Reward;
 			sourceTree = "<group>";
 		};
 		B614C461273A9CEE00A5E8F9 /* PlannerVC */ = {
@@ -1405,6 +1419,7 @@
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
+				B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
@@ -1545,6 +1560,7 @@
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
 				B63E67D12753DCCC00C891C2 /* ShowRecordDataManager.swift in Sources */,
 				B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */,
+				B60A9DD22758951700AC3E1B /* RewardShopViewController.swift in Sources */,
 				B61FAD1127363D0800D11538 /* HaveStudyCollectionViewCell.swift in Sources */,
 				B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
