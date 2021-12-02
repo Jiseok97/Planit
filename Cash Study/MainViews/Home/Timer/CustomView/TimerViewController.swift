@@ -113,7 +113,8 @@ class TimerViewController: UIViewController {
         // 시간, 쉬는 횟수, 리워드, 보너스
         guard let star = Int(self.rewardCntLbl.text!) else { return }
         guard let bonus = Int(self.bonusCntLbl.text!) else { return }
-        let totalRcrd = self.prevRcrd + self.timeCnt
+        let totalRcrd = self.prevRcrd
+        
         
         timer?.invalidate()
         let stvc = StopTimerViewController(stId: stId, title: self.studyTitle, totalRcrd: totalRcrd, additionalRcrd: self.timeCnt, starCnt: star, bonusCnt: bonus, restCnt: self.restCnt, isEdit: false)

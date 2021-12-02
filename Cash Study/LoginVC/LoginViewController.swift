@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var kakaoLoginView: UIView!
     @IBOutlet weak var appleLoginView: UIView!
     @IBOutlet weak var appleLoginBtn: UIButton!
+    @IBOutlet weak var logoImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
     func setUI() {
         kakaoLoginView.layer.cornerRadius = 6
         appleLoginView.layer.cornerRadius = 6
+        logoImgView.layer.cornerRadius = 8
     }
     
     

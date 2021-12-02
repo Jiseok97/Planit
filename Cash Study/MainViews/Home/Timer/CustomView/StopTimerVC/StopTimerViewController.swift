@@ -52,6 +52,8 @@ class StopTimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("totalRcrd = \(totalRcrd) && additionalRcrd = \(additionalRcrd)")
 
         self.firstView.layer.cornerRadius = 8
         self.restView.layer.cornerRadius = 8
