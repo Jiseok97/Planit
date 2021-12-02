@@ -23,7 +23,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="logoutBtn" destination="aTL-aL-fiX" id="AlN-Zh-Oq4"/>
-                <outlet property="myGiftView" destination="bAc-O0-gEA" id="ujc-AF-pLC"/>
+                <outlet property="myGiftView" destination="bAc-O0-gEA" id="5dB-gm-5PM"/>
                 <outlet property="myPointView" destination="hcB-Az-eVc" id="LCc-mY-Cyh"/>
                 <outlet property="nicknameLbl" destination="fBi-lh-U16" id="VE4-jv-FEV"/>
                 <outlet property="nicknameView" destination="cpX-Ur-W8w" id="Utu-fn-h0Z"/>
