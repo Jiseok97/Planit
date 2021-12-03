@@ -183,7 +183,6 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 } else {
                     cell.checkBox.image = UIImage(named: "noCheck")
                 }
-                print("isDone = \(studyDataLst?.studies[indexPath.row].isDone)")
                 return cell
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repeatStudyCell", for: indexPath) as? RepeatStudyCollectionViewCell else { return UICollectionViewCell() }

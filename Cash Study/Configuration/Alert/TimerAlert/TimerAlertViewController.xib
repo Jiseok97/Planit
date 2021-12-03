@@ -46,7 +46,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF7-xn-lh8">
-                            <rect key="frame" x="32" y="124" width="166" height="46"/>
+                            <rect key="frame" x="32" y="134" width="166" height="46"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="2qq-5s-TJx"/>
                             </constraints>
@@ -60,7 +60,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-mM-6e8">
-                            <rect key="frame" x="216" y="124" width="166" height="46"/>
+                            <rect key="frame" x="216" y="134" width="166" height="46"/>
                             <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="14"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -79,7 +79,7 @@
                         <constraint firstItem="sLE-W3-Zcl" firstAttribute="centerY" secondItem="9az-Ex-div" secondAttribute="centerY" multiplier="0.63324" id="7M0-tY-uhO"/>
                         <constraint firstItem="dhb-4G-xal" firstAttribute="leading" secondItem="sLE-W3-Zcl" secondAttribute="trailing" constant="30" id="9tU-jp-NzP"/>
                         <constraint firstItem="dhb-4G-xal" firstAttribute="centerX" secondItem="9az-Ex-div" secondAttribute="centerX" multiplier="1.05" id="Lpn-2B-9BK"/>
-                        <constraint firstAttribute="bottom" secondItem="GF7-xn-lh8" secondAttribute="bottom" constant="40" id="TQI-r2-qlZ"/>
+                        <constraint firstAttribute="bottom" secondItem="GF7-xn-lh8" secondAttribute="bottom" constant="30" id="TQI-r2-qlZ"/>
                         <constraint firstItem="GF7-xn-lh8" firstAttribute="leading" secondItem="9az-Ex-div" secondAttribute="leading" constant="32" id="c2h-Z8-qsQ"/>
                         <constraint firstItem="6Tk-mM-6e8" firstAttribute="height" secondItem="GF7-xn-lh8" secondAttribute="height" id="jv0-Zk-gwz"/>
                         <constraint firstItem="dhb-4G-xal" firstAttribute="centerY" secondItem="sLE-W3-Zcl" secondAttribute="centerY" multiplier="0.9423" id="k0B-Id-YI0"/>
