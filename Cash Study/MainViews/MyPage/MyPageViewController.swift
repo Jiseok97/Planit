@@ -84,9 +84,21 @@ class MyPageViewController: UIViewController {
         let ibSB = sbName.instantiateViewController(identifier: "EditUserInfoViewController")
         
         self.navigationController?.pushViewController(ibSB, animated: true)
-
     }
     
+    
+    @IBAction func pointViewTapped(_ sender: Any) {
+        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
+    
+    @IBAction func giftViewTapped(_ sender: Any) {
+        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     
     @IBAction func questionTapped(_ sender: Any) {
