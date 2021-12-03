@@ -10,13 +10,7 @@ import UIKit
 class InputNameViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nextBtn: UIButton!
-    @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nickNameView: UIView!
-    @IBOutlet weak var nameTF: UITextField! {
-        didSet {
-            nameTF.delegate = self
-        }
-    }
     @IBOutlet weak var nickNameTF: UITextField! {
         didSet {
             nickNameTF.delegate = self
@@ -64,9 +58,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MAKR: Functions
     func setUI() {
-        self.nameTF.setPlaceHolderColor(UIColor.placeHolderColor)
         self.nickNameTF.setPlaceHolderColor(UIColor.placeHolderColor)
-        self.nameView.layer.cornerRadius = 11
         self.nickNameView.layer.cornerRadius = 11
         self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
         
@@ -80,11 +72,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameTF {
-            nickNameTF.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
+        textField.resignFirstResponder()
         return true
     }
     
@@ -99,13 +87,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func editChange(_ sender: UITextField) {
-        switch sender {
-        case nameTF:
-            tfIsEmpty(sender, nickNameTF, nextBtn)
-            
-        default:
-            tfIsEmpty(nameTF, sender, nextBtn)
-        }
+        tfIsEmpty(sender, nextBtn)
     }
     
     
@@ -113,11 +95,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: 성별 선택 뷰 이동
     @IBAction func moveSelectGenderVC(_ sender: UIButton) {
-        guard let userName = nameTF.text else { return }
         guard let userNickName = nickNameTF.text else { return }
         
         if checkUserNickName {
-            UserInfoData.name = userName
             UserInfoData.nickname = userNickName
             
             let sbName = UIStoryboard(name: "SelectGender", bundle: nil)

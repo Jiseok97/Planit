@@ -45,7 +45,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="TermsOfUseViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuw-bo-Asz">
-                    <rect key="frame" x="32" y="758" width="350" height="64"/>
+                    <rect key="frame" x="32" y="774.5" width="350" height="64"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="7N1-6g-zsm"/>
@@ -212,7 +212,7 @@
             <constraints>
                 <constraint firstItem="qww-tR-OGH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.23" id="77z-uc-y4Y"/>
                 <constraint firstItem="COd-XV-fWc" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.3" id="BQ6-0e-crp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xuw-bo-Asz" secondAttribute="bottom" constant="40" id="Fm2-oI-TNx"/>
+                <constraint firstItem="xuw-bo-Asz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.8" id="Bce-Z2-e35"/>
                 <constraint firstItem="Vdz-JQ-7UH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="LxJ-0w-0Im"/>
                 <constraint firstItem="qww-tR-OGH" firstAttribute="top" secondItem="Vdz-JQ-7UH" secondAttribute="bottom" constant="12" id="a9K-7X-ZCP"/>
                 <constraint firstItem="COd-XV-fWc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="ewj-CK-9RX"/>

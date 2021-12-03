@@ -14,10 +14,12 @@ class SelectGenderViewController: UIViewController {
     
     @IBOutlet weak var manBtn: UIButton!
     @IBOutlet weak var womanBtn: UIButton!
+    @IBOutlet weak var noSelectBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     
     var manBtnClicked: Bool = false
     var womanBtnClicked: Bool = false
+    var noSelectClicked: Bool = false
     var userSex: String = ""
     
     // MARK: View Life Cycle
@@ -30,13 +32,15 @@ class SelectGenderViewController: UIViewController {
     func setUI() {
         self.manView.layer.cornerRadius = 11
         self.womanView.layer.cornerRadius = 11
+        
         self.manBtn.layer.cornerRadius = 11
         self.womanBtn.layer.cornerRadius = 11
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
+        
         self.manBtn.contentHorizontalAlignment = .left
         self.womanBtn.contentHorizontalAlignment = .left
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
-        swipeRecognizer()
         
+        swipeRecognizer()
         setEnableBtn(confirmBtn)
     }
     
@@ -49,6 +53,7 @@ class SelectGenderViewController: UIViewController {
             setBtnColor(womanBtn, womanBtnClicked)
             userSex = "MALE"
             setAbleBtnState()
+            
         default:
             self.womanBtnClicked = changeBoolValue(buttonChecked: womanBtnClicked)
             setBtnColor(womanBtn, womanBtnClicked)
@@ -70,14 +75,23 @@ class SelectGenderViewController: UIViewController {
     }
     
     
-    @IBAction func moveInputBirthdatVC(_ sender: Any) {
-        let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
-        let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
+    @IBAction func moveInputBirthdatVC(_ sender: UIButton) {
+        switch sender {
+        case confirmBtn:
+            let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
+            let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
+            
+            UserInfoData.sex = userSex
+            self.navigationController?.pushViewController(ibSB, animated: false)
+            
+        default:
+            let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
+            let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
+            
+            UserInfoData.sex = "MALE"
+            self.navigationController?.pushViewController(ibSB, animated: false)
+        }
         
-        UserInfoData.sex = userSex
-        
-        print("사용자의 성별은 \(userSex)입니다.")
-        self.navigationController?.pushViewController(ibSB, animated: false)
     }
     
     @IBAction func backBtn(_ sender: Any) {

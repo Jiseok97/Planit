@@ -12,6 +12,9 @@
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansKR-Bold</string>
         </array>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
         </array>
@@ -72,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-WL-OlS">
-                                <rect key="frame" x="32" y="758" width="350" height="64"/>
+                                <rect key="frame" x="32" y="774.5" width="350" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="g5a-7O-AR2"/>
@@ -86,14 +89,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-WJ-Dla">
-                                <rect key="frame" x="24" y="492" width="366" height="76"/>
+                                <rect key="frame" x="24" y="488" width="366" height="76"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-DW-L1n">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpA-DW-L1n">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="남성">
-                                            <color key="titleColor" systemColor="systemGray2Color"/>
+                                            <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="selectedGender:" destination="BFn-ob-8Df" eventType="touchUpInside" id="ZIk-cM-rli"/>
@@ -110,21 +113,21 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baE-U4-Tf1">
-                                <rect key="frame" x="24" y="580" width="366" height="76"/>
+                                <rect key="frame" x="24" y="576" width="366" height="76"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-p5-PCg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-p5-PCg">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="76"/>
                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="여성">
-                                            <color key="titleColor" systemColor="systemGray2Color"/>
+                                            <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="selectedGender:" destination="BFn-ob-8Df" eventType="touchUpInside" id="0yh-eC-Hb2"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.035294117649999998" green="0.039215686270000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cXj-p5-PCg" firstAttribute="width" secondItem="baE-U4-Tf1" secondAttribute="width" id="HWE-zz-lQd"/>
                                     <constraint firstItem="cXj-p5-PCg" firstAttribute="height" secondItem="baE-U4-Tf1" secondAttribute="height" id="oMv-LW-Iao"/>
@@ -142,6 +145,25 @@
                                     <action selector="backBtn:" destination="BFn-ob-8Df" eventType="touchUpInside" id="Zjr-XW-KjZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGZ-SL-Vpg">
+                                <rect key="frame" x="160.5" y="664" width="93" height="36"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음에 할게요">
+                                    <color key="titleColor" red="0.22352941176470587" green="0.22745098039215686" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveInputBirthdatVC:" destination="BFn-ob-8Df" eventType="touchUpInside" id="GhJ-jE-ctY"/>
+                                    <action selector="selectedGender:" destination="BFn-ob-8Df" eventType="touchUpInside" id="ghF-hC-ivs"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyb-ZV-qUG">
+                                <rect key="frame" x="160.5" y="693" width="93" height="0.5"/>
+                                <color key="backgroundColor" red="0.22352941176470587" green="0.22745098039215686" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.80000000000000004" id="HIp-mP-qzy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XsN-Uc-48j"/>
                         <color key="backgroundColor" red="0.019607843140000001" green="0.023529411760000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,6 +173,9 @@
                             <constraint firstItem="XsN-Uc-48j" firstAttribute="trailing" secondItem="Hw2-WJ-Dla" secondAttribute="trailing" constant="24" id="BK8-xK-u7Y"/>
                             <constraint firstItem="ow7-ww-MAN" firstAttribute="leading" secondItem="TBJ-NO-bwf" secondAttribute="trailing" constant="8" id="CbX-gu-yEo"/>
                             <constraint firstItem="q5y-SB-81q" firstAttribute="top" secondItem="TBJ-NO-bwf" secondAttribute="bottom" constant="12" id="Dda-Ju-7Uu"/>
+                            <constraint firstItem="9ud-WL-OlS" firstAttribute="centerY" secondItem="4GX-HQ-G3R" secondAttribute="centerY" multiplier="1.8" id="F0X-Op-RwX"/>
+                            <constraint firstItem="RGZ-SL-Vpg" firstAttribute="centerX" secondItem="4GX-HQ-G3R" secondAttribute="centerX" id="FCy-XF-HuV"/>
+                            <constraint firstItem="pyb-ZV-qUG" firstAttribute="centerX" secondItem="4GX-HQ-G3R" secondAttribute="centerX" id="Gt7-gQ-tQn"/>
                             <constraint firstItem="QFd-8U-LPE" firstAttribute="leading" secondItem="n5u-Nb-KUS" secondAttribute="trailing" constant="8" id="HaR-aB-rW5"/>
                             <constraint firstItem="XsN-Uc-48j" firstAttribute="trailing" secondItem="baE-U4-Tf1" secondAttribute="trailing" constant="24" id="PAO-q6-kZT"/>
                             <constraint firstItem="P6E-8a-Ltv" firstAttribute="centerY" secondItem="4GX-HQ-G3R" secondAttribute="centerY" multiplier="0.22" id="QXE-QP-MqJ"/>
@@ -160,36 +185,36 @@
                             <constraint firstItem="TBJ-NO-bwf" firstAttribute="leading" secondItem="XsN-Uc-48j" secondAttribute="leading" constant="32" id="U8u-dA-wne"/>
                             <constraint firstItem="wLc-We-pOb" firstAttribute="centerY" secondItem="QFd-8U-LPE" secondAttribute="centerY" id="VxL-8i-vKa"/>
                             <constraint firstItem="XsN-Uc-48j" firstAttribute="trailing" secondItem="9ud-WL-OlS" secondAttribute="trailing" constant="32" id="WGX-FW-SYb"/>
-                            <constraint firstItem="XsN-Uc-48j" firstAttribute="bottom" secondItem="9ud-WL-OlS" secondAttribute="bottom" constant="40" id="YLs-JZ-jNR"/>
                             <constraint firstItem="9ud-WL-OlS" firstAttribute="leading" secondItem="XsN-Uc-48j" secondAttribute="leading" constant="32" id="bQO-5i-9S7"/>
+                            <constraint firstItem="RGZ-SL-Vpg" firstAttribute="top" secondItem="cXj-p5-PCg" secondAttribute="bottom" constant="12" id="c3F-8F-CRh"/>
+                            <constraint firstItem="pyb-ZV-qUG" firstAttribute="width" secondItem="RGZ-SL-Vpg" secondAttribute="width" id="dmc-tQ-yft"/>
+                            <constraint firstItem="pyb-ZV-qUG" firstAttribute="top" secondItem="RGZ-SL-Vpg" secondAttribute="bottom" multiplier="0.99" id="gSG-QR-L2w"/>
                             <constraint firstItem="n5u-Nb-KUS" firstAttribute="centerY" secondItem="ow7-ww-MAN" secondAttribute="centerY" id="lvV-I1-sH2"/>
                             <constraint firstItem="TBJ-NO-bwf" firstAttribute="centerY" secondItem="4GX-HQ-G3R" secondAttribute="centerY" multiplier="0.37" id="oDm-58-rcB"/>
                             <constraint firstItem="QFd-8U-LPE" firstAttribute="centerY" secondItem="n5u-Nb-KUS" secondAttribute="centerY" id="pW4-N0-PDb"/>
                             <constraint firstItem="n5u-Nb-KUS" firstAttribute="leading" secondItem="ow7-ww-MAN" secondAttribute="trailing" constant="8" id="swA-dm-a6Q"/>
                             <constraint firstItem="baE-U4-Tf1" firstAttribute="leading" secondItem="XsN-Uc-48j" secondAttribute="leading" constant="24" id="x4j-tE-lyb"/>
                             <constraint firstItem="wLc-We-pOb" firstAttribute="leading" secondItem="QFd-8U-LPE" secondAttribute="trailing" constant="8" id="yYh-Zp-fl0"/>
-                            <constraint firstItem="baE-U4-Tf1" firstAttribute="centerY" secondItem="4GX-HQ-G3R" secondAttribute="centerY" multiplier="1.38" id="ytr-1V-Zrd"/>
+                            <constraint firstItem="baE-U4-Tf1" firstAttribute="centerY" secondItem="4GX-HQ-G3R" secondAttribute="centerY" multiplier="1.37" id="ytr-1V-Zrd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="confirmBtn" destination="9ud-WL-OlS" id="JaD-tI-Yoi"/>
                         <outlet property="manBtn" destination="YpA-DW-L1n" id="8Hb-qO-8h0"/>
                         <outlet property="manView" destination="Hw2-WJ-Dla" id="zBv-Gs-t47"/>
+                        <outlet property="noSelectBtn" destination="RGZ-SL-Vpg" id="Hv8-Lw-voQ"/>
                         <outlet property="womanBtn" destination="cXj-p5-PCg" id="hqh-9M-1L8"/>
                         <outlet property="womanView" destination="baE-U4-Tf1" id="R7V-LY-NWj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJs-Hy-cRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="700"/>
+            <point key="canvasLocation" x="44.927536231884062" y="699.77678571428567"/>
         </scene>
     </scenes>
     <resources>
         <image name="backArrow" width="24" height="24"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

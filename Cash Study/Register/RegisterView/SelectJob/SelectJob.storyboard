@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCg-ZE-jNj">
-                                <rect key="frame" x="32" y="758" width="350" height="64"/>
+                                <rect key="frame" x="32" y="774.5" width="350" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="zHp-CZ-5rb"/>
@@ -210,6 +210,7 @@
                             <constraint firstItem="rtX-BA-ckI" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="KwP-lr-xSh"/>
                             <constraint firstItem="2CS-Rn-OfD" firstAttribute="trailing" secondItem="wGI-Yt-FYN" secondAttribute="trailing" constant="24" id="Kz5-fB-SWC"/>
                             <constraint firstItem="OOM-at-hfC" firstAttribute="width" secondItem="TO2-Eo-U9G" secondAttribute="width" id="OYw-OV-P6v"/>
+                            <constraint firstItem="QCg-ZE-jNj" firstAttribute="centerY" secondItem="3yB-nW-bHW" secondAttribute="centerY" multiplier="1.8" id="PcR-cm-Q4y"/>
                             <constraint firstItem="TO2-Eo-U9G" firstAttribute="height" secondItem="2Ii-Wk-lxz" secondAttribute="height" id="Ps6-56-btn"/>
                             <constraint firstItem="wGI-Yt-FYN" firstAttribute="height" secondItem="3yB-nW-bHW" secondAttribute="height" multiplier="0.065" id="Qh6-gQ-N1f"/>
                             <constraint firstItem="r14-me-iAw" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="32" id="VPf-5y-gAb"/>
@@ -232,7 +233,6 @@
                             <constraint firstItem="wGI-Yt-FYN" firstAttribute="centerY" secondItem="LTn-Yx-Xc7" secondAttribute="centerY" id="qbK-TO-JVL"/>
                             <constraint firstItem="OOM-at-hfC" firstAttribute="top" secondItem="A0u-hw-qko" secondAttribute="bottom" constant="8" id="tos-2c-Zqe"/>
                             <constraint firstItem="fFO-Xx-yc6" firstAttribute="centerY" secondItem="Hjs-k2-7On" secondAttribute="centerY" id="uuz-IK-4Cd"/>
-                            <constraint firstItem="2CS-Rn-OfD" firstAttribute="bottom" secondItem="QCg-ZE-jNj" secondAttribute="bottom" constant="40" id="x2t-Oj-Uct"/>
                             <constraint firstItem="b6b-1b-mOB" firstAttribute="leading" secondItem="2CS-Rn-OfD" secondAttribute="leading" constant="32" id="zMp-tD-0Ty"/>
                             <constraint firstItem="Hjs-k2-7On" firstAttribute="centerY" secondItem="tqj-dx-Aip" secondAttribute="centerY" id="zce-f5-0Z7"/>
                         </constraints>

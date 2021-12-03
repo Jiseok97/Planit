@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eb-LL-ml3">
-                                <rect key="frame" x="198" y="758" width="184" height="64"/>
+                                <rect key="frame" x="198" y="774.5" width="184" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="3Vb-d0-iXD"/>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6Z-UT-lz2">
-                                <rect key="frame" x="32" y="758" width="119" height="64"/>
+                                <rect key="frame" x="32" y="774.5" width="119" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="G8J-QE-cIm"/>
                                     <constraint firstAttribute="width" constant="119" id="cPr-RM-gU9"/>
@@ -167,12 +167,12 @@
                             <constraint firstItem="V6Z-UT-lz2" firstAttribute="leading" secondItem="VeV-2E-vpg" secondAttribute="leading" constant="32" id="IIs-rc-IbQ"/>
                             <constraint firstItem="9a1-P2-aI7" firstAttribute="centerY" secondItem="agR-yb-BfO" secondAttribute="centerY" id="Ldq-dg-nqh"/>
                             <constraint firstItem="86e-Ha-x9v" firstAttribute="leading" secondItem="VeV-2E-vpg" secondAttribute="leading" constant="24" id="M97-95-DH0"/>
-                            <constraint firstItem="VeV-2E-vpg" firstAttribute="bottom" secondItem="4eb-LL-ml3" secondAttribute="bottom" constant="40" id="MqA-je-jgn"/>
                             <constraint firstItem="86e-Ha-x9v" firstAttribute="centerY" secondItem="Hp9-aS-kr7" secondAttribute="centerY" multiplier="1.33" id="QAD-8L-suj"/>
                             <constraint firstItem="agR-yb-BfO" firstAttribute="leading" secondItem="MI2-Ea-xLt" secondAttribute="trailing" constant="8" id="X3V-DO-UUi"/>
                             <constraint firstItem="MI2-Ea-xLt" firstAttribute="leading" secondItem="Rh3-E0-Vfd" secondAttribute="trailing" constant="8" id="ecs-iq-IYa"/>
                             <constraint firstItem="9a1-P2-aI7" firstAttribute="leading" secondItem="agR-yb-BfO" secondAttribute="trailing" constant="8" id="gM5-Wh-Kv3"/>
                             <constraint firstItem="IYz-oJ-a2I" firstAttribute="leading" secondItem="VeV-2E-vpg" secondAttribute="leading" constant="50" id="jIT-JK-1XA"/>
+                            <constraint firstItem="4eb-LL-ml3" firstAttribute="centerY" secondItem="Hp9-aS-kr7" secondAttribute="centerY" multiplier="1.8" id="lp6-3w-mfh"/>
                             <constraint firstItem="V6Z-UT-lz2" firstAttribute="centerY" secondItem="4eb-LL-ml3" secondAttribute="centerY" id="sY6-B0-jkC"/>
                             <constraint firstItem="Rh3-E0-Vfd" firstAttribute="leading" secondItem="q0e-qF-2l4" secondAttribute="trailing" constant="8" id="yJw-78-Fc7"/>
                             <constraint firstItem="VeV-2E-vpg" firstAttribute="trailing" secondItem="86e-Ha-x9v" secondAttribute="trailing" constant="24" id="yui-7l-g2e"/>

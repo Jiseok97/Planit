@@ -160,7 +160,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if studyDataLst?.studies != nil {
+        if studyDataLst?.studies != nil && studyDataLst!.studies.count >= 1{
             return studyDataLst!.studies.count
         } else {
             return 1
@@ -168,8 +168,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if studyDataLst?.studies != nil {
-            // if single || repeat
+        if studyDataLst?.studies != nil && studyDataLst!.studies.count != 0 {
             if studyDataLst?.studies[indexPath.row].repeatedDays == nil {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCell", for: indexPath) as? StudyCollectionViewCell else { return UICollectionViewCell() }
                 
@@ -202,7 +201,6 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                     cell.checkBox.image = UIImage(named: "noCheck")
                 }
                 
-                
                 return cell
             }
         } else {
@@ -231,14 +229,8 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
         let width = self.studyCV.frame.width
         
         if studyDataLst?.studies != nil {
-            if studyDataLst?.studies[indexPath.row].repeatedDays != nil {
-                let height = self.view.bounds.height * 0.132
-                return CGSize(width: width, height: height)
-            } else {
-                let height = self.view.bounds.height * 0.1289
-                return CGSize(width: width, height: height)
-            }
-            
+            let height = self.view.bounds.height * 0.1309
+            return CGSize(width: width, height: height)
         } else {
             let height = self.view.bounds.height * 0.1487
             return CGSize(width: width, height: height)

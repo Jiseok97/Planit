@@ -12,6 +12,9 @@
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansKR-Bold</string>
         </array>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
         </array>
@@ -91,7 +94,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAD-dA-gss">
-                                <rect key="frame" x="32" y="758" width="350" height="64"/>
+                                <rect key="frame" x="32" y="774.5" width="350" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="XQR-1T-MQb"/>
@@ -113,16 +116,36 @@
                                     <action selector="backBtn:" destination="uDA-tF-BYl" eventType="touchUpInside" id="umW-cK-dko"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqG-0M-toT">
+                                <rect key="frame" x="160.5" y="646" width="93" height="36"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음에 할게요">
+                                    <color key="titleColor" red="0.22352941176470587" green="0.22745098039215686" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveSelectJobVC:" destination="uDA-tF-BYl" eventType="touchUpInside" id="f0W-DM-zTW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-KG-4Dz">
+                                <rect key="frame" x="160.5" y="675" width="93" height="1"/>
+                                <color key="backgroundColor" red="0.22352941176470587" green="0.22745098039215686" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.80000000000000004" id="eyp-LZ-dIh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sih-Ff-2ed"/>
                         <color key="backgroundColor" red="0.023529411760000001" green="0.019607843140000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sih-Ff-2ed" firstAttribute="bottom" secondItem="XAD-dA-gss" secondAttribute="bottom" constant="40" id="2Ny-Y0-LT3"/>
+                            <constraint firstItem="UqG-0M-toT" firstAttribute="centerX" secondItem="0dv-X8-ZNo" secondAttribute="centerX" id="6v4-nN-uEZ"/>
                             <constraint firstItem="sih-Ff-2ed" firstAttribute="trailing" secondItem="XAD-dA-gss" secondAttribute="trailing" constant="32" id="7nT-Bd-78w"/>
                             <constraint firstItem="nTD-Ry-yJk" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="24" id="8fh-hO-c2X"/>
                             <constraint firstItem="ESd-TR-8Ef" firstAttribute="leading" secondItem="wsg-Hi-VAX" secondAttribute="trailing" constant="8" id="Ccf-Co-jJI"/>
                             <constraint firstItem="b1V-Nx-M5d" firstAttribute="top" secondItem="wsg-Hi-VAX" secondAttribute="bottom" constant="14" id="DT5-Nb-bBz"/>
+                            <constraint firstItem="XAD-dA-gss" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="1.8" id="FGb-vx-tJn"/>
                             <constraint firstItem="wsg-Hi-VAX" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="GEa-ZQ-HUI"/>
+                            <constraint firstItem="UqG-0M-toT" firstAttribute="top" secondItem="nTD-Ry-yJk" secondAttribute="bottom" constant="12" id="IS4-G2-PX9"/>
                             <constraint firstItem="b1V-Nx-M5d" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="MdO-B7-d4J"/>
                             <constraint firstItem="ESd-TR-8Ef" firstAttribute="centerY" secondItem="wsg-Hi-VAX" secondAttribute="centerY" id="PvF-eJ-8M3"/>
                             <constraint firstItem="U6F-Y6-mfG" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="R3x-Mm-Yzz"/>
@@ -130,11 +153,14 @@
                             <constraint firstItem="U6F-Y6-mfG" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="0.22" id="Yin-CS-jnf"/>
                             <constraint firstItem="wsg-Hi-VAX" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="0.37" id="ZCI-UG-VwG"/>
                             <constraint firstItem="XfS-f2-MVg" firstAttribute="centerY" secondItem="ihw-j1-0oI" secondAttribute="centerY" id="aTy-xL-3w8"/>
+                            <constraint firstItem="Tf4-KG-4Dz" firstAttribute="top" secondItem="UqG-0M-toT" secondAttribute="bottom" multiplier="0.99" id="bhT-Dw-BKn"/>
                             <constraint firstItem="ekX-AN-111" firstAttribute="centerY" secondItem="XfS-f2-MVg" secondAttribute="centerY" id="dHL-i0-qdK"/>
+                            <constraint firstItem="Tf4-KG-4Dz" firstAttribute="width" secondItem="UqG-0M-toT" secondAttribute="width" id="hPh-Um-3sB"/>
                             <constraint firstItem="ihw-j1-0oI" firstAttribute="leading" secondItem="ESd-TR-8Ef" secondAttribute="trailing" constant="8" id="jEv-WK-mgH"/>
                             <constraint firstItem="nTD-Ry-yJk" firstAttribute="centerY" secondItem="0dv-X8-ZNo" secondAttribute="centerY" multiplier="1.33" id="mxn-dh-6Pv"/>
+                            <constraint firstItem="Tf4-KG-4Dz" firstAttribute="centerX" secondItem="0dv-X8-ZNo" secondAttribute="centerX" id="n5E-xZ-kCg"/>
                             <constraint firstItem="ekX-AN-111" firstAttribute="leading" secondItem="XfS-f2-MVg" secondAttribute="trailing" constant="8" id="uKh-A1-HwR"/>
-                            <constraint firstItem="XAD-dA-gss" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="uc1-yk-gxV"/>
+                            <constraint firstItem="XAD-dA-gss" firstAttribute="leading" secondItem="sih-Ff-2ed" secondAttribute="leading" constant="32" id="we1-So-sXJ"/>
                             <constraint firstItem="ihw-j1-0oI" firstAttribute="centerY" secondItem="ESd-TR-8Ef" secondAttribute="centerY" id="wtE-lI-wFR"/>
                             <constraint firstItem="XfS-f2-MVg" firstAttribute="leading" secondItem="ihw-j1-0oI" secondAttribute="trailing" constant="8" id="zDX-yj-bFO"/>
                         </constraints>
@@ -143,6 +169,7 @@
                         <outlet property="birthTF" destination="Jby-DS-2jo" id="pJZ-aL-IoH"/>
                         <outlet property="birthView" destination="nTD-Ry-yJk" id="Pv6-Vg-f03"/>
                         <outlet property="confirmBtn" destination="XAD-dA-gss" id="gYh-vF-oUK"/>
+                        <outlet property="skipBtn" destination="UqG-0M-toT" id="blY-iL-qSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INd-Oo-IsL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

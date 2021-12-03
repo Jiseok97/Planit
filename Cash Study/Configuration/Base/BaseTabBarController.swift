@@ -19,6 +19,7 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
     let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 2)
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

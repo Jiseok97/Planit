@@ -104,20 +104,22 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == studyLstCV {
-            if todayStudyLst?.studies != nil {
+            if todayStudyLst?.studies != nil && todayStudyLst!.studies.count > 0 {
                 guard let titleTxt = todayStudyLst?.studies[indexPath.row].title else { return }
                 guard let stId = todayStudyLst?.studies[indexPath.row].studyId else { return }
                 
                 let vc = TimerViewController(title: titleTxt, stId: stId)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true, completion: nil)
+            } else {
+                return
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == studyLstCV {
-            if todayStudyLst?.studies != nil {
+            if todayStudyLst?.studies != nil && todayStudyLst!.studies.count >= 1{
                 return todayStudyLst!.studies.count
             } else {
                 return 1
@@ -179,8 +181,20 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
                 return cell
             }
-        } else {
-            if todayStudyLst?.studies != nil {
+        }
+        
+        else {
+            if todayStudyLst?.studies == nil || todayStudyLst!.studies.count == 0 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.layer.cornerRadius = 8
+                cell.layer.borderWidth = 1
+                cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+                
+                return cell
+                
+            } else {
+                
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
@@ -205,14 +219,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 }
                 
                 return cell
-            } else {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
-                
-                cell.layer.cornerRadius = 8
-                cell.layer.borderWidth = 1
-                cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-                
-                return cell
             }
         }
     }
@@ -222,18 +228,14 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         let width = self.view.frame.width * 0.872
         
         if collectionView == studyLstCV {
-            if todayStudyLst?.studies == nil {
-                let height = self.view.frame.height * 0.27586206896
-                return CGSize(width: width, height: height)
-            } else {
-                let height = self.view.frame.height * 0.12068965517
-                return CGSize(width: width, height: height)
-            }
+            let height = self.view.frame.height * 0.12268965517
+            return CGSize(width: width, height: height)
         } else {
             let height = self.view.frame.height * 0.12268965517
             return CGSize(width: width, height: height)
         }
     }
+    
 }
 
 
@@ -244,6 +246,8 @@ extension HomeViewController {
         
         self.todayStudyLst = result
         self.studyLstCV.reloadData()
+        
+        print("result count = \(result.studies.count) ")
         
         todayStudyLst?.studies.forEach {
             totalTime += $0.recordedTime
@@ -266,7 +270,7 @@ extension HomeViewController {
     func showRepresentDday(result : ShowDdayEntity) {
         self.representDday = result
         self.rprDdayCV.reloadData()
-        
+
         if representDday != nil {
             var idx : Int = 0
             for i in 0..<representDday!.ddays.count {

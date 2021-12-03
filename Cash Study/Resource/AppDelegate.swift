@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Kakao Login
-        KakaoSDKCommon.initSDK(appKey: "f953402e66a75c29b3150798868f15c4")
+        KakaoSDKCommon.initSDK(appKey: "a76352f6670e85030076b792cbff190e")
         
         window = UIWindow()
         window?.rootViewController = SplashViewController()

@@ -23,24 +23,22 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계획된 공부가 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR8-Sp-zLV">
-                        <rect key="frame" x="24" y="68" width="126.5" height="71"/>
+                        <rect key="frame" x="24" y="50.5" width="126.5" height="64"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
                         <color key="textColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todoEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="OID-RG-M9K">
-                        <rect key="frame" x="255" y="70" width="64" height="69"/>
+                        <rect key="frame" x="255" y="50.5" width="64" height="64"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="OID-RG-M9K" secondAttribute="trailing" constant="32" id="2Qq-Il-Wjz"/>
-                <constraint firstItem="hR8-Sp-zLV" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="24" id="9cr-MU-Bup"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="OID-RG-M9K" secondAttribute="bottom" constant="26" id="9sc-Fp-clK"/>
-                <constraint firstItem="OID-RG-M9K" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="26" id="QBT-wY-rkT"/>
+                <constraint firstItem="hR8-Sp-zLV" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DA3-EH-SgF"/>
                 <constraint firstItem="hR8-Sp-zLV" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="VHL-Uw-8O0"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="hR8-Sp-zLV" secondAttribute="bottom" constant="26" id="ugD-vD-iAB"/>
+                <constraint firstItem="OID-RG-M9K" firstAttribute="centerY" secondItem="hR8-Sp-zLV" secondAttribute="centerY" id="pjw-Ke-BQ0"/>
             </constraints>
             <size key="customSize" width="351" height="165"/>
             <point key="canvasLocation" x="350" y="49.21875"/>

@@ -148,8 +148,8 @@ extension UIViewController {
     
     
     // InputUserNameVC
-    func tfIsEmpty(_ tf1: UITextField, _ tf2: UITextField, _ btn: UIButton) {
-        if tf1.text?.isEmpty == true || tf2.text?.isEmpty == true {
+    func tfIsEmpty(_ tf: UITextField, _ btn: UIButton) {
+        if tf.text?.isEmpty == true {
             setEnableBtn(btn)
         } else {
             setAbleBtn(btn)

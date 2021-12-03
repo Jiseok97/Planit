@@ -8,6 +8,7 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import KakaoSDKCommon
 import AuthenticationServices
 
 // iOS 13버전부터 Apple Login 지원
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    // MARK: Set UI
+    // MARK: Functions
     func setUI() {
         kakaoLoginView.layer.cornerRadius = 6
         appleLoginView.layer.cornerRadius = 6
@@ -34,26 +35,36 @@ class LoginViewController: UIViewController {
     }
     
     
-    // MARK: Kakao Login Btn
+    // MARK: About Kakao Login
     @IBAction func kakaoBtnTapped(_ sender: Any) {
-        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {( oauthToken, error) in
+                if let error = error {
+                    print("KakaoTalk Login error → \(error)")
+                } else {
+                    print("Success kakaoTalk Login")
+                    _ = oauthToken
+                    
+                    self.getUserInfo()
+                }
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
                     print("카카오 임시 로그인 에러 발생 → \(error)")
                 }
                 else {
-                    // 로그인 성공
                     print("loginWithKakaoAccount() success.")
-                    
                     _ = oauthToken
                     
                     self.getUserInfo()
-                    
                 }
             }
+        }
+        
     }
     
     
-    // MARK: 카카오 유저 정보 가져오기
     func getUserInfo() {
         UserApi.shared.me() {(user, error) in
             if let error = error {
@@ -63,8 +74,12 @@ class LoginViewController: UIViewController {
                 _ = user
                 
                 guard let userEmail = user?.kakaoAccount?.email else { return }
+                guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
+                
                 Constant.MY_EMAIL = userEmail
+                Constant.MY_NAME = userName
                 UserInfoData.email = userEmail
+                UserInfoData.name = userName
                 
                 self.loginCheck(userEmail)
             }
@@ -77,7 +92,8 @@ class LoginViewController: UIViewController {
         LoginDataManager().userLogin(input, viewController: self)
     }
     
-    // MARK: 애플 로그인
+    
+    // MARK: About Apple Login
     @IBAction func appleBtnTapped(_ sender: Any) {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
@@ -113,6 +129,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             UserDefaults.standard.set(userEmail, forKey: "appleEmail")
             
             UserInfoData.email = userEmail ?? dbEmail!
+            UserInfoData.name = String(describing: userName)
             loginCheck(userEmail ?? dbEmail!)
             
         default:

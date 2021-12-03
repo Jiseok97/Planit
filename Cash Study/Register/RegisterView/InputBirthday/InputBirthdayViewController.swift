@@ -16,6 +16,7 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var skipBtn: UIButton!
     
     var birthDate : String = ""
     
@@ -81,14 +82,27 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func moveSelectJobVC(_ sender: Any) {
-        let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
-        let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
+    @IBAction func moveSelectJobVC(_ sender: UIButton) {
+        switch sender {
+        case confirmBtn:
+            let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
+            let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
+            
+            let userBirthDate = birthDate.replacingOccurrences(of: "/", with: "-")
+            UserInfoData.birth = userBirthDate
+            
+            self.navigationController?.pushViewController(sjSB, animated: false)
+            
+        default:
+            let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
+            let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
+            
+            let birth = "1950-01-01"
+            UserInfoData.birth = birth
+            
+            self.navigationController?.pushViewController(sjSB, animated: false)
+        }
         
-        let userBirthDate = birthDate.replacingOccurrences(of: "/", with: "-")
-        UserInfoData.birth = userBirthDate
-        print("사용자의 생년월일은 \(userBirthDate)입니다.")
-        self.navigationController?.pushViewController(sjSB, animated: false)
     }
     
     
