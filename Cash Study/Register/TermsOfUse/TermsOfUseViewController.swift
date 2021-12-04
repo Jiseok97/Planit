@@ -39,8 +39,7 @@ class TermsOfUseViewController: UIViewController {
         self.selectiveView.layer.cornerRadius = 11
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
-        self.confirmBtn.isEnabled = false
-        self.confirmBtn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        setEnableBtn(confirmBtn)
     }
 
     // MARK: 이용약관 체크박스

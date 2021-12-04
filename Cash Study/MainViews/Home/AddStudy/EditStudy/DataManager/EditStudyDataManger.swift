@@ -51,7 +51,6 @@ class EditStudyDataManager : UIViewController {
 
                  default:
                      print("잘못된 요청 형식")
-                     print(response.value?.message)
                  }
             }
      }

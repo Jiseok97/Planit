@@ -124,7 +124,7 @@ extension UIViewController {
     
     
     func setEnableBtn(_ btn: UIButton) {
-        btn.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        btn.backgroundColor = UIColor.enableBtnColor
         btn.isEnabled = false
     }
     
