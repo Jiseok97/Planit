@@ -31,6 +31,8 @@ class AddStudyDataManager : UIViewController {
                      print("동일한 공부 제목이 이미 존재")
 
                  default:
+                     self.dismissIndicator()
+                     print("Error = \(String(describing: response.error))")
                      print("잘못된 요청 형식")
                  }
             }
@@ -58,6 +60,7 @@ class AddStudyDataManager : UIViewController {
                      print("동일한 공부 제목이 존재")
 
                  default:
+                     self.dismissIndicator()
                      print("잘못된 요청 형식")
                  }
              }

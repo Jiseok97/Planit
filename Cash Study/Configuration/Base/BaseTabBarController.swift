@@ -11,12 +11,13 @@ import UIKit
 class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
     let homeViewController = HomeViewController()
     let plannerViewController = PlannerViewController()
+    let analysisViewController = AnalysisViewController()
     let mypageViewController = MyPageViewController()
-    
     
     let homeTabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "homeTab"), tag: 0)
     let plannerTabBarItem = UITabBarItem(title: "플래너", image: UIImage(named: "plannerTab"), tag: 1)
-    let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 2)
+    let analysisTabBarItem = UITabBarItem(title: "분석", image: UIImage(named: "analysisTab"), tag: 2)
+    let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 3)
     
     
     
@@ -25,13 +26,15 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
 
         let homeVC = UINavigationController(rootViewController: homeViewController)
         let plannerVC = UINavigationController(rootViewController: plannerViewController)
+        let analysisVC = UINavigationController(rootViewController: analysisViewController)
         let mypageVC = UINavigationController(rootViewController: mypageViewController)
         
         homeVC.tabBarItem = homeTabBarItem
         plannerVC.tabBarItem = plannerTabBarItem
+        analysisVC.tabBarItem = analysisTabBarItem
         mypageVC.tabBarItem = mypageTabBarItem
         
-        self.viewControllers = [homeVC, plannerVC, mypageVC]
+        self.viewControllers = [homeVC, plannerVC, analysisVC, mypageVC]
         
         
         self.delegate = self

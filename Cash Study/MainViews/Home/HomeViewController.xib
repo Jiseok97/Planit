@@ -140,7 +140,6 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="QJm-5N-cU0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8DG-Fg-1pg"/>
                 <constraint firstItem="NrU-8q-1Ui" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Deq-RC-dpL"/>

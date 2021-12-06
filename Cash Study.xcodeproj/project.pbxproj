@@ -79,6 +79,12 @@
 		B63E67D32753DD1E00C891C2 /* ShowRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */; };
 		B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D52753E21300C891C2 /* StopTimerViewController.swift */; };
 		B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63E67D62753E21300C891C2 /* StopTimerViewController.xib */; };
+		B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B651275DD5720051F137 /* AnalysisViewController.swift */; };
+		B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B652275DD5720051F137 /* AnalysisViewController.xib */; };
+		B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */; };
+		B645B659275DD66C0051F137 /* AnalysisPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B657275DD66C0051F137 /* AnalysisPageViewController.xib */; };
+		B645B65C275DD6F10051F137 /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B65A275DD6F10051F137 /* DailyReportViewController.swift */; };
+		B645B65D275DD6F10051F137 /* DailyReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B65B275DD6F10051F137 /* DailyReportViewController.xib */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
 		B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */; };
@@ -244,6 +250,12 @@
 		B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecordEntity.swift; sourceTree = "<group>"; };
 		B63E67D52753E21300C891C2 /* StopTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTimerViewController.swift; sourceTree = "<group>"; };
 		B63E67D62753E21300C891C2 /* StopTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopTimerViewController.xib; sourceTree = "<group>"; };
+		B645B651275DD5720051F137 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		B645B652275DD5720051F137 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
+		B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisPageViewController.swift; sourceTree = "<group>"; };
+		B645B657275DD66C0051F137 /* AnalysisPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisPageViewController.xib; sourceTree = "<group>"; };
+		B645B65A275DD6F10051F137 /* DailyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
+		B645B65B275DD6F10051F137 /* DailyReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyReportViewController.xib; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -382,6 +394,7 @@
 				B66B47742732704C00F89012 /* Home */,
 				B66B477B2732797F00F89012 /* Planner */,
 				B60A9DCF275894E800AC3E1B /* Reward */,
+				B645B64B275DBB4D0051F137 /* Analysis */,
 				B66B47852732892000F89012 /* MyPage */,
 			);
 			path = MainViews;
@@ -851,6 +864,35 @@
 				B63E67D52753E21300C891C2 /* StopTimerViewController.swift */,
 			);
 			path = StopTimerVC;
+			sourceTree = "<group>";
+		};
+		B645B64B275DBB4D0051F137 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				B645B652275DD5720051F137 /* AnalysisViewController.xib */,
+				B645B651275DD5720051F137 /* AnalysisViewController.swift */,
+				B645B650275DD51C0051F137 /* DailyReport */,
+				B645B655275DD64D0051F137 /* AnalysisPage */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		B645B650275DD51C0051F137 /* DailyReport */ = {
+			isa = PBXGroup;
+			children = (
+				B645B65B275DD6F10051F137 /* DailyReportViewController.xib */,
+				B645B65A275DD6F10051F137 /* DailyReportViewController.swift */,
+			);
+			path = DailyReport;
+			sourceTree = "<group>";
+		};
+		B645B655275DD64D0051F137 /* AnalysisPage */ = {
+			isa = PBXGroup;
+			children = (
+				B645B657275DD66C0051F137 /* AnalysisPageViewController.xib */,
+				B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */,
+			);
+			path = AnalysisPage;
 			sourceTree = "<group>";
 		};
 		B64771BC2744F2D200BBCBC2 /* NoDday */ = {
@@ -1437,11 +1479,13 @@
 				B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */,
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */,
+				B645B65D275DD6F10051F137 /* DailyReportViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
+				B645B659275DD66C0051F137 /* AnalysisPageViewController.xib in Resources */,
 				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */,
@@ -1451,6 +1495,7 @@
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
 				B608E50B274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.xib in Resources */,
 				B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */,
+				B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
 				B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
@@ -1533,6 +1578,7 @@
 			files = (
 				B633AA192754F32100A00EFD /* PutRecordEntity.swift in Sources */,
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
+				B645B65C275DD6F10051F137 /* DailyReportViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,
 				B61FAC58275283B5007458A1 /* EditStudyInput.swift in Sources */,
 				B66BAFBF2758BB78009CAA31 /* ProductCollectionViewCell.swift in Sources */,
@@ -1575,6 +1621,7 @@
 				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
 				B633AA152754F2EE00A00EFD /* PutRecordDataManager.swift in Sources */,
 				B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */,
+				B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B608E50A274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
@@ -1584,6 +1631,7 @@
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */,
 				B633A9F72754932A00A00EFD /* ShowUserInfoDataManager.swift in Sources */,
+				B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
 				B63E67D12753DCCC00C891C2 /* ShowRecordDataManager.swift in Sources */,
 				B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */,
@@ -1792,7 +1840,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1854,7 +1902,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
