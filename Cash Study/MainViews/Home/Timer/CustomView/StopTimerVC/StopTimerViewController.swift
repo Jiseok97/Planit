@@ -63,10 +63,11 @@ class StopTimerViewController: UIViewController {
         let min = (self.totalRcrd / 60) % 60
         let hour = self.totalRcrd / 3600
         
+        let aSec = self.additionalRcrd % 60
         let aMin = (self.additionalRcrd / 60) % 60
         let aHour = self.additionalRcrd / 3600
         
-        self.additionRecordTimeLbl.text = "(+\(aHour)시간 \(aMin)분)"
+        self.additionRecordTimeLbl.text = "(+\(aHour)시간 \(aMin)분 \(aSec)초)"
         self.totalRecordTimeLbl.text = "\(hour)시간 \(min)분 \(sec)초"
         self.titleLbl.text = studyTitle
         self.restLbl.text = "휴식은 모두 \(String(describing: restCnt))회 쉬었어요"

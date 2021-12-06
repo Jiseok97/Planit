@@ -21,7 +21,7 @@ class ObAlertViewController: UIViewController {
     
     init(mainMsg: String, subMsg: String, btnTitle: String, isTimer : Bool) {
         self.mainMsg = mainMsg
-        self.subMsg = ""
+        self.subMsg = subMsg
         self.btnTitle = btnTitle
         self.isTimer = isTimer
         

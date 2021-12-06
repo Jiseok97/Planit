@@ -31,14 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Apple Login
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let userId = UserDefaults.standard.string(forKey: "appleIdentifier")
-        let userEmail = UserDefaults.standard.string(forKey: "appleEmail")
         appleIDProvider.getCredentialState(forUserID: userId ?? "", completion: { (credentialState, error) in
             switch credentialState {
             case .authorized:
                 print("해당 ID는 연동되어있습니다.")
-                let accessToken = UserDefaults.standard.string(forKey: "accessToken")
-                Constant.MY_EMAIL = userEmail ?? ""
-                Constant.MY_ACCESS_TOKEN = accessToken ?? ""
                 
             case .revoked:
                 print("해당 ID는 연동되어있지 않습니다.")
@@ -61,9 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
                 return AuthController.handleOpenUrl(url: url)
             }
-        
+
             return false
         }
+
+        
 
     // MARK: UISceneSession Lifecycle
 

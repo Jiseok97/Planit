@@ -247,8 +247,6 @@ extension HomeViewController {
         self.todayStudyLst = result
         self.studyLstCV.reloadData()
         
-        print("result count = \(result.studies.count) ")
-        
         todayStudyLst?.studies.forEach {
             totalTime += $0.recordedTime
         }

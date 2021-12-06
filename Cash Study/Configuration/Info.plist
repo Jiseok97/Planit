@@ -37,10 +37,14 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSApplicationQueriesScehmes</key>
+	<key>KAKAO_APP_KEY</key>
+	<string>a76352f6670e85030076b792cbff190e</string>
+	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>kakaokompathauth</string>
+		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
+		<string>kakaotalk-5.9.7</string>
+		<string>kakaoa76352f6670e85030076b792cbff190e</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
