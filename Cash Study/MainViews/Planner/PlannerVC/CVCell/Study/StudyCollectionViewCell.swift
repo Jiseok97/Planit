@@ -7,15 +7,32 @@
 
 import UIKit
 
+protocol UserCheckisDoneDelegate: AnyObject {
+    func checkBoxTrue(stId: Int)
+    func checkBoxFalse(stId: Int)
+}
+
 class StudyCollectionViewCell: UICollectionViewCell {
 
-    
-    @IBOutlet weak var checkBox: UIImageView!
     @IBOutlet var titleLbl: UILabel!
+    @IBOutlet weak var checkBox: UIButton!
+    
+    var cellDelegate : UserCheckisDoneDelegate?
+    var studyId: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
+    @IBAction func testCheckTapped(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            self.cellDelegate?.checkBoxFalse(stId: studyId)
+        } else {
+            sender.isSelected = true
+            self.cellDelegate?.checkBoxTrue(stId: studyId)
+            
+        }
+    }
 }

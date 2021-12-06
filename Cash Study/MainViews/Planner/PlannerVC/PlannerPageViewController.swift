@@ -153,7 +153,17 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
 }
 
 
-extension PlannerPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension PlannerPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UserCheckisDoneDelegate {
+    
+    func checkBoxTrue(stId: Int) {
+        showIndicator()
+        EditStudyStatusDataManager().editStatus(stId: stId, isDone: true, viewController: self)
+    }
+    
+    func checkBoxFalse(stId: Int) {
+        showIndicator()
+        EditStudyStatusDataManager().editStatus(stId: stId, isDone: false, viewController: self)
+    }
     
     func changeHeight() {
         self.cvHeight.constant = self.studyCV.collectionViewLayout.collectionViewContentSize.height
@@ -174,14 +184,17 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 
                 cell.layer.cornerRadius = 8
                 cell.backgroundColor = .studyCellBgColor
-                
                 cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 
+                cell.studyId = studyDataLst!.studies[indexPath.row].studyId
+                cell.cellDelegate = self
+                
                 if studyDataLst?.studies[indexPath.row].isDone == true {
-                    cell.checkBox.image = UIImage(named: "Check")
+                    cell.checkBox.isSelected = true
                 } else {
-                    cell.checkBox.image = UIImage(named: "noCheck")
+                    cell.checkBox.isSelected = false
                 }
+                
                 return cell
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repeatStudyCell", for: indexPath) as? RepeatStudyCollectionViewCell else { return UICollectionViewCell() }
@@ -246,5 +259,7 @@ extension PlannerPageViewController {
         self.studyDataLst = result
         self.studyCV.reloadData()
         self.studyDataLst?.studies.sort { $0.startAt < $1.startAt }
+        
+        print("result = \(result)")
     }
 }

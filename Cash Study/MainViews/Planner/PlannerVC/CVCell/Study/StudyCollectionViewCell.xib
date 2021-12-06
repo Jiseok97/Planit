@@ -34,33 +34,36 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextImg" translatesAutoresizingMaskIntoConstraints="NO" id="tcQ-D1-pyH">
                         <rect key="frame" x="303" y="75.5" width="24" height="24"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noCheck" translatesAutoresizingMaskIntoConstraints="NO" id="x4B-ld-igg">
-                        <rect key="frame" x="16" y="75.5" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="24" id="dRw-uC-TlN"/>
-                            <constraint firstAttribute="height" constant="24" id="hrQ-QF-yky"/>
-                        </constraints>
-                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SA0-2c-EKH">
+                        <rect key="frame" x="16" y="73" width="24" height="24"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="noCheck"/>
+                        <state key="selected" image="Check"/>
+                        <connections>
+                            <action selector="testCheckTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gwX-ij-xi7"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="Yk0-yO-mVL" firstAttribute="leading" secondItem="SA0-2c-EKH" secondAttribute="trailing" constant="14" id="Ie1-yz-bSB"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="tcQ-D1-pyH" secondAttribute="trailing" constant="20" id="TWh-uh-bqE"/>
-                <constraint firstItem="x4B-ld-igg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lO3-6b-uSh"/>
-                <constraint firstItem="x4B-ld-igg" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="pbO-Bm-aOI"/>
-                <constraint firstItem="Yk0-yO-mVL" firstAttribute="leading" secondItem="x4B-ld-igg" secondAttribute="trailing" constant="14" id="ptc-0l-tba"/>
+                <constraint firstItem="SA0-2c-EKH" firstAttribute="centerY" secondItem="Yk0-yO-mVL" secondAttribute="centerY" id="io2-ju-12Y"/>
+                <constraint firstItem="SA0-2c-EKH" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="rZ8-hi-mAG"/>
                 <constraint firstItem="tcQ-D1-pyH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="t6K-Wl-7Sd"/>
                 <constraint firstItem="Yk0-yO-mVL" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.97" id="zKh-R2-HUq"/>
             </constraints>
             <size key="customSize" width="347" height="175"/>
             <connections>
-                <outlet property="checkBox" destination="x4B-ld-igg" id="peF-rm-WAp"/>
+                <outlet property="checkBox" destination="SA0-2c-EKH" id="Ejg-Uc-aRw"/>
                 <outlet property="titleLbl" destination="Yk0-yO-mVL" id="Dv1-Kg-ynk"/>
             </connections>
             <point key="canvasLocation" x="145.6521739130435" y="84.040178571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="Check" width="24" height="24"/>
         <image name="nextImg" width="24" height="24"/>
         <image name="noCheck" width="24" height="24"/>
     </resources>

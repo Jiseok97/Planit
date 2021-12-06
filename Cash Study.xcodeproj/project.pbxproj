@@ -87,6 +87,8 @@
 		B645B65D275DD6F10051F137 /* DailyReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B65B275DD6F10051F137 /* DailyReportViewController.xib */; };
 		B645B661275DE43D0051F137 /* EmptyReportCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B65F275DE43D0051F137 /* EmptyReportCollectionViewCell.swift */; };
 		B645B662275DE43D0051F137 /* EmptyReportCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B660275DE43D0051F137 /* EmptyReportCollectionViewCell.xib */; };
+		B645B667275DFD680051F137 /* EditStudyStatusDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B666275DFD680051F137 /* EditStudyStatusDataManager.swift */; };
+		B645B669275DFE180051F137 /* EditStudyStatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
 		B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */; };
@@ -260,6 +262,8 @@
 		B645B65B275DD6F10051F137 /* DailyReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyReportViewController.xib; sourceTree = "<group>"; };
 		B645B65F275DE43D0051F137 /* EmptyReportCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReportCollectionViewCell.swift; sourceTree = "<group>"; };
 		B645B660275DE43D0051F137 /* EmptyReportCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyReportCollectionViewCell.xib; sourceTree = "<group>"; };
+		B645B666275DFD680051F137 /* EditStudyStatusDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyStatusDataManager.swift; sourceTree = "<group>"; };
+		B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyStatusEntity.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -449,6 +453,7 @@
 			children = (
 				B614C464273A9D6F00A5E8F9 /* PlannerPageViewController.xib */,
 				B614C463273A9D6F00A5E8F9 /* PlannerPageViewController.swift */,
+				B645B663275DFD340051F137 /* EditStatus */,
 				B6CB7CF927463AA600B6381A /* CVCell */,
 			);
 			path = PlannerVC;
@@ -907,6 +912,31 @@
 				B645B65F275DE43D0051F137 /* EmptyReportCollectionViewCell.swift */,
 			);
 			path = CVCell;
+			sourceTree = "<group>";
+		};
+		B645B663275DFD340051F137 /* EditStatus */ = {
+			isa = PBXGroup;
+			children = (
+				B645B664275DFD460051F137 /* DataManager */,
+				B645B665275DFD520051F137 /* Entity */,
+			);
+			path = EditStatus;
+			sourceTree = "<group>";
+		};
+		B645B664275DFD460051F137 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B645B666275DFD680051F137 /* EditStudyStatusDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B645B665275DFD520051F137 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		B64771BC2744F2D200BBCBC2 /* NoDday */ = {
@@ -1665,6 +1695,7 @@
 				B6B22698272933860021A9A4 /* SelectGenderViewController.swift in Sources */,
 				B63A1F342747ADBF0077CC76 /* AddStudyDataManager.swift in Sources */,
 				B62BC468274B5EFF005296D8 /* EditDdayDataManager.swift in Sources */,
+				B645B667275DFD680051F137 /* EditStudyStatusDataManager.swift in Sources */,
 				B645B661275DE43D0051F137 /* EmptyReportCollectionViewCell.swift in Sources */,
 				B662795B27591E64002DE5B3 /* CALayer.swift in Sources */,
 				B607976E2727FD3100D6D454 /* InputNameViewController.swift in Sources */,
@@ -1688,6 +1719,7 @@
 				B63E67D32753DD1E00C891C2 /* ShowRecordEntity.swift in Sources */,
 				B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
+				B645B669275DFE180051F137 /* EditStudyStatusEntity.swift in Sources */,
 				B6B118352716D261008842BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
