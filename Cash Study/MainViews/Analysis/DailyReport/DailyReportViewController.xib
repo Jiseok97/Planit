@@ -5,11 +5,23 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyReportViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="cvHeight" destination="9jA-TS-mXd" id="ozq-aq-2M6"/>
+                <outlet property="studyAnalysisCV" destination="3JO-QA-xyO" id="Mxn-Om-Mv9"/>
+                <outlet property="timeLbl" destination="tan-8f-yqf" id="D2e-kV-4i7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +29,78 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuV-Rl-gwc">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frS-3B-tiN">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-Ze-iy5">
+                                    <rect key="frame" x="32" y="38" width="148" height="24"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="2021년 12월 06일 " image="downImg02">
+                                        <color key="titleColor" systemColor="linkColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="showCalendarTapped:" destination="-1" eventType="touchUpInside" id="vRE-VX-58a"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이머 측정 시간이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tan-8f-yqf">
+                                    <rect key="frame" x="32" y="70" width="261.5" height="32"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
+                                    <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3JO-QA-xyO">
+                                    <rect key="frame" x="24" y="162" width="366" height="400"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="400" id="9jA-TS-mXd"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pXn-gR-zX3">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="3JO-QA-xyO" firstAttribute="top" secondItem="tan-8f-yqf" secondAttribute="bottom" constant="60" id="1xj-xR-Az5"/>
+                                <constraint firstItem="3JO-QA-xyO" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="24" id="EHq-LI-l9V"/>
+                                <constraint firstAttribute="trailing" secondItem="3JO-QA-xyO" secondAttribute="trailing" constant="24" id="Mtt-jl-Y09"/>
+                                <constraint firstItem="GK5-Ze-iy5" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="R1F-zd-sgL"/>
+                                <constraint firstItem="GK5-Ze-iy5" firstAttribute="centerY" secondItem="frS-3B-tiN" secondAttribute="centerY" multiplier="0.1" id="Wid-NN-xLa"/>
+                                <constraint firstAttribute="height" priority="250" constant="1000" id="gjQ-lI-qgr"/>
+                                <constraint firstItem="tan-8f-yqf" firstAttribute="top" secondItem="GK5-Ze-iy5" secondAttribute="bottom" constant="8" symbolic="YES" id="vD3-zv-hTy"/>
+                                <constraint firstItem="tan-8f-yqf" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="z12-oh-nt3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="frS-3B-tiN" firstAttribute="width" secondItem="nuV-Rl-gwc" secondAttribute="width" id="50N-HX-GJv"/>
+                        <constraint firstItem="frS-3B-tiN" firstAttribute="leading" secondItem="nuV-Rl-gwc" secondAttribute="leading" id="dsb-4Z-ZLz"/>
+                        <constraint firstAttribute="trailing" secondItem="frS-3B-tiN" secondAttribute="trailing" id="gTK-by-7gM"/>
+                        <constraint firstItem="frS-3B-tiN" firstAttribute="top" secondItem="nuV-Rl-gwc" secondAttribute="top" id="sie-S8-Lm7"/>
+                        <constraint firstAttribute="bottom" secondItem="frS-3B-tiN" secondAttribute="bottom" id="uFl-dR-oeG"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="67"/>
+            <constraints>
+                <constraint firstItem="nuV-Rl-gwc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Qi0-Mr-54K"/>
+                <constraint firstAttribute="bottom" secondItem="nuV-Rl-gwc" secondAttribute="bottom" id="SEz-Z9-JVI"/>
+                <constraint firstItem="nuV-Rl-gwc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="teQ-0N-fMA"/>
+                <constraint firstItem="nuV-Rl-gwc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vyb-o4-84g"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="66.964285714285708"/>
         </view>
     </objects>
+    <resources>
+        <image name="downImg02" width="20" height="20"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

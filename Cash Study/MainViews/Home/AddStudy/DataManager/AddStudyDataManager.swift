@@ -32,7 +32,7 @@ class AddStudyDataManager : UIViewController {
 
                  default:
                      self.dismissIndicator()
-                     print("Error = \(String(describing: response.error))")
+                     print("error = \(String(describing: response.value?.message))")
                      print("잘못된 요청 형식")
                  }
             }

@@ -34,6 +34,11 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
         analysisVC.tabBarItem = analysisTabBarItem
         mypageVC.tabBarItem = mypageTabBarItem
         
+        homeVC.tabBarItem.selectedImage = UIImage(named: "homeTabS")
+        plannerVC.tabBarItem.selectedImage = UIImage(named: "plannerTabS")
+        analysisVC.tabBarItem.selectedImage = UIImage(named: "analysisTabS")
+        mypageVC.tabBarItem.selectedImage = UIImage(named: "myTabS")
+        
         self.viewControllers = [homeVC, plannerVC, analysisVC, mypageVC]
         
         
