@@ -15,15 +15,29 @@ class DailyReportViewController: UIViewController {
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
     var selectedDate : String = ""
+    var studyDataLst : ShowDateStudyEntity?
+    var isDoneCnt : Int = 0
+    var totalRecordedTime : Int = 0
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let df = DateFormatter()
+        df.dateFormat = "yyyy년 MM월 dd일"
+        
+        let inputDf = DateFormatter()
+        inputDf.dateFormat = "yyyy-MM-dd"
+        
+        self.dateBtn.setTitle(df.string(from: Date()), for: .normal)
+        showIndicator()
+        ShowDateStudyDataManager().showStudyReport(date: inputDf.string(from: Date()), viewController: self)
 
         studyAnalysisCV.delegate = self
         studyAnalysisCV.dataSource = self
         studyAnalysisCV.backgroundColor = .mainNavy.withAlphaComponent(0.0)
         studyAnalysisCV.register(UINib(nibName: "EmptyReportCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyReportCell")
+        studyAnalysisCV.register(UINib(nibName: "AchievementRateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "achievementCell")
         
         if let collectionViewLayout = studyAnalysisCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -51,6 +65,8 @@ class DailyReportViewController: UIViewController {
             let txt = Constant.DATE_TEXT
             self.dateBtn.setTitle(txt, for: .normal)
             self.selectedDate = Constant.DATE
+            showIndicator()
+            ShowDateStudyDataManager().showStudyReport(date: selectedDate, viewController: self)
         }
     }
     
@@ -71,25 +87,88 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if studyDataLst?.studies != nil && studyDataLst!.studies.count > 0 {
+            return 1
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyReportCell", for: indexPath) as? EmptyReportCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-        cell.layer.borderWidth = 0.8
-        cell.layer.cornerRadius = 8
-        
-        return cell
+        if studyDataLst?.studies != nil {
+            print(studyDataLst?.studies)
+            if studyDataLst!.studies.count > 0 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementCell", for: indexPath) as? AchievementRateCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.studyCntLbl.text = "\(isDoneCnt)/\(studyDataLst!.studies.count)"
+                cell.rateLbl.text = "\(100 / studyDataLst!.studies.count * isDoneCnt)%"
+                cell.progressBar.progress = Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01)
+                print("tets Result = \(Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01))")
+                
+                return cell
+            } else {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyReportCell", for: indexPath) as? EmptyReportCollectionViewCell else { return UICollectionViewCell() }
+                
+                cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+                cell.layer.borderWidth = 0.8
+                cell.layer.cornerRadius = 8
+                
+                return cell
+            }
+            
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyReportCell", for: indexPath) as? EmptyReportCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+            cell.layer.borderWidth = 0.8
+            cell.layer.cornerRadius = 8
+            
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = self.studyAnalysisCV.bounds.width * 0.88
-        let height = self.view.frame.height * 0.157857142857143
-        
-        return CGSize(width: width, height: height)
+        if studyDataLst?.studies != nil {
+            let width = self.studyAnalysisCV.frame.width
+            let height = self.view.frame.height * 0.2142
+            
+            return CGSize(width: width, height: height)
+        } else {
+            let width = self.studyAnalysisCV.bounds.width * 0.88
+            let height = self.view.frame.height * 0.157857142857143
+            
+            return CGSize(width: width, height: height)
+        }
     }
     
+}
+
+
+extension DailyReportViewController {
+    func showStudyReport(result: ShowDateStudyEntity) {
+        dismissIndicator()
+        var totalTime : Int = 0
+        var isDoneCount : Int = 0
+        self.studyDataLst = result
+        self.studyAnalysisCV.reloadData()
+        
+        studyDataLst?.studies.forEach {
+            totalTime += $0.recordedTime
+            if $0.isDone == true {
+                isDoneCount += 1
+            }
+        }
+        self.totalRecordedTime = totalTime
+        self.isDoneCnt = isDoneCount
+        
+        if totalTime == 0 {
+            self.timeLbl.text = "타이머 측정 시간이 없습니다"
+        } else {
+            let sec = String(describing: totalTime % 60 )
+            let min = String(describing: (totalTime / 60) % 60 )
+            let hour = String(describing: totalTime / 3600)
+            self.timeLbl.text = "\(hour)시간 \(min)분 \(sec)초 공부했어요"
+        }
+    }
 }

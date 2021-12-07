@@ -91,6 +91,8 @@
 		B645B669275DFE180051F137 /* EditStudyStatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
+		B648F5DF275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B648F5DD275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift */; };
+		B648F5E0275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B648F5DE275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib */; };
 		B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */; };
 		B662795B27591E64002DE5B3 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662795A27591E64002DE5B3 /* CALayer.swift */; };
 		B66B47772732706000F89012 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B47752732706000F89012 /* HomeViewController.swift */; };
@@ -266,6 +268,8 @@
 		B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyStatusEntity.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
+		B648F5DD275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRateCollectionViewCell.swift; sourceTree = "<group>"; };
+		B648F5DE275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementRateCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		B662795A27591E64002DE5B3 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		B66B47752732706000F89012 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -908,8 +912,8 @@
 		B645B65E275DE41A0051F137 /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
-				B645B660275DE43D0051F137 /* EmptyReportCollectionViewCell.xib */,
-				B645B65F275DE43D0051F137 /* EmptyReportCollectionViewCell.swift */,
+				B648F5DC275F538E005DDEF9 /* AchievementRate */,
+				B648F5DB275F537F005DDEF9 /* EmptyReport */,
 			);
 			path = CVCell;
 			sourceTree = "<group>";
@@ -946,6 +950,24 @@
 				B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */,
 			);
 			path = NoDday;
+			sourceTree = "<group>";
+		};
+		B648F5DB275F537F005DDEF9 /* EmptyReport */ = {
+			isa = PBXGroup;
+			children = (
+				B645B660275DE43D0051F137 /* EmptyReportCollectionViewCell.xib */,
+				B645B65F275DE43D0051F137 /* EmptyReportCollectionViewCell.swift */,
+			);
+			path = EmptyReport;
+			sourceTree = "<group>";
+		};
+		B648F5DC275F538E005DDEF9 /* AchievementRate */ = {
+			isa = PBXGroup;
+			children = (
+				B648F5DE275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib */,
+				B648F5DD275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift */,
+			);
+			path = AchievementRate;
 			sourceTree = "<group>";
 		};
 		B65310DC27253E32004AD249 /* Timer */ = {
@@ -1555,6 +1577,7 @@
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 				B614C46E273AA63700A5E8F9 /* NotoSansKR-Medium.otf in Resources */,
 				B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */,
+				B648F5E0275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,6 +1710,7 @@
 				B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
+				B648F5DF275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift in Sources */,
 				B633AA122754EA5A00A00EFD /* TimerAlertViewController.swift in Sources */,
 				B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */,
 				B67C98A02724FA9C0039D271 /* Color.swift in Sources */,
