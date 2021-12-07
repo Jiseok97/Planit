@@ -68,27 +68,27 @@ public enum HostType {
     public var host: String {
         switch self {
         case .Kapi:
-            return "https://\(KakaoSDKCommon.shared.hosts().kapi)"
+            return "https://\(KakaoSDK.shared.hosts().kapi)"
         case .Dapi:
-            return "https://\(KakaoSDKCommon.shared.hosts().dapi)"
+            return "https://\(KakaoSDK.shared.hosts().dapi)"
         case .Auth:
-            return "https://\(KakaoSDKCommon.shared.hosts().auth)"
+            return "https://\(KakaoSDK.shared.hosts().auth)"
         case .Kauth:
-            return "https://\(KakaoSDKCommon.shared.hosts().kauth)"
+            return "https://\(KakaoSDK.shared.hosts().kauth)"
         case .TalkAuth:
-            return "\(KakaoSDKCommon.shared.hosts().talkAuth)://"
+            return "\(KakaoSDK.shared.hosts().talkAuth)://"
         case .Channel:
-            return "https://\(KakaoSDKCommon.shared.hosts().channel)"
+            return "https://\(KakaoSDK.shared.hosts().channel)"
         case .Navi:
             return "kakaonavi-sdk://"
         case .WebNavi:
-            return "https://\(KakaoSDKCommon.shared.hosts().webnavi)"
+            return "https://\(KakaoSDK.shared.hosts().webnavi)"
         case .TalkLink:
-            return "\(KakaoSDKCommon.shared.hosts().talkLink)://"
+            return "\(KakaoSDK.shared.hosts().talkLink)://"
         case .TalkLinkVersion:
-            return "\(KakaoSDKCommon.shared.hosts().talkLinkVersion)://"
+            return "\(KakaoSDK.shared.hosts().talkLinkVersion)://"
         case .SharerLink:
-            return "https://\(KakaoSDKCommon.shared.hosts().sharerLink)"
+            return "https://\(KakaoSDK.shared.hosts().sharerLink)"
         }
     }
 }

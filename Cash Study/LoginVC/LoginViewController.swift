@@ -37,41 +37,31 @@ class LoginViewController: UIViewController {
     
     // MARK: About Kakao Login
     @IBAction func kakaoBtnTapped(_ sender: Any) {
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//            
-//            UserApi.shared.loginWithKakaoTalk {( oauthToken, error) in
-//                if let error = error {
-//                    print("KakaoTalk Login error → \(error)")
-//                } else {
-//                    print("Success kakaoTalk Login")
-//                    _ = oauthToken
-//                    
-//                    self.getUserInfo()
-//                    print("GetUserInfo")
-//                }
-//            }
-//        } else {
-//            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-//                if let error = error {
-//                    print("카카오 임시 로그인 에러 발생 → \(error)")
-//                }
-//                else {
-//                    print("loginWithKakaoAccount() success.")
-//                    _ = oauthToken
-//                    
-//                    self.getUserInfo()
-//                }
-//            }
-//        }
-        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-            if let error = error {
-                print("카카오 임시 로그인 에러 발생 → \(error)")
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            print("Test Print()")
+
+            UserApi.shared.loginWithKakaoTalk {( oauthToken, error) in
+                if let error = error {
+                    print("KakaoTalk Login error → \(error)")
+                } else {
+                    print("Success kakaoTalk Login")
+                    _ = oauthToken
+
+                    self.getUserInfo()
+                    print("GetUserInfo")
+                }
             }
-            else {
-                print("loginWithKakaoAccount() success.")
-                _ = oauthToken
-                
-                self.getUserInfo()
+        } else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print("카카오 임시 로그인 에러 발생 → \(error)")
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    _ = oauthToken
+
+                    self.getUserInfo()
+                }
             }
         }
         
@@ -142,8 +132,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             UserInfoData.name = String(describing: userName)
             print("userIdentifier = \(userIdentifier)")
             loginCheck(userIdentifier)
-            
-            
             
             
         default:

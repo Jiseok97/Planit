@@ -10,9 +10,11 @@ import UIKit
 class DailyReportViewController: UIViewController {
 
     @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var dateBtn: UIButton!
     @IBOutlet weak var studyAnalysisCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
+    var selectedDate : String = ""
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -30,12 +32,35 @@ class DailyReportViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         self.changeHeight()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reportDate"), object: nil)
+    }
 
 
     // MARK: Functions
-//    @IBAction func showCalendarTapped(_ sender: Any) {
-//    }
-//
+    @objc func reportDate(_ noti: Notification) {
+        if Constant.DATE != "" {
+            let txt = Constant.DATE_TEXT
+            self.dateBtn.setTitle(txt, for: .normal)
+            self.selectedDate = Constant.DATE
+        }
+    }
+    
+    
+    @IBAction func showCalendarTapped(_ sender: Any) {
+        let vc = CalendarAlertViewController(isEnd: false, checkDday: false, isReport: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+
 }
 
 

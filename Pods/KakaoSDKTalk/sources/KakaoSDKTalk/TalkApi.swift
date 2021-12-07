@@ -42,7 +42,7 @@ public class TalkApi {
     /// ```
     public func makeUrlForAddChannel(channelPublicId:String) -> URL? {
         SdkLog.d("===================================================================================================")
-        let url = SdkUtils.makeUrlWithParameters("\(Urls.compose(.Channel, path:Paths.channel))/\(channelPublicId)/friend",parameters:["app_key":try! KakaoSDKCommon.shared.appKey(), "kakao_agent":Constants.kaHeader, "api_ver":"1.0"].filterNil())
+        let url = SdkUtils.makeUrlWithParameters("\(Urls.compose(.Channel, path:Paths.channel))/\(channelPublicId)/friend",parameters:["app_key":try! KakaoSDK.shared.appKey(), "kakao_agent":Constants.kaHeader, "api_ver":"1.0"].filterNil())
         SdkLog.d("url: \(url?.absoluteString ?? "something wrong!") \n")
         return url
     }
@@ -62,7 +62,7 @@ public class TalkApi {
     public func makeUrlForChannelChat(channelPublicId:String) -> URL? {
         SdkLog.d("===================================================================================================")
         let url = SdkUtils.makeUrlWithParameters("\(Urls.compose(.Channel, path:Paths.channel))/\(channelPublicId)/chat",
-            parameters:["app_key":try! KakaoSDKCommon.shared.appKey(), "kakao_agent":Constants.kaHeader, "api_ver":"1.0"].filterNil())
+            parameters:["app_key":try! KakaoSDK.shared.appKey(), "kakao_agent":Constants.kaHeader, "api_ver":"1.0"].filterNil())
         SdkLog.d("url: \(url?.absoluteString ?? "something wrong!") \n")
         return url
     }

@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Kakao Login
-        KakaoSDKCommon.initSDK(appKey: "a76352f6670e85030076b792cbff190e")
+        KakaoSDK.initSDK(appKey: "a76352f6670e85030076b792cbff190e")
+        
         
         window = UIWindow()
         window?.rootViewController = SplashViewController()
@@ -54,9 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Kakao
-            if (AuthApi.isKakaoTalkLoginUrl(url)) {
-                return AuthController.handleOpenUrl(url: url)
-            }
+//            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+//                return AuthController.handleOpenUrl(url: url)
+//            }
 
             return false
         }

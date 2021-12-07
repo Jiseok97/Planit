@@ -20,10 +20,12 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     var nomalDate : String = ""
     var isEnd : Bool = false
     var checkDday : Bool = false
+    var isReport : Bool = false
     
-    init(isEnd: Bool, checkDday : Bool) {
+    init(isEnd: Bool, checkDday : Bool, isReport: Bool) {
         self.isEnd = isEnd
         self.checkDday = checkDday
+        self.isReport = isReport
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -86,6 +88,9 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         let nomalDF = DateFormatter()
         nomalDF.dateFormat = "yyyy-MM-dd"
         
+        let reDF = DateFormatter()
+        reDF.dateFormat = "yyyy년 MM월 dd일"
+        
         let selectedDate = differenceDF.string(from: date)
         let todayDate = differenceDF.string(from: Date())
 
@@ -95,7 +100,12 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         if checkDday {
             self.selectedDate = dateFormatter.string(from: date)
             self.nomalDate = nomalDF.string(from: date)
-        } else {
+        }
+        else if isReport {
+            self.selectedDate = reDF.string(from: date)
+            self.nomalDate = nomalDF.string(from: date)
+        }
+        else {
             if sDate < tDate {
                 self.calendarView.appearance.selectionColor = UIColor.link.withAlphaComponent(0.0)
                 calendar.deselect(date)
@@ -105,6 +115,7 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
                 self.nomalDate = nomalDF.string(from: date)
             }
         }
+        
     }
     
     
@@ -113,7 +124,13 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
             Constant.DATE_TEXT = self.selectedDate
             Constant.END_DATE = self.nomalDate
             NotificationCenter.default.post(name: NSNotification.Name("endDate"), object: nil)
-        } else {
+        }
+        else if isReport {
+            Constant.DATE_TEXT = self.selectedDate
+            Constant.DATE = self.nomalDate
+            NotificationCenter.default.post(name: NSNotification.Name("reportDate"), object: nil)
+        }
+        else {
             Constant.DATE_TEXT = self.selectedDate
             Constant.DATE = self.nomalDate
             NotificationCenter.default.post(name: NSNotification.Name("sendDate"), object: nil)

@@ -13,6 +13,7 @@
 //  limitations under the License.
 
 import Foundation
+import UIKit
 
 import Alamofire
 import KakaoSDKCommon
@@ -28,7 +29,7 @@ public class LinkApi {
         
     /// 카카오링크 API로부터 리다이렉트 된 URL 인지 체크합니다.
     public static func isKakaoLinkUrl(_ url:URL) -> Bool {
-        if url.absoluteString.hasPrefix("\(try! KakaoSDKCommon.shared.scheme())://kakaolink") {
+        if url.absoluteString.hasPrefix("\(try! KakaoSDK.shared.scheme())://kakaolink") {
             return true
         }
         return false
@@ -123,7 +124,7 @@ extension LinkApi {
     
     //공통
     private func makeSharerUrl(url:String, action:String, parameters:[String:Any]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
-        return SdkUtils.makeUrlWithParameters(url, parameters: ["app_key":try! KakaoSDKCommon.shared.appKey(),
+        return SdkUtils.makeUrlWithParameters(url, parameters: ["app_key":try! KakaoSDK.shared.appKey(),
                                                                 "validation_action":action,
                                                                 "validation_params":parameters?.toJsonString(),
                                                                 "ka":Constants.kaHeader,
@@ -145,7 +146,7 @@ extension LinkApi {
                                    "lcba":serverCallbackArgs?.toJsonString()
                 ].filterNil()
             
-            let linkParameters = ["appkey" : try! KakaoSDKCommon.shared.appKey(),
+            let linkParameters = ["appkey" : try! KakaoSDK.shared.appKey(),
                                   "target_app_key" : targetAppKey,
                                   "appver" : Constants.appVersion(),
                                   "linkver" : "4.0",
@@ -179,7 +180,7 @@ extension LinkApi {
                                 Urls.compose(path:Paths.defalutLink),
                                 parameters: ["link_ver":"4.0",
                                              "template_object":templateObjectJsonString].filterNil(),
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi) { [weak self] (response, data, error) in
                                     let strongSelf = self
@@ -225,7 +226,7 @@ extension LinkApi {
                                              "template_id":templateId,
                                              "template_args":templateArgs?.toJsonString()]
                                     .filterNil(),
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi) { [weak self] (response, data, error) in
                                     let strongSelf = self
@@ -257,7 +258,7 @@ extension LinkApi {
                                              "template_id":templateId,
                                              "template_args":templateArgs?.toJsonString()]
                                     .filterNil(),
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi ) { [weak self] (response, data, error) in
                                     let strongSelf = self
@@ -286,7 +287,7 @@ extension LinkApi {
         return API.upload(.post, Urls.compose(path:Paths.imageUploadLink),
                           images: [image],
                           parameters: ["secure_resource": secureResource],
-                          headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                          headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                           sessionType: .Api,
                           apiType: .KApi) { (response, data, error) in
                             if let error = error {
@@ -308,7 +309,7 @@ extension LinkApi {
                            completion:@escaping (ImageUploadResult?, Error?) -> Void) {
         API.responseData(.post, Urls.compose(path:Paths.imageScrapLink),
                                 parameters: ["image_url": imageUrl.absoluteString, "secure_resource": secureResource],
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi) { (response, data, error) in
                                     if let error = error {

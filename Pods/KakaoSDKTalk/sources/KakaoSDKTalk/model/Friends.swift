@@ -69,12 +69,12 @@ public struct Friends<T:Codable> : Codable {
     public let totalCount: Int
     
     /// 조회된 친구 중 즐겨찾기에 등록된 친구 수
-    public let favoriteCount: Int
+    public let favoriteCount: Int?
     
     public let beforeUrl : URL?
     public let afterUrl : URL?
     
-    public init(elements:[T]?, totalCount:Int, favoriteCount:Int, beforeUrl:URL? = nil, afterUrl:URL? = nil) {
+    public init(elements:[T]?, totalCount:Int, favoriteCount:Int? = nil, beforeUrl:URL? = nil, afterUrl:URL? = nil) {
         self.elements = elements
         self.totalCount = totalCount
         self.favoriteCount = favoriteCount
@@ -137,11 +137,14 @@ public struct Friend : Codable {
     /// 즐겨찾기 추가 여부
     public let favorite: Bool?
     
+    ///  메시지 수신이 허용되었는지 여부. 앱가입 친구의 경우는 feed msg에 해당. 앱미가입친구는 invite msg에 해당
+    public let allowedMsg: Bool?
+    
     
     // MARK: Internal
     
     enum CodingKeys : String, CodingKey {
-        case id, uuid, profileNickname, profileThumbnailImage, favorite
+        case id, uuid, profileNickname, profileThumbnailImage, favorite, allowedMsg
     }
     
     public init(from decoder: Decoder) throws {
@@ -152,5 +155,6 @@ public struct Friend : Codable {
         profileNickname = try? values.decode(String.self, forKey: .profileNickname)
         profileThumbnailImage = URL(string:(try? values.decode(String.self, forKey: .profileThumbnailImage)) ?? "")
         favorite = try? values.decode(Bool.self, forKey: .favorite)
+        allowedMsg = try? values.decode(Bool.self, forKey: .allowedMsg)
     }
 }

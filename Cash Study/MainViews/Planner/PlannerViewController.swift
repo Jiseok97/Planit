@@ -68,7 +68,7 @@ class PlannerViewController: UIViewController {
         dDayVC.didMove(toParent: self)
         
         // 화면 높이가 작은건 y : 90으로 바꿔주기 !
-        if self.view.frame.height < 812 {
+        if UIScreen.main.bounds.height < 812 {
             plannerVC.view.frame = CGRect(x: 0, y: 90, width: self.view.bounds.width, height: self.view.bounds.height - 104)
             dDayVC.view.frame = CGRect(x: 0, y: 90, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         } else {

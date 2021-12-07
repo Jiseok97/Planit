@@ -425,12 +425,12 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         switch sender {
         case startAtCalendarBtn:
-            let vc = CalendarAlertViewController(isEnd: false, checkDday: false)
+            let vc = CalendarAlertViewController(isEnd: false, checkDday: false, isReport: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
         default:
-            let vc = CalendarAlertViewController(isEnd: true, checkDday: false)
+            let vc = CalendarAlertViewController(isEnd: true, checkDday: false, isReport: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }

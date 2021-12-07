@@ -35,6 +35,7 @@ class AnalysisViewController: UIViewController {
     
     
     // MARK: Functions
+    
     func setUI() {
         self.sgController.layer.cornerRadius = 8
         self.sgController.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSansKR-Medium", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.myGray], for: .normal)
@@ -51,12 +52,12 @@ class AnalysisViewController: UIViewController {
         dailyVC.didMove(toParent: self)
         analysisVC.didMove(toParent: self)
         
-        if self.view.frame.height < 812 {
-            dailyVC.view.frame = CGRect(x: 0, y: 90, width: self.view.bounds.width, height: self.view.bounds.height - 104)
-            analysisVC.view.frame = CGRect(x: 0, y: 90, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+        if UIScreen.main.bounds.height < 812 {
+            dailyVC.view.frame = CGRect(x: 0, y: 160, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            analysisVC.view.frame = CGRect(x: 0, y: 160, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         } else {
-            dailyVC.view.frame = CGRect(x: 0, y: 180, width: self.view.bounds.width, height: self.view.bounds.height - 104)
-            analysisVC.view.frame = CGRect(x: 0, y: 180, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            dailyVC.view.frame = CGRect(x: 0, y: 175, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            analysisVC.view.frame = CGRect(x: 0, y: 175, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         }
         
         dailyVC.view.isHidden = false

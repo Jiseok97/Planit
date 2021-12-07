@@ -20,6 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyReportViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="cvHeight" destination="9jA-TS-mXd" id="ozq-aq-2M6"/>
+                <outlet property="dateBtn" destination="GK5-Ze-iy5" id="MMu-dk-aBh"/>
                 <outlet property="studyAnalysisCV" destination="3JO-QA-xyO" id="Mxn-Om-Mv9"/>
                 <outlet property="timeLbl" destination="tan-8f-yqf" id="D2e-kV-4i7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
