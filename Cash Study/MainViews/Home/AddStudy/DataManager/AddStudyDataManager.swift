@@ -24,6 +24,7 @@ class AddStudyDataManager : UIViewController {
                      NotificationCenter.default.post(name: NSNotification.Name("reloadHome"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("reportDate"), object: nil)
                      
                  case 409:
                      self.dismissIndicator()

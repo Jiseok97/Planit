@@ -84,7 +84,6 @@ class PlannerViewController: UIViewController {
     
     
     
-    
     @objc func indexChanged(_ sender: UISegmentedControl) {
         self.plannerVC.view.isHidden = true
         self.dDayVC.view.isHidden = true

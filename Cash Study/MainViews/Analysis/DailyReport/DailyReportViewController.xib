@@ -49,13 +49,13 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이머 측정 시간이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tan-8f-yqf">
-                                    <rect key="frame" x="32" y="70" width="261.5" height="32"/>
+                                    <rect key="frame" x="32" y="64" width="261.5" height="32"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
                                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3JO-QA-xyO">
-                                    <rect key="frame" x="24" y="162" width="366" height="400"/>
+                                    <rect key="frame" x="24" y="141" width="366" height="400"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="400" id="9jA-TS-mXd"/>
                                     </constraints>
@@ -68,13 +68,13 @@
                                 </collectionView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="3JO-QA-xyO" firstAttribute="top" secondItem="tan-8f-yqf" secondAttribute="bottom" constant="60" id="1xj-xR-Az5"/>
+                                <constraint firstItem="3JO-QA-xyO" firstAttribute="top" secondItem="tan-8f-yqf" secondAttribute="bottom" constant="45" id="1xj-xR-Az5"/>
                                 <constraint firstItem="3JO-QA-xyO" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="24" id="EHq-LI-l9V"/>
                                 <constraint firstAttribute="trailing" secondItem="3JO-QA-xyO" secondAttribute="trailing" constant="24" id="Mtt-jl-Y09"/>
                                 <constraint firstItem="GK5-Ze-iy5" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="R1F-zd-sgL"/>
                                 <constraint firstItem="GK5-Ze-iy5" firstAttribute="centerY" secondItem="frS-3B-tiN" secondAttribute="centerY" multiplier="0.1" id="Wid-NN-xLa"/>
                                 <constraint firstAttribute="height" priority="250" constant="1000" id="gjQ-lI-qgr"/>
-                                <constraint firstItem="tan-8f-yqf" firstAttribute="top" secondItem="GK5-Ze-iy5" secondAttribute="bottom" constant="8" symbolic="YES" id="vD3-zv-hTy"/>
+                                <constraint firstItem="tan-8f-yqf" firstAttribute="top" secondItem="GK5-Ze-iy5" secondAttribute="bottom" constant="2" id="vD3-zv-hTy"/>
                                 <constraint firstItem="tan-8f-yqf" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="z12-oh-nt3"/>
                             </constraints>
                         </view>

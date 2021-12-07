@@ -51,11 +51,14 @@ class DailyReportViewController: UIViewController {
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reportReload(_:)), name: NSNotification.Name("reportReload"), object: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reportDate"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reportReload"), object: nil)
     }
 
 
@@ -68,6 +71,13 @@ class DailyReportViewController: UIViewController {
             showIndicator()
             ShowDateStudyDataManager().showStudyReport(date: selectedDate, viewController: self)
         }
+    }
+    
+    @objc func reportReload(_ noti: Notification) {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        showIndicator()
+        ShowDateStudyDataManager().showStudyReport(date: df.string(from: Date()), viewController: self)
     }
     
     
@@ -96,13 +106,13 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if studyDataLst?.studies != nil {
-            print(studyDataLst?.studies)
             if studyDataLst!.studies.count > 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementCell", for: indexPath) as? AchievementRateCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.studyCntLbl.text = "\(isDoneCnt)/\(studyDataLst!.studies.count)"
                 cell.rateLbl.text = "\(100 / studyDataLst!.studies.count * isDoneCnt)%"
                 cell.progressBar.progress = Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01)
+                
                 print("tets Result = \(Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01))")
                 
                 return cell

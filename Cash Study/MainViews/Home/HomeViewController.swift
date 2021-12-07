@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         if let collectionViewLayout = studyLstCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
+        
     }
 
     
@@ -130,7 +131,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if collectionView == rprDdayCV {
             if representDday != nil {
                 if (representDday?.ddays.count)! >= 1 && representDday?.ddays[0].isRepresentative == true {
@@ -260,7 +260,11 @@ extension HomeViewController {
             let text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
             let atrbuteString = NSMutableAttributedString(string: text)
             atrbuteString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.homeTimeTxtColor, range: (text as NSString).range(of: "\(hour)시간 \(min)분 \(sec)초"))
-            
+//            
+//            if hour == "0" {
+//                let text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
+//            }
+//            
             self.topLbl.attributedText = atrbuteString
         }
     }

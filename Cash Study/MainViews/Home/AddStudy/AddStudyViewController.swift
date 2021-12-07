@@ -491,6 +491,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             } else {
                 let input = SingleStudyInput(title: title, startAt: sDate)
                 showIndicator()
+                print("Study add = \(sDate)")
                 AddStudyDataManager().singleStudy(input, viewController: self)
             }
         }

@@ -35,6 +35,7 @@ class DdayPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        showIndicator()
         ShowDdayDataManager().showDday(viewController: self)
         dDayCV.reloadData()
         
@@ -48,6 +49,7 @@ class DdayPageViewController: UIViewController {
     
     // MARK: Funcitons
     @objc func reloadCV(_ noti: Notification) {
+        showIndicator()
         ShowDdayDataManager().showDday(viewController: self)
     }
 }
@@ -213,6 +215,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
 
 extension DdayPageViewController {
     func showDday(result : ShowDdayEntity) {
+        dismissIndicator()
         self.DdayDataLst = result
         self.dDayCV.reloadData()
         DdayDataLst?.ddays.sort{ $0.endAt < $1.endAt}

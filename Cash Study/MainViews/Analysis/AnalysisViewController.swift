@@ -40,6 +40,7 @@ class AnalysisViewController: UIViewController {
         self.sgController.layer.cornerRadius = 8
         self.sgController.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSansKR-Medium", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.myGray], for: .normal)
         self.sgController.addTarget(self, action: #selector(indexChanged), for: .valueChanged)
+        self.sgController.selectedSegmentTintColor = .link
     }
     
     func setUP() {
@@ -56,8 +57,8 @@ class AnalysisViewController: UIViewController {
             dailyVC.view.frame = CGRect(x: 0, y: 160, width: self.view.bounds.width, height: self.view.bounds.height - 104)
             analysisVC.view.frame = CGRect(x: 0, y: 160, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         } else {
-            dailyVC.view.frame = CGRect(x: 0, y: 175, width: self.view.bounds.width, height: self.view.bounds.height - 104)
-            analysisVC.view.frame = CGRect(x: 0, y: 175, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            dailyVC.view.frame = CGRect(x: 0, y: 180, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            analysisVC.view.frame = CGRect(x: 0, y: 180, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         }
         
         dailyVC.view.isHidden = false

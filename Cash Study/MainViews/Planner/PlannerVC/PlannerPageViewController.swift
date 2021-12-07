@@ -22,6 +22,9 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     @IBOutlet weak var studyCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var bgViewHeight: NSLayoutConstraint!
+    
     var selectedDate : String = ""
     var studyDataLst : ShowDateStudyEntity?
     
@@ -77,12 +80,9 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         showIndicator()
         ShowDateStudyDataManager().showStudy(date: dateFormatter.string(from: Date()), viewController: self)
         
-        self.calendarView.layer.cornerRadius = 8
         self.changeScopeCalendar.setTitle("", for: .normal)
-        self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        self.changeScopeCalendarView.layer.cornerRadius = 8
+        self.changeScopeCalendarView.layer.cornerRadius = 16
         self.changeScopeCalendarView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        self.calendarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         if let collectionViewLayout = studyCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -101,11 +101,17 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleTodayColor = UIColor(red: 220/225, green: 185/225, blue: 45/225, alpha: 1.0)
+        calendarView.appearance.todayColor = UIColor.mainNavy.withAlphaComponent(0.0)
         calendarView.placeholderType = .none
         
         calendarView.scrollEnabled = true
         calendarView.scrollDirection = .horizontal
-        calendarView.appearance.headerTitleOffset = CGPoint(x: -60, y: calendarView.frame.origin.y)
+        calendarView.appearance.headerTitleOffset = CGPoint(x: -70, y: calendarView.frame.origin.y)
+        calendarView.layer.zPosition = 999
+        changeScopeCalendarView.layer.zPosition = 999
+        bgView.layer.zPosition = 0
+        bgView.backgroundColor = .studyCellBgColor
+        changeScopeCalendarView.backgroundColor = .studyCellBgColor
         
     }
     
@@ -136,7 +142,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
             self.changeScopeCalendar.setImage(UIImage(named: "upArrow"), for: .normal)
         } else {
             self.calendarView.scope = .week
-            self.calendarViewHeight.constant = view.frame.height * 0.193349753694581
+            self.calendarViewHeight.constant = view.frame.height * 0.213349753694581
             self.changeScopeCalendar.setImage(UIImage(named: "downArrow"), for: .normal)
         }
     }

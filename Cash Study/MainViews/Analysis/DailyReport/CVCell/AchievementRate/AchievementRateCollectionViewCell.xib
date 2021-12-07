@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="38.5" width="380" height="107.5"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-IR-TkA">
-                                <rect key="frame" x="24" y="43.5" width="332" height="10"/>
+                                <rect key="frame" x="24" y="36.5" width="332" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="Er6-xa-KdG"/>
                                 </constraints>
@@ -47,19 +47,19 @@
                                 <color key="trackTintColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료 개수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-3a-Vhe">
-                                <rect key="frame" x="24" y="61.5" width="55.5" height="20.5"/>
+                                <rect key="frame" x="24" y="54.5" width="55.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                 <color key="textColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fha-ps-fsU">
-                                <rect key="frame" x="85.5" y="61.5" width="21.5" height="20.5"/>
+                                <rect key="frame" x="85.5" y="54.5" width="21.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                 <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdy-TJ-zvV">
-                                <rect key="frame" x="334" y="61.5" width="22" height="20.5"/>
+                                <rect key="frame" x="334" y="54.5" width="22" height="20.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                 <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rdy-TJ-zvV" firstAttribute="centerY" secondItem="fha-ps-fsU" secondAttribute="centerY" id="1E9-he-x3u"/>
-                            <constraint firstItem="fPZ-IR-TkA" firstAttribute="centerY" secondItem="bC9-t6-q5N" secondAttribute="centerY" multiplier="0.9" id="81D-oy-WQO"/>
+                            <constraint firstItem="fPZ-IR-TkA" firstAttribute="centerY" secondItem="bC9-t6-q5N" secondAttribute="centerY" multiplier="0.77" id="81D-oy-WQO"/>
                             <constraint firstItem="fha-ps-fsU" firstAttribute="centerY" secondItem="QX0-3a-Vhe" secondAttribute="centerY" id="8Sn-fE-diQ"/>
                             <constraint firstItem="QX0-3a-Vhe" firstAttribute="leading" secondItem="bC9-t6-q5N" secondAttribute="leading" constant="24" id="A9B-id-MxS"/>
                             <constraint firstItem="fPZ-IR-TkA" firstAttribute="leading" secondItem="bC9-t6-q5N" secondAttribute="leading" constant="24" id="EDQ-Ec-QId"/>

@@ -23,6 +23,7 @@ class DeleteStudyDataManager : UIViewController {
                      viewController.checkSuccess = true
                      NotificationCenter.default.post(name: NSNotification.Name("reloadStudy"), object: nil)
                      NotificationCenter.default.post(name: NSNotification.Name("selectToday"), object: nil)
+                     NotificationCenter.default.post(name: NSNotification.Name("reportReload"), object: nil)
                      
                  default:
                      print("오류")

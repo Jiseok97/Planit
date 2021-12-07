@@ -18,6 +18,7 @@ class AchievementRateCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         self.bgView.layer.cornerRadius = 8
+        self.bgView.backgroundColor = .studyCellBgColor
         self.progressBar.clipsToBounds = true
         self.progressBar.subviews[1].clipsToBounds = true
         self.progressBar.layer.cornerRadius = 5
