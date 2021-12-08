@@ -56,14 +56,11 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        showIndicator()
         let td = DateFormatter()
         td.dateFormat = "yyyy-MM-dd"
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
-        self.studyLstCV.reloadData()
         
         ShowDdayDataManager().showHomeDday(viewController: self)
-        self.rprDdayCV.reloadData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("reloadHome"), object: nil)
     }
@@ -91,6 +88,10 @@ class HomeViewController: UIViewController {
     
     @objc func addStudy(_ noti: Notification) {
         changeRootVC(BaseTabBarController())
+        let td = DateFormatter()
+        td.dateFormat = "yyyy-MM-dd"
+        showIndicator()
+        ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
     }
     
     

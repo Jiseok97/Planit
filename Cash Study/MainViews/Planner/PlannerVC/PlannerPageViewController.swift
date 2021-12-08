@@ -59,6 +59,10 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        ShowDateStudyDataManager().showStudy(date: dateFormatter.string(from: Date()), viewController: self)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadStudy(_:)), name: NSNotification.Name("reloadStudy"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(selectToday(_:)), name: NSNotification.Name("selectToday"), object: nil)
