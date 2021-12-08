@@ -207,11 +207,26 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     let hour = time! / 3600
                     let min = (time! / 60) % 60
                     let sec = time! % 60
-                    let timeTxt = "\(hour)시간 \(min)분 \(sec)초"
-                    let restCnt = todayStudyLst?.studies[indexPath.row].rest
-                    let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
                     
-                    cell.subLbl.text = changeText
+                    if time! < 60 {
+                        let timeTxt = "\(sec)초"
+                        let restCnt = todayStudyLst?.studies[indexPath.row].rest
+                        let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
+                        cell.subLbl.text = changeText
+                        
+                    } else if time! >= 60 && time! < 3600 {
+                        let timeTxt = "\(min)분 \(sec)초"
+                        let restCnt = todayStudyLst?.studies[indexPath.row].rest
+                        let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
+                        cell.subLbl.text = changeText
+                        
+                    } else {
+                        let timeTxt = "\(hour)시간 \(min)분 \(sec)초"
+                        let restCnt = todayStudyLst?.studies[indexPath.row].rest
+                        let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
+                        cell.subLbl.text = changeText
+                    }
+                    
                     cell.subLbl.textColor = UIColor.link
                 } else {
                     cell.subLbl.textColor = UIColor.cancleAlertColor
@@ -257,15 +272,25 @@ extension HomeViewController {
             let sec = String(describing: totalTime % 60 )
             let min = String(describing: (totalTime / 60) % 60 )
             let hour = String(describing: totalTime / 3600)
-            let text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
-            let atrbuteString = NSMutableAttributedString(string: text)
-            atrbuteString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.homeTimeTxtColor, range: (text as NSString).range(of: "\(hour)시간 \(min)분 \(sec)초"))
-//            
-//            if hour == "0" {
-//                let text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
-//            }
-//            
-            self.topLbl.attributedText = atrbuteString
+            
+            if totalTime < 60 {
+                let text = "\(result.nickname)님,\n\(sec)초 공부했어요"
+                let atrbuteString = NSMutableAttributedString(string: text)
+                atrbuteString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.homeTimeTxtColor, range: (text as NSString).range(of: "\(sec)초"))
+                self.topLbl.attributedText = atrbuteString
+                
+            } else if totalTime >= 60 && totalTime < 3600 {
+                let text = "\(result.nickname)님,\n\(min)분 \(sec)초 공부했어요"
+                let atrbuteString = NSMutableAttributedString(string: text)
+                atrbuteString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.homeTimeTxtColor, range: (text as NSString).range(of: "\(min)분 \(sec)초"))
+                self.topLbl.attributedText = atrbuteString
+                
+            } else {
+                let text = "\(result.nickname)님,\n\(hour)시간 \(min)분 \(sec)초 공부했어요"
+                let atrbuteString = NSMutableAttributedString(string: text)
+                atrbuteString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.homeTimeTxtColor, range: (text as NSString).range(of: "\(hour)시간 \(min)분 \(sec)초"))
+                self.topLbl.attributedText = atrbuteString
+            }
         }
     }
     

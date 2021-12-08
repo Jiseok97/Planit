@@ -18,7 +18,7 @@ class EditStudyStatusDataManager: UIViewController {
                 let code = response.response?.statusCode
                 switch code {
                 case 200:
-                    NotificationCenter.default.post(name: NSNotification.Name("reportReload"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name("reportDate"), object: nil)
                     self.dismissIndicator()
                     print("성공")
                     

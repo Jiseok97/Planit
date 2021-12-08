@@ -59,15 +59,22 @@ class StopTimerViewController: UIViewController {
         self.bonusView.layer.cornerRadius = 8
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
-        let sec = self.totalRcrd % 60
-        let min = (self.totalRcrd / 60) % 60
-        let hour = self.totalRcrd / 3600
+        let totalRes = totalRcrd + additionalRcrd
+        let sec = totalRes % 60
+        let min = (totalRes / 60) % 60
+        let hour = totalRes / 3600
         
         let aSec = self.additionalRcrd % 60
         let aMin = (self.additionalRcrd / 60) % 60
         let aHour = self.additionalRcrd / 3600
         
-        self.additionRecordTimeLbl.text = "(+\(aHour)시간 \(aMin)분 \(aSec)초)"
+        if additionalRcrd < 60 {
+            self.additionRecordTimeLbl.text = "(+\(aSec)초)"
+        } else if additionalRcrd >= 60 && additionalRcrd < 3600 {
+            self.additionRecordTimeLbl.text = "(+\(aMin)분 \(aSec)초)"
+        } else {
+            self.additionRecordTimeLbl.text = "(+\(aHour)시간 \(aMin)분 \(aSec)초)"
+        }
         self.totalRecordTimeLbl.text = "\(hour)시간 \(min)분 \(sec)초"
         self.titleLbl.text = studyTitle
         self.restLbl.text = "휴식은 모두 \(String(describing: restCnt))회 쉬었어요"

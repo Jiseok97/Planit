@@ -25,13 +25,7 @@ class DailyReportViewController: UIViewController {
         
         let df = DateFormatter()
         df.dateFormat = "yyyy년 MM월 dd일"
-        
-        let inputDf = DateFormatter()
-        inputDf.dateFormat = "yyyy-MM-dd"
-        
         self.dateBtn.setTitle(df.string(from: Date()), for: .normal)
-        showIndicator()
-        ShowDateStudyDataManager().showStudyReport(date: inputDf.string(from: Date()), viewController: self)
 
         studyAnalysisCV.delegate = self
         studyAnalysisCV.dataSource = self
@@ -50,15 +44,16 @@ class DailyReportViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        ShowDateStudyDataManager().showStudyReport(date: df.string(from: Date()), viewController: self)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(reportReload(_:)), name: NSNotification.Name("reportReload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reportDate"), object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reportReload"), object: nil)
     }
 
 
@@ -70,16 +65,13 @@ class DailyReportViewController: UIViewController {
             self.selectedDate = Constant.DATE
             showIndicator()
             ShowDateStudyDataManager().showStudyReport(date: selectedDate, viewController: self)
+        } else {
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd"
+            showIndicator()
+            ShowDateStudyDataManager().showStudyReport(date: selectedDate, viewController: self)
         }
     }
-    
-    @objc func reportReload(_ noti: Notification) {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        showIndicator()
-        ShowDateStudyDataManager().showStudyReport(date: df.string(from: Date()), viewController: self)
-    }
-    
     
     @IBAction func showCalendarTapped(_ sender: Any) {
         let vc = CalendarAlertViewController(isEnd: false, checkDday: false, isReport: true)
@@ -112,8 +104,6 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                 cell.studyCntLbl.text = "\(isDoneCnt)/\(studyDataLst!.studies.count)"
                 cell.rateLbl.text = "\(100 / studyDataLst!.studies.count * isDoneCnt)%"
                 cell.progressBar.progress = Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01)
-                
-                print("tets Result = \(Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01))")
                 
                 return cell
             } else {
@@ -179,6 +169,13 @@ extension DailyReportViewController {
             let min = String(describing: (totalTime / 60) % 60 )
             let hour = String(describing: totalTime / 3600)
             self.timeLbl.text = "\(hour)시간 \(min)분 \(sec)초 공부했어요"
+            if totalTime < 60 {
+                self.timeLbl.text = "\(sec)초 공부했어요"
+            } else if totalTime < 3600 {
+                self.timeLbl.text = "\(min)분 \(sec)초 공부했어요"
+            } else {
+                self.timeLbl.text = "\(hour)시간 \(min)분 \(sec)초 공부했어요"
+            }
         }
     }
 }

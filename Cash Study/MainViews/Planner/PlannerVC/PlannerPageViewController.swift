@@ -141,8 +141,12 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
             self.calendarViewHeight.constant = view.frame.height * 0.48
             self.changeScopeCalendar.setImage(UIImage(named: "upArrow"), for: .normal)
         } else {
+            if UIScreen.main.bounds.height < 812 {
+                self.calendarViewHeight.constant = view.frame.height * 0.253349753694581
+            } else {
+                self.calendarViewHeight.constant = view.frame.height * 0.213349753694581
+            }
             self.calendarView.scope = .week
-            self.calendarViewHeight.constant = view.frame.height * 0.213349753694581
             self.changeScopeCalendar.setImage(UIImage(named: "downArrow"), for: .normal)
         }
     }
