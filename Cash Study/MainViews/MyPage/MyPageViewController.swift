@@ -44,7 +44,6 @@ class MyPageViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("EditUserInfo"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("Logout"), object: nil)

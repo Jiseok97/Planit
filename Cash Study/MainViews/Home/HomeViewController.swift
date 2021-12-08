@@ -67,7 +67,6 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadHome"), object: nil)
     }
@@ -242,14 +241,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = self.view.frame.width * 0.872
+        let height = self.view.frame.height * 0.12268965517
         
-        if collectionView == studyLstCV {
-            let height = self.view.frame.height * 0.12268965517
-            return CGSize(width: width, height: height)
-        } else {
-            let height = self.view.frame.height * 0.12268965517
-            return CGSize(width: width, height: height)
-        }
+        return CGSize(width: width, height: height)
     }
     
 }

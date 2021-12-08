@@ -273,7 +273,5 @@ extension PlannerPageViewController {
         self.studyDataLst = result
         self.studyCV.reloadData()
         self.studyDataLst?.studies.sort { $0.startAt < $1.startAt }
-        
-        print("result = \(result)")
     }
 }

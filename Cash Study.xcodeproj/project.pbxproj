@@ -117,6 +117,9 @@
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
 		B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A32724FBBE0039D271 /* IndicatorView.swift */; };
+		B6884930276071C600DF1F42 /* RewardMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688492E276071C600DF1F42 /* RewardMainViewController.swift */; };
+		B6884931276071C600DF1F42 /* RewardMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B688492F276071C600DF1F42 /* RewardMainViewController.xib */; };
+		B688493927609A0100DF1F42 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B688493827609A0100DF1F42 /* Roboto-Regular.ttf */; };
 		B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A33E8E274F5600004E88B0 /* AlertViewController.swift */; };
 		B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A33E8F274F5600004E88B0 /* AlertViewController.xib */; };
 		B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A33E94274F72FC004E88B0 /* CalendarAlertViewController.swift */; };
@@ -294,6 +297,9 @@
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B67C98A32724FBBE0039D271 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		B688492E276071C600DF1F42 /* RewardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardMainViewController.swift; sourceTree = "<group>"; };
+		B688492F276071C600DF1F42 /* RewardMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardMainViewController.xib; sourceTree = "<group>"; };
+		B688493827609A0100DF1F42 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B6A33E8E274F5600004E88B0 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B6A33E8F274F5600004E88B0 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		B6A33E94274F72FC004E88B0 /* CalendarAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAlertViewController.swift; sourceTree = "<group>"; };
@@ -447,6 +453,8 @@
 		B60A9DCF275894E800AC3E1B /* Reward */ = {
 			isa = PBXGroup;
 			children = (
+				B688492F276071C600DF1F42 /* RewardMainViewController.xib */,
+				B688492E276071C600DF1F42 /* RewardMainViewController.swift */,
 				B66BAFBB2758BB54009CAA31 /* RewardShop */,
 			);
 			path = Reward;
@@ -480,6 +488,7 @@
 		B614C46B273A9F7A00A5E8F9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				B688493827609A0100DF1F42 /* Roboto-Regular.ttf */,
 				B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */,
 				B6B4061B273CFDBD008DBE7C /* NotoSansKR-Light.otf */,
 				B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */,
@@ -1051,8 +1060,7 @@
 		B66BAFBC2758BB60009CAA31 /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
-				B66BAFBE2758BB78009CAA31 /* ProductCollectionViewCell.xib */,
-				B66BAFBD2758BB78009CAA31 /* ProductCollectionViewCell.swift */,
+				B688493227608B5800DF1F42 /* Product */,
 			);
 			path = CVCell;
 			sourceTree = "<group>";
@@ -1134,6 +1142,15 @@
 				B662795A27591E64002DE5B3 /* CALayer.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B688493227608B5800DF1F42 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				B66BAFBE2758BB78009CAA31 /* ProductCollectionViewCell.xib */,
+				B66BAFBD2758BB78009CAA31 /* ProductCollectionViewCell.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		B6A33E92274F72DB004E88B0 /* TwoButtons */ = {
@@ -1569,6 +1586,7 @@
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
 				B6D81E182732B588006E641E /* SplashViewController.xib in Resources */,
 				B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */,
+				B6884931276071C600DF1F42 /* RewardMainViewController.xib in Resources */,
 				B614C466273A9D6F00A5E8F9 /* PlannerPageViewController.xib in Resources */,
 				B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */,
 				B66BAFC02758BB78009CAA31 /* ProductCollectionViewCell.xib in Resources */,
@@ -1576,6 +1594,7 @@
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
 				B614C46E273AA63700A5E8F9 /* NotoSansKR-Medium.otf in Resources */,
+				B688493927609A0100DF1F42 /* Roboto-Regular.ttf in Resources */,
 				B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */,
 				B648F5E0275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib in Resources */,
 			);
@@ -1736,6 +1755,7 @@
 				B62BC471274B72BC005296D8 /* DeleteDdayDataManager.swift in Sources */,
 				B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */,
 				B66B477E2732799E00F89012 /* PlannerViewController.swift in Sources */,
+				B6884930276071C600DF1F42 /* RewardMainViewController.swift in Sources */,
 				B614C478273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.swift in Sources */,
 				B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */,
 				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
