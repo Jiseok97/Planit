@@ -20,4 +20,6 @@ target 'Cash Study' do
   # Timer View
   pod 'MSCircularSlider'
 
+  # For Animation
+  pod 'lottie-ios'
 end

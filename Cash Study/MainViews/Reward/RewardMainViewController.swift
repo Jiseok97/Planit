@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Lottie
 
 class RewardMainViewController: UIViewController {
 
     @IBOutlet weak var rewardShopBtn: UIButton!
+    @IBOutlet weak var rewardView: UIView!
     @IBOutlet weak var rewardStarBtn: UIButton!
     
     @IBOutlet weak var passView: UIView!
@@ -39,10 +41,51 @@ class RewardMainViewController: UIViewController {
     }
     
     
-    @IBAction func rewardStarTapped(_ sender: Any) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+    @IBAction func rewardStarTapped(_ sender: UIButton) {
+//        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
+        
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+
+        rotation.toValue = Double.pi * 2
+        rotation.duration = 1.4
+//        rotation.isCumulative = true
+        rotation.autoreverses = false
+        rotation.repeatCount = 1
+
+        rewardView.layer.add(rotation, forKey: "rotationAnimation")
+        rewardView.layer.zPosition = 1
+        rewardStarBtn.layer.zPosition = 999
+
+        UIView.animate(withDuration: 0.4, animations: {
+            self.rewardView.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0) {
+                self.rewardView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            } completion: { _ in
+                let anView = AnimationView(name: "testStar")
+                anView.frame = CGRect(x: 0, y: 0, width: 190, height: 190)
+                anView.center = self.view.center
+                anView.contentMode = .scaleAspectFill
+                anView.layer.zPosition = 0
+                self.view.addSubview(anView)
+                anView.play()
+            }
+        })
+        
+//        UIView.animate(withDuration: 0.5, animations: {
+//            let fRotate = CGAffineTransform(rotationAngle: .pi)
+//            let scale = CGAffineTransform(scaleX: 1.6, y: 1.6)
+//            let combine = scale.concatenating(fRotate)
+//            self.rewardView.transform = combine
+//        }) { (_) in
+//            UIView.animate(withDuration: 1.1) {
+//                self.rewardView.transform = CGAffineTransform.identity
+//            }
+//        }
+        
+        
     }
     
     
@@ -50,6 +93,9 @@ class RewardMainViewController: UIViewController {
         let vc = RewardShopViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+//        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
     }
     
 }

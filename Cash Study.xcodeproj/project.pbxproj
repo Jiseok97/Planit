@@ -145,6 +145,8 @@
 		B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
+		B6BBEECB2760F5CF00E3EE8E /* testStar.json in Resources */ = {isa = PBXBuildFile; fileRef = B6BBEECA2760F5CF00E3EE8E /* testStar.json */; };
+		B6BBEECD2761025A00E3EE8E /* bgStars.json in Resources */ = {isa = PBXBuildFile; fileRef = B6BBEECC2761025A00E3EE8E /* bgStars.json */; };
 		B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */; };
 		B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */; };
 		B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */; };
@@ -331,6 +333,8 @@
 		B6B449002738EF2B00AB45AC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
+		B6BBEECA2760F5CF00E3EE8E /* testStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testStar.json; path = ../../../Downloads/testStar.json; sourceTree = "<group>"; };
+		B6BBEECC2761025A00E3EE8E /* bgStars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bgStars.json; path = ../../../Downloads/bgStars.json; sourceTree = "<group>"; };
 		B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayEntity.swift; sourceTree = "<group>"; };
 		B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayInput.swift; sourceTree = "<group>"; };
 		B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayDataManager.swift; sourceTree = "<group>"; };
@@ -1196,6 +1200,8 @@
 		B6B118312716D261008842BA /* Cash Study */ = {
 			isa = PBXGroup;
 			children = (
+				B6BBEECC2761025A00E3EE8E /* bgStars.json */,
+				B6BBEECA2760F5CF00E3EE8E /* testStar.json */,
 				B61FAD0E273635CA00D11538 /* Cash Study.entitlements */,
 				B67C98982724F9E60039D271 /* Configuration */,
 				B6B118632716D5B4008842BA /* Splash */,
@@ -1573,6 +1579,7 @@
 				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */,
+				B6BBEECD2761025A00E3EE8E /* bgStars.json in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
@@ -1581,6 +1588,7 @@
 				B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */,
 				B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
+				B6BBEECB2760F5CF00E3EE8E /* testStar.json in Resources */,
 				B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
@@ -1925,6 +1933,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1987,6 +1996,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

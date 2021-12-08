@@ -34,6 +34,7 @@ PODS:
     - KakaoSDKCommon/Common (= 2.8.3)
   - KakaoSDKUser (2.8.3):
     - KakaoSDKAuth (= 2.8.3)
+  - lottie-ios (3.2.3)
   - MSCircularSlider (1.3.2)
 
 DEPENDENCIES:
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - FSCalendar
   - IQKeyboardManagerSwift
   - KakaoSDK
+  - lottie-ios
   - MSCircularSlider
 
 SPEC REPOS:
@@ -57,6 +59,7 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - lottie-ios
     - MSCircularSlider
 
 SPEC CHECKSUMS:
@@ -72,8 +75,9 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: 91f51840c2324b56593f980c78d6b8354f836330
   KakaoSDKTemplate: 0526fe52476228ec0061912e20e50955466ca873
   KakaoSDKUser: 7debff9ff539b095aa4858469163fed7e3bce73e
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
 
-PODFILE CHECKSUM: 46ca4e3f4d1d43ca7f273a9f446a83d38074cea9
+PODFILE CHECKSUM: 4998b652d96c31655ff32587f9229e944ac6cdea
 
 COCOAPODS: 1.11.2
