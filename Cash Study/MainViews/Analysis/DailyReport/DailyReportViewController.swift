@@ -16,10 +16,11 @@ class DailyReportViewController: UIViewController {
     
     var selectedDate : String = ""
     var reportDataLst : DailyReportEntity?
+    var mostStudyIdx : DailyReportEntity?
     var isDoneCnt : Int = 0
     var totalStudiesCnt : Int = 0
     var totalRecordedTime : Int = 0
-    var mostStudyIdx : DailyReportEntity?
+    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -35,6 +36,7 @@ class DailyReportViewController: UIViewController {
         studyAnalysisCV.register(UINib(nibName: "EmptyReportCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyReportCell")
         studyAnalysisCV.register(UINib(nibName: "AchievementRateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "achievementCell")
         studyAnalysisCV.register(UINib(nibName: "MostStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mostStudyCell")
+        studyAnalysisCV.register(UINib(nibName: "OverallTimeLineCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "timelineCell")
         
         if let collectionViewLayout = studyAnalysisCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -94,7 +96,7 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if reportDataLst != nil {
             if reportDataLst?.reports.count != 0 {
-                return 2
+                return 3
             } else {
                 return 1
             }
@@ -130,6 +132,12 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                     
                     return cell
                     
+                } else if indexPath.row == 1 {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineCell", for: indexPath) as? OverallTimeLineCollectionViewCell else { return UICollectionViewCell() }
+                    
+                    cell.configure(with: reportDataLst!)
+                    
+                    return cell
                 } else {
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementCell", for: indexPath) as? AchievementRateCollectionViewCell else { return UICollectionViewCell() }
                     

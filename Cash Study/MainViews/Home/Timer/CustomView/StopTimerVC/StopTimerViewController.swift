@@ -108,7 +108,6 @@ class StopTimerViewController: UIViewController {
     
     // MARK: Functions
     @objc func putRecordDone(_ noti: Notification) {
-        let totalRes = totalRcrd + additionalRcrd
         
         if isDone {
            let vc = ObAlertViewController(mainMsg: "이미 완료한 공부는\n결과에 반영되지 않습니다", subMsg: "", btnTitle: "확인", isTimer: false)
@@ -116,16 +115,15 @@ class StopTimerViewController: UIViewController {
             present(vc, animated: true)
             
         } else {
-            let input = PutRecordInput(isDone: true, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: totalRes)
+            let input = PutRecordInput(isDone: true, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: additionalRcrd)
             showIndicator()
             PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
         }
     }
     
     @objc func putRecordNotDone(_ noti: Notification) {
-        let totalRes = totalRcrd + additionalRcrd
         
-        let input = PutRecordInput(isDone: false, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: totalRes)
+        let input = PutRecordInput(isDone: false, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: additionalRcrd)
         showIndicator()
         PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
     }

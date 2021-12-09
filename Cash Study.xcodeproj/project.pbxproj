@@ -85,6 +85,8 @@
 		B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63ED5672761EB16000199E4 /* MostStudyCollectionViewCell.xib */; };
 		B63ED56C27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED56A27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift */; };
 		B63ED56D27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63ED56B27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib */; };
+		B63ED57127623E45000199E4 /* OverallTimeLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED56F27623E45000199E4 /* OverallTimeLineCollectionViewCell.swift */; };
+		B63ED57227623E45000199E4 /* OverallTimeLineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63ED57027623E45000199E4 /* OverallTimeLineCollectionViewCell.xib */; };
 		B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B651275DD5720051F137 /* AnalysisViewController.swift */; };
 		B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B652275DD5720051F137 /* AnalysisViewController.xib */; };
 		B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */; };
@@ -271,6 +273,8 @@
 		B63ED5672761EB16000199E4 /* MostStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostStudyCollectionViewCell.xib; sourceTree = "<group>"; };
 		B63ED56A27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeLineCollectionViewCell.swift; sourceTree = "<group>"; };
 		B63ED56B27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyTimeLineCollectionViewCell.xib; sourceTree = "<group>"; };
+		B63ED56F27623E45000199E4 /* OverallTimeLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallTimeLineCollectionViewCell.swift; sourceTree = "<group>"; };
+		B63ED57027623E45000199E4 /* OverallTimeLineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverallTimeLineCollectionViewCell.xib; sourceTree = "<group>"; };
 		B645B651275DD5720051F137 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		B645B652275DD5720051F137 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisPageViewController.swift; sourceTree = "<group>"; };
@@ -928,10 +932,20 @@
 		B63ED5652761EAF7000199E4 /* StudyTimeLine */ = {
 			isa = PBXGroup;
 			children = (
+				B63ED57027623E45000199E4 /* OverallTimeLineCollectionViewCell.xib */,
+				B63ED56F27623E45000199E4 /* OverallTimeLineCollectionViewCell.swift */,
+				B63ED56E27623E04000199E4 /* CVCell */,
+			);
+			path = StudyTimeLine;
+			sourceTree = "<group>";
+		};
+		B63ED56E27623E04000199E4 /* CVCell */ = {
+			isa = PBXGroup;
+			children = (
 				B63ED56B27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib */,
 				B63ED56A27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift */,
 			);
-			path = StudyTimeLine;
+			path = CVCell;
 			sourceTree = "<group>";
 		};
 		B645B64B275DBB4D0051F137 /* Analysis */ = {
@@ -1617,6 +1631,7 @@
 				B63ED56D27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */,
+				B63ED57227623E45000199E4 /* OverallTimeLineCollectionViewCell.xib in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
@@ -1801,6 +1816,7 @@
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B633AA0B2754D3E000A00EFD /* EditUserInfoInput.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
+				B63ED57127623E45000199E4 /* OverallTimeLineCollectionViewCell.swift in Sources */,
 				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
 				B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
