@@ -134,9 +134,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             loginCheck(userIdentifier)
             
         default:
-            let vc = ObAlertViewController(mainMsg: "사용자 정보가 올바르지 않습니다", subMsg: "", btnTitle: "확인", isTimer: false)
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true)
+            break
         }
         
     }

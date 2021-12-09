@@ -33,16 +33,4 @@ class ShowDateStudyDataManager {
                 viewController.showStudy(result: data)
             }
     }
-    
-    // MARK: For Daily Report ViewController
-    func showStudyReport(date: String, viewController: DailyReportViewController) {
-        AF.request(Constant.BASE_URL + "/v1/study/list/\(date)", method: .get, encoding: JSONEncoding.default, headers: header)
-            .validate()
-            .responseDecodable(of: ShowDateStudyEntity.self) { response in
-                guard let data = response.value else { return }
-                
-                viewController.showStudyReport(result: data)
-            }
-    }
-    
 }

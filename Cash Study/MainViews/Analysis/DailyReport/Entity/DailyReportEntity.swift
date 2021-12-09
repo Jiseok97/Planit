@@ -7,6 +7,8 @@
 
 struct DailyReportEntity : Decodable {
     var reports : [dailyReport]?
+    var totalStudies : Int
+    var doneStudies : Int
 }
 
 struct dailyReport : Decodable {

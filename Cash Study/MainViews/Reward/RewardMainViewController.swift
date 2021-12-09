@@ -42,41 +42,41 @@ class RewardMainViewController: UIViewController {
     
     
     @IBAction func rewardStarTapped(_ sender: UIButton) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+//        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
         
-//        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-//
-//        rotation.toValue = Double.pi * 2
-//        rotation.duration = 1.4
-//        rotation.isCumulative = true
-//        rotation.autoreverses = false
-//        rotation.repeatCount = 1
-//
-//        rewardView.layer.add(rotation, forKey: "rotationAnimation")
-//        rewardView.layer.zPosition = 1
-//        rewardStarBtn.layer.zPosition = 999
-//
-//        UIView.animate(withDuration: 0.4, animations: {
-//            self.rewardView.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
-//        }, completion: { _ in
-//            UIView.animate(withDuration: 1.0) {
-//                self.rewardView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//            }
-//        })
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+
+        rotation.toValue = Double.pi * 2
+        rotation.duration = 1.4
+        rotation.isCumulative = true
+        rotation.autoreverses = false
+        rotation.repeatCount = 1
+
+        rewardView.layer.add(rotation, forKey: "rotationAnimation")
+        rewardView.layer.zPosition = 1
+        rewardStarBtn.layer.zPosition = 999
+
+        UIView.animate(withDuration: 0.4, animations: {
+            self.rewardView.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0) {
+                self.rewardView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+        })
         
         
     }
     
     
     @IBAction func moveRewardShop(_ sender: Any) {
-//        let vc = RewardShopViewController()
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+        let vc = RewardShopViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+//        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
     }
     
 }

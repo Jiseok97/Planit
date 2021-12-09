@@ -15,8 +15,9 @@ class DailyReportDataManager {
         AF.request(Constant.BASE_URL + "/v1/study/daily-report/\(date)", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: DailyReportEntity.self) { response in
-//                guard let data = response.value else { return }
+                guard let data = response.value else { return }
                 
+                viewController.showDailyReport(result: data)
                 
             }
     }

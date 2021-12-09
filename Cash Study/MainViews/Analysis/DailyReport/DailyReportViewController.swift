@@ -15,9 +15,11 @@ class DailyReportViewController: UIViewController {
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
     var selectedDate : String = ""
-    var studyDataLst : ShowDateStudyEntity?
+    var reportDataLst : DailyReportEntity?
     var isDoneCnt : Int = 0
+    var totalStudiesCnt : Int = 0
     var totalRecordedTime : Int = 0
+    var mostStudyIdx : DailyReportEntity?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -32,21 +34,22 @@ class DailyReportViewController: UIViewController {
         studyAnalysisCV.backgroundColor = .mainNavy.withAlphaComponent(0.0)
         studyAnalysisCV.register(UINib(nibName: "EmptyReportCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyReportCell")
         studyAnalysisCV.register(UINib(nibName: "AchievementRateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "achievementCell")
+        studyAnalysisCV.register(UINib(nibName: "MostStudyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mostStudyCell")
         
         if let collectionViewLayout = studyAnalysisCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
-    override func viewDidLayoutSubviews() {
-        self.changeHeight()
-    }
+//    override func viewDidLayoutSubviews() {
+//        self.changeHeight()
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
-        ShowDateStudyDataManager().showStudyReport(date: df.string(from: Date()), viewController: self)
+        DailyReportDataManager().showDailyReport(date: selectedDate, viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
     }
@@ -64,12 +67,12 @@ class DailyReportViewController: UIViewController {
             self.dateBtn.setTitle(txt, for: .normal)
             self.selectedDate = Constant.DATE
             showIndicator()
-            ShowDateStudyDataManager().showStudyReport(date: selectedDate, viewController: self)
+            DailyReportDataManager().showDailyReport(date: selectedDate, viewController: self)
         } else {
             let df = DateFormatter()
             df.dateFormat = "yyyy-MM-dd"
             showIndicator()
-            ShowDateStudyDataManager().showStudyReport(date: selectedDate, viewController: self)
+            DailyReportDataManager().showDailyReport(date: selectedDate, viewController: self)
         }
     }
     
@@ -84,39 +87,84 @@ class DailyReportViewController: UIViewController {
 
 extension DailyReportViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func changeHeight() {
-        self.cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
-    }
+//    func changeHeight() {
+//        self.cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if studyDataLst?.studies != nil && studyDataLst!.studies.count > 0 {
-            return 1
+        if reportDataLst != nil {
+            if reportDataLst?.reports == nil {
+                if reportDataLst!.totalStudies > 0 {
+                    return 1
+                } else {
+                    return 1
+                }
+            } else {
+                return 2
+            }
         } else {
             return 1
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if studyDataLst?.studies != nil {
-            if studyDataLst!.studies.count > 0 {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementCell", for: indexPath) as? AchievementRateCollectionViewCell else { return UICollectionViewCell() }
-                
-                cell.studyCntLbl.text = "\(isDoneCnt)/\(studyDataLst!.studies.count)"
-                cell.rateLbl.text = "\(100 / studyDataLst!.studies.count * isDoneCnt)%"
-                cell.progressBar.progress = Float(Double(100 / studyDataLst!.studies.count * isDoneCnt) * 0.01)
-                
-                return cell
+        
+        if reportDataLst != nil {
+            if reportDataLst?.reports == nil {
+                if reportDataLst!.totalStudies > 0 {
+                    // achievement Rate Cell 하나만 출력
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementCell", for: indexPath) as? AchievementRateCollectionViewCell else { return UICollectionViewCell() }
+                    
+                    cell.studyCntLbl.text = "\(isDoneCnt)/\(totalStudiesCnt)"
+                    cell.rateLbl.text = "\(100 / totalStudiesCnt * isDoneCnt)%"
+                    cell.progressBar.progress = Float(Double(100 / totalStudiesCnt * isDoneCnt) * 0.01)
+                    
+                    return cell
+                } else {
+                    // empty Cell 하나만 출력
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyReportCell", for: indexPath) as? EmptyReportCollectionViewCell else { return UICollectionViewCell() }
+                    
+                    cell.layer.borderColor = UIColor.homeBorderColor.cgColor
+                    cell.layer.borderWidth = 0.8
+                    cell.layer.cornerRadius = 8
+                    
+                    return cell
+                }
             } else {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyReportCell", for: indexPath) as? EmptyReportCollectionViewCell else { return UICollectionViewCell() }
+                // 측정된 값과 공부들이 있기에 모두 출력
+                if indexPath.row == 0 {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mostStudyCell", for: indexPath) as? MostStudyCollectionViewCell else { return UICollectionViewCell() }
+                    
+                    let timeRcrd = reportDataLst?.reports![indexPath.row].recordedTime
+                    let sec = String(describing: timeRcrd! % 60 )
+                    let min = String(describing: (timeRcrd! / 60) % 60 )
+                    let hour = String(describing: timeRcrd! / 3600)
+                    
+                    if timeRcrd! < 60 {
+                        cell.recordTimeLbl.text = "\(sec)초"
+                    } else if timeRcrd! >= 60 && timeRcrd! < 3600 {
+                        cell.recordTimeLbl.text = "\(min)분 \(sec)초"
+                    } else {
+                        cell.recordTimeLbl.text = "\(hour)시간 \(min)분 \(sec)초"
+                    }
+                    
+                    cell.studyNameLbl.text = reportDataLst?.reports![indexPath.row].title
+                    return cell
+                    
+                } else {
+                    
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "achievementCell", for: indexPath) as? AchievementRateCollectionViewCell else { return UICollectionViewCell() }
+                    
+                    cell.studyCntLbl.text = "\(isDoneCnt)/\(totalStudiesCnt)"
+                    cell.rateLbl.text = "\(100 / totalStudiesCnt * isDoneCnt)%"
+                    cell.progressBar.progress = Float(Double(100 / totalStudiesCnt * isDoneCnt) * 0.01)
+                    
+                    return cell
+                }
                 
-                cell.layer.borderColor = UIColor.homeBorderColor.cgColor
-                cell.layer.borderWidth = 0.8
-                cell.layer.cornerRadius = 8
-                
-                return cell
             }
-            
         } else {
+            // empty cell 출력
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyReportCell", for: indexPath) as? EmptyReportCollectionViewCell else { return UICollectionViewCell() }
             
             cell.layer.borderColor = UIColor.homeBorderColor.cgColor
@@ -125,17 +173,23 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
             
             return cell
         }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return CGFloat(60)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if studyDataLst?.studies != nil {
+        if reportDataLst?.reports != nil {
             let width = self.studyAnalysisCV.frame.width
             let height = self.view.frame.height * 0.2142
             
             return CGSize(width: width, height: height)
         } else {
-            let width = self.studyAnalysisCV.bounds.width * 0.88
+            let width = self.studyAnalysisCV.frame.width
             let height = self.view.frame.height * 0.157857142857143
             
             return CGSize(width: width, height: height)
@@ -144,23 +198,25 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     
 }
 
-
 extension DailyReportViewController {
-    func showStudyReport(result: ShowDateStudyEntity) {
+    func showDailyReport(result: DailyReportEntity) {
         dismissIndicator()
-        var totalTime : Int = 0
-        var isDoneCount : Int = 0
-        self.studyDataLst = result
+        self.mostStudyIdx = result
+        self.reportDataLst = result
         self.studyAnalysisCV.reloadData()
+        mostStudyIdx?.reports!.sort{ $0.recordedTime < $1.recordedTime }
         
-        studyDataLst?.studies.forEach {
+        print("result = \(result)")
+        
+        var totalTime : Int = 0
+        
+        result.reports?.forEach {
             totalTime += $0.recordedTime
-            if $0.isDone == true {
-                isDoneCount += 1
-            }
         }
+        
         self.totalRecordedTime = totalTime
-        self.isDoneCnt = isDoneCount
+        self.isDoneCnt = result.doneStudies
+        self.totalStudiesCnt = result.totalStudies
         
         if totalTime == 0 {
             self.timeLbl.text = "타이머 측정 시간이 없습니다"
@@ -168,14 +224,15 @@ extension DailyReportViewController {
             let sec = String(describing: totalTime % 60 )
             let min = String(describing: (totalTime / 60) % 60 )
             let hour = String(describing: totalTime / 3600)
-            self.timeLbl.text = "\(hour)시간 \(min)분 \(sec)초 공부했어요"
+            
             if totalTime < 60 {
                 self.timeLbl.text = "\(sec)초 공부했어요"
-            } else if totalTime < 3600 {
+            } else if totalTime >= 60 && totalTime < 3600 {
                 self.timeLbl.text = "\(min)분 \(sec)초 공부했어요"
             } else {
                 self.timeLbl.text = "\(hour)시간 \(min)분 \(sec)초 공부했어요"
             }
         }
+        
     }
 }

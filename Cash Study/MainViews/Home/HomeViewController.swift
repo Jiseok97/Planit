@@ -43,7 +43,6 @@ class HomeViewController: UIViewController {
         if let collectionViewLayout = studyLstCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
-        
     }
 
     
@@ -61,6 +60,8 @@ class HomeViewController: UIViewController {
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
         
         ShowDdayDataManager().showHomeDday(viewController: self)
+        studyLstCV.setNeedsDisplay()
+        studyLstCV.setNeedsLayout()
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("reloadHome"), object: nil)
     }
@@ -242,10 +243,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         let width = self.view.frame.width * 0.872
         let height = self.view.frame.height * 0.12268965517
-        
         return CGSize(width: width, height: height)
+        
     }
-    
 }
 
 

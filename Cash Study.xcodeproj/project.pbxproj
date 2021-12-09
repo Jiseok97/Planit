@@ -81,6 +81,10 @@
 		B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63E67D62753E21300C891C2 /* StopTimerViewController.xib */; };
 		B63ED5612761CC7C000199E4 /* DailyReportDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED5602761CC7C000199E4 /* DailyReportDataManager.swift */; };
 		B63ED5632761CC87000199E4 /* DailyReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED5622761CC87000199E4 /* DailyReportEntity.swift */; };
+		B63ED5682761EB16000199E4 /* MostStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED5662761EB16000199E4 /* MostStudyCollectionViewCell.swift */; };
+		B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63ED5672761EB16000199E4 /* MostStudyCollectionViewCell.xib */; };
+		B63ED56C27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED56A27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift */; };
+		B63ED56D27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63ED56B27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib */; };
 		B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B651275DD5720051F137 /* AnalysisViewController.swift */; };
 		B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B652275DD5720051F137 /* AnalysisViewController.xib */; };
 		B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */; };
@@ -263,6 +267,10 @@
 		B63E67D62753E21300C891C2 /* StopTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopTimerViewController.xib; sourceTree = "<group>"; };
 		B63ED5602761CC7C000199E4 /* DailyReportDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportDataManager.swift; sourceTree = "<group>"; };
 		B63ED5622761CC87000199E4 /* DailyReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportEntity.swift; sourceTree = "<group>"; };
+		B63ED5662761EB16000199E4 /* MostStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostStudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		B63ED5672761EB16000199E4 /* MostStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostStudyCollectionViewCell.xib; sourceTree = "<group>"; };
+		B63ED56A27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeLineCollectionViewCell.swift; sourceTree = "<group>"; };
+		B63ED56B27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyTimeLineCollectionViewCell.xib; sourceTree = "<group>"; };
 		B645B651275DD5720051F137 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		B645B652275DD5720051F137 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisPageViewController.swift; sourceTree = "<group>"; };
@@ -908,6 +916,24 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		B63ED5642761EABD000199E4 /* MostStudy */ = {
+			isa = PBXGroup;
+			children = (
+				B63ED5672761EB16000199E4 /* MostStudyCollectionViewCell.xib */,
+				B63ED5662761EB16000199E4 /* MostStudyCollectionViewCell.swift */,
+			);
+			path = MostStudy;
+			sourceTree = "<group>";
+		};
+		B63ED5652761EAF7000199E4 /* StudyTimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				B63ED56B27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib */,
+				B63ED56A27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift */,
+			);
+			path = StudyTimeLine;
+			sourceTree = "<group>";
+		};
 		B645B64B275DBB4D0051F137 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +969,8 @@
 		B645B65E275DE41A0051F137 /* CVCell */ = {
 			isa = PBXGroup;
 			children = (
+				B63ED5642761EABD000199E4 /* MostStudy */,
+				B63ED5652761EAF7000199E4 /* StudyTimeLine */,
 				B648F5DC275F538E005DDEF9 /* AchievementRate */,
 				B648F5DB275F537F005DDEF9 /* EmptyReport */,
 			);
@@ -1586,7 +1614,9 @@
 				B6B272AF272687ED0010138A /* TermsOfUseViewController.xib in Resources */,
 				B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */,
 				B645B65D275DD6F10051F137 /* DailyReportViewController.xib in Resources */,
+				B63ED56D27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
+				B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
@@ -1724,6 +1754,7 @@
 				B62A93B8274FA9180092C9B5 /* ShowDateStudyEntity.swift in Sources */,
 				B6B118672716D7B0008842BA /* LoginViewController.swift in Sources */,
 				B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */,
+				B63ED56C27620EFB000199E4 /* StudyTimeLineCollectionViewCell.swift in Sources */,
 				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,
 				B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */,
 				B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */,
@@ -1731,6 +1762,7 @@
 				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
 				B633AA152754F2EE00A00EFD /* PutRecordDataManager.swift in Sources */,
 				B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */,
+				B63ED5682761EB16000199E4 /* MostStudyCollectionViewCell.swift in Sources */,
 				B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
 				B608E50A274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift in Sources */,

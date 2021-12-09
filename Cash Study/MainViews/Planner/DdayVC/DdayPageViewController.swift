@@ -228,8 +228,8 @@ extension DdayPageViewController {
                 }
             }
             if (DdayDataLst?.ddays.count)! >= 1 {
-                guard let data = DdayDataLst?.ddays[idx] as? dday else { return }
-                DdayDataLst?.ddays.insert(data, at: 0)
+                let data = DdayDataLst?.ddays[idx]
+                DdayDataLst?.ddays.insert(data!, at: 0)
                 DdayDataLst?.ddays.remove(at: idx + 1)
             }
         }

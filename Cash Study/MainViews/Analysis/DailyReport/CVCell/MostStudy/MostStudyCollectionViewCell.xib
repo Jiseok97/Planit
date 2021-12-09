@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostStudyCell" id="gTV-IL-0wX" customClass="MostStudyCollectionViewCell" customModule="Cash_Study" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="154"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="365" height="154"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가장 집중한 공부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-Gd-nTZ">
+                        <rect key="frame" x="8" y="3.5" width="112" height="23.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wym-Cv-lhH">
+                        <rect key="frame" x="0.0" y="39" width="365" height="115"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibl-1j-9Ye">
+                                <rect key="frame" x="24" y="31.5" width="74" height="29"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="20"/>
+                                <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1시간 20분 39초" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGY-QO-gDX">
+                                <rect key="frame" x="24" y="64.5" width="110.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                <color key="textColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zGY-QO-gDX" firstAttribute="leading" secondItem="wym-Cv-lhH" secondAttribute="leading" constant="24" id="7y0-se-c4S"/>
+                            <constraint firstItem="zGY-QO-gDX" firstAttribute="top" secondItem="Ibl-1j-9Ye" secondAttribute="bottom" constant="4" id="Y2a-uK-kX0"/>
+                            <constraint firstItem="Ibl-1j-9Ye" firstAttribute="leading" secondItem="wym-Cv-lhH" secondAttribute="leading" constant="24" id="fwT-BV-FCR"/>
+                            <constraint firstItem="Ibl-1j-9Ye" firstAttribute="centerY" secondItem="wym-Cv-lhH" secondAttribute="centerY" multiplier="0.8" id="vCc-eB-mWB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="wym-Cv-lhH" firstAttribute="top" secondItem="8Qc-Gd-nTZ" secondAttribute="bottom" constant="12" id="f5G-sL-OvC"/>
+                <constraint firstItem="8Qc-Gd-nTZ" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="8" id="iCB-L9-3pp"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="wym-Cv-lhH" secondAttribute="bottom" id="kGL-ie-19B"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="wym-Cv-lhH" secondAttribute="trailing" id="lDe-UT-9C9"/>
+                <constraint firstItem="wym-Cv-lhH" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="xEc-MQ-jxc"/>
+                <constraint firstItem="8Qc-Gd-nTZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.2" id="ykz-Sb-vk4"/>
+            </constraints>
+            <size key="customSize" width="365" height="154"/>
+            <connections>
+                <outlet property="bgView" destination="wym-Cv-lhH" id="XW8-LX-S7r"/>
+                <outlet property="recordTimeLbl" destination="zGY-QO-gDX" id="JPi-PI-jNC"/>
+                <outlet property="studyNameLbl" destination="Ibl-1j-9Ye" id="6J0-Us-ijx"/>
+            </connections>
+            <point key="canvasLocation" x="360.14492753623193" y="104.46428571428571"/>
+        </collectionViewCell>
+    </objects>
+</document>

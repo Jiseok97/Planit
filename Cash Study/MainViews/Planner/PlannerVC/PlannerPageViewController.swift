@@ -129,6 +129,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         df.dateFormat = "yyyy-MM-dd"
         showIndicator()
         ShowDateStudyDataManager().showStudy(date: df.string(from: Date()), viewController: self)
+        studyCV.reloadData()
     }
     
     
@@ -244,25 +245,21 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let data = studyDataLst?.studies[indexPath.row] else { return }
-        
-        let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, isEdit: true)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        if studyDataLst?.studies != nil && (studyDataLst?.studies.count)! > 0 {
+            guard let data = studyDataLst?.studies[indexPath.row] else { return }
+            
+            let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, isEdit: true)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width = self.studyCV.frame.width
-        
-        if studyDataLst?.studies != nil {
-            let height = self.view.bounds.height * 0.1309
-            return CGSize(width: width, height: height)
-        } else {
-            let height = self.view.bounds.height * 0.1487
-            return CGSize(width: width, height: height)
-        }
-        
+        let height = self.view.bounds.height * 0.1359
+        return CGSize(width: width, height: height)
     }
     
 }
