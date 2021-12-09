@@ -42,9 +42,9 @@ class DailyReportViewController: UIViewController {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
-//    override func viewDidLayoutSubviews() {
-//        self.changeHeight()
-//    }
+    override func viewDidLayoutSubviews() {
+        self.changeHeight()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,9 +89,9 @@ class DailyReportViewController: UIViewController {
 
 extension DailyReportViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-//    func changeHeight() {
-//        self.cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
-//    }
+    func changeHeight() {
+        self.cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if reportDataLst != nil {
@@ -135,7 +135,18 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                 } else if indexPath.row == 1 {
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineCell", for: indexPath) as? OverallTimeLineCollectionViewCell else { return UICollectionViewCell() }
                     
+                    let height = self.view.frame.height * 0.197857142857143
+                    
+                    if reportDataLst?.reports.count == 1 {
+                        cell.configureHeight(with: height)
+                    } else if reportDataLst?.reports.count == 2 {
+                        cell.configureHeight(with: (height * 2))
+                    } else {
+                        cell.configureHeight(with: (height * 3))
+                    }
+                    
                     cell.configure(with: reportDataLst!)
+                    
                     
                     return cell
                 } else {

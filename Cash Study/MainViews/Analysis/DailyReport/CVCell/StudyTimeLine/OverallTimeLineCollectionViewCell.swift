@@ -9,6 +9,7 @@ import UIKit
 
 class OverallTimeLineCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var timelineCV: UICollectionView!
     
     var timeLineLst : DailyReportEntity?
@@ -18,6 +19,10 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         timelineCV.reloadData()
     }
     
+    func configureHeight(with height: CGFloat) {
+        bgView.heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,6 +30,15 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         timelineCV.dataSource = self
         timelineCV.register(UINib(nibName: "StudyTimeLineCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "stlCell")
         timelineCV.layer.cornerRadius = 8
+        timelineCV.clipsToBounds = true
+        bgView.isHidden = true
+        
+        bgView.widthAnchor.constraint(equalToConstant: timelineCV.bounds.width).isActive = true
+        
+        if let collectionViewLayout = timelineCV.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+        
     }
 
 }
@@ -41,6 +55,11 @@ extension OverallTimeLineCollectionViewCell : UICollectionViewDelegate, UICollec
         } else {
             return 0
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return CGFloat(-1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,9 +109,20 @@ extension OverallTimeLineCollectionViewCell : UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.timelineCV.frame.width
-        let height = self.timelineCV.frame.height
         
-        return CGSize(width: width, height: height)
+        if timeLineLst?.reports.count == 1 {
+            let height = self.timelineCV.frame.height
+            return CGSize(width: width, height: height)
+            
+        } else if timeLineLst?.reports.count == 2 {
+            let height = self.timelineCV.frame.height / 2
+            return CGSize(width: width, height: height)
+            
+        } else {
+            let height = self.timelineCV.frame.height / 3
+            return CGSize(width: width, height: height)
+        }
+    
     }
     
 }

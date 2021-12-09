@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,6 +22,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="461" height="249"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ruj-EL-bBr">
+                        <rect key="frame" x="0.0" y="0.0" width="461" height="249"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 타임라인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0j-a8-jkZ">
                         <rect key="frame" x="8" y="13" width="93" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
@@ -31,7 +33,7 @@
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Rpk-ph-n7r">
                         <rect key="frame" x="0.0" y="48.5" width="461" height="166.5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="qS3-cq-etu">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -46,20 +48,20 @@
                 <constraint firstItem="Rpk-ph-n7r" firstAttribute="top" secondItem="M0j-a8-jkZ" secondAttribute="bottom" constant="12" id="0OY-42-16n"/>
                 <constraint firstItem="M0j-a8-jkZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.2" id="2jW-Be-8hO"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Rpk-ph-n7r" secondAttribute="bottom" id="DtF-S8-9mC"/>
+                <constraint firstItem="Ruj-EL-bBr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FRP-5i-ZsC"/>
+                <constraint firstAttribute="trailing" secondItem="Ruj-EL-bBr" secondAttribute="trailing" id="KBG-sR-cyv"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="Rpk-ph-n7r" secondAttribute="trailing" id="QGe-79-Ds5"/>
+                <constraint firstAttribute="bottom" secondItem="Ruj-EL-bBr" secondAttribute="bottom" id="dkE-8h-llM"/>
                 <constraint firstItem="M0j-a8-jkZ" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="8" id="gAO-Rn-dfN"/>
+                <constraint firstItem="Ruj-EL-bBr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tpu-Wm-GPO"/>
                 <constraint firstItem="Rpk-ph-n7r" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="zW6-OC-ebC"/>
             </constraints>
             <size key="customSize" width="461" height="249"/>
             <connections>
+                <outlet property="bgView" destination="Ruj-EL-bBr" id="49Q-Qk-ShD"/>
                 <outlet property="timelineCV" destination="Rpk-ph-n7r" id="Wyx-8o-dCv"/>
             </connections>
             <point key="canvasLocation" x="429.71014492753625" y="130.24553571428572"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
