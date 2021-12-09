@@ -79,6 +79,8 @@
 		B63E67D32753DD1E00C891C2 /* ShowRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */; };
 		B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E67D52753E21300C891C2 /* StopTimerViewController.swift */; };
 		B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63E67D62753E21300C891C2 /* StopTimerViewController.xib */; };
+		B63ED5612761CC7C000199E4 /* DailyReportDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED5602761CC7C000199E4 /* DailyReportDataManager.swift */; };
+		B63ED5632761CC87000199E4 /* DailyReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63ED5622761CC87000199E4 /* DailyReportEntity.swift */; };
 		B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B651275DD5720051F137 /* AnalysisViewController.swift */; };
 		B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645B652275DD5720051F137 /* AnalysisViewController.xib */; };
 		B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */; };
@@ -145,8 +147,6 @@
 		B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
-		B6BBEECB2760F5CF00E3EE8E /* testStar.json in Resources */ = {isa = PBXBuildFile; fileRef = B6BBEECA2760F5CF00E3EE8E /* testStar.json */; };
-		B6BBEECD2761025A00E3EE8E /* bgStars.json in Resources */ = {isa = PBXBuildFile; fileRef = B6BBEECC2761025A00E3EE8E /* bgStars.json */; };
 		B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */; };
 		B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */; };
 		B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */; };
@@ -261,6 +261,8 @@
 		B63E67D22753DD1E00C891C2 /* ShowRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecordEntity.swift; sourceTree = "<group>"; };
 		B63E67D52753E21300C891C2 /* StopTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTimerViewController.swift; sourceTree = "<group>"; };
 		B63E67D62753E21300C891C2 /* StopTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopTimerViewController.xib; sourceTree = "<group>"; };
+		B63ED5602761CC7C000199E4 /* DailyReportDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportDataManager.swift; sourceTree = "<group>"; };
+		B63ED5622761CC87000199E4 /* DailyReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportEntity.swift; sourceTree = "<group>"; };
 		B645B651275DD5720051F137 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		B645B652275DD5720051F137 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		B645B656275DD66C0051F137 /* AnalysisPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisPageViewController.swift; sourceTree = "<group>"; };
@@ -333,8 +335,6 @@
 		B6B449002738EF2B00AB45AC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
-		B6BBEECA2760F5CF00E3EE8E /* testStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testStar.json; path = ../../../Downloads/testStar.json; sourceTree = "<group>"; };
-		B6BBEECC2761025A00E3EE8E /* bgStars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bgStars.json; path = ../../../Downloads/bgStars.json; sourceTree = "<group>"; };
 		B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayEntity.swift; sourceTree = "<group>"; };
 		B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayInput.swift; sourceTree = "<group>"; };
 		B6BF895C273D14EA000ABCFF /* AddDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayDataManager.swift; sourceTree = "<group>"; };
@@ -892,6 +892,22 @@
 			path = StopTimerVC;
 			sourceTree = "<group>";
 		};
+		B63ED55E2761CC60000199E4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B63ED5622761CC87000199E4 /* DailyReportEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B63ED55F2761CC65000199E4 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B63ED5602761CC7C000199E4 /* DailyReportDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		B645B64B275DBB4D0051F137 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -908,6 +924,8 @@
 			children = (
 				B645B65B275DD6F10051F137 /* DailyReportViewController.xib */,
 				B645B65A275DD6F10051F137 /* DailyReportViewController.swift */,
+				B63ED55F2761CC65000199E4 /* DataManager */,
+				B63ED55E2761CC60000199E4 /* Entity */,
 				B645B65E275DE41A0051F137 /* CVCell */,
 			);
 			path = DailyReport;
@@ -1200,8 +1218,6 @@
 		B6B118312716D261008842BA /* Cash Study */ = {
 			isa = PBXGroup;
 			children = (
-				B6BBEECC2761025A00E3EE8E /* bgStars.json */,
-				B6BBEECA2760F5CF00E3EE8E /* testStar.json */,
 				B61FAD0E273635CA00D11538 /* Cash Study.entitlements */,
 				B67C98982724F9E60039D271 /* Configuration */,
 				B6B118632716D5B4008842BA /* Splash */,
@@ -1579,7 +1595,6 @@
 				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */,
-				B6BBEECD2761025A00E3EE8E /* bgStars.json in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
@@ -1588,7 +1603,6 @@
 				B63E67D82753E21300C891C2 /* StopTimerViewController.xib in Resources */,
 				B645B654275DD5720051F137 /* AnalysisViewController.xib in Resources */,
 				B66B47782732706000F89012 /* HomeViewController.xib in Resources */,
-				B6BBEECB2760F5CF00E3EE8E /* testStar.json in Resources */,
 				B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */,
 				B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */,
 				B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */,
@@ -1685,6 +1699,7 @@
 				B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */,
 				B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */,
 				B61FAD1527363D1B00D11538 /* EmptyStudyCollectionViewCell.swift in Sources */,
+				B63ED5632761CC87000199E4 /* DailyReportEntity.swift in Sources */,
 				B66B479927328C7900F89012 /* LoginEntity.swift in Sources */,
 				B614C465273A9D6F00A5E8F9 /* PlannerPageViewController.swift in Sources */,
 				B633AA022754C56900A00EFD /* EditnicknameInput.swift in Sources */,
@@ -1722,6 +1737,7 @@
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B633A9FD2754950100A00EFD /* EditUserInfoViewController.swift in Sources */,
 				B6224209272D06FE004F6750 /* nickNameInput.swift in Sources */,
+				B63ED5612761CC7C000199E4 /* DailyReportDataManager.swift in Sources */,
 				B633A9F92754933200A00EFD /* ShowUserInfoEntity.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
 				B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */,
@@ -1933,7 +1949,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1996,7 +2012,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -133,16 +133,17 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             print("userIdentifier = \(userIdentifier)")
             loginCheck(userIdentifier)
             
-            
         default:
-            break
+            let vc = ObAlertViewController(mainMsg: "사용자 정보가 올바르지 않습니다", subMsg: "", btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
         }
         
     }
     
     // 로그인 시 에러
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("Apple Login Error → \(error)")
+        return
     }
     
 }
