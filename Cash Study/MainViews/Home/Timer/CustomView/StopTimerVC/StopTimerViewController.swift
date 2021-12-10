@@ -59,6 +59,8 @@ class StopTimerViewController: UIViewController {
         self.bonusView.layer.cornerRadius = 8
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
+        print("total rcrd = \(totalRcrd) && additionRcrd = \(additionalRcrd)")
+        
         let totalRes = totalRcrd + additionalRcrd
         let sec = totalRes % 60
         let min = (totalRes / 60) % 60
@@ -85,7 +87,7 @@ class StopTimerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showIndicator()
+        
         ShowRecordDataManager().showRecordST(stId: stId, viewController: self)
         
         let vc = TimerAlertViewController()
@@ -136,7 +138,7 @@ class StopTimerViewController: UIViewController {
 
 extension StopTimerViewController {
     func showRecordST(result: ShowRecordEntity) {
-        self.dismissIndicator()
+        
         self.isDone = result.isDone
     }
 }

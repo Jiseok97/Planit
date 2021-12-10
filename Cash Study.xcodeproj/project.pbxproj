@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88CA37D59B433E43BA824565 /* Pods_Cash_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5D0E845A1C6A7C965C3682 /* Pods_Cash_Study.framework */; };
 		B604DA412751274900783E79 /* ObAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604DA3F2751274900783E79 /* ObAlertViewController.swift */; };
 		B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B604DA402751274900783E79 /* ObAlertViewController.xib */; };
 		B607976C2727FD2000D6D454 /* InputUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B607976B2727FD2000D6D454 /* InputUserInfo.storyboard */; };
@@ -99,6 +98,9 @@
 		B645B669275DFE180051F137 /* EditStudyStatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */; };
 		B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */; };
 		B64771C42744F32300BBCBC2 /* NoDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */; };
+		B64886A02763289400B57FFB /* Pods_Cash_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5D0E845A1C6A7C965C3682 /* Pods_Cash_Study.framework */; };
+		B64886A62763398E00B57FFB /* PlanitPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64886A42763398E00B57FFB /* PlanitPassViewController.swift */; };
+		B64886A72763398E00B57FFB /* PlanitPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64886A52763398E00B57FFB /* PlanitPassViewController.xib */; };
 		B648F5DF275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B648F5DD275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift */; };
 		B648F5E0275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B648F5DE275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib */; };
 		B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */; };
@@ -287,6 +289,8 @@
 		B645B668275DFE180051F137 /* EditStudyStatusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyStatusEntity.swift; sourceTree = "<group>"; };
 		B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B64771C22744F32300BBCBC2 /* NoDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDdayCollectionViewCell.xib; sourceTree = "<group>"; };
+		B64886A42763398E00B57FFB /* PlanitPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitPassViewController.swift; sourceTree = "<group>"; };
+		B64886A52763398E00B57FFB /* PlanitPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanitPassViewController.xib; sourceTree = "<group>"; };
 		B648F5DD275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRateCollectionViewCell.swift; sourceTree = "<group>"; };
 		B648F5DE275F53AD005DDEF9 /* AchievementRateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementRateCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6605BAB2753BDE800836795 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Black.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -373,7 +377,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CA37D59B433E43BA824565 /* Pods_Cash_Study.framework in Frameworks */,
+				B64886A02763289400B57FFB /* Pods_Cash_Study.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +475,7 @@
 			children = (
 				B688492F276071C600DF1F42 /* RewardMainViewController.xib */,
 				B688492E276071C600DF1F42 /* RewardMainViewController.swift */,
+				B64886A32763396C00B57FFB /* PlanitPass */,
 				B66BAFBB2758BB54009CAA31 /* RewardShop */,
 			);
 			path = Reward;
@@ -1023,6 +1028,15 @@
 				B64771C12744F32300BBCBC2 /* NoDdayCollectionViewCell.swift */,
 			);
 			path = NoDday;
+			sourceTree = "<group>";
+		};
+		B64886A32763396C00B57FFB /* PlanitPass */ = {
+			isa = PBXGroup;
+			children = (
+				B64886A52763398E00B57FFB /* PlanitPassViewController.xib */,
+				B64886A42763398E00B57FFB /* PlanitPassViewController.swift */,
+			);
+			path = PlanitPass;
 			sourceTree = "<group>";
 		};
 		B648F5DB275F537F005DDEF9 /* EmptyReport */ = {
@@ -1641,6 +1655,7 @@
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
+				B64886A72763398E00B57FFB /* PlanitPassViewController.xib in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
 				B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */,
 				B66B477F2732799E00F89012 /* PlannerViewController.xib in Resources */,
@@ -1773,6 +1788,7 @@
 				B6C455B3273028A600B1326A /* noReceiverDataManager.swift in Sources */,
 				B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */,
 				B66B479527328C6E00F89012 /* LoginDataManager.swift in Sources */,
+				B64886A62763398E00B57FFB /* PlanitPassViewController.swift in Sources */,
 				B67C98A22724FB910039D271 /* UIViewController.swift in Sources */,
 				B6D81E212732B905006E641E /* RefreshTokenEntity.swift in Sources */,
 				B633AA152754F2EE00A00EFD /* PutRecordDataManager.swift in Sources */,
@@ -1997,7 +2013,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2005,7 +2021,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -2060,7 +2076,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2068,7 +2084,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

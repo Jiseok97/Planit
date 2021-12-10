@@ -39,7 +39,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후라이드 반 + 양념 반 _ 콜라 1.25L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-sg-7hR">
-                        <rect key="frame" x="137" y="59.5" width="202" height="23.5"/>
+                        <rect key="frame" x="137" y="59.5" width="182" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                 <constraint firstItem="Qr0-eI-L54" firstAttribute="leading" secondItem="z2Z-sM-eYF" secondAttribute="trailing" constant="18" id="QoZ-X4-lqt"/>
                 <constraint firstItem="ev7-xH-g0Q" firstAttribute="leading" secondItem="cjb-Q5-7TH" secondAttribute="trailing" constant="3" id="URj-aM-jdR"/>
                 <constraint firstItem="2wl-sg-7hR" firstAttribute="top" secondItem="Qr0-eI-L54" secondAttribute="bottom" id="X8u-is-89I"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="2wl-sg-7hR" secondAttribute="trailing" constant="32" id="YSy-8V-LrH"/>
+                <constraint firstItem="2wl-sg-7hR" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.49" id="ZYl-bX-MsI"/>
                 <constraint firstItem="z2Z-sM-eYF" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="iq5-Z0-RUn"/>
                 <constraint firstItem="cjb-Q5-7TH" firstAttribute="leading" secondItem="z2Z-sM-eYF" secondAttribute="trailing" constant="18" id="ne5-0Y-cFl"/>
                 <constraint firstItem="2wl-sg-7hR" firstAttribute="leading" secondItem="z2Z-sM-eYF" secondAttribute="trailing" constant="18" id="w4q-0g-hp2"/>

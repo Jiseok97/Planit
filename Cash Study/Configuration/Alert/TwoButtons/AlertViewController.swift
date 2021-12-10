@@ -46,6 +46,10 @@ class AlertViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
+        if self.confirmBtnTxt == "구매" {
+            self.view.backgroundColor = .black.withAlphaComponent(1.0)
+        }
+        
     }
     
     
@@ -87,6 +91,9 @@ class AlertViewController: UIViewController {
                 NotificationCenter.default.post(name: NSNotification.Name("setRepresent"), object: nil)
                 dismiss(animated: true, completion: nil)
             }
+            
+        case "구매":
+            dismiss(animated: true, completion: nil)
             
             
         case "멈춤":

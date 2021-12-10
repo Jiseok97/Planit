@@ -224,6 +224,8 @@ extension TimerViewController {
         self.dismissIndicator()
         self.recordDataLst = result
         
+        print("result = \(result)")
+        
         guard let reward = recordDataLst?.star else { return }
         guard let bonus = recordDataLst?.bonusTicket else { return }
         guard let rest = recordDataLst?.rest else { return }

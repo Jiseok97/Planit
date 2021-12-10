@@ -38,8 +38,6 @@ class LoginViewController: UIViewController {
     // MARK: About Kakao Login
     @IBAction func kakaoBtnTapped(_ sender: Any) {
         if (UserApi.isKakaoTalkLoginAvailable()) {
-            print("Test Print()")
-
             UserApi.shared.loginWithKakaoTalk {( oauthToken, error) in
                 if let error = error {
                     print("KakaoTalk Login error → \(error)")

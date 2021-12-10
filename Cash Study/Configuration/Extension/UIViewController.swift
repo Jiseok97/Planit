@@ -159,7 +159,7 @@ extension UIViewController {
     
     func setGradation() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
+        gradientLayer.frame = UIScreen.main.bounds
         gradientLayer.colors = [UIColor.gradationStartColor.cgColor, UIColor.mainNavy.cgColor]
         
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)

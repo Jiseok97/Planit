@@ -66,8 +66,15 @@ class RewardMainViewController: UIViewController {
             }
         })
         
-        
     }
+    
+    @IBAction func movePlanitPass(_ sender: Any) {
+        let vc = PlanitPassViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
+    
     
     
     @IBAction func moveRewardShop(_ sender: Any) {

@@ -12,7 +12,7 @@ class PutRecordDataManager : UIViewController {
                                .accept("application/json")]
     
     func putRecord(_ info: PutRecordInput, stId: Int, viewController: StopTimerViewController) {
-        AF.request(Constant.BASE_URL + "/v1/study/record/\(stId)", method: .put, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
+        AF.request(Constant.BASE_URL + "/v1/study/record/\(stId)", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: ShowRecordEntity.self) { response in
                 let code = response.response?.statusCode

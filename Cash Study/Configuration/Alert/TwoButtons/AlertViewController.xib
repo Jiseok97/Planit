@@ -72,7 +72,7 @@
                     <rect key="frame" x="32" y="330.5" width="350" height="235"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RMG-KS-cPw">
-                            <rect key="frame" x="39" y="53" width="272" height="51"/>
+                            <rect key="frame" x="39" y="59" width="272" height="51"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림창 제목" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ci-SA-ayN">
                                     <rect key="frame" x="0.0" y="0.0" width="272" height="26.5"/>
@@ -125,7 +125,7 @@
                         <constraint firstItem="hZH-Uc-J8V" firstAttribute="centerY" secondItem="gja-ol-dTH" secondAttribute="centerY" id="ou4-H0-vOq"/>
                         <constraint firstAttribute="bottom" secondItem="gja-ol-dTH" secondAttribute="bottom" constant="20" id="r6W-vV-Uea"/>
                         <constraint firstItem="hZH-Uc-J8V" firstAttribute="height" secondItem="gja-ol-dTH" secondAttribute="height" id="rM3-UQ-oGQ"/>
-                        <constraint firstItem="RMG-KS-cPw" firstAttribute="centerY" secondItem="hij-LL-ObM" secondAttribute="centerY" multiplier="0.66823" id="rZJ-wQ-SYa"/>
+                        <constraint firstItem="RMG-KS-cPw" firstAttribute="centerY" secondItem="hij-LL-ObM" secondAttribute="centerY" multiplier="0.71823" id="rZJ-wQ-SYa"/>
                         <constraint firstAttribute="trailing" secondItem="RMG-KS-cPw" secondAttribute="trailing" constant="39" id="xxa-Ve-sA0"/>
                     </constraints>
                 </view>

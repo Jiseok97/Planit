@@ -30,10 +30,8 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         timelineCV.dataSource = self
         timelineCV.register(UINib(nibName: "StudyTimeLineCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "stlCell")
         timelineCV.layer.cornerRadius = 8
-        timelineCV.clipsToBounds = true
         bgView.isHidden = true
-        
-        bgView.widthAnchor.constraint(equalToConstant: timelineCV.bounds.width).isActive = true
+        bgView.backgroundColor = .mainNavy.withAlphaComponent(0.0)
         
         if let collectionViewLayout = timelineCV.collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -70,9 +68,7 @@ extension OverallTimeLineCollectionViewCell : UICollectionViewDelegate, UICollec
             if timeLineLst?.reports.count != 0 {
                 
                 if indexPath.row == 0 {
-                    
                     cell.topView.isHidden = true
-
                     if self.timeLineLst?.reports.count == 1 {
                         cell.bottomView.isHidden = true
                     }

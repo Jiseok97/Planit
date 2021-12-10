@@ -106,17 +106,28 @@
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdV-xL-q0h">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="102.5"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="movePlanitPass:" destination="-1" eventType="touchUpInside" id="pKZ-vQ-O2R"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="x9o-g2-QC9" firstAttribute="leading" secondItem="ZqS-4k-QVr" secondAttribute="trailing" constant="-22" id="33K-hf-Igg"/>
                         <constraint firstItem="9sq-q9-0lX" firstAttribute="leading" secondItem="YX1-LQ-NNQ" secondAttribute="leading" constant="24" id="Aa6-YW-D4M"/>
+                        <constraint firstItem="XdV-xL-q0h" firstAttribute="centerX" secondItem="YX1-LQ-NNQ" secondAttribute="centerX" id="B92-N3-I0b"/>
+                        <constraint firstItem="XdV-xL-q0h" firstAttribute="height" secondItem="YX1-LQ-NNQ" secondAttribute="height" id="C0s-dV-y3X"/>
                         <constraint firstItem="9sq-q9-0lX" firstAttribute="centerY" secondItem="YX1-LQ-NNQ" secondAttribute="centerY" id="CsY-cy-pwm"/>
                         <constraint firstAttribute="trailing" secondItem="ZqS-4k-QVr" secondAttribute="trailing" constant="24" id="FeN-J6-3kz"/>
                         <constraint firstItem="hpT-0M-kdf" firstAttribute="leading" secondItem="9sq-q9-0lX" secondAttribute="trailing" constant="8" id="Gqs-Aq-T84"/>
                         <constraint firstItem="hpT-0M-kdf" firstAttribute="centerY" secondItem="9sq-q9-0lX" secondAttribute="centerY" id="LaF-Zf-cqX"/>
                         <constraint firstItem="ZqS-4k-QVr" firstAttribute="centerY" secondItem="hpT-0M-kdf" secondAttribute="centerY" id="U4m-dk-YEt"/>
+                        <constraint firstItem="XdV-xL-q0h" firstAttribute="width" secondItem="YX1-LQ-NNQ" secondAttribute="width" id="hp9-Q0-PoO"/>
                         <constraint firstItem="x9o-g2-QC9" firstAttribute="centerY" secondItem="ZqS-4k-QVr" secondAttribute="centerY" id="iX0-Gq-0eO"/>
+                        <constraint firstItem="XdV-xL-q0h" firstAttribute="centerY" secondItem="YX1-LQ-NNQ" secondAttribute="centerY" id="iZs-rJ-aK2"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwH-wI-WoN">
