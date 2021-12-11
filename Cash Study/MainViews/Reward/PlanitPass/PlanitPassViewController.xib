@@ -88,9 +88,9 @@
                     <color key="currentPageIndicatorTintColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tlk-ed-M88">
-                    <rect key="frame" x="0.0" y="157.5" width="414" height="384"/>
+                    <rect key="frame" x="32" y="157.5" width="382" height="384"/>
                     <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hl6-19-UxJ">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Hl6-19-UxJ">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -111,7 +111,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PBe-nM-KeB" secondAttribute="trailing" constant="32" id="PPS-kk-IVl"/>
                 <constraint firstItem="q0k-Ou-63O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZOC-Td-8z7"/>
                 <constraint firstItem="97e-2D-ozp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="ans-gd-1eY"/>
-                <constraint firstItem="Tlk-ed-M88" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bVu-QV-HwQ"/>
+                <constraint firstItem="Tlk-ed-M88" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="bVu-QV-HwQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tlk-ed-M88" secondAttribute="trailing" id="cSt-Hn-ugr"/>
                 <constraint firstItem="JYS-0m-X1r" firstAttribute="centerY" secondItem="34e-RM-gKZ" secondAttribute="centerY" id="dzM-WZ-nkc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wri-k0-BhV" secondAttribute="trailing" constant="32" id="lxt-hP-38S"/>
