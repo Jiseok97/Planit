@@ -121,6 +121,8 @@
 		B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E64272BF1CB00847491 /* InputBirthday.storyboard */; };
 		B6709E69272BF31600847491 /* SelectJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E68272BF31600847491 /* SelectJob.storyboard */; };
 		B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6709E6A272BF32100847491 /* InputRecommander.storyboard */; };
+		B6770E46276479D200B01735 /* PlanitPassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6770E44276479D200B01735 /* PlanitPassCollectionViewCell.swift */; };
+		B6770E47276479D200B01735 /* PlanitPassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6770E45276479D200B01735 /* PlanitPassCollectionViewCell.xib */; };
 		B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6789945273F9B7200B08CEB /* AddStudyViewController.swift */; };
 		B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6789946273F9B7200B08CEB /* AddStudyViewController.xib */; };
 		B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */; };
@@ -311,6 +313,8 @@
 		B6709E64272BF1CB00847491 /* InputBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputBirthday.storyboard; sourceTree = "<group>"; };
 		B6709E68272BF31600847491 /* SelectJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectJob.storyboard; sourceTree = "<group>"; };
 		B6709E6A272BF32100847491 /* InputRecommander.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputRecommander.storyboard; sourceTree = "<group>"; };
+		B6770E44276479D200B01735 /* PlanitPassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitPassCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6770E45276479D200B01735 /* PlanitPassCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanitPassCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6789945273F9B7200B08CEB /* AddStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyViewController.swift; sourceTree = "<group>"; };
 		B6789946273F9B7200B08CEB /* AddStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudyViewController.xib; sourceTree = "<group>"; };
 		B67C989B2724FA3B0039D271 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -1035,6 +1039,7 @@
 			children = (
 				B64886A52763398E00B57FFB /* PlanitPassViewController.xib */,
 				B64886A42763398E00B57FFB /* PlanitPassViewController.swift */,
+				B6770E43276479B100B01735 /* CVCell */,
 			);
 			path = PlanitPass;
 			sourceTree = "<group>";
@@ -1179,6 +1184,15 @@
 				B60D61062729A27700D95950 /* InputRecommenderViewController.swift */,
 			);
 			path = InputRecommander;
+			sourceTree = "<group>";
+		};
+		B6770E43276479B100B01735 /* CVCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6770E45276479D200B01735 /* PlanitPassCollectionViewCell.xib */,
+				B6770E44276479D200B01735 /* PlanitPassCollectionViewCell.swift */,
+			);
+			path = CVCell;
 			sourceTree = "<group>";
 		};
 		B6789944273F9B4F00B08CEB /* AddStudy */ = {
@@ -1646,6 +1660,7 @@
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */,
 				B63ED57227623E45000199E4 /* OverallTimeLineCollectionViewCell.xib in Resources */,
+				B6770E47276479D200B01735 /* PlanitPassCollectionViewCell.xib in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
@@ -1807,6 +1822,7 @@
 				B633A9F72754932A00A00EFD /* ShowUserInfoDataManager.swift in Sources */,
 				B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */,
 				B66B479727328C7300F89012 /* LoginInput.swift in Sources */,
+				B6770E46276479D200B01735 /* PlanitPassCollectionViewCell.swift in Sources */,
 				B63E67D12753DCCC00C891C2 /* ShowRecordDataManager.swift in Sources */,
 				B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */,
 				B60A9DD22758951700AC3E1B /* RewardShopViewController.swift in Sources */,
@@ -2013,7 +2029,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2076,7 +2092,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cash Study/Cash Study.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "Cash Study/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

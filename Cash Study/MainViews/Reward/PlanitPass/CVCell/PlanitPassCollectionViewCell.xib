@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="passCell" id="gTV-IL-0wX" customClass="PlanitPassCollectionViewCell" customModule="Cash_Study" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="406"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="406"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passBg" translatesAutoresizingMaskIntoConstraints="NO" id="RtC-HA-VOs">
+                        <rect key="frame" x="0.0" y="0.0" width="339" height="406"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별을 찾으러 어떤 플래닛으로 여행갈까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-1o-Noj">
+                        <rect key="frame" x="80.5" y="55" width="178.5" height="52.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
+                        <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon140Planet10" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-GR-abj">
+                        <rect key="frame" x="99.5" y="184" width="140" height="140"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Lix-GR-abj" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="1.25" id="8bK-Ti-cKs"/>
+                <constraint firstItem="RtC-HA-VOs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AMF-tQ-nR5"/>
+                <constraint firstItem="RJQ-1o-Noj" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.4" id="JpF-w6-Xad"/>
+                <constraint firstItem="RJQ-1o-Noj" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ROd-rF-oEL"/>
+                <constraint firstItem="Lix-GR-abj" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bqS-e7-d8d"/>
+                <constraint firstAttribute="trailing" secondItem="RtC-HA-VOs" secondAttribute="trailing" id="e1c-BV-DDP"/>
+                <constraint firstAttribute="bottom" secondItem="RtC-HA-VOs" secondAttribute="bottom" id="jWl-Ax-ade"/>
+                <constraint firstItem="RtC-HA-VOs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tDm-Bo-Pp0"/>
+            </constraints>
+            <size key="customSize" width="339" height="406"/>
+            <connections>
+                <outlet property="imgView" destination="Lix-GR-abj" id="2aU-fG-WC9"/>
+            </connections>
+            <point key="canvasLocation" x="521.01449275362324" y="143.30357142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon140Planet10" width="140" height="140"/>
+        <image name="passBg" width="311" height="348"/>
+    </resources>
+</document>

@@ -22,6 +22,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanitPassViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="confirmBtn" destination="PBe-nM-KeB" id="C4S-KX-xgn"/>
+                <outlet property="pageCtrl" destination="q0k-Ou-63O" id="1IF-R6-6Ym"/>
+                <outlet property="passCV" destination="Tlk-ed-M88" id="LMW-cX-fcq"/>
                 <outlet property="planitNameLbl" destination="TL1-3K-fUn" id="Vja-pP-nL1"/>
                 <outlet property="pointLbl" destination="mcg-QZ-RLN" id="YOW-Gq-Nyf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -46,41 +48,6 @@
                         <action selector="dismissTapped:" destination="-1" eventType="touchUpInside" id="cVK-zj-iGk"/>
                     </connections>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sV7-4Y-45N">
-                    <rect key="frame" x="32" y="174.5" width="350" height="368"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-Pw-ZMj">
-                            <rect key="frame" x="0.0" y="0.0" width="350" height="368"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passBg" translatesAutoresizingMaskIntoConstraints="NO" id="OaI-Nc-nrZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="368"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별을 찾으러 어떤 플래닛으로 여행갈까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8f-SR-2MU">
-                                    <rect key="frame" x="86" y="52.5" width="178.5" height="52.5"/>
-                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
-                                    <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="OaI-Nc-nrZ" secondAttribute="bottom" id="Bl3-8B-aoc"/>
-                                <constraint firstAttribute="trailing" secondItem="OaI-Nc-nrZ" secondAttribute="trailing" id="F6e-cj-fi5"/>
-                                <constraint firstItem="OaI-Nc-nrZ" firstAttribute="leading" secondItem="pTU-Pw-ZMj" secondAttribute="leading" id="PYq-nP-3CD"/>
-                                <constraint firstItem="OaI-Nc-nrZ" firstAttribute="top" secondItem="pTU-Pw-ZMj" secondAttribute="top" id="geG-hK-6Af"/>
-                                <constraint firstItem="v8f-SR-2MU" firstAttribute="centerX" secondItem="pTU-Pw-ZMj" secondAttribute="centerX" id="rgn-s4-Frq"/>
-                                <constraint firstItem="v8f-SR-2MU" firstAttribute="centerY" secondItem="pTU-Pw-ZMj" secondAttribute="centerY" multiplier="0.43" id="xO2-CD-9ge"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="pTU-Pw-ZMj" firstAttribute="width" secondItem="sV7-4Y-45N" secondAttribute="width" id="224-Am-kst"/>
-                        <constraint firstAttribute="bottom" secondItem="pTU-Pw-ZMj" secondAttribute="bottom" id="TSs-Xc-YZh"/>
-                        <constraint firstAttribute="trailing" secondItem="pTU-Pw-ZMj" secondAttribute="trailing" id="bpc-60-R7Q"/>
-                        <constraint firstItem="pTU-Pw-ZMj" firstAttribute="top" secondItem="sV7-4Y-45N" secondAttribute="top" id="tjF-xe-SHG"/>
-                        <constraint firstItem="pTU-Pw-ZMj" firstAttribute="leading" secondItem="sV7-4Y-45N" secondAttribute="leading" id="ve6-1K-1UH"/>
-                        <constraint firstItem="pTU-Pw-ZMj" firstAttribute="height" secondItem="sV7-4Y-45N" secondAttribute="height" id="xoE-dO-Exa"/>
-                    </constraints>
-                </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBe-nM-KeB">
                     <rect key="frame" x="32" y="774.5" width="350" height="64"/>
                     <color key="backgroundColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,31 +83,41 @@
                     <state key="normal" image="nextImg"/>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="q0k-Ou-63O">
-                    <rect key="frame" x="129" y="552.5" width="156" height="26"/>
+                    <rect key="frame" x="129" y="551.5" width="156" height="26"/>
                     <color key="pageIndicatorTintColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tlk-ed-M88">
+                    <rect key="frame" x="0.0" y="157.5" width="414" height="384"/>
+                    <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hl6-19-UxJ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="PBe-nM-KeB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="4Fn-FF-jui"/>
                 <constraint firstItem="Wri-k0-BhV" firstAttribute="centerY" secondItem="97e-2D-ozp" secondAttribute="centerY" id="63T-lQ-wzb"/>
-                <constraint firstItem="sV7-4Y-45N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="9r2-os-kJr"/>
                 <constraint firstItem="mcg-QZ-RLN" firstAttribute="top" secondItem="TL1-3K-fUn" secondAttribute="bottom" constant="4" id="AK6-1R-qmG"/>
                 <constraint firstItem="mcg-QZ-RLN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ee1-QN-gbb"/>
+                <constraint firstItem="q0k-Ou-63O" firstAttribute="top" secondItem="Tlk-ed-M88" secondAttribute="bottom" constant="10" id="GoL-CQ-FOP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYS-0m-X1r" secondAttribute="trailing" constant="32" id="JkI-SZ-ZQ6"/>
                 <constraint firstItem="PBe-nM-KeB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.8" id="LnK-j7-aRx"/>
-                <constraint firstItem="q0k-Ou-63O" firstAttribute="top" secondItem="OaI-Nc-nrZ" secondAttribute="bottom" constant="10" id="Ofo-xI-jdg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PBe-nM-KeB" secondAttribute="trailing" constant="32" id="PPS-kk-IVl"/>
-                <constraint firstItem="sV7-4Y-45N" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.45" id="Wb7-yT-Q3V"/>
                 <constraint firstItem="q0k-Ou-63O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZOC-Td-8z7"/>
                 <constraint firstItem="97e-2D-ozp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="ans-gd-1eY"/>
-                <constraint firstItem="sV7-4Y-45N" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.8" id="bUw-uu-xAv"/>
+                <constraint firstItem="Tlk-ed-M88" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bVu-QV-HwQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tlk-ed-M88" secondAttribute="trailing" id="cSt-Hn-ugr"/>
                 <constraint firstItem="JYS-0m-X1r" firstAttribute="centerY" secondItem="34e-RM-gKZ" secondAttribute="centerY" id="dzM-WZ-nkc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wri-k0-BhV" secondAttribute="trailing" constant="32" id="lxt-hP-38S"/>
+                <constraint firstItem="Tlk-ed-M88" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.42857" id="oXe-CF-ct9"/>
+                <constraint firstItem="Tlk-ed-M88" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.78" id="pox-CT-VFp"/>
                 <constraint firstItem="TL1-3K-fUn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.48" id="qMX-RM-nd0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sV7-4Y-45N" secondAttribute="trailing" constant="32" id="rIe-bh-5Py"/>
                 <constraint firstItem="34e-RM-gKZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sL1-b2-oEa"/>
                 <constraint firstItem="97e-2D-ozp" firstAttribute="centerY" secondItem="TL1-3K-fUn" secondAttribute="centerY" multiplier="1.028" id="vyJ-wk-ZaP"/>
                 <constraint firstItem="34e-RM-gKZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="xBb-mV-QZV"/>
@@ -152,7 +129,6 @@
     <resources>
         <image name="backArrow" width="24" height="24"/>
         <image name="nextImg" width="24" height="24"/>
-        <image name="passBg" width="311" height="348"/>
         <image name="xmarkClose" width="24" height="24"/>
     </resources>
 </document>

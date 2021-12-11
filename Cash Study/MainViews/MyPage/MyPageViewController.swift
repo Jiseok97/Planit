@@ -12,12 +12,6 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var nicknameView: UIView!
     @IBOutlet weak var nicknameLbl: UILabel!
     @IBOutlet weak var logoutBtn: UIButton!
-    @IBOutlet weak var myPointView: UIView!
-    @IBOutlet weak var myGiftView: UIView!
-    @IBOutlet weak var questionView: UIView!
-    @IBOutlet weak var reviewView: UIView!
-    @IBOutlet weak var termsOfuseView: UIView!
-    @IBOutlet weak var versionView: UIView!
     
     var userInfoData : ShowUserInfoEntity?
     
@@ -53,17 +47,10 @@ class MyPageViewController: UIViewController {
     // MARK: Function
     func setUI() {
         self.nicknameView.layer.cornerRadius = 8
-        self.myPointView.layer.cornerRadius = 8
-        self.myGiftView.layer.cornerRadius = 8
         
         self.logoutBtn.layer.cornerRadius = 8
         self.logoutBtn.layer.borderColor = UIColor.placeHolderColor.cgColor
         self.logoutBtn.layer.borderWidth = 0.5
-        
-        self.questionView.layer.addBorder([.top], color: UIColor.homeBorderColor, width: 0.8)
-        self.reviewView.layer.addBorder([.top], color: UIColor.homeBorderColor, width: 0.8)
-        self.termsOfuseView.layer.addBorder([.top], color: UIColor.homeBorderColor, width: 0.8)
-        self.versionView.layer.addBorder([.top], color: UIColor.homeBorderColor, width: 0.8)
     }
     
     
@@ -84,42 +71,6 @@ class MyPageViewController: UIViewController {
         
         self.navigationController?.pushViewController(ibSB, animated: true)
     }
-    
-    
-    @IBAction func pointViewTapped(_ sender: Any) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
-    
-    @IBAction func giftViewTapped(_ sender: Any) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
-    
-    @IBAction func questionTapped(_ sender: Any) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
-    
-    @IBAction func reviewTapped(_ sender: Any) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다.", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
-    
-    @IBAction func termsOfuseTapped(_ sender: Any) {
-        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다.", subMsg: "", btnTitle: "확인", isTimer: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
     
     
     @IBAction func logoutBtn(_ sender: Any) {

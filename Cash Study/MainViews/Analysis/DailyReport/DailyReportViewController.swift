@@ -26,6 +26,8 @@ class DailyReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .mainNavy
+        
         let df = DateFormatter()
         df.dateFormat = "yyyy년 MM월 dd일"
         self.dateBtn.setTitle(df.string(from: Date()), for: .normal)
@@ -48,6 +50,7 @@ class DailyReportViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
@@ -206,17 +209,22 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if reportDataLst?.reports != nil {
-            let width = self.studyAnalysisCV.frame.width
-            let height = self.view.frame.height * 0.2142
-            
-            return CGSize(width: width, height: height)
-        } else {
-            let width = self.studyAnalysisCV.frame.width
-            let height = self.view.frame.height * 0.157857142857143
-            
-            return CGSize(width: width, height: height)
-        }
+//        if reportDataLst?.reports != nil {
+//            let width = self.studyAnalysisCV.frame.width
+//            let height = self.view.frame.height * 0.2142
+//            
+//            return CGSize(width: width, height: height)
+//        } else {
+//            let width = self.studyAnalysisCV.frame.width
+//            let height = self.view.frame.height * 0.157857142857143
+//            
+//            return CGSize(width: width, height: height)
+//        }
+        let width = self.studyAnalysisCV.frame.width
+        let height = self.view.frame.height * 0.2142
+        
+        return CGSize(width: width, height: height)
+        
     }
     
 }
