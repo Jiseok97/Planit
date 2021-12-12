@@ -38,7 +38,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-Ze-iy5">
-                                    <rect key="frame" x="32" y="129.5" width="148" height="31.5"/>
+                                    <rect key="frame" x="32" y="129.5" width="148" height="24"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="2021년 12월 06일 " image="downImg02">
@@ -49,13 +49,13 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이머 측정 시간이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tan-8f-yqf">
-                                    <rect key="frame" x="32" y="163" width="261.5" height="32"/>
+                                    <rect key="frame" x="32" y="155.5" width="261.5" height="32"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
                                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3JO-QA-xyO">
-                                    <rect key="frame" x="24" y="240" width="366" height="700"/>
+                                    <rect key="frame" x="24" y="232.5" width="366" height="700"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="700" id="9jA-TS-mXd"/>
                                     </constraints>
@@ -74,7 +74,6 @@
                                 <constraint firstItem="3JO-QA-xyO" firstAttribute="top" secondItem="tan-8f-yqf" secondAttribute="bottom" constant="45" id="1xj-xR-Az5"/>
                                 <constraint firstItem="OcX-uZ-oUH" firstAttribute="centerY" secondItem="frS-3B-tiN" secondAttribute="centerY" multiplier="0.12" id="2TW-lG-DGg"/>
                                 <constraint firstItem="3JO-QA-xyO" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="24" id="EHq-LI-l9V"/>
-                                <constraint firstAttribute="bottom" secondItem="3JO-QA-xyO" secondAttribute="bottom" constant="60" id="H0s-zS-udV"/>
                                 <constraint firstAttribute="trailing" secondItem="3JO-QA-xyO" secondAttribute="trailing" constant="24" id="Mtt-jl-Y09"/>
                                 <constraint firstItem="OcX-uZ-oUH" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="OQE-5S-PWV"/>
                                 <constraint firstItem="GK5-Ze-iy5" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="R1F-zd-sgL"/>

@@ -209,6 +209,17 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+//        if reportDataLst?.reports != nil {
+//            let width = self.studyAnalysisCV.frame.width
+//            let height = self.view.frame.height * 0.2142
+//            
+//            return CGSize(width: width, height: height)
+//        } else {
+//            let width = self.studyAnalysisCV.frame.width
+//            let height = self.view.frame.height * 0.157857142857143
+//            
+//            return CGSize(width: width, height: height)
+//        }
         let width = self.studyAnalysisCV.frame.width
         let height = self.view.frame.height * 0.2142
         

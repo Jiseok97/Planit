@@ -27,6 +27,8 @@
                 <outlet property="rewardShopBtn" destination="Zwc-CE-RCa" id="e4S-W8-ovs"/>
                 <outlet property="rewardStarBtn" destination="opC-M0-0db" id="aLC-2e-RLV"/>
                 <outlet property="rewardView" destination="HwH-wI-WoN" id="aSs-vO-f0A"/>
+                <outlet property="starCntLbl" destination="qcK-yC-Cth" id="67t-D7-Vsl"/>
+                <outlet property="starLbl" destination="BCM-LI-xvl" id="2uG-OI-cFX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

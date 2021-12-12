@@ -13,10 +13,14 @@ class RewardMainViewController: UIViewController {
     @IBOutlet weak var rewardShopBtn: UIButton!
     @IBOutlet weak var rewardView: UIView!
     @IBOutlet weak var rewardStarBtn: UIButton!
+    @IBOutlet weak var starLbl: UILabel!
+    @IBOutlet weak var starCntLbl: UILabel!
     
     @IBOutlet weak var passView: UIView!
     @IBOutlet weak var myPointLbl: UILabel!
     @IBOutlet weak var passCntLbl: UILabel!
+    
+    var rewardDataLst : ShowUserRewardEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,8 @@ class RewardMainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        showIndicator()
+        ShowUserRewardDataManager().showReward(viewController: self)
     }
     
     
@@ -42,10 +48,6 @@ class RewardMainViewController: UIViewController {
     
     
     @IBAction func rewardStarTapped(_ sender: UIButton) {
-//        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
-        
         let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
 
         rotation.toValue = Double.pi * 2
@@ -81,9 +83,32 @@ class RewardMainViewController: UIViewController {
         let vc = RewardShopViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
-//        let vc = ObAlertViewController(mainMsg: "서비스 준비중입니다", subMsg: "", btnTitle: "확인", isTimer: false)
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
     }
     
+}
+
+
+extension RewardMainViewController {
+    func showReward(result: ShowUserRewardEntity) {
+        dismissIndicator()
+        self.rewardDataLst = result
+        
+        if self.rewardDataLst != nil {
+            let star = result.star
+            let point = result.point
+            let passCnt = result.planetPass
+            
+            if star >= 50 {
+                self.starLbl.textColor = .remainDdayColor
+                self.starCntLbl.textColor = .remainDdayColor
+            } else {
+                self.starLbl.textColor = .placeHolderColor
+                self.starCntLbl.textColor = .placeHolderColor
+            }
+            
+            self.starCntLbl.text = "\(String(describing: star))/50"
+            self.myPointLbl.text = "\(String(describing: point))P"
+            self.passCntLbl.text = "\(String(describing: passCnt))"
+        }
+    }
 }
