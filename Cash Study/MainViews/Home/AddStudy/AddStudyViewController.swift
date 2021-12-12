@@ -104,6 +104,8 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(sendDate(_:)), name: Notification.Name("sendDate"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(endDate(_:)), name: NSNotification.Name("endDate"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(removeStudy(_:)), name: NSNotification.Name("removeStudy"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,6 +114,8 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("sendDate"), object: nil)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("endDate"), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("removeStudy"), object: nil)
     }
     
     
@@ -497,10 +501,16 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    @IBAction func delteBtnTapped(_ sender: Any) {
+    @objc func removeStudy(_ noti: Notification) {
         showIndicator()
         DeleteStudyDataManager().deleteStudy(stGroupId: stGrId, viewController: self)
+    }
+    
+    
+    @IBAction func delteBtnTapped(_ sender: Any) {
+        let vc = AlertViewController(mainMsg: "공부를 삭제하시겠습니까?", subMsg: "해당 공부와 관련된 기록은\n모두 삭제됩니다", btnTitle: "삭제", isTimer: false, isLogout: false, studyRemove: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     

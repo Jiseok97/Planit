@@ -11,7 +11,5 @@ struct ShowRecordEntity : Decodable {
     var startAt: String
     var recordedTime: Int
     var rest: Int
-    var star: Int
-    var bonusTicket: Int
 }
 

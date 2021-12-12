@@ -8,7 +8,7 @@
 struct PutRecordInput {
     var isDone : Bool
     var star : Int
-    var bonusTicket: Int
+    var planetPass: Int
     var rest : Int
     var recordedTime : Int
     
@@ -16,7 +16,7 @@ struct PutRecordInput {
         let dict : [String: Any] = [
             "isDone" : self.isDone,
             "star" : self.star,
-            "bonusTicket" : self.bonusTicket,
+            "planetPass" : self.planetPass,
             "rest" : self.rest,
             "recordedTime" : self.recordedTime
         ]

@@ -26,13 +26,15 @@ class AlertViewController: UIViewController {
     var confirmBtnTxt : String = ""
     var isTimer : Bool = false
     var isLogout: Bool = false
+    var studyRemove: Bool = false
     
-    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool, isLogout: Bool) {
+    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool, isLogout: Bool, studyRemove: Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.confirmBtnTxt = btnTitle
         self.isTimer = isTimer
         self.isLogout = isLogout
+        self.studyRemove = studyRemove
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -80,7 +82,11 @@ class AlertViewController: UIViewController {
     @IBAction func confirmBtnTapped(_ sender: Any) {
         switch self.confirmBtnTxt {
         case "삭제":
-            NotificationCenter.default.post(name: NSNotification.Name("remove"), object: nil)
+            if studyRemove {
+                NotificationCenter.default.post(name: NSNotification.Name("removeStudy"), object: nil)
+            } else {
+                NotificationCenter.default.post(name: NSNotification.Name("remove"), object: nil)
+            }
             dismiss(animated: true, completion: nil)
             
         case "확인":

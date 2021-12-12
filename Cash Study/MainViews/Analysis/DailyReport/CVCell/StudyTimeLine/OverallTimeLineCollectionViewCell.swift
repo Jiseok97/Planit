@@ -108,6 +108,7 @@ extension OverallTimeLineCollectionViewCell : UICollectionViewDelegate, UICollec
         
         if timeLineLst?.reports.count == 1 {
             let height = self.timelineCV.frame.height
+            
             return CGSize(width: width, height: height)
             
         } else if timeLineLst?.reports.count == 2 {

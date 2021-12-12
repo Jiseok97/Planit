@@ -64,8 +64,6 @@ class TimerViewController: UIViewController {
         showAlert()
         if self.recordDataLst != nil {
             self.restCntLbl.text = "\(String(describing: recordDataLst?.rest))회"
-            self.rewardCntLbl.text = String(describing: recordDataLst?.star)
-            self.bonusCntLbl.text = String(describing: recordDataLst?.bonusTicket)
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(timerStop(_:)), name: NSNotification.Name("timerStop"), object: nil)
@@ -192,7 +190,7 @@ class TimerViewController: UIViewController {
             
             let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
             
-            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false)
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false, studyRemove: false)
             vc.modalPresentationStyle = .overFullScreen
             timer?.invalidate()
             present(vc, animated: true)
@@ -209,7 +207,7 @@ class TimerViewController: UIViewController {
             
             let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
             
-            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false)
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false, studyRemove: false)
             vc.modalPresentationStyle = .overFullScreen
             timer?.invalidate()
             present(vc, animated: true)
@@ -225,15 +223,10 @@ extension TimerViewController {
         self.recordDataLst = result
         
         print("result = \(result)")
-        
-        guard let reward = recordDataLst?.star else { return }
-        guard let bonus = recordDataLst?.bonusTicket else { return }
         guard let rest = recordDataLst?.rest else { return }
         guard let rcrd = recordDataLst?.recordedTime else { return }
         
-        self.rewardCntLbl.text = String(describing: reward)
         self.restCntLbl.text = "\(String(describing: self.restCnt))회"
-        self.bonusCntLbl.text = String(describing: bonus)
         self.prevRcrd = rcrd
         self.restCnt = rest
     }

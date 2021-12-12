@@ -117,7 +117,7 @@ class StopTimerViewController: UIViewController {
             present(vc, animated: true)
             
         } else {
-            let input = PutRecordInput(isDone: true, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: additionalRcrd)
+            let input = PutRecordInput(isDone: true, star: starCnt, planetPass: bonusCnt, rest: restCnt, recordedTime: additionalRcrd)
             showIndicator()
             PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
         }
@@ -125,7 +125,7 @@ class StopTimerViewController: UIViewController {
     
     @objc func putRecordNotDone(_ noti: Notification) {
         
-        let input = PutRecordInput(isDone: false, star: starCnt, bonusTicket: bonusCnt, rest: restCnt, recordedTime: additionalRcrd)
+        let input = PutRecordInput(isDone: false, star: starCnt, planetPass: bonusCnt, rest: restCnt, recordedTime: additionalRcrd)
         showIndicator()
         PutRecordDataManager().putRecord(input, stId: self.stId, viewController: self)
     }
