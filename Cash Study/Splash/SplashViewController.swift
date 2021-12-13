@@ -8,16 +8,16 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        usleep(3000000)
+        super.viewDidAppear(animated)
         
+        usleep(2200000)
         changeRootVC(LoginViewController())
-//        changeRootVC(TermsOfUseViewController())
     }
 
 }

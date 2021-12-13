@@ -41,12 +41,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 
             case .revoked:
+                print("revoked")
                 break
                 
             case .notFound:
+                print("notFound")
                 break
                 
             default:
+                print("apple login error")
                 break
             }
         })

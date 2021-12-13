@@ -60,8 +60,14 @@ class MyPageViewController: UIViewController {
     
     
     @objc func logout(_ noti: Notification) {
-        changeRootVC(LoginViewController())
+        
+        let userEmail = UserDefaults.standard.string(forKey: "userEmail")
+        if userEmail != nil {
+            UserDefaults.standard.removeObject(forKey: "userEmail")
+        }
+        
         Constant.MY_ACCESS_TOKEN = ""
+        changeRootVC(LoginViewController())
     }
     
     

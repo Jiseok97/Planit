@@ -25,9 +25,6 @@ class LoginDataManager : UIViewController{
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
                         
-                        UserDefaults.standard.set(accessToken, forKey: "accessToken")
-                        UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
-                        
                         print("accessToekn ▾")
                         print(accessToken)
                         print("refreshToken ▾")
@@ -60,9 +57,6 @@ class LoginDataManager : UIViewController{
                         self.changeRootVC(BaseTabBarController())
                         Constant.MY_ACCESS_TOKEN = accessToken
                         Constant.MY_REFRESH_TOKEN = refreshToken
-                        
-                        UserDefaults.standard.set(accessToken, forKey: "accessToken")
-                        UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                         
                         print("accessToekn ▾")
                         print(accessToken)

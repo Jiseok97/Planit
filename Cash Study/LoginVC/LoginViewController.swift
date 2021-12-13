@@ -25,7 +25,25 @@ class LoginViewController: UIViewController {
         
         setUI()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if(AuthApi.hasToken()) {
+            UserApi.shared.accessTokenInfo(completion: { (_, error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() {
+                        // Need login
+                        return
+                    } else {
+                        // get error
+                        return
+                    }
+                } else {
+                    self.getUserInfo()
+                }
+            })
+        }
+    }
     
     // MARK: Functions
     func setUI() {
@@ -33,7 +51,6 @@ class LoginViewController: UIViewController {
         appleLoginView.layer.cornerRadius = 6
         logoImgView.layer.cornerRadius = 8
     }
-    
     
     // MARK: About Kakao Login
     @IBAction func kakaoBtnTapped(_ sender: Any) {
@@ -76,6 +93,9 @@ class LoginViewController: UIViewController {
                 
                 guard let userEmail = user?.kakaoAccount?.email else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
+                
+                UserDefaults.standard.set(userEmail, forKey: "userEmail")
+                print("ud Email = \(userEmail)")
                 
                 Constant.MY_EMAIL = userEmail
                 Constant.MY_NAME = userName
