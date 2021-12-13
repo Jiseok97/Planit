@@ -85,6 +85,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
 
         setUI()
+        swipeRecognizer()
     }
     
     override func viewWillAppear(_ animated: Bool) {

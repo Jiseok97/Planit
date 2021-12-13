@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="52" width="414" height="59.5"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-Q8-ix2">
-                            <rect key="frame" x="15" y="8" width="199.5" height="44.5"/>
+                            <rect key="frame" x="-30" y="8" width="171" height="44.5"/>
                             <segments>
-                                <segment title="플래너"/>
-                                <segment title="디데이"/>
+                                <segment title="           플래너"/>
+                                <segment title="디데이" width="80"/>
                             </segments>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-r1-ZdJ">
@@ -52,10 +52,9 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="leading" secondItem="xd0-Q8-ix2" secondAttribute="trailing" constant="63" id="7n4-Wu-wfd"/>
                         <constraint firstAttribute="trailing" secondItem="0Sv-r1-ZdJ" secondAttribute="trailing" constant="24" id="Zwp-dV-jjg"/>
                         <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="centerY" secondItem="xd0-Q8-ix2" secondAttribute="centerY" id="nA2-r6-CAl"/>
-                        <constraint firstItem="xd0-Q8-ix2" firstAttribute="leading" secondItem="EXl-0f-pf6" secondAttribute="leading" constant="15" id="nhs-5a-IRP"/>
+                        <constraint firstItem="xd0-Q8-ix2" firstAttribute="leading" secondItem="EXl-0f-pf6" secondAttribute="leading" constant="-30" id="nhs-5a-IRP"/>
                         <constraint firstItem="xd0-Q8-ix2" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="8" id="omq-7b-Xq1"/>
                         <constraint firstAttribute="bottom" secondItem="xd0-Q8-ix2" secondAttribute="bottom" constant="8" id="ubI-Q0-8dS"/>
                     </constraints>

@@ -110,7 +110,13 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
         
         calendarView.scrollEnabled = true
         calendarView.scrollDirection = .horizontal
-        calendarView.appearance.headerTitleOffset = CGPoint(x: -70, y: calendarView.frame.origin.y)
+        
+        if UIScreen.main.bounds.width < 400 {
+            calendarView.appearance.headerTitleOffset = CGPoint(x: calendarView.frame.origin.x - 85 , y: calendarView.frame.origin.y)
+        } else {
+            calendarView.appearance.headerTitleOffset = CGPoint(x: calendarView.frame.origin.x - 95 , y: calendarView.frame.origin.y)
+        }
+        
         calendarView.layer.zPosition = 999
         changeScopeCalendarView.layer.zPosition = 999
         bgView.layer.zPosition = 0

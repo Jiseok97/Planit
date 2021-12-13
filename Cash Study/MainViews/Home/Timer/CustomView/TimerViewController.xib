@@ -45,16 +45,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEB-ik-2dB">
-                    <rect key="frame" x="56" y="172.5" width="302" height="302"/>
+                    <rect key="frame" x="57.5" y="165.5" width="299" height="298"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-BP-co4">
-                            <rect key="frame" x="87" y="109.5" width="128.5" height="37.5"/>
+                            <rect key="frame" x="85.5" y="108" width="128.5" height="37.5"/>
                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집중하면 1시간마다 보너스 티켓 획득!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je5-Rk-CtM">
-                            <rect key="frame" x="94" y="159" width="114.5" height="41"/>
+                            <rect key="frame" x="92.5" y="157.5" width="114.5" height="41"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="14"/>
                             <color key="textColor" systemColor="linkColor"/>
                             <nil key="highlightedColor"/>
@@ -245,7 +245,7 @@
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="FUH-gL-qUM"/>
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="width" secondItem="BM2-3C-cCJ" secondAttribute="width" multiplier="0.485" id="Iip-N9-aFa"/>
                 <constraint firstItem="rU4-Cs-IVe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.7" id="PJi-n8-xc7"/>
-                <constraint firstItem="hEB-ik-2dB" firstAttribute="height" secondItem="rU4-Cs-IVe" secondAttribute="height" multiplier="0.9" id="TpC-5b-fJp"/>
+                <constraint firstItem="hEB-ik-2dB" firstAttribute="height" secondItem="rU4-Cs-IVe" secondAttribute="height" multiplier="0.888" id="TpC-5b-fJp"/>
                 <constraint firstItem="BM2-3C-cCJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.2289" id="UHJ-av-JD8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rU4-Cs-IVe" secondAttribute="trailing" constant="39" id="X6p-Pe-qDK"/>
                 <constraint firstItem="eaO-s7-0dF" firstAttribute="centerY" secondItem="oPu-sO-I7G" secondAttribute="centerY" id="XEQ-zp-lWw"/>
@@ -254,12 +254,12 @@
                 <constraint firstItem="VL7-Db-nyP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Zxo-Yu-se1"/>
                 <constraint firstItem="rU4-Cs-IVe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="cxH-iW-crv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BM2-3C-cCJ" secondAttribute="trailing" constant="32" id="fRP-7p-TsB"/>
-                <constraint firstItem="hEB-ik-2dB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.722" id="jyy-gs-LXI"/>
+                <constraint firstItem="hEB-ik-2dB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.702" id="jyy-gs-LXI"/>
                 <constraint firstItem="oPu-sO-I7G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="mlg-L5-Pik"/>
                 <constraint firstItem="ZvH-EW-aeY" firstAttribute="width" secondItem="pIV-l3-JhN" secondAttribute="width" id="nMW-ii-joy"/>
                 <constraint firstItem="eaO-s7-0dF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sjM-RV-WYH"/>
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="top" secondItem="BM2-3C-cCJ" secondAttribute="bottom" constant="10" id="uBk-El-JsU"/>
-                <constraint firstItem="hEB-ik-2dB" firstAttribute="width" secondItem="rU4-Cs-IVe" secondAttribute="width" multiplier="0.9" id="vvf-rQ-6lV"/>
+                <constraint firstItem="hEB-ik-2dB" firstAttribute="width" secondItem="rU4-Cs-IVe" secondAttribute="width" multiplier="0.89" id="vvf-rQ-6lV"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
         </view>

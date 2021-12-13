@@ -151,10 +151,15 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
                     if intDay > 0 {
                         cell.dDayLbl.text = "D-" + String(describing: (intDay))
+                        cell.representImgView.isHidden = true
+                        cell.dDayLbl.isHidden = false
                     } else if intDay == 0 {
-                        cell.dDayLbl.text = "D-DAY"
+                        cell.dDayLbl.isHidden = true
+                        cell.representImgView.isHidden = false
                     } else {
                         cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
+                        cell.representImgView.isHidden = true
+                        cell.dDayLbl.isHidden = false
                     }
                     
                     cell.layer.cornerRadius = 8

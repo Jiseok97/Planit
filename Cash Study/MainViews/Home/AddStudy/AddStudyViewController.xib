@@ -82,7 +82,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryV-V9-rcv">
-                    <rect key="frame" x="24" y="110" width="366" height="72"/>
+                    <rect key="frame" x="24" y="118" width="366" height="72"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="공부 제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNd-Vh-1WM">
                             <rect key="frame" x="22" y="24" width="261" height="24"/>
@@ -112,7 +112,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-Uf-jsK">
-                    <rect key="frame" x="24" y="198" width="366" height="139"/>
+                    <rect key="frame" x="24" y="206" width="366" height="139"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공부 반복하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-5V-ZhZ">
                             <rect key="frame" x="22" y="24" width="93" height="24"/>
@@ -198,7 +198,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxY-Gm-xFz">
-                    <rect key="frame" x="24" y="337" width="366" height="255.5"/>
+                    <rect key="frame" x="24" y="345" width="366" height="255.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiI-wM-8Fb">
                             <rect key="frame" x="1" y="2" width="364" height="1"/>
@@ -469,7 +469,7 @@
                 <constraint firstItem="TNf-LH-vQR" firstAttribute="centerY" secondItem="jAE-Df-KMk" secondAttribute="centerY" id="Ric-UZ-Cf1"/>
                 <constraint firstItem="ryV-V9-rcv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="SW0-7J-cGb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qbH-3w-tYK" secondAttribute="trailing" constant="32" id="T4z-6J-1g4"/>
-                <constraint firstItem="ryV-V9-rcv" firstAttribute="top" secondItem="jAE-Df-KMk" secondAttribute="bottom" constant="24" id="Wfk-Bq-cbR"/>
+                <constraint firstItem="ryV-V9-rcv" firstAttribute="top" secondItem="jAE-Df-KMk" secondAttribute="bottom" constant="32" id="Wfk-Bq-cbR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ryV-V9-rcv" secondAttribute="trailing" constant="24" id="eZq-Zf-FzM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CxY-Gm-xFz" secondAttribute="trailing" constant="24" id="kU6-Ft-SP1"/>
                 <constraint firstItem="Wsb-Uf-jsK" firstAttribute="top" secondItem="ryV-V9-rcv" secondAttribute="bottom" constant="16" id="mId-hJ-uQT"/>

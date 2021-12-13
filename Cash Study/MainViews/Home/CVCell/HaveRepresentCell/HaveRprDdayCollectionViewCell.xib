@@ -32,6 +32,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muV-qz-5HO">
                         <rect key="frame" x="12" y="20.5" width="79.5" height="71"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="8NU-Ig-cw6">
+                                <rect key="frame" x="0.0" y="-17.5" width="79.5" height="106.5"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-G3-7HD">
                                 <rect key="frame" x="18.5" y="22.5" width="42" height="26.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Black" family="Noto Sans KR" pointSize="18"/>
@@ -41,6 +44,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="8NU-Ig-cw6" firstAttribute="centerX" secondItem="muV-qz-5HO" secondAttribute="centerX" id="Af0-ol-g0h"/>
+                            <constraint firstItem="8NU-Ig-cw6" firstAttribute="height" secondItem="muV-qz-5HO" secondAttribute="height" multiplier="1.5" id="Ngh-5h-8QN"/>
+                            <constraint firstItem="8NU-Ig-cw6" firstAttribute="centerY" secondItem="muV-qz-5HO" secondAttribute="centerY" id="haX-tQ-cgq"/>
                             <constraint firstItem="lhf-G3-7HD" firstAttribute="centerY" secondItem="muV-qz-5HO" secondAttribute="centerY" id="mkm-kV-Bp9"/>
                             <constraint firstItem="lhf-G3-7HD" firstAttribute="centerX" secondItem="muV-qz-5HO" secondAttribute="centerX" id="rra-Eh-6I1"/>
                         </constraints>
@@ -64,6 +70,7 @@
             <constraints>
                 <constraint firstItem="muV-qz-5HO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="6Bz-16-slu"/>
                 <constraint firstItem="muV-qz-5HO" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="12" id="6p2-FY-UDE"/>
+                <constraint firstItem="8NU-Ig-cw6" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.232416" id="8Jm-h6-SUn"/>
                 <constraint firstItem="hK6-6g-pJl" firstAttribute="leading" secondItem="muV-qz-5HO" secondAttribute="trailing" constant="22" id="DDh-vd-abM"/>
                 <constraint firstItem="muV-qz-5HO" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.232416" id="amy-39-2dk"/>
                 <constraint firstItem="hK6-6g-pJl" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.6789" id="dOa-kB-AuE"/>
@@ -75,12 +82,14 @@
             <connections>
                 <outlet property="dDayLbl" destination="lhf-G3-7HD" id="eUe-wy-1Cc"/>
                 <outlet property="displayDdayView" destination="muV-qz-5HO" id="MJA-Kr-Ra0"/>
+                <outlet property="representImgView" destination="8NU-Ig-cw6" id="3im-lU-Xcu"/>
                 <outlet property="titleLbl" destination="KcC-VJ-xWy" id="W0b-0a-NA9"/>
             </connections>
             <point key="canvasLocation" x="421.73913043478262" y="62.276785714285708"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="gradient_Rectangle" width="152" height="136"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

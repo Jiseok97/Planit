@@ -32,11 +32,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrU-8q-1Ui">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrU-8q-1Ui">
                     <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-rX-n1N">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1028"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1042.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님의 공부를 응원합니다!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c43-HD-Wgz">
                                     <rect key="frame" x="32" y="62" width="175.5" height="64"/>
@@ -45,20 +45,20 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-ah-6p0">
-                                    <rect key="frame" x="32" y="322" width="24" height="24"/>
+                                    <rect key="frame" x="32" y="336.5" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="CsQ-H7-iGH"/>
                                         <constraint firstAttribute="height" constant="24" id="uKG-mF-oaH"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 할 공부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMs-cR-tGf">
-                                    <rect key="frame" x="64" y="321" width="93" height="26.5"/>
+                                    <rect key="frame" x="64" y="335.5" width="93" height="26.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                     <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-r5-ApP">
-                                    <rect key="frame" x="24" y="368" width="366" height="600"/>
+                                    <rect key="frame" x="24" y="382.5" width="366" height="600"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="600" id="CZo-Ic-IeA"/>
                                     </constraints>
@@ -70,10 +70,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZTr-R6-LZk">
-                                    <rect key="frame" x="24" y="150" width="366" height="92"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="92" id="4UC-Ts-lMi"/>
-                                    </constraints>
+                                    <rect key="frame" x="24" y="150" width="366" height="106.5"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7mt-jc-eFi">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -112,14 +109,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msx-qI-rMt">
-                            <rect key="frame" x="277.5" y="52" width="112.5" height="36"/>
+                            <rect key="frame" x="277.5" y="58.5" width="112.5" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="ZRf-3W-T2u"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                             <color key="tintColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title=" 공부추가" image="Plus">
+                            <state key="normal" title="  공부추가" image="Plus">
                                 <color key="titleColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -127,30 +124,31 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planit" translatesAutoresizingMaskIntoConstraints="NO" id="5bY-He-BJh">
-                            <rect key="frame" x="32" y="58" width="69" height="24"/>
+                            <rect key="frame" x="32" y="64.5" width="69" height="24"/>
                         </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="5bY-He-BJh" firstAttribute="leading" secondItem="QJm-5N-cU0" secondAttribute="leading" constant="32" id="BBF-aH-cwx"/>
                         <constraint firstItem="msx-qI-rMt" firstAttribute="centerY" secondItem="5bY-He-BJh" secondAttribute="centerY" id="Eeg-Eh-vtw"/>
                         <constraint firstAttribute="trailing" secondItem="msx-qI-rMt" secondAttribute="trailing" constant="24" id="IpL-Ov-9QI"/>
-                        <constraint firstItem="5bY-He-BJh" firstAttribute="top" secondItem="QJm-5N-cU0" secondAttribute="top" constant="58" id="rjo-14-f4x"/>
+                        <constraint firstAttribute="height" constant="108" id="qV1-3T-VoE"/>
+                        <constraint firstAttribute="bottom" secondItem="5bY-He-BJh" secondAttribute="bottom" constant="19.699999999999999" id="rsZ-Tf-Bsz"/>
                         <constraint firstItem="msx-qI-rMt" firstAttribute="width" secondItem="QJm-5N-cU0" secondAttribute="width" multiplier="0.272" id="xyh-th-r7D"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
+                <constraint firstItem="ZTr-R6-LZk" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.1303" id="89m-Gh-6Z6"/>
                 <constraint firstItem="QJm-5N-cU0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8DG-Fg-1pg"/>
                 <constraint firstItem="NrU-8q-1Ui" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Deq-RC-dpL"/>
                 <constraint firstItem="NrU-8q-1Ui" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Imk-Xv-ZwP"/>
-                <constraint firstItem="QJm-5N-cU0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.12069" id="LqO-Fh-yl0"/>
                 <constraint firstItem="NrU-8q-1Ui" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aQV-YJ-Cx9"/>
                 <constraint firstItem="NrU-8q-1Ui" firstAttribute="top" secondItem="QJm-5N-cU0" secondAttribute="bottom" id="afH-r3-ylN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QJm-5N-cU0" secondAttribute="trailing" id="jXh-pv-3uv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="QJm-5N-cU0" secondAttribute="top" constant="44" id="kVQ-Qt-vwE"/>
             </constraints>
-            <point key="canvasLocation" x="-584" y="-23"/>
+            <point key="canvasLocation" x="-584.05797101449275" y="-23.4375"/>
         </view>
     </objects>
     <resources>

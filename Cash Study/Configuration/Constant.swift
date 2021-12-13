@@ -8,8 +8,8 @@
 import Alamofire
 
 struct Constant {
-    static let BASE_URL : String = "https://stoplight.io/mocks/planit-study/planit-api-spec/281987"
-//    static let BASE_URL : String = "https://dev-api.planit-study.com"
+//    static let BASE_URL : String = "https://stoplight.io/mocks/planit-study/planit-api-spec/281987"
+    static let BASE_URL : String = "https://dev-api.planit-study.com"
     static let HEADERS : HTTPHeaders = ["x-access-token" : MY_ACCESS_TOKEN]
     
     

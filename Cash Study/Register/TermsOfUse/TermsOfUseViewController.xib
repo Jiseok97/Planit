@@ -149,28 +149,44 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cua-fa-oEJ">
-                            <rect key="frame" x="322" y="33" width="16" height="22"/>
+                            <rect key="frame" x="316" y="28" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="Buy-Cd-zMB"/>
+                                <constraint firstAttribute="width" constant="32" id="y8x-hF-hxT"/>
+                            </constraints>
                             <state key="normal" image="rightArrow"/>
                             <connections>
                                 <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="jD5-n8-5wv"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-Dh-bEW">
-                            <rect key="frame" x="322" y="81" width="16" height="22"/>
+                            <rect key="frame" x="316" y="76" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="Zkh-q5-sMR"/>
+                                <constraint firstAttribute="width" constant="32" id="tLe-cU-Ypc"/>
+                            </constraints>
                             <state key="normal" image="rightArrow"/>
                             <connections>
                                 <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="sTW-zs-W4k"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pam-Q5-G2p">
-                            <rect key="frame" x="322" y="129" width="16" height="22"/>
+                            <rect key="frame" x="316" y="124" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="gya-Pl-qyi"/>
+                                <constraint firstAttribute="height" constant="32" id="sJh-P2-jFy"/>
+                            </constraints>
                             <state key="normal" image="rightArrow"/>
                             <connections>
                                 <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="Him-qR-b2o"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsx-tT-GAU">
-                            <rect key="frame" x="322" y="177" width="16" height="22"/>
+                            <rect key="frame" x="316" y="172" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="8m1-ad-iZM"/>
+                                <constraint firstAttribute="width" constant="32" id="C9o-Hn-CSK"/>
+                            </constraints>
                             <state key="normal" image="rightArrow"/>
                             <connections>
                                 <action selector="showTermsAlert:" destination="-1" eventType="touchUpInside" id="ISu-ZR-ilH"/>
@@ -183,13 +199,13 @@
                         <constraint firstItem="yg4-VH-zxx" firstAttribute="leading" secondItem="VU7-dz-tOi" secondAttribute="trailing" constant="12" id="3sF-2B-yFE"/>
                         <constraint firstItem="V3K-Dh-bEW" firstAttribute="centerY" secondItem="M11-N7-qfl" secondAttribute="centerY" id="6qZ-53-QfD"/>
                         <constraint firstItem="QEO-cn-cgY" firstAttribute="leading" secondItem="qww-tR-OGH" secondAttribute="leading" constant="26" id="7go-aK-HcK"/>
-                        <constraint firstAttribute="trailing" secondItem="Cua-fa-oEJ" secondAttribute="trailing" constant="28" id="AvG-eh-lc3"/>
+                        <constraint firstAttribute="trailing" secondItem="Cua-fa-oEJ" secondAttribute="trailing" constant="18" id="AvG-eh-lc3"/>
                         <constraint firstItem="yg4-VH-zxx" firstAttribute="centerY" secondItem="VU7-dz-tOi" secondAttribute="centerY" id="CvT-nD-tdc"/>
                         <constraint firstItem="QEO-cn-cgY" firstAttribute="top" secondItem="8AV-Fr-IF7" secondAttribute="bottom" constant="24" id="Mf9-5E-3XL"/>
                         <constraint firstItem="qKy-Ru-41Y" firstAttribute="leading" secondItem="8AV-Fr-IF7" secondAttribute="trailing" constant="12" id="O8U-LW-lDs"/>
                         <constraint firstItem="8AV-Fr-IF7" firstAttribute="top" secondItem="qww-tR-OGH" secondAttribute="top" constant="32" id="PQ7-mC-lev"/>
                         <constraint firstItem="Cua-fa-oEJ" firstAttribute="centerY" secondItem="qKy-Ru-41Y" secondAttribute="centerY" id="Rjy-m8-3qJ"/>
-                        <constraint firstAttribute="trailing" secondItem="Pam-Q5-G2p" secondAttribute="trailing" constant="28" id="UxN-SK-D4Z"/>
+                        <constraint firstAttribute="trailing" secondItem="Pam-Q5-G2p" secondAttribute="trailing" constant="18" id="UxN-SK-D4Z"/>
                         <constraint firstItem="VU7-dz-tOi" firstAttribute="top" secondItem="HHb-yy-RrR" secondAttribute="bottom" constant="24" id="YOx-ke-xl4"/>
                         <constraint firstItem="8AV-Fr-IF7" firstAttribute="leading" secondItem="qww-tR-OGH" secondAttribute="leading" constant="26" id="Ycg-Bd-8e3"/>
                         <constraint firstItem="M11-N7-qfl" firstAttribute="leading" secondItem="QEO-cn-cgY" secondAttribute="trailing" constant="12" id="ZmU-iv-8qX"/>
@@ -197,13 +213,13 @@
                         <constraint firstItem="d6S-qt-o2Q" firstAttribute="leading" secondItem="HHb-yy-RrR" secondAttribute="trailing" constant="12" id="fzG-aE-AKe"/>
                         <constraint firstItem="M11-N7-qfl" firstAttribute="centerY" secondItem="QEO-cn-cgY" secondAttribute="centerY" id="giZ-fT-5tR"/>
                         <constraint firstAttribute="bottom" secondItem="VU7-dz-tOi" secondAttribute="bottom" constant="32" id="kak-XG-eXr"/>
-                        <constraint firstAttribute="trailing" secondItem="V3K-Dh-bEW" secondAttribute="trailing" constant="28" id="opJ-2m-iYS"/>
+                        <constraint firstAttribute="trailing" secondItem="V3K-Dh-bEW" secondAttribute="trailing" constant="18" id="opJ-2m-iYS"/>
                         <constraint firstItem="VU7-dz-tOi" firstAttribute="leading" secondItem="qww-tR-OGH" secondAttribute="leading" constant="26" id="pBv-ua-iin"/>
                         <constraint firstItem="jsx-tT-GAU" firstAttribute="centerY" secondItem="yg4-VH-zxx" secondAttribute="centerY" id="pia-dn-lFf"/>
                         <constraint firstItem="d6S-qt-o2Q" firstAttribute="centerY" secondItem="HHb-yy-RrR" secondAttribute="centerY" id="qaE-bO-Azv"/>
                         <constraint firstItem="Pam-Q5-G2p" firstAttribute="centerY" secondItem="d6S-qt-o2Q" secondAttribute="centerY" id="rUJ-3f-3wK"/>
                         <constraint firstItem="qKy-Ru-41Y" firstAttribute="centerY" secondItem="8AV-Fr-IF7" secondAttribute="centerY" id="uI1-zS-AIG"/>
-                        <constraint firstAttribute="trailing" secondItem="jsx-tT-GAU" secondAttribute="trailing" constant="28" id="wLC-bn-wAd"/>
+                        <constraint firstAttribute="trailing" secondItem="jsx-tT-GAU" secondAttribute="trailing" constant="18" id="wLC-bn-wAd"/>
                     </constraints>
                 </view>
             </subviews>

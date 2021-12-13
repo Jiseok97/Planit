@@ -18,6 +18,7 @@ class RepresentativeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bgView.layer.cornerRadius = 8
     }
     
     override func prepareForReuse() {
