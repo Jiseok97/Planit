@@ -22,10 +22,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanitPassViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="confirmBtn" destination="PBe-nM-KeB" id="C4S-KX-xgn"/>
+                <outlet property="nextPageBtn" destination="Wri-k0-BhV" id="VaE-Ap-Ixa"/>
                 <outlet property="pageCtrl" destination="q0k-Ou-63O" id="1IF-R6-6Ym"/>
                 <outlet property="passCV" destination="Tlk-ed-M88" id="LMW-cX-fcq"/>
                 <outlet property="planitNameLbl" destination="TL1-3K-fUn" id="Vja-pP-nL1"/>
                 <outlet property="pointLbl" destination="mcg-QZ-RLN" id="YOW-Gq-Nyf"/>
+                <outlet property="prevPageBtn" destination="97e-2D-ozp" id="z84-eW-a5M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -76,18 +78,24 @@
                     <rect key="frame" x="32" y="669.5" width="24" height="24"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="backArrow"/>
+                    <connections>
+                        <action selector="changePageTapped:" destination="-1" eventType="touchUpInside" id="cNc-Xa-l6D"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wri-k0-BhV">
                     <rect key="frame" x="358" y="669.5" width="24" height="24"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="nextImg"/>
+                    <connections>
+                        <action selector="changePageTapped:" destination="-1" eventType="touchUpInside" id="Bc8-6K-gSm"/>
+                    </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="q0k-Ou-63O">
                     <rect key="frame" x="129" y="551.5" width="156" height="26"/>
                     <color key="pageIndicatorTintColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tlk-ed-M88">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tlk-ed-M88">
                     <rect key="frame" x="32" y="157.5" width="382" height="384"/>
                     <color key="backgroundColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Hl6-19-UxJ">
@@ -123,7 +131,7 @@
                 <constraint firstItem="34e-RM-gKZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="xBb-mV-QZV"/>
                 <constraint firstItem="TL1-3K-fUn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yFa-od-bEt"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="64"/>
+            <point key="canvasLocation" x="131.8840579710145" y="63.616071428571423"/>
         </view>
     </objects>
     <resources>

@@ -54,6 +54,8 @@
 		B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC469274B5F07005296D8 /* EditDdayInput.swift */; };
 		B62BC46C274B5F11005296D8 /* EditDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */; };
 		B62BC471274B72BC005296D8 /* DeleteDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */; };
+		B62C5E2C2766F34C006DF835 /* PlanitPassInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C5E2B2766F34C006DF835 /* PlanitPassInfoDataManager.swift */; };
+		B62C5E2E2766F35C006DF835 /* PlanitPassInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C5E2D2766F35C006DF835 /* PlanitPassInfoEntity.swift */; };
 		B62F78582752240A001D748E /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */; };
 		B63352A92755298500D1914D /* RestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63352A72755298500D1914D /* RestTimerViewController.swift */; };
 		B63352AA2755298500D1914D /* RestTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63352A82755298500D1914D /* RestTimerViewController.xib */; };
@@ -250,6 +252,8 @@
 		B62BC469274B5F07005296D8 /* EditDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayInput.swift; sourceTree = "<group>"; };
 		B62BC46B274B5F11005296D8 /* EditDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDdayEntity.swift; sourceTree = "<group>"; };
 		B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDdayDataManager.swift; sourceTree = "<group>"; };
+		B62C5E2B2766F34C006DF835 /* PlanitPassInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitPassInfoDataManager.swift; sourceTree = "<group>"; };
+		B62C5E2D2766F35C006DF835 /* PlanitPassInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanitPassInfoEntity.swift; sourceTree = "<group>"; };
 		B63352A72755298500D1914D /* RestTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerViewController.swift; sourceTree = "<group>"; };
 		B63352A82755298500D1914D /* RestTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestTimerViewController.xib; sourceTree = "<group>"; };
 		B633A9F62754932A00A00EFD /* ShowUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserInfoDataManager.swift; sourceTree = "<group>"; };
@@ -484,8 +488,8 @@
 				B688492F276071C600DF1F42 /* RewardMainViewController.xib */,
 				B688492E276071C600DF1F42 /* RewardMainViewController.swift */,
 				B6447B7C276625FB00C75246 /* ShowUserReward */,
-				B64886A32763396C00B57FFB /* PlanitPass */,
 				B66BAFBB2758BB54009CAA31 /* RewardShop */,
+				B64886A32763396C00B57FFB /* PlanitPass */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -765,6 +769,31 @@
 			isa = PBXGroup;
 			children = (
 				B62BC470274B72BC005296D8 /* DeleteDdayDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B62C5E282766F322006DF835 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				B62C5E2A2766F340006DF835 /* DataManager */,
+				B62C5E292766F33C006DF835 /* Entity */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		B62C5E292766F33C006DF835 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B62C5E2D2766F35C006DF835 /* PlanitPassInfoEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B62C5E2A2766F340006DF835 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B62C5E2B2766F34C006DF835 /* PlanitPassInfoDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1070,6 +1099,7 @@
 				B64886A52763398E00B57FFB /* PlanitPassViewController.xib */,
 				B64886A42763398E00B57FFB /* PlanitPassViewController.swift */,
 				B6770E43276479B100B01735 /* CVCell */,
+				B62C5E282766F322006DF835 /* Info */,
 			);
 			path = PlanitPass;
 			sourceTree = "<group>";
@@ -1814,6 +1844,7 @@
 				B6B1F88B2755F02000E84CE7 /* TermsAlertViewController.swift in Sources */,
 				B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */,
 				B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */,
+				B62C5E2E2766F35C006DF835 /* PlanitPassInfoEntity.swift in Sources */,
 				B6BF895D273D14EA000ABCFF /* AddDdayDataManager.swift in Sources */,
 				B66B47772732706000F89012 /* HomeViewController.swift in Sources */,
 				B63352A92755298500D1914D /* RestTimerViewController.swift in Sources */,
@@ -1896,6 +1927,7 @@
 				B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */,
 				B63A1F382747ADD00077CC76 /* SingleStudyInput.swift in Sources */,
 				B61FAC5F275293E2007458A1 /* DeleteStudyDataManger.swift in Sources */,
+				B62C5E2C2766F34C006DF835 /* PlanitPassInfoDataManager.swift in Sources */,
 				B63E67D32753DD1E00C891C2 /* ShowRecordEntity.swift in Sources */,
 				B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */,
 				B6C455B727302A8800B1326A /* noReceiverInput.swift in Sources */,
