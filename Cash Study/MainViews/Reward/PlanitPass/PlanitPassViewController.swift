@@ -70,7 +70,6 @@ class PlanitPassViewController: UIViewController {
                 
             default:
                 return
-                
             }
             
         default:
@@ -87,7 +86,6 @@ class PlanitPassViewController: UIViewController {
                 
             default:
                 return
-                
             }
         }
     }

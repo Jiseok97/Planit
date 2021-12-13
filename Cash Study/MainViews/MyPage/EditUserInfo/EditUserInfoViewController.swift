@@ -10,12 +10,12 @@ import UIKit
 class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     
-    @IBOutlet weak var nameView: UIView!
-    @IBOutlet weak var nameTF: UITextField! {
-        didSet {
-            nameTF.delegate = self
-        }
-    }
+//    @IBOutlet weak var nameView: UIView!
+//    @IBOutlet weak var nameTF: UITextField! {
+//        didSet {
+//            nameTF.delegate = self
+//        }
+//    }
     
     
     @IBOutlet weak var nicknameView: UIView!
@@ -68,7 +68,9 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         setUI()
+        swipeRecognizer()
         
+        showIndicator()
         ShowUserInfoDataManager().showUserInfoEditVC(viewController: self)
     }
     
@@ -97,7 +99,7 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     // MARK: Functions
     
     func setUI() {
-        self.nameView.layer.cornerRadius = 11
+//        self.nameView.layer.cornerRadius = 11
         self.nicknameView.layer.cornerRadius = 11
         
         self.categoryBtns.forEach {
@@ -149,11 +151,12 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameTF {
-            nicknameTF.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
+//        if textField == nameTF {
+//            nicknameTF.becomeFirstResponder()
+//        } else {
+//            textField.resignFirstResponder()
+//        }
+        textField.resignFirstResponder()
         return true
     }
     
@@ -304,7 +307,13 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkConfirmBtn(check: Bool) {
-        if self.nameTF.text?.isEmpty == false && checkUserNickName == true && check == true {
+//        if self.nameTF.text?.isEmpty == false && checkUserNickName == true && check == true {
+//            setAbleBtn(confirmBtn)
+//        } else {
+//            setEnableBtn(confirmBtn)
+//        }
+        
+        if checkUserNickName == true && check == true {
             setAbleBtn(confirmBtn)
         } else {
             setEnableBtn(confirmBtn)
@@ -313,7 +322,8 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func confirmBtnTapped(_ sender: Any) {
-        guard let name = self.nameTF.text else { return }
+//        guard let name = self.nameTF.text else { return }
+        guard let name = userInfoData?.name else { return }
         guard let nickname = self.nicknameTF.text else { return }
         
         let input = EditUserInfoInput(name: name, nickname: nickname, category: self.userCategory)
@@ -332,9 +342,16 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
 
 extension EditUserInfoViewController {
     func showUserInfo(result: ShowUserInfoEntity) {
+        dismissIndicator()
         self.userInfoData = result
         
-        self.nameTF.text = userInfoData?.name
-        self.nicknameTF.text = userInfoData?.nickname
+        if userInfoData != nil {
+//            guard let userName = userInfoData?.name else { return }
+            guard let userNickName = userInfoData?.nickname else { return }
+            
+//            self.nameTF.text = userName
+            self.nicknameTF.text = userNickName
+        }
+        
     }
 }

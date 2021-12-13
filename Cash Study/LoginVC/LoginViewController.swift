@@ -122,7 +122,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             let userIdentifier = appleIDCredential.user
-            let userName = appleIDCredential.fullName
+            guard let userName = appleIDCredential.fullName else { return }
             
             UserDefaults.standard.set(userIdentifier, forKey: "appleIdentifier")
             

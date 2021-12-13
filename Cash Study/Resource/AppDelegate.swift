@@ -35,13 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appleIDProvider.getCredentialState(forUserID: userId ?? "", completion: { (credentialState, error) in
             switch credentialState {
             case .authorized:
-                print("해당 ID는 연동되어있습니다.")
+                let input = LoginInput(email: userId!)
+                DispatchQueue.main.async {
+                    LoginDataManager().autoLogin(input)
+                }
                 
             case .revoked:
-                print("해당 ID는 연동되어있지 않습니다.")
+                break
                 
             case .notFound:
-                print("해당 ID를 찾을 수 없습니다.")
+                break
                 
             default:
                 break
