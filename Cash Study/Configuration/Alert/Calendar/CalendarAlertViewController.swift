@@ -126,8 +126,19 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
             NotificationCenter.default.post(name: NSNotification.Name("endDate"), object: nil)
         }
         else if isReport {
-            Constant.DATE_TEXT = self.selectedDate
-            Constant.DATE = self.nomalDate
+            if selectedDate == "" && nomalDate == "" {
+                let df = DateFormatter()
+                df.dateFormat = "yyyy년 MM월 dd일"
+                
+                let noDf = DateFormatter()
+                noDf.dateFormat = "yyyy-MM-dd"
+                
+                Constant.DATE_TEXT = df.string(from: Date())
+                Constant.DATE = noDf.string(from: Date())
+            } else {
+                Constant.DATE_TEXT = self.selectedDate
+                Constant.DATE = self.nomalDate
+            }
             NotificationCenter.default.post(name: NSNotification.Name("reportDate"), object: nil)
         }
         else {

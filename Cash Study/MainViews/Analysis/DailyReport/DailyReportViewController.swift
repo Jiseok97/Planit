@@ -13,6 +13,7 @@ class DailyReportViewController: UIViewController {
     @IBOutlet weak var dateBtn: UIButton!
     @IBOutlet weak var studyAnalysisCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
+    @IBOutlet weak var dateLblVertical: NSLayoutConstraint!
     
     var selectedDate : String = ""
     var reportDataLst : DailyReportEntity?
@@ -161,7 +162,6 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                     
                     return cell
                 }
-                    
             } else {
                 // 측정한 공부가 없는 경우
                 if reportDataLst!.totalStudies == 0 {

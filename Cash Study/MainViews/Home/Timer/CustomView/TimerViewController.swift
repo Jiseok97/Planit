@@ -52,6 +52,9 @@ class TimerViewController: UIViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // for sleep mode
+        UIApplication.shared.isIdleTimerDisabled = true
 
         setUI()
         showIndicator()
@@ -212,6 +215,10 @@ class TimerViewController: UIViewController {
             timer?.invalidate()
             present(vc, animated: true)
         }
+    }
+    
+    deinit {
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
 }

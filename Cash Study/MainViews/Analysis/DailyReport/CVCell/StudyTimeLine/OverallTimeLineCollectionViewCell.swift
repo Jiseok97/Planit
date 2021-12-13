@@ -71,11 +71,17 @@ extension OverallTimeLineCollectionViewCell : UICollectionViewDelegate, UICollec
                     cell.topView.isHidden = true
                     if self.timeLineLst?.reports.count == 1 {
                         cell.bottomView.isHidden = true
+                    } else {
+                        cell.bottomView.isHidden = false
                     }
+                } else {
+                    cell.topView.isHidden = false
                 }
                 
                 if indexPath.row == (self.timeLineLst?.reports.count)! - 1 {
                     cell.bottomView.isHidden = true
+                } else {
+                    cell.bottomView.isHidden = false
                 }
                 
                 cell.studyNameLbl.text = timeLineLst?.reports[indexPath.row].title

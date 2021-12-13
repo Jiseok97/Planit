@@ -30,6 +30,7 @@ class MyPageViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
+        showIndicator()
         ShowUserInfoDataManager().showUserInfo(viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(editUserInfoNoti(_:)), name: NSNotification.Name("EditUserInfo"), object: nil)
@@ -98,8 +99,8 @@ class MyPageViewController: UIViewController {
 
 extension MyPageViewController {
     func showUserInfo(result: ShowUserInfoEntity) {
+        dismissIndicator()
         self.userInfoData = result
-        
         self.nicknameLbl.text = userInfoData?.nickname
     }
 }

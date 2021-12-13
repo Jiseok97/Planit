@@ -18,5 +18,4 @@ class StudyTimeLineCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-
 }
