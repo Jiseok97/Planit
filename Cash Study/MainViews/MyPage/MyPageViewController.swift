@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import KakaoSDKUser
+import KakaoSDKAuth
 
 class MyPageViewController: UIViewController {
 
@@ -60,10 +62,16 @@ class MyPageViewController: UIViewController {
     
     
     @objc func logout(_ noti: Notification) {
-        
-        let userEmail = UserDefaults.standard.string(forKey: "userEmail")
-        if userEmail != nil {
-            UserDefaults.standard.removeObject(forKey: "userEmail")
+        if AuthApi.hasToken() {
+            UserApi.shared.logout { (error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("Kakao Logout success")
+                }
+            }
+        } else {
+            print("Kakao Token 없다")
         }
         
         Constant.MY_ACCESS_TOKEN = ""

@@ -60,11 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Kakao Login Setup
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        // Kakao
-//            if (AuthApi.isKakaoTalkLoginUrl(url)) {
-//                return AuthController.handleOpenUrl(url: url)
-//            }
-
             return false
         }
 

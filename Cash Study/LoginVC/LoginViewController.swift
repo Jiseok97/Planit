@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if(AuthApi.hasToken()) {
-            UserApi.shared.accessTokenInfo(completion: { (_, error) in
+            UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {
                     if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() {
                         // Need login
@@ -41,7 +41,10 @@ class LoginViewController: UIViewController {
                 } else {
                     self.getUserInfo()
                 }
-            })
+            }
+        } else {
+            // Need login
+            return
         }
     }
     
@@ -79,7 +82,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     
@@ -93,9 +95,6 @@ class LoginViewController: UIViewController {
                 
                 guard let userEmail = user?.kakaoAccount?.email else { return }
                 guard let userName = user?.kakaoAccount?.profile?.nickname else { return }
-                
-                UserDefaults.standard.set(userEmail, forKey: "userEmail")
-                print("ud Email = \(userEmail)")
                 
                 Constant.MY_EMAIL = userEmail
                 Constant.MY_NAME = userName
