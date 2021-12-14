@@ -22,21 +22,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="328" height="92"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 디데이가 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-JR-mOi">
-                        <rect key="frame" x="95.5" y="36" width="137" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 디데이 설정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-JR-mOi">
+                        <rect key="frame" x="109" y="36" width="124" height="20.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-iw-Ma4">
+                        <rect key="frame" x="91" y="40" width="12" height="12"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="H9o-JR-mOi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tff-lg-WZG"/>
+                <constraint firstItem="H9o-JR-mOi" firstAttribute="leading" secondItem="u6e-iw-Ma4" secondAttribute="trailing" constant="6" id="X6x-ZC-n6t"/>
+                <constraint firstItem="H9o-JR-mOi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="1.042" id="tff-lg-WZG"/>
                 <constraint firstItem="H9o-JR-mOi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vSy-Sd-vEr"/>
+                <constraint firstItem="u6e-iw-Ma4" firstAttribute="centerY" secondItem="H9o-JR-mOi" secondAttribute="centerY" id="vh1-Ba-sdB"/>
             </constraints>
             <size key="customSize" width="288" height="128"/>
             <point key="canvasLocation" x="310.14492753623193" y="101.78571428571428"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="Plus" width="12" height="12"/>
+    </resources>
 </document>

@@ -43,19 +43,19 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 디데이 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW3-ag-PtR">
-                        <rect key="frame" x="94" y="30.5" width="112" height="23.5"/>
+                        <rect key="frame" x="94" y="25" width="112" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh7-Xz-Wwh">
-                        <rect key="frame" x="94" y="58" width="36.5" height="23.5"/>
+                        <rect key="frame" x="94" y="52.5" width="36.5" height="23.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                         <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.10.06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-tN-f0S">
-                        <rect key="frame" x="260" y="61" width="47" height="17.5"/>
+                        <rect key="frame" x="260" y="55.5" width="47" height="17.5"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                         <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
             <constraints>
                 <constraint firstItem="uh7-Xz-Wwh" firstAttribute="leading" secondItem="rli-fS-6qb" secondAttribute="trailing" constant="14" id="28c-mi-16p"/>
                 <constraint firstItem="VmA-xu-C5O" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="GaG-YU-NmN"/>
-                <constraint firstItem="WW3-ag-PtR" firstAttribute="centerY" secondItem="rli-fS-6qb" secondAttribute="centerY" multiplier="0.8" id="MUO-KW-Gpc"/>
+                <constraint firstItem="WW3-ag-PtR" firstAttribute="centerY" secondItem="rli-fS-6qb" secondAttribute="centerY" multiplier="0.7" id="MUO-KW-Gpc"/>
                 <constraint firstItem="VmA-xu-C5O" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" multiplier="0.3334" id="Mhu-84-yjP"/>
                 <constraint firstItem="rli-fS-6qb" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="SPo-S6-s8n"/>
                 <constraint firstItem="WW3-ag-PtR" firstAttribute="leading" secondItem="rli-fS-6qb" secondAttribute="trailing" constant="14" id="gPy-gW-8kh"/>

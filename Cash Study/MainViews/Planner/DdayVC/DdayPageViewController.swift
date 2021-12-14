@@ -184,7 +184,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
         guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
         
-        let vc = AddDdayViewController(id: id, title: title, isEdit: true, isRepresentative: isRepresent)
+        let vc = AddDdayViewController(id: id, title: title, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

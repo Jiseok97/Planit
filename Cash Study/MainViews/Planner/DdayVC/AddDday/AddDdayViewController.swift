@@ -65,12 +65,14 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var dDayId: Int = 0
     var isEdit: Bool = false
     var titleTxt: String = ""
+    var homeAddDday: Bool = false
     
-    init(id: Int, title : String, isEdit: Bool, isRepresentative: Bool) {
+    init(id: Int, title : String, isEdit: Bool, isRepresentative: Bool, homeAddDday: Bool) {
         self.isEdit = isEdit
         self.dDayId = id
         self.titleTxt = title
         self.isRepresentative = isRepresentative
+        self.homeAddDday = homeAddDday
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -323,6 +325,9 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
                 let input = AddDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
                 showIndicator()
                 AddDdayDataManager().addDday(input, viewController: self)
+                if homeAddDday {
+                    NotificationCenter.default.post(name: NSNotification.Name("homeAddDdayReload"), object: nil)
+                }
             }
         }
     }

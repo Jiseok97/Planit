@@ -57,6 +57,7 @@ class HomeViewController: UIViewController {
         
         let td = DateFormatter()
         td.dateFormat = "yyyy-MM-dd"
+        showIndicator()
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
         
         ShowDdayDataManager().showHomeDday(viewController: self)
@@ -64,12 +65,15 @@ class HomeViewController: UIViewController {
         studyLstCV.setNeedsLayout()
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStudy(_:)), name: NSNotification.Name("reloadHome"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(homeAddDdayReload(_:)), name: NSNotification.Name("homeAddDdayReload"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadHome"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("homeAddDdayReload"), object: nil)
     }
     
     
@@ -94,6 +98,9 @@ class HomeViewController: UIViewController {
         ShowDateStudyDataManager().homeStudy(date: td.string(from: Date()), viewController: self)
     }
     
+    @objc func homeAddDdayReload(_ noti: Notification) {
+        changeRootVC(BaseTabBarController())
+    }
     
 }
 
@@ -113,8 +120,12 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 let vc = TimerViewController(title: titleTxt, stId: stId)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true, completion: nil)
-            } else {
-                return
+            }
+        } else {
+            if representDday == nil || (representDday?.ddays.count)! <= 0 || representDday?.ddays[0].isRepresentative == false {
+                let vc = AddDdayViewController(id: 0, title: "", isEdit: false, isRepresentative: false, homeAddDday: true)
+                vc.modalPresentationStyle = .overFullScreen
+                present(vc, animated: true)
             }
         }
     }
