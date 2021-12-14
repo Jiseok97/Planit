@@ -528,11 +528,35 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             eDate = df.string(from: Date())
         }
         
-        if repeatSd.value == 1 {
-            if sDate > eDate {
-                let vc = ObAlertViewController(mainMsg: "종료일은 시작일보다\n이전일 수 없습니다", subMsg: "", btnTitle: "확인", isTimer: false)
-                vc.modalPresentationStyle = .overFullScreen
-                present(vc, animated: true)
+        if titleTF.text?.isEmpty == true {
+            let vc = ObAlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "", btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+            
+        } else {
+            if repeatSd.value == 1 {
+                if sDate > eDate {
+                    let vc = ObAlertViewController(mainMsg: "종료일은 시작일보다\n이전일 수 없습니다", subMsg: "", btnTitle: "확인", isTimer: false)
+                    vc.modalPresentationStyle = .overFullScreen
+                    present(vc, animated: true)
+                } else {
+                    if isEdit {
+                        let dt = df.string(from: Date())
+                        if dt >= sDate {
+                            let vc = ObAlertViewController(mainMsg: "오늘 이후의 날짜만 선택 가능합니다", subMsg: "", btnTitle: "확인", isTimer: false)
+                            vc.modalPresentationStyle = .overFullScreen
+                            present(vc, animated: true)
+                        } else {
+                            let input = EditRepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                            showIndicator()
+                            EditStudyDataManager().editRepeatStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
+                        }
+                    } else {
+                        let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                        showIndicator()
+                        AddStudyDataManager().repeatStudy(input, viewController: self)
+                    }
+                }
             } else {
                 if isEdit {
                     let dt = df.string(from: Date())
@@ -541,33 +565,16 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                         vc.modalPresentationStyle = .overFullScreen
                         present(vc, animated: true)
                     } else {
-                        let input = EditRepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                        let input = EditStudyInput(title: title, startAt: sDate)
                         showIndicator()
-                        EditStudyDataManager().editRepeatStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
+                        EditStudyDataManager().editSingleStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
                     }
                 } else {
-                    let input = RepeatStudyInput(title: title, startAt: sDate, endAt: eDate, repeatedDays: tappedDayButtons)
+                    let input = SingleStudyInput(title: title, startAt: sDate)
                     showIndicator()
-                    AddStudyDataManager().repeatStudy(input, viewController: self)
+                    print("Study add = \(sDate)")
+                    AddStudyDataManager().singleStudy(input, viewController: self)
                 }
-            }
-        } else {
-            if isEdit {
-                let dt = df.string(from: Date())
-                if dt >= sDate {
-                    let vc = ObAlertViewController(mainMsg: "오늘 이후의 날짜만 선택 가능합니다", subMsg: "", btnTitle: "확인", isTimer: false)
-                    vc.modalPresentationStyle = .overFullScreen
-                    present(vc, animated: true)
-                } else {
-                    let input = EditStudyInput(title: title, startAt: sDate)
-                    showIndicator()
-                    EditStudyDataManager().editSingleStudy(stGroupId: stGrId, stScheduleId: stSchId, input, viewController: self)
-                }
-            } else {
-                let input = SingleStudyInput(title: title, startAt: sDate)
-                showIndicator()
-                print("Study add = \(sDate)")
-                AddStudyDataManager().singleStudy(input, viewController: self)
             }
         }
     }
