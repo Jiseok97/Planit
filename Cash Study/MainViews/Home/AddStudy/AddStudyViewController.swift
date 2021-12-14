@@ -230,7 +230,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         
         
         let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
-//        self.endDay = Int(txt)!
         let endDF = DateFormatter()
         endDF.dateFormat = "yyyyMMdd"
 
@@ -272,7 +271,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 default:
                     limitBtnSetup(self.sundayBtn)
                 }
-                limitBtnSetup(self.everyDayBtn)
+//                limitBtnSetup(self.everyDayBtn)
             }
         } else {
             self.tappedDayButtons.removeAll()
@@ -315,9 +314,57 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBAction func dayBtnTapped(_ sender: UIButton) {
         guard let txt = sender.titleLabel?.text else { return }
         
-        if sender.isEnabled {
-            
-        }
+//        if sender == everyDayBtn {
+//            if !everyDayBtn.isSelected {
+//                // 매일이 꺼져있는 상태에서 탭을 해서 켰을 때(비활성화 → 활성화)
+//                dateBtnCollection.forEach {
+//                    // 다른 요일버튼 모두 비활성화
+//                    $0.isSelected = false
+//                    $0.backgroundColor = UIColor.homeBorderColor
+//                    $0.setTitleColor(.placeHolderColor, for: .normal)
+//                }
+//            } else {
+//                // 매일 버튼 (활성화 → 비활성화)
+//                everyDayBtn.isSelected = false
+//                everyDayBtn.backgroundColor = UIColor.homeBorderColor
+//                everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
+//            }
+//        } else {
+//            // 매일버튼을 제외한 나머지 요일 버튼 클릭시
+//            if !sender.isSelected {
+//                everyDayBtn.isSelected = false
+//                everyDayBtn.backgroundColor = UIColor.homeBorderColor
+//                everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
+//
+//                sender.isSelected = true
+//                sender.backgroundColor = UIColor.link
+//                sender.setTitleColor(.myGray, for: .normal)
+//
+//                dateBtnCollection.forEach {
+//                    // 모든 요일이 다 선택되어있을 경우 btnCheck는 true로 남아 있다
+//                    if $0.isSelected {
+//                        // 요일버튼이 선택되어 있을 경우
+//                        btnCheck = true
+//                    } else {
+//                        // 요일버튼이 선택되지 않았을 경우
+//                        btnCheck = false
+//                    }
+//                }
+//
+//                if btnCheck {
+//                    dateBtnCollection.forEach {
+//                        $0.isSelected = false
+//                        $0.backgroundColor = UIColor.homeBorderColor
+//                        $0.setTitleColor(.placeHolderColor, for: .normal)
+//                    }
+//                    everyDayBtn.isSelected = true
+//                    everyDayBtn.backgroundColor = UIColor.link
+//                    everyDayBtn.setTitleColor(.myGray, for: .normal)
+//                }
+//            }
+//        }
+        
+        
         
         
         
@@ -326,38 +373,32 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 // 매일 버튼 클릭 시
                 dateBtnCollection.forEach {
                     // 다른 요일 버튼 활성화 꺼짐
-                    $0.isSelected = false
-                    $0.backgroundColor = UIColor.homeBorderColor
-                    $0.setTitleColor(.placeHolderColor, for: .normal)
+                    if $0.isEnabled {
+                        $0.isSelected = false
+                        $0.backgroundColor = UIColor.homeBorderColor
+                        $0.setTitleColor(.placeHolderColor, for: .normal)
+                    }
                 }
             }
         } else {
             // 다른 버튼 클릭시
-            if everyDayBtn.isEnabled == true {
-                if everyDayBtn.isSelected {
-                    // 배열 값 삭제
-                    tappedDayButtons.removeAll()
-                }
-                // 매일 버튼 비활성화
-                everyDayBtn.isSelected = false
-                everyDayBtn.backgroundColor = UIColor.homeBorderColor
-                everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
+            if everyDayBtn.isSelected {
+                // 배열 값 삭제
+                tappedDayButtons.removeAll()
             }
-            // 여기에
+            // 매일 버튼 비활성화
+            everyDayBtn.isSelected = false
+            everyDayBtn.backgroundColor = UIColor.homeBorderColor
+            everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
+            
         }
         
         
-        if sender.isEnabled == true {
+        if sender.isEnabled {
             if !sender.isSelected {
                 sender.isSelected = true
                 sender.backgroundColor = UIColor.link
                 sender.setTitleColor(.myGray, for: .normal)
-               
-                dateBtnCollection.forEach {
-                    if !$0.isSelected {
-                        btnCheck = false
-                    }
-                }
                 
                 switch txt {
                     
@@ -398,19 +439,24 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                     tappedDayButtons.append(String("SUNDAY"))
                 }
                 
-//                if everyDayBtn.isEnabled == true {
-//                    if btnCheck {
-//                        for date in dateBtnCollection {
-//                            date.isSelected = false
-//                            date.backgroundColor = UIColor.homeBorderColor
-//                            date.setTitleColor(.placeHolderColor, for: .normal)
-//
-//                            everyDayBtn.isSelected = true
-//                            everyDayBtn.backgroundColor = UIColor.link
-//                            everyDayBtn.setTitleColor(.myGray, for: .normal)
-//                        }
-//                    }
-//                }
+                dateBtnCollection.forEach {
+                    if !$0.isSelected {
+                        btnCheck = false
+                    }
+                }
+                
+                if everyDayBtn.isEnabled == true {
+                    if btnCheck {
+                        dateBtnCollection.forEach {
+                            $0.isSelected = false
+                            $0.backgroundColor = UIColor.homeBorderColor
+                            $0.setTitleColor(.placeHolderColor, for: .normal)
+                        }
+                        everyDayBtn.isSelected = true
+                        everyDayBtn.backgroundColor = UIColor.link
+                        everyDayBtn.setTitleColor(.myGray, for: .normal)
+                    }
+                }
                 
             } else {
                 sender.isSelected = false
