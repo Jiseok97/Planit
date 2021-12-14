@@ -121,8 +121,20 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     
     @IBAction func dismissBtn(_ sender: Any) {
         if isEnd {
-            Constant.DATE_TEXT = self.selectedDate
-            Constant.END_DATE = self.nomalDate
+            if selectedDate == "" && nomalDate == "" {
+                let df = DateFormatter()
+                df.locale = Locale(identifier: "ko_KR")
+                df.dateFormat = "yyyy년 MM월 dd일 (E)"
+                
+                let noDf = DateFormatter()
+                noDf.dateFormat = "yyyy-MM-dd"
+                
+                Constant.DATE_TEXT = df.string(from: Date() + 3600 * 24)
+                Constant.DATE = noDf.string(from: Date() + 3600 * 24)
+            } else {
+                Constant.DATE_TEXT = self.selectedDate
+                Constant.END_DATE = self.nomalDate
+            }
             NotificationCenter.default.post(name: NSNotification.Name("endDate"), object: nil)
         }
         else if isReport {

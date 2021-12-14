@@ -275,6 +275,6 @@ extension PlannerPageViewController {
         self.dismissIndicator()
         self.studyDataLst = result
         self.studyCV.reloadData()
-//        self.studyDataLst?.studies.sort { $0.startAt < $1.startAt }
+        
     }
 }

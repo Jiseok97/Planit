@@ -16,7 +16,7 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        usleep(2500000)
+        usleep(2700000)
         changeRootVC(LoginViewController())
     }
 

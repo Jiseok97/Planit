@@ -26,6 +26,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var deleteBtn: UIButton!
     
+    @IBOutlet weak var startTxtLbl: UILabel!
     @IBOutlet weak var startAtLbl: UILabel!
     @IBOutlet weak var startAtCalendarBtn: UIButton!
     @IBOutlet weak var endAtLbl: UILabel!
@@ -150,7 +151,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         toDate.dateFormat = "yyyy년 MM월 dd일 (E)"
         
         self.startAtLbl.text = toDate.string(from: Date())
-        self.endAtLbl.text = toDate.string(from: Date())
+        self.endAtLbl.text = toDate.string(from: Date() + (3600 * 24))
         
         self.titleView.layer.cornerRadius = 8
         self.secondView.layer.cornerRadius = 8
@@ -227,9 +228,18 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             startDay = Int(txt)!
         }
         
-        let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
-        self.endDay = Int(txt)!
         
+        let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
+//        self.endDay = Int(txt)!
+        let endDF = DateFormatter()
+        endDF.dateFormat = "yyyyMMdd"
+
+        if txt != "" {
+            self.endDay = Int(txt)!
+        } else {
+            self.endDay = Int(endDF.string(from: Date() + (3600 * 24)))!
+        }
+         
         
         if endDay - startDay < 6 {
             self.tappedDayButtons.removeAll()
@@ -288,12 +298,14 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.isRepeat = true
             self.repeatSd.value = 1.0
             thirdView.isHidden = false
+            startTxtLbl.text = "시작일"
             
         } else {
             self.secondView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             self.isRepeat = false
             self.repeatSd.value = 0.0
             thirdView.isHidden = true
+            startTxtLbl.text = "날짜"
             
         }
     }
@@ -303,23 +315,35 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     @IBAction func dayBtnTapped(_ sender: UIButton) {
         guard let txt = sender.titleLabel?.text else { return }
         
+        if sender.isEnabled {
+            
+        }
+        
+        
+        
         if sender == everyDayBtn {
             if !everyDayBtn.isSelected {
+                // 매일 버튼 클릭 시
                 dateBtnCollection.forEach {
+                    // 다른 요일 버튼 활성화 꺼짐
                     $0.isSelected = false
                     $0.backgroundColor = UIColor.homeBorderColor
                     $0.setTitleColor(.placeHolderColor, for: .normal)
                 }
             }
         } else {
+            // 다른 버튼 클릭시
             if everyDayBtn.isEnabled == true {
                 if everyDayBtn.isSelected {
+                    // 배열 값 삭제
                     tappedDayButtons.removeAll()
                 }
+                // 매일 버튼 비활성화
                 everyDayBtn.isSelected = false
                 everyDayBtn.backgroundColor = UIColor.homeBorderColor
                 everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
             }
+            // 여기에
         }
         
         
@@ -374,19 +398,19 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                     tappedDayButtons.append(String("SUNDAY"))
                 }
                 
-                if everyDayBtn.isEnabled == true {
-                    if btnCheck {
-                        for date in dateBtnCollection {
-                            date.isSelected = false
-                            date.backgroundColor = UIColor.homeBorderColor
-                            date.setTitleColor(.placeHolderColor, for: .normal)
-                            
-                            everyDayBtn.isSelected = true
-                            everyDayBtn.backgroundColor = UIColor.link
-                            everyDayBtn.setTitleColor(.myGray, for: .normal)
-                        }
-                    }
-                }
+//                if everyDayBtn.isEnabled == true {
+//                    if btnCheck {
+//                        for date in dateBtnCollection {
+//                            date.isSelected = false
+//                            date.backgroundColor = UIColor.homeBorderColor
+//                            date.setTitleColor(.placeHolderColor, for: .normal)
+//
+//                            everyDayBtn.isSelected = true
+//                            everyDayBtn.backgroundColor = UIColor.link
+//                            everyDayBtn.setTitleColor(.myGray, for: .normal)
+//                        }
+//                    }
+//                }
                 
             } else {
                 sender.isSelected = false

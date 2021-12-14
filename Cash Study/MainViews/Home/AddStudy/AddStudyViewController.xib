@@ -39,6 +39,7 @@
                 <outlet property="secondView" destination="Wsb-Uf-jsK" id="FDR-AD-XqH"/>
                 <outlet property="startAtCalendarBtn" destination="7I1-yw-fRg" id="980-sJ-A66"/>
                 <outlet property="startAtLbl" destination="24f-QY-EdF" id="LwU-ho-hdV"/>
+                <outlet property="startTxtLbl" destination="mJr-1d-SjF" id="gVt-0l-aAQ"/>
                 <outlet property="sundayBtn" destination="qJi-gt-8SI" id="q1K-JC-DT0"/>
                 <outlet property="textCntLbl" destination="jJ8-bd-AKL" id="SrH-Hp-dOM"/>
                 <outlet property="thirdView" destination="CxY-Gm-xFz" id="fcL-KE-kJo"/>
