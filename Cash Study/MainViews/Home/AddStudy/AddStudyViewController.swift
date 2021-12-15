@@ -217,90 +217,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         limitDateBtn()
     }
     
-    
-    func limitDateBtn() {
-        let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "E"
-        
-        let datefm = DateFormatter()
-        datefm.dateFormat = "yyyyMMdd"
-        
-        if startDay == 0 {
-            let txt = datefm.string(from: Date())
-            startDay = Int(txt)!
-        }
-        
-        
-        let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
-        let endDF = DateFormatter()
-        endDF.dateFormat = "yyyyMMdd"
-
-        if txt != "" {
-            self.endDay = Int(txt)!
-        } else {
-            self.endDay = Int(endDF.string(from: Date() + (3600 * 24)))!
-        }
-         
-        
-        if endDay - startDay < 6 {
-            allDateLst = [ "월", "화", "수", "목", "금", "토", "일" ]
-            self.tappedDayButtons.removeAll()
-            for i in startDay...endDay {
-                let data = datefm.date(from: String(describing: i))!
-                let a = df.string(from: data)
-                allDateLst.removeAll(where: { $0 == a } )
-            }
-            print(allDateLst)
-            for date in allDateLst {
-                dateCase.removeAll(where: {$0 == date} )
-            }
-            
-            dateCase.forEach {
-                switch $0 {
-                case "월" : limitedBtn.append(mondayBtn)
-                case "화" : limitedBtn.append(tuesdayBtn)
-                case "수" : limitedBtn.append(wednesdayBtn)
-                case "목" : limitedBtn.append(thursdayBtn)
-                case "금" : limitedBtn.append(fridayBtn)
-                case "토" : limitedBtn.append(saturdayBtn)
-                default: limitedBtn.append(sundayBtn)
-                }
-            }
-            
-            
-            allDateLst.forEach {
-                switch $0 {
-                case "월":
-                    limitBtnSetup(self.mondayBtn)
-                    
-                case "화":
-                    limitBtnSetup(self.tuesdayBtn)
-                    
-                case "수":
-                    limitBtnSetup(self.wednesdayBtn)
-                    
-                case "목":
-                    limitBtnSetup(self.thursdayBtn)
-                    
-                case "금":
-                    limitBtnSetup(self.fridayBtn)
-                    
-                case "토":
-                    limitBtnSetup(self.saturdayBtn)
-                    
-                default:
-                    limitBtnSetup(self.sundayBtn)
-                }
-//                limitBtnSetup(self.everyDayBtn)
-            }
-        } else {
-            self.tappedDayButtons.removeAll()
-        }
-        
-    }
-    
-    
     @IBAction func showTextCount(_ sernder: Any) {
         guard let textCnt = self.titleTF.text?.count else { return }
 
@@ -329,6 +245,93 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             startTxtLbl.text = "날짜"
             
         }
+    }
+    
+    
+    func limitDateBtn() {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "E"
+        
+        let datefm = DateFormatter()
+        datefm.dateFormat = "yyyyMMdd"
+        
+        if startDay == 0 {
+            let txt = datefm.string(from: Date())
+            startDay = Int(txt)!
+        }
+        
+        
+        let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
+        let endDF = DateFormatter()
+        endDF.dateFormat = "yyyyMMdd"
+
+        if txt != "" {
+            self.endDay = Int(txt)!
+        } else {
+            self.endDay = Int(endDF.string(from: Date() + (3600 * 24)))!
+        }
+         
+        
+        if endDay - startDay < 6 {
+            allDateLst = [ "월", "화", "수", "목", "금", "토", "일" ]
+            dateCase = [ "월", "화", "수", "목", "금", "토", "일" ]
+            limitedBtn = []
+            
+            self.tappedDayButtons.removeAll()
+            
+            for i in startDay...endDay {
+                let data = datefm.date(from: String(describing: i))!
+                let a = df.string(from: data)
+                allDateLst.removeAll(where: { $0 == a } )
+            }
+            
+            for date in allDateLst {
+                dateCase.removeAll(where: {$0 == date} )
+            }
+            
+            dateCase.forEach {
+                switch $0 {
+                case "월" : limitedBtn.append(mondayBtn)
+                case "화" : limitedBtn.append(tuesdayBtn)
+                case "수" : limitedBtn.append(wednesdayBtn)
+                case "목" : limitedBtn.append(thursdayBtn)
+                case "금" : limitedBtn.append(fridayBtn)
+                case "토" : limitedBtn.append(saturdayBtn)
+                default: limitedBtn.append(sundayBtn)
+                }
+            }
+            
+            allDateLst.forEach {
+                switch $0 {
+                case "월":
+                    limitBtnSetup(self.mondayBtn)
+                    
+                case "화":
+                    limitBtnSetup(self.tuesdayBtn)
+                    
+                case "수":
+                    limitBtnSetup(self.wednesdayBtn)
+                    
+                case "목":
+                    limitBtnSetup(self.thursdayBtn)
+                    
+                case "금":
+                    limitBtnSetup(self.fridayBtn)
+                    
+                case "토":
+                    limitBtnSetup(self.saturdayBtn)
+                    
+                default:
+                    limitBtnSetup(self.sundayBtn)
+                }
+//                limitBtnSetup(self.everyDayBtn)
+            }
+        } else {
+            self.limitedBtn = [ mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn ]
+            self.tappedDayButtons.removeAll()
+        }
+        
     }
     
     
@@ -364,16 +367,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             
-            if limitedBtn.count == limitedBtnCheck{
-                everyDayBtn.isSelected = true
-                everyDayBtn.backgroundColor = UIColor.link
-                everyDayBtn.setTitleColor(.myGray, for: .normal)
-                
-            } else {
-                everyDayBtn.isSelected = false
-                everyDayBtn.backgroundColor = UIColor.homeBorderColor
-                everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
-            }
+            
             
         }
         
@@ -440,6 +434,24 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                         everyDayBtn.backgroundColor = UIColor.link
                         everyDayBtn.setTitleColor(.myGray, for: .normal)
                     }
+                }
+                
+                if limitedBtn.count == limitedBtnCheck{
+                    everyDayBtn.isSelected = true
+                    everyDayBtn.backgroundColor = UIColor.link
+                    everyDayBtn.setTitleColor(.myGray, for: .normal)
+                    
+                    limitedBtn.forEach {
+                        self.limitedBtnCheck = 0
+                        $0.isSelected = false
+                        $0.backgroundColor = UIColor.homeBorderColor
+                        $0.setTitleColor(.placeHolderColor, for: .normal)
+                    }
+                    
+                } else {
+                    everyDayBtn.isSelected = false
+                    everyDayBtn.backgroundColor = UIColor.homeBorderColor
+                    everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
                 }
                 
             } else {
