@@ -130,7 +130,7 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
                 noDf.dateFormat = "yyyy-MM-dd"
                 
                 Constant.DATE_TEXT = df.string(from: Date() + 3600 * 24)
-                Constant.DATE = noDf.string(from: Date() + 3600 * 24)
+                Constant.END_DATE = noDf.string(from: Date() + 3600 * 24)
             } else {
                 Constant.DATE_TEXT = self.selectedDate
                 Constant.END_DATE = self.nomalDate

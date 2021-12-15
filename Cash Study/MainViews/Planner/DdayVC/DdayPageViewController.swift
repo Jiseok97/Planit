@@ -233,8 +233,6 @@ extension DdayPageViewController {
         self.dDayCV.reloadData()
         DdayDataLst?.ddays.sort{ $0.endAt < $1.endAt}
         
-        print("result = \(result)")
-        
         if DdayDataLst != nil {
             var idx : Int = 0
             for i in 0..<DdayDataLst!.ddays.count {

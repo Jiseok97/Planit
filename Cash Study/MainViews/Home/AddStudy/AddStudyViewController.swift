@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKCommon
 
 class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
@@ -78,15 +79,19 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     var stSchId: Int = 0
     var stTitle: String = ""
     var isEdit: Bool = false
+    var startAtTxt : String = ""
+    var endAtTxt : String = ""
     
     var startDay : Int = 0
     var endDay : Int = 0
     
-    init(stGrId: Int, stSchId: Int, title: String, isEdit: Bool) {
+    init(stGrId: Int, stSchId: Int, title: String, startAtTxt: String, isEdit: Bool, isRepeat: Bool) {
         self.stGrId = stGrId
         self.stSchId = stSchId
         self.stTitle = title
+        self.startAtTxt = startAtTxt
         self.isEdit = isEdit
+        self.isRepeat = isRepeat
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -184,7 +189,24 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.titleTF.text = stTitle
             self.titleLbl.text = "공부 편집하기"
             self.textCntLbl.text = String(describing: stTitle.count) + "/16"
+            self.startAtLbl.text = startAtTxt
             
+        }
+        
+        if isRepeat {
+            self.repeatSd.value = 1.0
+            self.secondView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            self.isRepeat = true
+            thirdView.isHidden = false
+            startTxtLbl.text = "시작일"
+            limitDateBtn()
+            
+        } else {
+            self.repeatSd.value = 0.0
+            self.secondView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+            self.isRepeat = false
+            thirdView.isHidden = true
+            startTxtLbl.text = "날짜"
         }
         
     }
@@ -325,7 +347,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 default:
                     limitBtnSetup(self.sundayBtn)
                 }
-//                limitBtnSetup(self.everyDayBtn)
             }
         } else {
             self.limitedBtn = [ mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn ]
@@ -426,7 +447,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                         everyDayBtn.setTitleColor(.myGray, for: .normal)
                         
                         limitedBtn.forEach {
-                            self.limitedBtnCheck = 0
+                            limitedBtnCheck = 0
                             $0.isSelected = false
                             $0.backgroundColor = UIColor.homeBorderColor
                             $0.setTitleColor(.placeHolderColor, for: .normal)
@@ -437,6 +458,8 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                         everyDayBtn.backgroundColor = UIColor.homeBorderColor
                         everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
                     }
+                } else {
+                    limitedBtnCheck = 0
                 }
                 
             }

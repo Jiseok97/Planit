@@ -254,9 +254,26 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
         if studyDataLst?.studies != nil && (studyDataLst?.studies.count)! > 0 {
             guard let data = studyDataLst?.studies[indexPath.row] else { return }
             
-            let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, isEdit: true)
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true)
+            let date = DateFormatter()
+            date.locale = Locale(identifier: "ko_KR")
+            date.dateFormat = "yyyy-MM-dd"
+            
+            guard let startAtTxt = date.date(from: data.startAt) else { return }
+            
+            let df = DateFormatter()
+            df.locale = Locale(identifier: "ko_KR")
+            df.dateFormat = "yyyy년 MM월 dd일 (E)"
+            
+            if data.repeatedDays != nil {
+                let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, startAtTxt: df.string(from: startAtTxt),isEdit: true, isRepeat: true)
+                vc.modalPresentationStyle = .overFullScreen
+                present(vc, animated: true)
+            } else {
+                let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, startAtTxt: df.string(from: startAtTxt), isEdit: true, isRepeat: false)
+                vc.modalPresentationStyle = .overFullScreen
+                present(vc, animated: true)
+            }
+            
         }
     }
     
