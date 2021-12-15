@@ -123,7 +123,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
         } else {
             if representDday == nil || (representDday?.ddays.count)! <= 0 || representDday?.ddays[0].isRepresentative == false {
-                let vc = AddDdayViewController(id: 0, title: "", isEdit: false, isRepresentative: false, homeAddDday: true)
+                let vc = AddDdayViewController(id: 0, title: "", endTxt: "", iconTxt: "", isEdit: false, isRepresentative: false, homeAddDday: true)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true)
             }

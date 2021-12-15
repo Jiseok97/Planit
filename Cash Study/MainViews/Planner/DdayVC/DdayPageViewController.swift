@@ -183,8 +183,21 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
         guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
         guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
+        guard let endAtTxt = DdayDataLst?.ddays[indexPath.row].endAt else { return }
+        guard let icon = DdayDataLst?.ddays[indexPath.row].icon else { return }
         
-        let vc = AddDdayViewController(id: id, title: title, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
+        let date = DateFormatter()
+        date.locale = Locale(identifier: "ko_KR")
+        date.dateFormat = "yyyy-MM-dd"
+        
+        guard let endDateText = date.date(from: endAtTxt) else { return }
+        
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy년 MM월 dd일 (E)"
+        
+        let vc = AddDdayViewController(id: id, title: title, endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
+        print(icon)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
@@ -219,6 +232,8 @@ extension DdayPageViewController {
         self.DdayDataLst = result
         self.dDayCV.reloadData()
         DdayDataLst?.ddays.sort{ $0.endAt < $1.endAt}
+        
+        print("result = \(result)")
         
         if DdayDataLst != nil {
             var idx : Int = 0

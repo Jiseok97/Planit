@@ -65,12 +65,16 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var dDayId: Int = 0
     var isEdit: Bool = false
     var titleTxt: String = ""
+    var endTxt : String = ""
+    var iconTxt : String = ""
     var homeAddDday: Bool = false
     
-    init(id: Int, title : String, isEdit: Bool, isRepresentative: Bool, homeAddDday: Bool) {
+    init(id: Int, title : String, endTxt: String, iconTxt: String, isEdit: Bool, isRepresentative: Bool, homeAddDday: Bool) {
         self.isEdit = isEdit
         self.dDayId = id
         self.titleTxt = title
+        self.endTxt = endTxt
+        self.iconTxt = iconTxt
         self.isRepresentative = isRepresentative
         self.homeAddDday = homeAddDday
         
@@ -168,6 +172,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             self.deleteBtn.isHidden = false
             self.inputTitleTF.text = titleTxt
             self.countTfLbl.text = String(describing: titleTxt.count) + "/10"
+            self.dateLbl.text = endTxt
+            bringEditImage(iconTxt)
             
         } else {
             self.titleLbl.text = "디데이 추가하기"
@@ -207,6 +213,76 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             return true
         }
         return false
+    }
+    
+    func bringEditImage(_ img: String) {
+        switch img {
+            
+        case "PLANET":
+            self.firstBtnClicked = changeBoolValue(buttonChecked: firstBtnClicked)
+            setBtnColors(firstBtn, firstBtnClicked)
+            
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            
+            setElseBtnColors(secondBtn, thirdBtn, fourthBtn, fifthBtn)
+
+            icon = "PLANET"
+            
+        case "PLANET_WITH_RINGS":
+            self.secondBtnClicked = changeBoolValue(buttonChecked: secondBtnClicked)
+            setBtnColors(secondBtn, secondBtnClicked)
+            
+            self.firstBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            
+            setElseBtnColors(firstBtn, thirdBtn, fourthBtn, fifthBtn)
+
+            icon = "PLANET_WITH_RINGS"
+            
+        case "STAR":
+            self.thirdBtnClicked = changeBoolValue(buttonChecked: thirdBtnClicked)
+            setBtnColors(thirdBtn, thirdBtnClicked)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.fourthBtnClicked = false
+            self.fifthBtnClicked = false
+            
+            setElseBtnColors(firstBtn, secondBtn, fourthBtn, fifthBtn)
+
+            icon = "STAR"
+            
+        case "FLAME":
+            self.fourthBtnClicked = changeBoolValue(buttonChecked: fourthBtnClicked)
+            setBtnColors(fourthBtn, fourthBtnClicked)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fifthBtnClicked = false
+            
+            setElseBtnColors(firstBtn, secondBtn, thirdBtn, fifthBtn)
+
+            icon = "FLAME"
+            
+        default:
+            self.fifthBtnClicked = changeBoolValue(buttonChecked: fifthBtnClicked)
+            setBtnColors(fifthBtn, fifthBtnClicked)
+            
+            self.firstBtnClicked = false
+            self.secondBtnClicked = false
+            self.thirdBtnClicked = false
+            self.fourthBtnClicked = false
+            
+            setElseBtnColors(firstBtn, secondBtn, thirdBtn, fourthBtn)
+
+            icon = "UFO"
+        }
     }
 
     

@@ -100,7 +100,7 @@ class PlannerViewController: UIViewController {
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         } else {
-            let vc = AddDdayViewController(id: 0, title: "", isEdit: false, isRepresentative: false, homeAddDday: false)
+            let vc = AddDdayViewController(id: 0, title: "", endTxt: "", iconTxt: "", isEdit: false, isRepresentative: false, homeAddDday: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }
