@@ -17,6 +17,7 @@
 		B608E50E274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */; };
 		B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */; };
 		B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */; };
+		B6098B0A276A207C001AADEC /* bgAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B6098B09276A207C001AADEC /* bgAnimation.json */; };
 		B60A9DD22758951700AC3E1B /* RewardShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */; };
 		B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
@@ -214,6 +215,7 @@
 		B608E50C274DEF68003A87A2 /* EmptyDdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../캐•스 자료/이미지자료/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		B6098B09276A207C001AADEC /* bgAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bgAnimation.json; path = ../../../../Downloads/bgAnimation.json; sourceTree = "<group>"; };
 		B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardShopViewController.swift; sourceTree = "<group>"; };
 		B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardShopViewController.xib; sourceTree = "<group>"; };
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
@@ -1272,6 +1274,7 @@
 		B67C98982724F9E60039D271 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				B6098B09276A207C001AADEC /* bgAnimation.json */,
 				B622420F272D0840004F6750 /* Constant.swift */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
 				B6B118402716D262008842BA /* Info.plist */,
@@ -1706,6 +1709,7 @@
 				B63352AA2755298500D1914D /* RestTimerViewController.xib in Resources */,
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6A33E97274F72FC004E88B0 /* CalendarAlertViewController.xib in Resources */,
+				B6098B0A276A207C001AADEC /* bgAnimation.json in Resources */,
 				B6709E6B272BF32100847491 /* InputRecommander.storyboard in Resources */,
 				B633AA002754A66000A00EFD /* EditUserInfo.storyboard in Resources */,
 				B61FAC4C2752763F007458A1 /* RepeatStudyCollectionViewCell.xib in Resources */,

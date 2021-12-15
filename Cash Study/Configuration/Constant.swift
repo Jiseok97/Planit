@@ -29,4 +29,6 @@ struct Constant {
     static var DATE_TEXT : String = ""
     static var DATE : String = ""
     static var END_DATE : String = ""
+    static var START_AT : String = ""
+    static var END_AT : String = ""
 }

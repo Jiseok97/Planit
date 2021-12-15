@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RewardMainViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="lottieBgView" destination="Chk-a9-J9z" id="eXS-ZB-FFp"/>
                 <outlet property="myPointLbl" destination="DGg-FB-AhD" id="ilD-7L-2Qo"/>
                 <outlet property="passCntLbl" destination="x9o-g2-QC9" id="E8L-rW-K8A"/>
                 <outlet property="passView" destination="YX1-LQ-NNQ" id="X2x-49-flv"/>
@@ -37,6 +38,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-a9-J9z">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewardPage" translatesAutoresizingMaskIntoConstraints="NO" id="KvQ-tR-C7g">
                     <rect key="frame" x="32" y="89" width="54" height="19"/>
                 </imageView>
@@ -155,6 +159,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="6TT-hU-8as" firstAttribute="centerY" secondItem="1sh-sd-QVr" secondAttribute="centerY" id="2ZP-9d-M0s"/>
+                <constraint firstItem="Chk-a9-J9z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3vJ-LX-nZN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YX1-LQ-NNQ" secondAttribute="trailing" constant="24" id="4ZD-AN-p8X"/>
                 <constraint firstItem="KvQ-tR-C7g" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="5Yv-zr-8j3"/>
                 <constraint firstItem="qcK-yC-Cth" firstAttribute="centerY" secondItem="BCM-LI-xvl" secondAttribute="centerY" id="6cX-Mh-LqW"/>
@@ -167,18 +172,21 @@
                 <constraint firstItem="DGg-FB-AhD" firstAttribute="centerY" secondItem="6TT-hU-8as" secondAttribute="centerY" id="IWc-zl-JhK"/>
                 <constraint firstItem="qcK-yC-Cth" firstAttribute="leading" secondItem="BCM-LI-xvl" secondAttribute="trailing" constant="3" id="KW9-tI-h6Z"/>
                 <constraint firstItem="RTC-rK-8i6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.41" id="NOl-2r-Iid"/>
+                <constraint firstItem="Chk-a9-J9z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qbo-Ng-ee1"/>
                 <constraint firstItem="1sh-sd-QVr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Riz-Ym-Vkj"/>
                 <constraint firstItem="KvQ-tR-C7g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="TOs-hC-j20"/>
                 <constraint firstItem="YX1-LQ-NNQ" firstAttribute="top" secondItem="1sh-sd-QVr" secondAttribute="bottom" constant="17" id="TVL-X8-ddC"/>
                 <constraint firstItem="Zwc-CE-RCa" firstAttribute="centerY" secondItem="KvQ-tR-C7g" secondAttribute="centerY" id="VAv-IE-lme"/>
+                <constraint firstItem="Chk-a9-J9z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Xm6-3G-TPB"/>
                 <constraint firstItem="BCM-LI-xvl" firstAttribute="top" secondItem="RTC-rK-8i6" secondAttribute="bottom" constant="2" id="bcw-mT-OfA"/>
                 <constraint firstItem="BCM-LI-xvl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="dDS-Dk-S2i"/>
                 <constraint firstItem="RTC-rK-8i6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="gFA-in-Hip"/>
                 <constraint firstItem="Zwc-CE-RCa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.327" id="gFe-RW-Bi3"/>
                 <constraint firstItem="HwH-wI-WoN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oTh-cf-y8c"/>
                 <constraint firstItem="HwH-wI-WoN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vfc-4w-kqf"/>
+                <constraint firstAttribute="trailing" secondItem="Chk-a9-J9z" secondAttribute="trailing" id="vtP-KR-URf"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="66"/>
+            <point key="canvasLocation" x="131.8840579710145" y="65.625"/>
         </view>
     </objects>
     <resources>

@@ -131,11 +131,13 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     }
     
     @objc func reloadStudy(_ noti : Notification) {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        showIndicator()
-        ShowDateStudyDataManager().showStudy(date: df.string(from: Date()), viewController: self)
-        studyCV.reloadData()
+//        let df = DateFormatter()
+//        df.dateFormat = "yyyy-MM-dd"
+//        showIndicator()
+//        ShowDateStudyDataManager().showStudy(date: df.string(from: Date()), viewController: self)
+//        studyCV.reloadData()
+        
+        changeRootVC(BaseTabBarController())
     }
     
     
@@ -265,11 +267,14 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
             df.dateFormat = "yyyy년 MM월 dd일 (E)"
             
             if data.repeatedDays != nil {
-                let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, startAtTxt: df.string(from: startAtTxt),isEdit: true, isRepeat: true)
+                guard let endAtTxt = date.date(from: data.endAt) else { return }
+                Constant.START_AT = data.startAt
+                Constant.END_AT = data.endAt
+                let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, startAtTxt: df.string(from: startAtTxt), endAtTxt: df.string(from: endAtTxt), isEdit: true, isRepeat: true)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true)
             } else {
-                let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, startAtTxt: df.string(from: startAtTxt), isEdit: true, isRepeat: false)
+                let vc = AddStudyViewController(stGrId: data.studyGroupId, stSchId: data.studyScheduleId, title: data.title, startAtTxt: df.string(from: startAtTxt), endAtTxt: "", isEdit: true, isRepeat: false)
                 vc.modalPresentationStyle = .overFullScreen
                 present(vc, animated: true)
             }

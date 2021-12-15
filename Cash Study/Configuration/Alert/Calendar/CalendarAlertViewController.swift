@@ -131,9 +131,11 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
                 
                 Constant.DATE_TEXT = df.string(from: Date() + 3600 * 24)
                 Constant.END_DATE = noDf.string(from: Date() + 3600 * 24)
+                Constant.END_AT = noDf.string(from: Date() + 3600 * 24)
             } else {
                 Constant.DATE_TEXT = self.selectedDate
                 Constant.END_DATE = self.nomalDate
+                Constant.END_AT = self.nomalDate
             }
             NotificationCenter.default.post(name: NSNotification.Name("endDate"), object: nil)
         }
@@ -156,6 +158,7 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         else {
             Constant.DATE_TEXT = self.selectedDate
             Constant.DATE = self.nomalDate
+            Constant.START_AT = self.nomalDate
             NotificationCenter.default.post(name: NSNotification.Name("sendDate"), object: nil)
         }
         dismiss(animated: true, completion: nil)

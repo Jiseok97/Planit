@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func moveAddStudyBtn(_ sender: Any) {
-        let vc = AddStudyViewController(stGrId: 0, stSchId: 0, title: "", startAtTxt: "", isEdit: false, isRepeat: false)
+        let vc = AddStudyViewController(stGrId: 0, stSchId: 0, title: "", startAtTxt: "", endAtTxt: "", isEdit: false, isRepeat: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

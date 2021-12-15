@@ -85,11 +85,12 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     var startDay : Int = 0
     var endDay : Int = 0
     
-    init(stGrId: Int, stSchId: Int, title: String, startAtTxt: String, isEdit: Bool, isRepeat: Bool) {
+    init(stGrId: Int, stSchId: Int, title: String, startAtTxt: String, endAtTxt: String, isEdit: Bool, isRepeat: Bool) {
         self.stGrId = stGrId
         self.stSchId = stSchId
         self.stTitle = title
         self.startAtTxt = startAtTxt
+        self.endAtTxt = endAtTxt
         self.isEdit = isEdit
         self.isRepeat = isRepeat
         
@@ -190,7 +191,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.titleLbl.text = "공부 편집하기"
             self.textCntLbl.text = String(describing: stTitle.count) + "/16"
             self.startAtLbl.text = startAtTxt
-            
         }
         
         if isRepeat {
@@ -199,6 +199,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.isRepeat = true
             thirdView.isHidden = false
             startTxtLbl.text = "시작일"
+            self.endAtLbl.text = endAtTxt
             limitDateBtn()
             
         } else {
@@ -217,6 +218,8 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             self.startAtLbl.text = Constant.DATE_TEXT
             Constant.DATE_TEXT = ""
         }
+        
+        limitDateBtn()
     }
     
     @objc func endDate(_ noti: Notification) {
@@ -278,20 +281,28 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         let datefm = DateFormatter()
         datefm.dateFormat = "yyyyMMdd"
         
-        if startDay == 0 {
-            let txt = datefm.string(from: Date())
-            startDay = Int(txt)!
+        var sTxt : String = ""
+        var eTxt : String = ""
+       
+        sTxt = Constant.DATE.replacingOccurrences(of: "-", with: "")
+        eTxt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
+        
+        if isEdit && isRepeat {
+            // Edit Mode → default value
+            sTxt = Constant.START_AT.replacingOccurrences(of: "-", with: "")
+            eTxt = Constant.END_AT.replacingOccurrences(of: "-", with: "")
         }
         
-        
-        let txt = Constant.END_DATE.replacingOccurrences(of: "-", with: "")
-        let endDF = DateFormatter()
-        endDF.dateFormat = "yyyyMMdd"
-
-        if txt != "" {
-            self.endDay = Int(txt)!
+        if sTxt != "" {
+            self.startDay = Int(sTxt)!
         } else {
-            self.endDay = Int(endDF.string(from: Date() + (3600 * 24)))!
+            self.startDay = Int(datefm.string(from: Date()))!
+        }
+        
+        if eTxt != "" {
+            self.endDay = Int(eTxt)!
+        } else {
+            self.endDay = Int(datefm.string(from: Date() + (3600 * 24)))!
         }
          
         
@@ -302,11 +313,14 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
             
             self.tappedDayButtons.removeAll()
             
-            for i in startDay...endDay {
-                let data = datefm.date(from: String(describing: i))!
-                let a = df.string(from: data)
-                allDateLst.removeAll(where: { $0 == a } )
+            if startDay <= endDay {
+                for i in startDay...endDay {
+                    let data = datefm.date(from: String(describing: i))!
+                    let a = df.string(from: data)
+                    allDateLst.removeAll(where: { $0 == a } )
+                }
             }
+            
             
             for date in allDateLst {
                 dateCase.removeAll(where: {$0 == date} )

@@ -9,6 +9,9 @@ import UIKit
 import Lottie
 
 class RewardMainViewController: UIViewController {
+    
+    @IBOutlet weak var lottieBgView: UIView!
+    
 
     @IBOutlet weak var rewardShopBtn: UIButton!
     @IBOutlet weak var rewardView: UIView!
@@ -44,6 +47,14 @@ class RewardMainViewController: UIViewController {
         self.rewardShopBtn.layer.cornerRadius = rewardShopBtn.frame.height / 2
         
         self.passView.layer.cornerRadius = 8
+        
+        let bgAnimation = AnimationView(name: "bgAnimation")
+        self.lottieBgView.addSubview(bgAnimation)
+        bgAnimation.frame = bgAnimation.superview!.bounds
+        bgAnimation.center = self.view.center
+        bgAnimation.contentMode = .scaleAspectFill
+        bgAnimation.loopMode = .loop
+        bgAnimation.play()
     }
     
     
