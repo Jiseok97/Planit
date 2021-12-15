@@ -352,6 +352,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
+            
         } else {
             // 다른 버튼 클릭시
             if everyDayBtn.isSelected {
@@ -359,6 +360,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 tappedDayButtons.removeAll()
             }
             
+            // 비활성화가 된 버튼들만 다 눌러도 매일 버튼 활성화를 위함(카운팅)
             if limitedBtn.contains(sender) {
                 if !sender.isSelected {
                     self.limitedBtnCheck += 1
@@ -366,8 +368,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                     self.limitedBtnCheck -= 1
                 }
             }
-            
-            
             
         }
         
@@ -417,44 +417,32 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                     tappedDayButtons.append(String("SUNDAY"))
                 }
                 
-                dateBtnCollection.forEach {
-                    if !$0.isSelected {
-                        btnCheck = false
-                    }
-                }
                 
-                if everyDayBtn.isEnabled == true {
-                    if btnCheck {
-                        dateBtnCollection.forEach {
+                // 비활성화 된 버튼 나머지들을 활성화 & 매일 버튼 동기화
+                if sender != everyDayBtn {
+                    if limitedBtn.count == limitedBtnCheck{
+                        everyDayBtn.isSelected = true
+                        everyDayBtn.backgroundColor = UIColor.link
+                        everyDayBtn.setTitleColor(.myGray, for: .normal)
+                        
+                        limitedBtn.forEach {
+                            self.limitedBtnCheck = 0
                             $0.isSelected = false
                             $0.backgroundColor = UIColor.homeBorderColor
                             $0.setTitleColor(.placeHolderColor, for: .normal)
                         }
-                        everyDayBtn.isSelected = true
-                        everyDayBtn.backgroundColor = UIColor.link
-                        everyDayBtn.setTitleColor(.myGray, for: .normal)
+                        
+                    } else {
+                        everyDayBtn.isSelected = false
+                        everyDayBtn.backgroundColor = UIColor.homeBorderColor
+                        everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
                     }
                 }
                 
-                if limitedBtn.count == limitedBtnCheck{
-                    everyDayBtn.isSelected = true
-                    everyDayBtn.backgroundColor = UIColor.link
-                    everyDayBtn.setTitleColor(.myGray, for: .normal)
-                    
-                    limitedBtn.forEach {
-                        self.limitedBtnCheck = 0
-                        $0.isSelected = false
-                        $0.backgroundColor = UIColor.homeBorderColor
-                        $0.setTitleColor(.placeHolderColor, for: .normal)
-                    }
-                    
-                } else {
-                    everyDayBtn.isSelected = false
-                    everyDayBtn.backgroundColor = UIColor.homeBorderColor
-                    everyDayBtn.setTitleColor(.placeHolderColor, for: .normal)
-                }
-                
-            } else {
+            }
+            
+            // 선택된 버튼을 재클릭 했을 때
+            else {
                 sender.isSelected = false
                 sender.backgroundColor = UIColor.homeBorderColor
                 sender.setTitleColor(.placeHolderColor, for: .normal)
@@ -488,8 +476,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 
             }
         }
-        
-        
     }
     
     @IBAction func showCalendar(_ sender: UIButton) {
