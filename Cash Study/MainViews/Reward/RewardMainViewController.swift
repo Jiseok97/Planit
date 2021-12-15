@@ -25,7 +25,6 @@ class RewardMainViewController: UIViewController {
     @IBOutlet weak var passCntLbl: UILabel!
     
     var rewardDataLst : ShowUserRewardEntity?
-    var starCnt: Int = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +42,13 @@ class RewardMainViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         showIndicator()
         ShowUserRewardDataManager().showReward(viewController: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadReward(_:)), name: NSNotification.Name("reloadReward"), object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadReward"), object: nil)
     }
     
     
@@ -68,6 +74,13 @@ class RewardMainViewController: UIViewController {
         bgAnimation.contentMode = .scaleAspectFill
         bgAnimation.loopMode = .loop
         bgAnimation.play()
+        
+        self.rewardShopBtn.isHidden = true
+    }
+    
+    
+    @objc func reloadReward(_ noti: Notification) {
+        ShowUserRewardDataManager().showReward(viewController: self)
     }
     
     
@@ -86,12 +99,8 @@ class RewardMainViewController: UIViewController {
         actionAnimation.contentMode = .scaleAspectFill
         actionAnimation.play { (finish) in
             actionAnimation.removeFromSuperview()
-            self.starCnt -= 50
-            if self.starCnt >= 50 {
-                self.satisfyLtView.isHidden = false
-            } else {
-                self.rewardStarImgView.isHidden = false
-            }
+            self.showIndicator()
+            ChangePointDataManager().changePoint(viewController: self)
         }
     }
     
@@ -122,12 +131,14 @@ extension RewardMainViewController {
             let point = result.point
             let passCnt = result.planetPass
             
-//            if star >= 50 {
-            if self.starCnt >= 50 {
+            if star >= 50 {
                 self.starLbl.textColor = .remainDdayColor
                 self.starCntLbl.textColor = .remainDdayColor
                 
                 self.rewardStarImgView.isHidden = true
+                self.rewardView.isHidden = false
+                self.rewardView.isUserInteractionEnabled = true
+                self.satisfyLtView.isHidden = false
                 
                 let animationView = AnimationView(name: "satisfyStar")
                 self.satisfyLtView.addSubview(animationView)
@@ -149,6 +160,9 @@ extension RewardMainViewController {
                 self.starLbl.textColor = .placeHolderColor
                 self.starCntLbl.textColor = .placeHolderColor
                 
+                self.satisfyLtView.isHidden = true
+                self.rewardView.isHidden = false
+                self.rewardView.isUserInteractionEnabled = false
                 self.rewardStarImgView.isHidden = false
             }
             

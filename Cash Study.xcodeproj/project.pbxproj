@@ -35,6 +35,10 @@
 		B614C479273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C477273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib */; };
 		B614C47D273AE08300A5E8F9 /* AddDdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */; };
 		B614C47E273AE08300A5E8F9 /* AddDdayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */; };
+		B61E18BB276A5F6000A40556 /* ChangePointDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E18BA276A5F6000A40556 /* ChangePointDataManager.swift */; };
+		B61E18BD276A5F6900A40556 /* ChangePointEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E18BC276A5F6900A40556 /* ChangePointEntity.swift */; };
+		B61E18C2276A700000A40556 /* UsePlanetPassDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E18C1276A700000A40556 /* UsePlanetPassDataManager.swift */; };
+		B61E18C4276A700800A40556 /* UsePlanetPassEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E18C3276A700800A40556 /* UsePlanetPassEntity.swift */; };
 		B61FAC4B2752763F007458A1 /* RepeatStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC492752763F007458A1 /* RepeatStudyCollectionViewCell.swift */; };
 		B61FAC4C2752763F007458A1 /* RepeatStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61FAC4A2752763F007458A1 /* RepeatStudyCollectionViewCell.xib */; };
 		B61FAC522752838E007458A1 /* EditStudyDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61FAC512752838E007458A1 /* EditStudyDataManger.swift */; };
@@ -236,6 +240,10 @@
 		B614C477273ACB8200A5E8F9 /* RepresentativeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepresentativeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B614C47B273AE08300A5E8F9 /* AddDdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayViewController.swift; sourceTree = "<group>"; };
 		B614C47C273AE08300A5E8F9 /* AddDdayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDdayViewController.xib; sourceTree = "<group>"; };
+		B61E18BA276A5F6000A40556 /* ChangePointDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePointDataManager.swift; sourceTree = "<group>"; };
+		B61E18BC276A5F6900A40556 /* ChangePointEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePointEntity.swift; sourceTree = "<group>"; };
+		B61E18C1276A700000A40556 /* UsePlanetPassDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsePlanetPassDataManager.swift; sourceTree = "<group>"; };
+		B61E18C3276A700800A40556 /* UsePlanetPassEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsePlanetPassEntity.swift; sourceTree = "<group>"; };
 		B61FAC492752763F007458A1 /* RepeatStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatStudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B61FAC4A2752763F007458A1 /* RepeatStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepeatStudyCollectionViewCell.xib; sourceTree = "<group>"; };
 		B61FAC512752838E007458A1 /* EditStudyDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStudyDataManger.swift; sourceTree = "<group>"; };
@@ -495,6 +503,7 @@
 			children = (
 				B688492F276071C600DF1F42 /* RewardMainViewController.xib */,
 				B688492E276071C600DF1F42 /* RewardMainViewController.swift */,
+				B61E18B7276A5F3E00A40556 /* ChangePoint */,
 				B6447B7C276625FB00C75246 /* ShowUserReward */,
 				B66BAFBB2758BB54009CAA31 /* RewardShop */,
 				B64886A32763396C00B57FFB /* PlanitPass */,
@@ -592,6 +601,56 @@
 				B6A33E93274F72E9004E88B0 /* Calendar */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		B61E18B7276A5F3E00A40556 /* ChangePoint */ = {
+			isa = PBXGroup;
+			children = (
+				B61E18B9276A5F4F00A40556 /* DataManager */,
+				B61E18B8276A5F4900A40556 /* Entity */,
+			);
+			path = ChangePoint;
+			sourceTree = "<group>";
+		};
+		B61E18B8276A5F4900A40556 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B61E18BC276A5F6900A40556 /* ChangePointEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B61E18B9276A5F4F00A40556 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B61E18BA276A5F6000A40556 /* ChangePointDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B61E18BE276A6FD300A40556 /* UsePlanetPass */ = {
+			isa = PBXGroup;
+			children = (
+				B61E18C0276A6FF300A40556 /* DataManager */,
+				B61E18BF276A6FEF00A40556 /* Entity */,
+			);
+			path = UsePlanetPass;
+			sourceTree = "<group>";
+		};
+		B61E18BF276A6FEF00A40556 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B61E18C3276A700800A40556 /* UsePlanetPassEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B61E18C0276A6FF300A40556 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B61E18C1276A700000A40556 /* UsePlanetPassDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		B61FAC4827527629007458A1 /* RepeatStudy */ = {
@@ -1106,8 +1165,9 @@
 			children = (
 				B64886A52763398E00B57FFB /* PlanitPassViewController.xib */,
 				B64886A42763398E00B57FFB /* PlanitPassViewController.swift */,
-				B6770E43276479B100B01735 /* CVCell */,
+				B61E18BE276A6FD300A40556 /* UsePlanetPass */,
 				B62C5E282766F322006DF835 /* Info */,
+				B6770E43276479B100B01735 /* CVCell */,
 			);
 			path = PlanitPass;
 			sourceTree = "<group>";
@@ -1836,6 +1896,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B633AA192754F32100A00EFD /* PutRecordEntity.swift in Sources */,
+				B61E18BB276A5F6000A40556 /* ChangePointDataManager.swift in Sources */,
 				B6098B10276A4844001AADEC /* UIDevice.swift in Sources */,
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B645B65C275DD6F10051F137 /* DailyReportViewController.swift in Sources */,
@@ -1907,6 +1968,7 @@
 				B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
 				B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */,
+				B61E18C2276A700000A40556 /* UsePlanetPassDataManager.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
 				B648F5DF275F53AD005DDEF9 /* AchievementRateCollectionViewCell.swift in Sources */,
@@ -1925,6 +1987,8 @@
 				B6C455AD2730270D00B1326A /* noReceiverEntity.swift in Sources */,
 				B633AA0B2754D3E000A00EFD /* EditUserInfoInput.swift in Sources */,
 				B66B47902732896800F89012 /* MyPageViewController.swift in Sources */,
+				B61E18BD276A5F6900A40556 /* ChangePointEntity.swift in Sources */,
+				B61E18C4276A700800A40556 /* UsePlanetPassEntity.swift in Sources */,
 				B63ED57127623E45000199E4 /* OverallTimeLineCollectionViewCell.swift in Sources */,
 				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
 				B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */,

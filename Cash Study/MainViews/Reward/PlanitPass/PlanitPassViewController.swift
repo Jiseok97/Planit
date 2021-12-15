@@ -91,6 +91,11 @@ class PlanitPassViewController: UIViewController {
     }
     
     
+    @IBAction func confirmTapped(_ sender: Any) {
+        print("currentIdx = \(currentIdx)")
+    }
+    
+    
     @IBAction func dismissTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -137,6 +142,14 @@ extension PlanitPassViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "passCell", for: indexPath) as? PlanitPassCollectionViewCell else { return UICollectionViewCell() }
         
+        switch indexPath.row {
+        case 0:
+            cell.imgView.image = UIImage(named: "planet01")
+        case 1:
+            cell.imgView.image = UIImage(named: "planet02")
+        default:
+            cell.imgView.image = UIImage(named: "planet03")
+        }
         
         return cell
     }
