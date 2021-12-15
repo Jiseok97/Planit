@@ -11,11 +11,12 @@ import Lottie
 class RewardMainViewController: UIViewController {
     
     @IBOutlet weak var lottieBgView: UIView!
+    @IBOutlet weak var satisfyLtView: UIView!
     
-
     @IBOutlet weak var rewardShopBtn: UIButton!
     @IBOutlet weak var rewardView: UIView!
-    @IBOutlet weak var rewardStarBtn: UIButton!
+    @IBOutlet weak var rewardStarImgView: UIImageView!
+    
     @IBOutlet weak var starLbl: UILabel!
     @IBOutlet weak var starCntLbl: UILabel!
     
@@ -24,10 +25,15 @@ class RewardMainViewController: UIViewController {
     @IBOutlet weak var passCntLbl: UILabel!
     
     var rewardDataLst : ShowUserRewardEntity?
+    var starCnt: Int = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedRewardView(_:)))
+        
+        self.rewardView.addGestureRecognizer(tapGesture)
+        
         setGradation()
         setUI()
     }
@@ -50,44 +56,51 @@ class RewardMainViewController: UIViewController {
         
         let bgAnimation = AnimationView(name: "bgAnimation")
         self.lottieBgView.addSubview(bgAnimation)
-        bgAnimation.frame = bgAnimation.superview!.bounds
-        bgAnimation.center = self.view.center
+        
+        let centerX = NSLayoutConstraint(item: bgAnimation, attribute: .centerX, relatedBy: .equal, toItem: lottieBgView, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: bgAnimation, attribute: .centerY, relatedBy: .equal, toItem: lottieBgView, attribute: .centerY, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: bgAnimation, attribute: .width, relatedBy: .equal, toItem: lottieBgView, attribute: .width, multiplier: 1, constant: 35)
+        let height = NSLayoutConstraint(item: bgAnimation, attribute: .height, relatedBy: .equal, toItem: lottieBgView, attribute: .height, multiplier: 1, constant: 35)
+        
+        view.addConstraints([ centerX, centerY, width, height ])
+        
+        bgAnimation.translatesAutoresizingMaskIntoConstraints = false
         bgAnimation.contentMode = .scaleAspectFill
         bgAnimation.loopMode = .loop
         bgAnimation.play()
     }
     
     
-    @IBAction func rewardStarTapped(_ sender: UIButton) {
-        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-
-        rotation.toValue = Double.pi * 2
-        rotation.duration = 1.4
-        rotation.isCumulative = true
-        rotation.autoreverses = false
-        rotation.repeatCount = 1
-
-        rewardView.layer.add(rotation, forKey: "rotationAnimation")
-        rewardView.layer.zPosition = 1
-        rewardStarBtn.layer.zPosition = 999
-
-        UIView.animate(withDuration: 0.4, animations: {
-            self.rewardView.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
-        }, completion: { _ in
-            UIView.animate(withDuration: 1.0) {
-                self.rewardView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            }
-        })
+    @objc func tappedRewardView(_ sender: UITapGestureRecognizer) {
+        satisfyLtView.isHidden = true
         
+        let actionAnimation = AnimationView(name: "tappedStar")
+        self.rewardView.addSubview(actionAnimation)
+        
+        let centerX = NSLayoutConstraint(item: actionAnimation, attribute: .centerX, relatedBy: .equal, toItem: rewardView, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: actionAnimation, attribute: .centerY, relatedBy: .equal, toItem: rewardView, attribute: .centerY, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: actionAnimation, attribute: .width, relatedBy: .equal, toItem: rewardView, attribute: .width, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: actionAnimation, attribute: .height, relatedBy: .equal, toItem: rewardView, attribute: .height, multiplier: 1, constant: 0)
+        
+        self.rewardView.addConstraints([ centerX, centerY, width, height ])
+        actionAnimation.contentMode = .scaleAspectFill
+        actionAnimation.play { (finish) in
+            actionAnimation.removeFromSuperview()
+            self.starCnt -= 50
+            if self.starCnt >= 50 {
+                self.satisfyLtView.isHidden = false
+            } else {
+                self.rewardStarImgView.isHidden = false
+            }
+        }
     }
+    
     
     @IBAction func movePlanitPass(_ sender: Any) {
         let vc = PlanitPassViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
-    
-    
     
     
     @IBAction func moveRewardShop(_ sender: Any) {
@@ -109,12 +122,34 @@ extension RewardMainViewController {
             let point = result.point
             let passCnt = result.planetPass
             
-            if star >= 50 {
+//            if star >= 50 {
+            if self.starCnt >= 50 {
                 self.starLbl.textColor = .remainDdayColor
                 self.starCntLbl.textColor = .remainDdayColor
+                
+                self.rewardStarImgView.isHidden = true
+                
+                let animationView = AnimationView(name: "satisfyStar")
+                self.satisfyLtView.addSubview(animationView)
+                
+                let centerX = NSLayoutConstraint(item: animationView, attribute: .centerX, relatedBy: .equal, toItem: rewardView, attribute: .centerX, multiplier: 1, constant: 0)
+                let centerY = NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: rewardView, attribute: .centerY, multiplier: 1, constant: 0)
+                let width = NSLayoutConstraint(item: animationView, attribute: .width, relatedBy: .equal, toItem: rewardView, attribute: .width, multiplier: 1, constant: 0)
+                let height = NSLayoutConstraint(item: animationView, attribute: .height, relatedBy: .equal, toItem: rewardView, attribute: .height, multiplier: 1, constant: 0)
+                
+                view.addConstraints([ centerX, centerY, width, height ])
+                
+                animationView.translatesAutoresizingMaskIntoConstraints = false
+                animationView.contentMode = .scaleAspectFill
+                animationView.loopMode = .loop
+                animationView.play()
+                
+                
             } else {
                 self.starLbl.textColor = .placeHolderColor
                 self.starCntLbl.textColor = .placeHolderColor
+                
+                self.rewardStarImgView.isHidden = false
             }
             
             self.starCntLbl.text = "\(String(describing: star))/50"

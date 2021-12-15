@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ObAlertViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="alertViewHeight" destination="Roc-AX-P6s" id="kN5-pq-5Wz"/>
                 <outlet property="confirmBtn" destination="xJ8-sc-Vdn" id="GYl-DB-Nlz"/>
                 <outlet property="contentView" destination="J8W-ba-ZcV" id="ikr-wv-xSP"/>
                 <outlet property="msgLbl" destination="1Qy-AQ-elc" id="Hh5-iA-W5M"/>
@@ -33,7 +34,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-ba-ZcV">
-                    <rect key="frame" x="32" y="322.5" width="350" height="251"/>
+                    <rect key="frame" x="32" y="323" width="350" height="250"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qy-AQ-elc">
                             <rect key="frame" x="150.5" y="62.5" width="49" height="26.5"/>
@@ -42,7 +43,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ8-sc-Vdn">
-                            <rect key="frame" x="24" y="185" width="302" height="46"/>
+                            <rect key="frame" x="24" y="184" width="302" height="46"/>
                             <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="vkE-jp-lSs"/>
@@ -69,6 +70,7 @@
                         <constraint firstItem="ugA-Hz-JOS" firstAttribute="top" secondItem="1Qy-AQ-elc" secondAttribute="bottom" constant="2" id="I70-Cf-pWm"/>
                         <constraint firstItem="1Qy-AQ-elc" firstAttribute="centerY" secondItem="J8W-ba-ZcV" secondAttribute="centerY" multiplier="0.605" id="Ocj-02-ooo"/>
                         <constraint firstAttribute="bottom" secondItem="xJ8-sc-Vdn" secondAttribute="bottom" constant="20" id="QvJ-zh-2aw"/>
+                        <constraint firstAttribute="height" constant="250" id="Roc-AX-P6s"/>
                         <constraint firstItem="xJ8-sc-Vdn" firstAttribute="leading" secondItem="J8W-ba-ZcV" secondAttribute="leading" constant="24" id="UD9-rx-rau"/>
                         <constraint firstItem="ugA-Hz-JOS" firstAttribute="centerX" secondItem="J8W-ba-ZcV" secondAttribute="centerX" id="WVk-wI-ByP"/>
                         <constraint firstItem="1Qy-AQ-elc" firstAttribute="centerX" secondItem="J8W-ba-ZcV" secondAttribute="centerX" id="lFa-fd-fBO"/>
@@ -79,7 +81,6 @@
             <constraints>
                 <constraint firstItem="J8W-ba-ZcV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="0Fk-78-7TZ"/>
                 <constraint firstItem="ZN3-8u-Gbc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7Cj-sN-qvK"/>
-                <constraint firstItem="J8W-ba-ZcV" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.28" id="9Bq-cv-fXg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J8W-ba-ZcV" secondAttribute="trailing" constant="32" id="J22-9i-YXJ"/>
                 <constraint firstItem="ZN3-8u-Gbc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WtJ-E1-jkO"/>
                 <constraint firstAttribute="bottom" secondItem="ZN3-8u-Gbc" secondAttribute="bottom" id="iIl-Jd-1Hr"/>

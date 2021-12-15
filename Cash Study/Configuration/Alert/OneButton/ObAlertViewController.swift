@@ -13,17 +13,21 @@ class ObAlertViewController: UIViewController {
     @IBOutlet weak var msgLbl: UILabel!
     @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
+    
     
     var mainMsg : String = ""
     var subMsg : String = ""
     var btnTitle : String = ""
     var isTimer : Bool = false
+    var heightValue : Double = 0.0
     
-    init(mainMsg: String, subMsg: String, btnTitle: String, isTimer : Bool) {
+    init(mainMsg: String, subMsg: String, heightValue: Double, btnTitle: String, isTimer : Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.btnTitle = btnTitle
         self.isTimer = isTimer
+        self.heightValue = heightValue
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +41,7 @@ class ObAlertViewController: UIViewController {
         super.viewDidLoad()
 
         setUI()
+        alertViewHeight.constant = view.frame.height * heightValue
     }
 
     
@@ -54,6 +59,10 @@ class ObAlertViewController: UIViewController {
             self.confirmBtn.setTitleColor(.myGray, for: .normal)
         }
     }
+    
+//    private func setConstraintWitouthNotch() {
+//        alertViewHeight.constant = UIDevice.current.hasNotch ? view.frame.height * 0.28 : view.frame.height * 0.28
+//    }
     
     @IBAction func dismissBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)

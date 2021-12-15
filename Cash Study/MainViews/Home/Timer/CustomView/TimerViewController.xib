@@ -45,7 +45,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEB-ik-2dB">
-                    <rect key="frame" x="57.5" y="165.5" width="299" height="298"/>
+                    <rect key="frame" x="57.5" y="173.5" width="299" height="298.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-BP-co4">
                             <rect key="frame" x="85.5" y="108" width="128.5" height="37.5"/>
@@ -69,7 +69,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU4-Cs-IVe" customClass="MSCircularSlider">
-                    <rect key="frame" x="39" y="145.5" width="336" height="336"/>
+                    <rect key="frame" x="39" y="154.5" width="336" height="336"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="rU4-Cs-IVe" secondAttribute="height" multiplier="1:1" id="dLq-dR-KaX"/>
@@ -140,16 +140,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BM2-3C-cCJ">
-                    <rect key="frame" x="32" y="526.5" width="350" height="48"/>
+                    <rect key="frame" x="32" y="540" width="350" height="48"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfa-MS-WcK">
-                            <rect key="frame" x="32" y="12.5" width="63.5" height="23.5"/>
+                            <rect key="frame" x="32" y="12" width="63.5" height="23.5"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS8-cz-yYn">
-                            <rect key="frame" x="294" y="12.5" width="24" height="23.5"/>
+                            <rect key="frame" x="294" y="12" width="24" height="23.5"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                             <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -165,7 +165,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIV-l3-JhN">
-                    <rect key="frame" x="32" y="584.5" width="170" height="48"/>
+                    <rect key="frame" x="32" y="598" width="170" height="48"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reward" translatesAutoresizingMaskIntoConstraints="NO" id="47r-c5-NHR">
                             <rect key="frame" x="8" y="8" width="32" height="32"/>
@@ -191,7 +191,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvH-EW-aeY">
-                    <rect key="frame" x="212.5" y="584.5" width="169.5" height="48"/>
+                    <rect key="frame" x="212.5" y="598" width="169.5" height="48"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bonus" translatesAutoresizingMaskIntoConstraints="NO" id="MCn-nL-AZw">
                             <rect key="frame" x="8" y="8" width="32" height="32"/>
@@ -244,9 +244,9 @@
                 <constraint firstItem="oPu-sO-I7G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.19" id="FBG-kX-wTt"/>
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="FUH-gL-qUM"/>
                 <constraint firstItem="pIV-l3-JhN" firstAttribute="width" secondItem="BM2-3C-cCJ" secondAttribute="width" multiplier="0.485" id="Iip-N9-aFa"/>
-                <constraint firstItem="rU4-Cs-IVe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.7" id="PJi-n8-xc7"/>
+                <constraint firstItem="rU4-Cs-IVe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.72" id="PJi-n8-xc7"/>
                 <constraint firstItem="hEB-ik-2dB" firstAttribute="height" secondItem="rU4-Cs-IVe" secondAttribute="height" multiplier="0.888" id="TpC-5b-fJp"/>
-                <constraint firstItem="BM2-3C-cCJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.2289" id="UHJ-av-JD8"/>
+                <constraint firstItem="BM2-3C-cCJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.2589" id="UHJ-av-JD8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rU4-Cs-IVe" secondAttribute="trailing" constant="39" id="X6p-Pe-qDK"/>
                 <constraint firstItem="eaO-s7-0dF" firstAttribute="centerY" secondItem="oPu-sO-I7G" secondAttribute="centerY" id="XEQ-zp-lWw"/>
                 <constraint firstItem="ZvH-EW-aeY" firstAttribute="height" secondItem="pIV-l3-JhN" secondAttribute="height" id="ZFt-eB-5oi"/>
@@ -254,7 +254,7 @@
                 <constraint firstItem="VL7-Db-nyP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Zxo-Yu-se1"/>
                 <constraint firstItem="rU4-Cs-IVe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="cxH-iW-crv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BM2-3C-cCJ" secondAttribute="trailing" constant="32" id="fRP-7p-TsB"/>
-                <constraint firstItem="hEB-ik-2dB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.702" id="jyy-gs-LXI"/>
+                <constraint firstItem="hEB-ik-2dB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.7202" id="jyy-gs-LXI"/>
                 <constraint firstItem="oPu-sO-I7G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="mlg-L5-Pik"/>
                 <constraint firstItem="ZvH-EW-aeY" firstAttribute="width" secondItem="pIV-l3-JhN" secondAttribute="width" id="nMW-ii-joy"/>
                 <constraint firstItem="eaO-s7-0dF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sjM-RV-WYH"/>

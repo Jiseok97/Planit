@@ -26,8 +26,9 @@
                 <outlet property="passCntLbl" destination="x9o-g2-QC9" id="E8L-rW-K8A"/>
                 <outlet property="passView" destination="YX1-LQ-NNQ" id="X2x-49-flv"/>
                 <outlet property="rewardShopBtn" destination="Zwc-CE-RCa" id="e4S-W8-ovs"/>
-                <outlet property="rewardStarBtn" destination="opC-M0-0db" id="aLC-2e-RLV"/>
+                <outlet property="rewardStarImgView" destination="4gp-pL-0FB" id="aL0-Fh-ppH"/>
                 <outlet property="rewardView" destination="HwH-wI-WoN" id="aSs-vO-f0A"/>
+                <outlet property="satisfyLtView" destination="qby-x1-C8Q" id="kG6-bV-uTT"/>
                 <outlet property="starCntLbl" destination="qcK-yC-Cth" id="67t-D7-Vsl"/>
                 <outlet property="starLbl" destination="BCM-LI-xvl" id="2uG-OI-cFX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -91,6 +92,9 @@
                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qby-x1-C8Q">
+                    <rect key="frame" x="97" y="338" width="220" height="220"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX1-LQ-NNQ">
                     <rect key="frame" x="24" y="705.5" width="366" height="102.5"/>
                     <subviews>
@@ -136,23 +140,20 @@
                         <constraint firstItem="XdV-xL-q0h" firstAttribute="centerY" secondItem="YX1-LQ-NNQ" secondAttribute="centerY" id="iZs-rJ-aK2"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwH-wI-WoN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwH-wI-WoN" customClass="rewardView" customModule="Cash_Study" customModuleProvider="target">
                     <rect key="frame" x="97" y="338" width="220" height="220"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opC-M0-0db">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewardStar" translatesAutoresizingMaskIntoConstraints="NO" id="4gp-pL-0FB">
                             <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="rewardStar"/>
-                            <connections>
-                                <action selector="rewardStarTapped:" destination="-1" eventType="touchUpInside" id="xqL-Oc-gUM"/>
-                            </connections>
-                        </button>
+                        </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="opC-M0-0db" secondAttribute="bottom" id="Iot-HW-FCo"/>
-                        <constraint firstItem="opC-M0-0db" firstAttribute="top" secondItem="HwH-wI-WoN" secondAttribute="top" id="Lg5-Xr-HAx"/>
-                        <constraint firstAttribute="trailing" secondItem="opC-M0-0db" secondAttribute="trailing" id="VAd-0q-nkO"/>
-                        <constraint firstItem="opC-M0-0db" firstAttribute="leading" secondItem="HwH-wI-WoN" secondAttribute="leading" id="eV2-CQ-nRT"/>
+                        <constraint firstItem="4gp-pL-0FB" firstAttribute="top" secondItem="HwH-wI-WoN" secondAttribute="top" id="AfS-Ge-ZuD"/>
+                        <constraint firstAttribute="bottom" secondItem="4gp-pL-0FB" secondAttribute="bottom" id="KbA-kp-I8V"/>
+                        <constraint firstAttribute="trailing" secondItem="4gp-pL-0FB" secondAttribute="trailing" id="an8-dl-J6K"/>
+                        <constraint firstItem="4gp-pL-0FB" firstAttribute="leading" secondItem="HwH-wI-WoN" secondAttribute="leading" id="dlA-3C-DNj"/>
+                        <constraint firstItem="4gp-pL-0FB" firstAttribute="width" secondItem="HwH-wI-WoN" secondAttribute="width" id="nZi-p9-L3q"/>
+                        <constraint firstItem="4gp-pL-0FB" firstAttribute="height" secondItem="HwH-wI-WoN" secondAttribute="height" id="paH-y7-MGI"/>
                     </constraints>
                 </view>
             </subviews>
@@ -160,6 +161,7 @@
             <constraints>
                 <constraint firstItem="6TT-hU-8as" firstAttribute="centerY" secondItem="1sh-sd-QVr" secondAttribute="centerY" id="2ZP-9d-M0s"/>
                 <constraint firstItem="Chk-a9-J9z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3vJ-LX-nZN"/>
+                <constraint firstItem="qby-x1-C8Q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4Fc-ds-iMG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YX1-LQ-NNQ" secondAttribute="trailing" constant="24" id="4ZD-AN-p8X"/>
                 <constraint firstItem="KvQ-tR-C7g" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="5Yv-zr-8j3"/>
                 <constraint firstItem="qcK-yC-Cth" firstAttribute="centerY" secondItem="BCM-LI-xvl" secondAttribute="centerY" id="6cX-Mh-LqW"/>
@@ -179,12 +181,15 @@
                 <constraint firstItem="Zwc-CE-RCa" firstAttribute="centerY" secondItem="KvQ-tR-C7g" secondAttribute="centerY" id="VAv-IE-lme"/>
                 <constraint firstItem="Chk-a9-J9z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Xm6-3G-TPB"/>
                 <constraint firstItem="BCM-LI-xvl" firstAttribute="top" secondItem="RTC-rK-8i6" secondAttribute="bottom" constant="2" id="bcw-mT-OfA"/>
+                <constraint firstItem="qby-x1-C8Q" firstAttribute="width" secondItem="HwH-wI-WoN" secondAttribute="width" id="cSQ-SV-BSy"/>
                 <constraint firstItem="BCM-LI-xvl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="dDS-Dk-S2i"/>
                 <constraint firstItem="RTC-rK-8i6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="gFA-in-Hip"/>
                 <constraint firstItem="Zwc-CE-RCa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.327" id="gFe-RW-Bi3"/>
                 <constraint firstItem="HwH-wI-WoN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oTh-cf-y8c"/>
                 <constraint firstItem="HwH-wI-WoN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vfc-4w-kqf"/>
                 <constraint firstAttribute="trailing" secondItem="Chk-a9-J9z" secondAttribute="trailing" id="vtP-KR-URf"/>
+                <constraint firstItem="qby-x1-C8Q" firstAttribute="height" secondItem="HwH-wI-WoN" secondAttribute="height" id="xlh-WO-vd2"/>
+                <constraint firstItem="qby-x1-C8Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zF8-48-eRt"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="65.625"/>
         </view>

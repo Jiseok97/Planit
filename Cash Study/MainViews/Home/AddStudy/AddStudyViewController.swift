@@ -57,14 +57,14 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     }
     var isAlreadyExist : Bool = false {
         didSet {
-            let vc = ObAlertViewController(mainMsg: "해당 공부는 이미 존재합니다\n제목을 수정해주세요", subMsg: "", btnTitle: "확인", isTimer: false)
+            let vc = ObAlertViewController(mainMsg: "해당 공부는 이미 존재합니다\n제목을 수정해주세요", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }
     }
     var editRpSuccess : Bool = false {
         didSet {
-            let vc = ObAlertViewController(mainMsg: "오늘 일자 이후의\n공부 반복하기를 변경합니다", subMsg: "", btnTitle: "확인", isTimer: false)
+            let vc = ObAlertViewController(mainMsg: "오늘 일자 이후의\n공부 반복하기를 변경합니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }
@@ -548,21 +548,21 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         }
         
         if titleTF.text?.isEmpty == true {
-            let vc = ObAlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "", btnTitle: "확인", isTimer: false)
+            let vc = ObAlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
         } else {
             if repeatSd.value == 1 {
                 if sDate > eDate {
-                    let vc = ObAlertViewController(mainMsg: "종료일은 시작일보다\n이전일 수 없습니다", subMsg: "", btnTitle: "확인", isTimer: false)
+                    let vc = ObAlertViewController(mainMsg: "종료일은 시작일보다\n이전일 수 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
                     vc.modalPresentationStyle = .overFullScreen
                     present(vc, animated: true)
                 } else {
                     if isEdit {
                         let dt = df.string(from: Date())
                         if dt >= sDate {
-                            let vc = ObAlertViewController(mainMsg: "오늘 이후의 날짜만 선택 가능합니다", subMsg: "", btnTitle: "확인", isTimer: false)
+                            let vc = ObAlertViewController(mainMsg: "오늘 이후의 날짜만 선택 가능합니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
                             vc.modalPresentationStyle = .overFullScreen
                             present(vc, animated: true)
                         } else {
@@ -580,7 +580,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
                 if isEdit {
                     let dt = df.string(from: Date())
                     if dt >= sDate {
-                        let vc = ObAlertViewController(mainMsg: "오늘 이후의 날짜만 선택 가능합니다", subMsg: "", btnTitle: "확인", isTimer: false)
+                        let vc = ObAlertViewController(mainMsg: "오늘 이후의 날짜만 선택 가능합니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
                         vc.modalPresentationStyle = .overFullScreen
                         present(vc, animated: true)
                     } else {

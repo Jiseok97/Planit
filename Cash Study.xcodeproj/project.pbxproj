@@ -18,6 +18,9 @@
 		B608E50F274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */; };
 		B608E511274E14B1003A87A2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */; };
 		B6098B0A276A207C001AADEC /* bgAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B6098B09276A207C001AADEC /* bgAnimation.json */; };
+		B6098B0C276A34D5001AADEC /* tappedStar.json in Resources */ = {isa = PBXBuildFile; fileRef = B6098B0B276A34D4001AADEC /* tappedStar.json */; };
+		B6098B0E276A457A001AADEC /* satisfyStar.json in Resources */ = {isa = PBXBuildFile; fileRef = B6098B0D276A457A001AADEC /* satisfyStar.json */; };
+		B6098B10276A4844001AADEC /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098B0F276A4844001AADEC /* UIDevice.swift */; };
 		B60A9DD22758951700AC3E1B /* RewardShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */; };
 		B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */; };
 		B60D61072729A27700D95950 /* InputRecommenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D61062729A27700D95950 /* InputRecommenderViewController.swift */; };
@@ -216,6 +219,9 @@
 		B608E50D274DEF68003A87A2 /* EmptyDdayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDdayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B608E510274E14B1003A87A2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../캐•스 자료/이미지자료/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B6098B09276A207C001AADEC /* bgAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bgAnimation.json; path = ../../../../Downloads/bgAnimation.json; sourceTree = "<group>"; };
+		B6098B0B276A34D4001AADEC /* tappedStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tappedStar.json; path = ../../../../Downloads/tappedStar.json; sourceTree = "<group>"; };
+		B6098B0D276A457A001AADEC /* satisfyStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = satisfyStar.json; path = ../../../../Downloads/satisfyStar.json; sourceTree = "<group>"; };
+		B6098B0F276A4844001AADEC /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardShopViewController.swift; sourceTree = "<group>"; };
 		B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardShopViewController.xib; sourceTree = "<group>"; };
 		B60D61062729A27700D95950 /* InputRecommenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRecommenderViewController.swift; sourceTree = "<group>"; };
@@ -1274,6 +1280,8 @@
 		B67C98982724F9E60039D271 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				B6098B0D276A457A001AADEC /* satisfyStar.json */,
+				B6098B0B276A34D4001AADEC /* tappedStar.json */,
 				B6098B09276A207C001AADEC /* bgAnimation.json */,
 				B622420F272D0840004F6750 /* Constant.swift */,
 				B6B1183B2716D262008842BA /* Assets.xcassets */,
@@ -1295,6 +1303,7 @@
 				B6D1FDF12728308A00C9C846 /* UITextField.swift */,
 				B6709E54272BD7C100847491 /* NotificationName.swift */,
 				B662795A27591E64002DE5B3 /* CALayer.swift */,
+				B6098B0F276A4844001AADEC /* UIDevice.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1706,6 +1715,7 @@
 				B6B40618273CFB52008DBE7C /* NotoSansKR-Regular.otf in Resources */,
 				B633AA132754EA5A00A00EFD /* TimerAlertViewController.xib in Resources */,
 				B6B4061E273CFDCC008DBE7C /* NotoSansKR-Bold.otf in Resources */,
+				B6098B0E276A457A001AADEC /* satisfyStar.json in Resources */,
 				B63352AA2755298500D1914D /* RestTimerViewController.xib in Resources */,
 				B614C46A273A9D7A00A5E8F9 /* DdayPageViewController.xib in Resources */,
 				B6A33E97274F72FC004E88B0 /* CalendarAlertViewController.xib in Resources */,
@@ -1754,6 +1764,7 @@
 				B6789948273F9B7200B08CEB /* AddStudyViewController.xib in Resources */,
 				B61FAD1227363D0800D11538 /* HaveStudyCollectionViewCell.xib in Resources */,
 				B6B118682716D7B0008842BA /* LoginViewController.xib in Resources */,
+				B6098B0C276A34D5001AADEC /* tappedStar.json in Resources */,
 				B614C46E273AA63700A5E8F9 /* NotoSansKR-Medium.otf in Resources */,
 				B688493927609A0100DF1F42 /* Roboto-Regular.ttf in Resources */,
 				B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */,
@@ -1825,6 +1836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B633AA192754F32100A00EFD /* PutRecordEntity.swift in Sources */,
+				B6098B10276A4844001AADEC /* UIDevice.swift in Sources */,
 				B6789947273F9B7200B08CEB /* AddStudyViewController.swift in Sources */,
 				B645B65C275DD6F10051F137 /* DailyReportViewController.swift in Sources */,
 				B614C472273ABF0900A5E8F9 /* DdayListCollectionViewCell.swift in Sources */,

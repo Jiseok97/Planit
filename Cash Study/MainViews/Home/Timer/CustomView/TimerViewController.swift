@@ -105,8 +105,7 @@ class TimerViewController: UIViewController {
     }
     
     func showAlert() {
-        let vc = ObAlertViewController(mainMsg: "기기의 홈버튼을 이용해서\n앱을 나가면 타이머 측정이\n자동으로 멈추게 돼요.",
-                                       subMsg: "앱을 유지해주세요",
+        let vc = ObAlertViewController(mainMsg: "기기의 홈버튼을 이용해서\n앱을 나가면 타이머 측정이\n자동으로 멈추게 돼요.", subMsg: "앱을 유지해주세요", heightValue: 0.28,
                                        btnTitle: "공부시간 측정 시작하기",
                                        isTimer: true)
         vc.modalPresentationStyle = .overFullScreen
