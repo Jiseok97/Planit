@@ -44,6 +44,7 @@ class HaveReceiverDataManager : UIViewController {
                     viewController.checkUser = true
                     self.changeRootVC(BaseTabBarController())
                     
+                    
                 case 404:
                     self.dismissIndicator()
                     viewController.checkUser = false
@@ -54,6 +55,7 @@ class HaveReceiverDataManager : UIViewController {
                     viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
                 default:
+                    self.dismissIndicator()
                     print("서버 요청 형식이 잘못되었습니다.")
                 }
             }

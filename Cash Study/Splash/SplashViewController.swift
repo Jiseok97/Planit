@@ -18,6 +18,7 @@ class SplashViewController: UIViewController {
         
         usleep(2700000)
         changeRootVC(LoginViewController())
+    
     }
 
 }

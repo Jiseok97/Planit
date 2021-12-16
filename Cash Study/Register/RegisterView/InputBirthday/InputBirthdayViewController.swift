@@ -97,8 +97,7 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
             let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
             let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
             
-            let birth = "1950-01-01"
-            UserInfoData.birth = birth
+            UserInfoData.birth = ""
             
             self.navigationController?.pushViewController(sjSB, animated: false)
         }

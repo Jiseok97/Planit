@@ -9,7 +9,7 @@ struct UserInfoData {
     static var email : String = ""
     static var name : String = ""
     static var nickname : String = ""
-    static var sex : String = ""
+    static var sex : String? = ""
     static var birth : String = ""
     static var category : String = ""
     static var personalInformationAgree : Bool = false

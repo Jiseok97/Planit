@@ -209,7 +209,6 @@ class SelectJobViewController: UIViewController {
         let irSB = sbName.instantiateViewController(identifier: "InputRecommenderViewController")
         UserInfoData.category = userCategory
         
-        print("사용자의 직업은 \(userCategory)입니다.")
         self.navigationController?.pushViewController(irSB, animated: false)
     }
     

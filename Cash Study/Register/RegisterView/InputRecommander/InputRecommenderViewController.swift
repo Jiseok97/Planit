@@ -96,6 +96,9 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func finishBtn(_ sender: UIButton) {
         // 홈 이동
+        if UserInfoData.name == "" {
+            UserInfoData.name = "사용자"
+        }
         let input =  HaveReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, receiverNickname: recommander)
         
         showIndicator()
@@ -105,11 +108,14 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func skipInputRecommander(_ sender: UIButton) {
         // 스킵 → 홈 이동
+        if UserInfoData.name == "" {
+            UserInfoData.name = "사용자"
+        }
         let input =  noReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree)
-        
+
         showIndicator()
         noReceiverDataManager().user(input ,viewController: self)
-        
+
         if checkUser {
             changeRootVC(BaseTabBarController())
         } else {

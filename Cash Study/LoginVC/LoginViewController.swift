@@ -144,10 +144,11 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             guard let userName = appleIDCredential.fullName else { return }
             
             UserDefaults.standard.set(userIdentifier, forKey: "appleIdentifier")
+            UserDefaults.standard.set(String(describing: userName), forKey: "appleName")
             
             UserInfoData.email = userIdentifier
             UserInfoData.name = String(describing: userName)
-            print("userIdentifier = \(userIdentifier)")
+//            print("userIdentifier = \(userIdentifier)")
             loginCheck(userIdentifier)
             
         default:

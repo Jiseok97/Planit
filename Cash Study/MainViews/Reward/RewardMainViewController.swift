@@ -23,6 +23,8 @@ class RewardMainViewController: UIViewController {
     @IBOutlet weak var passView: UIView!
     @IBOutlet weak var myPointLbl: UILabel!
     @IBOutlet weak var passCntLbl: UILabel!
+    @IBOutlet weak var passBgImgView: UIImageView!
+    
     
     var rewardDataLst : ShowUserRewardEntity?
     
@@ -165,6 +167,12 @@ extension RewardMainViewController {
                 self.rewardView.isHidden = false
                 self.rewardView.isUserInteractionEnabled = false
                 self.rewardStarImgView.isHidden = false
+            }
+            
+            if passCnt > 0 {
+                self.passBgImgView.image = UIImage(named: "tapImg")
+            } else {
+                self.passBgImgView.image = UIImage(named: "noTapImg")
             }
             
             self.starCntLbl.text = "\(String(describing: star))/50"

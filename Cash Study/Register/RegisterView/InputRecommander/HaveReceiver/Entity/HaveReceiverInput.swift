@@ -9,7 +9,7 @@ struct HaveReceiverInput {
     var email: String
     var name: String
     var nickname: String
-    var sex: String
+    var sex: String?
     var birth: String
     var category: String
     var personalInformationAgree : Bool
@@ -17,6 +17,7 @@ struct HaveReceiverInput {
     var receiverNickname : String
     
     var toDictionary : [ String: Any] {
+        
         let dict : [String: Any] = [
             "email" : self.email,
             "name" : self.name,

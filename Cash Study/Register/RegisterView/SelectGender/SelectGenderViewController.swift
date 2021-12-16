@@ -88,7 +88,7 @@ class SelectGenderViewController: UIViewController {
             let sbName = UIStoryboard(name: "InputBirthday", bundle: nil)
             let ibSB = sbName.instantiateViewController(identifier: "InputBirthdayViewController")
             
-            UserInfoData.sex = "MALE"
+            UserInfoData.sex = nil
             self.navigationController?.pushViewController(ibSB, animated: false)
         }
         

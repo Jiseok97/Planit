@@ -23,6 +23,7 @@
             <connections>
                 <outlet property="lottieBgView" destination="Chk-a9-J9z" id="eXS-ZB-FFp"/>
                 <outlet property="myPointLbl" destination="DGg-FB-AhD" id="ilD-7L-2Qo"/>
+                <outlet property="passBgImgView" destination="ZqS-4k-QVr" id="fqf-nN-1MG"/>
                 <outlet property="passCntLbl" destination="x9o-g2-QC9" id="E8L-rW-K8A"/>
                 <outlet property="passView" destination="YX1-LQ-NNQ" id="X2x-49-flv"/>
                 <outlet property="rewardShopBtn" destination="Zwc-CE-RCa" id="e4S-W8-ovs"/>

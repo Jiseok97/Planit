@@ -32,12 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Apple Login
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let userId = UserDefaults.standard.string(forKey: "appleIdentifier")
+        let userName = UserDefaults.standard.string(forKey: "appleName")
         appleIDProvider.getCredentialState(forUserID: userId ?? "", completion: { (credentialState, error) in
             switch credentialState {
             case .authorized:
-                let input = LoginInput(email: userId!)
-                DispatchQueue.main.async {
-                    LoginDataManager().autoLogin(input)
+                if userName == "" {
+                    break
+                } else {
+                    let input = LoginInput(email: userId!)
+                    UserInfoData.email = userId!
+                    DispatchQueue.main.async {
+                        LoginDataManager().autoLogin(input)
+                    }
                 }
                 
             case .revoked:

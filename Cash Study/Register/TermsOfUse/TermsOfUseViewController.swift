@@ -40,6 +40,7 @@ class TermsOfUseViewController: UIViewController {
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
         setEnableBtn(confirmBtn)
+        
     }
 
     // MARK: 이용약관 체크박스
