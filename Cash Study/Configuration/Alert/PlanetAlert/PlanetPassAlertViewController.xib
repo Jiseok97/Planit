@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanetPassAlertViewController" customModule="Cash_Study" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmBtn" destination="cUC-Nk-bNA" id="QaM-9k-qVG"/>
+                <outlet property="contentView" destination="2Yj-um-UWt" id="oJw-Pk-oOe"/>
+                <outlet property="pointAlertLbl" destination="OqV-hV-eGQ" id="iEi-kl-cP8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-kj-eXR">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yj-um-UWt">
+                    <rect key="frame" x="32" y="280.5" width="350" height="245"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertRewardStar" translatesAutoresizingMaskIntoConstraints="NO" id="lAN-6Z-MHX">
+                            <rect key="frame" x="105" y="77" width="140" height="140"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20별을 획득했어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqV-hV-eGQ">
+                            <rect key="frame" x="100.5" y="41" width="149" height="26.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="18"/>
+                            <color key="textColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.035294117647058823" green="0.039215686274509803" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="lAN-6Z-MHX" firstAttribute="centerX" secondItem="2Yj-um-UWt" secondAttribute="centerX" id="8rm-Wb-y2y"/>
+                        <constraint firstAttribute="height" constant="245" id="9JN-yv-a3y"/>
+                        <constraint firstItem="OqV-hV-eGQ" firstAttribute="centerY" secondItem="2Yj-um-UWt" secondAttribute="centerY" multiplier="0.44" id="NLi-Ve-chs"/>
+                        <constraint firstItem="lAN-6Z-MHX" firstAttribute="centerY" secondItem="2Yj-um-UWt" secondAttribute="centerY" multiplier="1.2" id="a4Q-7K-JxX"/>
+                        <constraint firstItem="OqV-hV-eGQ" firstAttribute="centerX" secondItem="2Yj-um-UWt" secondAttribute="centerX" id="rey-jt-tyI"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paticleStar" translatesAutoresizingMaskIntoConstraints="NO" id="XOA-ZU-hxU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUC-Nk-bNA">
+                    <rect key="frame" x="80" y="549.5" width="254" height="46"/>
+                    <color key="backgroundColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="HVf-YR-753"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="확인">
+                        <color key="titleColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissTapped:" destination="-1" eventType="touchUpInside" id="p0e-Iw-1Dl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dFN-kj-eXR" secondAttribute="bottom" id="8se-88-ekr"/>
+                <constraint firstItem="dFN-kj-eXR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GNl-Ax-LUW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cUC-Nk-bNA" secondAttribute="trailing" constant="80" id="It8-oA-4Q1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Yj-um-UWt" secondAttribute="trailing" constant="32" id="K9p-v9-wdH"/>
+                <constraint firstItem="2Yj-um-UWt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="ibV-lw-zsb"/>
+                <constraint firstItem="dFN-kj-eXR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l21-kd-Axd"/>
+                <constraint firstItem="cUC-Nk-bNA" firstAttribute="top" secondItem="2Yj-um-UWt" secondAttribute="bottom" constant="24" id="qVg-ry-vcx"/>
+                <constraint firstItem="2Yj-um-UWt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.9" id="v5L-Ux-vh8"/>
+                <constraint firstItem="cUC-Nk-bNA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="wXc-4O-cc3"/>
+                <constraint firstItem="dFN-kj-eXR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xRA-Dt-ldJ"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="69.642857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alertRewardStar" width="140" height="140"/>
+        <image name="paticleStar" width="375" height="812"/>
+    </resources>
+</document>

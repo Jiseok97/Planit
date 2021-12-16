@@ -26,6 +26,20 @@ class PlanitPassViewController: UIViewController {
             self.pageCtrl.currentPage = currentIdx
         }
     }
+    var isSuccess: Bool = false {
+        didSet {
+            let vc = PlanetPassAlertViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
+    }
+    var notEnough: Bool = false {
+        didSet {
+            let vc = ObAlertViewController(mainMsg: "보유하고 있는\n플래닛 패스가 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,12 +106,15 @@ class PlanitPassViewController: UIViewController {
     
     
     @IBAction func confirmTapped(_ sender: Any) {
-        print("currentIdx = \(currentIdx)")
+        showIndicator()
+        UsePlanetPassDataManager().usePlanetPass(planetId: (currentIdx + 1) , viewController: self)
     }
     
     
     @IBAction func dismissTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let vc = AlertViewController(mainMsg: "플래닛 패스를 닫으시겠습니까?", subMsg: "", btnTitle: "확인", isTimer: false, isLogout: false, studyRemove: false, passMode: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
 }

@@ -192,7 +192,7 @@ class TimerViewController: UIViewController {
             
             let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
             
-            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false, studyRemove: false)
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false, studyRemove: false, passMode: false)
             vc.modalPresentationStyle = .overFullScreen
             timer?.invalidate()
             present(vc, animated: true)
@@ -209,7 +209,7 @@ class TimerViewController: UIViewController {
             
             let remainMin = String(describing: (60 - (self.timeCnt / 60) % 60))
             
-            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false, studyRemove: false)
+            let vc = AlertViewController(mainMsg: "타이머를 멈출까요?", subMsg: "보너스 티켓까지 앞으로\n\(remainMin)분 남았어요", btnTitle: "멈춤", isTimer: true, isLogout: false, studyRemove: false, passMode: false)
             vc.modalPresentationStyle = .overFullScreen
             timer?.invalidate()
             present(vc, animated: true)

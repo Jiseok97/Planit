@@ -89,7 +89,7 @@ class MyPageViewController: UIViewController {
     
     
     @IBAction func logoutBtn(_ sender: Any) {
-        let vc = AlertViewController(mainMsg: "로그아웃 하시겠습니까?", subMsg: "", btnTitle: "확인", isTimer: false, isLogout: true, studyRemove: false)
+        let vc = AlertViewController(mainMsg: "로그아웃 하시겠습니까?", subMsg: "", btnTitle: "확인", isTimer: false, isLogout: true, studyRemove: false, passMode: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

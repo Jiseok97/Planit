@@ -54,6 +54,8 @@
 		B622420B272D0751004F6750 /* nickNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420A272D0751004F6750 /* nickNameEntity.swift */; };
 		B622420E272D07EE004F6750 /* NickNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420D272D07EE004F6750 /* NickNameDataManager.swift */; };
 		B6224210272D0840004F6750 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B622420F272D0840004F6750 /* Constant.swift */; };
+		B6252251276AEDF30074A4EB /* PlanetPassAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625224F276AEDF30074A4EB /* PlanetPassAlertViewController.swift */; };
+		B6252252276AEDF30074A4EB /* PlanetPassAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6252250276AEDF30074A4EB /* PlanetPassAlertViewController.xib */; };
 		B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */; };
 		B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62618AB274229F900E301A7 /* ShowDdayEntity.swift */; };
 		B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */; };
@@ -260,6 +262,8 @@
 		B622420A272D0751004F6750 /* nickNameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameEntity.swift; sourceTree = "<group>"; };
 		B622420D272D07EE004F6750 /* NickNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameDataManager.swift; sourceTree = "<group>"; };
 		B622420F272D0840004F6750 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B625224F276AEDF30074A4EB /* PlanetPassAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetPassAlertViewController.swift; sourceTree = "<group>"; };
+		B6252250276AEDF30074A4EB /* PlanetPassAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetPassAlertViewController.xib; sourceTree = "<group>"; };
 		B62618A9274229F200E301A7 /* ShowDdayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayDataManager.swift; sourceTree = "<group>"; };
 		B62618AB274229F900E301A7 /* ShowDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDdayEntity.swift; sourceTree = "<group>"; };
 		B62A93B5274FA90A0092C9B5 /* ShowDateStudyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDateStudyDataManager.swift; sourceTree = "<group>"; };
@@ -593,6 +597,7 @@
 		B6196613274F0F510004EA10 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				B625224E276AEDDE0074A4EB /* PlanetAlert */,
 				B6B1F8882755F00800E84CE7 /* TerrmsAlert */,
 				B63352A62755297300D1914D /* RestAlert */,
 				B633AA0F2754EA4600A00EFD /* TimerAlert */,
@@ -746,6 +751,15 @@
 				B6C455B02730289C00B1326A /* HaveReceiverDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B625224E276AEDDE0074A4EB /* PlanetAlert */ = {
+			isa = PBXGroup;
+			children = (
+				B6252250276AEDF30074A4EB /* PlanetPassAlertViewController.xib */,
+				B625224F276AEDF30074A4EB /* PlanetPassAlertViewController.swift */,
+			);
+			path = PlanetAlert;
 			sourceTree = "<group>";
 		};
 		B62618A6274228C000E301A7 /* ShowDday */ = {
@@ -1798,6 +1812,7 @@
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
+				B6252252276AEDF30074A4EB /* PlanetPassAlertViewController.xib in Resources */,
 				B66B47912732896800F89012 /* MyPageViewController.xib in Resources */,
 				B645B659275DD66C0051F137 /* AnalysisPageViewController.xib in Resources */,
 				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
@@ -1992,6 +2007,7 @@
 				B63ED57127623E45000199E4 /* OverallTimeLineCollectionViewCell.swift in Sources */,
 				B614C469273A9D7A00A5E8F9 /* DdayPageViewController.swift in Sources */,
 				B61FAC542752839A007458A1 /* EditStudyEntity.swift in Sources */,
+				B6252251276AEDF30074A4EB /* PlanetPassAlertViewController.swift in Sources */,
 				B6224210272D0840004F6750 /* Constant.swift in Sources */,
 				B64771C32744F32300BBCBC2 /* NoDdayCollectionViewCell.swift in Sources */,
 				B63A1F3A2747ADD60077CC76 /* RepeatStudyInput.swift in Sources */,

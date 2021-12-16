@@ -10,6 +10,7 @@ import UIKit
 class AlertViewController: UIViewController {
 
     @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
     @IBOutlet weak var msgLbl: UILabel!
     @IBOutlet weak var subMsgLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -27,14 +28,16 @@ class AlertViewController: UIViewController {
     var isTimer : Bool = false
     var isLogout: Bool = false
     var studyRemove: Bool = false
+    var passMode: Bool = false
     
-    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool, isLogout: Bool, studyRemove: Bool) {
+    init(mainMsg: String, subMsg : String, btnTitle : String, isTimer : Bool, isLogout: Bool, studyRemove: Bool, passMode: Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.confirmBtnTxt = btnTitle
         self.isTimer = isTimer
         self.isLogout = isLogout
         self.studyRemove = studyRemove
+        self.passMode = passMode
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,6 +51,7 @@ class AlertViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
+        
         if self.confirmBtnTxt == "구매" {
             self.view.backgroundColor = .black.withAlphaComponent(1.0)
         }
@@ -93,6 +97,8 @@ class AlertViewController: UIViewController {
             if isLogout {
                 NotificationCenter.default.post(name: NSNotification.Name("Logout"), object: nil)
                 dismiss(animated: true, completion: nil)
+            } else if passMode {
+                changeRootVC(BaseTabBarController())
             } else {
                 NotificationCenter.default.post(name: NSNotification.Name("setRepresent"), object: nil)
                 dismiss(animated: true, completion: nil)
@@ -113,7 +119,7 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func cancleBtnTapped(_ sender: Any) {
-        if isLogout || isTimer {
+        if isLogout || isTimer || passMode {
             dismiss(animated: true, completion: nil)
         } else {
             changeRootVC(BaseTabBarController())

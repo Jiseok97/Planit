@@ -76,6 +76,21 @@ class RewardMainViewController: UIViewController {
         bgAnimation.play()
         
         self.rewardShopBtn.isHidden = true
+        
+        let animationView = AnimationView(name: "satisfyStar")
+        self.satisfyLtView.addSubview(animationView)
+        
+        let centerX2 = NSLayoutConstraint(item: animationView, attribute: .centerX, relatedBy: .equal, toItem: satisfyLtView, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY2 = NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: satisfyLtView, attribute: .centerY, multiplier: 1, constant: 0)
+        let width2 = NSLayoutConstraint(item: animationView, attribute: .width, relatedBy: .equal, toItem: satisfyLtView, attribute: .width, multiplier: 1, constant: 0)
+        let height2 = NSLayoutConstraint(item: animationView, attribute: .height, relatedBy: .equal, toItem: satisfyLtView, attribute: .height, multiplier: 1, constant: 0)
+        
+        view.addConstraints([ centerX2, centerY2, width2, height2 ])
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
     }
     
     
@@ -96,11 +111,13 @@ class RewardMainViewController: UIViewController {
         let height = NSLayoutConstraint(item: actionAnimation, attribute: .height, relatedBy: .equal, toItem: rewardView, attribute: .height, multiplier: 1, constant: 0)
         
         self.rewardView.addConstraints([ centerX, centerY, width, height ])
+        self.rewardView.isUserInteractionEnabled = false
         actionAnimation.contentMode = .scaleAspectFill
         actionAnimation.play { (finish) in
             actionAnimation.removeFromSuperview()
             self.showIndicator()
             ChangePointDataManager().changePoint(viewController: self)
+            self.rewardView.isUserInteractionEnabled = true
         }
     }
     
@@ -139,22 +156,6 @@ extension RewardMainViewController {
                 self.rewardView.isHidden = false
                 self.rewardView.isUserInteractionEnabled = true
                 self.satisfyLtView.isHidden = false
-                
-                let animationView = AnimationView(name: "satisfyStar")
-                self.satisfyLtView.addSubview(animationView)
-                
-                let centerX = NSLayoutConstraint(item: animationView, attribute: .centerX, relatedBy: .equal, toItem: rewardView, attribute: .centerX, multiplier: 1, constant: 0)
-                let centerY = NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: rewardView, attribute: .centerY, multiplier: 1, constant: 0)
-                let width = NSLayoutConstraint(item: animationView, attribute: .width, relatedBy: .equal, toItem: rewardView, attribute: .width, multiplier: 1, constant: 0)
-                let height = NSLayoutConstraint(item: animationView, attribute: .height, relatedBy: .equal, toItem: rewardView, attribute: .height, multiplier: 1, constant: 0)
-                
-                view.addConstraints([ centerX, centerY, width, height ])
-                
-                animationView.translatesAutoresizingMaskIntoConstraints = false
-                animationView.contentMode = .scaleAspectFill
-                animationView.loopMode = .loop
-                animationView.play()
-                
                 
             } else {
                 self.starLbl.textColor = .placeHolderColor

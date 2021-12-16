@@ -605,7 +605,7 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func delteBtnTapped(_ sender: Any) {
-        let vc = AlertViewController(mainMsg: "공부를 삭제하시겠습니까?", subMsg: "해당 공부와 관련된 기록은\n모두 삭제됩니다", btnTitle: "삭제", isTimer: false, isLogout: false, studyRemove: true)
+        let vc = AlertViewController(mainMsg: "공부를 삭제하시겠습니까?", subMsg: "해당 공부와 관련된 기록은\n모두 삭제됩니다", btnTitle: "삭제", isTimer: false, isLogout: false, studyRemove: true, passMode: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
