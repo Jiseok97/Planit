@@ -8,8 +8,10 @@
 import Alamofire
 
 class CheckTokenDataManager {
-    func updateToken(_ info: RefreshTokenInput) {
-        AF.request(Constant.BASE_URL + "/v1/auth/update-token", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
+    let header: HTTPHeaders = [.accept("application/json")]
+    
+    func updateToken(_ info: RefreshTokenInput, viewController: LoginViewController) {
+        AF.request(Constant.BASE_URL + "/v1/auth/update-token", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: RefreshTokenEntity.self) { response in
                 let code = response.response?.statusCode
@@ -17,10 +19,11 @@ class CheckTokenDataManager {
                 case 200:
                     guard let accessToken = response.value?.accessToken else { return }
                     Constant.MY_ACCESS_TOKEN = accessToken
-                    UserDefaults.standard.set(accessToken, forKey: "accessToken")
+//                    viewController.haveToken = true
                     print("AccessToken 발급 성공")
                     
                 default:
+                    
                     print("RefreshToken 갱신 || 발급이 필요합니다.")
                     
                 }

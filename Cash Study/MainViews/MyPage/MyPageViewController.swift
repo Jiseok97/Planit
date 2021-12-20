@@ -58,6 +58,7 @@ class MyPageViewController: UIViewController {
     
     
     @objc func editUserInfoNoti(_ noti : Notification) {
+        
         ShowUserInfoDataManager().showUserInfo(viewController: self)
     }
     

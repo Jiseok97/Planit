@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class ShowUserInfoDataManager {
+class ShowUserInfoDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -19,10 +19,12 @@ class ShowUserInfoDataManager {
                 
                 switch statusCode {
                 case 200:
+                    self.dismissIndicator()
                     guard let data = response.value else { return }
                     viewController.showUserInfo(result: data)
                     
                 default:
+                    self.dismissIndicator()
                     print("토큰 만료.")
   
                 }
@@ -38,10 +40,12 @@ class ShowUserInfoDataManager {
                 
                 switch statusCode {
                 case 200:
+                    self.dismissIndicator()
                     guard let data = response.value else { return }
                     viewController.showUserInfo(result: data)
                     
                 default:
+                    self.dismissIndicator()
                     print("토큰 만료.")
   
                 }

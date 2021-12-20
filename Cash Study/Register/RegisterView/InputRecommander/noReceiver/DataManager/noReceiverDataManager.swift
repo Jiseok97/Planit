@@ -36,7 +36,6 @@ class noReceiverDataManager : UIViewController {
                     Constant.MY_REFRESH_TOKEN = refreshToken
                     
                     self.sethiddenLblImg(viewController.errorImageView, viewController.errorLbl)
-                    UserDefaults.standard.set(accessToken, forKey: "accessToken")
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     
                     viewController.checkUser = true

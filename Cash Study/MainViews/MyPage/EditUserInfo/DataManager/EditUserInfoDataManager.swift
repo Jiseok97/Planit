@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class EditUserInfoDataManager {
+class EditUserInfoDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -19,10 +19,12 @@ class EditUserInfoDataManager {
                 
                 switch statusCode {
                 case 200:
+                    self.dismissIndicator()
                     viewController.isSuccess = true
                     NotificationCenter.default.post(name: NSNotification.Name("EditUserInfo"), object: nil)
                     
                 default:
+                    self.dismissIndicator()
                     viewController.nicknameError = true
   
                 }

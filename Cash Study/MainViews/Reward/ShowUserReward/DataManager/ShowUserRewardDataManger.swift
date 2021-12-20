@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class ShowUserRewardDataManager {
+class ShowUserRewardDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
                                .accept("application/json")]
     
@@ -16,6 +16,7 @@ class ShowUserRewardDataManager {
         AF.request(Constant.BASE_URL + "/v1/reward", method: .get, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: ShowUserRewardEntity.self) { response in
+                self.dismissIndicator()
                 guard let data = response.value else { return }
                 
                 viewController.showReward(result: data)

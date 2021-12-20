@@ -20,14 +20,28 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appleLoginBtn: UIButton!
     @IBOutlet weak var logoImgView: UIImageView!
     
+//    var haveToken : Bool = false {
+//        didSet {
+//            changeRootVC(BaseTabBarController())
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
+        
+//        guard let rfToken = UserDefaults.standard.string(forKey: "refreshToken") else { return }
+//        print("rfToken = \(rfToken)")
+//        if rfToken != "" {
+//            let input = RefreshTokenInput(refreshToken: rfToken)
+//            CheckTokenDataManager().updateToken(input, viewController: self)
+//        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Kakao auto login
         if(AuthApi.hasToken()) {
             UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {
@@ -46,13 +60,13 @@ class LoginViewController: UIViewController {
             // Need login
             return
         }
+        
     }
     
     // MARK: Functions
     func setUI() {
         kakaoLoginView.layer.cornerRadius = 6
         appleLoginView.layer.cornerRadius = 6
-        logoImgView.layer.cornerRadius = 8
     }
     
     // MARK: About Kakao Login

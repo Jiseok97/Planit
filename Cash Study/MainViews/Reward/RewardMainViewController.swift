@@ -27,6 +27,8 @@ class RewardMainViewController: UIViewController {
     
     
     var rewardDataLst : ShowUserRewardEntity?
+    let animationView = AnimationView(name: "satisfyStar")
+    let bgAnimation = AnimationView(name: "bgAnimation")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,11 @@ class RewardMainViewController: UIViewController {
         
         setGradation()
         setUI()
+        
+        self.lottieBgView.addSubview(bgAnimation)
+        bgLottie()
+        self.satisfyLtView.addSubview(animationView)
+        satisfyLottie()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,13 +53,16 @@ class RewardMainViewController: UIViewController {
         ShowUserRewardDataManager().showReward(viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadReward(_:)), name: NSNotification.Name("reloadReward"), object: nil)
+        
+        animationView.play()
+        bgAnimation.play()
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadReward"), object: nil)
     }
-    
     
     // MARK: Functions
     func setUI() {
@@ -61,10 +71,9 @@ class RewardMainViewController: UIViewController {
         self.rewardShopBtn.layer.cornerRadius = rewardShopBtn.frame.height / 2
         
         self.passView.layer.cornerRadius = 8
-        
-        let bgAnimation = AnimationView(name: "bgAnimation")
-        self.lottieBgView.addSubview(bgAnimation)
-        
+    }
+    
+    func bgLottie() {
         let centerX = NSLayoutConstraint(item: bgAnimation, attribute: .centerX, relatedBy: .equal, toItem: lottieBgView, attribute: .centerX, multiplier: 1, constant: 0)
         let centerY = NSLayoutConstraint(item: bgAnimation, attribute: .centerY, relatedBy: .equal, toItem: lottieBgView, attribute: .centerY, multiplier: 1, constant: 0)
         let width = NSLayoutConstraint(item: bgAnimation, attribute: .width, relatedBy: .equal, toItem: lottieBgView, attribute: .width, multiplier: 1, constant: 35)
@@ -76,12 +85,9 @@ class RewardMainViewController: UIViewController {
         bgAnimation.contentMode = .scaleAspectFill
         bgAnimation.loopMode = .loop
         bgAnimation.play()
-        
-        self.rewardShopBtn.isHidden = true
-        
-        let animationView = AnimationView(name: "satisfyStar")
-        self.satisfyLtView.addSubview(animationView)
-        
+    }
+    
+    func satisfyLottie() {
         let centerX2 = NSLayoutConstraint(item: animationView, attribute: .centerX, relatedBy: .equal, toItem: satisfyLtView, attribute: .centerX, multiplier: 1, constant: 0)
         let centerY2 = NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: satisfyLtView, attribute: .centerY, multiplier: 1, constant: 0)
         let width2 = NSLayoutConstraint(item: animationView, attribute: .width, relatedBy: .equal, toItem: satisfyLtView, attribute: .width, multiplier: 1, constant: 0)

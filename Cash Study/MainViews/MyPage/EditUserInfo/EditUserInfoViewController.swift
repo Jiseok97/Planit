@@ -342,9 +342,8 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
 
 extension EditUserInfoViewController {
     func showUserInfo(result: ShowUserInfoEntity) {
-        dismissIndicator()
+        self.dismissIndicator()
         self.userInfoData = result
-        
         if userInfoData != nil {
 //            guard let userName = userInfoData?.name else { return }
             guard let userNickName = userInfoData?.nickname else { return }

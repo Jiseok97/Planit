@@ -107,7 +107,6 @@ class AddStudyViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         setUI()
-        swipeRecognizer()
     }
     
     
