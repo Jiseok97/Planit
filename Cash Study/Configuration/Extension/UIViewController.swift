@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension UIViewController {
     
@@ -174,6 +175,48 @@ extension UIViewController {
         btn.backgroundColor = .mainNavy
         btn.setTitleColor(UIColor.homeBorderColor, for: .normal)
         btn.isEnabled = false
+    }
+    
+    
+    
+    // MARK: For Lottie
+    func bgLottie(lottieView: AnimationView, view: UIView) {
+        let centerX = NSLayoutConstraint(item: lottieView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: lottieView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: lottieView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 35)
+        let height = NSLayoutConstraint(item: lottieView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1, constant: 35)
+        
+        view.addConstraints([ centerX, centerY, width, height ])
+        
+        lottieView.translatesAutoresizingMaskIntoConstraints = false
+        lottieView.contentMode = .scaleAspectFill
+        lottieView.loopMode = .loop
+        lottieView.play()
+    }
+    
+    func actionLottie(lottieView: AnimationView, view: UIView) {
+        let centerX = NSLayoutConstraint(item: lottieView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: lottieView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: lottieView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: lottieView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1, constant: 0)
+        
+        view.addConstraints([ centerX, centerY, width, height ])
+        view.isUserInteractionEnabled = false
+        lottieView.contentMode = .scaleAspectFill
+    }
+    
+    func satisfyLottie(lottieView: AnimationView, view: UIView) {
+        let centerX2 = NSLayoutConstraint(item: lottieView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerY2 = NSLayoutConstraint(item: lottieView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        let width2 = NSLayoutConstraint(item: lottieView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0)
+        let height2 = NSLayoutConstraint(item: lottieView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1, constant: 0)
+        
+        view.addConstraints([ centerX2, centerY2, width2, height2 ])
+        
+        lottieView.translatesAutoresizingMaskIntoConstraints = false
+        lottieView.contentMode = .scaleAspectFill
+        lottieView.loopMode = .loop
+        lottieView.play()
     }
     
 }
