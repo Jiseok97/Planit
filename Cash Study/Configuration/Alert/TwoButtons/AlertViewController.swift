@@ -98,7 +98,9 @@ class AlertViewController: UIViewController {
                 NotificationCenter.default.post(name: NSNotification.Name("Logout"), object: nil)
                 dismiss(animated: true, completion: nil)
             } else if passMode {
-                changeRootVC(BaseTabBarController())
+                dismiss(animated: true, completion: nil)
+                NotificationCenter.default.post(name: NSNotification.Name("dismissPass"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name("reloadReward"), object: nil)
             } else {
                 NotificationCenter.default.post(name: NSNotification.Name("setRepresent"), object: nil)
                 dismiss(animated: true, completion: nil)

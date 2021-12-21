@@ -28,7 +28,7 @@ class PlanitPassViewController: UIViewController {
     }
     var isSuccess: Bool = false {
         didSet {
-            let vc = PlanetPassAlertViewController()
+            let vc = PlanetPassAlertViewController(pointTxt: String(describing: self.passGetPoint))
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }
@@ -40,7 +40,25 @@ class PlanitPassViewController: UIViewController {
             present(vc, animated: true)
         }
     }
+    
+    var prevPoint : Int = 0
+    var passGetPoint : Int = 0
+    var usePassDataLst : UsePlanetPassEntity?
+    
+    init(prevPoint: Int) {
+        self.prevPoint = prevPoint
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,14 +75,24 @@ class PlanitPassViewController: UIViewController {
         
         showIndicator()
         PlanitPassInfoDataManager().showPassInfo(viewController: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(dismissPass(_:)), name: NSNotification.Name("dismissPass"), object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("dismissPass"), object: nil)
     }
 
+    
 
     // MARK: Functions
     func setUI() {
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         passCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 32)
         pageCtrl.isUserInteractionEnabled = false
+    }
+    
+    @objc func dismissPass(_ noti: Notification) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func changePageTapped(_ sender: UIButton) {
@@ -190,5 +218,15 @@ extension PlanitPassViewController {
     func showPassInfo(result: PlanitPassInfoEntity) {
         dismissIndicator()
         self.passInfo = result
+    }
+    
+    
+    func usePlanetPass(result: UsePlanetPassEntity) {
+        self.usePassDataLst = result
+        
+        if usePassDataLst != nil {
+            guard let star = usePassDataLst?.star else { return }
+            self.passGetPoint = star - self.prevPoint
+        }
     }
 }

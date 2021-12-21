@@ -104,7 +104,9 @@ class RewardMainViewController: UIViewController {
     
     
     @IBAction func movePlanitPass(_ sender: Any) {
-        let vc = PlanitPassViewController()
+        guard let star = rewardDataLst?.star else { return }
+        
+        let vc = PlanitPassViewController(prevPoint: star)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
