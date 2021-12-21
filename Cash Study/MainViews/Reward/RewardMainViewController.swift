@@ -36,7 +36,7 @@ class RewardMainViewController: UIViewController {
         super.viewDidLoad()
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedActionLtView(_:)))
-        self.actionLtView.addGestureRecognizer(tapGesture)
+        self.satisfyLtView.addGestureRecognizer(tapGesture)
         
         setGradation()
         setUI()
@@ -135,8 +135,8 @@ extension RewardMainViewController {
                 self.starCntLbl.textColor = .remainDdayColor
                 
                 self.rewardView.isHidden = true
-                self.actionLtView.isHidden = false
-                self.actionLtView.isUserInteractionEnabled = true
+                self.actionLtView.isHidden = true
+                self.satisfyLtView.isUserInteractionEnabled = true
                 self.satisfyLtView.isHidden = false
                 
             } else {
@@ -145,7 +145,7 @@ extension RewardMainViewController {
 
                 self.rewardView.isHidden = false
                 self.actionLtView.isHidden = true
-                self.actionLtView.isUserInteractionEnabled = false
+                self.satisfyLtView.isUserInteractionEnabled = false
                 self.satisfyLtView.isHidden = true
             }
             
