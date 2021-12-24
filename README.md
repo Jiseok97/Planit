@@ -1,71 +1,35 @@
-# Planit 📖
-***Start → 21.10.13***
+# Planit <img height = "27" alt="Planit" src="https://user-images.githubusercontent.com/64394744/147323976-09824d2e-1da7-444e-95c8-8da227074bce.png">
 
-</br>
+### 내 공부시간을 리워드로 바꾸다! </br> 공부와 보상을 한번에 ⭐️
 
-## 📱 View Progress ▾
+**Team CTU, 8th Central MakeUs Challenge<br>iOS Developer 이지석🌝**
 
-* Login View → ✅
+**개발기간 : 2021.10.16 ~ 2021.12.18**
 
-* Terms of Use View → ✅
-
-* Input User Name & NickName View → ✅
-
-* Select User Gender View → ✅
-
-* Input User Date of birth View → ✅
-
-* Select User Job View → ✅
-
-* Input Recommender View → ✅
-
-* Added BaseTabBar Controller → ✅
-
-* Home View → ✅
-
-* Timer & Timer stop View → ✅
-
-* Alert View → ✅
-
-* Show represent D-day (Home View) → ✅
-
-* Show today studies list (Home View) → ✅
-
-* Add study View (Home & Planner View) → ✅
-
-* Planner View → ✅
-
-* Add D-day View (Planner View) → ✅
+**앱스토어 출시일 : 2021.12.12** &nbsp; [보러가기 🛸](https://apps.apple.com/kr/app/%ED%94%8C%EB%9E%98%EB%8B%9B-%EB%8F%88-%EB%B2%84%EB%8A%94-%EA%B3%B5%EB%B6%80%ED%83%80%EC%9D%B4%EB%A8%B8/id1597905981)
 
 
-</br>
+<img src="https://user-images.githubusercontent.com/64394744/147325484-9a180ad3-4d81-4a18-bbb4-997a6011114e.png" width="300"> <img src="https://user-images.githubusercontent.com/64394744/147325489-86dd2150-07f7-477d-b572-14d1ff759dda.png" width = "300">
 
-## 🔗 API Progress ▾
-* Validate-nickname → ✅
+<br>
+<hr>
+<br>
 
-* Register User → ✅
-    * Validate-recommender-nickname → ✅
+## 개발 환경 ⚙️
+- iOS 13.0+
+- Xcode 13.1
 
-* Login → ✅
+<br>
 
-* Token renewal → ✅ 
+## 라이브러리 🗂
+- Alamofire
+- IQKeyboardManagerSwift
+- FSCalendar
+- MSCircularSlider
+- lottie - ios
 
-* Add study → ✅
+<br>
 
-* Add Dday → ✅
-
-* Show study about each day → ✅
-
-* Edit Dday & Study → ✅
-
-* Record time of study → ✅
-
-* Show user information → ✅
-
-* Edit user information → ✅
-
-</br>
-
-* **All API connections successful so far❗️** 
-
-* As of ***21.12.02***
+## 개발 방식 💻
+- Xib 개발
+- MVC

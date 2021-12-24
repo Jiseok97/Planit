@@ -100,9 +100,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>User Interface Style</key>
-	<string>Dark</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>User Interface Style</key>
+	<string>Dark</string>
 </dict>
 </plist>
