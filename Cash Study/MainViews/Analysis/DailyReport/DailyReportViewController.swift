@@ -27,7 +27,8 @@ class DailyReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .mainNavy
+//        self.view.backgroundColor = .mainNavy
+//        setGradation()
         
         let df = DateFormatter()
         df.dateFormat = "yyyy년 MM월 dd일"
@@ -236,8 +237,6 @@ extension DailyReportViewController {
         self.reportDataLst = result
         self.studyAnalysisCV.reloadData()
         mostStudyIdx?.reports.sort{ $0.recordedTime > $1.recordedTime }
-        
-        print("result = \(result)")
         
         var totalTime : Int = 0
         

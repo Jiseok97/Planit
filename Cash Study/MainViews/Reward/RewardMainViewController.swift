@@ -50,6 +50,8 @@ class RewardMainViewController: UIViewController {
         self.actionLtView.addSubview(actionAnimation)
         actionLottie(lottieView: actionAnimation, view: actionLtView)
         
+        self.rewardShopBtn.isHidden = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -26,17 +26,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXl-0f-pf6">
-                    <rect key="frame" x="0.0" y="52" width="414" height="59.5"/>
+                    <rect key="frame" x="0.0" y="58" width="414" height="64"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-Q8-ix2">
-                            <rect key="frame" x="-30" y="8" width="171" height="44.5"/>
+                            <rect key="frame" x="-30" y="0.0" width="171" height="49"/>
                             <segments>
                                 <segment title="           플래너"/>
                                 <segment title="디데이" width="80"/>
                             </segments>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-r1-ZdJ">
-                            <rect key="frame" x="277.5" y="12" width="112.5" height="36"/>
+                            <rect key="frame" x="277.5" y="6" width="112.5" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="alz-dY-5XU"/>
                             </constraints>
@@ -52,20 +52,20 @@
                         </button>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="height" constant="64" id="IYb-3g-vEu"/>
                         <constraint firstAttribute="trailing" secondItem="0Sv-r1-ZdJ" secondAttribute="trailing" constant="24" id="Zwp-dV-jjg"/>
                         <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="centerY" secondItem="xd0-Q8-ix2" secondAttribute="centerY" id="nA2-r6-CAl"/>
                         <constraint firstItem="xd0-Q8-ix2" firstAttribute="leading" secondItem="EXl-0f-pf6" secondAttribute="leading" constant="-30" id="nhs-5a-IRP"/>
-                        <constraint firstItem="xd0-Q8-ix2" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" constant="8" id="omq-7b-Xq1"/>
-                        <constraint firstAttribute="bottom" secondItem="xd0-Q8-ix2" secondAttribute="bottom" constant="8" id="ubI-Q0-8dS"/>
+                        <constraint firstItem="xd0-Q8-ix2" firstAttribute="top" secondItem="EXl-0f-pf6" secondAttribute="top" id="omq-7b-Xq1"/>
+                        <constraint firstAttribute="bottom" secondItem="xd0-Q8-ix2" secondAttribute="bottom" constant="16" id="ubI-Q0-8dS"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.272" id="4Wq-BK-Gem"/>
+                <constraint firstItem="EXl-0f-pf6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="9Q2-lD-ZhO"/>
                 <constraint firstItem="EXl-0f-pf6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CzD-kd-k1y"/>
-                <constraint firstItem="EXl-0f-pf6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0665025" id="Hld-u3-vRt"/>
-                <constraint firstItem="EXl-0f-pf6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="iHG-PS-TdC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EXl-0f-pf6" secondAttribute="trailing" id="o3j-qW-3K6"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="15.401785714285714"/>

@@ -264,11 +264,6 @@
             <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
         </view>
     </objects>
-    <designables>
-        <designable name="rU4-Cs-IVe">
-            <size key="intrinsicContentSize" width="298" height="298"/>
-        </designable>
-    </designables>
     <resources>
         <image name="backArrow" width="24" height="24"/>
         <image name="bonus" width="32" height="32"/>

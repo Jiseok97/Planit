@@ -11,8 +11,8 @@ import UIKit
 class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
     let homeViewController = HomeViewController()
     let plannerViewController = PlannerViewController()
-//    let analysisViewController = AnalysisViewController()
-    let analysisViewController = DailyReportViewController()
+    let analysisViewController = AnalysisViewController()
+//    let analysisViewController = DailyReportViewController()
     let mypageViewController = MyPageViewController()
     let rewardViewController = RewardMainViewController()
     

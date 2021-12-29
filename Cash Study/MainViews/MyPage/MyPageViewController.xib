@@ -37,13 +37,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPage" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-cn-WUd">
-                                    <rect key="frame" x="32" y="26.5" width="89" height="19"/>
+                                    <rect key="frame" x="32" y="74" width="89" height="19"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-Ur-W8w">
-                                    <rect key="frame" x="24" y="87" width="366" height="90"/>
+                                    <rect key="frame" x="24" y="125" width="366" height="90.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNJ-qz-bxU">
-                                            <rect key="frame" x="24" y="16" width="39" height="20.5"/>
+                                            <rect key="frame" x="24" y="16.5" width="39" height="20.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                             <color key="textColor" systemColor="linkColor"/>
                                             <nil key="highlightedColor"/>
@@ -90,9 +90,8 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="aTL-aL-fiX" secondAttribute="trailing" constant="24" id="11l-BE-8wE"/>
-                                <constraint firstItem="R4L-cn-WUd" firstAttribute="centerY" secondItem="xmS-a8-P7W" secondAttribute="centerY" multiplier="0.09" id="2PG-mB-1XJ"/>
                                 <constraint firstItem="cpX-Ur-W8w" firstAttribute="height" secondItem="xmS-a8-P7W" secondAttribute="height" multiplier="0.113" id="2sJ-iQ-cIt"/>
-                                <constraint firstItem="cpX-Ur-W8w" firstAttribute="centerY" secondItem="xmS-a8-P7W" secondAttribute="centerY" multiplier="0.33" id="9xs-oL-Kpb"/>
+                                <constraint firstItem="cpX-Ur-W8w" firstAttribute="top" secondItem="R4L-cn-WUd" secondAttribute="bottom" constant="32" id="IgU-JZ-kDg"/>
                                 <constraint firstItem="cpX-Ur-W8w" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" constant="24" id="Uvh-Pa-aRX"/>
                                 <constraint firstAttribute="trailing" secondItem="cpX-Ur-W8w" secondAttribute="trailing" constant="24" id="Z0v-VD-Pl2"/>
                                 <constraint firstItem="R4L-cn-WUd" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" constant="32" id="ad9-oS-J8C"/>
@@ -115,6 +114,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="pk1-ug-B9j" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5v9-dr-xUR"/>
+                <constraint firstItem="R4L-cn-WUd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="BKS-V4-z3H"/>
                 <constraint firstAttribute="bottom" secondItem="pk1-ug-B9j" secondAttribute="bottom" id="DgZ-hZ-CVy"/>
                 <constraint firstItem="pk1-ug-B9j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EiH-7T-cIB"/>
                 <constraint firstItem="pk1-ug-B9j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gwI-7g-fQT"/>
