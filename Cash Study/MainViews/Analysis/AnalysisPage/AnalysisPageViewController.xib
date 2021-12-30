@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnalysisPageViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="V5b-Hg-Hjr" id="Fmp-GC-8F4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,19 +24,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 준비 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftE-QR-ui9">
-                    <rect key="frame" x="134" y="332" width="146" height="35"/>
-                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="24"/>
-                    <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-Hg-Hjr">
+                    <rect key="frame" x="24" y="44" width="366" height="401.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터를 분석중입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr7-Le-seC">
+                            <rect key="frame" x="24" y="24" width="129" height="64"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
+                            <color key="textColor" red="0.090196078431372548" green="0.094117647058823528" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphicGraph" translatesAutoresizingMaskIntoConstraints="NO" id="Llj-ks-Sf3">
+                            <rect key="frame" x="24" y="245.5" width="318" height="116"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Llj-ks-Sf3" secondAttribute="bottom" constant="40" id="COC-5Y-it8"/>
+                        <constraint firstItem="Rr7-Le-seC" firstAttribute="leading" secondItem="V5b-Hg-Hjr" secondAttribute="leading" constant="24" id="FhE-ef-lca"/>
+                        <constraint firstItem="Rr7-Le-seC" firstAttribute="top" secondItem="V5b-Hg-Hjr" secondAttribute="top" constant="24" id="doD-KU-NVe"/>
+                        <constraint firstAttribute="trailing" secondItem="Llj-ks-Sf3" secondAttribute="trailing" constant="24" id="eDf-Sy-RZ7"/>
+                        <constraint firstItem="Llj-ks-Sf3" firstAttribute="leading" secondItem="V5b-Hg-Hjr" secondAttribute="leading" constant="24" id="uPs-kj-2yj"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
-                <constraint firstItem="ftE-QR-ui9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DPW-T4-CrT"/>
-                <constraint firstItem="ftE-QR-ui9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.78" id="ROo-MT-vgi"/>
+                <constraint firstItem="V5b-Hg-Hjr" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.448125" id="5OY-H2-bz9"/>
+                <constraint firstItem="V5b-Hg-Hjr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="AlA-1m-xiT"/>
+                <constraint firstItem="V5b-Hg-Hjr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WcU-42-Qpg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V5b-Hg-Hjr" secondAttribute="trailing" constant="24" id="aoU-Wz-97n"/>
             </constraints>
             <point key="canvasLocation" x="132" y="67"/>
         </view>
     </objects>
+    <resources>
+        <image name="graphicGraph" width="279" height="116"/>
+    </resources>
 </document>

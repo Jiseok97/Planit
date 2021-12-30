@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import MessageUI
 import KakaoSDKUser
 import KakaoSDKAuth
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var nicknameView: UIView!
     @IBOutlet weak var nicknameLbl: UILabel!
     @IBOutlet weak var logoutBtn: UIButton!
+    
+    @IBOutlet weak var questionView: UIView!
+    @IBOutlet weak var reviewView: UIView!
+    @IBOutlet weak var termsOfUseView: UIView!
+    @IBOutlet weak var versionLbl: UILabel!
+    
     
     var userInfoData : ShowUserInfoEntity?
     
@@ -24,6 +31,9 @@ class MyPageViewController: UIViewController {
         setGradation()
         setUI()
         
+        // 문의하기 tap gesture
+        let questionTapped = UITapGestureRecognizer(target: self, action: #selector(questionTapped(_:)))
+        questionView.addGestureRecognizer(questionTapped)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +57,7 @@ class MyPageViewController: UIViewController {
     }
     
     
+    
     // MARK: Function
     func setUI() {
         self.nicknameView.layer.cornerRadius = 8
@@ -54,11 +65,65 @@ class MyPageViewController: UIViewController {
         self.logoutBtn.layer.cornerRadius = 8
         self.logoutBtn.layer.borderColor = UIColor.placeHolderColor.cgColor
         self.logoutBtn.layer.borderWidth = 0.5
+        
+        questionView.layer.addBorder([.top, .bottom], color: .homeBorderColor, width: 0.4)
+        reviewView.layer.addBorder([.bottom], color: .homeBorderColor, width: 0.4)
+        termsOfUseView.layer.addBorder([.bottom], color: .homeBorderColor, width: 0.4)
     }
     
     
-    @objc func editUserInfoNoti(_ noti : Notification) {
+    // MARK: 문의하기, 앱 리뷰 남기기, 서비스 이용약관
+    func getDeviceIdentifier() -> String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8, value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
         
+        return identifier
+    }
+    
+    @objc func questionTapped(_ sender: UITapGestureRecognizer) {
+        guard let versionNumber = self.versionLbl.text else { return }
+        if MFMailComposeViewController.canSendMail() {
+            print("메일을 보낼 수 있습니다.")
+            
+            let cpVC = MFMailComposeViewController()
+            cpVC.mailComposeDelegate = self
+            
+            let emailTitle = "플래닛 문의"
+            let messageBody =
+            """
+            SystemVersion: \(UIDevice.current.systemVersion)
+            AppVersion: \(String(describing: versionNumber))
+            Device: \(self.getDeviceIdentifier())
+            """
+            
+            cpVC.setToRecipients(["jiseok2301@gmail.com"])  // 전달 받을 주소
+            cpVC.setSubject(emailTitle)  // 메세지 제목
+            cpVC.setMessageBody(messageBody, isHTML: false)
+            
+        } else {
+            
+            let message =
+            """
+            SystemVersion: \(UIDevice.current.systemVersion)
+            AppVersion: \(String(describing: versionNumber))
+            Device: \(self.getDeviceIdentifier())
+            """
+            print(message)
+            
+            
+        }
+    }
+    
+    
+    
+    
+    
+    @objc func editUserInfoNoti(_ noti : Notification) {
         ShowUserInfoDataManager().showUserInfo(viewController: self)
     }
     
