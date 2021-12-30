@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageUI
+import StoreKit
 import KakaoSDKUser
 import KakaoSDKAuth
 
@@ -34,6 +35,12 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         // 문의하기 tap gesture
         let questionTapped = UITapGestureRecognizer(target: self, action: #selector(questionTapped(_:)))
         questionView.addGestureRecognizer(questionTapped)
+        // 리뷰 tap gesture
+        let reviewTapped = UITapGestureRecognizer(target: self, action: #selector(reviewTapped(_:)))
+        reviewView.addGestureRecognizer(reviewTapped)
+        // 이용약관 tap gesture
+        let termsTapped = UITapGestureRecognizer(target: self, action: #selector(termsTapped(_:)))
+        termsOfUseView.addGestureRecognizer(termsTapped)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +79,7 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     
     
-    // MARK: 문의하기, 앱 리뷰 남기기, 서비스 이용약관
+    // MARK: 문의하기
     func getDeviceIdentifier() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -85,6 +92,12 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         return identifier
     }
     
+    // 메일 보내기 누르면 팝업 dismiss
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    // 문의하기
     @objc func questionTapped(_ sender: UITapGestureRecognizer) {
         guard let versionNumber = self.versionLbl.text else { return }
         if MFMailComposeViewController.canSendMail() {
@@ -103,26 +116,36 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
             
             cpVC.setToRecipients(["jiseok2301@gmail.com"])  // 전달 받을 주소
             cpVC.setSubject(emailTitle)  // 메세지 제목
-            cpVC.setMessageBody(messageBody, isHTML: false)
+            cpVC.setMessageBody(messageBody, isHTML: false)  // 메세지 본문
+            
+            self.present(cpVC, animated: true, completion: nil)
             
         } else {
-            
-            let message =
-            """
-            SystemVersion: \(UIDevice.current.systemVersion)
-            AppVersion: \(String(describing: versionNumber))
-            Device: \(self.getDeviceIdentifier())
-            """
-            print(message)
-            
-            
+            // 팝업창 멘트 정하기
+            let vc = ObAlertViewController(mainMsg: "메일 전송 창 띄우기 실패했습니다\n아이폰 이메일 설정을 확인해주세요", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
         }
     }
     
     
+    // MARK: 앱 리뷰하기
+    @objc func reviewTapped(_ sender: UITapGestureRecognizer) {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id1597905981?action=write-review"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    // MARK: 이용약관 이동
+    @objc func termsTapped(_ sender: UITapGestureRecognizer) {
+        let vc = TouViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     
-    
+    // MARK: 그 외 기능
     @objc func editUserInfoNoti(_ noti : Notification) {
         ShowUserInfoDataManager().showUserInfo(viewController: self)
     }

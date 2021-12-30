@@ -183,6 +183,8 @@
 		B6CB7CFE27463AE000B6381A /* NoStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB7CFC27463AE000B6381A /* NoStudyCollectionViewCell.swift */; };
 		B6CB7CFF27463AE000B6381A /* NoStudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CB7CFD27463AE000B6381A /* NoStudyCollectionViewCell.xib */; };
 		B6CB7D062746439700B6381A /* StudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB7D042746439700B6381A /* StudyCollectionViewCell.swift */; };
+		B6D06AD5277D643D00574241 /* TouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D06AD3277D643D00574241 /* TouViewController.swift */; };
+		B6D06AD6277D643D00574241 /* TouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D06AD4277D643D00574241 /* TouViewController.xib */; };
 		B6D1FDF22728308A00C9C846 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1FDF12728308A00C9C846 /* UITextField.swift */; };
 		B6D81E172732B588006E641E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D81E152732B588006E641E /* SplashViewController.swift */; };
 		B6D81E182732B588006E641E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D81E162732B588006E641E /* SplashViewController.xib */; };
@@ -396,6 +398,8 @@
 		B6CB7CFD27463AE000B6381A /* NoStudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoStudyCollectionViewCell.xib; sourceTree = "<group>"; };
 		B6CB7D042746439700B6381A /* StudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6CB7D052746439700B6381A /* StudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyCollectionViewCell.xib; sourceTree = "<group>"; };
+		B6D06AD3277D643D00574241 /* TouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouViewController.swift; sourceTree = "<group>"; };
+		B6D06AD4277D643D00574241 /* TouViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TouViewController.xib; sourceTree = "<group>"; };
 		B6D1FDF12728308A00C9C846 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B6D81E152732B588006E641E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B6D81E162732B588006E641E /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
@@ -1249,6 +1253,7 @@
 			children = (
 				B66B478F2732896800F89012 /* MyPageViewController.xib */,
 				B66B478E2732896800F89012 /* MyPageViewController.swift */,
+				B6D06AD2277D642300574241 /* TermsOfUseVC */,
 				B633A9FA275494EA00A00EFD /* EditUserInfo */,
 				B633AA032754D34100A00EFD /* ShowUserInfo */,
 			);
@@ -1651,6 +1656,15 @@
 			path = Study;
 			sourceTree = "<group>";
 		};
+		B6D06AD2277D642300574241 /* TermsOfUseVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6D06AD4277D643D00574241 /* TouViewController.xib */,
+				B6D06AD3277D643D00574241 /* TouViewController.swift */,
+			);
+			path = TermsOfUseVC;
+			sourceTree = "<group>";
+		};
 		B6D81E192732B8B6006E641E /* CheckToken */ = {
 			isa = PBXGroup;
 			children = (
@@ -1809,6 +1823,7 @@
 				B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */,
 				B63ED57227623E45000199E4 /* OverallTimeLineCollectionViewCell.xib in Resources */,
 				B6770E47276479D200B01735 /* PlanitPassCollectionViewCell.xib in Resources */,
+				B6D06AD6277D643D00574241 /* TouViewController.xib in Resources */,
 				B614C473273ABF0900A5E8F9 /* DdayListCollectionViewCell.xib in Resources */,
 				B6B4061C273CFDBD008DBE7C /* NotoSansKR-Light.otf in Resources */,
 				B6605BAC2753BDE800836795 /* NotoSansKR-Black.otf in Resources */,
@@ -1943,6 +1958,7 @@
 				B6C455AF2730272300B1326A /* HaveReceiverEntity.swift in Sources */,
 				B67C989C2724FA3B0039D271 /* BaseTabBarController.swift in Sources */,
 				B6B2269D272941370021A9A4 /* SelectJobViewController.swift in Sources */,
+				B6D06AD5277D643D00574241 /* TouViewController.swift in Sources */,
 				B62618AA274229F200E301A7 /* ShowDdayDataManager.swift in Sources */,
 				B62BC46A274B5F07005296D8 /* EditDdayInput.swift in Sources */,
 				B62A93B6274FA90A0092C9B5 /* ShowDateStudyDataManager.swift in Sources */,
