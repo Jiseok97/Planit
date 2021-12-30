@@ -140,7 +140,8 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                 } else if indexPath.row == 1 {
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineCell", for: indexPath) as? OverallTimeLineCollectionViewCell else { return UICollectionViewCell() }
                     
-                    let height = self.view.frame.height * 0.197857142857143
+//                    let height = self.view.frame.height * 0.197857142857143
+                    let height = CGFloat(128)
                     
                     if reportDataLst?.reports.count == 1 {
                         cell.configureHeight(with: height)
@@ -209,23 +210,23 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-//        if reportDataLst?.reports != nil {
-//            let width = self.studyAnalysisCV.frame.width
-//            let height = self.view.frame.height * 0.2142
-//            
-//            return CGSize(width: width, height: height)
-//        } else {
-//            let width = self.studyAnalysisCV.frame.width
-//            let height = self.view.frame.height * 0.157857142857143
-//            
-//            return CGSize(width: width, height: height)
-//        }
         let width = self.studyAnalysisCV.frame.width
-        let height = self.view.frame.height * 0.2142
         
-        return CGSize(width: width, height: height)
-        
+        if reportDataLst?.reports.count != 0 {
+            // 모두 보여질 때
+            switch indexPath.row {
+            case 0:
+                return CGSize(width: width, height: 157)
+                
+            case 1:
+                return CGSize(width: width, height: 164)
+                
+            default:
+                return CGSize(width: width, height: 130)
+            }
+        } else {
+            return CGSize(width: width, height: 130)
+        }
     }
     
 }

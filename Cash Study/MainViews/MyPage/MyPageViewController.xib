@@ -38,7 +38,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-a8-P7W">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPage" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-cn-WUd">
                                     <rect key="frame" x="32" y="30" width="89" height="19"/>
@@ -82,7 +82,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTL-aL-fiX">
-                                    <rect key="frame" x="24" y="704" width="366" height="56"/>
+                                    <rect key="frame" x="24" y="654" width="366" height="56"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="J1K-5j-akS"/>
                                     </constraints>
@@ -187,9 +187,9 @@
                                 <constraint firstItem="aTL-aL-fiX" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" constant="24" id="bBn-Vf-mxb"/>
                                 <constraint firstItem="xHZ-0h-P6l" firstAttribute="top" secondItem="CIO-tz-sFQ" secondAttribute="bottom" id="fdv-dk-94n"/>
                                 <constraint firstAttribute="trailing" secondItem="6lD-kR-HCR" secondAttribute="trailing" id="gY4-Aa-cU3"/>
-                                <constraint firstAttribute="height" constant="800" id="geb-nw-0lZ"/>
                                 <constraint firstAttribute="bottom" secondItem="aTL-aL-fiX" secondAttribute="bottom" constant="40" id="onb-h0-62y"/>
                                 <constraint firstItem="R4L-cn-WUd" firstAttribute="top" secondItem="xmS-a8-P7W" secondAttribute="top" constant="30" id="pLq-99-qLm"/>
+                                <constraint firstAttribute="height" constant="750" id="rry-XD-b3b"/>
                                 <constraint firstItem="pId-gK-tzq" firstAttribute="top" secondItem="6lD-kR-HCR" secondAttribute="bottom" constant="20" id="skB-VH-2yX"/>
                                 <constraint firstItem="6lD-kR-HCR" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" id="tC5-9T-42z"/>
                                 <constraint firstItem="Sqb-L7-gX9" firstAttribute="centerY" secondItem="pId-gK-tzq" secondAttribute="centerY" id="uVC-3q-1RD"/>

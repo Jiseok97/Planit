@@ -38,11 +38,11 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         }
         
     }
-
 }
 
 
 extension OverallTimeLineCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if timeLineLst != nil {
             if timeLineLst?.reports.count != 0 {

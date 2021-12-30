@@ -49,11 +49,11 @@ class AnalysisViewController: UIViewController {
         analysisVC.didMove(toParent: self)
         
         if UIScreen.main.bounds.height < 812 {
-            dailyVC.view.frame = CGRect(x: 0, y: 185, width: self.view.bounds.width, height: self.view.bounds.height - 104)
-            analysisVC.view.frame = CGRect(x: 0, y: 185, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            dailyVC.view.frame = CGRect(x: 0, y: 185, width: self.view.bounds.width, height: self.view.bounds.height - 200)
+            analysisVC.view.frame = CGRect(x: 0, y: 185, width: self.view.bounds.width, height: self.view.bounds.height - 200)
         } else {
-            dailyVC.view.frame = CGRect(x: 0, y: 205, width: self.view.bounds.width, height: self.view.bounds.height - 104)
-            analysisVC.view.frame = CGRect(x: 0, y: 205, width: self.view.bounds.width, height: self.view.bounds.height - 104)
+            dailyVC.view.frame = CGRect(x: 0, y: 205, width: self.view.bounds.width, height: self.view.bounds.height - 200)
+            analysisVC.view.frame = CGRect(x: 0, y: 205, width: self.view.bounds.width, height: self.view.bounds.height - 200)
         }
         
         dailyVC.view.isHidden = false
