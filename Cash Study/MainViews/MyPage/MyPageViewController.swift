@@ -73,9 +73,9 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.logoutBtn.layer.borderColor = UIColor.placeHolderColor.cgColor
         self.logoutBtn.layer.borderWidth = 0.5
         
-        questionView.layer.addBorder([.top, .bottom], color: .homeBorderColor, width: 0.4)
-        reviewView.layer.addBorder([.bottom], color: .homeBorderColor, width: 0.4)
-        termsOfUseView.layer.addBorder([.bottom], color: .homeBorderColor, width: 0.4)
+        questionView.layer.addBorder([.top, .bottom], color: .homeBorderColor, width: 0.5)
+        reviewView.layer.addBorder([.bottom], color: .homeBorderColor, width: 0.5)
+        termsOfUseView.layer.addBorder([.bottom], color: .homeBorderColor, width: 0.5)
     }
     
     

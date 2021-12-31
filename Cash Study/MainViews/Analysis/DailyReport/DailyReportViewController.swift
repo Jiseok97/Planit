@@ -94,7 +94,6 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     
     func changeHeight() {
         self.cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
-        print("cvHeight = \(self.cvHeight.constant)")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
