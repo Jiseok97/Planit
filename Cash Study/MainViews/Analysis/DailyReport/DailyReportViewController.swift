@@ -27,9 +27,6 @@ class DailyReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.view.backgroundColor = .mainNavy
-//        setGradation()
-        
         let df = DateFormatter()
         df.dateFormat = "yyyy년 MM월 dd일"
         self.dateBtn.setTitle(df.string(from: Date()), for: .normal)
@@ -46,6 +43,7 @@ class DailyReportViewController: UIViewController {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
+    
     override func viewDidLayoutSubviews() {
         self.changeHeight()
     }
@@ -96,6 +94,7 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
     
     func changeHeight() {
         self.cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
+        print("cvHeight = \(self.cvHeight.constant)")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -141,8 +140,9 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineCell", for: indexPath) as? OverallTimeLineCollectionViewCell else { return UICollectionViewCell() }
                     
 //                    let height = self.view.frame.height * 0.197857142857143
+                    // AnalysisViewController를 추가할 시 이 부분의 Layout 문제 발생
                     let height = CGFloat(128)
-                    
+
                     if reportDataLst?.reports.count == 1 {
                         cell.configureHeight(with: height)
                     } else if reportDataLst?.reports.count == 2 {

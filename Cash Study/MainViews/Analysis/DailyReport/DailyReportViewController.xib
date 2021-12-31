@@ -35,10 +35,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frS-3B-tiN">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="853.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="853"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-Ze-iy5">
-                                    <rect key="frame" x="32" y="30.5" width="148" height="24"/>
+                                    <rect key="frame" x="32" y="30" width="148" height="24"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="2021년 12월 06일 " image="downImg02">
@@ -49,13 +49,13 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이머 측정 시간이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tan-8f-yqf">
-                                    <rect key="frame" x="32" y="56.5" width="261.5" height="32"/>
+                                    <rect key="frame" x="32" y="56" width="261.5" height="32"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
                                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3JO-QA-xyO">
-                                    <rect key="frame" x="24" y="133.5" width="366" height="660"/>
+                                    <rect key="frame" x="24" y="133" width="366" height="660"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="660" id="9jA-TS-mXd"/>
                                     </constraints>
@@ -69,8 +69,8 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="3JO-QA-xyO" firstAttribute="top" secondItem="tan-8f-yqf" secondAttribute="bottom" constant="45" id="1xj-xR-Az5"/>
-                                <constraint firstItem="GK5-Ze-iy5" firstAttribute="centerY" secondItem="frS-3B-tiN" secondAttribute="centerY" multiplier="0.1" id="4m5-6V-XXk"/>
                                 <constraint firstItem="3JO-QA-xyO" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="24" id="EHq-LI-l9V"/>
+                                <constraint firstItem="GK5-Ze-iy5" firstAttribute="top" secondItem="frS-3B-tiN" secondAttribute="top" constant="30" id="G2r-3R-7gG"/>
                                 <constraint firstAttribute="trailing" secondItem="3JO-QA-xyO" secondAttribute="trailing" constant="24" id="Mtt-jl-Y09"/>
                                 <constraint firstItem="GK5-Ze-iy5" firstAttribute="leading" secondItem="frS-3B-tiN" secondAttribute="leading" constant="32" id="R1F-zd-sgL"/>
                                 <constraint firstAttribute="bottom" secondItem="3JO-QA-xyO" secondAttribute="bottom" constant="60" id="q8g-3V-RGu"/>

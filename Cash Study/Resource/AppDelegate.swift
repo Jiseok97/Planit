@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
 
+        // 네트워크 상태 감지
+        NetworkMonitor.shared.startMonitoring()
         
         // About Keyboard
         IQKeyboardManager.shared.enable = true

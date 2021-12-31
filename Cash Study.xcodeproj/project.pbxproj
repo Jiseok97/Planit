@@ -146,6 +146,7 @@
 		B6884930276071C600DF1F42 /* RewardMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688492E276071C600DF1F42 /* RewardMainViewController.swift */; };
 		B6884931276071C600DF1F42 /* RewardMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B688492F276071C600DF1F42 /* RewardMainViewController.xib */; };
 		B688493927609A0100DF1F42 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B688493827609A0100DF1F42 /* Roboto-Regular.ttf */; };
+		B68EC992277EA24B00EEC9B0 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EC991277EA24B00EEC9B0 /* NetworkMonitor.swift */; };
 		B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A33E8E274F5600004E88B0 /* AlertViewController.swift */; };
 		B6A33E91274F5600004E88B0 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A33E8F274F5600004E88B0 /* AlertViewController.xib */; };
 		B6A33E96274F72FC004E88B0 /* CalendarAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A33E94274F72FC004E88B0 /* CalendarAlertViewController.swift */; };
@@ -354,6 +355,7 @@
 		B688492E276071C600DF1F42 /* RewardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardMainViewController.swift; sourceTree = "<group>"; };
 		B688492F276071C600DF1F42 /* RewardMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardMainViewController.xib; sourceTree = "<group>"; };
 		B688493827609A0100DF1F42 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		B68EC991277EA24B00EEC9B0 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B6A33E8E274F5600004E88B0 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B6A33E8F274F5600004E88B0 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		B6A33E94274F72FC004E88B0 /* CalendarAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAlertViewController.swift; sourceTree = "<group>"; };
@@ -1383,6 +1385,7 @@
 				B6709E54272BD7C100847491 /* NotificationName.swift */,
 				B662795A27591E64002DE5B3 /* CALayer.swift */,
 				B6098B0F276A4844001AADEC /* UIDevice.swift */,
+				B68EC991277EA24B00EEC9B0 /* NetworkMonitor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1980,6 +1983,7 @@
 				B63ED5682761EB16000199E4 /* MostStudyCollectionViewCell.swift in Sources */,
 				B645B653275DD5720051F137 /* AnalysisViewController.swift in Sources */,
 				B6709E55272BD7C100847491 /* NotificationName.swift in Sources */,
+				B68EC992277EA24B00EEC9B0 /* NetworkMonitor.swift in Sources */,
 				B608E50A274DEF55003A87A2 /* HaveRprDdayCollectionViewCell.swift in Sources */,
 				B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */,
 				B633A9FD2754950100A00EFD /* EditUserInfoViewController.swift in Sources */,

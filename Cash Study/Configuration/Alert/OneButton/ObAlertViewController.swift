@@ -14,19 +14,22 @@ class ObAlertViewController: UIViewController {
     @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var subConstraint: NSLayoutConstraint!
     
     
     var mainMsg : String = ""
     var subMsg : String = ""
     var btnTitle : String = ""
     var isTimer : Bool = false
+    var isMypage : Bool = false
     var heightValue : Double = 0.0
     
-    init(mainMsg: String, subMsg: String, heightValue: Double, btnTitle: String, isTimer : Bool) {
+    init(mainMsg: String, subMsg: String, heightValue: Double, btnTitle: String, isTimer : Bool, isMypage: Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.btnTitle = btnTitle
         self.isTimer = isTimer
+        self.isMypage = isMypage
         self.heightValue = heightValue
         
         super.init(nibName: nil, bundle: nil)
@@ -57,6 +60,12 @@ class ObAlertViewController: UIViewController {
         if isTimer {
             self.confirmBtn.backgroundColor = UIColor.link
             self.confirmBtn.setTitleColor(.myGray, for: .normal)
+        }
+        
+        if isMypage {
+            self.subConstraint.constant = CGFloat(10)
+            self.timerLbl.textColor = .placeHolderColor
+            self.timerLbl.font = UIFont(name: "NotoSansKR-Regular", size: 14)
         }
     }
     

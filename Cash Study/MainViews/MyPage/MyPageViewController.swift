@@ -122,7 +122,7 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
             
         } else {
             // 팝업창 멘트 정하기
-            let vc = ObAlertViewController(mainMsg: "메일 전송 창 띄우기 실패했습니다\n아이폰 이메일 설정을 확인해주세요", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
+            let vc = ObAlertViewController(mainMsg: "메일을 가져올 수 없습니다", subMsg: "기기의 메일 설정을 확인해주세요", heightValue: 0.22, btnTitle: "확인", isTimer: false, isMypage: true)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }

@@ -27,6 +27,10 @@ class HomeViewController: UIViewController {
         setUI()
         setGradation()
         
+        // 네트워크 감지
+        
+        
+        
         rprDdayCV?.delegate = self
         rprDdayCV?.dataSource = self
         studyLstCV?.delegate = self

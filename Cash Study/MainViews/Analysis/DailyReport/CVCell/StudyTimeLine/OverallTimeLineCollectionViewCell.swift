@@ -33,10 +33,9 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         bgView.isHidden = true
         bgView.backgroundColor = .mainNavy.withAlphaComponent(0.0)
         
-        if let collectionViewLayout = timelineCV.collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-        
+//        if let collectionViewLayout = timelineCV.collectionViewLayout as? UICollectionViewFlowLayout {
+//            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
     }
 }
 

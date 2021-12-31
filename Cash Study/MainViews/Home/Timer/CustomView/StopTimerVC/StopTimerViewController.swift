@@ -112,7 +112,7 @@ class StopTimerViewController: UIViewController {
     @objc func putRecordDone(_ noti: Notification) {
         
         if isDone {
-            let vc = ObAlertViewController(mainMsg: "이미 완료한 공부는\n결과에 반영되지 않습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false)
+            let vc = ObAlertViewController(mainMsg: "이미 완료한 공부는\n결과에 반영되지 않습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
