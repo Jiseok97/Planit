@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarAlertViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="bgView" destination="Dak-eM-0Qb" id="YRJ-9b-bh0"/>
                 <outlet property="calendarView" destination="kDR-mR-K4h" id="ymW-lA-nAu"/>
                 <outlet property="confirmBtn" destination="PGD-dT-sxp" id="feb-gZ-vrB"/>
                 <outlet property="contentView" destination="c5z-IV-Qlf" id="FFs-iY-hH4"/>

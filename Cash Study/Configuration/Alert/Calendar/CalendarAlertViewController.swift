@@ -15,6 +15,7 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var bgView: UIView!
     
     var selectedDate : String = ""
     var nomalDate : String = ""
@@ -44,6 +45,10 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         
         calendarView.delegate = self
         calendarView.dataSource = self
+        
+        // 배경 화면 클릭 시 dismiss
+        let bgViewTapped = UITapGestureRecognizer(target: self, action: #selector(bgViewTapped(_:)))
+        bgView.addGestureRecognizer(bgViewTapped)
     }
     
     
@@ -116,6 +121,11 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
             }
         }
         
+    }
+    
+    
+    @objc func bgViewTapped(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
     }
     
     
