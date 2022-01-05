@@ -27,7 +27,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     var selectedDate : String = ""
     var studyDataLst : ShowDateStudyEntity?
-    
+    var events : [Date] = []
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,7 +151,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
 
         if self.calendarView.scope == .week {
             self.calendarView.scope = .month
-            self.calendarViewHeight.constant = view.frame.height * 0.48
+            self.calendarViewHeight.constant = view.frame.height * 0.53
             self.changeScopeCalendar.setImage(UIImage(named: "upArrow"), for: .normal)
         } else {
             if UIScreen.main.bounds.height < 812 {

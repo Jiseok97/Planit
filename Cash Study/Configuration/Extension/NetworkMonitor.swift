@@ -7,8 +7,9 @@
 
 import Foundation
 import Network
+import UIKit
 
-final class NetworkMonitor{
+final class NetworkMonitor {
     static let shared = NetworkMonitor()
     
     private let queue = DispatchQueue.global()
@@ -42,7 +43,7 @@ final class NetworkMonitor{
                 print("연결이된 상태임!")
             }else{
                 print("연결 안된 상태임!")
-
+                NotificationCenter.default.post(name: NSNotification.Name("networkNotConnect"), object: nil)
             }
         }
     }

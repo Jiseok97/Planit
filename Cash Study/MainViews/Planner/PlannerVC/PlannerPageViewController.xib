@@ -63,7 +63,7 @@
                                             <color key="value" systemColor="linkColor"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="fakeEventDots" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="fakeEventDots" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
                                             <real key="value" value="0.0"/>
                                         </userDefinedRuntimeAttribute>

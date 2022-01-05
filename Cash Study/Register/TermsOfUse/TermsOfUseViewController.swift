@@ -24,7 +24,6 @@ class TermsOfUseViewController: UIViewController {
     @IBOutlet weak var thirdBtn: UIButton!
     @IBOutlet weak var fourthBtn: UIButton!
     
-    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

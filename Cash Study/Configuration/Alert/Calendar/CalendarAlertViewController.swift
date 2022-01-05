@@ -71,11 +71,13 @@ class CalendarAlertViewController: UIViewController, FSCalendarDelegate, FSCalen
         
         calendarView.appearance.headerDateFormat = "YYYY년 MM월"
         calendarView.appearance.headerTitleColor = UIColor.link
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+//        calendarView.headerHeight = 40
         calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansKR-Medium", size: 18)
         calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 14)
         calendarView.appearance.headerTitleOffset = CGPoint(x: 0, y: -12)
-        calendarView.appearance.headerMinimumDissolvedAlpha = 1.0
+//        calendarView.appearance.headerMinimumDissolvedAlpha = 1.0
         
         calendarView.appearance.titleTodayColor = UIColor(red: 220/225, green: 185/225, blue: 45/225, alpha: 1.0)
         calendarView.placeholderType = .none
