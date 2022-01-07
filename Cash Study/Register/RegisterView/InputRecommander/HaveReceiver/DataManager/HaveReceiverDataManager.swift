@@ -37,22 +37,19 @@ class HaveReceiverDataManager : UIViewController {
                     Constant.MY_REFRESH_TOKEN = refreshToken
                     
                     self.sethiddenLblImg(viewController.errorImageView, viewController.errorLbl)
-                    
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     
-                    viewController.checkUser = true
                     self.changeRootVC(BaseTabBarController())
                     
                     
                 case 404:
                     self.dismissIndicator()
-                    viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "닉네임이 존재하지 않습니다.")
 
                 case 409:
                     self.dismissIndicator()
-                    viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
+                    
                 default:
                     self.dismissIndicator()
                     print("서버 요청 형식이 잘못되었습니다.")

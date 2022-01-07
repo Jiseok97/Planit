@@ -157,13 +157,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pId-gK-tzq">
-                                    <rect key="frame" x="32" y="491" width="71.5" height="26.5"/>
+                                    <rect key="frame" x="32" y="417" width="71.5" height="26.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                     <color key="textColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqb-L7-gX9">
-                                    <rect key="frame" x="342" y="491" width="40" height="26.5"/>
+                                    <rect key="frame" x="342" y="417" width="40" height="26.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                     <color key="textColor" red="0.41960784313725491" green="0.42352941176470588" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -185,12 +185,12 @@
                                 <constraint firstItem="6lD-kR-HCR" firstAttribute="height" secondItem="xHZ-0h-P6l" secondAttribute="height" id="ZFh-mn-BEG"/>
                                 <constraint firstItem="R4L-cn-WUd" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" constant="32" id="ad9-oS-J8C"/>
                                 <constraint firstItem="aTL-aL-fiX" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" constant="24" id="bBn-Vf-mxb"/>
+                                <constraint firstItem="pId-gK-tzq" firstAttribute="top" secondItem="xHZ-0h-P6l" secondAttribute="bottom" constant="25" id="dD8-dY-vME"/>
                                 <constraint firstItem="xHZ-0h-P6l" firstAttribute="top" secondItem="CIO-tz-sFQ" secondAttribute="bottom" id="fdv-dk-94n"/>
                                 <constraint firstAttribute="trailing" secondItem="6lD-kR-HCR" secondAttribute="trailing" id="gY4-Aa-cU3"/>
                                 <constraint firstAttribute="bottom" secondItem="aTL-aL-fiX" secondAttribute="bottom" constant="40" id="onb-h0-62y"/>
                                 <constraint firstItem="R4L-cn-WUd" firstAttribute="top" secondItem="xmS-a8-P7W" secondAttribute="top" constant="30" id="pLq-99-qLm"/>
                                 <constraint firstAttribute="height" constant="750" id="rry-XD-b3b"/>
-                                <constraint firstItem="pId-gK-tzq" firstAttribute="top" secondItem="6lD-kR-HCR" secondAttribute="bottom" constant="20" id="skB-VH-2yX"/>
                                 <constraint firstItem="6lD-kR-HCR" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" id="tC5-9T-42z"/>
                                 <constraint firstItem="Sqb-L7-gX9" firstAttribute="centerY" secondItem="pId-gK-tzq" secondAttribute="centerY" id="uVC-3q-1RD"/>
                                 <constraint firstItem="CIO-tz-sFQ" firstAttribute="leading" secondItem="xmS-a8-P7W" secondAttribute="leading" id="zSe-2J-DHs"/>

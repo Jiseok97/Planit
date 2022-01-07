@@ -38,13 +38,10 @@ class noReceiverDataManager : UIViewController {
                     self.sethiddenLblImg(viewController.errorImageView, viewController.errorLbl)
                     UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
                     
-                    viewController.checkUser = true
-                    
                     self.changeRootVC(BaseTabBarController())
                     
                 case 409:
                     self.dismissIndicator()
-                    viewController.checkUser = false
                     self.setShowErrorLblImg(viewController.errorImageView, viewController.errorLbl, "이미 사용중인 이메일입니다.")
 
                 default:

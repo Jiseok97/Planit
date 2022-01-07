@@ -28,6 +28,8 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        termsOfUseView.isHidden = true
 
         setGradation()
         setUI()

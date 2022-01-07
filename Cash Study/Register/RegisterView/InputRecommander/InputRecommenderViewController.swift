@@ -22,8 +22,6 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorImageView: UIImageView!
     
     var recommander: String = ""
-    var checkUser : Bool = false
-    
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -95,7 +93,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func finishBtn(_ sender: UIButton) {
-        // 홈 이동
+        // 추천인 있는 경우
         if UserInfoData.name == "" {
             UserInfoData.name = "사용자"
         }
@@ -115,12 +113,6 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
 
         showIndicator()
         noReceiverDataManager().user(input ,viewController: self)
-
-        if checkUser {
-            changeRootVC(BaseTabBarController())
-        } else {
-            changeRootVC(LoginViewController())
-        }
     }
     
 

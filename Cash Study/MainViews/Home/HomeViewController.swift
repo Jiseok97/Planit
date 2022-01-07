@@ -29,8 +29,6 @@ class HomeViewController: UIViewController {
         
         // 네트워크 감지
         
-        
-        
         rprDdayCV?.delegate = self
         rprDdayCV?.dataSource = self
         studyLstCV?.delegate = self
