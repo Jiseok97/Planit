@@ -57,7 +57,14 @@ class DailyReportViewController: UIViewController {
         DailyReportDataManager().showDailyReport(date: df.string(from: Date()), viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
+        
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        changeHeight()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -144,12 +151,15 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
 
                     if reportDataLst?.reports.count == 1 {
                         cell.configureHeight(with: height)
+                        cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
                     } else if reportDataLst?.reports.count == 2 {
                         cell.configureHeight(with: (height * 2))
+                        cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height + height
                     } else {
                         cell.configureHeight(with: (height * 3))
+                        cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height + height * 2
                     }
-                    
+
                     cell.configure(with: reportDataLst!)
                     
                     
