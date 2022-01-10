@@ -19,14 +19,16 @@ class EditDdayDataManager : UIViewController {
                 switch code {
                 case 200:
                     self.dismissIndicator()
-                    print("편집완료")
                     viewController.checkEdit = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     Constant.DATE = ""
+                    print("편집 완료 result = \(response.value)")
                     
                 default:
                     // 커스텀 뷰 띄어주기
+                    self.dismissIndicator()
                     print("수정오류")
+                    print(response.error)
                 }
             }
     }

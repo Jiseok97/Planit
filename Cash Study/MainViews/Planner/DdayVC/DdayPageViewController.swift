@@ -196,8 +196,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "yyyy년 MM월 dd일 (E)"
         
-        let vc = AddDdayViewController(id: id, title: title, endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
-        print(icon)
+        let vc = AddDdayViewController(id: id, title: title, editEndTxt: endAtTxt ,endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

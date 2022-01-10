@@ -66,13 +66,15 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     var isEdit: Bool = false
     var titleTxt: String = ""
     var endTxt : String = ""
+    var editEndTxt : String = ""
     var iconTxt : String = ""
     var homeAddDday: Bool = false
     
-    init(id: Int, title : String, endTxt: String, iconTxt: String, isEdit: Bool, isRepresentative: Bool, homeAddDday: Bool) {
+    init(id: Int, title : String, editEndTxt: String ,endTxt: String, iconTxt: String, isEdit: Bool, isRepresentative: Bool, homeAddDday: Bool) {
         self.isEdit = isEdit
         self.dDayId = id
         self.titleTxt = title
+        self.editEndTxt = editEndTxt
         self.endTxt = endTxt
         self.iconTxt = iconTxt
         self.isRepresentative = isRepresentative
@@ -91,6 +93,8 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
 
         setUI()
+        
+        print("Constant Date = \(Constant.DATE)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -377,9 +381,16 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         var endDate = Constant.DATE
         
+        // 대표 디데이 수정시 오늘 날짜로 바뀌는 에러 코드 부분
         if endDate == "" {
-            endDate = df.string(from: Date())
+            if isEdit {
+                endDate = editEndTxt
+            } else {
+                endDate = df.string(from: Date())
+            }
         }
+        // 여기까지
+        
         
         if inputTitleTF.text?.isEmpty == true && Constant.DATE == "" {
             // 제목은 한글자 이상 적어주세요.
@@ -391,6 +402,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             if isEdit {
                 // 편집 모드
                 let input = EditDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
+                print("Edit input = \(input)")
                 showIndicator()
                 EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
             }

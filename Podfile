@@ -22,4 +22,6 @@ target 'Cash Study' do
 
   # For Animation
   pod 'lottie-ios'
+
+  
 end

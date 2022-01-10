@@ -11,15 +11,27 @@ import KakaoSDKAuth
 import IQKeyboardManagerSwift
 import AuthenticationServices
 
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+import AppCenterDistribute
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // App Center
+        AppCenter.start(withAppSecret: "5ab195b5-4aee-40bd-bae9-47e293f8070e", services:[
+          Analytics.self,
+          Crashes.self
+        ])
+        
+//        Distribute.updateTrack = .public  
+        
         // Kakao Login
         KakaoSDK.initSDK(appKey: "a76352f6670e85030076b792cbff190e")
-        
         
         window = UIWindow()
         window?.rootViewController = SplashViewController()
