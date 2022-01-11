@@ -59,11 +59,6 @@ class DailyReportViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reportDate(_:)), name: NSNotification.Name("reportDate"), object: nil)
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        changeHeight()
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -144,24 +139,8 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
                     
                 } else if indexPath.row == 1 {
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timelineCell", for: indexPath) as? OverallTimeLineCollectionViewCell else { return UICollectionViewCell() }
-                    
-//                    let height = self.view.frame.height * 0.197857142857143
-                    // AnalysisViewController를 추가할 시 이 부분의 Layout 문제 발생
-                    let height = CGFloat(128)
-
-                    if reportDataLst?.reports.count == 1 {
-                        cell.configureHeight(with: height)
-                        cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height
-                    } else if reportDataLst?.reports.count == 2 {
-                        cell.configureHeight(with: (height * 2))
-                        cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height + height
-                    } else {
-                        cell.configureHeight(with: (height * 3))
-                        cvHeight.constant = self.studyAnalysisCV.collectionViewLayout.collectionViewContentSize.height + height * 2
-                    }
 
                     cell.configure(with: reportDataLst!)
-                    
                     
                     return cell
                 } else {
@@ -209,8 +188,6 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
             return cell
         }
         
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -226,13 +203,20 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
             switch indexPath.row {
             case 0:
                 return CGSize(width: width, height: 157)
-                
+
             case 1:
-                return CGSize(width: width, height: 164)
-                
+                if reportDataLst?.reports.count == 1 {
+                    return CGSize(width: width, height: 157)
+                } else if reportDataLst?.reports.count == 2 {
+                    return CGSize(width: width, height: 216)
+                } else {
+                    return CGSize(width: width, height: 333)
+                }
+
             default:
                 return CGSize(width: width, height: 130)
             }
+            
         } else {
             return CGSize(width: width, height: 130)
         }

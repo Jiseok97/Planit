@@ -19,10 +19,6 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         timelineCV.reloadData()
     }
     
-    func configureHeight(with height: CGFloat) {
-        bgView.heightAnchor.constraint(equalToConstant: height).isActive = true
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,9 +29,9 @@ class OverallTimeLineCollectionViewCell: UICollectionViewCell {
         bgView.isHidden = true
         bgView.backgroundColor = .mainNavy.withAlphaComponent(0.0)
         
-//        if let collectionViewLayout = timelineCV.collectionViewLayout as? UICollectionViewFlowLayout {
-//            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
+        if let collectionViewLayout = timelineCV.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 class AlertViewController: UIViewController {
 
     @IBOutlet weak var alertView: UIView!
-    @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
+//    @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
     @IBOutlet weak var msgLbl: UILabel!
     @IBOutlet weak var subMsgLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -82,7 +82,7 @@ class AlertViewController: UIViewController {
         }
     }
     
-    
+    // 확인, 삭제, 구매, 멈춤 버튼
     @IBAction func confirmBtnTapped(_ sender: Any) {
         switch self.confirmBtnTxt {
         case "삭제":
@@ -120,16 +120,19 @@ class AlertViewController: UIViewController {
         
     }
     
+    // 취소 버튼
     @IBAction func cancleBtnTapped(_ sender: Any) {
-        if studyRemove {
-            // 공부 삭제 시, 홈 화면 이동
-            changeRootVC(BaseTabBarController())
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
+//        if studyRemove {
+//            // 공부 삭제 시, 홈 화면 이동
+//            changeRootVC(BaseTabBarController())
+//        } else {
+//            dismiss(animated: true, completion: nil)
+//        }
+        
+        dismiss(animated: true, completion: nil)
     }
     
-    
+    // 5분 쉬고 싶어요 버튼
     @IBAction func restBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: NSNotification.Name("ShowRestTimer"), object: nil)
