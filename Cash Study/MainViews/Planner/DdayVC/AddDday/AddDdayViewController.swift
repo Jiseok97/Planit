@@ -93,8 +93,6 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
 
         setUI()
-        
-        print("Constant Date = \(Constant.DATE)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -360,6 +358,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
+    // 대표 디데이 설정 Slider
     @IBAction func sliderTapped(_ sender: Any) {
         if checkRepresentSd.value == 0.0 {
             let vc = AlertViewController(mainMsg: "대표 디데이를 설정하시겠어요?", subMsg: "홈에 표시되는 대표 디데이는\n1개만 설정할 수 있어요", btnTitle: "확인", isTimer: false, isLogout: false, studyRemove: false, passMode: false)
@@ -373,6 +372,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
+    // 완료 버튼 클릭
     @IBAction func addDdayTapped(_ sender: Any) {
         guard let title = self.inputTitleTF.text else { return }
         
@@ -381,15 +381,14 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         var endDate = Constant.DATE
         
-        // 대표 디데이 수정시 오늘 날짜로 바뀌는 에러 코드 부분
         if endDate == "" {
             if isEdit {
+                // 편집 모드 일 때, 대표 디데이 수정 없을 시 날짜 그대로 가져오기
                 endDate = editEndTxt
             } else {
                 endDate = df.string(from: Date())
             }
         }
-        // 여기까지
         
         
         if inputTitleTF.text?.isEmpty == true && Constant.DATE == "" {
@@ -402,7 +401,6 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
             if isEdit {
                 // 편집 모드
                 let input = EditDdayInput(title: title, endAt: endDate, icon: self.icon, isRepresentative: self.isRepresentative)
-                print("Edit input = \(input)")
                 showIndicator()
                 EditDdayDataManager().editDday(id: self.dDayId, input, viewController: self)
             }

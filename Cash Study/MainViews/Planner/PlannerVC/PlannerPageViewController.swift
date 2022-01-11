@@ -231,10 +231,13 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 cell.titleLbl.text = studyDataLst?.studies[indexPath.row].title
                 cell.repeatLbl.text = "\(String(describing: startTxt!))~\(String(describing: endTxt!))"
                 
+                cell.studyId = studyDataLst!.studies[indexPath.row].studyId
+                cell.cellDelegate = self
+                
                 if studyDataLst?.studies[indexPath.row].isDone == true {
-                    cell.checkBox.image = UIImage(named: "Check")
+                    cell.checkBoxBtn.isSelected = true
                 } else {
-                    cell.checkBox.image = UIImage(named: "noCheck")
+                    cell.checkBoxBtn.isSelected = false
                 }
                 
                 return cell
