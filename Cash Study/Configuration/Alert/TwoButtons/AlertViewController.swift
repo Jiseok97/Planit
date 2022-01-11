@@ -121,10 +121,11 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func cancleBtnTapped(_ sender: Any) {
-        if isLogout || isTimer || passMode {
-            dismiss(animated: true, completion: nil)
-        } else {
+        if studyRemove {
+            // 공부 삭제 시, 홈 화면 이동
             changeRootVC(BaseTabBarController())
+        } else {
+            dismiss(animated: true, completion: nil)
         }
     }
     
