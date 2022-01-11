@@ -89,6 +89,7 @@ class RewardMainViewController: UIViewController {
         ShowUserRewardDataManager().showReward(viewController: self)
     }
     
+    // 중앙 별 클릭 시
     @objc func tappedActionLtView(_ sender: UITapGestureRecognizer) {
         self.satisfyLtView.isHidden = true
         self.actionLtView.isHidden = false
@@ -105,15 +106,24 @@ class RewardMainViewController: UIViewController {
     }
     
     
+    // 플래닛 패스 이동
     @IBAction func movePlanitPass(_ sender: Any) {
-        guard let star = rewardDataLst?.star else { return }
-        
-        let vc = PlanitPassViewController(prevPoint: star)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        guard let passCnt = rewardDataLst?.planetPass else { return }
+        if passCnt == 0 {
+            let vc = ObAlertViewController(mainMsg: "보유하고 있는\n플래닛 패스가 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        } else {
+            guard let star = rewardDataLst?.star else { return }
+            
+            let vc = PlanitPassViewController(prevPoint: star)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+        }
     }
     
     
+    // 리워드 샵 이동
     @IBAction func moveRewardShop(_ sender: Any) {
         let vc = RewardShopViewController()
         vc.modalPresentationStyle = .overFullScreen

@@ -30,8 +30,8 @@
             filePath = "Cash Study/MainViews/Reward/RewardMainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "showReward(result:)"
             landmarkType = "7">
          </BreakpointContent>
