@@ -11,6 +11,7 @@ class PlannerViewController: UIViewController {
 
     @IBOutlet weak var sgController: UISegmentedControl!
     @IBOutlet weak var plusBtn: UIButton!
+    @IBOutlet weak var plusBtnWidth: NSLayoutConstraint!
     
     let plannerVC = PlannerPageViewController()
     let dDayVC = DdayPageViewController()

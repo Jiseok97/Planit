@@ -19,7 +19,12 @@ class ChangePointDataManager: UIViewController {
                 switch code {
                 case 200:
                     self.dismissIndicator()
+                    // UI 업데이트 Observer
                     NotificationCenter.default.post(name: NSNotification.Name("reloadReward"), object: nil)
+                    // 포인트 획득 팝업 Observer
+                    guard let point = response.value?.point else { return }
+                    viewController.afterPoint = point
+                    NotificationCenter.default.post(name: NSNotification.Name("successChangeReward"), object: nil)
                     
                     print("성공")
                     

@@ -32,6 +32,9 @@ class RewardMainViewController: UIViewController {
     let bgAnimation = AnimationView(name: "bgAnimation")
     let actionAnimation = AnimationView(name: "tappedStar")
     
+    var prevPoint : Int = 0
+    var afterPoint : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,7 +64,11 @@ class RewardMainViewController: UIViewController {
         showIndicator()
         ShowUserRewardDataManager().showReward(viewController: self)
         
+        // 별 획득 후 UI Update
         NotificationCenter.default.addObserver(self, selector: #selector(reloadReward(_:)), name: NSNotification.Name("reloadReward"), object: nil)
+        
+        // 별 획득 팝업 Observer
+        NotificationCenter.default.addObserver(self, selector: #selector(successChangeReward(_:)), name: NSNotification.Name("successChangeReward"), object: nil)
         
         satisfyAnimation.play()
         bgAnimation.play()
@@ -72,6 +79,7 @@ class RewardMainViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadReward"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("successChangeReward"), object: nil)
     }
     
     
@@ -104,6 +112,15 @@ class RewardMainViewController: UIViewController {
         }
         
     }
+    
+    // 별 획득 팝업 Observer
+    @objc func successChangeReward(_ noti: Notification) {
+        let point = self.afterPoint - self.prevPoint
+        let vc = ObAlertViewController(mainMsg: "\(point)포인트를 획득하였습니다", subMsg: "", heightValue: 0.19, btnTitle: "확인", isTimer: false, isMypage: false)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
     
     
     // 플래닛 패스 이동
@@ -140,6 +157,8 @@ extension RewardMainViewController {
         self.rewardDataLst = result
         
         if self.rewardDataLst != nil {
+            self.prevPoint = result.point
+            
             let star = result.star
             let point = result.point
             let passCnt = result.planetPass

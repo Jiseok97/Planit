@@ -130,13 +130,14 @@ class PlanitPassViewController: UIViewController {
         }
     }
     
-    
+    // 플래닛 패스 교환 버튼 클릭
     @IBAction func confirmTapped(_ sender: Any) {
         showIndicator()
         UsePlanetPassDataManager().usePlanetPass(planetId: (currentIdx + 1) , viewController: self)
     }
     
     
+    // 플래닛 패스 닫기 버튼 클릭
     @IBAction func dismissTapped(_ sender: Any) {
         let vc = AlertViewController(mainMsg: "플래닛 패스를 닫으시겠습니까?", subMsg: "", btnTitle: "확인", isTimer: false, isLogout: false, studyRemove: false, passMode: true)
         vc.modalPresentationStyle = .overFullScreen

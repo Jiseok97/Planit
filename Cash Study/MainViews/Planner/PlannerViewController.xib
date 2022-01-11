@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlannerViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="plusBtn" destination="0Sv-r1-ZdJ" id="dMR-cz-rWc"/>
+                <outlet property="plusBtnWidth" destination="4Wq-BK-Gem" id="Jzk-aK-Afl"/>
                 <outlet property="sgController" destination="xd0-Q8-ix2" id="K7U-MQ-SIc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
