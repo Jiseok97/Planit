@@ -9,7 +9,8 @@ import Alamofire
 
 class ShowUserInfoDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func showUserInfo(viewController: MyPageViewController) {
         AF.request(Constant.BASE_URL + "/v1/user", method: .get, headers: header)

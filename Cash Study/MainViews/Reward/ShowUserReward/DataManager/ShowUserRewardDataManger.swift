@@ -9,7 +9,8 @@ import Alamofire
 
 class ShowUserRewardDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     // MARK: For Home ViewController
     func showReward(viewController: RewardMainViewController) {

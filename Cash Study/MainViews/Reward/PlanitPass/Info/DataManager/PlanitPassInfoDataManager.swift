@@ -8,8 +8,11 @@
 import Alamofire
 
 class PlanitPassInfoDataManager {
+    let header: HTTPHeaders = [ .accept("application/json"),
+                                .init(name: "version", value: Constant.VERSION) ]
+    
     func showPassInfo(viewController: PlanitPassViewController) {
-        AF.request(Constant.BASE_URL + "/v1/reward/planet", method: .get, headers: ["Content-type" : "application/json"])
+        AF.request(Constant.BASE_URL + "/v1/reward/planet", method: .get, headers: header)
             .validate()
             .responseDecodable(of: PlanitPassInfoEntity.self) { response in
                 let code = response.response?.statusCode

@@ -9,7 +9,8 @@ import Alamofire
 
 class EditDdayDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func editDday(id: Int, _ info: EditDdayInput ,viewController: AddDdayViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday/\(id)", method: .put, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
@@ -22,13 +23,11 @@ class EditDdayDataManager : UIViewController {
                     viewController.checkEdit = true
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     Constant.DATE = ""
-                    print("편집 완료 result = \(response.value)")
                     
                 default:
                     // 커스텀 뷰 띄어주기
                     self.dismissIndicator()
                     print("수정오류")
-                    print(response.error)
                 }
             }
     }

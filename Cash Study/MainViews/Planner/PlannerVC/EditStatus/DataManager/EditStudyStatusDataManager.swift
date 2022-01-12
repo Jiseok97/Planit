@@ -9,7 +9,8 @@ import Alamofire
 
 class EditStudyStatusDataManager: UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func editStatus(stId: Int, isDone: Bool, viewController: PlannerPageViewController) {
         AF.request(Constant.BASE_URL + "/v1/study/modify-status/\(stId)?isDone=\(isDone)", method: .patch, headers: header)

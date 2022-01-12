@@ -8,8 +8,11 @@
 import Alamofire
 
 class HaveReceiverDataManager : UIViewController {
+    let header: HTTPHeaders = [.accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION) ]
+    
     func user(_ info: HaveReceiverInput ,viewController: InputRecommenderViewController) {
-        AF.request(Constant.BASE_URL + "/v1/user", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
+        AF.request(Constant.BASE_URL + "/v1/user", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: HaveReceiverEntity.self) { response in
                 let code = response.response?.statusCode

@@ -9,7 +9,8 @@ import Alamofire
 
 class DeleteDdayDataManager {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func deleteDday(id: Int, viewController: AddDdayViewController) {
         AF.request(Constant.BASE_URL + "/v1/dday/\(id)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header)

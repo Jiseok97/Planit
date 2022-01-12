@@ -8,8 +8,11 @@
 import Alamofire
 
 class noReceiverDataManager : UIViewController {
+    let header: HTTPHeaders = ["version" : Constant.VERSION,
+                               "Content-type" : "application/json" ]
+    
     func user(_ info: noReceiverInput ,viewController: InputRecommenderViewController) {
-        AF.request(Constant.BASE_URL + "/v1/user", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
+        AF.request(Constant.BASE_URL + "/v1/user", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: noReceiverEntity.self) { response in
                 let code = response.response?.statusCode

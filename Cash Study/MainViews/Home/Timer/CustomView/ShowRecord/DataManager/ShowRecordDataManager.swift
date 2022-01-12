@@ -9,7 +9,8 @@ import Alamofire
 
 class ShowRecordDataManager {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func showRecord(stId: Int, viewController: TimerViewController) {
         AF.request(Constant.BASE_URL + "/v1/study/record/\(stId)", method: .get, encoding: JSONEncoding.default, headers: header)

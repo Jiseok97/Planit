@@ -8,8 +8,9 @@
 import Alamofire
 
 class AddStudyDataManager : UIViewController {
-     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                                .accept("application/json")]
+    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
 
      func singleStudy(_ info: SingleStudyInput, viewController : AddStudyViewController) {
          AF.request(Constant.BASE_URL + "/v1/study", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)

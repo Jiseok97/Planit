@@ -8,8 +8,11 @@
 import Alamofire
 
 class LoginDataManager : UIViewController{
+    let header: HTTPHeaders = [.accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION) ]
+    
     func userLogin(_ info: LoginInput ,viewController: LoginViewController) {
-        AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
+        AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: LoginEntity.self) { response in
                 let code = response.response?.statusCode
@@ -43,7 +46,8 @@ class LoginDataManager : UIViewController{
     }
     
     func autoLogin(_ info: LoginInput) {
-        AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"])
+        
+        AF.request(Constant.BASE_URL + "/v1/auth/login", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)
             .validate()
             .responseDecodable(of: LoginEntity.self) { response in
                 let code = response.response?.statusCode

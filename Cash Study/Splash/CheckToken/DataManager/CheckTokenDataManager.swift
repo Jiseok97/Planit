@@ -8,7 +8,8 @@
 import Alamofire
 
 class CheckTokenDataManager {
-    let header: HTTPHeaders = [.accept("application/json")]
+    let header: HTTPHeaders = [.accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func updateToken(_ info: RefreshTokenInput, viewController: LoginViewController) {
         AF.request(Constant.BASE_URL + "/v1/auth/update-token", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)

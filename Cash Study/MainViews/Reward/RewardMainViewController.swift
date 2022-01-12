@@ -32,9 +32,6 @@ class RewardMainViewController: UIViewController {
     let bgAnimation = AnimationView(name: "bgAnimation")
     let actionAnimation = AnimationView(name: "tappedStar")
     
-    var prevPoint : Int = 0
-    var afterPoint : Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -99,6 +96,7 @@ class RewardMainViewController: UIViewController {
     
     // 중앙 별 클릭 시
     @objc func tappedActionLtView(_ sender: UITapGestureRecognizer) {
+        self.actionLtView.layer.zPosition = 999
         self.satisfyLtView.isHidden = true
         self.actionLtView.isHidden = false
         self.actionLtView.isUserInteractionEnabled = false
@@ -115,8 +113,7 @@ class RewardMainViewController: UIViewController {
     
     // 별 획득 팝업 Observer
     @objc func successChangeReward(_ noti: Notification) {
-        let point = self.afterPoint - self.prevPoint
-        let vc = ObAlertViewController(mainMsg: "\(point)포인트를 획득하였습니다", subMsg: "", heightValue: 0.19, btnTitle: "확인", isTimer: false, isMypage: false)
+        let vc = ObAlertViewController(mainMsg: "5포인트를 획득하였습니다", subMsg: "", heightValue: 0.19, btnTitle: "확인", isTimer: false, isMypage: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
@@ -157,8 +154,6 @@ extension RewardMainViewController {
         self.rewardDataLst = result
         
         if self.rewardDataLst != nil {
-            self.prevPoint = result.point
-            
             let star = result.star
             let point = result.point
             let passCnt = result.planetPass

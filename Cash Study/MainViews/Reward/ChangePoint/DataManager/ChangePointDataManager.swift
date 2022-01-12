@@ -9,7 +9,8 @@ import Alamofire
 
 class ChangePointDataManager: UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func changePoint(viewController: RewardMainViewController) {
         AF.request(Constant.BASE_URL + "/v1/reward/convert-star-to-point", method: .put, headers: header)
@@ -22,8 +23,6 @@ class ChangePointDataManager: UIViewController {
                     // UI 업데이트 Observer
                     NotificationCenter.default.post(name: NSNotification.Name("reloadReward"), object: nil)
                     // 포인트 획득 팝업 Observer
-                    guard let point = response.value?.point else { return }
-                    viewController.afterPoint = point
                     NotificationCenter.default.post(name: NSNotification.Name("successChangeReward"), object: nil)
                     
                     print("성공")

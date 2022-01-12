@@ -9,7 +9,8 @@ import Alamofire
 
 class PutRecordDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func putRecord(_ info: PutRecordInput, stId: Int, viewController: StopTimerViewController) {
         AF.request(Constant.BASE_URL + "/v1/study/record/\(stId)", method: .post, parameters: info.toDictionary, encoding: JSONEncoding.default, headers: header)

@@ -9,7 +9,8 @@ import Alamofire
 
 class UsePlanetPassDataManager : UIViewController {
     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                               .accept("application/json")]
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
     
     func usePlanetPass(planetId: Int, viewController: PlanitPassViewController) {
         AF.request(Constant.BASE_URL + "/v1/reward/star-with-ad/\(planetId)", method: .post, headers: header)

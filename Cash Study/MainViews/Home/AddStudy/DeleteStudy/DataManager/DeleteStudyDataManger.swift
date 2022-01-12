@@ -8,8 +8,9 @@
 import Alamofire
 
 class DeleteStudyDataManager : UIViewController {
-     let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
-                                .accept("application/json")]
+    let header: HTTPHeaders = [.authorization(bearerToken: Constant.MY_ACCESS_TOKEN),
+                               .accept("application/json"),
+                               .init(name: "version", value: Constant.VERSION)]
 
      func deleteStudy(stGroupId: Int, viewController : AddStudyViewController) {
          AF.request(Constant.BASE_URL + "/v1/study/\(stGroupId)", method: .delete, encoding: JSONEncoding.default, headers: header)
