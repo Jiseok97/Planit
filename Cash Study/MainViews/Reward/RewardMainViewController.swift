@@ -90,13 +90,13 @@ class RewardMainViewController: UIViewController {
         self.passView.layer.cornerRadius = 8
     }
     
+    // 별 획득 후 UI 업데이트를 위한 DataManager 호출
     @objc func reloadReward(_ noti: Notification) {
         ShowUserRewardDataManager().showReward(viewController: self)
     }
     
     // 중앙 별 클릭 시
     @objc func tappedActionLtView(_ sender: UITapGestureRecognizer) {
-        self.actionLtView.layer.zPosition = 999
         self.satisfyLtView.isHidden = true
         self.actionLtView.isHidden = false
         self.actionLtView.isUserInteractionEnabled = false

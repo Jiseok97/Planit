@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lottie
 class AnalysisPageViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
@@ -23,5 +23,4 @@ class AnalysisPageViewController: UIViewController {
         contentView.layer.borderWidth = 0.8
         contentView.layer.cornerRadius = 8
     }
-
 }

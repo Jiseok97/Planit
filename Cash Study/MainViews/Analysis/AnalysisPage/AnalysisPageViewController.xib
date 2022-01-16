@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-Hg-Hjr">
-                    <rect key="frame" x="24" y="44" width="366" height="401.5"/>
+                    <rect key="frame" x="24" y="44" width="366" height="564.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터를 분석중입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr7-Le-seC">
                             <rect key="frame" x="24" y="24" width="129" height="64"/>
@@ -34,7 +34,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphicGraph" translatesAutoresizingMaskIntoConstraints="NO" id="Llj-ks-Sf3">
-                            <rect key="frame" x="24" y="245.5" width="318" height="116"/>
+                            <rect key="frame" x="24" y="408.5" width="318" height="116"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -48,7 +48,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
-                <constraint firstItem="V5b-Hg-Hjr" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.448125" id="5OY-H2-bz9"/>
+                <constraint firstItem="V5b-Hg-Hjr" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.63" id="5OY-H2-bz9"/>
                 <constraint firstItem="V5b-Hg-Hjr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="AlA-1m-xiT"/>
                 <constraint firstItem="V5b-Hg-Hjr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WcU-42-Qpg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V5b-Hg-Hjr" secondAttribute="trailing" constant="24" id="aoU-Wz-97n"/>

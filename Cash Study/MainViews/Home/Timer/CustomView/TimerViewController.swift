@@ -144,14 +144,6 @@ class TimerViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.rw += 1
             self.bn += 1
-            if self.rw % 300 == 0 {
-                self.rw *= 0
-                self.rewardCnt += 1
-            }
-            if self.bn % 3600 == 0 {
-                self.bn *= 0
-                self.bonusCnt += 1
-            }
             
             self.timeCnt += 1
             self.circleView._currentValue += 1
@@ -165,6 +157,14 @@ class TimerViewController: UIViewController {
                 self.rewardCntLbl.text = "\(self.rewardCnt)"
                 self.bonusCntLbl.text = "\(self.bonusCnt)"
                 
+                if self.rw % 300 == 0 {
+                    self.rw *= 0
+                    self.rewardCnt += 1
+                }
+                if self.bn % 3600 == 0 {
+                    self.bn *= 0
+                    self.bonusCnt += 1
+                }
             }
         })
     }

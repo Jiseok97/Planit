@@ -260,8 +260,12 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = self.view.frame.width * 0.872
-        let height = self.view.frame.height * 0.12268965517
-        return CGSize(width: width, height: height)
+        
+        if collectionView == rprDdayCV {
+            return CGSize(width: width, height: 92)
+        } else {
+            return CGSize(width: width, height: 98)
+        }
         
     }
 }
