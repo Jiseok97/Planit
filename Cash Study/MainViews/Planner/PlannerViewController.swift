@@ -13,6 +13,7 @@ class PlannerViewController: UIViewController {
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var plusBtnWidth: NSLayoutConstraint!
     
+    
     let plannerVC = PlannerPageViewController()
     let dDayVC = DdayPageViewController()
     
@@ -88,10 +89,13 @@ class PlannerViewController: UIViewController {
         case 0:
             self.plannerVC.view.isHidden = false
             self.plusBtn.setTitle(" 공부추가", for: .normal)
+            self.plusBtnWidth.constant = CGFloat(102)
             
         default:
             self.dDayVC.view.isHidden = false
             self.plusBtn.setTitle(" 디데이추가", for: .normal)
+            self.plusBtnWidth.constant = CGFloat(115)
+            
         }
     }
     

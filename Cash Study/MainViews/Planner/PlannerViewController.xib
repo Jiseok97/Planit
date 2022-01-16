@@ -16,7 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlannerViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="plusBtn" destination="0Sv-r1-ZdJ" id="dMR-cz-rWc"/>
-                <outlet property="plusBtnWidth" destination="4Wq-BK-Gem" id="Jzk-aK-Afl"/>
+                <outlet property="plusBtnWidth" destination="VEu-6c-pwv" id="BWq-SD-kSm"/>
                 <outlet property="sgController" destination="xd0-Q8-ix2" id="K7U-MQ-SIc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,8 +37,9 @@
                             </segments>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-r1-ZdJ">
-                            <rect key="frame" x="277.5" y="6" width="112.5" height="36"/>
+                            <rect key="frame" x="288" y="6" width="102" height="36"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="102" id="VEu-6c-pwv"/>
                                 <constraint firstAttribute="height" constant="36" id="alz-dY-5XU"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
@@ -64,7 +65,6 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
-                <constraint firstItem="0Sv-r1-ZdJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.272" id="4Wq-BK-Gem"/>
                 <constraint firstItem="EXl-0f-pf6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="9Q2-lD-ZhO"/>
                 <constraint firstItem="EXl-0f-pf6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CzD-kd-k1y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EXl-0f-pf6" secondAttribute="trailing" id="o3j-qW-3K6"/>

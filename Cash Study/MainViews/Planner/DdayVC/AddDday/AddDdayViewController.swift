@@ -159,13 +159,11 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         self.titleView.layer.cornerRadius = 8
         self.calendarView.layer.cornerRadius = 8
         self.representView.layer.cornerRadius = 8
-        
-        self.thirdBtn.isSelected = true
-        
-        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2 - 5
+        self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         btnCategory.forEach {
             $0.layer.cornerRadius = 8
         }
+        self.thirdBtn.isSelected = true
         
         if isEdit {
             self.titleLbl.text = "디데이 편집하기"
