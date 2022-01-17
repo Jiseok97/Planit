@@ -14,7 +14,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addStudyBtn: UIButton!
     @IBOutlet weak var studyLstCV: UICollectionView!
     @IBOutlet weak var studyLstCVHeight: NSLayoutConstraint!
+    @IBOutlet weak var studyLstCVBtConstraint: NSLayoutConstraint!
     @IBOutlet weak var rprDdayCV: UICollectionView!
+    
     
     var haveRprDday : Bool = false
     var todayStudyLst : ShowDateStudyEntity?
@@ -145,9 +147,11 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // MARK: 대표 디데이 Cell
         if collectionView == rprDdayCV {
             if representDday != nil {
                 if (representDday?.ddays.count)! >= 1 && representDday?.ddays[0].isRepresentative == true {
+                    /// 대표 디데이가 있을 때
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rprDdayCell", for: indexPath) as? HaveRprDdayCollectionViewCell else { return UICollectionViewCell() }
                     
                     let formmat = DateFormatter()
@@ -181,6 +185,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     
                     return cell
                 } else {
+                    /// 대표 디데이가 없을 때
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyDdayCell", for: indexPath) as? EmptyDdayCollectionViewCell else { return UICollectionViewCell() }
 
                     cell.layer.borderColor = UIColor.homeBorderColor.cgColor
@@ -191,6 +196,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     return cell
                 }
             } else {
+                /// 대표 디데이가 없을 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyDdayCell", for: indexPath) as? EmptyDdayCollectionViewCell else { return UICollectionViewCell() }
 
                 cell.layer.borderColor = UIColor.homeBorderColor.cgColor
@@ -202,8 +208,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
         
+        // MARK: 오늘 해야할 공부 Cell
         else {
             if todayStudyLst?.studies == nil || todayStudyLst!.studies.count == 0 {
+                /// 공부가 없을 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as? EmptyStudyCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
@@ -213,7 +221,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 return cell
                 
             } else {
-                
+                /// 공부가 있을 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
@@ -264,9 +272,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if collectionView == rprDdayCV {
             return CGSize(width: width, height: 92)
         } else {
-            return CGSize(width: width, height: 98)
+            if todayStudyLst?.studies == nil || todayStudyLst!.studies.count == 0  {
+                let height = width * 0.685015290519878
+                return CGSize(width: width, height: height)
+            } else {
+                return CGSize(width: width, height: 98)
+            }
         }
-        
     }
 }
 
@@ -323,7 +335,7 @@ extension HomeViewController {
                 }
             }
             if (representDday?.ddays.count)! >= 1 {
-                guard let data = representDday?.ddays[idx] as? dday else { return }
+                guard let data = representDday?.ddays[idx] else { return }
                 representDday?.ddays.insert(data, at: 0)
             }
         }

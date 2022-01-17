@@ -8,7 +8,7 @@
 import UIKit
 
 class EmptyStudyCollectionViewCell: UICollectionViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

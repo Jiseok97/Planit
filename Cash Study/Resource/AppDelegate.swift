@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("view Height = \(UIScreen.main.bounds.size.height)")
         // App Center
         AppCenter.start(withAppSecret: "5ab195b5-4aee-40bd-bae9-47e293f8070e", services:[
           Analytics.self,

@@ -219,4 +219,35 @@ extension UIViewController {
         lottieView.play()
     }
     
+    
+    func eachDeviceHeight() {
+        let height = UIScreen.main.bounds.size.height
+        
+        switch height {
+        case 926:
+            print("iPhone 12 Pro Max, iPhone 13 Pro Max")
+            
+        case 780:
+            print("iPhone 12 mini")
+            
+        case 844:
+            print("iPhone 12, 12 Pro, iPhone 13, 13 Pro, ")
+            
+        case 667:
+            print("iPhone 2SE, iPhone 7, iPhone 8   ")
+            
+        case 896:
+            print("iPhone 11 Pro Max, iPhone 11, iPhone Xs Max, iPhone XR")
+            
+        case 812:
+            print("iPhone 11 Pro, iPhone X, Xs, iPhone 13 mini")
+            
+        case 736:
+            print("iPHone 6+, 6+s, 7+, 8+")
+            
+        default:
+            print("제일작은 사이즈 가정( iPhone SE)")
+        }
+    }
+    
 }

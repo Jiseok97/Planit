@@ -22,6 +22,7 @@
                 <outlet property="rprDdayCV" destination="ZTr-R6-LZk" id="ucC-rh-qNf"/>
                 <outlet property="scrollView" destination="NrU-8q-1Ui" id="Jnk-8q-P3W"/>
                 <outlet property="studyLstCV" destination="mLS-r5-ApP" id="unS-Op-hv5"/>
+                <outlet property="studyLstCVBtConstraint" destination="trN-MF-Hi2" id="OC0-VG-2dL"/>
                 <outlet property="studyLstCVHeight" destination="CZo-Ic-IeA" id="JU5-gw-qgP"/>
                 <outlet property="topLbl" destination="c43-HD-Wgz" id="y77-Ap-MQL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,7 +37,7 @@
                     <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-rX-n1N">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1018"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1008"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님의 공부를 응원합니다!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c43-HD-Wgz">
                                     <rect key="frame" x="32" y="52" width="175.5" height="64"/>
@@ -96,7 +97,7 @@
                                 <constraint firstItem="ZTr-R6-LZk" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="kDL-to-yZg"/>
                                 <constraint firstItem="mLS-r5-ApP" firstAttribute="leading" secondItem="AtT-rX-n1N" secondAttribute="leading" constant="24" id="pGd-ks-Tpc"/>
                                 <constraint firstAttribute="trailing" secondItem="mLS-r5-ApP" secondAttribute="trailing" constant="24" id="pgw-Fm-e2U"/>
-                                <constraint firstAttribute="bottom" secondItem="mLS-r5-ApP" secondAttribute="bottom" constant="60" id="trN-MF-Hi2"/>
+                                <constraint firstAttribute="bottom" secondItem="mLS-r5-ApP" secondAttribute="bottom" constant="50" id="trN-MF-Hi2"/>
                             </constraints>
                         </view>
                     </subviews>
