@@ -63,14 +63,21 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             return DdayDataLst!.ddays.count
         } else {
             // 디데이가 없을 때
+            print("여기")
             return 1
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if DdayDataLst != nil {
+        if DdayDataLst == nil {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoDdayCell", for: indexPath) as? NoDdayCollectionViewCell else { return UICollectionViewCell() }
             
+            return cell
+        }
+        
+        
+        if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
             if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
                 // 대표 디데이
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
@@ -172,6 +179,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             // 디데이가 없다는 cell 출력
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoDdayCell", for: indexPath) as? NoDdayCollectionViewCell else { return UICollectionViewCell() }
             
+            cell.backgroundColor = .yellow
             return cell
         }
         
@@ -207,22 +215,21 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
         
         if DdayDataLst != nil {
             if  DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
-                
+                /// 대표 디데이
                 let height = self.view.bounds.height * 0.23510971786
+                
                 return CGSize(width: width, height: height)
-                
             } else {
-                
+                /// 일반 디데이
                 let height = self.view.bounds.height * 0.15673981191
+                
                 return CGSize(width: width, height: height)
             }
         } else {
             // 디데이가 없을 때
-            
-            return CGSize(width: self.view.bounds.width / 2 + 30, height: view.bounds.height / 2 + 50)
+            return CGSize(width: 300, height: 300)
         }
     }
-    
 }
 
 extension DdayPageViewController {
