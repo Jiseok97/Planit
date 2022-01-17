@@ -199,7 +199,7 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
         let width = self.studyAnalysisCV.frame.width
         
         if reportDataLst?.reports.count != 0 {
-            // 모두 보여질 때
+            /// 모두 보여질 때
             switch indexPath.row {
             case 0:
                 return CGSize(width: width, height: 157)
@@ -218,7 +218,8 @@ extension DailyReportViewController : UICollectionViewDelegate, UICollectionView
             }
             
         } else {
-            return CGSize(width: width, height: 130)
+            /// 아무 데이터도 없을 때
+            return CGSize(width: width, height: 116)
         }
     }
     

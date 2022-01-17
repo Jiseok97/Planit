@@ -290,15 +290,14 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
 
         let width = self.studyCV.frame.width
         if studyDataLst?.studies == nil || studyDataLst!.studies.count == 0 {
+            /// 오늘 해야할 공부가 없을 때
             let height = CGFloat(116)
             return CGSize(width: width, height: height)
         } else {
+            /// 오늘 해야할 공부가 있을 때
             let height = self.view.bounds.height * 0.1359
             return CGSize(width: width, height: height)
         }
-        
-        
-        
     }
     
 }
