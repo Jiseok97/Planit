@@ -8,11 +8,11 @@
 import Alamofire
 
 struct Constant {
-//    static let BASE_URL : String = "https://api.planit-study.com"
-//    static let VERSION : String = "0.1.0"
+    static let BASE_URL : String = "https://api.planit-study.com"
+    static let VERSION : String = "0.1.0"
     
-    static let BASE_URL : String = "https://dev-api.planit-study.com"
-    static let VERSION : String = "0.1.0.dev"
+//    static let BASE_URL : String = "https://dev-api.planit-study.com"
+//    static let VERSION : String = "0.1.0.dev"
     
     
     /// User Informaition

@@ -40,8 +40,8 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
                     let idx = text.index(text.startIndex, offsetBy: maxLength)
                     let newText = text[text.startIndex..<idx]
                     textField.text = String(newText)
+                    textField.resignFirstResponder()
                     setAbleBtn(confirmBtn)
-                    birthDate = text
                 } else {
                     setEnableBtn(confirmBtn)
                 }
@@ -90,8 +90,10 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
             let sbName = UIStoryboard(name: "SelectJob", bundle: nil)
             let sjSB = sbName.instantiateViewController(identifier: "SelectJobViewController")
             
-            let userBirthDate = birthDate.replacingOccurrences(of: "/", with: "-")
-            UserInfoData.birth = userBirthDate
+            if let birthTxt = self.birthTF.text {
+                UserInfoData.birth = birthTxt.replacingOccurrences(of: "/", with: "-")
+                print(UserInfoData.birth)
+            }
             
             self.navigationController?.pushViewController(sjSB, animated: false)
             
