@@ -9,14 +9,6 @@ import UIKit
 
 class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     
-    
-//    @IBOutlet weak var nameView: UIView!
-//    @IBOutlet weak var nameTF: UITextField! {
-//        didSet {
-//            nameTF.delegate = self
-//        }
-//    }
-    
     @IBOutlet weak var nicknameView: UIView!
     @IBOutlet weak var nicknameTF: UITextField! {
         didSet {
@@ -56,11 +48,9 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
     var userInfoData : ShowUserInfoEntity?
     
-    
-    // MARK: View Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,21 +61,9 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         ShowUserInfoDataManager().showUserInfoEditVC(viewController: self)
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: nicknameTF)
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: nicknameTF)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -93,10 +71,8 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    // MARK: Functions
-    
+    // MARK: - Custom method
     func setUI() {
-//        self.nameView.layer.cornerRadius = 11
         self.nicknameView.layer.cornerRadius = 11
         
         self.categoryBtns.forEach {
@@ -112,18 +88,19 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
             sethiddenLblImg(self.nicknameErrorImgView, self.nicknameErrorLbl)
             setAbleBtn(self.confirmBtn)
         }
-        
         setEnableBtn(confirmBtn)
-        
     }
     
-    @objc private func textLengthLimit(_ noti: Notification) {
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         let maxLength : Int = 8
-        if let textField = noti.object as? UITextField {
+        if let textField = self.nicknameTF {
             if let text = textField.text {
                 if text.count > maxLength {
                     setShowErrorLblImg(nicknameErrorImgView, nicknameErrorLbl, "닉네임은 8글자 이내로 입력해주세요.")
                     setEnableBtn(confirmBtn)
+                } else if text.count == 0 {
+                    self.nicknameErrorLbl.isHidden = true
                 } else {
                     guard let userNickName = self.nicknameTF.text else { return }
                     guard let userPreNickName = self.userInfoData?.nickname else { return }
@@ -136,7 +113,7 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    /// 텍스트 필드 특수문자 및 공백 제한
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let utf8Char = string.cString(using: .utf8)
         let isBackSpace = strcmp(utf8Char, "\\b")
@@ -146,20 +123,14 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    
+    /// 텍스트필드 Return Type
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if textField == nameTF {
-//            nicknameTF.becomeFirstResponder()
-//        } else {
-//            textField.resignFirstResponder()
-//        }
         textField.resignFirstResponder()
         return true
     }
     
-    
+    /// 직업 버튼 눌렀을 때 → 선택(값 저장 & API 호출), 해제(값 날림)
     @IBAction func selectCategoryBtns(_ sender: UIButton) {
-        
         switch sender {
         case firstBtn:
             self.firstBtnClicked = changeBoolValue(buttonChecked: firstBtnClicked)
@@ -295,6 +266,8 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /// 확인 버튼 활성화 조건(1)
+    /// 버튼이 한개라도 눌려있는지
     func setAbleConfirmBtn() {
         if firstBtnClicked || secondBtnClicked || thirdBtnClicked || fourthBtnClicked || fifthBtnClicked || sixthBtnClicked || seventhBtnClicked || eighthBtnClicked {
             checkConfirmBtn(check: true)
@@ -303,13 +276,9 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// 확인 버튼 활성화 조건(2)
+    /// 위 조건 + 닉네임 중복 및 오류가 없는지
     func checkConfirmBtn(check: Bool) {
-//        if self.nameTF.text?.isEmpty == false && checkUserNickName == true && check == true {
-//            setAbleBtn(confirmBtn)
-//        } else {
-//            setEnableBtn(confirmBtn)
-//        }
-        
         if checkUserNickName == true && check == true {
             setAbleBtn(confirmBtn)
         } else {
@@ -317,7 +286,7 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    /// 확인 버튼 눌렀을 때
     @IBAction func confirmBtnTapped(_ sender: Any) {
 //        guard let name = self.nameTF.text else { return }
         guard let name = userInfoData?.name else { return }
@@ -328,8 +297,7 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
-    
+    /// 뒤로가기
     @IBAction func dismissBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -342,10 +310,8 @@ extension EditUserInfoViewController {
         self.dismissIndicator()
         self.userInfoData = result
         if userInfoData != nil {
-//            guard let userName = userInfoData?.name else { return }
             guard let userNickName = userInfoData?.nickname else { return }
             guard let userJob = userInfoData?.category else { return }
-//            self.nameTF.text = userName
             self.nicknameTF.text = userNickName
             
             switch userJob {

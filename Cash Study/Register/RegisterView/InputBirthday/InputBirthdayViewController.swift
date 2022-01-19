@@ -21,41 +21,18 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     
     var birthDate : String = ""
     
-    // MARK: View Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: birthTF)
-    }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: birthTF)
-    }
-    
-    
-    // MARK: Functions
-    @objc private func textLengthLimit(_ noti: Notification) {
-//        let maxLength: Int = 9
-//        if let textField = noti.object as? UITextField {
-//            if let text = textField.text {
-//                if text.count >= maxLength {
-//                    let idx = text.index(text.startIndex, offsetBy: maxLength)
-//                    let newText = text[text.startIndex..<idx]
-//                    textField.text = String(newText)
-//                    setAbleBtn(confirmBtn)
-//                    birthDate = text
-//                } else {
-//                    setEnableBtn(confirmBtn)
-//                }
-//            }
-//        }
-    }
-    
+    // MARK: - Custom method
+    /// Use AnyFormatKit
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        /// 글자 수 제한
         let maxLength: Int = 9
         if let textField = self.birthTF {
             if let text = textField.text {
@@ -71,20 +48,19 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        /// 텍스트 사이사이 ' / ' 추가 → AnyFormatKit
         guard let text = textField.text else {
             return false
         }
-        
-        let characterSet = CharacterSet(charactersIn: string)
-        if CharacterSet.decimalDigits.isSuperset(of: characterSet) == false {
-            return false
-        }
-
         let formatter = DefaultTextInputFormatter(textPattern: "####/##/##")
         let result = formatter.formatInput(currentText: text, range: range, replacementString: string)
         textField.text = result.formattedText
-        let position = textField.position(from: textField.beginningOfDocument, offset: result.caretBeginOffset)!
-        textField.selectedTextRange = textField.textRange(from: position, to: position)
+        
+        /// 텍스트 필드가 비어있을 때 → 버튼 비활성화
+        if textField.text == "" {
+            setEnableBtn(confirmBtn)
+        }
+        
         return false
     }
     

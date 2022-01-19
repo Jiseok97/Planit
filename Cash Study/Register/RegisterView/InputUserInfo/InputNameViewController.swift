@@ -21,7 +21,15 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     
     var nameEmpty: Bool = true
     var checkUserNickName : Bool = false
-    
+    {
+        didSet {
+            if checkUserNickName {
+                setAbleBtn(nextBtn)
+            } else {
+                setEnableBtn(nextBtn)
+            }
+        }
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -79,7 +87,7 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func editChange(_ sender: UITextField) {
-        tfIsEmpty(sender, nextBtn)
+        setEnableBtn(nextBtn)
     }
     
     
