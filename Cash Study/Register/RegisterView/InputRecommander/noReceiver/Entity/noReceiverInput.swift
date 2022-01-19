@@ -14,6 +14,7 @@ struct noReceiverInput {
     var category: String
     var personalInformationAgree : Bool
     var marketingInformationAgree : Bool
+    var device: String
     
     var toDictionary : [ String: Any] {
         let dict : [String: Any] = [
@@ -24,7 +25,8 @@ struct noReceiverInput {
             "birth" : self.birth,
             "category" : self.category,
             "personalInformationAgree" : self.personalInformationAgree,
-            "marketingInformationAgree" : self.marketingInformationAgree
+            "marketingInformationAgree" : self.marketingInformationAgree,
+            "device" : self.device
         ]
         
         return dict

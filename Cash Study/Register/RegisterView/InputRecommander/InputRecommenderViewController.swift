@@ -97,7 +97,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         if UserInfoData.name == "" {
             UserInfoData.name = "사용자"
         }
-        let input =  HaveReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, receiverNickname: recommander)
+        let input =  HaveReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, receiverNickname: recommander, device: UserInfoData.device)
         
         showIndicator()
         HaveReceiverDataManager().user(input ,viewController: self)
@@ -109,7 +109,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         if UserInfoData.name == "" {
             UserInfoData.name = "사용자"
         }
-        let input =  noReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree)
+        let input =  noReceiverInput(email: UserInfoData.email, name: UserInfoData.name, nickname: UserInfoData.nickname, sex: UserInfoData.sex, birth: UserInfoData.birth, category: UserInfoData.category, personalInformationAgree: UserInfoData.personalInformationAgree, marketingInformationAgree: UserInfoData.marketingInformationAgree, device: UserInfoData.device)
 
         showIndicator()
         noReceiverDataManager().user(input ,viewController: self)

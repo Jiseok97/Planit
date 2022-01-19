@@ -15,6 +15,7 @@ struct HaveReceiverInput {
     var personalInformationAgree : Bool
     var marketingInformationAgree : Bool
     var receiverNickname : String
+    var device : String
     
     var toDictionary : [ String: Any] {
         
@@ -27,7 +28,8 @@ struct HaveReceiverInput {
             "category" : self.category,
             "personalInformationAgree" : self.personalInformationAgree,
             "marketingInformationAgree" : self.marketingInformationAgree,
-            "receiverNickname" : self.receiverNickname
+            "receiverNickname" : self.receiverNickname,
+            "device" : self.device
         ]
         
         return dict

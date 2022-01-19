@@ -23,5 +23,7 @@ target 'Cash Study' do
   # For Animation
   pod 'lottie-ios'
 
+  # For TextField
+  pod 'AnyFormatKit'
   
 end

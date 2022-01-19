@@ -18,7 +18,8 @@ class SplashViewController: UIViewController {
         super.viewDidAppear(animated)
     
         usleep(2700000)
-        changeRootVC(LoginViewController())
+//        changeRootVC(LoginViewController())
+        changeRootVC(TermsOfUseViewController())
     }
 
 }

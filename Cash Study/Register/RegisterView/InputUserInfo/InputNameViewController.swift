@@ -23,28 +23,23 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
     var checkUserNickName : Bool = false
     
     
-    // MARK: View Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: nickNameTF)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: nickNameTF)
-    }
-    
-    @objc private func textLengthLimit(_ noti: Notification) {
+    // MARK: - Custom method
+    func textFieldDidEndEditing(_ textField: UITextField) {
         let maxLength : Int = 8
-        if let textField = noti.object as? UITextField {
+        if let textField = self.nickNameTF {
             if let text = textField.text {
                 if text.count > maxLength {
                     setShowErrorLblImg(nickNameError, nickNameErrorLbl, "닉네임은 8글자 이내로 입력해주세요.")
                     setEnableBtn(nextBtn)
+                } else if text.count == 0 {
+                    self.nickNameErrorLbl.isHidden = true
                 } else {
                     guard let userNickName = self.nickNameTF.text else { return }
                     let input = nickNameInput(nickname: userNickName)
@@ -55,8 +50,6 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    // MAKR: Functions
     func setUI() {
         self.nickNameTF.setPlaceHolderColor(UIColor.placeHolderColor)
         self.nickNameView.layer.cornerRadius = 11
@@ -85,12 +78,9 @@ class InputNameViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    
     @IBAction func editChange(_ sender: UITextField) {
         tfIsEmpty(sender, nextBtn)
     }
-    
-    
     
     
     // MARK: 성별 선택 뷰 이동

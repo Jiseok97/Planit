@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AnyFormatKit
 
 class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
     
@@ -35,9 +36,28 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: birthTF)
     }
     
+    
+    // MARK: Functions
     @objc private func textLengthLimit(_ noti: Notification) {
-        let maxLength : Int = 10
-        if let textField = noti.object as? UITextField {
+//        let maxLength: Int = 9
+//        if let textField = noti.object as? UITextField {
+//            if let text = textField.text {
+//                if text.count >= maxLength {
+//                    let idx = text.index(text.startIndex, offsetBy: maxLength)
+//                    let newText = text[text.startIndex..<idx]
+//                    textField.text = String(newText)
+//                    setAbleBtn(confirmBtn)
+//                    birthDate = text
+//                } else {
+//                    setEnableBtn(confirmBtn)
+//                }
+//            }
+//        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength: Int = 9
+        if let textField = self.birthTF {
             if let text = textField.text {
                 if text.count >= maxLength {
                     let idx = text.index(text.startIndex, offsetBy: maxLength)
@@ -48,17 +68,24 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     setEnableBtn(confirmBtn)
                 }
-                
-                switch text.count{
-                    case 4:
-                        textField.text = text + "/"
-                    case 7:
-                        textField.text = text + "/"
-                    default:
-                        return
-                }
             }
         }
+        
+        guard let text = textField.text else {
+            return false
+        }
+        
+        let characterSet = CharacterSet(charactersIn: string)
+        if CharacterSet.decimalDigits.isSuperset(of: characterSet) == false {
+            return false
+        }
+
+        let formatter = DefaultTextInputFormatter(textPattern: "####/##/##")
+        let result = formatter.formatInput(currentText: text, range: range, replacementString: string)
+        textField.text = result.formattedText
+        let position = textField.position(from: textField.beginningOfDocument, offset: result.caretBeginOffset)!
+        textField.selectedTextRange = textField.textRange(from: position, to: position)
+        return false
     }
     
     
@@ -67,7 +94,6 @@ class InputBirthdayViewController: UIViewController, UITextFieldDelegate {
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         self.birthTF.setPlaceHolderColor(UIColor.placeHolderColor)
         swipeRecognizer()
-        
         setEnableBtn(confirmBtn)
     }
     

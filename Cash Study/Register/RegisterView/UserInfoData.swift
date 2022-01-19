@@ -14,4 +14,5 @@ struct UserInfoData {
     static var category : String = ""
     static var personalInformationAgree : Bool = false
     static var marketingInformationAgree : Bool = false
+    static var device : String = "IOS"
 }
