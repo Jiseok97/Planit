@@ -42,6 +42,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewardMainBg" translatesAutoresizingMaskIntoConstraints="NO" id="oGp-HM-J42">
+                    <rect key="frame" x="19.5" y="81.5" width="375" height="812"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-a9-J9z">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </view>
@@ -176,10 +179,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
+                <constraint firstItem="oGp-HM-J42" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1sW-ql-Ebd"/>
                 <constraint firstItem="6TT-hU-8as" firstAttribute="centerY" secondItem="1sh-sd-QVr" secondAttribute="centerY" id="2ZP-9d-M0s"/>
                 <constraint firstItem="Chk-a9-J9z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3vJ-LX-nZN"/>
                 <constraint firstItem="qby-x1-C8Q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4Fc-ds-iMG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YX1-LQ-NNQ" secondAttribute="trailing" constant="24" id="4ZD-AN-p8X"/>
+                <constraint firstItem="oGp-HM-J42" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.088" id="5kz-za-fST"/>
                 <constraint firstItem="qcK-yC-Cth" firstAttribute="centerY" secondItem="BCM-LI-xvl" secondAttribute="centerY" id="6cX-Mh-LqW"/>
                 <constraint firstItem="YX1-LQ-NNQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="7AA-eo-L7A"/>
                 <constraint firstItem="W5W-RD-NLL" firstAttribute="width" secondItem="qby-x1-C8Q" secondAttribute="width" id="8bX-uk-K7U"/>
@@ -218,6 +223,7 @@
     <resources>
         <image name="noTapImg" width="34" height="34"/>
         <image name="passImg" width="24" height="24"/>
+        <image name="rewardMainBg" width="375" height="812"/>
         <image name="rewardPage" width="54" height="19"/>
         <image name="rewardPoint" width="20" height="20"/>
         <image name="rewardStar" width="220" height="220"/>

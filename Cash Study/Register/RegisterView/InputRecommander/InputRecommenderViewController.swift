@@ -48,7 +48,6 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
                     recommander = text
                     setAbleBtn(confirmBtn)
                 }
-                
                 if text.count > maxLength {
                     setShowErrorLblImg(errorImageView, errorLbl, "닉네임 형식이 올바르지 않습니다.")
                     setEnableBtn(confirmBtn)
