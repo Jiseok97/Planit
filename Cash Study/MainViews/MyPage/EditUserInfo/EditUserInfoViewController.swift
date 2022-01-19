@@ -17,7 +17,6 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
 //        }
 //    }
     
-    
     @IBOutlet weak var nicknameView: UIView!
     @IBOutlet weak var nicknameTF: UITextField! {
         didSet {
@@ -36,8 +35,6 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sixthBtn: UIButton!
     @IBOutlet weak var seventhBtn: UIButton!
     @IBOutlet weak var eighthBtn: UIButton!
-    
-    
     @IBOutlet weak var confirmBtn: UIButton!
     
     
@@ -81,8 +78,8 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(textLengthLimit(_:)), name: UITextField.textDidChangeNotification, object: nicknameTF)
-        
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -347,9 +344,147 @@ extension EditUserInfoViewController {
         if userInfoData != nil {
 //            guard let userName = userInfoData?.name else { return }
             guard let userNickName = userInfoData?.nickname else { return }
-            
+            guard let userJob = userInfoData?.category else { return }
 //            self.nameTF.text = userName
             self.nicknameTF.text = userNickName
+            
+            switch userJob {
+            case "ELEMENTARY_SCHOOL":
+                /// 초등학생
+                self.firstBtnClicked = changeBoolValue(buttonChecked: firstBtnClicked)
+                setBtnColor(firstBtn, firstBtnClicked)
+                setElseBtnColor(secondBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+                
+                self.secondBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fourthBtnClicked = false
+                self.fifthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.seventhBtnClicked = false
+                self.eighthBtnClicked = false
+
+                setAbleConfirmBtn()
+                userCategory = "ELEMENTARY_SCHOOL"
+                
+            case "MIDDLE_SCHOOL":
+                /// 중학생
+                self.secondBtnClicked = changeBoolValue(buttonChecked: secondBtnClicked)
+                setBtnColor(secondBtn, secondBtnClicked)
+                setElseBtnColor(firstBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+                
+                self.firstBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fourthBtnClicked = false
+                self.fifthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.seventhBtnClicked = false
+                self.eighthBtnClicked = false
+
+                setAbleConfirmBtn()
+                userCategory = "ELEMENTARY_SCHOOL"
+                
+            case "HIGH_SCHOOL":
+                /// 고등학생
+                self.thirdBtnClicked = changeBoolValue(buttonChecked: thirdBtnClicked)
+                setBtnColor(thirdBtn, thirdBtnClicked)
+                setElseBtnColor(firstBtn, secondBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+                
+                self.firstBtnClicked = false
+                self.secondBtnClicked = false
+                self.fourthBtnClicked = false
+                self.fifthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.seventhBtnClicked = false
+                self.eighthBtnClicked = false
+                
+                setAbleConfirmBtn()
+                userCategory = "HIGH_SCHOOL"
+                
+            case "NTH_EXAM":
+                /// N수생
+                self.fourthBtnClicked = changeBoolValue(buttonChecked: fourthBtnClicked)
+                setBtnColor(fourthBtn, fourthBtnClicked)
+                setElseBtnColor(firstBtn, secondBtn, thirdBtn, fifthBtn, sixthBtn, seventhBtn, eighthBtn)
+                
+                self.firstBtnClicked = false
+                self.secondBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fifthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.seventhBtnClicked = false
+                self.eighthBtnClicked = false
+
+                setAbleConfirmBtn()
+                userCategory = "NNTH_EXAM"
+                
+            case "UNIVERSITY":
+                /// 대학생
+                self.fifthBtnClicked = changeBoolValue(buttonChecked: fifthBtnClicked)
+                setBtnColor(fifthBtn, fifthBtnClicked)
+                setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, sixthBtn, seventhBtn, eighthBtn)
+                
+                self.firstBtnClicked = false
+                self.secondBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fourthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.seventhBtnClicked = false
+                self.eighthBtnClicked = false
+
+                setAbleConfirmBtn()
+                userCategory = "UNIVERSITY"
+                
+            case "EXAM_PREP":
+                /// 고시생
+                self.sixthBtnClicked = changeBoolValue(buttonChecked: sixthBtnClicked)
+                setBtnColor(sixthBtn, sixthBtnClicked)
+                setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, fifthBtn, seventhBtn, eighthBtn)
+                
+                self.firstBtnClicked = false
+                self.secondBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fourthBtnClicked = false
+                self.fifthBtnClicked = false
+                self.seventhBtnClicked = false
+                self.eighthBtnClicked = false
+
+                setAbleConfirmBtn()
+                userCategory = "EXAM_PREP"
+                
+            case "JOB_PREP":
+                /// 취업준비생
+                self.seventhBtnClicked = changeBoolValue(buttonChecked: seventhBtnClicked)
+                setBtnColor(seventhBtn, seventhBtnClicked)
+                setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, eighthBtn)
+                
+                self.firstBtnClicked = false
+                self.secondBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fourthBtnClicked = false
+                self.fifthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.eighthBtnClicked = false
+                
+                setAbleConfirmBtn()
+                userCategory = "JOB_PREP"
+                
+            default:
+                /// 직장인
+                self.eighthBtnClicked = changeBoolValue(buttonChecked: eighthBtnClicked)
+                setBtnColor(eighthBtn, eighthBtnClicked)
+                setElseBtnColor(firstBtn, secondBtn, thirdBtn, fourthBtn, fifthBtn, sixthBtn, seventhBtn)
+                
+                self.firstBtnClicked = false
+                self.secondBtnClicked = false
+                self.thirdBtnClicked = false
+                self.fourthBtnClicked = false
+                self.fifthBtnClicked = false
+                self.sixthBtnClicked = false
+                self.seventhBtnClicked = false
+                
+                setAbleConfirmBtn()
+                userCategory = "WORKER"
+            }
         }
         
     }
