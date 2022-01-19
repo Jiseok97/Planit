@@ -63,7 +63,6 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             return DdayDataLst!.ddays.count
         } else {
             // 디데이가 없을 때
-            print("여기")
             return 1
         }
     }

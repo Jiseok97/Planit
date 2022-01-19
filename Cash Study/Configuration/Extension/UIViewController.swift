@@ -234,7 +234,7 @@ extension UIViewController {
             print("iPhone 12, 12 Pro, iPhone 13, 13 Pro, ")
             
         case 667:
-            print("iPhone 2SE, iPhone 7, iPhone 8   ")
+            print("iPhone 2SE, iPhone 7, iPhone 8")
             
         case 896:
             print("iPhone 11 Pro Max, iPhone 11, iPhone Xs Max, iPhone XR")

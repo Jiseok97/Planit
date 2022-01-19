@@ -22,6 +22,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RewardMainViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
                 <outlet property="actionLtView" destination="W5W-RD-NLL" id="xum-KB-TEG"/>
+                <outlet property="descriptionLbl" destination="RTC-rK-8i6" id="rkQ-6Y-g4Y"/>
                 <outlet property="lottieBgView" destination="Chk-a9-J9z" id="eXS-ZB-FFp"/>
                 <outlet property="myPointLbl" destination="DGg-FB-AhD" id="ilD-7L-2Qo"/>
                 <outlet property="passBgImgView" destination="ZqS-4k-QVr" id="fqf-nN-1MG"/>

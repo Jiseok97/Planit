@@ -20,6 +20,7 @@ class RewardMainViewController: UIViewController {
     
     @IBOutlet weak var starLbl: UILabel!
     @IBOutlet weak var starCntLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
     
     @IBOutlet weak var passView: UIView!
     @IBOutlet weak var myPointLbl: UILabel!
@@ -159,6 +160,7 @@ extension RewardMainViewController {
             let passCnt = result.planetPass
             
             if star >= 50 {
+                self.descriptionLbl.text = "별을 탭하고\n포인트를 받으세요"
                 self.starLbl.textColor = .remainDdayColor
                 self.starCntLbl.textColor = .remainDdayColor
                 
@@ -168,6 +170,7 @@ extension RewardMainViewController {
                 self.satisfyLtView.isHidden = false
                 
             } else {
+                self.descriptionLbl.text = "별을 더 모아\n포인트를 받으세요"
                 self.starLbl.textColor = .placeHolderColor
                 self.starCntLbl.textColor = .placeHolderColor
 
