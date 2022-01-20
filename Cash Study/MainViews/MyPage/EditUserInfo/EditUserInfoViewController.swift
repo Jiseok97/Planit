@@ -42,13 +42,19 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     var eighthBtnClicked: Bool = false
     
     var userCategory : String = ""
-    var checkUserNickName: Bool = true
+    var checkUserNickName: Bool = true {
+        didSet {
+            setAbleConfirmBtn()
+        }
+    }
+    
     var isSuccess: Bool = false {
         didSet {
             self.navigationController?.popViewController(animated: true)
         }
     }
     var userInfoData : ShowUserInfoEntity?
+    var userPrevNickname: String = ""
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -64,6 +70,13 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nicknameTF)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: nicknameTF)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -91,6 +104,10 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
         setEnableBtn(confirmBtn)
     }
     
+    @objc private func textDidChange(_ notification: Notification) {
+        setEnableBtn(confirmBtn)
+        self.nicknameErrorLbl.isHidden = true
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         let maxLength : Int = 8
@@ -103,10 +120,9 @@ class EditUserInfoViewController: UIViewController, UITextFieldDelegate {
                     self.nicknameErrorLbl.isHidden = true
                 } else {
                     guard let userNickName = self.nicknameTF.text else { return }
-                    guard let userPreNickName = self.userInfoData?.nickname else { return }
                     sethiddenLblImg(nicknameErrorImgView, nicknameErrorLbl)
                     
-                    let input = EditnicknameInput(nickname: userNickName, previousNickname: userPreNickName)
+                    let input = EditnicknameInput(nickname: userNickName, previousNickname: userPrevNickname)
                     NickNameDataManager().validateEditNickName(input, viewController: self)
                 }
             }
@@ -312,6 +328,7 @@ extension EditUserInfoViewController {
         if userInfoData != nil {
             guard let userNickName = userInfoData?.nickname else { return }
             guard let userJob = userInfoData?.category else { return }
+            self.userPrevNickname = userNickName
             self.nicknameTF.text = userNickName
             
             switch userJob {

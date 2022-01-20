@@ -23,6 +23,7 @@ class EditUserInfoDataManager : UIViewController {
                     self.dismissIndicator()
                     viewController.isSuccess = true
                     NotificationCenter.default.post(name: NSNotification.Name("EditUserInfo"), object: nil)
+                    print("유저 정보 변경 성공")
                     
                 default:
                     self.dismissIndicator()

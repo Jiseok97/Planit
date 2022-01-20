@@ -171,6 +171,7 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     
     
+    /// 유저 정보 변경 VC 이동
     @IBAction func editUserInfo(_ sender: Any) {
         let sbName = UIStoryboard(name: "EditUserInfo", bundle: nil)
         let ibSB = sbName.instantiateViewController(identifier: "EditUserInfoViewController")
@@ -178,7 +179,7 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.navigationController?.pushViewController(ibSB, animated: true)
     }
     
-    
+    /// 로그아웃
     @IBAction func logoutBtn(_ sender: Any) {
         let vc = AlertViewController(mainMsg: "로그아웃 하시겠습니까?", subMsg: "", btnTitle: "확인", isTimer: false, isLogout: true, studyRemove: false, passMode: false)
         vc.modalPresentationStyle = .overFullScreen
