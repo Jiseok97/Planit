@@ -13,12 +13,10 @@ class PlannerViewController: UIViewController {
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var plusBtnWidth: NSLayoutConstraint!
     
-    
     let plannerVC = PlannerPageViewController()
     let dDayVC = DdayPageViewController()
     
-    
-    // MARK: View Life Cycle
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,10 +29,17 @@ class PlannerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(moveSGIdx(_:)), name: NSNotification.Name("moveSGIdx"), object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("moveSGIdx"), object: nil)
+    }
     
-    // MARK: Functions
+    // MARK: - Custom Method
     func setUI() {
         self.plusBtn.layer.borderColor = UIColor.myGray.cgColor
         self.plusBtn.layer.borderWidth = 1
@@ -42,6 +47,13 @@ class PlannerViewController: UIViewController {
     }
     
     
+    /// 홈에서 대표 디데이 없을 시 이동하는 Observer
+    @objc func moveSGIdx(_ noti: Notification) {
+        print(sgController.selectedSegmentIndex)
+    }
+    
+    
+    /// Segment Control UI 및 이벤트 함수 대입
     func setSGControl() {
         self.sgController.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSansKR-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.sgNomalColor], for: .normal)
 
@@ -53,7 +65,7 @@ class PlannerViewController: UIViewController {
   
     }
     
-    
+    /// Segment Control Add View
     func setUp() {
         addChild(plannerVC)
         addChild(dDayVC)
@@ -79,8 +91,7 @@ class PlannerViewController: UIViewController {
     }
     
     
-    
-    
+    /// Segment Control 클릭 이벤트
     @objc func indexChanged(_ sender: UISegmentedControl) {
         self.plannerVC.view.isHidden = true
         self.dDayVC.view.isHidden = true
@@ -99,6 +110,7 @@ class PlannerViewController: UIViewController {
         }
     }
     
+    /// 공부 추가 || 디데이 추가 이동
     @IBAction func moveAddpage(_ sender: UIButton) {
         if sgController.selectedSegmentIndex == 0 {
             let vc = AddStudyViewController(stGrId: 0, stSchId: 0, title: "", startAtTxt: "", endAtTxt: "", isEdit: false, isRepeat: false)

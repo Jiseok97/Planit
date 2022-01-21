@@ -109,6 +109,7 @@ class HomeViewController: UIViewController {
 }
 
 
+// MARK: - Collection View
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func changeHeight() {
@@ -127,9 +128,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
         } else {
             if representDday == nil || (representDday?.ddays.count)! <= 0 || representDday?.ddays[0].isRepresentative == false {
-                let vc = AddDdayViewController(id: 0, title: "", editEndTxt: "" ,endTxt: "", iconTxt: "", isEdit: false, isRepresentative: false, homeAddDday: true)
-                vc.modalPresentationStyle = .overFullScreen
-                present(vc, animated: true)
+                /// 디데이 메인으로 이동
+                /// 탭바 Index 바꾸기
+                self.tabBarController?.selectedIndex = 1
             }
         }
     }
@@ -282,7 +283,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-
+// MARK: - Get Data
 extension HomeViewController {
     func homeStudy(result : ShowDateStudyEntity) {
         dismissIndicator()
