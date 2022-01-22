@@ -15,6 +15,8 @@ struct Constant {
     static let VERSION : String = "0.1.0.dev"
     
     
+    static var VC_MOVE : Int = 0
+    
     /// User Informaition
     static var MY_ID : Int = 0
     static var MY_EMAIL : String = ""

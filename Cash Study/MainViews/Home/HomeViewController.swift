@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol plannerDelegate {
+    func changeSgIdx()
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var topLbl: UILabel!
@@ -130,6 +134,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             if representDday == nil || (representDday?.ddays.count)! <= 0 || representDday?.ddays[0].isRepresentative == false {
                 /// 디데이 메인으로 이동
                 /// 탭바 Index 바꾸기
+                Constant.VC_MOVE += 1
                 self.tabBarController?.selectedIndex = 1
             }
         }

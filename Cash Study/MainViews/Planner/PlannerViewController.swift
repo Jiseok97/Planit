@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlannerViewController: UIViewController {
+class PlannerViewController: UIViewController, plannerDelegate {
 
     @IBOutlet weak var sgController: UISegmentedControl!
     @IBOutlet weak var plusBtn: UIButton!
@@ -15,6 +15,8 @@ class PlannerViewController: UIViewController {
     
     let plannerVC = PlannerPageViewController()
     let dDayVC = DdayPageViewController()
+    
+    var delegate = plannerDelegate?.self
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -30,13 +32,16 @@ class PlannerViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(moveSGIdx(_:)), name: NSNotification.Name("moveSGIdx"), object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        /// 프로토콜 대입
+        if Constant.VC_MOVE == 1 {
+            self.sgController.selectedSegmentIndex = 1
+            self.plannerVC.view.isHidden = true
+            self.dDayVC.view.isHidden = false
+            self.plusBtn.setTitle(" 디데이추가", for: .normal)
+            self.plusBtnWidth.constant = CGFloat(115)
+            Constant.VC_MOVE -= 1
+        }
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("moveSGIdx"), object: nil)
     }
     
     // MARK: - Custom Method
@@ -46,10 +51,8 @@ class PlannerViewController: UIViewController {
         self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2
     }
     
-    
-    /// 홈에서 대표 디데이 없을 시 이동하는 Observer
-    @objc func moveSGIdx(_ noti: Notification) {
-        print(sgController.selectedSegmentIndex)
+    func changeSgIdx() {
+        self.sgController.selectedSegmentIndex = 1
     }
     
     
@@ -84,8 +87,6 @@ class PlannerViewController: UIViewController {
             plannerVC.view.frame = CGRect(x: 0, y: 120, width: self.view.bounds.width, height: self.view.bounds.height - 104)
             dDayVC.view.frame = CGRect(x: 0, y: 120, width: self.view.bounds.width, height: self.view.bounds.height - 104)
         }
-        
-        
         plannerVC.view.isHidden = false
         dDayVC.view.isHidden = true
     }
