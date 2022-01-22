@@ -17,7 +17,6 @@ class DdayPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setGradation()
         dDayCV.delegate = self
         dDayCV.dataSource = self
         
@@ -25,11 +24,6 @@ class DdayPageViewController: UIViewController {
         dDayCV.register(UINib(nibName: "DdayListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DdayCell")
         dDayCV.register(UINib(nibName: "RepresentativeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RepresentativeCell")
         dDayCV.register(UINib(nibName: "NoDdayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NoDdayCell")
-        
-        if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-        
         dDayCV.contentInset.bottom = 60
     }
     
@@ -59,24 +53,21 @@ class DdayPageViewController: UIViewController {
 extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if DdayDataLst != nil {
+        if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
             return DdayDataLst!.ddays.count
         } else {
-            // 디데이가 없을 때
+            /// 디데이가 없을 때
             return 1
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if DdayDataLst == nil {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoDdayCell", for: indexPath) as? NoDdayCollectionViewCell else { return UICollectionViewCell() }
-            
-            return cell
-        }
-        
-        
         if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
+            /// 레이아웃(컬렉션 뷰)
+            if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
+                collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            }
+            
             if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
                 // 대표 디데이
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
@@ -127,58 +118,57 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
             } else {
                 // 일반 디데이
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DdayCell", for: indexPath) as? DdayListCollectionViewCell else { return UICollectionViewCell() }
-                
+
                 let formmat = DateFormatter()
                 formmat.dateFormat = "yyyy-MM-dd"
-                
+
                 let endAt = formmat.date(from: (DdayDataLst?.ddays[indexPath.row].endAt)!)
                 let dDay = (endAt?.timeIntervalSince(Date()))!
                 var intDay : Int = 0
-                
+
                 if dDay >= 0 {
                     intDay = Int(ceil((dDay + 32400) / 86400))
                 } else {
                     intDay = Int((dDay + 32400) / 86400)
                 }
-                
+
                 if intDay > 0 {
                     cell.dDayLbl.text = "D-" + String(describing: (intDay))
                 } else {
                     cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
                 }
-                
+
                 cell.layer.cornerRadius = 8
                 cell.backgroundColor = UIColor.studyCellBgColor
-                
+
                 switch DdayDataLst?.ddays[indexPath.row].icon {
-                    
+
                 case "PLANET" :
                     cell.iconImgView.image = UIImage(named: "Planet")
-                    
+
                 case "PLANET_WITH_RINGS":
                     cell.iconImgView.image = UIImage(named: "PlanetRing")
-                    
+
                 case "STAR":
                     cell.iconImgView.image = UIImage(named: "Star")
-                    
+
                 case "FLAME":
                     cell.iconImgView.image = UIImage(named: "Flame")
-                    
+
                 default:
                     cell.iconImgView.image = UIImage(named: "Ufo")
                 }
-                
+
                 cell.dDayName.text = DdayDataLst?.ddays[indexPath.row].title
                 cell.timeLbl.text = DdayDataLst?.ddays[indexPath.row].endAt
-                
+
                 return cell
             }
             
         } else {
             // 디데이가 없다는 cell 출력
+            collectionView.isScrollEnabled = false
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoDdayCell", for: indexPath) as? NoDdayCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.backgroundColor = .yellow
             return cell
         }
         
@@ -187,46 +177,47 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Dday 편집하기 기능
-        guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
-        guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
-        guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
-        guard let endAtTxt = DdayDataLst?.ddays[indexPath.row].endAt else { return }
-        guard let icon = DdayDataLst?.ddays[indexPath.row].icon else { return }
-        
-        let date = DateFormatter()
-        date.locale = Locale(identifier: "ko_KR")
-        date.dateFormat = "yyyy-MM-dd"
-        
-        guard let endDateText = date.date(from: endAtTxt) else { return }
-        
-        let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "yyyy년 MM월 dd일 (E)"
-        
-        let vc = AddDdayViewController(id: id, title: title, editEndTxt: endAtTxt ,endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
+            if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
+                guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
+                guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
+                guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
+                guard let endAtTxt = DdayDataLst?.ddays[indexPath.row].endAt else { return }
+                guard let icon = DdayDataLst?.ddays[indexPath.row].icon else { return }
+                
+                let date = DateFormatter()
+                date.locale = Locale(identifier: "ko_KR")
+                date.dateFormat = "yyyy-MM-dd"
+                
+                guard let endDateText = date.date(from: endAtTxt) else { return }
+                
+                let df = DateFormatter()
+                df.locale = Locale(identifier: "ko_KR")
+                df.dateFormat = "yyyy년 MM월 dd일 (E)"
+                
+                let vc = AddDdayViewController(id: id, title: title, editEndTxt: endAtTxt ,endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
+                vc.modalPresentationStyle = .overFullScreen
+                present(vc, animated: true)
+            }
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.bounds.width * 0.872
         
-        if DdayDataLst != nil {
+        if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
             if  DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
                 /// 대표 디데이
-                let height = self.view.bounds.height * 0.23510971786
-                
-                return CGSize(width: width, height: height)
+                return CGSize(width: width, height: 150)
             } else {
                 /// 일반 디데이
-                let height = self.view.bounds.height * 0.15673981191
-                
-                return CGSize(width: width, height: height)
+                return CGSize(width: width, height: 100)
             }
         } else {
-            // 디데이가 없을 때
-            return CGSize(width: 300, height: 300)
+            /// 디데이가 없을 때
+            let height = UIScreen.main.bounds.height - collectionView.frame.height / 2
+            return CGSize(width: width, height: height)
         }
     }
 }

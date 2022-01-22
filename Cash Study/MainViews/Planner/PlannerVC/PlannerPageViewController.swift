@@ -32,7 +32,6 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setGradation()
         setCalendar()
         setUI()
         
