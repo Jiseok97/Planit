@@ -64,7 +64,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
             /// 레이아웃(컬렉션 뷰)
-            /// estimatedItemSize → Index 오류
+            /// estimatedItemSize → Index 오류, 왜 오류가 나는지 알아보기
 //            if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
 //                collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 //            }
@@ -74,45 +74,7 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RepresentativeCell", for: indexPath) as? RepresentativeCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
-                
-                let formmat = DateFormatter()
-                formmat.dateFormat = "yyyy-MM-dd"
-                
-                let endAt = formmat.date(from: (DdayDataLst?.ddays[indexPath.row].endAt)!)
-                let dDay = (endAt?.timeIntervalSince(Date()))!
-                var intDay : Int = 0
-                
-                if dDay >= 0 {
-                    intDay = Int(ceil((dDay + 32400) / 86400))
-                } else {
-                    intDay = Int((dDay + 32400) / 86400)
-                }
-                
-                if intDay > 0 {
-                    cell.dDayLbl.text = "D-" + String(describing: (intDay))
-                } else {
-                    cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
-                }
-                
-                switch DdayDataLst?.ddays[indexPath.row].icon {
-                case "PLANET" :
-                    cell.iconImgView.image = UIImage(named: "Planet")
-                    
-                case "PLANET_WITH_RINGS":
-                    cell.iconImgView.image = UIImage(named: "PlanetRing")
-                    
-                case "STAR":
-                    cell.iconImgView.image = UIImage(named: "Star")
-                    
-                case "FLAME":
-                    cell.iconImgView.image = UIImage(named: "Flame")
-                    
-                default:
-                    cell.iconImgView.image = UIImage(named: "Ufo")
-                }
-                
-                cell.dDayNameLbl.text = DdayDataLst?.ddays[indexPath.row].title
-                cell.timeLbl.text = DdayDataLst?.ddays[indexPath.row].endAt
+                cell.configure(with: DdayDataLst!, idx: indexPath.row)
                 
                 return cell
                 
@@ -120,49 +82,10 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
                 // 일반 디데이
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DdayCell", for: indexPath) as? DdayListCollectionViewCell else { return UICollectionViewCell() }
 
-                let formmat = DateFormatter()
-                formmat.dateFormat = "yyyy-MM-dd"
-
-                let endAt = formmat.date(from: (DdayDataLst?.ddays[indexPath.row].endAt)!)
-                let dDay = (endAt?.timeIntervalSince(Date()))!
-                var intDay : Int = 0
-
-                if dDay >= 0 {
-                    intDay = Int(ceil((dDay + 32400) / 86400))
-                } else {
-                    intDay = Int((dDay + 32400) / 86400)
-                }
-
-                if intDay > 0 {
-                    cell.dDayLbl.text = "D-" + String(describing: (intDay))
-                } else {
-                    cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
-                }
-
                 cell.layer.cornerRadius = 8
                 cell.backgroundColor = UIColor.studyCellBgColor
-
-                switch DdayDataLst?.ddays[indexPath.row].icon {
-
-                case "PLANET" :
-                    cell.iconImgView.image = UIImage(named: "Planet")
-
-                case "PLANET_WITH_RINGS":
-                    cell.iconImgView.image = UIImage(named: "PlanetRing")
-
-                case "STAR":
-                    cell.iconImgView.image = UIImage(named: "Star")
-
-                case "FLAME":
-                    cell.iconImgView.image = UIImage(named: "Flame")
-
-                default:
-                    cell.iconImgView.image = UIImage(named: "Ufo")
-                }
-
-                cell.dDayName.text = DdayDataLst?.ddays[indexPath.row].title
-                cell.timeLbl.text = DdayDataLst?.ddays[indexPath.row].endAt
-
+                cell.configure(with: DdayDataLst!, idx: indexPath.row)
+                
                 return cell
             }
             
@@ -179,27 +102,25 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Dday 편집하기 기능
         if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
-            if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
-                guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
-                guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
-                guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
-                guard let endAtTxt = DdayDataLst?.ddays[indexPath.row].endAt else { return }
-                guard let icon = DdayDataLst?.ddays[indexPath.row].icon else { return }
-                
-                let date = DateFormatter()
-                date.locale = Locale(identifier: "ko_KR")
-                date.dateFormat = "yyyy-MM-dd"
-                
-                guard let endDateText = date.date(from: endAtTxt) else { return }
-                
-                let df = DateFormatter()
-                df.locale = Locale(identifier: "ko_KR")
-                df.dateFormat = "yyyy년 MM월 dd일 (E)"
-                
-                let vc = AddDdayViewController(id: id, title: title, editEndTxt: endAtTxt ,endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
-                vc.modalPresentationStyle = .overFullScreen
-                present(vc, animated: true)
-            }
+            guard let id = DdayDataLst?.ddays[indexPath.row].id else { return }
+            guard let title = DdayDataLst?.ddays[indexPath.row].title else { return }
+            guard let isRepresent = DdayDataLst?.ddays[indexPath.row].isRepresentative else { return }
+            guard let endAtTxt = DdayDataLst?.ddays[indexPath.row].endAt else { return }
+            guard let icon = DdayDataLst?.ddays[indexPath.row].icon else { return }
+            
+            let date = DateFormatter()
+            date.locale = Locale(identifier: "ko_KR")
+            date.dateFormat = "yyyy-MM-dd"
+            
+            guard let endDateText = date.date(from: endAtTxt) else { return }
+            
+            let df = DateFormatter()
+            df.locale = Locale(identifier: "ko_KR")
+            df.dateFormat = "yyyy년 MM월 dd일 (E)"
+            
+            let vc = AddDdayViewController(id: id, title: title, editEndTxt: endAtTxt ,endTxt: df.string(from: endDateText), iconTxt: icon, isEdit: true, isRepresentative: isRepresent, homeAddDday: false)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
         }
     }
     

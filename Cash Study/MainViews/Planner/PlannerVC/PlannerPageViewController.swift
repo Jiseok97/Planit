@@ -202,6 +202,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if studyDataLst?.studies != nil && studyDataLst!.studies.count != 0 {
             if studyDataLst?.studies[indexPath.row].repeatedDays == nil {
+                /// 반복 공부가 아닐 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCell", for: indexPath) as? StudyCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
@@ -219,6 +220,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 
                 return cell
             } else {
+                /// 반복 공부 일 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repeatStudyCell", for: indexPath) as? RepeatStudyCollectionViewCell else { return UICollectionViewCell() }
                 
                 cell.layer.cornerRadius = 8
@@ -242,7 +244,7 @@ extension PlannerPageViewController : UICollectionViewDelegate, UICollectionView
                 return cell
             }
         } else {
-            
+            /// 공부 계획이 없을 때
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noStudyCell", for: indexPath) as? NoStudyCollectionViewCell else { return UICollectionViewCell() }
             
             cell.layer.borderColor = UIColor.homeBorderColor.cgColor
