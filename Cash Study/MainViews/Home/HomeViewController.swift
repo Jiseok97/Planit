@@ -154,32 +154,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     /// 대표 디데이가 있을 때
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rprDdayCell", for: indexPath) as? HaveRprDdayCollectionViewCell else { return UICollectionViewCell() }
                     
-                    let formmat = DateFormatter()
-                    formmat.dateFormat = "yyyy-MM-dd"
-
-                    let endAt = formmat.date(from: (representDday?.ddays[indexPath.row].endAt)!)
-                    let dDay = (endAt?.timeIntervalSince(Date()))!
-                    var intDay : Int = 0
-                    if dDay >= 0 {
-                        intDay = Int(ceil((dDay + 32400) / 86400))
-                    } else {
-                        intDay = Int((dDay + 32400) / 86400)
-                    }
-
-                    if intDay > 0 {
-                        cell.dDayLbl.text = "D-" + String(describing: (intDay))
-                        cell.representImgView.isHidden = true
-                        cell.dDayLbl.isHidden = false
-                    } else if intDay == 0 {
-                        cell.dDayLbl.isHidden = true
-                        cell.representImgView.isHidden = false
-                    } else {
-                        cell.dDayLbl.text = "D+" + String(describing: (intDay * -1))
-                        cell.representImgView.isHidden = true
-                        cell.dDayLbl.isHidden = false
-                    }
-//                    let endAt = String(describing: representDday?.ddays[indexPath.row].endAt)
-//                    cell.configure(with: endAt)
+                    let endAt = String(describing: (representDday?.ddays[indexPath.row].endAt)!)
+                    cell.configure(with: endAt)
+                    
                     cell.layer.cornerRadius = 8
                     cell.titleLbl.text = representDday?.ddays[indexPath.row].title
                     
