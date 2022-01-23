@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlannerViewController: UIViewController, plannerDelegate {
+class PlannerViewController: UIViewController {
 
     @IBOutlet weak var sgController: UISegmentedControl!
     @IBOutlet weak var plusBtn: UIButton!
@@ -15,8 +15,6 @@ class PlannerViewController: UIViewController, plannerDelegate {
     
     let plannerVC = PlannerPageViewController()
     let dDayVC = DdayPageViewController()
-    
-    var delegate = plannerDelegate?.self
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -32,14 +30,12 @@ class PlannerViewController: UIViewController, plannerDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        /// 프로토콜 대입
-        if Constant.VC_MOVE == 1 {
+        /// Home에서 대표 디데이 설정 누를 시 디데이 메인 뷰 표시
+        if Constant.VC_MOVE {
             self.sgController.selectedSegmentIndex = 1
             self.plannerVC.view.isHidden = true
-            self.dDayVC.view.isHidden = false
-            self.plusBtn.setTitle(" 디데이추가", for: .normal)
-            self.plusBtnWidth.constant = CGFloat(115)
-            Constant.VC_MOVE -= 1
+            setupDdayVC()
+            Constant.VC_MOVE = false
         }
         
     }
@@ -50,11 +46,6 @@ class PlannerViewController: UIViewController, plannerDelegate {
         self.plusBtn.layer.borderWidth = 1
         self.plusBtn.layer.cornerRadius = plusBtn.frame.height / 2
     }
-    
-    func changeSgIdx() {
-        self.sgController.selectedSegmentIndex = 1
-    }
-    
     
     /// Segment Control UI 및 이벤트 함수 대입
     func setSGControl() {
@@ -96,19 +87,24 @@ class PlannerViewController: UIViewController, plannerDelegate {
     @objc func indexChanged(_ sender: UISegmentedControl) {
         self.plannerVC.view.isHidden = true
         self.dDayVC.view.isHidden = true
-        
         switch self.sgController.selectedSegmentIndex {
         case 0:
-            self.plannerVC.view.isHidden = false
-            self.plusBtn.setTitle(" 공부추가", for: .normal)
-            self.plusBtnWidth.constant = CGFloat(102)
-            
+            setupPlannerVC()
         default:
-            self.dDayVC.view.isHidden = false
-            self.plusBtn.setTitle(" 디데이추가", for: .normal)
-            self.plusBtnWidth.constant = CGFloat(115)
-            
+            setupDdayVC()
         }
+    }
+    
+    /// PlannerVC && Dday VC 셋팅
+    private func setupPlannerVC() {
+        self.plannerVC.view.isHidden = false
+        self.plusBtn.setTitle(" 공부추가", for: .normal)
+        self.plusBtnWidth.constant = CGFloat(102)
+    }
+    private func setupDdayVC() {
+        self.dDayVC.view.isHidden = false
+        self.plusBtn.setTitle(" 디데이추가", for: .normal)
+        self.plusBtnWidth.constant = CGFloat(115)
     }
     
     /// 공부 추가 || 디데이 추가 이동

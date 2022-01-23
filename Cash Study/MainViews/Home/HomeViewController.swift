@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol plannerDelegate {
-    func changeSgIdx()
-}
-
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var topLbl: UILabel!
@@ -26,14 +22,12 @@ class HomeViewController: UIViewController {
     var todayStudyLst : ShowDateStudyEntity?
     var representDday : ShowDdayEntity?
     
-    // MARK: View Life Cycle
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
         setGradation()
-        
-        // 네트워크 감지
         
         rprDdayCV?.delegate = self
         rprDdayCV?.dataSource = self
@@ -85,7 +79,7 @@ class HomeViewController: UIViewController {
     }
     
     
-    // MARK: Functions
+    // MARK: - Custom Method
     func setUI() {
         addStudyBtn.layer.borderColor = UIColor.myGray.cgColor
         addStudyBtn.layer.borderWidth = 1
@@ -134,7 +128,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             if representDday == nil || (representDday?.ddays.count)! <= 0 || representDday?.ddays[0].isRepresentative == false {
                 /// 디데이 메인으로 이동
                 /// 탭바 Index 바꾸기
-                Constant.VC_MOVE += 1
+                Constant.VC_MOVE = true
                 self.tabBarController?.selectedIndex = 1
             }
         }
