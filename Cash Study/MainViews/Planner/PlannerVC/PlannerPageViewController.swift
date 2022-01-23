@@ -27,7 +27,7 @@ class PlannerPageViewController: UIViewController, FSCalendarDelegate, FSCalenda
     
     var selectedDate : String = ""
     var studyDataLst : ShowDateStudyEntity?
-    var events : [Date] = []
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

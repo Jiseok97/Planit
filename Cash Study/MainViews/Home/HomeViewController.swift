@@ -178,10 +178,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                         cell.representImgView.isHidden = true
                         cell.dDayLbl.isHidden = false
                     }
-                    
+//                    let endAt = String(describing: representDday?.ddays[indexPath.row].endAt)
+//                    cell.configure(with: endAt)
                     cell.layer.cornerRadius = 8
                     cell.titleLbl.text = representDday?.ddays[indexPath.row].title
-                    
                     
                     return cell
                 } else {

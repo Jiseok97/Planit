@@ -53,7 +53,7 @@ class DdayPageViewController: UIViewController {
 extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
+        if DdayDataLst != nil {
             return DdayDataLst!.ddays.count
         } else {
             /// 디데이가 없을 때
@@ -64,9 +64,10 @@ extension DdayPageViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if DdayDataLst != nil && DdayDataLst!.ddays.count != 0 {
             /// 레이아웃(컬렉션 뷰)
-            if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
-                collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            }
+            /// estimatedItemSize → Index 오류
+//            if let collectionViewLayout = dDayCV.collectionViewLayout as? UICollectionViewFlowLayout {
+//                collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//            }
             
             if DdayDataLst?.ddays[indexPath.row].isRepresentative == true {
                 // 대표 디데이

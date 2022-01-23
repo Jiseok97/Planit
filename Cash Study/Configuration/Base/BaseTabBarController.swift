@@ -12,7 +12,6 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
     let homeViewController = HomeViewController()
     let plannerViewController = PlannerViewController()
     let analysisViewController = AnalysisViewController()
-//    let analysisViewController = DailyReportViewController()
     let mypageViewController = MyPageViewController()
     let rewardViewController = RewardMainViewController()
     
@@ -21,13 +20,6 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
     let rewardTabBarItem = UITabBarItem(title: "리워드", image: UIImage(named: "rewardTab"), tag: 2)
     let analysisTabBarItem = UITabBarItem(title: "분석", image: UIImage(named: "analysisTab"), tag: 3)
     let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 4)
-    
-//    let homeTabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "homeTab"), tag: 0)
-//    let plannerTabBarItem = UITabBarItem(title: "플래너", image: UIImage(named: "plannerTab"), tag: 1)
-//    let analysisTabBarItem = UITabBarItem(title: "분석", image: UIImage(named: "analysisTab"), tag: 2)
-//    let mypageTabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myTab"), tag: 3)
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +43,6 @@ class BaseTabBarController : UITabBarController, UITabBarControllerDelegate {
         mypageVC.tabBarItem.selectedImage = UIImage(named: "myTabS")
         
         self.viewControllers = [homeVC, plannerVC, rewardVC, analysisVC, mypageVC]
-//        self.viewControllers = [homeVC, plannerVC, analysisVC, mypageVC]
-        
         
         self.delegate = self
         self.tabBar.tintColor = UIColor.white

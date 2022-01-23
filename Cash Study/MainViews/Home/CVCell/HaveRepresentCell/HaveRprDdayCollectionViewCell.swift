@@ -18,11 +18,43 @@ class HaveRprDdayCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setUICell()
+    }
+    
+    private func setUICell() {
         displayDdayView.layer.cornerRadius = 8
         representImgView.isHidden = true
         dDayLbl.layer.zPosition = 999
         representImgView.layer.zPosition = 1
-
     }
+    
+//    public func configure(with date : String) {
+//        let formmat = DateFormatter()
+//        formmat.dateFormat = "yyyy-MM-dd"
+//
+//        let endAt = formmat.date(from: date)
+//        let dDay = (endAt?.timeIntervalSince(Date()))!
+//
+//        var intDay: Int = 0
+//
+//        if dDay >= 0 {
+//            intDay = Int(ceil((dDay + 32400) / 86400))
+//        } else {
+//            intDay = Int((dDay + 32400) / 86400)
+//        }
+//
+//        if intDay > 0 {
+//            self.dDayLbl.text = "D-" + String(describing: (intDay))
+//            self.representImgView.isHidden = true
+//            self.dDayLbl.isHidden = false
+//        } else if intDay == 0 {
+//            self.dDayLbl.isHidden = true
+//            self.representImgView.isHidden = false
+//        } else {
+//            self.dDayLbl.text = "D+" + String(describing: (intDay * -1))
+//            self.representImgView.isHidden = true
+//            self.dDayLbl.isHidden = false
+//        }
+//    }
     
 }
