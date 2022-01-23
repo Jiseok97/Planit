@@ -201,41 +201,16 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 /// 공부가 있을 때
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "haveCell", for: indexPath) as? HaveStudyCollectionViewCell else { return UICollectionViewCell() }
                 
-                cell.layer.cornerRadius = 8
-                cell.backgroundColor = UIColor.studyCellBgColor
+                let recordedTime = todayStudyLst!.studies[indexPath.row].recordedTime
+                let restCnt = todayStudyLst!.studies[indexPath.row].rest
                 
+                /// Cell Configure
+                cell.configure(recordedTime: recordedTime, restCnt: restCnt)
                 cell.nameLbl.text = todayStudyLst?.studies[indexPath.row].title
                 
-                if todayStudyLst?.studies[indexPath.row].recordedTime != 0 {
-                    let time = todayStudyLst?.studies[indexPath.row].recordedTime
-                    let hour = time! / 3600
-                    let min = (time! / 60) % 60
-                    let sec = time! % 60
-                    
-                    if time! < 60 {
-                        let timeTxt = "\(sec)초"
-                        let restCnt = todayStudyLst?.studies[indexPath.row].rest
-                        let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
-                        cell.subLbl.text = changeText
-                        
-                    } else if time! >= 60 && time! < 3600 {
-                        let timeTxt = "\(min)분 \(sec)초"
-                        let restCnt = todayStudyLst?.studies[indexPath.row].rest
-                        let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
-                        cell.subLbl.text = changeText
-                        
-                    } else {
-                        let timeTxt = "\(hour)시간 \(min)분 \(sec)초"
-                        let restCnt = todayStudyLst?.studies[indexPath.row].rest
-                        let changeText = "측정시간 \(timeTxt) • 휴식횟수 \(String(describing: restCnt!))회"
-                        cell.subLbl.text = changeText
-                    }
-                    
-                    cell.subLbl.textColor = UIColor.link
-                } else {
-                    cell.subLbl.textColor = UIColor.cancleAlertColor
-                    cell.subLbl.text = "측정된 공부시간이 없습니다"
-                }
+                /// Cell UI
+                cell.layer.cornerRadius = 8
+                cell.backgroundColor = UIColor.studyCellBgColor
                 
                 return cell
             }
