@@ -1,41 +1,41 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.5.0)
   - AnyFormatKit (2.5.1)
   - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.9)
-  - KakaoSDK (2.8.3):
-    - KakaoSDKAuth (= 2.8.3)
-    - KakaoSDKCommon (= 2.8.3)
-    - KakaoSDKLink (= 2.8.3)
-    - KakaoSDKNavi (= 2.8.3)
-    - KakaoSDKStory (= 2.8.3)
-    - KakaoSDKTalk (= 2.8.3)
-    - KakaoSDKTemplate (= 2.8.3)
-    - KakaoSDKUser (= 2.8.3)
-  - KakaoSDKAuth (2.8.3):
-    - KakaoSDKCommon (= 2.8.3)
-  - KakaoSDKCommon (2.8.3):
-    - KakaoSDKCommon/Common (= 2.8.3)
-    - KakaoSDKCommon/Network (= 2.8.3)
-  - KakaoSDKCommon/Common (2.8.3)
-  - KakaoSDKCommon/Network (2.8.3):
+  - KakaoSDK (2.8.5):
+    - KakaoSDKAuth (= 2.8.5)
+    - KakaoSDKCommon (= 2.8.5)
+    - KakaoSDKLink (= 2.8.5)
+    - KakaoSDKNavi (= 2.8.5)
+    - KakaoSDKStory (= 2.8.5)
+    - KakaoSDKTalk (= 2.8.5)
+    - KakaoSDKTemplate (= 2.8.5)
+    - KakaoSDKUser (= 2.8.5)
+  - KakaoSDKAuth (2.8.5):
+    - KakaoSDKCommon (= 2.8.5)
+  - KakaoSDKCommon (2.8.5):
+    - KakaoSDKCommon/Common (= 2.8.5)
+    - KakaoSDKCommon/Network (= 2.8.5)
+  - KakaoSDKCommon/Common (2.8.5)
+  - KakaoSDKCommon/Network (2.8.5):
     - Alamofire (~> 5.1)
-    - KakaoSDKCommon/Common (= 2.8.3)
-  - KakaoSDKLink (2.8.3):
-    - KakaoSDKCommon (= 2.8.3)
-    - KakaoSDKTemplate (= 2.8.3)
-  - KakaoSDKNavi (2.8.3):
-    - KakaoSDKCommon/Common (= 2.8.3)
-  - KakaoSDKStory (2.8.3):
-    - KakaoSDKUser (= 2.8.3)
-  - KakaoSDKTalk (2.8.3):
-    - KakaoSDKTemplate (= 2.8.3)
-    - KakaoSDKUser (= 2.8.3)
-  - KakaoSDKTemplate (2.8.3):
-    - KakaoSDKCommon/Common (= 2.8.3)
-  - KakaoSDKUser (2.8.3):
-    - KakaoSDKAuth (= 2.8.3)
-  - lottie-ios (3.2.3)
+    - KakaoSDKCommon/Common (= 2.8.5)
+  - KakaoSDKLink (2.8.5):
+    - KakaoSDKCommon (= 2.8.5)
+    - KakaoSDKTemplate (= 2.8.5)
+  - KakaoSDKNavi (2.8.5):
+    - KakaoSDKCommon/Common (= 2.8.5)
+  - KakaoSDKStory (2.8.5):
+    - KakaoSDKUser (= 2.8.5)
+  - KakaoSDKTalk (2.8.5):
+    - KakaoSDKTemplate (= 2.8.5)
+    - KakaoSDKUser (= 2.8.5)
+  - KakaoSDKTemplate (2.8.5):
+    - KakaoSDKCommon/Common (= 2.8.5)
+  - KakaoSDKUser (2.8.5):
+    - KakaoSDKAuth (= 2.8.5)
+  - lottie-ios (3.3.0)
   - MSCircularSlider (1.3.2)
 
 DEPENDENCIES:
@@ -66,20 +66,20 @@ SPEC REPOS:
     - MSCircularSlider
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   AnyFormatKit: 4ef60ad3f48c69962d482bb2de0a6d3214e8527b
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
-  KakaoSDK: 7511c6121a9934bd7cf0257ad5963a843f8c37de
-  KakaoSDKAuth: 36597989cec6dd54707c2fc6501091bb9e32e3f0
-  KakaoSDKCommon: b86ad0c899b93eaf0edb94c6deb5f0dbf7116398
-  KakaoSDKLink: 6bf7c20aeafac56d2b863023b1e1ace2b36dbc87
-  KakaoSDKNavi: 0971686e7183fe5a8d219c628b3548496f400fbc
-  KakaoSDKStory: 53dea855b389afa6c23893f5ff072c4cca1790f7
-  KakaoSDKTalk: 91f51840c2324b56593f980c78d6b8354f836330
-  KakaoSDKTemplate: 0526fe52476228ec0061912e20e50955466ca873
-  KakaoSDKUser: 7debff9ff539b095aa4858469163fed7e3bce73e
-  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  KakaoSDK: f634244173eccab9198766e5f974c605095f80e8
+  KakaoSDKAuth: a9033bd3fbbb9a8c74dcd0dbd7705f7a2bc50ff1
+  KakaoSDKCommon: b98d08cf838effdc9b82aca7dee3e50c048880ca
+  KakaoSDKLink: 0c93cf5ad2bf73c4e2cb8db5820cd71a9c97feb8
+  KakaoSDKNavi: 278b8e8435fe964bd525d683b35313257b2890a7
+  KakaoSDKStory: 65793d1dd46e01bed461a8cb453c13dbd4bc8721
+  KakaoSDKTalk: 782952e48f8343db5ff3be434cd4b9fd5fed1b1d
+  KakaoSDKTemplate: 903808a8e0bfcae8f00f8561c3e8cb9eef5ed7e6
+  KakaoSDKUser: a76667bb06c1d5072178eea5cee4ac9fdba94679
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
 
 PODFILE CHECKSUM: b85ff21fffc6b5ece6bf58c8443a86e46ea3f59a

@@ -21,9 +21,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>appcenter-5ab195b5-4aee-40bd-bae9-47e293f8070e</string>
+				<string>kakaoa76352f6670e85030076b792cbff190e</string>
 			</array>
 		</dict>
 	</array>

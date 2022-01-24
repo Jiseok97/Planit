@@ -10,7 +10,8 @@ struct LoginInput {
     
     var toDictionary : [ String: Any] {
         let dict : [String: Any] = [
-            "email" : self.email
+            "email" : self.email,
+            "device": "IOS"
         ]
         return dict
     }

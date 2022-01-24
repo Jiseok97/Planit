@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Kakao auto login
+        /// Kakao auto login
         if(AuthApi.hasToken()) {
             UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {
@@ -69,20 +69,22 @@ class LoginViewController: UIViewController {
         appleLoginView.layer.cornerRadius = 6
     }
     
-    // MARK: About Kakao Login
+    // MARK: - Kakao Login
     @IBAction func kakaoBtnTapped(_ sender: Any) {
         if (UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {( oauthToken, error) in
+            
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
                     print("KakaoTalk Login error → \(error)")
                 } else {
                     print("Success kakaoTalk Login")
                     _ = oauthToken
-
                     self.getUserInfo()
                     print("GetUserInfo")
                 }
             }
+            
+            
         } else {
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
