@@ -97,7 +97,7 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         controller.dismiss(animated: true, completion: nil)
     }
     
-    /// 문의하기
+    /// 문의하기 클릭
     @objc func questionTapped(_ sender: UITapGestureRecognizer) {
         guard let versionNumber = self.versionLbl.text else { return }
         if MFMailComposeViewController.canSendMail() {
@@ -139,23 +139,8 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     // MARK: 이용약관 이동
     @objc func termsTapped(_ sender: UITapGestureRecognizer) {
-        /// 우 → 좌 애니메이션
-//        UIView.animate(withDuration: 0.2, animations: {
-//            let transition = CATransition()
-//            transition.duration = 0.5
-//            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-//            transition.type = CATransitionType.reveal
-//            transition.subtype = CATransitionSubtype.fromRight
-//            self.view.window!.layer.add(transition, forKey: nil)
-//            let vc = TouViewController()
-//            vc.modalPresentationStyle = .overFullScreen
-//            self.present(vc, animated: true)
-//        })
-        
         let vc = TouViewController()
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

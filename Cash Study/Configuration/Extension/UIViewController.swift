@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import PDFKit
 
 extension UIViewController {
     
@@ -123,7 +124,7 @@ extension UIViewController {
     }
     
     
-    
+    // MARK: - 버튼 UI 및 상태 제어
     func setEnableBtn(_ btn: UIButton) {
         btn.backgroundColor = UIColor.enableBtnColor
         btn.isEnabled = false
@@ -148,7 +149,7 @@ extension UIViewController {
     
     
     
-    // InputUserNameVC
+    // MARK: - InputUserNameVC
     func tfIsEmpty(_ tf: UITextField, _ btn: UIButton) {
         if tf.text?.isEmpty == true {
             setEnableBtn(btn)
@@ -157,7 +158,7 @@ extension UIViewController {
         }
     }
     
-    
+    // MARK: - 그라데이션
     func setGradation() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = UIScreen.main.bounds
@@ -219,8 +220,35 @@ extension UIViewController {
         lottieView.play()
     }
     
-    /// 
-    
+    // MARK: - 마이페이지 클릭 이벤트 메소드
+    /// 이용약관 필수동의(필수)
+    @objc func touTapped(_ sender: UITapGestureRecognizer) {
+        let vc = TermsAlertViewController(idx: 1)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    /// 개인정보 수집 이용동의(필수)
+    @objc func infoFirstTapped(_ sender: UITapGestureRecognizer) {
+        let vc = TermsAlertViewController(idx: 2)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    /// 개인정보 수집 이용동의(선택)
+    @objc func infoSecondTapped(_ sender: UITapGestureRecognizer) {
+        let vc = TermsAlertViewController(idx: 3)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    /// 플래닛 알림 및 광고 메세지 수신(선택)
+    @objc func marketingTapped(_ sender: UITapGestureRecognizer) {
+        let vc = TermsAlertViewController(idx: 4)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    /// 회원 탈퇴
+    @objc func leaveTapped(_ sender: UITapGestureRecognizer) {
+        
+    }
     
     
     /// 디바이스 해상도
