@@ -155,8 +155,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rprDdayCell", for: indexPath) as? HaveRprDdayCollectionViewCell else { return UICollectionViewCell() }
                     
                     let endAt = String(describing: (representDday?.ddays[indexPath.row].endAt)!)
+                    /// Cell configure
                     cell.configure(with: endAt)
-                    
                     cell.layer.cornerRadius = 8
                     cell.titleLbl.text = representDday?.ddays[indexPath.row].title
                     

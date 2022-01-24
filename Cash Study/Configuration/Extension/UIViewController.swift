@@ -219,7 +219,11 @@ extension UIViewController {
         lottieView.play()
     }
     
+    /// 
     
+    
+    
+    /// 디바이스 해상도
     func eachDeviceHeight() {
         let height = UIScreen.main.bounds.size.height
         

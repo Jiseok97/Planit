@@ -29,8 +29,6 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        termsOfUseView.isHidden = true
-
         setGradation()
         setUI()
         
@@ -94,12 +92,12 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         return identifier
     }
     
-    // 메일 보내기 누르면 팝업 dismiss
+    /// 메일 보내기 누르면 팝업 dismiss
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    // 문의하기
+    /// 문의하기
     @objc func questionTapped(_ sender: UITapGestureRecognizer) {
         guard let versionNumber = self.versionLbl.text else { return }
         if MFMailComposeViewController.canSendMail() {
@@ -141,7 +139,21 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     // MARK: 이용약관 이동
     @objc func termsTapped(_ sender: UITapGestureRecognizer) {
+        /// 우 → 좌 애니메이션
+//        UIView.animate(withDuration: 0.2, animations: {
+//            let transition = CATransition()
+//            transition.duration = 0.5
+//            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//            transition.type = CATransitionType.reveal
+//            transition.subtype = CATransitionSubtype.fromRight
+//            self.view.window!.layer.add(transition, forKey: nil)
+//            let vc = TouViewController()
+//            vc.modalPresentationStyle = .overFullScreen
+//            self.present(vc, animated: true)
+//        })
+        
         let vc = TouViewController()
+        vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
@@ -152,9 +164,10 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         ShowUserInfoDataManager().showUserInfo(viewController: self)
     }
     
-    
+    /// 로그아웃
     @objc func logout(_ noti: Notification) {
         if AuthApi.hasToken() {
+            /// 카카오 로그아웃
             UserApi.shared.logout { (error) in
                 if let error = error {
                     print(error)
@@ -165,7 +178,7 @@ class MyPageViewController: UIViewController, MFMailComposeViewControllerDelegat
         } else {
             print("Kakao Token 없다")
         }
-        
+        /// 기존 Access Token 값 제거
         Constant.MY_ACCESS_TOKEN = ""
         changeRootVC(LoginViewController())
     }
