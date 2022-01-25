@@ -45,7 +45,7 @@ class SplashViewController: UIViewController {
             changeRootVC(LoginViewController())
         } else {
             usleep(1000000)
-            let vc = ObAlertViewController(mainMsg: "네트워크가\n연결되지 않았습니다", subMsg: "네트워크 연결 상태를 확인해주세요", heightValue: 0.25, btnTitle: "다시 시도", isTimer: false, isMypage: false)
+            let vc = ObAlertViewController(mainMsg: "네트워크가\n연결되지 않았습니다", subMsg: "네트워크 연결 상태를 확인해주세요", heightValue: 0.255, btnTitle: "다시 시도", isTimer: false, isMypage: false, networkConnect: true)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true, completion: nil)
         }

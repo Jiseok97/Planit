@@ -11,7 +11,7 @@ class ObAlertViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var msgLbl: UILabel!
-    @IBOutlet weak var timerLbl: UILabel!
+    @IBOutlet weak var subLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
     @IBOutlet weak var subConstraint: NSLayoutConstraint!
@@ -22,15 +22,17 @@ class ObAlertViewController: UIViewController {
     var btnTitle : String = ""
     var isTimer : Bool = false
     var isMypage : Bool = false
+    var networkConnect: Bool = false
     var heightValue : Double = 0.0
     
-    init(mainMsg: String, subMsg: String, heightValue: Double, btnTitle: String, isTimer : Bool, isMypage: Bool) {
+    init(mainMsg: String, subMsg: String, heightValue: Double, btnTitle: String, isTimer : Bool, isMypage: Bool, networkConnect: Bool) {
         self.mainMsg = mainMsg
         self.subMsg = subMsg
         self.btnTitle = btnTitle
         self.isTimer = isTimer
         self.isMypage = isMypage
         self.heightValue = heightValue
+        self.networkConnect = networkConnect
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -54,7 +56,7 @@ class ObAlertViewController: UIViewController {
         self.confirmBtn.layer.cornerRadius = confirmBtn.frame.height / 2
         
         self.msgLbl.text = mainMsg
-        self.timerLbl.text = subMsg
+        self.subLbl.text = subMsg
         self.confirmBtn.setTitle(self.btnTitle, for: .normal)
         
         if isTimer {
@@ -64,19 +66,24 @@ class ObAlertViewController: UIViewController {
         
         if isMypage {
             self.subConstraint.constant = CGFloat(10)
-            self.timerLbl.textColor = .placeHolderColor
-            self.timerLbl.font = UIFont(name: "NotoSansKR-Regular", size: 14)
+            self.subLbl.textColor = .placeHolderColor
+            self.subLbl.font = UIFont(name: "NotoSansKR-Regular", size: 14)
+        }
+        
+        if networkConnect {
+            self.subConstraint.constant = CGFloat(8)
+            self.subLbl.textColor = .placeHolderColor
+            self.subLbl.font = UIFont(name: "NotoSansKR-Regular", size: 14)
         }
     }
     
-//    private func setConstraintWitouthNotch() {
-//        alertViewHeight.constant = UIDevice.current.hasNotch ? view.frame.height * 0.28 : view.frame.height * 0.28
-//    }
     
     @IBAction func dismissBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        if networkConnect {
+            changeRootVC(SplashViewController())
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
-    
-    
     
 }

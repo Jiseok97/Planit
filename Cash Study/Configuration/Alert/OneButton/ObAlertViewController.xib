@@ -21,7 +21,7 @@
                 <outlet property="contentView" destination="J8W-ba-ZcV" id="ikr-wv-xSP"/>
                 <outlet property="msgLbl" destination="1Qy-AQ-elc" id="Hh5-iA-W5M"/>
                 <outlet property="subConstraint" destination="I70-Cf-pWm" id="2c2-4P-D9J"/>
-                <outlet property="timerLbl" destination="ugA-Hz-JOS" id="UBn-Rn-mRi"/>
+                <outlet property="subLbl" destination="ugA-Hz-JOS" id="BnU-ox-NAg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

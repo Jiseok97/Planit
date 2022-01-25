@@ -35,7 +35,7 @@ class PlanitPassViewController: UIViewController {
     }
     var notEnough: Bool = false {
         didSet {
-            let vc = ObAlertViewController(mainMsg: "보유하고 있는\n플래닛 패스가 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false)
+            let vc = ObAlertViewController(mainMsg: "보유하고 있는\n플래닛 패스가 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false, networkConnect: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         }

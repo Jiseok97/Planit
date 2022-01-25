@@ -114,7 +114,7 @@ class RewardMainViewController: UIViewController {
     
     // 별 획득 팝업 Observer
     @objc func successChangeReward(_ noti: Notification) {
-        let vc = ObAlertViewController(mainMsg: "5포인트를 획득하였습니다", subMsg: "", heightValue: 0.19, btnTitle: "확인", isTimer: false, isMypage: false)
+        let vc = ObAlertViewController(mainMsg: "5포인트를 획득하였습니다", subMsg: "", heightValue: 0.19, btnTitle: "확인", isTimer: false, isMypage: false, networkConnect: false)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
@@ -125,7 +125,7 @@ class RewardMainViewController: UIViewController {
     @IBAction func movePlanitPass(_ sender: Any) {
         guard let passCnt = rewardDataLst?.planetPass else { return }
         if passCnt == 0 {
-            let vc = ObAlertViewController(mainMsg: "보유하고 있는\n플래닛 패스가 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false)
+            let vc = ObAlertViewController(mainMsg: "보유하고 있는\n플래닛 패스가 없습니다", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false, networkConnect: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
         } else {

@@ -391,7 +391,7 @@ class AddDdayViewController: UIViewController, UITextFieldDelegate  {
         
         if inputTitleTF.text?.isEmpty == true && Constant.DATE == "" {
             // 제목은 한글자 이상 적어주세요.
-            let vc = ObAlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false)
+            let vc = ObAlertViewController(mainMsg: "제목은 한 글자 이상 입력하세요", subMsg: "", heightValue: 0.2, btnTitle: "확인", isTimer: false, isMypage: false, networkConnect: false)
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
             
