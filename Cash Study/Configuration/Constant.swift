@@ -14,7 +14,6 @@ struct Constant {
     static let BASE_URL : String = "https://dev-api.planit-study.com"
     static let VERSION : String = "0.1.0.dev"
     
-    
     static var VC_MOVE : Bool = false
     
     /// User Informaition

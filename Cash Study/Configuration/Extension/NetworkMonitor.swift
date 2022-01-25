@@ -30,6 +30,11 @@ final class NetworkMonitor {
         monitor = NWPathMonitor()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     public func startMonitoring(){
         print("startMonitoring 호출")
         monitor.start(queue: queue)
@@ -43,7 +48,8 @@ final class NetworkMonitor {
                 print("연결이된 상태임!")
             }else{
                 print("연결 안된 상태임!")
-//                NotificationCenter.default.post(name: NSNotification.Name("networkNotConnect"), object: nil)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("NetworkDisconnect"), object: nil)
             }
         }
     }
