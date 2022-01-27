@@ -27,12 +27,12 @@ class RewardMainViewController: UIViewController {
     @IBOutlet weak var passCntLbl: UILabel!
     @IBOutlet weak var passBgImgView: UIImageView!
     
-    
     var rewardDataLst : ShowUserRewardEntity?
     let satisfyAnimation = AnimationView(name: "satisfyStar")
     let bgAnimation = AnimationView(name: "bgAnimation")
     let actionAnimation = AnimationView(name: "tappedStar")
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,8 +51,8 @@ class RewardMainViewController: UIViewController {
         self.actionLtView.addSubview(actionAnimation)
         actionLottie(lottieView: actionAnimation, view: actionLtView)
         
-        self.rewardShopBtn.isHidden = true
-        
+        // MARK: - 리워드 샵 버튼 가리기
+//        self.rewardShopBtn.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,10 +62,10 @@ class RewardMainViewController: UIViewController {
         showIndicator()
         ShowUserRewardDataManager().showReward(viewController: self)
         
-        // 별 획득 후 UI Update
+        /// 별 획득 후 UI Update Observer
         NotificationCenter.default.addObserver(self, selector: #selector(reloadReward(_:)), name: NSNotification.Name("reloadReward"), object: nil)
         
-        // 별 획득 팝업 Observer
+        /// 별 획득 팝업 Observer
         NotificationCenter.default.addObserver(self, selector: #selector(successChangeReward(_:)), name: NSNotification.Name("successChangeReward"), object: nil)
         
         satisfyAnimation.play()
@@ -76,13 +76,15 @@ class RewardMainViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        /// 별 획득 후 UI Update Obsever 제거
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadReward"), object: nil)
+        /// 별 획득 팝업 Observer 제거
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("successChangeReward"), object: nil)
     }
     
     
     
-    // MARK: Functions
+    // MARK: - Custom Method
     func setUI() {
         self.rewardShopBtn.layer.borderColor = UIColor.myGray.cgColor
         self.rewardShopBtn.layer.borderWidth = 1
@@ -91,12 +93,12 @@ class RewardMainViewController: UIViewController {
         self.passView.layer.cornerRadius = 8
     }
     
-    // 별 획득 후 UI 업데이트를 위한 DataManager 호출
+    /// 별 획득 후 UI 업데이트를 위한 DataManager 호출
     @objc func reloadReward(_ noti: Notification) {
         ShowUserRewardDataManager().showReward(viewController: self)
     }
     
-    // 중앙 별 클릭 시
+    /// 별 포인트 전환 애니메이션 (회전)
     @objc func tappedActionLtView(_ sender: UITapGestureRecognizer) {
         self.satisfyLtView.isHidden = true
         self.actionLtView.isHidden = false
@@ -112,7 +114,7 @@ class RewardMainViewController: UIViewController {
         
     }
     
-    // 별 획득 팝업 Observer
+    /// 별 획득 팝업 Observer
     @objc func successChangeReward(_ noti: Notification) {
         let vc = ObAlertViewController(mainMsg: "5포인트를 획득하였습니다", subMsg: "", heightValue: 0.19, btnTitle: "확인", isTimer: false, isMypage: false, networkConnect: false)
         vc.modalPresentationStyle = .overFullScreen
@@ -121,7 +123,7 @@ class RewardMainViewController: UIViewController {
     
     
     
-    // 플래닛 패스 이동
+    /// 플래닛 패스 이동
     @IBAction func movePlanitPass(_ sender: Any) {
         guard let passCnt = rewardDataLst?.planetPass else { return }
         if passCnt == 0 {
@@ -148,6 +150,7 @@ class RewardMainViewController: UIViewController {
 }
 
 
+// MARK: - Extension (DataManager)
 extension RewardMainViewController {
     func showReward(result: ShowUserRewardEntity) {
         dismissIndicator()
@@ -160,6 +163,7 @@ extension RewardMainViewController {
             let passCnt = result.planetPass
             
             if star >= 50 {
+                /// 별 포인트 전환 조건 충족
                 self.descriptionLbl.text = "별을 탭하고\n포인트를 받으세요"
                 self.starLbl.textColor = .remainDdayColor
                 self.starCntLbl.textColor = .remainDdayColor
@@ -170,6 +174,7 @@ extension RewardMainViewController {
                 self.satisfyLtView.isHidden = false
                 
             } else {
+                /// 별 포인트 전환 조건 불충족
                 self.descriptionLbl.text = "별을 더 모아\n포인트를 받으세요"
                 self.starLbl.textColor = .placeHolderColor
                 self.starCntLbl.textColor = .placeHolderColor

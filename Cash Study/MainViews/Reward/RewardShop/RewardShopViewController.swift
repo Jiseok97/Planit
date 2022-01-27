@@ -26,7 +26,14 @@ class RewardShopViewController: UIViewController {
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
+    /// For Picker View
+    @IBOutlet weak var filterBtn: UIButton!
+    let filterTitle: [String] = ["인기순", "낮은가격순", "높은가격순"]
+    var toolBar = UIToolbar()
+    var picker = UIPickerView()
     
+    
+    // MARK: - Lify Clycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +53,7 @@ class RewardShopViewController: UIViewController {
     }
 
     
-    // MARK: Functions
+    // MARK: - Custom Method
     func setUI() {
         self.pointView.layer.cornerRadius = 8
         self.buttonsView.layer.cornerRadius = 8
@@ -56,11 +63,71 @@ class RewardShopViewController: UIViewController {
         }
     }
     
+    /// 필터 버튼 클릭 이벤트
+    @IBAction func filterBtnTapped(_ sender: Any) {
+        picker = UIPickerView.init()
+        picker.delegate = self
+        picker.backgroundColor = UIColor.white
+        picker.setValue(UIColor.black, forKey: "textColor")
+        picker.autoresizingMask = .flexibleWidth
+        picker.contentMode = .center
+        picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+        self.view.addSubview(picker)
+        
+        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+        toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+        self.view.addSubview(toolBar)
+    }
+    /// 픽커뷰 "Done" 버튼 누를 시 이벤트
+    @objc func onDoneButtonTapped() {
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+    }
+    
+    
+    /// 뒤로 가기
     @IBAction func dismissTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 }
 
+// MARK: - Extension Picker View
+extension RewardShopViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    /// 픽커(그룹) 갯수
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    /// 픽커 요소 갯수
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    /// 표시할 텍스트
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            return filterTitle[row]
+            
+        case 1:
+            return filterTitle[row]
+            
+        case 2:
+            return filterTitle[row]
+            
+        default:
+            return ""
+        }
+        
+        /// 선택
+        
+    }
+    
+}
+
+
+
+// MARK: - Extension Collection View
 extension RewardShopViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func changeHeight() {

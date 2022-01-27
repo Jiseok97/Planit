@@ -46,10 +46,12 @@ final class NetworkMonitor {
             
             if self?.isConnected == true{
                 print("연결이된 상태임!")
+                /// 네트워크 연결 되었다는 Observer
+//                NotificationCenter.default.post(name: NSNotification.Name("NetworkConnect"), object: nil)
             }else{
                 print("연결 안된 상태임!")
-                
-                NotificationCenter.default.post(name: NSNotification.Name("NetworkDisconnect"), object: nil)
+                /// 네트워크 연결 안되었다는 Observer
+//                NotificationCenter.default.post(name: NSNotification.Name("NetworkDisconnect"), object: nil)
             }
         }
     }

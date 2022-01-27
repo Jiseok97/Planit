@@ -203,7 +203,7 @@ extension UIViewController {
         
         view.addConstraints([ centerX, centerY, width, height ])
         view.isUserInteractionEnabled = false
-        lottieView.contentMode = .scaleAspectFill
+        lottieView.contentMode = .scaleAspectFit
     }
     
     func satisfyLottie(lottieView: AnimationView, view: UIView) {

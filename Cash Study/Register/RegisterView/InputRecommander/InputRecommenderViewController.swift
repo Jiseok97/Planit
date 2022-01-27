@@ -23,7 +23,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     
     var recommander: String = ""
     
-    // MARK: View Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +38,8 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: recommenderTF)
     }
     
+    
+    // MARK: - Custom Method
     @objc private func inputRecommender(_ noti: Notification) {
         let maxLength: Int = 8
         if let textField = noti.object as? UITextField {
@@ -58,7 +60,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+
     func setUI() {
         self.tfView.layer.cornerRadius = 11
         self.skipBtn.layer.borderWidth = 1
@@ -73,26 +75,48 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
         self.errorImageView.isHidden = true
     }
     
-    // MARK: TF Delegate
+    /// 텍스트 필드 관련 delegate
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
+    /// 키보드 리턴 타입
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     
+    /// 텍스트가 수정되는 동안도 버튼 비활성화, Done이 되었을 때 버튼 판별 여부 확인
+    /// 22.01.25 수정 시작
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let nickname = UserInfoData.nickname
+        let writeNickname = textField.text
+        print("nickname = \(nickname) && writeNickname = \(writeNickname)")
+        if nickname == writeNickname {
+            setEnableBtn(confirmBtn)
+            setShowErrorLblImg(errorImageView, errorLbl, "추천하신 분의 닉네임을 입력해주세요.")
+        }
+    }
+//
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        /// 텍스트 필드가 비어있을 때 → 버튼 비활성화
+//        if textField.text == "" {
+//            setEnableBtn(confirmBtn)
+//            sethiddenLblImg(errorImageView, errorLbl)
+//        }
+//        return false
+//    }
     
-    // MARK: Function Move VC
+    
+    /// 뒤로가기
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func finishBtn(_ sender: UIButton) {
-        // 추천인 있는 경우
+        /// 추천인 있는 경우
         if UserInfoData.name == "" {
             UserInfoData.name = "사용자"
         }
@@ -104,7 +128,7 @@ class InputRecommenderViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func skipInputRecommander(_ sender: UIButton) {
-        // 스킵 → 홈 이동
+        /// 추천인이 없는 경우, 스킵 → 홈 이동
         if UserInfoData.name == "" {
             UserInfoData.name = "사용자"
         }
