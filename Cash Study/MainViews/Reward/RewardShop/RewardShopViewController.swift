@@ -43,9 +43,9 @@ class RewardShopViewController: UIViewController {
         
         productCV.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "productCell")
         
-        if let collectionViewLayout = productCV.collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
+//        if let collectionViewLayout = productCV.collectionViewLayout as? UICollectionViewFlowLayout {
+//            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,6 +64,7 @@ class RewardShopViewController: UIViewController {
     }
     
     /// 필터 버튼 클릭 이벤트
+    /// 필터 Set Up
     @IBAction func filterBtnTapped(_ sender: Any) {
         picker = UIPickerView.init()
         picker.delegate = self
@@ -74,8 +75,14 @@ class RewardShopViewController: UIViewController {
         picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
         self.view.addSubview(picker)
         
+        
         toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-        toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+        
+        let doneBtn = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        
+        toolBar.setItems([space, doneBtn], animated: true)
+        
         self.view.addSubview(toolBar)
     }
     /// 픽커뷰 "Done" 버튼 누를 시 이벤트
@@ -119,7 +126,7 @@ extension RewardShopViewController: UIPickerViewDelegate, UIPickerViewDataSource
             return ""
         }
         
-        /// 선택
+        /// 선택 관련 메소드
         
     }
     

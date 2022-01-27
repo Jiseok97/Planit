@@ -171,6 +171,8 @@
 		B6B40620273CFDD3008DBE7C /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */; };
 		B6B449022738EF2B00AB45AC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B449002738EF2B00AB45AC /* TimerViewController.swift */; };
 		B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B449012738EF2B00AB45AC /* TimerViewController.xib */; };
+		B6B505B927A262060078B3D5 /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B505B727A262060078B3D5 /* DetailProductViewController.swift */; };
+		B6B505BA27A262060078B3D5 /* DetailProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B505B827A262060078B3D5 /* DetailProductViewController.xib */; };
 		B6B60B11273150FE0050C772 /* UserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B60B10273150FE0050C772 /* UserInfoData.swift */; };
 		B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */; };
 		B6BF8959273D14D0000ABCFF /* AddDdayInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */; };
@@ -386,6 +388,8 @@
 		B6B4061F273CFDD3008DBE7C /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Thin.otf"; path = "../../../../캐•스 자료/이미지자료/Noto_Sans_KR/NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		B6B449002738EF2B00AB45AC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B6B449012738EF2B00AB45AC /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		B6B505B727A262060078B3D5 /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
+		B6B505B827A262060078B3D5 /* DetailProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailProductViewController.xib; sourceTree = "<group>"; };
 		B6B60B10273150FE0050C772 /* UserInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoData.swift; sourceTree = "<group>"; };
 		B6BF8956273D14C8000ABCFF /* AddDdayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayEntity.swift; sourceTree = "<group>"; };
 		B6BF8958273D14D0000ABCFF /* AddDdayInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDdayInput.swift; sourceTree = "<group>"; };
@@ -1284,6 +1288,7 @@
 			children = (
 				B60A9DD12758951700AC3E1B /* RewardShopViewController.xib */,
 				B60A9DD02758951700AC3E1B /* RewardShopViewController.swift */,
+				B6B505B627A261EC0078B3D5 /* DetailProduct */,
 				B66BAFBC2758BB60009CAA31 /* CVCell */,
 			);
 			path = RewardShop;
@@ -1548,6 +1553,15 @@
 				B63E67CD2753DC6C00C891C2 /* ShowRecord */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		B6B505B627A261EC0078B3D5 /* DetailProduct */ = {
+			isa = PBXGroup;
+			children = (
+				B6B505B827A262060078B3D5 /* DetailProductViewController.xib */,
+				B6B505B727A262060078B3D5 /* DetailProductViewController.swift */,
+			);
+			path = DetailProduct;
 			sourceTree = "<group>";
 		};
 		B6BF8954273D14A3000ABCFF /* DataManager */ = {
@@ -1824,6 +1838,7 @@
 				B6B449032738EF2B00AB45AC /* TimerViewController.xib in Resources */,
 				B645B65D275DD6F10051F137 /* DailyReportViewController.xib in Resources */,
 				B63ED56D27620EFB000199E4 /* StudyTimeLineCollectionViewCell.xib in Resources */,
+				B6B505BA27A262060078B3D5 /* DetailProductViewController.xib in Resources */,
 				B6709E65272BF1CB00847491 /* InputBirthday.storyboard in Resources */,
 				B63ED5692761EB16000199E4 /* MostStudyCollectionViewCell.xib in Resources */,
 				B63ED57227623E45000199E4 /* OverallTimeLineCollectionViewCell.xib in Resources */,
@@ -2005,6 +2020,7 @@
 				B63E67D72753E21300C891C2 /* StopTimerViewController.swift in Sources */,
 				B6BF8957273D14C8000ABCFF /* AddDdayEntity.swift in Sources */,
 				B6A33E90274F5600004E88B0 /* AlertViewController.swift in Sources */,
+				B6B505B927A262060078B3D5 /* DetailProductViewController.swift in Sources */,
 				B61E18C2276A700000A40556 /* UsePlanetPassDataManager.swift in Sources */,
 				B6B272AE272687ED0010138A /* TermsOfUseViewController.swift in Sources */,
 				B6B118332716D261008842BA /* AppDelegate.swift in Sources */,
