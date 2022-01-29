@@ -28,6 +28,7 @@
                 <outlet property="filterBtn" destination="oxC-w0-Xoz" id="DbE-iU-088"/>
                 <outlet property="firstBtn" destination="qWk-Ch-UiL" id="dpe-Xi-zKV"/>
                 <outlet property="fourthBtn" destination="b6S-RM-s4K" id="yhB-iy-bPS"/>
+                <outlet property="myPointLbl" destination="qfG-Li-oyb" id="RzR-pf-kVq"/>
                 <outlet property="pointView" destination="JXU-74-ztr" id="hBs-aS-r0m"/>
                 <outlet property="productCV" destination="M0J-dV-qgl" id="82f-mb-rXq"/>
                 <outlet property="secondBtn" destination="zRe-Jl-evi" id="hQb-AV-ZZc"/>
@@ -51,7 +52,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPK-qH-ffy">
-                    <rect key="frame" x="32" y="86.5" width="24" height="24"/>
+                    <rect key="frame" x="32" y="70" width="24" height="24"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="backArrow"/>
                     <connections>
@@ -59,13 +60,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리워드샵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVi-G8-onF">
-                    <rect key="frame" x="177.5" y="87" width="59" height="23.5"/>
+                    <rect key="frame" x="177.5" y="70" width="59" height="23.5"/>
                     <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                     <color key="textColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJb-MB-Piz">
-                    <rect key="frame" x="0.0" y="142.5" width="414" height="719.5"/>
+                    <rect key="frame" x="0.0" y="126" width="414" height="736"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDT-rw-jAm">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="962.5"/>
@@ -74,17 +75,17 @@
                                     <rect key="frame" x="24" y="0.0" width="366" height="192"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m28-gq-Wer">
-                                            <rect key="frame" x="0.0" y="120.5" width="366" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="120" width="366" height="72"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-hb-fdZ">
-                                                    <rect key="frame" x="182.5" y="17.5" width="1" height="36.5"/>
+                                                    <rect key="frame" x="182.5" y="18" width="1" height="36"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="mmv-4s-c4R"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLw-S5-rFo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="177.5" height="71.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="177.5" height="72"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="포인트 내역">
@@ -92,7 +93,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLO-o3-zwt">
-                                                    <rect key="frame" x="188.5" y="0.0" width="177.5" height="71.5"/>
+                                                    <rect key="frame" x="188.5" y="0.0" width="177.5" height="72"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="보관함">
@@ -116,25 +117,25 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 포인트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVd-9Y-KLB">
-                                            <rect key="frame" x="26" y="30.5" width="78.5" height="23.5"/>
+                                            <rect key="frame" x="26" y="30" width="78.5" height="23.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfG-Li-oyb">
-                                            <rect key="frame" x="26" y="54" width="108.5" height="41"/>
+                                            <rect key="frame" x="26" y="53.5" width="108.5" height="41"/>
                                             <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeG-T1-glv">
-                                            <rect key="frame" x="136.5" y="66.5" width="12.5" height="26.5"/>
+                                            <rect key="frame" x="136.5" y="66" width="12.5" height="26.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group5" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-tL-lG3">
-                                            <rect key="frame" x="206" y="0.0" width="160" height="120.5"/>
+                                            <rect key="frame" x="206" y="0.0" width="160" height="120"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.10588235294117647" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,7 +162,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="88"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWk-Ch-UiL">
-                                                    <rect key="frame" x="0.0" y="2" width="85.5" height="40"/>
+                                                    <rect key="frame" x="0.0" y="1.5" width="85.5" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -171,7 +172,7 @@
                                                     <state key="selected" title="인기상품"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-Jl-evi">
-                                                    <rect key="frame" x="93.5" y="2" width="86" height="40"/>
+                                                    <rect key="frame" x="93.5" y="1.5" width="86" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -180,7 +181,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6S-RM-s4K">
-                                                    <rect key="frame" x="280.5" y="2" width="85.5" height="40"/>
+                                                    <rect key="frame" x="280.5" y="1.5" width="85.5" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -189,7 +190,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC5-Ch-3kX">
-                                                    <rect key="frame" x="186.5" y="2" width="86" height="40"/>
+                                                    <rect key="frame" x="186.5" y="1.5" width="86" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -198,7 +199,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-oK-G2N">
-                                                    <rect key="frame" x="0.0" y="46" width="85.5" height="40"/>
+                                                    <rect key="frame" x="0.0" y="45.5" width="85.5" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -207,7 +208,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdS-qC-dtn">
-                                                    <rect key="frame" x="93.5" y="46" width="86" height="40"/>
+                                                    <rect key="frame" x="93.5" y="45.5" width="86" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -216,7 +217,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boy-uj-y3W">
-                                                    <rect key="frame" x="280.5" y="46" width="85.5" height="40"/>
+                                                    <rect key="frame" x="280.5" y="45.5" width="85.5" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -225,7 +226,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAd-tx-QTS">
-                                                    <rect key="frame" x="186.5" y="46" width="86" height="40"/>
+                                                    <rect key="frame" x="186.5" y="45.5" width="86" height="40.5"/>
                                                     <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -285,7 +286,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-w0-Xoz">
-                                    <rect key="frame" x="328" y="355" width="62" height="21"/>
+                                    <rect key="frame" x="328" y="354.5" width="62" height="21"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="인기순 " image="triangle">
@@ -343,12 +344,12 @@
                 <constraint firstItem="aJb-MB-Piz" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="5Ld-7p-776"/>
                 <constraint firstItem="fPK-qH-ffy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="856-lY-qdk"/>
                 <constraint firstItem="aJb-MB-Piz" firstAttribute="top" secondItem="fPK-qH-ffy" secondAttribute="bottom" constant="32" id="DjH-xG-Imt"/>
+                <constraint firstItem="fPK-qH-ffy" firstAttribute="centerY" secondItem="rVi-G8-onF" secondAttribute="centerY" id="EhG-RB-8nQ"/>
                 <constraint firstItem="qWk-Ch-UiL" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.207077" id="HI6-H2-pHE"/>
-                <constraint firstItem="rVi-G8-onF" firstAttribute="centerY" secondItem="fPK-qH-ffy" secondAttribute="centerY" id="IdO-84-Oht"/>
                 <constraint firstItem="JXU-74-ztr" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.234719" id="Oak-Ci-nkH"/>
                 <constraint firstItem="qWk-Ch-UiL" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0490404" id="Q18-3A-dvd"/>
                 <constraint firstItem="aJb-MB-Piz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="asc-YD-X1q"/>
-                <constraint firstItem="fPK-qH-ffy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.22" id="pJr-LS-pRq"/>
+                <constraint firstItem="rVi-G8-onF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="lDp-1Q-Zp0"/>
                 <constraint firstItem="rVi-G8-onF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vMk-Si-MlH"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="55.580357142857139"/>

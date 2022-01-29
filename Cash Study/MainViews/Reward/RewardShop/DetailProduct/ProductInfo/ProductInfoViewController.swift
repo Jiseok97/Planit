@@ -20,15 +20,32 @@ class ProductInfoViewController: UIViewController {
     
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var lackPointView: UIStackView!
+    @IBOutlet weak var remainingDescriptionLbl: UILabel!
     @IBOutlet weak var remainingPointLbl: UILabel!
     
     @IBOutlet weak var getBtn: UIButton!
+    
+    var myPoint: Int = 0
+    var pricePoint: Int = 1000
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if myPoint < pricePoint {
+            /// 포인트가 적을 때
+            self.remainingPointLbl.isHidden = true
+            self.remainingDescriptionLbl.isHidden = true
+        } else {
+            /// 포인트의 조건이 충족될 때
+            self.lackPointView.isHidden = true
+        }
     }
     
     

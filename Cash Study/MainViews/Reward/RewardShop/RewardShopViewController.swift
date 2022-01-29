@@ -10,6 +10,7 @@ import UIKit
 class RewardShopViewController: UIViewController {
     
     @IBOutlet weak var pointView: UIView!
+    @IBOutlet weak var myPointLbl: UILabel!
     @IBOutlet weak var buttonsView: UIView!
     
     @IBOutlet weak var firstBtn: UIButton!
@@ -26,11 +27,22 @@ class RewardShopViewController: UIViewController {
     @IBOutlet weak var productCV: UICollectionView!
     @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
+    var myPoint: Int = 0
+    
     /// For Picker View
     @IBOutlet weak var filterBtn: UIButton!
     let filterTitle: [String] = ["인기순", "낮은가격순", "높은가격순"]
     var toolBar = UIToolbar()
     var picker = UIPickerView()
+    
+    init(point: Int) {
+        self.myPoint = point
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     // MARK: - Lify Clycle
@@ -46,6 +58,19 @@ class RewardShopViewController: UIViewController {
 //        if let collectionViewLayout = productCV.collectionViewLayout as? UICollectionViewFlowLayout {
 //            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 //        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var pointStr = String(describing: myPoint)
+        if myPoint > 999 {
+            pointStr.insert(",", at: pointStr.index(pointStr.endIndex, offsetBy: -3))
+        } else if myPoint > 999999 {
+            pointStr.insert(",", at: pointStr.index(pointStr.endIndex, offsetBy: -3))
+            pointStr.insert(",", at: pointStr.index(pointStr.endIndex, offsetBy: -7))
+        }
+        self.myPointLbl.text = pointStr
     }
     
     override func viewDidLayoutSubviews() {

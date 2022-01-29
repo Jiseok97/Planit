@@ -142,7 +142,8 @@ class RewardMainViewController: UIViewController {
     
     // 리워드 샵 이동
     @IBAction func moveRewardShop(_ sender: Any) {
-        let vc = RewardShopViewController()
+        let point = rewardDataLst!.point
+        let vc = RewardShopViewController(point: point)
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
