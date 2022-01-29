@@ -143,6 +143,8 @@
 		B67C98A02724FA9C0039D271 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C989F2724FA9C0039D271 /* Color.swift */; };
 		B67C98A22724FB910039D271 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A12724FB910039D271 /* UIViewController.swift */; };
 		B67C98A42724FBBE0039D271 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C98A32724FBBE0039D271 /* IndicatorView.swift */; };
+		B6881C4A27A51F8C00F75178 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6881C4827A51F8C00F75178 /* ProductInfoViewController.swift */; };
+		B6881C4B27A51F8C00F75178 /* ProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6881C4927A51F8C00F75178 /* ProductInfoViewController.xib */; };
 		B6884930276071C600DF1F42 /* RewardMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688492E276071C600DF1F42 /* RewardMainViewController.swift */; };
 		B6884931276071C600DF1F42 /* RewardMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B688492F276071C600DF1F42 /* RewardMainViewController.xib */; };
 		B688493927609A0100DF1F42 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B688493827609A0100DF1F42 /* Roboto-Regular.ttf */; };
@@ -354,6 +356,8 @@
 		B67C989F2724FA9C0039D271 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B67C98A12724FB910039D271 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B67C98A32724FBBE0039D271 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		B6881C4827A51F8C00F75178 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		B6881C4927A51F8C00F75178 /* ProductInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoViewController.xib; sourceTree = "<group>"; };
 		B688492E276071C600DF1F42 /* RewardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardMainViewController.swift; sourceTree = "<group>"; };
 		B688492F276071C600DF1F42 /* RewardMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardMainViewController.xib; sourceTree = "<group>"; };
 		B688493827609A0100DF1F42 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -1395,6 +1399,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		B6881C4727A51F5400F75178 /* ProductInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B6881C4927A51F8C00F75178 /* ProductInfoViewController.xib */,
+				B6881C4827A51F8C00F75178 /* ProductInfoViewController.swift */,
+			);
+			path = ProductInfo;
+			sourceTree = "<group>";
+		};
 		B688493227608B5800DF1F42 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -1560,6 +1573,7 @@
 			children = (
 				B6B505B827A262060078B3D5 /* DetailProductViewController.xib */,
 				B6B505B727A262060078B3D5 /* DetailProductViewController.swift */,
+				B6881C4727A51F5400F75178 /* ProductInfo */,
 			);
 			path = DetailProduct;
 			sourceTree = "<group>";
@@ -1853,6 +1867,7 @@
 				B6B1F88C2755F02000E84CE7 /* TermsAlertViewController.xib in Resources */,
 				B604DA422751274900783E79 /* ObAlertViewController.xib in Resources */,
 				B60A9DD32758951700AC3E1B /* RewardShopViewController.xib in Resources */,
+				B6881C4B27A51F8C00F75178 /* ProductInfoViewController.xib in Resources */,
 				B6709E62272BF05300847491 /* SelectGender.storyboard in Resources */,
 				B64886A72763398E00B57FFB /* PlanitPassViewController.xib in Resources */,
 				B6B1183C2716D262008842BA /* Assets.xcassets in Resources */,
@@ -2008,6 +2023,7 @@
 				B63ED5612761CC7C000199E4 /* DailyReportDataManager.swift in Sources */,
 				B633A9F92754933200A00EFD /* ShowUserInfoEntity.swift in Sources */,
 				B6B2269A27293C080021A9A4 /* InputBirthdayViewController.swift in Sources */,
+				B6881C4A27A51F8C00F75178 /* ProductInfoViewController.swift in Sources */,
 				B62618AC274229F900E301A7 /* ShowDdayEntity.swift in Sources */,
 				B633A9F72754932A00A00EFD /* ShowUserInfoDataManager.swift in Sources */,
 				B645B658275DD66C0051F137 /* AnalysisPageViewController.swift in Sources */,

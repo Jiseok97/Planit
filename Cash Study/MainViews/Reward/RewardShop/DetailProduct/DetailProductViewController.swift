@@ -31,6 +31,7 @@ class DetailProductViewController: UIViewController {
 
     // MARK: - Custom Method
     private func setUI() {
+        self.productImgView.layer.cornerRadius = 10
         self.getBtn.layer.cornerRadius = getBtn.frame.height / 2
     }
     
