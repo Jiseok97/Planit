@@ -35,8 +35,17 @@ class DetailProductViewController: UIViewController {
         self.getBtn.layer.cornerRadius = getBtn.frame.height / 2
     }
     
+    /// 구매하기 이벤트
+    @IBAction private func getBtnTapped(_ sender: Any) {
+        let vc = ProductInfoViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
     
-    @IBAction func dismissBtnTapped(_ sender: Any) {
+    
+    /// 뒤로 가기 이벤트
+    @IBAction private func dismissBtnTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
