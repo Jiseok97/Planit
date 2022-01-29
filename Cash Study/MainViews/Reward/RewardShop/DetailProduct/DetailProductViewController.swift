@@ -21,14 +21,27 @@ class DetailProductViewController: UIViewController {
     
     @IBOutlet weak var getBtn: UIButton!
     
+    var myPoint: Int = 0
+    
+    // MARK: - Init
+    init(point: Int) {
+        self.myPoint = point
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
     }
-
-
+    
+    
     // MARK: - Custom Method
     private func setUI() {
         self.productImgView.layer.cornerRadius = 10
@@ -37,7 +50,7 @@ class DetailProductViewController: UIViewController {
     
     /// 구매하기 이벤트
     @IBAction private func getBtnTapped(_ sender: Any) {
-        let vc = ProductInfoViewController()
+        let vc = ProductInfoViewController(point: myPoint)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)

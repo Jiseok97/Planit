@@ -35,6 +35,7 @@ class RewardShopViewController: UIViewController {
     var toolBar = UIToolbar()
     var picker = UIPickerView()
     
+    // MARK: - Init
     init(point: Int) {
         self.myPoint = point
         super.init(nibName: nil, bundle: nil)
@@ -172,7 +173,7 @@ extension RewardShopViewController : UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailProductViewController()
+        let vc = DetailProductViewController(point: myPoint)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)

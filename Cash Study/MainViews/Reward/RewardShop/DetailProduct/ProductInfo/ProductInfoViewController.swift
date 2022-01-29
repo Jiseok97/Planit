@@ -19,14 +19,26 @@ class ProductInfoViewController: UIViewController {
     @IBOutlet weak var myPointLbl: UILabel!
     
     @IBOutlet weak var secondView: UIView!
-    @IBOutlet weak var lackPointView: UIStackView!
     @IBOutlet weak var remainingDescriptionLbl: UILabel!
     @IBOutlet weak var remainingPointLbl: UILabel!
+    
+    @IBOutlet weak var lackPointView: UIStackView!
+    @IBOutlet weak var lackPointLbl: UILabel!
     
     @IBOutlet weak var getBtn: UIButton!
     
     var myPoint: Int = 0
-    var pricePoint: Int = 1000
+    var pricePoint: Int = 100
+    
+    // MARK: - Init
+    init(point: Int) {
+        self.myPoint = point
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -38,13 +50,49 @@ class ProductInfoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        /// 상품 가격 ',' 추가
+        var priceStr = String(describing: pricePoint)
+        priceStr.insert(",", at: priceStr.index(priceStr.endIndex, offsetBy: -3))
+        priceLbl.text = priceStr + "P"
+        
+        /// 내 포인트 ',' 추가
+        var myPointStr = String(describing: myPoint)
+        if myPoint > 999 {
+            myPointStr.insert(",", at: myPointStr.index(myPointStr.endIndex, offsetBy: -3))
+        } else if myPoint > 999999 {
+            myPointStr.insert(",", at: myPointStr.index(myPointStr.endIndex, offsetBy: -3))
+            myPointStr.insert(",", at: myPointStr.index(myPointStr.endIndex, offsetBy: -7))
+        }
+        myPointLbl.text = myPointStr + "P"
+        
+        /// 포인트가 부족할 때
         if myPoint < pricePoint {
-            /// 포인트가 적을 때
             self.remainingPointLbl.isHidden = true
             self.remainingDescriptionLbl.isHidden = true
-        } else {
-            /// 포인트의 조건이 충족될 때
+            self.lackPointView.isHidden = false
+            
+            let lackPoint = pricePoint - myPoint
+            var lackPointStr = String(describing: lackPoint)
+            if lackPoint > 999 {
+                lackPointStr.insert(",", at: lackPointStr.index(lackPointStr.endIndex, offsetBy: -3))
+            }
+            lackPointLbl.text = lackPointStr + "P가 부족해요"
+        }
+        /// 포인트의 조건이 충족될 때
+        else {
+            self.remainingPointLbl.isHidden = false
+            self.remainingDescriptionLbl.isHidden = false
             self.lackPointView.isHidden = true
+            
+            let remainingPoint = myPoint - pricePoint
+            var remainingPointStr = String(describing: remainingPoint)
+            if remainingPoint > 999 {
+                remainingPointStr.insert(",", at: remainingPointStr.index(remainingPointStr.endIndex, offsetBy: -3))
+            } else if remainingPoint > 999999 {
+                remainingPointStr.insert(",", at: remainingPointStr.index(remainingPointStr.endIndex, offsetBy: -3))
+                remainingPointStr.insert(",", at: remainingPointStr.index(remainingPointStr.endIndex, offsetBy: -7))
+            }
+            remainingPointLbl.text = remainingPointStr + "P"
         }
     }
     

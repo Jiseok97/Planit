@@ -24,6 +24,7 @@
                 <outlet property="expiryPeriodLbl" destination="l2v-eP-a3r" id="Pez-ys-Njd"/>
                 <outlet property="firstView" destination="WWk-nx-h6G" id="rOy-AD-rgf"/>
                 <outlet property="getBtn" destination="x79-mX-dqq" id="5fk-NO-Ifs"/>
+                <outlet property="lackPointLbl" destination="f6I-yw-9nF" id="Ihc-xR-YtH"/>
                 <outlet property="lackPointView" destination="E8W-aG-s37" id="v2w-E1-cBi"/>
                 <outlet property="myPointLbl" destination="uZr-QI-71l" id="Fx8-EB-u0Q"/>
                 <outlet property="priceLbl" destination="em8-uL-IcO" id="m6f-Bz-4FQ"/>
@@ -187,7 +188,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x79-mX-dqq">
-                    <rect key="frame" x="32" y="798" width="350" height="64"/>
+                    <rect key="frame" x="32" y="758" width="350" height="64"/>
                     <color key="backgroundColor" red="0.10980392156862745" green="0.43137254901960786" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="bZl-Lt-zP6"/>
@@ -223,7 +224,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rr4-Rb-Hle" secondAttribute="trailing" constant="24" id="ri3-3N-VoU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x79-mX-dqq" secondAttribute="trailing" constant="32" id="sND-2r-OKG"/>
                 <constraint firstItem="uCP-19-uJf" firstAttribute="top" secondItem="VU6-id-DG6" secondAttribute="bottom" constant="54" id="w5Q-KB-m8Z"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x79-mX-dqq" secondAttribute="bottom" id="x67-oj-HoE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x79-mX-dqq" secondAttribute="bottom" constant="40" id="x67-oj-HoE"/>
                 <constraint firstItem="rr4-Rb-Hle" firstAttribute="top" secondItem="WWk-nx-h6G" secondAttribute="bottom" constant="12" id="yFZ-Mx-xA1"/>
                 <constraint firstItem="x79-mX-dqq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="zuc-W9-aVd"/>
             </constraints>
