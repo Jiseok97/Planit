@@ -21,6 +21,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailProductViewController" customModule="Cash_Study" customModuleProvider="target">
             <connections>
+                <outlet property="backBtn" destination="PAy-wK-oDc" id="iZQ-0O-MI4"/>
+                <outlet property="descriptionLbl" destination="nhs-2J-ksN" id="XbV-sq-63Y"/>
+                <outlet property="expiryPeriodLbl" destination="spL-wp-5aY" id="TWt-qi-2YI"/>
+                <outlet property="getBtn" destination="s12-VA-kWQ" id="PH7-Un-Mwh"/>
+                <outlet property="priceLbl" destination="6at-sg-l6P" id="Wxq-bA-B5C"/>
+                <outlet property="productImgView" destination="v7i-Su-4oS" id="B13-tl-aSq"/>
+                <outlet property="productNameLbl" destination="ZwQ-FR-M8K" id="82B-t3-sLW"/>
+                <outlet property="storeNameLbl" destination="qIG-bM-cTm" id="0mt-F4-n4z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,6 +44,9 @@
                             <rect key="frame" x="32" y="26" width="24" height="24"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="backArrow"/>
+                            <connections>
+                                <action selector="dismissBtnTapped:" destination="-1" eventType="touchUpInside" id="aZf-f2-trL"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품 상세정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-gQ-K5f">
                             <rect key="frame" x="160.5" y="26.5" width="93" height="23.5"/>

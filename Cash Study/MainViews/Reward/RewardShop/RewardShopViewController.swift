@@ -147,9 +147,10 @@ extension RewardShopViewController : UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = AlertViewController(mainMsg: "해당 상품을 구매하시겠어요?", subMsg: "상품 구매 후 교환이나\n환불을 할 수 없습니다.", btnTitle: "구매", isTimer: false, isLogout: false, studyRemove: false, passMode: false)
+        let vc = DetailProductViewController()
+        vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

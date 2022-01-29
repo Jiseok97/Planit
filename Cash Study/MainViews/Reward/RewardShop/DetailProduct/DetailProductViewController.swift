@@ -9,21 +9,33 @@ import UIKit
 
 class DetailProductViewController: UIViewController {
 
+    @IBOutlet weak var backBtn: UIButton!
+    
+    @IBOutlet weak var productImgView: UIImageView!
+    @IBOutlet weak var storeNameLbl: UILabel!
+    @IBOutlet weak var productNameLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
+    
+    @IBOutlet weak var expiryPeriodLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    
+    @IBOutlet weak var getBtn: UIButton!
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUI()
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Custom Method
+    private func setUI() {
+        self.getBtn.layer.cornerRadius = getBtn.frame.height / 2
     }
-    */
-
+    
+    
+    @IBAction func dismissBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
