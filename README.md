@@ -6,7 +6,9 @@
 
 **개발기간 : 2021.10.16 ~ 2021.12.18**
 
-**앱스토어 출시일 : 2021.12.12** &nbsp; [보러가기 🛸](https://apps.apple.com/kr/app/%ED%94%8C%EB%9E%98%EB%8B%9B-%EB%8F%88-%EB%B2%84%EB%8A%94-%EA%B3%B5%EB%B6%80%ED%83%80%EC%9D%B4%EB%A8%B8/id1597905981)
+**앱스토어 출시일 : 2021.12.12**
+
+<!-- &nbsp; [보러가기 🛸](https://apps.apple.com/kr/app/%ED%94%8C%EB%9E%98%EB%8B%9B-%EB%8F%88-%EB%B2%84%EB%8A%94-%EA%B3%B5%EB%B6%80%ED%83%80%EC%9D%B4%EB%A8%B8/id1597905981) -->
 
 
 <img src="https://user-images.githubusercontent.com/64394744/147325484-9a180ad3-4d81-4a18-bbb4-997a6011114e.png" width="300"> <img src="https://user-images.githubusercontent.com/64394744/147325489-86dd2150-07f7-477d-b572-14d1ff759dda.png" width = "300">
