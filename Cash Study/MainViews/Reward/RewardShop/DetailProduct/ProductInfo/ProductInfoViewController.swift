@@ -28,7 +28,7 @@ class ProductInfoViewController: UIViewController {
     @IBOutlet weak var getBtn: UIButton!
     
     var myPoint: Int = 0
-    var pricePoint: Int = 100
+    var pricePoint: Int = 1000
     
     // MARK: - Init
     init(point: Int) {
@@ -43,13 +43,26 @@ class ProductInfoViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setUI()
+        
+        setRadius()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setUI()
+    }
+    
+    
+    // MARK: - Custom Method
+    private func setRadius() {
+        self.productImgView.layer.cornerRadius = 10
+        self.firstView.layer.cornerRadius = 8
+        self.secondView.layer.cornerRadius = 8
+        self.getBtn.layer.cornerRadius = getBtn.frame.height / 2
+    }
+    
+    private func setUI() {
         /// 상품 가격 ',' 추가
         var priceStr = String(describing: pricePoint)
         priceStr.insert(",", at: priceStr.index(priceStr.endIndex, offsetBy: -3))
@@ -94,15 +107,6 @@ class ProductInfoViewController: UIViewController {
             }
             remainingPointLbl.text = remainingPointStr + "P"
         }
-    }
-    
-    
-    // MARK: - Custom Method
-    private func setUI() {
-        self.productImgView.layer.cornerRadius = 10
-        self.firstView.layer.cornerRadius = 8
-        self.secondView.layer.cornerRadius = 8
-        self.getBtn.layer.cornerRadius = getBtn.frame.height / 2
     }
     
     
